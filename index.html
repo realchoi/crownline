@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="交互式浏览中国历代王朝、主要并立政权、历史分期与重要区域政权的名称和时间范围。">
+  <meta name="theme-color" content="#8b2f2f" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#181310" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="中国历代王朝与主要政权时间轴">
+  <meta property="og:description" content="按历史阶段浏览中国历代王朝与主要并立政权，支持搜索、筛选和详情查看。">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>中国历代王朝与主要政权时间轴</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238b2f2f'/%3E%3Cpath d='M14 18h36v6H14zm5 11h26v6H19zm-5 11h36v6H14z' fill='white'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --page: #f5f0e8;
+      --surface: rgba(255, 252, 246, 0.92);
+      --surface-strong: #fffdf8;
+      --surface-soft: #eee5d8;
+      --text: #261d19;
+      --muted: #74645b;
+      --border: #d8cbbd;
+      --accent: #8b2f2f;
+      --accent-hover: #6f2020;
+      --accent-soft: #f2d9d4;
+      --parallel: #9a6a24;
+      --period: #496a69;
+      --regional: #6b5b8b;
+      --shadow: 0 18px 50px rgba(72, 45, 29, 0.09);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --label-column: 166px;
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #181310;
+        --surface: rgba(35, 28, 24, 0.94);
+        --surface-strong: #2a211c;
+        --surface-soft: #30261f;
+        --text: #f4ece3;
+        --muted: #c1b2a6;
+        --border: #4a3c33;
+        --accent: #d9766f;
+        --accent-hover: #e58c85;
+        --accent-soft: #4a2b29;
+        --parallel: #d8a755;
+        --period: #77aaa7;
+        --regional: #a895c8;
+        --shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 30rem),
+        var(--page);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    button, input, select { font: inherit; }
+
+    button, select { cursor: pointer; }
+
+    a { color: var(--accent); }
+
+    a:hover { color: var(--accent-hover); }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--text);
+      color: var(--page);
+      transform: translateY(-180%);
+      transition: transform 0.15s ease;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 72px 0 32px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 880px;
+      margin-bottom: 18px;
+      font-family: "Songti SC", "STSong", "SimSun", serif;
+      font-size: clamp(2.4rem, 6vw, 5.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-copy {
+      max-width: 790px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat-card {
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .stat-value {
+      display: block;
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: 750;
+      line-height: 1.2;
+    }
+
+    main { padding-bottom: 60px; }
+
+    .controls-panel {
+      position: sticky;
+      top: 10px;
+      z-index: 20;
+      margin-bottom: 24px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--surface-strong) 92%, transparent);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.7fr) auto;
+      gap: 12px;
+      align-items: end;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 650;
+    }
+
+    .text-input, .select-input {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-strong);
+      color: var(--text);
+      padding: 10px 12px;
+      outline: none;
+    }
+
+    .text-input:focus, .select-input:focus, button:focus-visible, a:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      outline-offset: 2px;
+      border-color: var(--accent);
+    }
+
+    .button {
+      min-height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-soft);
+      color: var(--text);
+      padding: 10px 16px;
+      font-weight: 700;
+    }
+
+    .button:hover:not(:disabled) { border-color: var(--accent); }
+
+    .button:disabled { cursor: not-allowed; opacity: 0.48; }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .legend-item { display: inline-flex; align-items: center; gap: 8px; }
+
+    .legend-mark {
+      width: 26px;
+      height: 10px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .legend-main { color: var(--accent); }
+    .legend-parallel { color: var(--parallel); }
+    .legend-period { color: var(--period); }
+    .legend-regional { color: var(--regional); }
+    .legend-period .legend-mark { background: transparent; border: 2px dashed currentColor; }
+
+    .scope-note {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      margin-bottom: 34px;
+      padding: 20px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      background: var(--accent-soft);
+    }
+
+    .scope-icon {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+      border-radius: 50%;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .scope-note p { margin: 0; }
+
+    .results-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .timeline-stage {
+      margin-bottom: 22px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .stage-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .stage-title {
+      margin: 0;
+      font-family: "Songti SC", "STSong", "SimSun", serif;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    .stage-range {
+      flex: none;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .axis-row, .timeline-row {
+      display: grid;
+      grid-template-columns: var(--label-column) minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .axis-row { margin-bottom: 7px; }
+
+    .axis-labels {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeline-row {
+      align-items: center;
+      padding: 5px 0;
+    }
+
+    .timeline-row + .timeline-row { border-top: 1px solid color-mix(in srgb, var(--border) 50%, transparent); }
+
+    .row-label { min-width: 0; }
+
+    .row-name {
+      overflow: hidden;
+      color: var(--text);
+      font-size: 0.94rem;
+      font-weight: 700;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .row-years {
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-variant-numeric: tabular-nums;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .track {
+      position: relative;
+      height: 26px;
+      overflow: visible;
+      border-radius: 999px;
+      background:
+        linear-gradient(to right,
+          transparent 33.25%,
+          color-mix(in srgb, var(--border) 72%, transparent) 33.25%,
+          color-mix(in srgb, var(--border) 72%, transparent) 33.5%,
+          transparent 33.5%,
+          transparent 66.5%,
+          color-mix(in srgb, var(--border) 72%, transparent) 66.5%,
+          color-mix(in srgb, var(--border) 72%, transparent) 66.75%,
+          transparent 66.75%),
+        var(--surface-soft);
+    }
+
+    .timeline-bar {
+      position: absolute;
+      top: 4px;
+      min-width: 8px;
+      height: 18px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      padding: 0;
+      transition: transform 0.12s ease, filter 0.12s ease;
+    }
+
+    .timeline-bar:hover, .timeline-bar:focus-visible {
+      z-index: 2;
+      transform: scaleY(1.25);
+      filter: brightness(1.08);
+    }
+
+    .bar-main { background: var(--accent); }
+    .bar-parallel { background: var(--parallel); }
+    .bar-regional { background: var(--regional); }
+    .bar-period {
+      top: 3px;
+      height: 20px;
+      border: 2px dashed var(--period);
+      background: transparent;
+    }
+
+    .empty-state {
+      padding: 52px 24px;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-lg);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer-note {
+      margin-top: 34px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .footer-note strong { color: var(--text); }
+
+    dialog {
+      width: min(620px, calc(100% - 28px));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--surface-strong);
+      color: var(--text);
+      padding: 0;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+    }
+
+    dialog::backdrop {
+      background: rgba(20, 14, 10, 0.58);
+      backdrop-filter: blur(4px);
+    }
+
+    .dialog-inner { padding: 26px; }
+
+    .dialog-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .type-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      font-size: 0.76rem;
+      font-weight: 750;
+    }
+
+    .dialog-title {
+      margin-bottom: 4px;
+      font-family: "Songti SC", "STSong", "SimSun", serif;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    .dialog-years {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .icon-button {
+      display: grid;
+      flex: none;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--surface-soft);
+      color: var(--text);
+      font-size: 1.3rem;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .detail-card {
+      padding: 14px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+    }
+
+    .detail-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.74rem;
+    }
+
+    .detail-card strong { font-variant-numeric: tabular-nums; }
+
+    noscript {
+      display: block;
+      margin: 24px auto;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-strong);
+    }
+
+    @media (max-width: 760px) {
+      :root { --label-column: 112px; }
+      .hero { padding-top: 48px; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .controls-panel { position: static; }
+      .controls-grid { grid-template-columns: 1fr; }
+      .button { width: 100%; }
+      .timeline-stage { padding: 18px 14px; }
+      .stage-heading { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .axis-row, .timeline-row { gap: 9px; }
+      .row-name { font-size: 0.84rem; }
+      .row-years { font-size: 0.68rem; }
+      .results-line { flex-direction: column; gap: 2px; }
+    }
+
+    @media (max-width: 460px) {
+      :root { --label-column: 90px; }
+      .site-shell { width: min(100% - 20px, 1120px); }
+      .scope-note { grid-template-columns: 1fr; }
+      .axis-labels { font-size: 0.64rem; }
+      .row-name { font-size: 0.78rem; }
+      .row-years { font-size: 0.63rem; }
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+      }
+    }
+
+    @media print {
+      body { background: white; color: black; }
+      .controls-panel, .scope-note, dialog, .skip-link { display: none !important; }
+      .site-shell { width: 100%; }
+      .timeline-stage { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "中国历代王朝与主要政权时间轴",
+      "description": "按历史阶段浏览中国历代王朝与主要并立政权的交互式时间轴。",
+      "inLanguage": "zh-CN"
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+  <header class="hero site-shell">
+    <p class="eyebrow">中国历史可视化</p>
+    <h1>中国历代王朝与主要政权时间轴</h1>
+    <p class="hero-copy">
+      从夏商周到明清，按历史阶段查看主线王朝、主要并立政权、常见历史分期及若干重要区域政权。每个阶段采用局部时间尺度，让短暂政权也能清晰呈现。
+    </p>
+    <div class="stat-grid" aria-label="时间轴概览">
+      <div class="stat-card">
+        <span class="stat-label">覆盖时段</span>
+        <strong class="stat-value">约前2070—1912</strong>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">收录条目</span>
+        <strong class="stat-value" id="total-count">—</strong>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">历史阶段</span>
+        <strong class="stat-value" id="stage-count">—</strong>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="site-shell">
+    <section class="controls-panel" aria-label="时间轴筛选工具">
+      <div class="controls-grid">
+        <label>
+          <span class="field-label">搜索名称、别名、年份或说明</span>
+          <input class="text-input" id="timeline-search" type="search" placeholder="例如：唐、北魏、南宋、前221" autocomplete="off">
+        </label>
+        <label>
+          <span class="field-label">显示类别</span>
+          <select class="select-input" id="type-filter">
+            <option value="all">全部条目</option>
+            <option value="main">主线王朝</option>
+            <option value="parallel">主要并立政权</option>
+            <option value="period">历史分期</option>
+            <option value="regional">区域政权</option>
+          </select>
+        </label>
+        <button class="button" id="clear-filters" type="button" disabled>清除筛选</button>
+      </div>
+      <div class="legend" aria-label="类别图例">
+        <span class="legend-item legend-main"><i class="legend-mark" aria-hidden="true"></i>主线王朝</span>
+        <span class="legend-item legend-parallel"><i class="legend-mark" aria-hidden="true"></i>主要并立政权</span>
+        <span class="legend-item legend-period"><i class="legend-mark" aria-hidden="true"></i>历史分期</span>
+        <span class="legend-item legend-regional"><i class="legend-mark" aria-hidden="true"></i>区域政权</span>
+      </div>
+    </section>
+
+    <aside class="scope-note" aria-label="收录口径说明">
+      <span class="scope-icon" aria-hidden="true">注</span>
+      <p>
+        “所有朝代”并不存在完全统一的学术边界。本页采用通史常见口径：覆盖主线王朝、分裂时期的主要政权，并补充少量重要区域政权；不把每一个地方割据、农民政权或短暂称帝政权都列为独立“朝代”。部分起止年会因建国、改元、灭亡或入主中原的判定不同而存在差异。
+      </p>
+    </aside>
+
+    <div class="results-line">
+      <span id="results-summary">正在载入时间轴……</span>
+      <span>点击任意时间条查看说明</span>
+    </div>
+
+    <section id="timeline" aria-label="中国历代王朝时间轴" aria-live="polite"></section>
+
+    <noscript>此时间轴需要 JavaScript 才能进行筛选和展开详情。请在浏览器中启用 JavaScript。</noscript>
+
+    <footer class="footer-note">
+      <p><strong>纪年说明：</strong>夏、商早期年代使用常见估年；清朝可从 1636 年改国号或 1644 年入关起算；南明等政权的终止年份亦有不同口径。页面中的说明用于通史浏览，不替代专业断代研究。</p>
+      <p>
+        <strong>资料参考：</strong>
+        <a href="https://scopsr.gov.cn/zlzx/lsgk/201811/t20181120_326615.html" target="_blank" rel="noreferrer">《中国历史纪年简表》</a>、
+        <a href="https://www.chnmuseum.cn/" target="_blank" rel="noreferrer">中国国家博物馆</a>的中国古代史分期，以及通行历史年表。
+      </p>
+    </footer>
+  </main>
+
+  <dialog id="detail-dialog" aria-labelledby="detail-name">
+    <div class="dialog-inner">
+      <div class="dialog-head">
+        <div>
+          <span class="type-badge" id="detail-type">条目</span>
+          <h2 class="dialog-title" id="detail-name"></h2>
+          <p class="dialog-years" id="detail-years"></p>
+        </div>
+        <button class="icon-button" id="close-detail" type="button" aria-label="关闭详情">×</button>
+      </div>
+      <p id="detail-note"></p>
+      <div class="detail-grid">
+        <div class="detail-card">
+          <span>阶段</span>
+          <strong id="detail-era"></strong>
+        </div>
+        <div class="detail-card">
+          <span>约持续</span>
+          <strong id="detail-duration"></strong>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script id="dynasty-data" type="application/json">
+[
+  {
+    "title": "早期国家与先秦",
+    "rangeLabel": "约前2070—前206",
+    "min": -2070,
+    "max": -206,
+    "items": [
+      {"name":"夏","aliases":"夏朝","start":-2070,"end":-1600,"years":"约前2070—约前1600","type":"main","note":"传统中国史叙事中的早期王朝；起止年代多采用常见估年。"},
+      {"name":"商","aliases":"商朝 殷商","start":-1600,"end":-1046,"years":"约前1600—前1046","type":"main","note":"又称殷商；早期年代为约数，晚期有较丰富甲骨文记录。"},
+      {"name":"西周","aliases":"周朝前期","start":-1046,"end":-771,"years":"前1046—前771","type":"main","note":"周朝前期，前771年犬戎攻破镐京后结束。"},
+      {"name":"东周","aliases":"周朝后期","start":-770,"end":-256,"years":"前770—前256","type":"main","note":"周平王东迁洛邑后的周朝，与春秋、战国分期部分重叠。"},
+      {"name":"春秋","aliases":"春秋时期","start":-770,"end":-476,"years":"前770—前476","type":"period","note":"历史分期，并非单一王朝；起止年在不同史学口径中略有差异。"},
+      {"name":"战国","aliases":"战国时期","start":-475,"end":-221,"years":"前475—前221","type":"period","note":"历史分期，并非单一王朝；通常以秦统一六国为终点。"},
+      {"name":"秦","aliases":"秦朝","start":-221,"end":-206,"years":"前221—前206","type":"main","note":"秦始皇统一六国后建立的统一王朝。"}
+    ]
+  },
+  {
+    "title": "汉与三国",
+    "rangeLabel": "前202—280",
+    "min": -202,
+    "max": 280,
+    "items": [
+      {"name":"西汉","aliases":"前汉 汉朝前期","start":-202,"end":8,"years":"前202—8","type":"main","note":"汉高祖刘邦建立；公元9年王莽建立新朝。"},
+      {"name":"新","aliases":"新朝 王莽政权","start":9,"end":23,"years":"9—23","type":"parallel","note":"王莽建立的短期王朝。"},
+      {"name":"东汉","aliases":"后汉 汉朝后期","start":25,"end":220,"years":"25—220","type":"main","note":"汉光武帝刘秀建立，后期进入群雄割据。"},
+      {"name":"曹魏","aliases":"魏 三国魏","start":220,"end":265,"years":"220—265","type":"parallel","note":"三国之一，通常简称魏。"},
+      {"name":"蜀汉","aliases":"蜀 季汉","start":221,"end":263,"years":"221—263","type":"parallel","note":"三国之一，通常简称蜀。"},
+      {"name":"孙吴","aliases":"吴 东吴","start":222,"end":280,"years":"222—280","type":"parallel","note":"三国之一，通常简称吴或东吴。"}
+    ]
+  },
+  {
+    "title": "两晋与十六国",
+    "rangeLabel": "265—439",
+    "min": 265,
+    "max": 439,
+    "items": [
+      {"name":"西晋","aliases":"晋朝前期","start":265,"end":316,"years":"265—316","type":"main","note":"司马炎代魏建立，280年统一三国，后因内乱与北方政局崩溃而亡。"},
+      {"name":"东晋","aliases":"晋朝后期","start":317,"end":420,"years":"317—420","type":"main","note":"司马睿在建康建立，与北方十六国长期南北并立。"},
+      {"name":"前凉","aliases":"张凉","start":301,"end":376,"years":"301—376","type":"parallel","note":"十六国之一。"},
+      {"name":"成汉","aliases":"成 蜀 李蜀","start":304,"end":347,"years":"304—347","type":"parallel","note":"十六国之一，前期国号成，后改汉。"},
+      {"name":"汉赵（前赵）","aliases":"汉赵 前赵 匈奴汉","start":304,"end":329,"years":"304—329","type":"parallel","note":"十六国之一；前期国号汉，后改赵。"},
+      {"name":"后赵","aliases":"石赵","start":319,"end":351,"years":"319—351","type":"parallel","note":"十六国之一。"},
+      {"name":"前燕","aliases":"慕容燕","start":337,"end":370,"years":"337—370","type":"parallel","note":"十六国之一。"},
+      {"name":"前秦","aliases":"苻秦","start":351,"end":394,"years":"351—394","type":"parallel","note":"十六国之一，曾一度统一北方大部。"},
+      {"name":"后秦","aliases":"姚秦","start":384,"end":417,"years":"384—417","type":"parallel","note":"十六国之一。"},
+      {"name":"后燕","aliases":"慕容燕","start":384,"end":409,"years":"384—409","type":"parallel","note":"十六国之一。"},
+      {"name":"西秦","aliases":"乞伏秦","start":385,"end":431,"years":"385—400、409—431","type":"parallel","note":"十六国之一；400至409年间政权中断。"},
+      {"name":"后凉","aliases":"吕凉","start":386,"end":403,"years":"386—403","type":"parallel","note":"十六国之一。"},
+      {"name":"南凉","aliases":"秃发凉","start":397,"end":414,"years":"397—414","type":"parallel","note":"十六国之一。"},
+      {"name":"北凉","aliases":"沮渠凉","start":397,"end":439,"years":"397—439","type":"parallel","note":"十六国之一；部分余部延续时间更久。"},
+      {"name":"南燕","aliases":"慕容燕","start":398,"end":410,"years":"398—410","type":"parallel","note":"十六国之一。"},
+      {"name":"西凉","aliases":"李凉","start":400,"end":421,"years":"400—421","type":"parallel","note":"十六国之一。"},
+      {"name":"夏（胡夏）","aliases":"胡夏 大夏","start":407,"end":431,"years":"407—431","type":"parallel","note":"十六国之一，由赫连勃勃建立。"},
+      {"name":"北燕","aliases":"冯燕","start":409,"end":436,"years":"409—436","type":"parallel","note":"十六国之一。"}
+    ]
+  },
+  {
+    "title": "南北朝",
+    "rangeLabel": "386—589",
+    "min": 386,
+    "max": 589,
+    "items": [
+      {"name":"北魏","aliases":"拓跋魏 元魏","start":386,"end":534,"years":"386—534","type":"parallel","note":"北朝第一朝，后分裂为东魏和西魏。"},
+      {"name":"东魏","aliases":"高魏","start":534,"end":550,"years":"534—550","type":"parallel","note":"北魏分裂后的东部政权。"},
+      {"name":"西魏","aliases":"宇文魏","start":535,"end":557,"years":"535—557","type":"parallel","note":"北魏分裂后的西部政权。"},
+      {"name":"北齐","aliases":"高齐","start":550,"end":577,"years":"550—577","type":"parallel","note":"承东魏而立。"},
+      {"name":"北周","aliases":"宇文周","start":557,"end":581,"years":"557—581","type":"parallel","note":"承西魏而立，后为隋所代。"},
+      {"name":"刘宋","aliases":"南朝宋 宋","start":420,"end":479,"years":"420—479","type":"parallel","note":"南朝第一朝，通常称刘宋以区别于赵宋。"},
+      {"name":"南齐","aliases":"萧齐 齐","start":479,"end":502,"years":"479—502","type":"parallel","note":"南朝第二朝。"},
+      {"name":"梁","aliases":"南梁 萧梁","start":502,"end":557,"years":"502—557","type":"parallel","note":"南朝第三朝。"},
+      {"name":"陈","aliases":"南陈","start":557,"end":589,"years":"557—589","type":"parallel","note":"南朝第四朝，589年为隋所灭。"}
+    ]
+  },
+  {
+    "title": "隋唐与五代十国",
+    "rangeLabel": "581—979",
+    "min": 581,
+    "max": 979,
+    "items": [
+      {"name":"隋","aliases":"隋朝","start":581,"end":618,"years":"581—618","type":"main","note":"结束南北朝长期分裂，为唐朝统一奠定制度基础。"},
+      {"name":"唐","aliases":"唐朝 李唐","start":618,"end":907,"years":"618—907","type":"main","note":"690至705年间由武周取代，神龙政变后复唐。"},
+      {"name":"武周","aliases":"周 武则天政权","start":690,"end":705,"years":"690—705","type":"parallel","note":"武则天建立，处于唐朝中断期。"},
+      {"name":"后梁","aliases":"朱梁","start":907,"end":923,"years":"907—923","type":"parallel","note":"五代第一朝。"},
+      {"name":"后唐","aliases":"李唐 沙陀唐","start":923,"end":936,"years":"923—936","type":"parallel","note":"五代第二朝。"},
+      {"name":"后晋","aliases":"石晋","start":936,"end":947,"years":"936—947","type":"parallel","note":"五代第三朝。"},
+      {"name":"后汉","aliases":"刘汉","start":947,"end":951,"years":"947—951","type":"parallel","note":"五代第四朝。"},
+      {"name":"后周","aliases":"郭周 柴周","start":951,"end":960,"years":"951—960","type":"parallel","note":"五代第五朝。"},
+      {"name":"吴","aliases":"杨吴 南吴","start":902,"end":937,"years":"902—937","type":"parallel","note":"十国之一，常称杨吴。"},
+      {"name":"南唐","aliases":"李唐 江南国","start":937,"end":976,"years":"937—976","type":"parallel","note":"十国之一。"},
+      {"name":"吴越","aliases":"钱氏吴越","start":907,"end":978,"years":"907—978","type":"parallel","note":"十国之一。"},
+      {"name":"闽","aliases":"王闽","start":909,"end":945,"years":"909—945","type":"parallel","note":"十国之一。"},
+      {"name":"楚","aliases":"马楚 南楚","start":907,"end":951,"years":"907—951","type":"parallel","note":"十国之一，常称马楚。"},
+      {"name":"前蜀","aliases":"王蜀","start":907,"end":925,"years":"907—925","type":"parallel","note":"十国之一。"},
+      {"name":"后蜀","aliases":"孟蜀","start":934,"end":965,"years":"934—965","type":"parallel","note":"十国之一。"},
+      {"name":"南汉","aliases":"刘汉","start":917,"end":971,"years":"917—971","type":"parallel","note":"十国之一。"},
+      {"name":"荆南（南平）","aliases":"荆南 南平 高季兴","start":924,"end":963,"years":"924—963","type":"parallel","note":"十国之一。"},
+      {"name":"北汉","aliases":"刘汉","start":951,"end":979,"years":"951—979","type":"parallel","note":"十国之一，979年为北宋所灭。"},
+      {"name":"吐蕃","aliases":"吐蕃王朝","start":618,"end":842,"years":"约618—842","type":"regional","note":"青藏高原的重要区域政权；不属于传统中原王朝序列。"},
+      {"name":"渤海国","aliases":"渤海 海东盛国","start":698,"end":926,"years":"698—926","type":"regional","note":"东北地区的重要区域政权。"},
+      {"name":"南诏","aliases":"蒙舍诏","start":738,"end":902,"years":"738—902","type":"regional","note":"西南地区的重要区域政权。"}
+    ]
+  },
+  {
+    "title": "辽宋夏金元",
+    "rangeLabel": "916—1368",
+    "min": 916,
+    "max": 1368,
+    "items": [
+      {"name":"辽","aliases":"契丹 辽朝","start":916,"end":1125,"years":"916—1125","type":"parallel","note":"契丹建立，与五代、北宋等政权长期并立。"},
+      {"name":"大理","aliases":"大理国 后理","start":937,"end":1253,"years":"937—1253","type":"regional","note":"西南地区的重要区域政权。"},
+      {"name":"北宋","aliases":"宋朝前期 赵宋","start":960,"end":1127,"years":"960—1127","type":"main","note":"宋朝前期，以开封为都，1127年靖康之变后结束。"},
+      {"name":"西夏","aliases":"大夏 邦泥定国","start":1038,"end":1227,"years":"1038—1227","type":"parallel","note":"党项建立，与宋、辽、金等政权并立。"},
+      {"name":"金","aliases":"金朝 女真金","start":1115,"end":1234,"years":"1115—1234","type":"parallel","note":"女真建立，先后与辽、北宋、南宋并立。"},
+      {"name":"南宋","aliases":"宋朝后期 赵宋","start":1127,"end":1279,"years":"1127—1279","type":"main","note":"宋朝后期，以临安为都，1279年崖山海战后结束。"},
+      {"name":"大蒙古国","aliases":"蒙古帝国 蒙古汗国","start":1206,"end":1271,"years":"1206—1271","type":"regional","note":"1206年成吉思汗建立；1271年忽必烈定国号为元。"},
+      {"name":"元","aliases":"元朝 大元","start":1271,"end":1368,"years":"1271—1368","type":"main","note":"1271年定国号元；1368年退出中原，北元继续存在。"}
+    ]
+  },
+  {
+    "title": "明清",
+    "rangeLabel": "1368—1912",
+    "min": 1368,
+    "max": 1912,
+    "items": [
+      {"name":"明","aliases":"明朝 大明","start":1368,"end":1644,"years":"1368—1644","type":"main","note":"传统主线通常以1644年北京失守、崇祯帝自缢为终点。"},
+      {"name":"后金","aliases":"后金国 女真","start":1616,"end":1636,"years":"1616—1636","type":"parallel","note":"清朝前身，1636年皇太极改国号为清。"},
+      {"name":"清","aliases":"清朝 大清 后金","start":1636,"end":1912,"years":"1636（1644入关）—1912","type":"main","note":"1636年改国号为清，1644年入关；1912年清帝退位。"},
+      {"name":"南明","aliases":"明朝延续 弘光 隆武 永历","start":1644,"end":1662,"years":"1644—1662","type":"parallel","note":"明朝宗室在南方建立的延续政权；终止年在不同口径中存在差异。"}
+    ]
+  }
+]
+  </script>
+
+  <script>
+    "use strict";
+
+    const ERAS = JSON.parse(document.getElementById("dynasty-data").textContent);
+    const TYPE_NAMES = {
+      main: "主线王朝",
+      parallel: "主要并立政权",
+      period: "历史分期",
+      regional: "区域政权"
+    };
+
+    const searchInput = document.getElementById("timeline-search");
+    const typeFilter = document.getElementById("type-filter");
+    const clearButton = document.getElementById("clear-filters");
+    const timeline = document.getElementById("timeline");
+    const resultsSummary = document.getElementById("results-summary");
+    const totalCount = document.getElementById("total-count");
+    const stageCount = document.getElementById("stage-count");
+    const detailDialog = document.getElementById("detail-dialog");
+    const detailName = document.getElementById("detail-name");
+    const detailType = document.getElementById("detail-type");
+    const detailYears = document.getElementById("detail-years");
+    const detailNote = document.getElementById("detail-note");
+    const detailEra = document.getElementById("detail-era");
+    const detailDuration = document.getElementById("detail-duration");
+    const closeDetailButton = document.getElementById("close-detail");
+
+    function normalizeText(value) {
+      return String(value ?? "")
+        .toLowerCase()
+        .replace(/[\s·•（）()—–－_,，。；;：:、]/g, "");
+    }
+
+    function filterItems(query, type) {
+      const normalizedQuery = normalizeText(query);
+      const matches = [];
+
+      ERAS.forEach((era, eraIndex) => {
+        era.items.forEach((item, itemIndex) => {
+          const typeMatches = type === "all" || item.type === type;
+          const searchableText = normalizeText([
+            item.name,
+            item.aliases,
+            item.years,
+            item.note,
+            era.title
+          ].join(" "));
+          const queryMatches = !normalizedQuery || searchableText.includes(normalizedQuery);
+
+          if (typeMatches && queryMatches) {
+            matches.push({ era, eraIndex, item, itemIndex });
+          }
+        });
+      });
+
+      return matches;
+    }
+
+    function formatAxisYear(year) {
+      return year < 0 ? `前${Math.abs(year)}` : String(year);
+    }
+
+    function approximateDuration(item) {
+      const duration = item.end - item.start + (item.start < 0 && item.end > 0 ? 0 : 1);
+      return duration > 1 ? `约 ${duration} 年` : "不足 1 年";
+    }
+
+    function makeElement(tag, className, text) {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (text !== undefined) element.textContent = text;
+      return element;
+    }
+
+    function syncUrlState() {
+      if (window.location.protocol === "file:") return;
+
+      const params = new URLSearchParams(window.location.search);
+      const query = searchInput.value.trim();
+      const type = typeFilter.value;
+
+      if (query) params.set("q", query);
+      else params.delete("q");
+
+      if (type !== "all") params.set("type", type);
+      else params.delete("type");
+
+      const next = `${window.location.pathname}${params.toString() ? `?${params}` : ""}${window.location.hash}`;
+      window.history.replaceState(null, "", next);
+    }
+
+    function openDetail(item, eraTitle) {
+      detailType.textContent = TYPE_NAMES[item.type];
+      detailType.className = `type-badge detail-${item.type}`;
+      detailName.textContent = item.name;
+      detailYears.textContent = item.years;
+      detailNote.textContent = item.note;
+      detailEra.textContent = eraTitle;
+      detailDuration.textContent = approximateDuration(item);
+
+      if (typeof detailDialog.showModal === "function") {
+        detailDialog.showModal();
+      } else {
+        detailDialog.setAttribute("open", "");
+      }
+      closeDetailButton.focus();
+    }
+
+    function closeDetail() {
+      if (typeof detailDialog.close === "function" && detailDialog.open) {
+        detailDialog.close();
+      } else {
+        detailDialog.removeAttribute("open");
+      }
+    }
+
+    function createStageSection(era, matchedItems) {
+      const section = makeElement("section", "timeline-stage");
+      section.setAttribute("aria-labelledby", `stage-${normalizeText(era.title)}`);
+
+      const heading = makeElement("div", "stage-heading");
+      const title = makeElement("h2", "stage-title", era.title);
+      title.id = `stage-${normalizeText(era.title)}`;
+      const range = makeElement("span", "stage-range", era.rangeLabel);
+      heading.append(title, range);
+      section.appendChild(heading);
+
+      const axis = makeElement("div", "axis-row");
+      axis.setAttribute("aria-hidden", "true");
+      axis.appendChild(document.createElement("span"));
+      const axisLabels = makeElement("div", "axis-labels");
+      const midpoint = Math.round((era.min + era.max) / 2);
+      [era.min, midpoint, era.max].forEach((year) => {
+        axisLabels.appendChild(makeElement("span", "", formatAxisYear(year)));
+      });
+      axis.appendChild(axisLabels);
+      section.appendChild(axis);
+
+      matchedItems.forEach((item) => {
+        const row = makeElement("div", "timeline-row");
+        const label = makeElement("div", "row-label");
+        const name = makeElement("div", "row-name", item.name);
+        name.title = item.name;
+        const years = makeElement("div", "row-years", item.years);
+        years.title = item.years;
+        label.append(name, years);
+
+        const track = makeElement("div", "track");
+        const clippedStart = Math.max(item.start, era.min);
+        const clippedEnd = Math.min(item.end, era.max);
+        const left = ((clippedStart - era.min) / (era.max - era.min)) * 100;
+        const width = Math.max(((clippedEnd - clippedStart) / (era.max - era.min)) * 100, 1.1);
+
+        const bar = makeElement("button", `timeline-bar bar-${item.type}`);
+        bar.type = "button";
+        bar.style.left = `${Math.max(0, left)}%`;
+        bar.style.width = `${Math.min(100 - Math.max(0, left), width)}%`;
+        bar.title = `${item.name}｜${item.years}`;
+        bar.setAttribute("aria-label", `${item.name}，${item.years}，${TYPE_NAMES[item.type]}。点击查看详情。`);
+        bar.addEventListener("click", () => openDetail(item, era.title));
+        track.appendChild(bar);
+
+        row.append(label, track);
+        section.appendChild(row);
+      });
+
+      return section;
+    }
+
+    function renderTimeline() {
+      const query = searchInput.value;
+      const type = typeFilter.value;
+      const matches = filterItems(query, type);
+      const grouped = new Map();
+
+      matches.forEach(({ era, eraIndex, item }) => {
+        if (!grouped.has(eraIndex)) grouped.set(eraIndex, { era, items: [] });
+        grouped.get(eraIndex).items.push(item);
+      });
+
+      timeline.replaceChildren();
+
+      if (!matches.length) {
+        const empty = makeElement("div", "empty-state");
+        empty.innerHTML = "没有找到匹配条目。<br>请尝试更短的关键词或切换类别。";
+        timeline.appendChild(empty);
+      } else {
+        grouped.forEach(({ era, items }) => {
+          timeline.appendChild(createStageSection(era, items));
+        });
+      }
+
+      const total = ERAS.reduce((sum, era) => sum + era.items.length, 0);
+      resultsSummary.textContent = `显示 ${matches.length} / ${total} 个条目，涉及 ${grouped.size} 个历史阶段`;
+      clearButton.disabled = !searchInput.value.trim() && typeFilter.value === "all";
+      syncUrlState();
+    }
+
+    function restoreUrlState() {
+      const params = new URLSearchParams(window.location.search);
+      const query = params.get("q") ?? "";
+      const type = params.get("type") ?? "all";
+      const validTypes = new Set(["all", ...Object.keys(TYPE_NAMES)]);
+      searchInput.value = query;
+      typeFilter.value = validTypes.has(type) ? type : "all";
+    }
+
+    searchInput.addEventListener("input", renderTimeline);
+    typeFilter.addEventListener("change", renderTimeline);
+    clearButton.addEventListener("click", () => {
+      searchInput.value = "";
+      typeFilter.value = "all";
+      renderTimeline();
+      searchInput.focus();
+    });
+    closeDetailButton.addEventListener("click", closeDetail);
+    detailDialog.addEventListener("click", (event) => {
+      if (event.target === detailDialog) closeDetail();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && detailDialog.hasAttribute("open")) {
+        closeDetail();
+      }
+    });
+
+    const itemTotal = ERAS.reduce((sum, era) => sum + era.items.length, 0);
+    totalCount.textContent = `${itemTotal} 个`;
+    stageCount.textContent = `${ERAS.length} 个`;
+    restoreUrlState();
+    renderTimeline();
+  </script>
+</body>
+</html>
