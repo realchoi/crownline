@@ -1,6 +1,6 @@
-# Dynasty Atlas
+# Crownline
 
-Dynasty Atlas 是一个面向全球历史的交互式王朝图谱项目，旨在用时间轴呈现不同地区的王朝、主要政权及其并立关系。
+Crownline 是一个面向全球历史的交互式王朝图谱项目，旨在用时间轴呈现不同地区的王朝、主要政权及其并立关系。
 
 > 当前版本仅收录中国历代王朝与主要政权；世界其他地区的数据与跨区域浏览能力将在后续版本中逐步加入。
 
@@ -37,7 +37,7 @@ python3 -m http.server 8000
 
 ## 部署到 GitHub Pages
 
-1. 在 GitHub 创建名为 `dynasty-atlas` 的仓库。
+1. 在 GitHub 创建名为 `crownline` 的仓库。
 2. 将本项目提交并推送到仓库的 `main` 分支。
 3. 打开仓库的 **Settings → Pages**。
 4. 在 **Build and deployment** 中选择 **Deploy from a branch**。
@@ -46,7 +46,7 @@ python3 -m http.server 8000
 发布后的地址通常为：
 
 ```text
-https://<username>.github.io/dynasty-atlas/
+https://<username>.github.io/crownline/
 ```
 
 首次上传可使用：
@@ -54,9 +54,9 @@ https://<username>.github.io/dynasty-atlas/
 ```bash
 git init
 git add .
-git commit -m "feat: 发布 Dynasty Atlas 初始版本"
+git commit -m "feat: 发布 Crownline 初始版本"
 git branch -M main
-git remote add origin https://github.com/<username>/dynasty-atlas.git
+git remote add origin https://github.com/<username>/crownline.git
 git push -u origin main
 ```
 
