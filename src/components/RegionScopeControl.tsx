@@ -7,7 +7,7 @@ interface RegionScopeControlProps {
   onChange: (scope: RegionScope) => void;
 }
 
-/** 时间点模式的地区预设、多选地区和数据覆盖说明。 */
+/** 全览与时间点模式共享的地区预设、多选地区和数据覆盖说明。 */
 export function RegionScopeControl({ regions, scope, onChange }: RegionScopeControlProps) {
   const selectableRegions = regions.filter((region) => {
     return region.regionKind === "historical-region" && region.id !== CHINA_REGION_ID;

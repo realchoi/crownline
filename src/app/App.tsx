@@ -10,6 +10,7 @@ import {
   writeBrowseState,
   type BrowseState
 } from "../domain/browseState";
+import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
 import { selectBrowseResults } from "../domain/selectors";
 import type { CrownlineData } from "../domain/types";
 
@@ -30,7 +31,7 @@ export function App({ data }: AppProps) {
     const filters = {
       query: browseState.query,
       category: browseState.category,
-      regionScope: browseState.mode === "overview" ? { mode: "china" as const } : browseState.regionScope
+      regionScope: browseState.regionScope
     };
     return browseState.mode === "point"
       ? selectBrowseResults(data, { ...filters, year: browseState.year })
@@ -47,8 +48,16 @@ export function App({ data }: AppProps) {
   const selectedMatch = selectedEntityId
     ? allMatches.find(({ entity }) => entity.id === selectedEntityId)
     : undefined;
-  const visibleSections = new Set(results.all.flatMap(({ section }) => section ? [section.id] : [])).size;
-  const overviewTotal = data.timelineSections.reduce((total, section) => total + section.entityIds.length, 0);
+  const overviewGroups = useMemo(() => {
+    return buildOverviewTimelineGroups(data, results.all, browseState.regionScope);
+  }, [browseState.regionScope, data, results.all]);
+  const overviewTotal = useMemo(() => {
+    return selectBrowseResults(data, {
+      query: "",
+      category: "all",
+      regionScope: browseState.regionScope
+    }).all.length;
+  }, [browseState.regionScope, data]);
 
   useEffect(() => {
     const params = writeBrowseState(browseState, yearBounds, window.location.search);
@@ -90,7 +99,7 @@ export function App({ data }: AppProps) {
           <span className="site-title-sub">世界王朝与帝国时间轴</span>
         </h1>
         <p className="hero-copy">
-          沿时间线探索世界王朝、帝国与文明的兴衰。当前完整时间轴覆盖中国历代王朝与主要政权；时间点模式另以拜占庭、阿拔斯、神圣罗马与朱罗四个代表条目验证跨地区浏览。外部地区仍属样本数据，不代表全球历史已完整收录。
+          沿时间线探索世界王朝、帝国与文明的兴衰。中国范围按历史阶段浏览；自选地区与全球已收录按地区局部时间尺度浏览，并以少量外部代表条目验证跨地区全览。外部地区仍属样本数据，不代表全球历史已完整收录。
         </p>
         <div className="stat-grid" aria-label="时间轴概览">
           <div className="stat-card">
@@ -117,11 +126,7 @@ export function App({ data }: AppProps) {
           category={browseState.category}
           regions={data.regions}
           regionScope={browseState.regionScope}
-          onModeChange={(mode) => setBrowseState((current) => ({
-            ...current,
-            mode,
-            regionScope: mode === "overview" ? { mode: "china" } : current.regionScope
-          }))}
+          onModeChange={(mode) => setBrowseState((current) => ({ ...current, mode }))}
           onYearChange={(year) => setBrowseState((current) => ({ ...current, year }))}
           onQueryChange={(query) => setBrowseState((current) => ({ ...current, query }))}
           onCategoryChange={(category) => {
@@ -140,7 +145,7 @@ export function App({ data }: AppProps) {
             注
           </span>
           <p>
-            {browseState.mode === "overview" || browseState.regionScope.mode === "china"
+            {browseState.regionScope.mode === "china"
               ? "“所有朝代”并不存在完全统一的学术边界。中国范围采用通史常见口径：覆盖主线王朝、分裂时期的主要政权，并补充少量重要区域政权；不把每一个地方割据、农民政权或短暂称帝政权都列为独立“朝代”。"
               : "跨地区内容目前只用于验证地区机制，每个外部地区仅有少量代表条目。“全球已收录”表示当前数据集中的全部内容，不表示世界历史已经完整覆盖；空结果也不表示该地区当时没有政权。"}
           </p>
@@ -149,7 +154,11 @@ export function App({ data }: AppProps) {
         <div className="results-line" role="status" aria-atomic="true">
           {browseState.mode === "overview" ? (
             <>
-              <span>{`显示 ${results.all.length} / ${overviewTotal} 个条目，涉及 ${visibleSections} 个历史阶段`}</span>
+              <span>
+                {browseState.regionScope.mode === "china"
+                  ? `显示 ${results.all.length} / ${overviewTotal} 个条目，涉及 ${overviewGroups.length} 个历史阶段`
+                  : `显示 ${results.all.length} / ${overviewTotal} 个条目，分为 ${overviewGroups.length} 个时间轴组`}
+              </span>
               <span>点击任意时间条查看说明</span>
             </>
           ) : (
@@ -161,7 +170,14 @@ export function App({ data }: AppProps) {
         </div>
 
         {browseState.mode === "overview" ? (
-          <Timeline data={data} matches={results.all} onSelect={openDetail} />
+          <Timeline
+            data={data}
+            matches={results.all}
+            regions={data.regions}
+            regionScope={browseState.regionScope}
+            emptyReason={results.polityEmptyReason}
+            onSelect={openDetail}
+          />
         ) : (
           <TimepointView
             year={browseState.year}

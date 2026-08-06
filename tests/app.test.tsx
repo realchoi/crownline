@@ -27,6 +27,7 @@ describe("Crownline 时间轴", () => {
 
     expect(screen.getByText("显示 73 / 73 个条目，涉及 7 个历史阶段")).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Crownline · 王冠纪" })).toBeInTheDocument();
+    expect(screen.getByLabelText("地区范围")).toBeInTheDocument();
   });
 
   it("按名称或别名搜索并支持空结果", async () => {
@@ -161,16 +162,65 @@ describe("Crownline 时间轴", () => {
     );
   });
 
-  it("返回全览时恢复中国范围，避免隐藏的全球筛选状态", async () => {
+  it("在全览与时间点之间切换时保持全球范围", async () => {
     window.history.replaceState(null, "", "/?mode=point&scope=global");
     const user = userEvent.setup();
     render(<App data={data} />);
 
     await user.click(screen.getByRole("button", { name: "全览" }));
 
-    expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
-    expect(screen.queryByLabelText("地区范围")).not.toBeInTheDocument();
-    expect(screen.getByRole("region", { name: "中国历代王朝时间轴" })).toBeInTheDocument();
+    expect(new URLSearchParams(window.location.search).get("scope")).toBe("global");
+    expect(screen.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    expect(screen.getByRole("region", { name: "多地区完整时间轴" })).toBeInTheDocument();
+  });
+
+  it("从 URL 恢复全球全览并去重展示跨地区实体", () => {
+    window.history.replaceState(null, "", "/?scope=global");
+    render(<App data={data} />);
+
+    expect(screen.getByRole("status")).toHaveTextContent("显示 77 / 77 个条目");
+    expect(screen.getByRole("heading", { name: "跨地区政权" })).toBeInTheDocument();
+    expect(screen.getAllByText("拜占庭帝国")).toHaveLength(1);
+    expect(screen.getAllByText("阿拔斯哈里发")).toHaveLength(1);
+    expect(screen.getByRole("button", { name: /神圣罗马帝国/ })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /朱罗帝国/ })).toBeInTheDocument();
+  });
+
+  it("自选多地区在两种浏览模式间保持并同步 URL", async () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?scope=custom&region=region-europe&region=region-west-asia"
+    );
+    const user = userEvent.setup();
+    render(<App data={data} />);
+
+    expect(screen.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
+    expect(screen.getByRole("checkbox", { name: "西亚" })).toBeChecked();
+    await user.click(screen.getByRole("button", { name: "时间点" }));
+    await user.click(screen.getByRole("button", { name: "全览" }));
+
+    const params = new URLSearchParams(window.location.search);
+    expect(params.get("scope")).toBe("custom");
+    expect(params.getAll("region")).toEqual(["region-europe", "region-west-asia"]);
+    expect(screen.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
+    expect(screen.getByRole("checkbox", { name: "西亚" })).toBeChecked();
+  });
+
+  it("未收录地区的全览说明资料缺口而不是历史不存在", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?scope=custom&region=region-americas"
+    );
+    render(<App data={data} />);
+
+    const timeline = screen.getByRole("region", { name: "多地区完整时间轴" });
+    expect(timeline).toHaveTextContent("美洲尚未收录代表性政权");
+    expect(timeline).not.toHaveTextContent("当时不存在");
   });
 
   it("时间点模式隐藏重复图例并在全览模式恢复", async () => {

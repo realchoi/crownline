@@ -110,9 +110,9 @@ describe("浏览状态", () => {
     expect(global.toString()).toBe("mode=point&year=1000&scope=global");
   });
 
-  it("全览模式忽略阶段 2 的地区范围参数", () => {
+  it("全览模式恢复并序列化全球范围", () => {
     expect(readBrowseState("?scope=global", bounds, data.regions).regionScope).toEqual({
-      mode: "china"
+      mode: "global"
     });
     const params = writeBrowseState(
       {
@@ -124,6 +124,25 @@ describe("浏览状态", () => {
       },
       bounds
     );
-    expect(params.toString()).toBe("");
+    expect(params.toString()).toBe("scope=global");
+  });
+
+  it("全览模式恢复并规范化自选地区", () => {
+    const state = readBrowseState(
+      "?scope=custom&region=region-west-asia&region=region-europe&region=region-missing",
+      bounds,
+      data.regions
+    );
+
+    expect(state).toMatchObject({
+      mode: "overview",
+      regionScope: {
+        mode: "custom",
+        regionIds: ["region-europe", "region-west-asia"]
+      }
+    });
+    expect(writeBrowseState(state, bounds).toString()).toBe(
+      "scope=custom&region=region-europe&region=region-west-asia"
+    );
   });
 });

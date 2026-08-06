@@ -62,9 +62,7 @@ export function readBrowseState(
   const customRegionIds = [...new Set(params.getAll("region"))]
     .filter((id) => validHistoricalRegionIds.has(id))
     .sort();
-  const regionScope: RegionScope = mode === "overview"
-    ? { mode: "china" }
-    : rawScope === "global"
+  const regionScope: RegionScope = rawScope === "global"
     ? { mode: "global" }
     : rawScope === "custom" && customRegionIds.length > 0
       ? { mode: "custom", regionIds: customRegionIds }
@@ -94,8 +92,8 @@ export function writeBrowseState(
   if (state.year !== bounds.max) params.set("year", String(state.year));
   if (state.query.trim()) params.set("q", state.query.trim());
   if (state.category !== "all") params.set("type", state.category);
-  if (state.mode === "point" && state.regionScope.mode === "global") params.set("scope", "global");
-  if (state.mode === "point" && state.regionScope.mode === "custom") {
+  if (state.regionScope.mode === "global") params.set("scope", "global");
+  if (state.regionScope.mode === "custom") {
     params.set("scope", "custom");
     [...new Set(state.regionScope.regionIds)].sort().forEach((regionId) => {
       params.append("region", regionId);

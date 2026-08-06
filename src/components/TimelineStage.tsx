@@ -1,12 +1,12 @@
 import { fromOrdinal, formatHistoricalYear, formatPeriods, toOrdinal } from "../domain/chronology";
-import type { MatchedEntity } from "../domain/selectors";
-import type { TimelineSection } from "../domain/types";
+import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
+import type { Region } from "../domain/types";
 import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 
 /** 单个局部时间尺度阶段的渲染参数。 */
 interface TimelineStageProps {
-  section: TimelineSection;
-  matches: MatchedEntity[];
+  group: OverviewTimelineGroup;
+  regions: Region[];
   onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
 }
 
@@ -14,33 +14,39 @@ interface TimelineStageProps {
  * 在阶段自己的时间尺度内绘制实体存在区间。
  * 同一实体的多个存在区间会生成多个时间条，但都指向同一详情记录。
  */
-export function TimelineStage({ section, matches, onSelect }: TimelineStageProps) {
-  const startOrdinal = toOrdinal(section.range.startYear);
-  const endOrdinal = toOrdinal(section.range.endYear);
+export function TimelineStage({ group, regions, onSelect }: TimelineStageProps) {
+  const startOrdinal = toOrdinal(group.range.startYear);
+  const endOrdinal = toOrdinal(group.range.endYear);
   const span = endOrdinal - startOrdinal;
   const midpoint = fromOrdinal(Math.round((startOrdinal + endOrdinal) / 2));
-  const headingId = `stage-${section.id}`;
+  const headingId = `stage-${group.id}`;
 
   return (
-    <section className="timeline-stage" aria-labelledby={headingId}>
+    <section className={`timeline-stage timeline-group-${group.kind}`} aria-labelledby={headingId}>
       <div className="stage-heading">
         <h2 className="stage-title" id={headingId}>
-          {section.title}
+          {group.title}
         </h2>
-        <span className="stage-range">{section.displayRange}</span>
+        <span className="stage-range">{group.displayRange}</span>
       </div>
 
       <div className="axis-row" aria-hidden="true">
         <span />
         <div className="axis-labels">
-          {[section.range.startYear, midpoint, section.range.endYear].map((year) => (
+          {[group.range.startYear, midpoint, group.range.endYear].map((year) => (
             <span key={year}>{formatHistoricalYear({ year, precision: "exact" })}</span>
           ))}
         </div>
       </div>
 
-      {matches.map(({ entity }) => {
+      {group.matches.map(({ entity }) => {
         const displayRange = formatPeriods(entity.existencePeriods, entity.displayRangeOverride);
+        const regionNames = group.kind === "cross-region"
+          ? entity.historicalRegionIds.flatMap((regionId) => {
+              const region = regions.find(({ id }) => id === regionId);
+              return region ? [region.names.primary] : [];
+            })
+          : [];
         return (
           <div className="timeline-row" key={entity.id}>
             <div className="row-label">
@@ -50,6 +56,11 @@ export function TimelineStage({ section, matches, onSelect }: TimelineStageProps
               <div className="row-years" title={displayRange}>
                 {displayRange}
               </div>
+              {regionNames.length > 0 && (
+                <div className="row-regions" title={regionNames.join(" · ")}>
+                  {regionNames.join(" · ")}
+                </div>
+              )}
             </div>
             <div className="track">
               {entity.existencePeriods.map((period) => {
