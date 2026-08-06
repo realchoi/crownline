@@ -40,7 +40,7 @@ function sortMatches(matches: MatchedEntity[]): MatchedEntity[] {
   });
 }
 
-/** 从组内实体推导显示年代与安全绘制范围。 */
+/** 从组内实体推导标题年代与安全的分组范围。 */
 function getGroupRange(matches: MatchedEntity[]) {
   const startOrdinal = Math.min(
     ...matches.flatMap(({ entity }) => entity.existencePeriods.map(({ start }) => toOrdinal(start.year)))
@@ -60,7 +60,7 @@ function getGroupRange(matches: MatchedEntity[]) {
 }
 
 /**
- * 为全览模式生成可读的局部时间尺度。
+ * 为全览模式生成可读分组及其标题年代范围。
  * 中国沿用既有历史阶段；多地区范围按顶层地区分组，跨地区实体只出现一次。
  */
 export function buildOverviewTimelineGroups(

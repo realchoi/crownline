@@ -99,7 +99,7 @@ export function App({ data }: AppProps) {
           <span className="site-title-sub">世界王朝与帝国时间轴</span>
         </h1>
         <p className="hero-copy">
-          沿时间线探索世界王朝、帝国与文明的兴衰。中国范围按历史阶段浏览；自选地区与全球已收录按地区局部时间尺度浏览，并以少量外部代表条目验证跨地区全览。外部地区仍属样本数据，不代表全球历史已完整收录。
+          沿时间线探索世界王朝、帝国与文明的兴衰。中国范围按历史阶段浏览；自选地区与全球已收录采用统一时间比例，便于比较不同政权的先后与存续长度。外部地区仍属样本数据，不代表全球历史已完整收录。
         </p>
         <div className="stat-grid" aria-label="时间轴概览">
           <div className="stat-card">

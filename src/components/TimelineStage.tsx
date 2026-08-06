@@ -3,20 +3,28 @@ import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
 import type { Region } from "../domain/types";
 import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 
-/** 单个局部时间尺度阶段的渲染参数。 */
+/** 单个时间轴分组的渲染参数；多地区模式可注入共享比例。 */
 interface TimelineStageProps {
   group: OverviewTimelineGroup;
   regions: Region[];
+  scaleRange?: OverviewTimelineGroup["range"];
+  showAxis?: boolean;
   onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
 }
 
 /**
- * 在阶段自己的时间尺度内绘制实体存在区间。
+ * 在传入的时间尺度内绘制实体存在区间。
  * 同一实体的多个存在区间会生成多个时间条，但都指向同一详情记录。
  */
-export function TimelineStage({ group, regions, onSelect }: TimelineStageProps) {
-  const startOrdinal = toOrdinal(group.range.startYear);
-  const endOrdinal = toOrdinal(group.range.endYear);
+export function TimelineStage({
+  group,
+  regions,
+  scaleRange = group.range,
+  showAxis = true,
+  onSelect
+}: TimelineStageProps) {
+  const startOrdinal = toOrdinal(scaleRange.startYear);
+  const endOrdinal = toOrdinal(scaleRange.endYear);
   const span = endOrdinal - startOrdinal;
   const midpoint = fromOrdinal(Math.round((startOrdinal + endOrdinal) / 2));
   const headingId = `stage-${group.id}`;
@@ -30,14 +38,16 @@ export function TimelineStage({ group, regions, onSelect }: TimelineStageProps) 
         <span className="stage-range">{group.displayRange}</span>
       </div>
 
-      <div className="axis-row" aria-hidden="true">
-        <span />
-        <div className="axis-labels">
-          {[group.range.startYear, midpoint, group.range.endYear].map((year) => (
-            <span key={year}>{formatHistoricalYear({ year, precision: "exact" })}</span>
-          ))}
+      {showAxis && (
+        <div className="axis-row" aria-hidden="true">
+          <span />
+          <div className="axis-labels">
+            {[scaleRange.startYear, midpoint, scaleRange.endYear].map((year) => (
+              <span key={year}>{formatHistoricalYear({ year, precision: "exact" })}</span>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {group.matches.map(({ entity }) => {
         const displayRange = formatPeriods(entity.existencePeriods, entity.displayRangeOverride);

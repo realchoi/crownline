@@ -1,3 +1,4 @@
+import { formatHistoricalYear, fromOrdinal, toOrdinal } from "../domain/chronology";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
 import type { RegionScope } from "../domain/regionScope";
 import type { MatchedEntity } from "../domain/selectors";
@@ -24,6 +25,21 @@ export function Timeline({
   onSelect
 }: TimelineProps) {
   const groups = buildOverviewTimelineGroups(data, matches, regionScope);
+  const sharedRange = regionScope.mode !== "china" && groups.length > 0
+    ? {
+        startYear: fromOrdinal(Math.min(...groups.map(({ range }) => toOrdinal(range.startYear)))),
+        endYear: fromOrdinal(Math.max(...groups.map(({ range }) => toOrdinal(range.endYear))))
+      }
+    : null;
+  const sharedAxisLabels = sharedRange
+    ? [
+        sharedRange.startYear,
+        fromOrdinal(Math.round(
+          (toOrdinal(sharedRange.startYear) + toOrdinal(sharedRange.endYear)) / 2
+        )),
+        sharedRange.endYear
+      ].map((year) => formatHistoricalYear({ year, precision: "exact" }))
+    : null;
   const timelineLabel = regionScope.mode === "china" ? "中国历代王朝时间轴" : "多地区完整时间轴";
   const selectedRegionNames = regionScope.mode === "custom"
     ? regions.filter(({ id }) => regionScope.regionIds.includes(id)).map(({ names }) => names.primary)
@@ -48,11 +64,25 @@ export function Timeline({
 
   return (
     <section id="timeline" aria-label={timelineLabel} aria-live="polite">
+      {sharedAxisLabels && (
+        <div
+          className="timeline-shared-axis"
+          role="img"
+          aria-label={`统一时间刻度：${sharedAxisLabels[0]}—${sharedAxisLabels[2]}，中点${sharedAxisLabels[1]}`}
+        >
+          <span className="shared-axis-caption">统一时间比例</span>
+          <div className="axis-labels" aria-hidden="true">
+            {sharedAxisLabels.map((label) => <span key={label}>{label}</span>)}
+          </div>
+        </div>
+      )}
       {groups.map((group) => (
         <TimelineStage
           key={group.id}
           group={group}
           regions={regions}
+          scaleRange={sharedRange ?? group.range}
+          showAxis={!sharedRange}
           onSelect={onSelect}
         />
       ))}

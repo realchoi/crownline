@@ -124,8 +124,8 @@ describe("Crownline 时间轴", () => {
     expect(screen.getByRole("region", { name: "1912 年时间点结果" })).toHaveTextContent(
       "1912年 · 当时存在"
     );
-    expect(screen.getByRole("textbox", { name: "当前年份" })).toHaveValue("1912");
-    expect(screen.getByRole("status")).toHaveTextContent("显示 1 个政权，另有 0 条历史背景");
+    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1912");
+    expect(screen.getByText("显示 1 个政权，另有 0 条历史背景")).toBeInTheDocument();
     expect(new URLSearchParams(window.location.search).get("mode")).toBe("point");
 
     await user.click(screen.getByRole("button", { name: "全览" }));
@@ -189,6 +189,25 @@ describe("Crownline 时间轴", () => {
     expect(screen.getByRole("button", { name: /朱罗帝国/ })).toBeInTheDocument();
   });
 
+  it("多地区全览使用单一共享刻度并按真实时长绘制政权", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?scope=custom&region=region-south-asia&region=region-europe"
+    );
+    render(<App data={data} />);
+
+    expect(screen.getAllByRole("img", { name: "统一时间刻度：330—1806，中点1068" }))
+      .toHaveLength(1);
+
+    const cholaBar = screen.getByRole("button", { name: /朱罗帝国/ });
+    const holyRomanEmpireBar = screen.getByRole("button", { name: /神圣罗马帝国/ });
+    expect(Number.parseFloat(cholaBar.style.left)).toBeCloseTo(35.23, 1);
+    expect(Number.parseFloat(cholaBar.style.width)).toBeCloseTo(29.07, 1);
+    expect(Number.parseFloat(holyRomanEmpireBar.style.left)).toBeCloseTo(42.82, 1);
+    expect(Number.parseFloat(holyRomanEmpireBar.style.width)).toBeCloseTo(57.18, 1);
+  });
+
   it("自选多地区在两种浏览模式间保持并同步 URL", async () => {
     window.history.replaceState(
       null,
@@ -247,38 +266,37 @@ describe("Crownline 时间轴", () => {
     expect(screen.getByText(/起止边界/)).toBeInTheDocument();
   });
 
-  it("用键盘提交传统年份输入并在公元前后步进时跳过零年", async () => {
+  it("将当前年份置于滑杆上方，并把年份加减放在滑杆首尾", () => {
+    window.history.replaceState(null, "", "/?mode=point&year=-221");
+    render(<App data={data} />);
+
+    const currentYear = screen.getByLabelText("当前年份");
+    const slider = screen.getByRole("slider", { name: "历史年份滑杆" });
+    const sliderRow = slider.closest(".year-slider-row");
+
+    expect(currentYear).toHaveTextContent("前221");
+    expect(currentYear.closest(".year-current")?.nextElementSibling).toBe(sliderRow);
+    expect(sliderRow?.firstElementChild).toHaveAccessibleName("上一年");
+    expect(sliderRow?.lastElementChild).toHaveAccessibleName("下一年");
+    expect(screen.queryByRole("textbox", { name: "当前年份" })).not.toBeInTheDocument();
+  });
+
+  it("用键盘操作年份首尾按钮并在公元前后步进时跳过零年", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=-1");
     const user = userEvent.setup();
     render(<App data={data} />);
-    const yearInput = screen.getByRole("textbox", { name: "当前年份" });
+    const currentYear = screen.getByLabelText("当前年份");
 
     const nextYear = screen.getByRole("button", { name: "下一年" });
     nextYear.focus();
     await user.keyboard("{Enter}");
-    expect(yearInput).toHaveValue("1");
+    expect(currentYear).toHaveTextContent("1");
     expect(new URLSearchParams(window.location.search).get("year")).toBe("1");
 
-    await user.clear(yearInput);
-    await user.type(yearInput, "前221{Enter}");
-    expect(yearInput).toHaveValue("前221");
-    expect(screen.getByRole("region", { name: "前221 年时间点结果" })).toBeInTheDocument();
-  });
-
-  it("拒绝无效或超出数据范围的年份并保留当前结果", async () => {
-    window.history.replaceState(null, "", "/?mode=point&year=-221");
-    const user = userEvent.setup();
-    render(<App data={data} />);
-    const yearInput = screen.getByRole("textbox", { name: "当前年份" });
-
-    await user.clear(yearInput);
-    await user.type(yearInput, "0{Enter}");
-    expect(screen.getByRole("alert")).toHaveTextContent("不存在公元 0 年");
-    expect(screen.getByRole("region", { name: "前221 年时间点结果" })).toBeInTheDocument();
-
-    await user.clear(yearInput);
-    await user.type(yearInput, "3000{Enter}");
-    expect(screen.getByRole("alert")).toHaveTextContent("可浏览范围为前2070—1912");
+    const previousYear = screen.getByRole("button", { name: "上一年" });
+    previousYear.focus();
+    await user.keyboard("{Enter}");
+    expect(currentYear).toHaveTextContent("前1");
   });
 
   it("通过滑杆序数跨越公元前后且不产生公元零年", () => {
@@ -287,9 +305,9 @@ describe("Crownline 时间轴", () => {
     const slider = screen.getByRole("slider", { name: "历史年份滑杆" });
 
     fireEvent.change(slider, { target: { value: "1" } });
-    expect(screen.getByRole("textbox", { name: "当前年份" })).toHaveValue("1");
+    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1");
     fireEvent.change(slider, { target: { value: "0" } });
-    expect(screen.getByRole("textbox", { name: "当前年份" })).toHaveValue("前1");
+    expect(screen.getByLabelText("当前年份")).toHaveTextContent("前1");
   });
 
   it("在约年边界给出解释，并为组合筛选提供明确空状态", async () => {

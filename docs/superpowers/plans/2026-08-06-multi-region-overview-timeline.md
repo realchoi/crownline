@@ -4,7 +4,7 @@
 
 **Goal:** Extend overview mode so China, custom region selections, and all indexed regions can browse complete readable timelines with shared URL state and no duplicated cross-region entities.
 
-**Architecture:** Keep the existing Chinese seven-section timeline unchanged for the default China scope. Add a pure overview grouping module that creates region-local timeline groups for custom/global scopes, placing entities that match multiple visible top-level regions in one cross-region group. React remains responsible only for controlled browse state, rendering the groups, and accessible empty/coverage states.
+**Architecture:** Keep the existing Chinese seven-section timeline unchanged for the default China scope. Add a pure overview grouping module that creates region groups for custom/global scopes, placing entities that match multiple visible top-level regions in one cross-region group. Dynamic groups retain local title ranges while React derives one shared scale from all visible groups for comparable placement and duration.
 
 **Tech Stack:** React 19, TypeScript 7, Vite 8, Vitest 4, Testing Library, CSS.
 
@@ -13,7 +13,7 @@
 - Do not add dependencies or change the v2 JSON data contract.
 - Preserve the current 73-entity, seven-section Chinese overview presentation.
 - A cross-region entity appears in exactly one overview group for the active scope.
-- Every timeline group uses its own data-derived year range so short-lived entities remain readable.
+- Every visible custom/global timeline group uses the same data-derived scale; group-specific ranges remain visible as heading metadata.
 - “全球已收录” means only the current dataset and never implies complete world-history coverage.
 - Region state is shared by overview and timepoint modes and restored from the existing `scope` and `region` URL parameters.
 - Do not create Git commits without explicit user authorization.
@@ -190,11 +190,11 @@ Expected: TypeScript and Vite build succeed with no invalid imports or style pro
 
 - [ ] **Step 1: Update README current capabilities**
 
-State that all three region scopes work in overview and timepoint modes, that overview uses China historical stages or region-local groups, and that cross-region entities are deduplicated. Keep the sample-data limitation prominent.
+State that all three region scopes work in overview and timepoint modes, that overview uses China historical stages or region groups with a shared visible scale, and that cross-region entities are deduplicated. Keep the sample-data limitation prominent.
 
 - [ ] **Step 2: Mark stage 2B complete in ROADMAP**
 
-Check all six stage 2B items and add a 2026-08-06 completion record describing shared URL scope, region-local scales, cross-region grouping, readable short durations, empty/coverage messaging, and regression coverage.
+Check all six stage 2B items and add a 2026-08-06 completion record describing shared URL scope, a shared scale across visible region groups, cross-region grouping, readable short durations, empty/coverage messaging, and regression coverage.
 
 ### Task 6: Run completion gates
 

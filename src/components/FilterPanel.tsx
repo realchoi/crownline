@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
-
 import {
   formatHistoricalYear,
   fromOrdinal,
   nextHistoricalYear,
-  parseHistoricalYear,
   previousHistoricalYear,
   toOrdinal
 } from "../domain/chronology";
@@ -57,34 +54,6 @@ export function FilterPanel({
 }: FilterPanelProps) {
   const hasFilters = query.trim().length > 0 || category !== "all";
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
-  const [yearDraft, setYearDraft] = useState(formattedYear);
-  const [yearError, setYearError] = useState<string | null>(null);
-
-  useEffect(() => {
-    setYearDraft(formattedYear);
-    setYearError(null);
-  }, [formattedYear]);
-
-  const commitYear = () => {
-    const parsedYear = parseHistoricalYear(yearDraft);
-    if (parsedYear === null) {
-      const isYearZero = /^(?:-?0|前\s*0|公元前\s*0|公元\s*0)$/.test(yearDraft.trim());
-      setYearError(
-        isYearZero
-          ? "历史纪年不存在公元 0 年。"
-          : "请输入整数年份；公元前可输入“前221”或“-221”。"
-      );
-      return;
-    }
-    if (parsedYear < yearBounds.min || parsedYear > yearBounds.max) {
-      setYearError(
-        `可浏览范围为${formatHistoricalYear({ year: yearBounds.min, precision: "exact" })}—${formatHistoricalYear({ year: yearBounds.max, precision: "exact" })}。`
-      );
-      return;
-    }
-    setYearError(null);
-    onYearChange(parsedYear);
-  };
 
   return (
     <section className={`controls-panel controls-${mode}`} aria-label="浏览与筛选工具">
@@ -108,77 +77,7 @@ export function FilterPanel({
             </button>
           </div>
         </div>
-        {mode === "overview" && (
-          <p className="mode-description">浏览完整时间轴，观察政权的兴替与并存。</p>
-        )}
       </div>
-
-      {mode === "point" && (
-        <div className="year-panel">
-          <div className="year-stepper">
-            <button
-              className="year-step-button"
-              type="button"
-              aria-label="上一年"
-              disabled={year === yearBounds.min}
-              onClick={() => onYearChange(previousHistoricalYear(year))}
-            >
-              <span aria-hidden="true">−</span>
-            </button>
-            <label className="year-input-label">
-              <span className="field-label">当前年份</span>
-              <input
-                className="year-input"
-                type="text"
-                inputMode="numeric"
-                autoComplete="off"
-                aria-invalid={yearError ? "true" : undefined}
-                aria-describedby={yearError ? "year-error" : "year-help"}
-                value={yearDraft}
-                onChange={(event) => setYearDraft(event.currentTarget.value)}
-                onBlur={commitYear}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") commitYear();
-                }}
-              />
-            </label>
-            <button
-              className="year-step-button"
-              type="button"
-              aria-label="下一年"
-              disabled={year === yearBounds.max}
-              onClick={() => onYearChange(nextHistoricalYear(year))}
-            >
-              <span aria-hidden="true">＋</span>
-            </button>
-          </div>
-          <div className="year-slider-wrap">
-            <label className="field-label" htmlFor="historical-year-slider">
-              历史年份滑杆
-            </label>
-            <input
-              id="historical-year-slider"
-              className="year-slider"
-              type="range"
-              min={toOrdinal(yearBounds.min)}
-              max={toOrdinal(yearBounds.max)}
-              value={toOrdinal(year)}
-              aria-valuetext={`${formattedYear}年`}
-              onChange={(event) => onYearChange(fromOrdinal(Number(event.currentTarget.value)))}
-            />
-            <div className="year-range" id="year-help">
-              <span>{formatHistoricalYear({ year: yearBounds.min, precision: "exact" })}</span>
-              <span>跨公元前后时自动跳过公元 0 年</span>
-              <span>{formatHistoricalYear({ year: yearBounds.max, precision: "exact" })}</span>
-            </div>
-          </div>
-          {yearError && (
-            <p className="year-error" id="year-error" role="alert">
-              {yearError}
-            </p>
-          )}
-        </div>
-      )}
 
       <RegionScopeControl
         regions={regions}
@@ -187,6 +86,55 @@ export function FilterPanel({
       />
 
       <div className="controls-grid">
+        {mode === "point" && (
+          <div className="year-panel">
+            <div className="year-current">
+              <span className="field-label">当前年份</span>
+              <output aria-label="当前年份" aria-live="polite">
+                {formattedYear}
+              </output>
+            </div>
+            <div className="year-slider-row">
+              <button
+                className="year-step-button"
+                type="button"
+                aria-label="上一年"
+                disabled={year === yearBounds.min}
+                onClick={() => onYearChange(previousHistoricalYear(year))}
+              >
+                <span aria-hidden="true">−</span>
+              </button>
+              <div className="year-slider-wrap">
+                <input
+                  id="historical-year-slider"
+                  className="year-slider"
+                  type="range"
+                  min={toOrdinal(yearBounds.min)}
+                  max={toOrdinal(yearBounds.max)}
+                  value={toOrdinal(year)}
+                  aria-label="历史年份滑杆"
+                  aria-valuetext={`${formattedYear}年`}
+                  aria-describedby="year-help"
+                  onChange={(event) => onYearChange(fromOrdinal(Number(event.currentTarget.value)))}
+                />
+                <div className="year-range" id="year-help">
+                  <span>{formatHistoricalYear({ year: yearBounds.min, precision: "exact" })}</span>
+                  <span>自动跳过公元 0 年</span>
+                  <span>{formatHistoricalYear({ year: yearBounds.max, precision: "exact" })}</span>
+                </div>
+              </div>
+              <button
+                className="year-step-button"
+                type="button"
+                aria-label="下一年"
+                disabled={year === yearBounds.max}
+                onClick={() => onYearChange(nextHistoricalYear(year))}
+              >
+                <span aria-hidden="true">＋</span>
+              </button>
+            </div>
+          </div>
+        )}
         <label>
           <span className="field-label">搜索名称、别名、年份或说明</span>
           <input
