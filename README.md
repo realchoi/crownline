@@ -20,16 +20,21 @@ Crownline（王冠纪）是一个面向全球历史的交互式王朝图谱项�
 
 ```text
 .
-├── index.html       # 页面、样式、交互逻辑及当前历史数据
-├── .nojekyll        # 让 GitHub Pages 跳过 Jekyll 处理
-├── .gitignore       # Git 忽略规则
-├── README.md        # 项目说明
-└── LICENSE          # MIT 许可证
+├── index.html          # 页面结构与交互逻辑
+├── data/
+│   └── dynasties.js    # 当前历史数据（中国历代王朝与主要政权）
+├── assets/
+│   ├── styles.css      # 页面样式
+│   └── fonts/          # 字体等静态资源
+├── .nojekyll           # 让 GitHub Pages 跳过 Jekyll 处理
+├── .gitignore          # Git 忽略规则
+├── README.md           # 项目说明
+└── LICENSE             # MIT 许可证
 ```
 
 ## 本地预览
 
-可以直接用浏览器打开 `index.html`。为了更接近 GitHub Pages 的运行环境，推荐在项目目录执行：
+可以直接用浏览器打开 `index.html`。为了更接近 GitHub Pages 的运行环境，也可在项目目录执行：
 
 ```bash
 python3 -m http.server 8000
@@ -76,13 +81,13 @@ git push -u origin main
 
 ## 数据维护
 
-当前历史数据内嵌在 `index.html` 的以下节点中：
+当前历史数据位于独立文件：
 
-```html
-<script id="dynasty-data" type="application/json">
+```text
+data/dynasties.js
 ```
 
-编辑数据后刷新页面即可检查结果。年代和政权分类存在不同史学口径，新增内容时应尽量记录可靠来源，并区分王朝、并立政权、历史分期与区域政权。
+该文件通过 `window.CROWNLINE_ERAS` 导出数据数组，编辑后刷新页面即可检查结果。年代和政权分类存在不同史学口径，新增内容时应尽量记录可靠来源，并区分王朝、并立政权、历史分期与区域政权。
 
 为了支持世界历史，未来的数据模型至少需要补充：
 
@@ -99,7 +104,7 @@ git push -u origin main
 建议按以下节奏演进：
 
 1. **现在：保持静态单页。** 优先完善数据、史料来源和展示规则。
-2. **数据增长后：先拆分职责。** 将数据移到独立的 JSON 文件，并把样式与脚本从 `index.html` 拆出；可引入 Vite 和 TypeScript，但不必同时引入 UI 框架。
+2. **数据增长后：继续拆分职责。** 历史数据已独立为 JSON；下一步可将样式与脚本从 `index.html` 拆出；可引入 Vite 和 TypeScript，但不必同时引入 UI 框架。
 3. **交互复杂后：再引入框架。** 当项目需要跨地区对比、多语言、多页面路由、复杂筛选状态、可复用图表组件或内容编辑后台时，再迁移到 React（或团队更熟悉的 Vue）更划算。
 
 如果未来采用单页应用路由，需要额外处理 GitHub Pages 的子路径和刷新回退问题；在此之前，保持当前静态架构是风险最低的方案。
@@ -107,7 +112,7 @@ git push -u origin main
 ## 发展路线
 
 - [x] 中国王朝与主要政权时间轴
-- [ ] 将历史数据与页面代码分离
+- [x] 将历史数据与页面代码分离
 - [ ] 为每条数据补充来源与校订信息
 - [ ] 建立统一的跨地区数据模型
 - [ ] 增加东亚、南亚、中东、欧洲、非洲和美洲等区域数据
