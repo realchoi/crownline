@@ -9,8 +9,10 @@ import {
   toOrdinal
 } from "../domain/chronology";
 import type { BrowseMode, HistoricalYearBounds } from "../domain/browseState";
+import type { RegionScope } from "../domain/regionScope";
 import type { CategoryFilter } from "../domain/selectors";
-import type { DisplayCategory } from "../domain/types";
+import type { DisplayCategory, Region } from "../domain/types";
+import { RegionScopeControl } from "./RegionScopeControl";
 
 /** 展示类别对应的中文界面名称。 */
 export const DISPLAY_CATEGORY_NAMES: Record<DisplayCategory, string> = {
@@ -27,10 +29,13 @@ interface FilterPanelProps {
   yearBounds: HistoricalYearBounds;
   query: string;
   category: CategoryFilter;
+  regions: Region[];
+  regionScope: RegionScope;
   onModeChange: (mode: BrowseMode) => void;
   onYearChange: (year: number) => void;
   onQueryChange: (query: string) => void;
   onCategoryChange: (category: CategoryFilter) => void;
+  onRegionScopeChange: (scope: RegionScope) => void;
   onClear: () => void;
 }
 
@@ -41,10 +46,13 @@ export function FilterPanel({
   yearBounds,
   query,
   category,
+  regions,
+  regionScope,
   onModeChange,
   onYearChange,
   onQueryChange,
   onCategoryChange,
+  onRegionScopeChange,
   onClear
 }: FilterPanelProps) {
   const hasFilters = query.trim().length > 0 || category !== "all";
@@ -170,6 +178,14 @@ export function FilterPanel({
             </p>
           )}
         </div>
+      )}
+
+      {mode === "point" && (
+        <RegionScopeControl
+          regions={regions}
+          scope={regionScope}
+          onChange={onRegionScopeChange}
+        />
       )}
 
       <div className="controls-grid">

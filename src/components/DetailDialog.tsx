@@ -1,21 +1,26 @@
 import { useEffect, useRef } from "react";
 
 import { calculatePeriodsDuration, formatPeriods } from "../domain/chronology";
-import type { HistoricalEntity } from "../domain/types";
+import type { HistoricalEntity, Region } from "../domain/types";
 import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 
 /** 详情对话框展示的实体、阶段和关闭事件。 */
 interface DetailDialogProps {
   entity: HistoricalEntity;
-  sectionTitle: string;
+  sectionTitle: string | undefined;
+  regions: Region[];
   onClose: () => void;
 }
 
 /** 渲染实体完整区间、口径说明和累计持续时间。 */
-export function DetailDialog({ entity, sectionTitle, onClose }: DetailDialogProps) {
+export function DetailDialog({ entity, sectionTitle, regions, onClose }: DetailDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const duration = calculatePeriodsDuration(entity.existencePeriods);
+  const regionNames = entity.historicalRegionIds.flatMap((regionId) => {
+    const region = regions.find(({ id }) => id === regionId);
+    return region ? [region.names.primary] : [];
+  });
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -72,8 +77,8 @@ export function DetailDialog({ entity, sectionTitle, onClose }: DetailDialogProp
         {entity.chronologyNote && <p className="chronology-note">采用口径：{entity.chronologyNote}</p>}
         <div className="detail-grid">
           <div className="detail-card">
-            <span>阶段</span>
-            <strong>{sectionTitle}</strong>
+            <span>{sectionTitle ? "阶段" : "历史地区"}</span>
+            <strong>{sectionTitle ?? regionNames.join("、")}</strong>
           </div>
           <div className="detail-card">
             <span>持续时间</span>

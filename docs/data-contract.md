@@ -1,6 +1,6 @@
-# Crownline 数据契约 v1
+# Crownline 数据契约 v2
 
-本契约是阶段 0.5 的长期数据边界。机器可读定义以 `src/data/crownline-data.schema.json` 为准，TypeScript 消费端以 `src/domain/types.ts` 为准；本文解释两者共同采用的历史口径。
+本契约在阶段 0.5 基础上加入阶段 2 所需的地区层级、名称和覆盖状态。机器可读定义以 `src/data/crownline-data.schema.json` 为准，TypeScript 消费端以 `src/domain/types.ts` 为准；本文解释两者共同采用的历史口径。
 
 ## 1. ID 与引用
 
@@ -38,6 +38,16 @@
 
 实体分别通过 `historicalRegionIds`、`culturalSphereIds` 与 `modernAreaIds` 引用三类地区，三者不可互相替代。
 
+地区使用与实体相同的 `names.primary`、`names.aliases` 与可选 `names.local` 名称结构；`parentRegionId` 只允许引用同类地区，并且不得形成循环。阶段 2 只根据 `historicalRegionIds` 过滤：选择父地区时包含其全部后代，多地区之间采用并集语义，同一实体不会因关联多个地区而重复。
+
+`coverage.status` 只说明当前数据集：
+
+- `none`：尚未收录代表性条目。
+- `sample`：只有用于验证模型的少量代表条目。
+- `partial`：已有成体系内容，但仍不声称完整覆盖。
+
+每个状态必须带 `coverage.note`。项目不提供“完整”状态，避免把资料收录程度误写成真实历史完整性。“中国历史范围”是产品策展预设，不等同于任何时期的现代国界或主权范围。
+
 ## 5. 人物、任期、关系与事件
 
 - `persons` 保存人物本身；`reigns` 通过一个或多个区间记录人物在某政权的统治、共治、摄政或争位身份。
@@ -60,6 +70,7 @@ JSON Schema 校验必填字段、封闭对象、枚举、ID 格式、非零年�
 - 全局重复 ID
 - 反向、重叠或可合并的相邻区间
 - 阶段、人物、政权、地区、事件和来源的悬空引用
+- 地区父引用悬空、跨类型或形成循环，以及实体混用三类地区引用
 - 政权与历史分期的分类矛盾
 - 关系中重复参与方
 - 争议年代或低可信度记录缺少说明

@@ -12,6 +12,8 @@ export const CHRONOLOGY_STATUSES = ["accepted", "disputed"] as const;
 export const CONFIDENCE_LEVELS = ["high", "medium", "low", "disputed"] as const;
 /** 历史地区、文化圈和现代地理映射必须分别建模。 */
 export const REGION_KINDS = ["historical-region", "cultural-sphere", "modern-area"] as const;
+/** 地区数据覆盖只描述当前数据集，不评价真实历史完整性。 */
+export const REGION_COVERAGE_STATUSES = ["none", "sample", "partial"] as const;
 /** 人物在某段任期内扮演的统治角色。 */
 export const REIGN_ROLES = ["ruler", "co-ruler", "regent", "contender"] as const;
 /** 首批支持的结构化政权关系类型。 */
@@ -44,6 +46,7 @@ export type DisplayCategory = (typeof DISPLAY_CATEGORIES)[number];
 export type ChronologyStatus = (typeof CHRONOLOGY_STATUSES)[number];
 export type ConfidenceLevel = (typeof CONFIDENCE_LEVELS)[number];
 export type RegionKind = (typeof REGION_KINDS)[number];
+export type RegionCoverageStatus = (typeof REGION_COVERAGE_STATUSES)[number];
 export type ReignRole = (typeof REIGN_ROLES)[number];
 export type RelationshipType = (typeof RELATIONSHIP_TYPES)[number];
 export type EventType = (typeof EVENT_TYPES)[number];
@@ -125,8 +128,13 @@ export interface TimelineSection {
 /** 可被历史实体引用的地区、文化圈或现代地理映射。 */
 export interface Region {
   id: string;
-  name: string;
+  names: LocalizedNames;
   regionKind: RegionKind;
+  parentRegionId?: string;
+  coverage: {
+    status: RegionCoverageStatus;
+    note: string;
+  };
   description: string;
   sourceRefs: SourceRef[];
 }
@@ -207,9 +215,9 @@ export interface ChronologyPolicy {
   yearSelection: "exists-at-any-time-during-year";
 }
 
-/** Crownline 数据契约 v1 的根对象。 */
+/** Crownline 数据契约 v2 的根对象。 */
 export interface CrownlineData {
-  schemaVersion: 1;
+  schemaVersion: 2;
   chronologyPolicy: ChronologyPolicy;
   timelineSections: TimelineSection[];
   entities: HistoricalEntity[];

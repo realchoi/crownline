@@ -1,4 +1,5 @@
-import type { CrownlineData, DisplayCategory } from "./types";
+import type { RegionScope } from "./regionScope";
+import type { CrownlineData, DisplayCategory, Region } from "./types";
 import type { CategoryFilter } from "./selectors";
 
 export type BrowseMode = "overview" | "point";
@@ -13,6 +14,7 @@ export interface BrowseState {
   year: number;
   query: string;
   category: CategoryFilter;
+  regionScope: RegionScope;
 }
 
 const VALID_CATEGORIES = new Set<CategoryFilter>([
@@ -42,7 +44,8 @@ export function getHistoricalYearBounds(data: CrownlineData): HistoricalYearBoun
 /** 从 URL 读取并清洗阶段 1 的共享浏览状态。 */
 export function readBrowseState(
   search: string,
-  bounds: HistoricalYearBounds
+  bounds: HistoricalYearBounds,
+  regions: Region[] = []
 ): BrowseState {
   const params = new URLSearchParams(search);
   const rawYear = Number(params.get("year"));
@@ -51,14 +54,30 @@ export function readBrowseState(
     : bounds.max;
   const rawCategory = params.get("type") ?? "all";
   const mappedCategory = LEGACY_CATEGORY_MAP[rawCategory] ?? rawCategory;
+  const mode: BrowseMode = params.get("mode") === "point" ? "point" : "overview";
+  const rawScope = params.get("scope");
+  const validHistoricalRegionIds = new Set(
+    regions.filter(({ regionKind }) => regionKind === "historical-region").map(({ id }) => id)
+  );
+  const customRegionIds = [...new Set(params.getAll("region"))]
+    .filter((id) => validHistoricalRegionIds.has(id))
+    .sort();
+  const regionScope: RegionScope = mode === "overview"
+    ? { mode: "china" }
+    : rawScope === "global"
+    ? { mode: "global" }
+    : rawScope === "custom" && customRegionIds.length > 0
+      ? { mode: "custom", regionIds: customRegionIds }
+      : { mode: "china" };
 
   return {
-    mode: params.get("mode") === "point" ? "point" : "overview",
+    mode,
     year,
     query: params.get("q") ?? "",
     category: VALID_CATEGORIES.has(mappedCategory as CategoryFilter)
       ? (mappedCategory as CategoryFilter)
-      : "all"
+      : "all",
+    regionScope
   };
 }
 
@@ -69,11 +88,18 @@ export function writeBrowseState(
   currentSearch = ""
 ): URLSearchParams {
   const params = new URLSearchParams(currentSearch);
-  ["mode", "year", "q", "type"].forEach((name) => params.delete(name));
+  ["mode", "year", "q", "type", "scope", "region"].forEach((name) => params.delete(name));
 
   if (state.mode === "point") params.set("mode", "point");
   if (state.year !== bounds.max) params.set("year", String(state.year));
   if (state.query.trim()) params.set("q", state.query.trim());
   if (state.category !== "all") params.set("type", state.category);
+  if (state.mode === "point" && state.regionScope.mode === "global") params.set("scope", "global");
+  if (state.mode === "point" && state.regionScope.mode === "custom") {
+    params.set("scope", "custom");
+    [...new Set(state.regionScope.regionIds)].sort().forEach((regionId) => {
+      params.append("region", regionId);
+    });
+  }
   return params;
 }

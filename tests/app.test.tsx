@@ -132,6 +132,47 @@ describe("Crownline 时间轴", () => {
     expect(new URLSearchParams(window.location.search).has("mode")).toBe(false);
   });
 
+  it("在时间点模式切换全球已收录并同步覆盖说明与 URL", async () => {
+    const user = userEvent.setup();
+    render(<App data={data} />);
+
+    await user.click(screen.getByRole("button", { name: "时间点" }));
+    await user.click(screen.getByRole("button", { name: "全球已收录" }));
+
+    expect(new URLSearchParams(window.location.search).get("scope")).toBe("global");
+    expect(screen.getByLabelText("地区范围")).toHaveTextContent("当前数据集中的全部已收录条目");
+  });
+
+  it("从 URL 恢复自选地区并把未收录与历史不存在区分开", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?mode=point&year=1000&scope=custom&region=region-americas"
+    );
+    render(<App data={data} />);
+
+    expect(screen.getByRole("button", { name: "自选地区" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("checkbox", { name: "美洲" })).toBeChecked();
+    expect(screen.getByRole("region", { name: "当时存在的政权" })).toHaveTextContent(
+      "美洲尚未收录代表性政权"
+    );
+    expect(screen.getByRole("region", { name: "当时存在的政权" })).not.toHaveTextContent(
+      "当时不存在"
+    );
+  });
+
+  it("返回全览时恢复中国范围，避免隐藏的全球筛选状态", async () => {
+    window.history.replaceState(null, "", "/?mode=point&scope=global");
+    const user = userEvent.setup();
+    render(<App data={data} />);
+
+    await user.click(screen.getByRole("button", { name: "全览" }));
+
+    expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
+    expect(screen.queryByLabelText("地区范围")).not.toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "中国历代王朝时间轴" })).toBeInTheDocument();
+  });
+
   it("时间点模式隐藏重复图例并在全览模式恢复", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=978");
     const user = userEvent.setup();
@@ -206,7 +247,9 @@ describe("Crownline 时间轴", () => {
     const user = userEvent.setup();
     render(<App data={data} />);
 
-    expect(screen.getByText(/起止年代为约年/)).toBeInTheDocument();
+    expect(screen.getByText(/起止年份采用约略年代/)).toBeInTheDocument();
+    expect(screen.getByText("年代约略")).toBeInTheDocument();
+    expect(screen.queryByText("约年")).not.toBeInTheDocument();
     await user.type(screen.getByRole("searchbox"), "不存在的政权");
     expect(screen.getByRole("region", { name: "当时存在的政权" })).toHaveTextContent(
       "没有匹配当前搜索与类别的政权"

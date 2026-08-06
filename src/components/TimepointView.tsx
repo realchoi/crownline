@@ -1,22 +1,33 @@
 import { formatHistoricalYear, formatPeriods } from "../domain/chronology";
 import type { MatchedEntity } from "../domain/selectors";
+import type { RegionScope } from "../domain/regionScope";
+import type { Region } from "../domain/types";
 import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 
 interface TimepointViewProps {
   year: number;
   polities: MatchedEntity[];
   historicalPeriods: MatchedEntity[];
+  regions: Region[];
+  regionScope: RegionScope;
+  polityEmptyReason: "unindexed" | "limited-coverage" | "filtered-out" | null;
   onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
 }
 
 function TimepointCard({
   match,
-  onSelect
+  onSelect,
+  regions
 }: {
   match: MatchedEntity;
   onSelect: TimepointViewProps["onSelect"];
+  regions: Region[];
 }) {
   const { entity, section } = match;
+  const regionNames = entity.historicalRegionIds.flatMap((regionId) => {
+    const region = regions.find(({ id }) => id === regionId);
+    return region ? [region.names.primary] : [];
+  });
   const periods = formatPeriods(entity.existencePeriods, entity.displayRangeOverride);
   const isApproximate = entity.existencePeriods.some((period) => {
     return period.start.precision !== "exact" || period.end.precision !== "exact";
@@ -33,13 +44,14 @@ function TimepointCard({
         <span className={`type-badge detail-${entity.displayCategory}`}>
           {DISPLAY_CATEGORY_NAMES[entity.displayCategory]}
         </span>
-        <span className="timepoint-card-section">{section.title}</span>
+        <span className="timepoint-card-section">{section?.title ?? regionNames.join(" · ")}</span>
       </span>
       <strong className="timepoint-card-name">{entity.names.primary}</strong>
       <span className="timepoint-card-periods">{periods}</span>
+      <span className="timepoint-card-regions">{regionNames.join(" · ")}</span>
       {(isApproximate || entity.chronologyStatus === "disputed") && (
         <span className="timepoint-card-flags">
-          {isApproximate && <span>约年</span>}
+          {isApproximate && <span>年代约略</span>}
           {entity.chronologyStatus === "disputed" && <span>年代有争议</span>}
         </span>
       )}
@@ -52,9 +64,20 @@ export function TimepointView({
   year,
   polities,
   historicalPeriods,
+  regions,
+  regionScope,
+  polityEmptyReason,
   onSelect
 }: TimepointViewProps) {
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
+  const scopeRegions = regionScope.mode === "custom"
+    ? regions.filter(({ id }) => regionScope.regionIds.includes(id))
+    : [];
+  const scopeName = regionScope.mode === "china"
+    ? "中国历史范围"
+    : regionScope.mode === "global"
+      ? "全球已收录范围"
+      : scopeRegions.map(({ names }) => names.primary).join("、");
   const allMatches = [...polities, ...historicalPeriods];
   const hasApproximateChronology = allMatches.some(({ entity }) => {
     return entity.existencePeriods.some((period) => {
@@ -83,7 +106,7 @@ export function TimepointView({
 
       {(hasApproximateChronology || hasDisputedChronology || isBoundaryYear) && (
         <aside className="timepoint-notices" aria-label="年代提示">
-          {hasApproximateChronology && <p>部分条目的起止年代为约年，结果采用当前数据口径。</p>}
+          {hasApproximateChronology && <p>部分条目的起止年份采用约略年代，筛选按页面所示区间计算。</p>}
           {hasDisputedChronology && <p>部分条目的年代口径存在争议，请打开条目查看说明。</p>}
           {isBoundaryYear && <p>当前年份是部分条目的起止边界；按整年存在规则计入结果。</p>}
         </aside>
@@ -97,14 +120,20 @@ export function TimepointView({
         {polities.length > 0 ? (
           <div className="timepoint-grid">
             {polities.map((match) => (
-              <TimepointCard key={match.entity.id} match={match} onSelect={onSelect} />
+              <TimepointCard key={match.entity.id} match={match} onSelect={onSelect} regions={regions} />
             ))}
           </div>
         ) : (
           <div className="empty-state compact-empty">
-            {formattedYear}年没有匹配当前搜索与类别的政权。
-            <br />
-            可尝试清除筛选或选择其他年份。
+            {polityEmptyReason === "unindexed" && (
+              <>{scopeName}尚未收录代表性政权；这不表示该地区在历史上没有政权。</>
+            )}
+            {polityEmptyReason === "limited-coverage" && (
+              <>{formattedYear}年在{scopeName}暂无已收录政权；当前数据覆盖有限，不表示当时不存在政权。</>
+            )}
+            {polityEmptyReason === "filtered-out" && (
+              <>{formattedYear}年没有匹配当前搜索与类别的政权。<br />可尝试清除筛选或选择其他年份。</>
+            )}
           </div>
         )}
       </section>
@@ -120,7 +149,7 @@ export function TimepointView({
         {historicalPeriods.length > 0 ? (
           <div className="timepoint-grid context-grid">
             {historicalPeriods.map((match) => (
-              <TimepointCard key={match.entity.id} match={match} onSelect={onSelect} />
+              <TimepointCard key={match.entity.id} match={match} onSelect={onSelect} regions={regions} />
             ))}
           </div>
         ) : (

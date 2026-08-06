@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "chronologyPolicy": {
     "calendar": "historical-year",
     "hasYearZero": false,
@@ -186,7 +186,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -227,7 +227,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -267,7 +267,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -306,7 +306,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -343,7 +343,7 @@
       ],
       "chronologyStatus": "disputed",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -381,7 +381,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -420,7 +420,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -460,7 +460,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -500,7 +500,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -540,7 +540,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -580,7 +580,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -620,7 +620,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -660,7 +660,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -699,7 +699,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -738,7 +738,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -777,7 +777,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -818,7 +818,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -859,7 +859,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -898,7 +898,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -937,7 +937,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -976,7 +976,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1015,7 +1015,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1054,7 +1054,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1103,7 +1103,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1143,7 +1143,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1182,7 +1182,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1221,7 +1221,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1260,7 +1260,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1299,7 +1299,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1339,7 +1339,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1378,7 +1378,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1418,7 +1418,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1457,7 +1457,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1496,7 +1496,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1535,7 +1535,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1574,7 +1574,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1614,7 +1614,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1654,7 +1654,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1694,7 +1694,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1733,7 +1733,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1772,7 +1772,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1822,7 +1822,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1863,7 +1863,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1902,7 +1902,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1942,7 +1942,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -1981,7 +1981,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2020,7 +2020,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2060,7 +2060,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2100,7 +2100,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2140,7 +2140,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2179,7 +2179,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2218,7 +2218,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2258,7 +2258,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2297,7 +2297,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2336,7 +2336,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2375,7 +2375,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2416,7 +2416,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2455,7 +2455,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2494,7 +2494,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2535,7 +2535,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2574,7 +2574,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2614,7 +2614,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2654,7 +2654,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2694,7 +2694,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2734,7 +2734,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2774,7 +2774,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2814,7 +2814,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2855,7 +2855,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2895,7 +2895,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2935,7 +2935,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -2975,7 +2975,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -3016,7 +3016,7 @@
       ],
       "chronologyStatus": "accepted",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -3059,7 +3059,7 @@
       ],
       "chronologyStatus": "disputed",
       "historicalRegionIds": [
-        "region-east-asia"
+        "region-china"
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
@@ -3071,17 +3071,346 @@
       ],
       "confidence": "medium",
       "chronologyNote": "明朝宗室在南方建立的延续政权；终止年在不同口径中存在差异。"
+    },
+    {
+      "id": "polity-byzantine-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "拜占庭帝国",
+        "aliases": [
+          "东罗马帝国",
+          "Byzantine Empire",
+          "Eastern Roman Empire"
+        ],
+        "local": "Βασιλεία Ῥωμαίων"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 330,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1453,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-europe",
+        "region-west-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "罗马帝国东部延续形成的帝国，以君士坦丁堡为政治中心；约330年君士坦丁迁都于此，1453年君士坦丁堡陷落。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-met-byzantium"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "“拜占庭帝国”是后世称谓；约330—1453年是常见的艺术史分期口径。"
+    },
+    {
+      "id": "polity-abbasid-caliphate",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "阿拔斯哈里发",
+        "aliases": [
+          "阿拔斯王朝",
+          "黑衣大食",
+          "Abbasid Caliphate"
+        ],
+        "local": "الخلافة العباسية"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 750,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1258,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-west-asia",
+        "region-north-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "750年取代倭马亚哈里发，以伊拉克为政治文化中心；1258年巴格达陷落后，其在当地的统治终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-met-abbasid"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "存续区间按巴格达时期计算，不延伸至1261年后开罗的象征性哈里发世系。"
+    },
+    {
+      "id": "polity-holy-roman-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "神圣罗马帝国",
+        "aliases": [
+          "Holy Roman Empire",
+          "德意志民族神圣罗马帝国"
+        ],
+        "local": "Sacrum Imperium Romanum"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 962,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1806,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-europe"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "以中欧诸政治实体为主体的复合帝国结构；962年奥托一世加冕，1806年帝国解体。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "部分研究从800年查理曼加冕追溯帝国传统；页面按德国历史博物馆所列的962—1806年展示。",
+      "alternativeChronologies": [
+        {
+          "label": "查理曼起点口径",
+          "existencePeriods": [
+            {
+              "start": {
+                "year": 800,
+                "precision": "exact"
+              },
+              "end": {
+                "year": 1806,
+                "precision": "exact"
+              }
+            }
+          ],
+          "note": "将800年查理曼加冕视为帝国传统的起点。",
+          "sourceRefs": [
+            {
+              "sourceId": "source-met-hre"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "polity-chola-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "朱罗帝国",
+        "aliases": [
+          "朱罗王朝",
+          "Chola Empire",
+          "Chola dynasty"
+        ],
+        "local": "சோழப் பேரரசு"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 850,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1279,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-south-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "以印度南部为核心的朱罗政权；约850年维查耶罗耶重建势力，延续至1279年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "朱罗传统早于九世纪；所列年代聚焦约850年开始的中世纪帝国阶段。"
     }
   ],
   "regions": [
     {
       "id": "region-east-asia",
-      "name": "东亚",
+      "names": {
+        "primary": "东亚",
+        "aliases": [
+          "Eastern Asia"
+        ]
+      },
       "regionKind": "historical-region",
-      "description": "当前中国历史数据使用的宽粒度历史地区；不代表精确疆域或现代主权范围。",
+      "coverage": {
+        "status": "partial",
+        "note": "当前以中国历史条目为主，东亚其他地区仅在后续阶段逐步补充。"
+      },
+      "description": "东亚历史地理范围；不代表精确疆域或现代主权范围。",
       "sourceRefs": [
         {
           "sourceId": "source-national-museum"
+        }
+      ]
+    },
+    {
+      "id": "region-china",
+      "names": {
+        "primary": "中国历史范围",
+        "aliases": [
+          "中国",
+          "China"
+        ]
+      },
+      "regionKind": "historical-region",
+      "parentRegionId": "region-east-asia",
+      "coverage": {
+        "status": "partial",
+        "note": "采用中国通史浏览口径，不等同于任何时期的现代国界或主权范围。"
+      },
+      "description": "用于“中国”预设的策展范围，覆盖当前中国历代王朝、主要并立政权与历史分期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-national-museum"
+        }
+      ]
+    },
+    {
+      "id": "region-south-asia",
+      "names": {
+        "primary": "南亚",
+        "aliases": [
+          "South Asia"
+        ]
+      },
+      "regionKind": "historical-region",
+      "coverage": {
+        "status": "sample",
+        "note": "南亚目前仅收录朱罗帝国作为地区机制样本。"
+      },
+      "description": "南亚宽粒度历史地区；不代表精确疆域或现代主权范围。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-crownline-coverage"
+        }
+      ]
+    },
+    {
+      "id": "region-west-asia",
+      "names": {
+        "primary": "西亚",
+        "aliases": [
+          "West Asia",
+          "西亚与近东"
+        ]
+      },
+      "regionKind": "historical-region",
+      "coverage": {
+        "status": "sample",
+        "note": "西亚目前仅收录拜占庭帝国与阿拔斯哈里发作为地区机制样本。"
+      },
+      "description": "西亚宽粒度历史地区；不从该标签推断任何时期的精确领土。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-crownline-coverage"
+        }
+      ]
+    },
+    {
+      "id": "region-europe",
+      "names": {
+        "primary": "欧洲",
+        "aliases": [
+          "Europe"
+        ]
+      },
+      "regionKind": "historical-region",
+      "coverage": {
+        "status": "sample",
+        "note": "欧洲目前仅收录拜占庭帝国与神圣罗马帝国作为地区机制样本。"
+      },
+      "description": "欧洲宽粒度历史地区；跨地区政权可同时关联其他历史地区。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-crownline-coverage"
+        }
+      ]
+    },
+    {
+      "id": "region-north-africa",
+      "names": {
+        "primary": "北非",
+        "aliases": [
+          "North Africa"
+        ]
+      },
+      "regionKind": "historical-region",
+      "coverage": {
+        "status": "sample",
+        "note": "北非目前仅通过跨地区的阿拔斯哈里发记录验证多地区归属。"
+      },
+      "description": "北非宽粒度历史地区；当前数据不足以形成地区通史。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-crownline-coverage"
+        }
+      ]
+    },
+    {
+      "id": "region-americas",
+      "names": {
+        "primary": "美洲",
+        "aliases": [
+          "Americas"
+        ]
+      },
+      "regionKind": "historical-region",
+      "coverage": {
+        "status": "none",
+        "note": "美洲尚未收录代表性政权。"
+      },
+      "description": "预留的美洲历史地区，用于明确表达当前尚未收录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-crownline-coverage"
         }
       ]
     }
@@ -3107,6 +3436,57 @@
       "citation": "中国国家博物馆：中国古代史相关资料。",
       "publisher": "中国国家博物馆",
       "url": "https://www.chnmuseum.cn/",
+      "accessedAt": "2026-08-06"
+    },
+    {
+      "id": "source-crownline-coverage",
+      "title": "Crownline 数据覆盖说明",
+      "sourceType": "dataset",
+      "citation": "Crownline：阶段2地区范围数据覆盖记录。"
+    },
+    {
+      "id": "source-met-byzantium",
+      "title": "Byzantium (ca. 330–1453)",
+      "sourceType": "institutional",
+      "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: Byzantium (ca. 330–1453).",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/byzantium-ca-330-1453",
+      "accessedAt": "2026-08-06"
+    },
+    {
+      "id": "source-met-abbasid",
+      "title": "The Art of the Abbasid Period (750–1258)",
+      "sourceType": "institutional",
+      "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: The Art of the Abbasid Period (750–1258).",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-art-of-the-abbasid-period-750-1258",
+      "accessedAt": "2026-08-06"
+    },
+    {
+      "id": "source-dhm-hre",
+      "title": "Heiliges Römisches Reich Deutscher Nation: 962–1806",
+      "sourceType": "institutional",
+      "citation": "Deutsches Historisches Museum: Heiliges Römisches Reich Deutscher Nation: 962–1806.",
+      "publisher": "Deutsches Historisches Museum",
+      "url": "https://www.dhm.de/publikation/heiliges-roemisches-reich-deutscher-nation-962-1806/",
+      "accessedAt": "2026-08-06"
+    },
+    {
+      "id": "source-met-hre",
+      "title": "The Holy Roman Empire and the Habsburgs, 1400–1600",
+      "sourceType": "institutional",
+      "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: The Holy Roman Empire and the Habsburgs, 1400–1600.",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-holy-roman-empire-and-the-habsburgs-1400-1600",
+      "accessedAt": "2026-08-06"
+    },
+    {
+      "id": "source-inflibnet-chola",
+      "title": "The Cholas",
+      "sourceType": "institutional",
+      "citation": "INFLIBNET Centre, Outlines of Indian History: The Cholas.",
+      "publisher": "INFLIBNET Centre",
+      "url": "https://ebooks.inflibnet.ac.in/icp01/chapter/the-cholas/",
       "accessedAt": "2026-08-06"
     }
   ]

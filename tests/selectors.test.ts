@@ -2,8 +2,30 @@ import { describe, expect, it } from "vitest";
 
 import { loadCrownlineData } from "../src/data/loadCrownlineData";
 import { selectBrowseResults } from "../src/domain/selectors";
+import type { CrownlineData, HistoricalEntity } from "../src/domain/types";
 
 const data = loadCrownlineData();
+
+function makeCrossRegionData(): CrownlineData {
+  const result = structuredClone(data);
+  const tang = result.entities.find(({ id }) => id === "polity-cn-tang")!;
+  const externalEntity: HistoricalEntity = {
+    ...structuredClone(tang),
+    id: "polity-south-asia-test",
+    names: { primary: "南亚测试政权", aliases: ["Test South Asian Polity"] },
+    existencePeriods: [
+      {
+        start: { year: 900, precision: "exact" },
+        end: { year: 1100, precision: "exact" }
+      }
+    ],
+    historicalRegionIds: ["region-south-asia"]
+  };
+  delete externalEntity.displayRangeOverride;
+  delete externalEntity.chronologyNote;
+  result.entities.push(externalEntity);
+  return result;
+}
 
 function names(year: number): string[] {
   return selectBrowseResults(data, { query: "", category: "all", year }).polities.map(
@@ -12,6 +34,55 @@ function names(year: number): string[] {
 }
 
 describe("时间点结果", () => {
+  it("全球范围直接查询全部实体，不依赖中国时间轴分期", () => {
+    const crossRegionData = makeCrossRegionData();
+    const results = selectBrowseResults(
+      crossRegionData,
+      {
+        query: "",
+        category: "all",
+        year: 1000,
+        regionScope: { mode: "global" }
+      }
+    );
+
+    expect(results.polities.map(({ entity }) => entity.names.primary)).toContain("南亚测试政权");
+  });
+
+  it("自选地区采用并集并展开父地区", () => {
+    const crossRegionData = makeCrossRegionData();
+    const results = selectBrowseResults(
+      crossRegionData,
+      {
+        query: "",
+        category: "all",
+        year: 1000,
+        regionScope: { mode: "custom", regionIds: ["region-east-asia", "region-south-asia"] }
+      }
+    );
+
+    expect(results.polities.map(({ entity }) => entity.names.primary)).toEqual(
+      expect.arrayContaining(["北宋", "南亚测试政权"])
+    );
+  });
+
+  it("区分未收录、覆盖有限和被筛选为空", () => {
+    const crossRegionData = makeCrossRegionData();
+    const select = (year: number, query: string, regionId: string) => selectBrowseResults(
+      crossRegionData,
+      {
+        query,
+        category: "all",
+        year,
+        regionScope: { mode: "custom", regionIds: [regionId] }
+      }
+    );
+
+    expect(select(1000, "", "region-americas").polityEmptyReason).toBe("unindexed");
+    expect(select(1300, "", "region-south-asia").polityEmptyReason).toBe("limited-coverage");
+    expect(select(1000, "不存在", "region-south-asia").polityEmptyReason).toBe("filtered-out");
+  });
+
   it("按多个存在区间排除中断期并包含复立年份", () => {
     expect(names(400)).toContain("西秦");
     expect(names(405)).not.toContain("西秦");

@@ -29,7 +29,7 @@ function makeEntity(overrides: Partial<HistoricalEntity> = {}): HistoricalEntity
 
 function makeValidData(): CrownlineData {
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     chronologyPolicy: {
       calendar: "historical-year",
       hasYearZero: false,
@@ -49,8 +49,9 @@ function makeValidData(): CrownlineData {
     regions: [
       {
         id: "region-east-asia",
-        name: "东亚",
+        names: { primary: "东亚", aliases: ["Eastern Asia"] },
         regionKind: "historical-region",
+        coverage: { status: "partial", note: "当前主要收录中国历史条目。" },
         description: "用于测试的宽粒度历史地区。",
         sourceRefs: [{ sourceId: "source-test" }]
       }
@@ -75,6 +76,27 @@ function issueCodes(input: unknown): string[] {
 }
 
 describe("JSON Schema 结构校验", () => {
+  it("接受带层级、名称与覆盖说明的地区契约 v2", () => {
+    const data = makeValidData() as unknown as {
+      schemaVersion: number;
+      regions: Array<Record<string, unknown>>;
+    };
+    data.schemaVersion = 2;
+    data.regions[0] = {
+      id: "region-east-asia",
+      names: { primary: "东亚", aliases: ["Eastern Asia"] },
+      regionKind: "historical-region",
+      coverage: {
+        status: "partial",
+        note: "当前主要收录中国历史条目。"
+      },
+      description: "用于测试的宽粒度历史地区。",
+      sourceRefs: [{ sourceId: "source-test" }]
+    };
+
+    expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
+  });
+
   it("接受完整的最小数据集", () => {
     expect(validateCrownlineData(makeValidData())).toEqual({ valid: true, issues: [] });
   });
@@ -138,6 +160,59 @@ describe("跨记录语义校验", () => {
     const sourceRef = makeValidData();
     sourceRef.entities[0]!.sourceRefs = [{ sourceId: "source-missing" }];
     expect(issueCodes(sourceRef)).toContain("DANGLING_SOURCE_REF");
+  });
+
+  it("拒绝悬空、跨类型和循环的地区父子关系", () => {
+    const danglingParent = makeValidData();
+    danglingParent.regions[0]!.parentRegionId = "region-missing";
+    expect(issueCodes(danglingParent)).toContain("DANGLING_REGION_PARENT_REF");
+
+    const mixedKinds = makeValidData();
+    mixedKinds.regions.push({
+      id: "region-modern-test",
+      names: { primary: "现代测试范围", aliases: [] },
+      regionKind: "modern-area",
+      parentRegionId: "region-east-asia",
+      coverage: { status: "none", note: "尚未收录。" },
+      description: "用于验证地区类型边界。",
+      sourceRefs: [{ sourceId: "source-test" }]
+    });
+    expect(issueCodes(mixedKinds)).toContain("INVALID_REGION_PARENT_KIND");
+
+    const cycle = makeValidData();
+    cycle.regions.push({
+      id: "region-china",
+      names: { primary: "中国历史范围", aliases: [] },
+      regionKind: "historical-region",
+      parentRegionId: "region-east-asia",
+      coverage: { status: "partial", note: "当前收录有限。" },
+      description: "用于验证地区循环。",
+      sourceRefs: [{ sourceId: "source-test" }]
+    });
+    cycle.regions[0]!.parentRegionId = "region-china";
+    expect(issueCodes(cycle)).toContain("CYCLIC_REGION_PARENT");
+  });
+
+  it("拒绝实体把现代范围当作历史地区引用", () => {
+    const data = makeValidData();
+    data.regions.push({
+      id: "region-modern-test",
+      names: { primary: "现代测试范围", aliases: [] },
+      regionKind: "modern-area",
+      coverage: { status: "none", note: "尚未收录。" },
+      description: "用于验证三类地区职责不可混用。",
+      sourceRefs: [{ sourceId: "source-test" }]
+    });
+    data.entities[0]!.historicalRegionIds = ["region-modern-test"];
+
+    expect(issueCodes(data)).toContain("INVALID_REGION_REFERENCE_KIND");
+  });
+
+  it("要求每个实体至少绑定一个历史地区", () => {
+    const data = makeValidData();
+    data.entities[0]!.historicalRegionIds = [];
+
+    expect(issueCodes(data)).toContain("SCHEMA_ERROR");
   });
 
   it("拒绝历史分期的政权形态和缺少说明的争议口径", () => {

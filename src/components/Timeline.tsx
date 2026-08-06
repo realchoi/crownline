@@ -13,6 +13,7 @@ interface TimelineProps {
 export function Timeline({ data, matches, onSelect }: TimelineProps) {
   const matchesBySection = new Map<string, MatchedEntity[]>();
   matches.forEach((match) => {
+    if (!match.section) return;
     const sectionMatches = matchesBySection.get(match.section.id) ?? [];
     sectionMatches.push(match);
     matchesBySection.set(match.section.id, sectionMatches);

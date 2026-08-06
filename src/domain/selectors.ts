@@ -1,4 +1,5 @@
 import { formatPeriods, isYearInPeriods } from "./chronology";
+import { entityMatchesRegionScope, type RegionScope } from "./regionScope";
 import type {
   CrownlineData,
   DisplayCategory,
@@ -12,19 +13,43 @@ export type CategoryFilter = DisplayCategory | "all";
 /** 筛选命中的实体及其所属时间轴阶段。 */
 export interface MatchedEntity {
   entity: HistoricalEntity;
-  section: TimelineSection;
+  section: TimelineSection | undefined;
 }
 
 export interface EntityFilters {
   query: string;
   category: CategoryFilter;
   year?: number;
+  regionScope?: RegionScope;
 }
 
 export interface BrowseResults {
   all: MatchedEntity[];
   polities: MatchedEntity[];
   historicalPeriods: MatchedEntity[];
+  polityEmptyReason: "unindexed" | "limited-coverage" | "filtered-out" | null;
+}
+
+function searchableText(
+  data: CrownlineData,
+  entity: HistoricalEntity,
+  section?: TimelineSection
+): string {
+  const regionNames = entity.historicalRegionIds.flatMap((regionId) => {
+    const region = data.regions.find(({ id }) => id === regionId);
+    return region ? [region.names.primary, ...region.names.aliases, region.names.local ?? ""] : [];
+  });
+  return normalizeText(
+    [
+      entity.names.primary,
+      ...entity.names.aliases,
+      entity.names.local ?? "",
+      ...regionNames,
+      formatPeriods(entity.existencePeriods, entity.displayRangeOverride),
+      entity.description,
+      section?.title ?? ""
+    ].join(" ")
+  );
 }
 
 /** 统一搜索大小写、空白和常见中英文标点。 */
@@ -52,16 +77,8 @@ export function filterEntities(
       const entity = entityById.get(entityId);
       if (!entity) return;
       const categoryMatches = category === "all" || entity.displayCategory === category;
-      const searchableText = normalizeText(
-        [
-          entity.names.primary,
-          ...entity.names.aliases,
-          formatPeriods(entity.existencePeriods, entity.displayRangeOverride),
-          entity.description,
-          section.title
-        ].join(" ")
-      );
-      if (categoryMatches && (!normalizedQuery || searchableText.includes(normalizedQuery))) {
+      const indexedText = searchableText(data, entity, section);
+      if (categoryMatches && (!normalizedQuery || indexedText.includes(normalizedQuery))) {
         matches.push({ entity, section });
       }
     });
@@ -78,15 +95,40 @@ export function selectBrowseResults(
   data: CrownlineData,
   filters: EntityFilters
 ): BrowseResults {
-  const filtered = filterEntities(data, filters.query, filters.category);
+  const normalizedQuery = normalizeText(filters.query);
+  const sectionByEntityId = new Map<string, TimelineSection>();
+  data.timelineSections.forEach((section) => {
+    section.entityIds.forEach((entityId) => sectionByEntityId.set(entityId, section));
+  });
+  const scope = filters.regionScope ?? { mode: "china" };
+  const regionMatches = data.entities.flatMap((entity): MatchedEntity[] => {
+    const section = sectionByEntityId.get(entity.id);
+    return entityMatchesRegionScope(entity, data.regions, scope) ? [{ entity, section }] : [];
+  });
   const selectedYear = filters.year;
-  const all = selectedYear === undefined
-    ? filtered
-    : filtered.filter(({ entity }) => isYearInPeriods(selectedYear, entity.existencePeriods));
+  const timeMatches = selectedYear === undefined
+    ? regionMatches
+    : regionMatches.filter(({ entity }) => isYearInPeriods(selectedYear, entity.existencePeriods));
+  const all = timeMatches.filter(({ entity, section }) => {
+    const categoryMatches = filters.category === "all" || entity.displayCategory === filters.category;
+    const queryMatches = !normalizedQuery || searchableText(data, entity, section).includes(normalizedQuery);
+    return categoryMatches && queryMatches;
+  });
+  const polities = all.filter(({ entity }) => entity.entityKind === "polity");
+  const regionPolities = regionMatches.filter(({ entity }) => entity.entityKind === "polity");
+  const timePolities = timeMatches.filter(({ entity }) => entity.entityKind === "polity");
+  const polityEmptyReason = polities.length > 0
+    ? null
+    : regionPolities.length === 0
+      ? "unindexed"
+      : selectedYear !== undefined && timePolities.length === 0
+        ? "limited-coverage"
+        : "filtered-out";
 
   return {
     all,
-    polities: all.filter(({ entity }) => entity.entityKind === "polity"),
-    historicalPeriods: all.filter(({ entity }) => entity.entityKind === "historical-period")
+    polities,
+    historicalPeriods: all.filter(({ entity }) => entity.entityKind === "historical-period"),
+    polityEmptyReason
   };
 }

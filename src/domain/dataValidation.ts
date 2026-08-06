@@ -125,6 +125,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
   const issues: ValidationIssue[] = [];
   const entityIds = new Set(data.entities.map(({ id }) => id));
   const regionIds = new Set(data.regions.map(({ id }) => id));
+  const regionById = new Map(data.regions.map((region) => [region.id, region]));
   const personIds = new Set(data.persons.map(({ id }) => id));
   const eventIds = new Set(data.events.map(({ id }) => id));
   const sourceIds = new Set(data.sources.map(({ id }) => id));
@@ -201,26 +202,70 @@ export function validateCrownlineData(input: unknown): ValidationResult {
       validateSourceRefs(alternative.sourceRefs, `${alternativePath}/sourceRefs`, sourceIds, issues);
     });
 
-    const referencedRegionIds = [
-      ...entity.historicalRegionIds,
-      ...entity.culturalSphereIds,
-      ...entity.modernAreaIds
-    ];
-    referencedRegionIds.forEach((regionId, regionIndex) => {
-      if (!regionIds.has(regionId)) {
-        issues.push({
-          code: "DANGLING_REGION_REF",
-          path: `${path}/regionRefs/${regionIndex}`,
-          message: `地区 ${regionId} 不存在`
-        });
-      }
+    const regionReferenceGroups = [
+      ["historicalRegionIds", entity.historicalRegionIds, "historical-region"],
+      ["culturalSphereIds", entity.culturalSphereIds, "cultural-sphere"],
+      ["modernAreaIds", entity.modernAreaIds, "modern-area"]
+    ] as const;
+    regionReferenceGroups.forEach(([field, referencedRegionIds, expectedKind]) => {
+      referencedRegionIds.forEach((regionId, regionIndex) => {
+        const region = regionById.get(regionId);
+        if (!region) {
+          issues.push({
+            code: "DANGLING_REGION_REF",
+            path: `${path}/${field}/${regionIndex}`,
+            message: `地区 ${regionId} 不存在`
+          });
+        } else if (region.regionKind !== expectedKind) {
+          issues.push({
+            code: "INVALID_REGION_REFERENCE_KIND",
+            path: `${path}/${field}/${regionIndex}`,
+            message: `${field} 只能引用 ${expectedKind}`
+          });
+        }
+      });
     });
     validateSourceRefs(entity.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
     validateConfidenceNote(entity.confidence, entity.confidenceNote, `${path}/confidenceNote`, issues);
   });
 
   data.regions.forEach((region, regionIndex) => {
-    validateSourceRefs(region.sourceRefs, `/regions/${regionIndex}/sourceRefs`, sourceIds, issues);
+    const path = `/regions/${regionIndex}`;
+    validateSourceRefs(region.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
+    if (!region.parentRegionId) return;
+    const parent = regionById.get(region.parentRegionId);
+    if (!parent) {
+      issues.push({
+        code: "DANGLING_REGION_PARENT_REF",
+        path: `${path}/parentRegionId`,
+        message: `父地区 ${region.parentRegionId} 不存在`
+      });
+    } else if (parent.regionKind !== region.regionKind) {
+      issues.push({
+        code: "INVALID_REGION_PARENT_KIND",
+        path: `${path}/parentRegionId`,
+        message: "父子地区必须属于同一种地区类型"
+      });
+    }
+  });
+
+  data.regions.forEach((region, regionIndex) => {
+    const visited = new Set<string>();
+    let current = region;
+    while (current.parentRegionId) {
+      if (visited.has(current.id)) {
+        issues.push({
+          code: "CYCLIC_REGION_PARENT",
+          path: `/regions/${regionIndex}/parentRegionId`,
+          message: `地区 ${region.id} 的父子关系形成循环`
+        });
+        break;
+      }
+      visited.add(current.id);
+      const parent = regionById.get(current.parentRegionId);
+      if (!parent) break;
+      current = parent;
+    }
   });
 
   data.persons.forEach((person, personIndex) => {
