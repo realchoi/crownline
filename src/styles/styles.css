@@ -2,7 +2,7 @@
    否则 650/750 等中间字重会全部塌陷到 400 或 700 */
 @font-face {
   font-family: "Crownline Sans SC";
-  src: url("./fonts/noto-sans-sc-page-400-700.woff2") format("woff2");
+  src: url("../assets/fonts/noto-sans-sc-page-400-700.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -12,7 +12,7 @@
    在大字号下自动切换 Display 光学尺寸，衬线更舒展 */
 @font-face {
   font-family: "Crownline Latin Serif";
-  src: url("./fonts/source-serif-4-latin-var.woff2") format("woff2");
+  src: url("../assets/fonts/source-serif-4-latin-var.woff2") format("woff2");
   font-style: normal;
   font-weight: 200 900;
   font-display: swap;
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: "Crownline Song SC";
-  src: url("./fonts/noto-serif-sc-display-700.woff2") format("woff2");
+  src: url("../assets/fonts/noto-serif-sc-display-700.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -108,6 +108,14 @@ a:hover { color: var(--accent-hover); }
 }
 
 .skip-link:focus { transform: translateY(0); }
+
+.data-error {
+  margin-top: 72px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  padding: 28px;
+}
 
 .site-shell {
   width: min(1120px, calc(100% - 32px));
@@ -293,11 +301,11 @@ main { padding-bottom: 60px; }
   background: currentColor;
 }
 
-.legend-main { color: var(--accent); }
-.legend-parallel { color: var(--parallel); }
-.legend-period { color: var(--period); }
+.legend-mainline { color: var(--accent); }
+.legend-contemporary { color: var(--parallel); }
+.legend-context { color: var(--period); }
 .legend-regional { color: var(--regional); }
-.legend-period .legend-mark { background: transparent; border: 2px dashed currentColor; }
+.legend-context .legend-mark { background: transparent; border: 2px dashed currentColor; }
 
 .scope-note {
   display: grid;
@@ -444,10 +452,10 @@ main { padding-bottom: 60px; }
   filter: brightness(1.08);
 }
 
-.bar-main { background: var(--accent); }
-.bar-parallel { background: var(--parallel); }
+.bar-mainline { background: var(--accent); }
+.bar-contemporary { background: var(--parallel); }
 .bar-regional { background: var(--regional); }
-.bar-period {
+.bar-context {
   top: 3px;
   height: 20px;
   border: 2px dashed var(--period);
@@ -509,12 +517,12 @@ dialog::backdrop {
   font-weight: 750;
 }
 
-.type-badge.detail-parallel {
+.type-badge.detail-contemporary {
   background: color-mix(in srgb, var(--parallel) 16%, transparent);
   color: var(--parallel);
 }
 
-.type-badge.detail-period {
+.type-badge.detail-context {
   background: color-mix(in srgb, var(--period) 16%, transparent);
   color: var(--period);
 }
@@ -538,6 +546,13 @@ dialog::backdrop {
   margin-bottom: 16px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
+}
+
+.chronology-note {
+  border-left: 3px solid var(--period);
+  color: var(--muted);
+  padding-left: 12px;
+  font-size: 0.9rem;
 }
 
 .icon-button {

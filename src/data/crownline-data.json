@@ -1,0 +1,3113 @@
+{
+  "schemaVersion": 1,
+  "chronologyPolicy": {
+    "calendar": "historical-year",
+    "hasYearZero": false,
+    "intervalBoundary": "inclusive",
+    "yearSelection": "exists-at-any-time-during-year"
+  },
+  "timelineSections": [
+    {
+      "id": "section-cn-early-states",
+      "title": "早期国家与先秦",
+      "displayRange": "约前2070—前206",
+      "range": {
+        "startYear": -2070,
+        "endYear": -206
+      },
+      "entityIds": [
+        "polity-cn-xia",
+        "polity-cn-shang",
+        "polity-cn-western-zhou",
+        "polity-cn-eastern-zhou",
+        "period-cn-spring-autumn",
+        "period-cn-warring-states",
+        "polity-cn-qin"
+      ]
+    },
+    {
+      "id": "section-cn-han-three-kingdoms",
+      "title": "汉与三国",
+      "displayRange": "前202—280",
+      "range": {
+        "startYear": -202,
+        "endYear": 280
+      },
+      "entityIds": [
+        "polity-cn-western-han",
+        "polity-cn-xin",
+        "polity-cn-eastern-han",
+        "polity-cn-cao-wei",
+        "polity-cn-shu-han",
+        "polity-cn-eastern-wu"
+      ]
+    },
+    {
+      "id": "section-cn-jin-sixteen-kingdoms",
+      "title": "两晋与十六国",
+      "displayRange": "265—439",
+      "range": {
+        "startYear": 265,
+        "endYear": 439
+      },
+      "entityIds": [
+        "polity-cn-western-jin",
+        "polity-cn-eastern-jin",
+        "polity-cn-former-liang",
+        "polity-cn-cheng-han",
+        "polity-cn-han-zhao",
+        "polity-cn-later-zhao",
+        "polity-cn-former-yan",
+        "polity-cn-former-qin",
+        "polity-cn-later-qin",
+        "polity-cn-later-yan",
+        "polity-cn-western-qin",
+        "polity-cn-later-liang-lu",
+        "polity-cn-southern-liang-tufa",
+        "polity-cn-northern-liang",
+        "polity-cn-southern-yan",
+        "polity-cn-western-liang",
+        "polity-cn-hu-xia",
+        "polity-cn-northern-yan"
+      ]
+    },
+    {
+      "id": "section-cn-northern-southern-dynasties",
+      "title": "南北朝",
+      "displayRange": "386—589",
+      "range": {
+        "startYear": 386,
+        "endYear": 589
+      },
+      "entityIds": [
+        "polity-cn-northern-wei",
+        "polity-cn-eastern-wei",
+        "polity-cn-western-wei",
+        "polity-cn-northern-qi",
+        "polity-cn-northern-zhou",
+        "polity-cn-liu-song",
+        "polity-cn-southern-qi",
+        "polity-cn-liang",
+        "polity-cn-chen"
+      ]
+    },
+    {
+      "id": "section-cn-sui-tang-five-dynasties",
+      "title": "隋唐与五代十国",
+      "displayRange": "581—979",
+      "range": {
+        "startYear": 581,
+        "endYear": 979
+      },
+      "entityIds": [
+        "polity-cn-sui",
+        "polity-cn-tang",
+        "polity-cn-wu-zhou",
+        "polity-cn-later-liang-zhu",
+        "polity-cn-later-tang",
+        "polity-cn-later-jin",
+        "polity-cn-later-han",
+        "polity-cn-later-zhou",
+        "polity-cn-yang-wu",
+        "polity-cn-southern-tang",
+        "polity-cn-wuyue",
+        "polity-cn-min",
+        "polity-cn-ma-chu",
+        "polity-cn-former-shu",
+        "polity-cn-later-shu",
+        "polity-cn-southern-han",
+        "polity-cn-jingnan",
+        "polity-cn-northern-han",
+        "polity-tibet-empire",
+        "polity-balhae",
+        "polity-nanzhao"
+      ]
+    },
+    {
+      "id": "section-cn-liao-song-xia-jin-yuan",
+      "title": "辽宋夏金元",
+      "displayRange": "916—1368",
+      "range": {
+        "startYear": 916,
+        "endYear": 1368
+      },
+      "entityIds": [
+        "polity-cn-liao",
+        "polity-dali",
+        "polity-cn-northern-song",
+        "polity-cn-western-xia",
+        "polity-cn-jin",
+        "polity-cn-southern-song",
+        "polity-mongol-empire",
+        "polity-cn-yuan"
+      ]
+    },
+    {
+      "id": "section-cn-ming-qing",
+      "title": "明清",
+      "displayRange": "1368—1912",
+      "range": {
+        "startYear": 1368,
+        "endYear": 1912
+      },
+      "entityIds": [
+        "polity-cn-ming",
+        "polity-cn-later-jin-jurchen",
+        "polity-cn-qing",
+        "polity-cn-southern-ming"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "polity-cn-xia",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "夏",
+        "aliases": [
+          "夏朝"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -2070,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1600,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "传统中国史叙事中的早期王朝；起止年代多采用常见估年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "传统中国史叙事中的早期王朝；起止年代多采用常见估年。"
+    },
+    {
+      "id": "polity-cn-shang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "商",
+        "aliases": [
+          "商朝",
+          "殷商"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -1600,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1046,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "又称殷商；早期年代为约数，晚期有较丰富甲骨文记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "又称殷商；早期年代为约数，晚期有较丰富甲骨文记录。"
+    },
+    {
+      "id": "polity-cn-western-zhou",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "西周",
+        "aliases": [
+          "周朝前期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -1046,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -771,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "周朝前期，前771年犬戎攻破镐京后结束。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-eastern-zhou",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "东周",
+        "aliases": [
+          "周朝后期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -770,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -256,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "周平王东迁洛邑后的周朝，与春秋、战国分期部分重叠。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "period-cn-spring-autumn",
+      "entityKind": "historical-period",
+      "polityForms": [],
+      "displayCategory": "context",
+      "names": {
+        "primary": "春秋",
+        "aliases": [
+          "春秋时期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -770,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -476,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "历史分期，并非单一王朝；起止年在不同史学口径中略有差异。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "历史分期，并非单一王朝；起止年在不同史学口径中略有差异。"
+    },
+    {
+      "id": "period-cn-warring-states",
+      "entityKind": "historical-period",
+      "polityForms": [],
+      "displayCategory": "context",
+      "names": {
+        "primary": "战国",
+        "aliases": [
+          "战国时期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -475,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -221,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "历史分期，并非单一王朝；通常以秦统一六国为终点。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-qin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "秦",
+        "aliases": [
+          "秦朝"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -221,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -206,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "秦始皇统一六国后建立的统一王朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-western-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "西汉",
+        "aliases": [
+          "前汉",
+          "汉朝前期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -202,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 8,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "汉高祖刘邦建立；公元9年王莽建立新朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-xin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "新",
+        "aliases": [
+          "新朝",
+          "王莽政权"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 9,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 23,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "王莽建立的短期王朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-eastern-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "东汉",
+        "aliases": [
+          "后汉",
+          "汉朝后期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 25,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 220,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "汉光武帝刘秀建立，后期进入群雄割据。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-cao-wei",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "曹魏",
+        "aliases": [
+          "魏",
+          "三国魏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 220,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 265,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "三国之一，通常简称魏。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-shu-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "蜀汉",
+        "aliases": [
+          "蜀",
+          "季汉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 221,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 263,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "三国之一，通常简称蜀。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-eastern-wu",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "孙吴",
+        "aliases": [
+          "吴",
+          "东吴"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 222,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 280,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "三国之一，通常简称吴或东吴。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-western-jin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "西晋",
+        "aliases": [
+          "晋朝前期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 265,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 316,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "司马炎代魏建立，280年统一三国，后因内乱与北方政局崩溃而亡。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-eastern-jin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "东晋",
+        "aliases": [
+          "晋朝后期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 317,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 420,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "司马睿在建康建立，与北方十六国长期南北并立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-former-liang",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "前凉",
+        "aliases": [
+          "张凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 301,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 376,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-cheng-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "成汉",
+        "aliases": [
+          "成",
+          "蜀",
+          "李蜀"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 304,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 347,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一，前期国号成，后改汉。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-han-zhao",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "汉赵（前赵）",
+        "aliases": [
+          "汉赵",
+          "前赵",
+          "匈奴汉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 304,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 329,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一；前期国号汉，后改赵。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-zhao",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后赵",
+        "aliases": [
+          "石赵"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 319,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 351,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-former-yan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "前燕",
+        "aliases": [
+          "慕容燕"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 337,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 370,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-former-qin",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "前秦",
+        "aliases": [
+          "苻秦"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 351,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 394,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一，曾一度统一北方大部。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-qin",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后秦",
+        "aliases": [
+          "姚秦"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 384,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 417,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-yan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后燕",
+        "aliases": [
+          "慕容燕"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 384,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 409,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-western-qin",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "西秦",
+        "aliases": [
+          "乞伏秦"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 385,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 400,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 409,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 431,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一；400至409年间政权中断。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "十六国之一；400至409年间政权中断。"
+    },
+    {
+      "id": "polity-cn-later-liang-lu",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后凉",
+        "aliases": [
+          "吕凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 386,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 403,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-southern-liang-tufa",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南凉",
+        "aliases": [
+          "秃发凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 397,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 414,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-northern-liang",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北凉",
+        "aliases": [
+          "沮渠凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 397,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 439,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一；部分余部延续时间更久。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-southern-yan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南燕",
+        "aliases": [
+          "慕容燕"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 398,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 410,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-western-liang",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "西凉",
+        "aliases": [
+          "李凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 400,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 421,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-hu-xia",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "夏（胡夏）",
+        "aliases": [
+          "胡夏",
+          "大夏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 407,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 431,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一，由赫连勃勃建立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-northern-yan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北燕",
+        "aliases": [
+          "冯燕"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 409,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 436,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-northern-wei",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北魏",
+        "aliases": [
+          "拓跋魏",
+          "元魏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 386,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 534,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "北朝第一朝，后分裂为东魏和西魏。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-eastern-wei",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "东魏",
+        "aliases": [
+          "高魏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 534,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 550,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "北魏分裂后的东部政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-western-wei",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "西魏",
+        "aliases": [
+          "宇文魏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 535,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 557,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "北魏分裂后的西部政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-northern-qi",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北齐",
+        "aliases": [
+          "高齐"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 550,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 577,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "承东魏而立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-northern-zhou",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北周",
+        "aliases": [
+          "宇文周"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 557,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 581,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "承西魏而立，后为隋所代。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-liu-song",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "刘宋",
+        "aliases": [
+          "南朝宋",
+          "宋"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 420,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 479,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "南朝第一朝，通常称刘宋以区别于赵宋。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-southern-qi",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南齐",
+        "aliases": [
+          "萧齐",
+          "齐"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 479,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 502,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "南朝第二朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-liang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "梁",
+        "aliases": [
+          "南梁",
+          "萧梁"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 502,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 557,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "南朝第三朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-chen",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "陈",
+        "aliases": [
+          "南陈"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 557,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 589,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "南朝第四朝，589年为隋所灭。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-sui",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "隋",
+        "aliases": [
+          "隋朝"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 581,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 618,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "结束南北朝长期分裂，为唐朝统一奠定制度基础。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-tang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "唐",
+        "aliases": [
+          "唐朝",
+          "李唐"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 618,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 690,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 705,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 907,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "690至705年间由武周取代，神龙政变后复唐。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "690至705年间由武周取代，神龙政变后复唐。"
+    },
+    {
+      "id": "polity-cn-wu-zhou",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "武周",
+        "aliases": [
+          "周",
+          "武则天政权"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 690,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 705,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "武则天建立，处于唐朝中断期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-liang-zhu",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后梁",
+        "aliases": [
+          "朱梁"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 907,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 923,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "五代第一朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-tang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后唐",
+        "aliases": [
+          "李唐",
+          "沙陀唐"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 923,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 936,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "五代第二朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-jin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后晋",
+        "aliases": [
+          "石晋"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 936,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 947,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "五代第三朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后汉",
+        "aliases": [
+          "刘汉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 947,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 951,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "五代第四朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-zhou",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后周",
+        "aliases": [
+          "郭周",
+          "柴周"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 951,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 960,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "五代第五朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-yang-wu",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "吴",
+        "aliases": [
+          "杨吴",
+          "南吴"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 902,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 937,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一，常称杨吴。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-southern-tang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南唐",
+        "aliases": [
+          "李唐",
+          "江南国"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 937,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 976,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-wuyue",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "吴越",
+        "aliases": [
+          "钱氏吴越"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 907,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 978,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-min",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "闽",
+        "aliases": [
+          "王闽"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 909,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 945,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-ma-chu",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "楚",
+        "aliases": [
+          "马楚",
+          "南楚"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 907,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 951,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一，常称马楚。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-former-shu",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "前蜀",
+        "aliases": [
+          "王蜀"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 907,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 925,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-shu",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后蜀",
+        "aliases": [
+          "孟蜀"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 934,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 965,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-southern-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南汉",
+        "aliases": [
+          "刘汉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 917,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 971,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-jingnan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "荆南（南平）",
+        "aliases": [
+          "荆南",
+          "南平",
+          "高季兴"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 924,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 963,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-northern-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北汉",
+        "aliases": [
+          "刘汉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 951,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 979,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一，979年为北宋所灭。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-tibet-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "吐蕃",
+        "aliases": [
+          "吐蕃王朝"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 618,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 842,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "青藏高原的重要区域政权；不属于传统中原王朝序列。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "青藏高原的重要区域政权；不属于传统中原王朝序列。"
+    },
+    {
+      "id": "polity-balhae",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "渤海国",
+        "aliases": [
+          "渤海",
+          "海东盛国"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 698,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 926,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "东北地区的重要区域政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-nanzhao",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "南诏",
+        "aliases": [
+          "蒙舍诏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 738,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 902,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "西南地区的重要区域政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-liao",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "辽",
+        "aliases": [
+          "契丹",
+          "辽朝"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 916,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1125,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "契丹建立，与五代、北宋等政权长期并立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-dali",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "大理",
+        "aliases": [
+          "大理国",
+          "后理"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 937,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1253,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "西南地区的重要区域政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-northern-song",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "北宋",
+        "aliases": [
+          "宋朝前期",
+          "赵宋"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 960,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1127,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "宋朝前期，以开封为都，1127年靖康之变后结束。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-western-xia",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "西夏",
+        "aliases": [
+          "大夏",
+          "邦泥定国"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1038,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1227,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "党项建立，与宋、辽、金等政权并立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-jin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "金",
+        "aliases": [
+          "金朝",
+          "女真金"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1115,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1234,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "女真建立，先后与辽、北宋、南宋并立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-southern-song",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "南宋",
+        "aliases": [
+          "宋朝后期",
+          "赵宋"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1127,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1279,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "宋朝后期，以临安为都，1279年崖山海战后结束。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-mongol-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire",
+        "khanate"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "大蒙古国",
+        "aliases": [
+          "蒙古帝国",
+          "蒙古汗国"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1206,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1271,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "1206年成吉思汗建立；1271年忽必烈定国号为元。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-yuan",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "元",
+        "aliases": [
+          "元朝",
+          "大元"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1271,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1368,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "1271年定国号元；1368年退出中原，北元继续存在。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-ming",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "明",
+        "aliases": [
+          "明朝",
+          "大明"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1368,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1644,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "传统主线通常以1644年北京失守、崇祯帝自缢为终点。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-later-jin-jurchen",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后金",
+        "aliases": [
+          "后金国",
+          "女真"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1616,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1636,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "清朝前身，1636年皇太极改国号为清。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "polity-cn-qing",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "清",
+        "aliases": [
+          "清朝",
+          "大清",
+          "后金"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1636,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1912,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "1636年改国号为清，1644年入关；1912年清帝退位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "displayRangeOverride": "1636（1644入关）—1912"
+    },
+    {
+      "id": "polity-cn-southern-ming",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南明",
+        "aliases": [
+          "明朝延续",
+          "弘光",
+          "隆武",
+          "永历"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1644,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1662,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-east-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "明朝宗室在南方建立的延续政权；终止年在不同口径中存在差异。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "明朝宗室在南方建立的延续政权；终止年在不同口径中存在差异。"
+    }
+  ],
+  "regions": [
+    {
+      "id": "region-east-asia",
+      "name": "东亚",
+      "regionKind": "historical-region",
+      "description": "当前中国历史数据使用的宽粒度历史地区；不代表精确疆域或现代主权范围。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-national-museum"
+        }
+      ]
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "relationships": [],
+  "events": [],
+  "sources": [
+    {
+      "id": "source-cn-chronology-table",
+      "title": "中国历史纪年简表",
+      "sourceType": "institutional",
+      "citation": "中国机构编制网：《中国历史纪年简表》。",
+      "publisher": "中国机构编制网",
+      "url": "https://scopsr.gov.cn/zlzx/lsgk/201811/t20181120_326615.html",
+      "accessedAt": "2026-08-06"
+    },
+    {
+      "id": "source-national-museum",
+      "title": "中国古代史资料",
+      "sourceType": "institutional",
+      "citation": "中国国家博物馆：中国古代史相关资料。",
+      "publisher": "中国国家博物馆",
+      "url": "https://www.chnmuseum.cn/",
+      "accessedAt": "2026-08-06"
+    }
+  ]
+}

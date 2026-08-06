@@ -2,133 +2,108 @@
 
 > 世界王朝与帝国时间轴——沿时间线探索世界王朝、帝国与文明的兴衰。
 
-Crownline（王冠纪）是一个面向全球历史的交互式王朝图谱项目，旨在用时间轴呈现不同地区的王朝、主要政权及其并立关系。
-
-> 当前版本仅收录中国历代王朝与主要政权；世界其他地区的数据与跨区域浏览能力将在后续版本中逐步加入。
+Crownline（王冠纪）是一个面向全球历史的交互式王朝图谱项目。当前版本收录中国历代王朝与主要政权；世界其他地区的数据与跨区域浏览能力将在后续版本中逐步加入。
 
 ## 当前功能
 
-- 按七个历史阶段展示中国历代王朝和主要政权
-- 收录主线王朝、主要并立政权、常见历史分期与少量重要区域政权
-- 支持按名称、别名、年份和说明搜索
-- 支持按政权类别筛选
-- 点击时间条查看详细信息
+- 按七个历史阶段展示 73 个中国历代王朝、主要政权与历史分期
+- 支持名称、别名、年份和说明搜索，以及展示类别筛选
+- 点击时间条查看详情；中断或复立政权可显示多个存在区间
+- 搜索与类别状态同步到 URL
 - 自动适配手机、桌面和系统深色模式
-- 无需安装依赖，可直接部署到 GitHub Pages
+- 使用 JSON Schema、TypeScript 类型和语义校验共同保护历史数据
+
+## 技术栈
+
+- React 19：组件和交互状态
+- Vite 8：开发服务器与生产构建
+- TypeScript 7：应用代码、数据类型与命令行类型检查
+- JSON Schema 2020-12 + Ajv：运行时结构校验
+- Vitest + Testing Library：数据规则与界面回归测试
+
+项目使用 TypeScript 7 的 `tsc` 命令行能力，不依赖 TypeScript 旧版的可编程编译器 API。
 
 ## 项目结构
 
 ```text
 .
-├── index.html          # 页面结构与交互逻辑
-├── data/
-│   └── dynasties.js    # 当前历史数据（中国历代王朝与主要政权）
-├── assets/
-│   ├── styles.css      # 页面样式
-│   └── fonts/          # 字体等静态资源
-├── .nojekyll           # 让 GitHub Pages 跳过 Jekyll 处理
-├── .gitignore          # Git 忽略规则
-├── README.md           # 项目说明
-├── ROADMAP.md          # 长远规划与分阶段路线
-└── LICENSE             # MIT 许可证
+├── index.html
+├── src/
+│   ├── app/                  # React 应用状态与页面组合
+│   ├── components/           # 筛选、时间轴与详情组件
+│   ├── data/
+│   │   ├── crownline-data.json
+│   │   └── crownline-data.schema.json
+│   ├── domain/               # 类型、纪年运算、选择器与数据校验
+│   ├── assets/               # 字体资源
+│   └── styles/               # 页面样式
+├── scripts/validate-data.ts  # 独立数据校验入口
+├── tests/                    # 单元与界面回归测试
+├── docs/                     # 数据契约与实施设计
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── ROADMAP.md
+└── LICENSE
 ```
 
-## 本地预览
+## 本地开发
 
-可以直接用浏览器打开 `index.html`。为了更接近 GitHub Pages 的运行环境，也可在项目目录执行：
+需要 Node.js 20.19+ 或 22.12+。
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-然后访问 <http://localhost:8000/>。
+按终端给出的地址访问页面。迁移到 Vite 后不再支持直接用 `file://` 打开 `index.html`。
 
-## 字体资源
-
-页面字体位于 `assets/fonts/`，通过 `@font-face` 从站内加载，避免电脑、iOS 和 Android 因系统字体不同而产生明显的字形差异：
-
-- 正文使用 Noto Sans SC 的页面字符子集。
-- 标题中的英文使用 Source Serif 4，中文使用 Noto Serif SC。
-- 字体均采用 WOFF2 格式，并随附各自的 SIL Open Font License 1.1 许可文件。
-
-当前字体文件按页面已有文案和时间轴数据做了字符子集化。新增文案、朝代名称或其他语言内容时，需要同步重新生成相应字体子集；否则新字符会回退到设备字体。
-
-## 部署到 GitHub Pages
-
-1. 在 GitHub 创建名为 `crownline` 的仓库。
-2. 将本项目提交并推送到仓库的 `main` 分支。
-3. 打开仓库的 **Settings → Pages**。
-4. 在 **Build and deployment** 中选择 **Deploy from a branch**。
-5. 选择 `main` 分支和 `/(root)` 目录，然后保存。
-
-发布后的地址通常为：
-
-```text
-https://<username>.github.io/crownline/
-```
-
-首次上传可使用：
+常用质量命令：
 
 ```bash
-git init
-git add .
-git commit -m "feat: 发布 Crownline 初始版本"
-git branch -M main
-git remote add origin https://github.com/<username>/crownline.git
-git push -u origin main
+npm run validate:data
+npm test
+npm run typecheck
+npm run build
+npm run preview
 ```
 
-请将 `<username>` 替换为你的 GitHub 用户名。执行前请确认目标仓库为空，且没有需要保留的远程提交。
+`npm run build` 的生产文件输出到 `dist/`。
 
 ## 数据维护
 
-当前历史数据位于独立文件：
+历史数据以纯 JSON 存放在 `src/data/crownline-data.json`，机器契约位于 `src/data/crownline-data.schema.json`，TypeScript 领域类型位于 `src/domain/types.ts`。完整的人类可读规则见 [数据契约说明](docs/data-contract.md)。
 
-```text
-data/dynasties.js
+修改数据后至少运行：
+
+```bash
+npm run validate:data
+npm test
 ```
 
-该文件通过 `window.CROWNLINE_ERAS` 导出数据数组，编辑后刷新页面即可检查结果。年代和政权分类存在不同史学口径，新增内容时应尽量记录可靠来源，并区分王朝、并立政权、历史分期与区域政权。
+校验分两层：JSON Schema 负责必填字段、枚举、格式与基本结构；TypeScript 语义校验负责重复 ID、无效或相邻区间、悬空引用、分类矛盾、争议口径缺少说明等跨记录规则。
 
-为了支持世界历史，未来的数据模型至少需要补充：
+公元前年份使用负整数，公元后使用正整数，不存在公元 0 年；区间两端均包含。西秦、唐等中断条目使用多个 `existencePeriods`，而不是把中断期误算为连续存续。
 
-- 稳定的条目 ID，以及本地名称、中文名称和别名
-- 所属地区、文化圈与现代地理范围
-- 起止年份、年代精度和不确定性说明
-- 政权关系、前身与继承者
-- 资料来源及最后校订日期
+## 字体资源
 
-## 技术路线与 Web 框架评估
+页面字体位于 `src/assets/fonts/`，通过 `@font-face` 从站内加载：
 
-当前阶段**不建议立即引入 Web 框架**。现有页面规模较小，搜索、筛选和详情展示均可由原生 HTML、CSS、JavaScript 清晰完成；继续保持零依赖可以降低维护成本，并让 GitHub Pages 部署保持简单。
+- 正文使用 Noto Sans SC 页面字符子集
+- 拉丁标题使用 Source Serif 4
+- 中文标题使用 Noto Serif SC
 
-建议按以下节奏演进：
+字体均为 WOFF2，并附 SIL Open Font License 1.1。新增页面文案、名称或语言时，需要检查并重新生成相应字符子集，避免新字符回退到设备字体。
 
-1. **现在：保持静态单页。** 优先完善数据、史料来源和展示规则。
-2. **数据增长后：继续拆分职责。** 历史数据已拆分为独立 JavaScript 数据文件；下一步可将交互脚本从 `index.html` 拆出；可引入 Vite 和 TypeScript，但不必同时引入 UI 框架。
-3. **交互复杂后：再引入框架。** 当项目需要跨地区对比、多语言、多页面路由、复杂筛选状态、可复用图表组件或内容编辑后台时，再迁移到 React（或团队更熟悉的 Vue）更划算。
+## 部署到 GitHub Pages
 
-如果未来采用单页应用路由，需要额外处理 GitHub Pages 的子路径和刷新回退问题；在此之前，保持当前静态架构是风险最低的方案。
+先执行生产构建，再将 `dist/` 作为 Pages 站点内容发布。`vite.config.ts` 使用相对资源基路径，可适配 `https://<username>.github.io/crownline/` 这类项目子路径。
+
+推荐使用 GitHub Actions 执行 `npm ci && npm run build`，并上传 `dist/` 作为 Pages artifact；不要再把仓库根目录当作可直接发布的静态站点。
 
 ## 发展路线
 
-长远产品规划与分阶段落地见 [ROADMAP.md](ROADMAP.md)。摘要如下：
-
-**已完成**
-
-- [x] 中国王朝与主要政权时间轴
-- [x] 将历史数据与页面代码分离
-
-**规划中的核心能力**
-
-1. **地区范围** — 仅看中国 / 自选地区 / 全球已收录
-2. **年份操控** — 手动输入、增减年份，并提供滑杆滑动选年
-3. **当时存在** — 按所选地区与年份，列出该时刻存在的王朝或政权
-4. **政权详情** — 点击政权查看说明、来源，并按时间显示当时在位的统治者
-5. **政权对比与历史关系** — 选择两个政权，查看时间重叠及已校订的战争、外交、疆域接触等关系
-6. **视图模式** — 线条模式（时间轴）与地图模式切换
-
-**建议落地顺序：** 先建立稳定 ID、多段存在区间、年代口径、来源与校验等数据契约 → 完成年份操控与「当时存在」→ 用少量外部数据验证地区范围 → 接入统治者 → 分两步完成双政权时间对比与有来源的历史关系 → 最后加入共享状态的地图模式。质量门禁贯穿所有阶段，全球数据与多语言按已验证的模型持续扩展。
+长远规划见 [ROADMAP.md](ROADMAP.md)。阶段 0.5 已建立稳定 ID、多段存在区间、年代口径、地区职责、人物/任期/关系/事件/来源模型与自动校验。下一阶段将实现全局年份状态和“当时存在”的时间点浏览。
 
 ## 数据口径
 

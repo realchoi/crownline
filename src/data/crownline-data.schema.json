@@ -1,0 +1,358 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crownline.example/schema/crownline-data-v1.json",
+  "title": "Crownline Data Contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "chronologyPolicy",
+    "timelineSections",
+    "entities",
+    "regions",
+    "persons",
+    "reigns",
+    "relationships",
+    "events",
+    "sources"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "chronologyPolicy": { "$ref": "#/$defs/chronologyPolicy" },
+    "timelineSections": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/timelineSection" }
+    },
+    "entities": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/entity" }
+    },
+    "regions": { "type": "array", "items": { "$ref": "#/$defs/region" } },
+    "persons": { "type": "array", "items": { "$ref": "#/$defs/person" } },
+    "reigns": { "type": "array", "items": { "$ref": "#/$defs/reign" } },
+    "relationships": { "type": "array", "items": { "$ref": "#/$defs/relationship" } },
+    "events": { "type": "array", "items": { "$ref": "#/$defs/event" } },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+    },
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "historicalYear": {
+      "type": "integer",
+      "not": { "const": 0 }
+    },
+    "historicalDate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["year", "precision"],
+      "properties": {
+        "year": { "$ref": "#/$defs/historicalYear" },
+        "precision": {
+          "enum": ["exact", "circa", "decade", "century", "unknown"]
+        }
+      }
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "$ref": "#/$defs/historicalDate" },
+        "end": { "$ref": "#/$defs/historicalDate" }
+      }
+    },
+    "names": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "aliases"],
+      "properties": {
+        "primary": { "$ref": "#/$defs/nonEmptyString" },
+        "aliases": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        },
+        "local": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "sourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId"],
+      "properties": {
+        "sourceId": { "$ref": "#/$defs/id" },
+        "locator": { "$ref": "#/$defs/nonEmptyString" },
+        "note": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/sourceRef" }
+    },
+    "chronologyPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["calendar", "hasYearZero", "intervalBoundary", "yearSelection"],
+      "properties": {
+        "calendar": { "const": "historical-year" },
+        "hasYearZero": { "const": false },
+        "intervalBoundary": { "const": "inclusive" },
+        "yearSelection": { "const": "exists-at-any-time-during-year" }
+      }
+    },
+    "alternativeChronology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "existencePeriods", "note", "sourceRefs"],
+      "properties": {
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "existencePeriods": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/interval" }
+        },
+        "note": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "entityKind",
+        "polityForms",
+        "displayCategory",
+        "names",
+        "existencePeriods",
+        "chronologyStatus",
+        "historicalRegionIds",
+        "culturalSphereIds",
+        "modernAreaIds",
+        "description",
+        "sourceRefs",
+        "confidence"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "entityKind": { "enum": ["polity", "historical-period"] },
+        "polityForms": {
+          "type": "array",
+          "items": { "enum": ["dynasty", "empire", "kingdom", "khanate", "state", "other"] },
+          "uniqueItems": true
+        },
+        "displayCategory": { "enum": ["mainline", "contemporary", "regional", "context"] },
+        "names": { "$ref": "#/$defs/names" },
+        "existencePeriods": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/interval" }
+        },
+        "chronologyStatus": { "enum": ["accepted", "disputed"] },
+        "chronologyNote": { "$ref": "#/$defs/nonEmptyString" },
+        "alternativeChronologies": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/alternativeChronology" }
+        },
+        "displayRangeOverride": { "$ref": "#/$defs/nonEmptyString" },
+        "historicalRegionIds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "culturalSphereIds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "modernAreaIds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "description": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" },
+        "confidence": { "enum": ["high", "medium", "low", "disputed"] },
+        "confidenceNote": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "timelineSection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "displayRange", "range", "entityIds"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "displayRange": { "$ref": "#/$defs/nonEmptyString" },
+        "range": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["startYear", "endYear"],
+          "properties": {
+            "startYear": { "$ref": "#/$defs/historicalYear" },
+            "endYear": { "$ref": "#/$defs/historicalYear" }
+          }
+        },
+        "entityIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "regionKind", "description", "sourceRefs"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "regionKind": { "enum": ["historical-region", "cultural-sphere", "modern-area"] },
+        "description": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "person": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "names", "description", "sourceRefs"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "names": { "$ref": "#/$defs/names" },
+        "description": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "reign": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "personId",
+        "polityId",
+        "titles",
+        "role",
+        "periods",
+        "chronologyStatus",
+        "sourceRefs",
+        "confidence"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "personId": { "$ref": "#/$defs/id" },
+        "polityId": { "$ref": "#/$defs/id" },
+        "titles": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "role": { "enum": ["ruler", "co-ruler", "regent", "contender"] },
+        "periods": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/interval" }
+        },
+        "chronologyStatus": { "enum": ["accepted", "disputed"] },
+        "note": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" },
+        "confidence": { "enum": ["high", "medium", "low", "disputed"] },
+        "confidenceNote": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "participant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entityId", "role"],
+      "properties": {
+        "entityId": { "$ref": "#/$defs/id" },
+        "role": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "participants", "periods", "summary", "eventIds", "sourceRefs", "confidence"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "type": { "enum": ["war", "alliance", "diplomacy", "tribute", "vassalage", "trade", "cultural-exchange"] },
+        "participants": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/participant" }
+        },
+        "periods": { "type": "array", "items": { "$ref": "#/$defs/interval" } },
+        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "eventIds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" },
+        "confidence": { "enum": ["high", "medium", "low", "disputed"] },
+        "confidenceNote": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "title", "periods", "participantEntityIds", "regionIds", "summary", "sourceRefs", "confidence"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "type": { "enum": ["foundation", "dissolution", "succession", "battle", "treaty", "diplomatic", "other"] },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "periods": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/interval" }
+        },
+        "participantEntityIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "regionIds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" },
+        "confidence": { "enum": ["high", "medium", "low", "disputed"] },
+        "confidenceNote": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "sourceType", "citation"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceType": { "enum": ["primary", "secondary", "tertiary", "dataset", "institutional"] },
+        "citation": { "$ref": "#/$defs/nonEmptyString" },
+        "authors": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "publisher": { "$ref": "#/$defs/nonEmptyString" },
+        "url": { "$ref": "#/$defs/nonEmptyString" },
+        "accessedAt": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        }
+      }
+    }
+  }
+}
