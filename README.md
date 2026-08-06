@@ -37,6 +37,16 @@ python3 -m http.server 8000
 
 然后访问 <http://localhost:8000/>。
 
+## 字体资源
+
+页面字体位于 `assets/fonts/`，通过 `@font-face` 从站内加载，避免电脑、iOS 和 Android 因系统字体不同而产生明显的字形差异：
+
+- 正文使用 Noto Sans SC 的页面字符子集。
+- 标题中的英文使用 Source Serif 4，中文使用 Noto Serif SC。
+- 字体均采用 WOFF2 格式，并随附各自的 SIL Open Font License 1.1 许可文件。
+
+当前字体文件按页面已有文案和时间轴数据做了字符子集化。新增文案、朝代名称或其他语言内容时，需要同步重新生成相应字体子集；否则新字符会回退到设备字体。
+
 ## 部署到 GitHub Pages
 
 1. 在 GitHub 创建名为 `crownline` 的仓库。

@@ -12,7 +12,38 @@
   <meta name="twitter:card" content="summary">
   <title>Crownline · 王冠纪｜世界王朝与帝国时间轴</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238b2f2f'/%3E%3Cpath d='M14 18h36v6H14zm5 11h26v6H19zm-5 11h36v6H14z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preload" href="./assets/fonts/noto-sans-sc-page-400-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/noto-serif-sc-display-700.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    /* 可变字体（wght 100–900），按范围声明后各档字重才能精确实例化，
+       否则 650/750 等中间字重会全部塌陷到 400 或 700 */
+    @font-face {
+      font-family: "Crownline Sans SC";
+      src: url("./assets/fonts/noto-sans-sc-page-400-700.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
+    /* 可变字体（wght 200–900 + opsz 8–60），配合 font-optical-sizing: auto
+       在大字号下自动切换 Display 光学尺寸，衬线更舒展 */
+    @font-face {
+      font-family: "Crownline Latin Serif";
+      src: url("./assets/fonts/source-serif-4-latin-var.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 200 900;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Crownline Song SC";
+      src: url("./assets/fonts/noto-serif-sc-display-700.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+
     :root {
       color-scheme: light dark;
       --page: #f5f0e8;
@@ -33,7 +64,9 @@
       --radius-md: 16px;
       --radius-sm: 10px;
       --label-column: 166px;
-      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-body: "Crownline Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      --font-display: "Crownline Latin Serif", "Crownline Song SC", "Songti SC", "STSong", "SimSun", serif;
+      font-family: var(--font-body);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -126,7 +159,10 @@
     h1 {
       max-width: 880px;
       margin-bottom: 18px;
-      font-family: "Songti SC", "STSong", "SimSun", serif;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-optical-sizing: auto;
+      font-synthesis: none;
       font-size: clamp(2.4rem, 6vw, 5.4rem);
       line-height: 1.08;
       letter-spacing: -0.035em;
@@ -139,6 +175,10 @@
       font-size: clamp(1.95rem, 7.6vw, 5.4rem);
       white-space: nowrap;
     }
+
+    /* 拉丁字形比中文宋体窄，-0.035em 的中文紧排幅度会让英文显得瘦高拥挤，
+       单独放宽一档 */
+    .brand-latin { letter-spacing: -0.01em; }
 
     .brand-zh {
       font-size: 0.88em;
@@ -329,7 +369,10 @@
 
     .stage-title {
       margin: 0;
-      font-family: "Songti SC", "STSong", "SimSun", serif;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-optical-sizing: auto;
+      font-synthesis: none;
       font-size: clamp(1.35rem, 3vw, 2rem);
     }
 
@@ -501,7 +544,10 @@
 
     .dialog-title {
       margin-bottom: 4px;
-      font-family: "Songti SC", "STSong", "SimSun", serif;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-optical-sizing: auto;
+      font-synthesis: none;
       font-size: 2rem;
       line-height: 1.2;
     }
@@ -513,17 +559,35 @@
     }
 
     .icon-button {
-      display: grid;
+      position: relative;
       flex: none;
-      place-items: center;
       width: 40px;
       height: 40px;
       border: 1px solid var(--border);
       border-radius: 50%;
       background: var(--surface-soft);
       color: var(--text);
-      font-size: 1.3rem;
     }
+
+    /* 不用文本字符 "×"：其字形悬在基线上方，行盒居中后视觉偏下，
+       且字体子集未收录该字符、各设备回退字体不一。几何绘制保证绝对居中 */
+    .icon-button::before, .icon-button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 1.5px;
+      border-radius: 1px;
+      background: currentColor;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .icon-button::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+    /* dialog-head 顶对齐时，40px 的按钮与 28px 的类别徽章顶对齐，
+       圆心会比徽章中心低 6px；上移半个高差让两者中心对齐 */
+    .dialog-head .icon-button { margin-top: -6px; }
 
     .detail-grid {
       display: grid;
@@ -612,7 +676,7 @@
   <header class="hero site-shell">
     <p class="eyebrow">交互式王朝图谱</p>
     <h1>
-      <span class="site-title-brand">Crownline<span class="brand-dot">·</span><span class="brand-zh">王冠纪</span></span>
+      <span class="site-title-brand"><span class="brand-latin">Crownline</span><span class="brand-dot">·</span><span class="brand-zh">王冠纪</span></span>
       <span class="site-title-sub">世界王朝与帝国时间轴</span>
     </h1>
     <p class="hero-copy">
@@ -696,7 +760,7 @@
           <h2 class="dialog-title" id="detail-name"></h2>
           <p class="dialog-years" id="detail-years"></p>
         </div>
-        <button class="icon-button" id="close-detail" type="button" aria-label="关闭详情">×</button>
+        <button class="icon-button" id="close-detail" type="button" aria-label="关闭详情"></button>
       </div>
       <p id="detail-note"></p>
       <div class="detail-grid">
