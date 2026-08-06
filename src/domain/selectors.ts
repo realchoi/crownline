@@ -1,4 +1,4 @@
-import { formatPeriods } from "./chronology";
+import { formatPeriods, isYearInPeriods } from "./chronology";
 import type {
   CrownlineData,
   DisplayCategory,
@@ -13,6 +13,18 @@ export type CategoryFilter = DisplayCategory | "all";
 export interface MatchedEntity {
   entity: HistoricalEntity;
   section: TimelineSection;
+}
+
+export interface EntityFilters {
+  query: string;
+  category: CategoryFilter;
+  year?: number;
+}
+
+export interface BrowseResults {
+  all: MatchedEntity[];
+  polities: MatchedEntity[];
+  historicalPeriods: MatchedEntity[];
 }
 
 /** 统一搜索大小写、空白和常见中英文标点。 */
@@ -56,4 +68,25 @@ export function filterEntities(
   });
 
   return matches;
+}
+
+/**
+ * 组合搜索、类别和可选年份筛选，并将真实政权与历史分期明确分区。
+ * 未提供年份时保持全览模式的原有结果。
+ */
+export function selectBrowseResults(
+  data: CrownlineData,
+  filters: EntityFilters
+): BrowseResults {
+  const filtered = filterEntities(data, filters.query, filters.category);
+  const selectedYear = filters.year;
+  const all = selectedYear === undefined
+    ? filtered
+    : filtered.filter(({ entity }) => isYearInPeriods(selectedYear, entity.existencePeriods));
+
+  return {
+    all,
+    polities: all.filter(({ entity }) => entity.entityKind === "polity"),
+    historicalPeriods: all.filter(({ entity }) => entity.entityKind === "historical-period")
+  };
 }

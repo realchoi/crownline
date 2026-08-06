@@ -76,7 +76,7 @@ export function DetailDialog({ entity, sectionTitle, onClose }: DetailDialogProp
             <strong>{sectionTitle}</strong>
           </div>
           <div className="detail-card">
-            <span>约持续</span>
+            <span>持续时间</span>
             <strong>{duration > 1 ? `约 ${duration} 年` : "不足 1 年"}</strong>
           </div>
         </div>

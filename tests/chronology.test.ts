@@ -7,6 +7,7 @@ import {
   fromOrdinal,
   isYearInPeriods,
   nextHistoricalYear,
+  parseHistoricalYear,
   previousHistoricalYear,
   toOrdinal
 } from "../src/domain/chronology";
@@ -63,6 +64,16 @@ describe("多段存在区间", () => {
 });
 
 describe("传统纪年显示", () => {
+  it("解析常见公元前写法并拒绝公元 0 年和小数", () => {
+    expect(parseHistoricalYear("前221")).toBe(-221);
+    expect(parseHistoricalYear("公元前 221")).toBe(-221);
+    expect(parseHistoricalYear("-221")).toBe(-221);
+    expect(parseHistoricalYear("公元 221")).toBe(221);
+    expect(parseHistoricalYear("0")).toBeNull();
+    expect(parseHistoricalYear("1.5")).toBeNull();
+    expect(parseHistoricalYear("前")).toBeNull();
+  });
+
   it("格式化公元前、公元后和约年", () => {
     expect(formatHistoricalYear({ year: -221, precision: "exact" })).toBe("前221");
     expect(formatHistoricalYear({ year: -2070, precision: "circa" })).toBe("约前2070");

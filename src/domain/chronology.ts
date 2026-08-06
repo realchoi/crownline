@@ -39,6 +39,23 @@ export function previousHistoricalYear(year: number): number {
   return year === 1 ? -1 : year - 1;
 }
 
+/**
+ * 解析用户输入的历史年份。
+ * 支持“前221”“公元前 221”“-221”“221”和“公元 221”。
+ */
+export function parseHistoricalYear(value: string): number | null {
+  const normalized = value.trim();
+  const beforeCommonEra = normalized.match(/^(?:公元前|前)\s*(\d+)$/);
+  const commonEra = normalized.match(/^(?:公元\s*)?(\d+)$/);
+  const signedBeforeCommonEra = normalized.match(/^-(\d+)$/);
+  const digits = beforeCommonEra?.[1] ?? signedBeforeCommonEra?.[1] ?? commonEra?.[1];
+  if (!digits) return null;
+
+  const absoluteYear = Number(digits);
+  if (!Number.isSafeInteger(absoluteYear) || absoluteYear === 0) return null;
+  return beforeCommonEra || signedBeforeCommonEra ? -absoluteYear : absoluteYear;
+}
+
 /** 判断实体是否在指定年份内的任一时刻存在。 */
 export function isYearInPeriods(year: number, periods: HistoricalInterval[]): boolean {
   const ordinal = toOrdinal(year);

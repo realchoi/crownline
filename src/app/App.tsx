@@ -3,75 +3,50 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { DetailDialog } from "../components/DetailDialog";
 import { FilterPanel } from "../components/FilterPanel";
 import { Timeline } from "../components/Timeline";
-import { filterEntities, type CategoryFilter } from "../domain/selectors";
-import type { CrownlineData, DisplayCategory } from "../domain/types";
+import { TimepointView } from "../components/TimepointView";
+import {
+  getHistoricalYearBounds,
+  readBrowseState,
+  writeBrowseState,
+  type BrowseState
+} from "../domain/browseState";
+import { filterEntities, selectBrowseResults } from "../domain/selectors";
+import type { CrownlineData } from "../domain/types";
 
 /** 应用根组件接收的已校验数据。 */
 interface AppProps {
   data: CrownlineData;
 }
 
-/** 当前版本允许从 URL 恢复的筛选类别。 */
-const VALID_CATEGORIES = new Set<CategoryFilter>([
-  "all",
-  "mainline",
-  "contemporary",
-  "regional",
-  "context"
-]);
-
-/** 兼容旧静态页面已经分享出去的类别参数。 */
-const LEGACY_CATEGORY_MAP: Record<string, DisplayCategory> = {
-  main: "mainline",
-  parallel: "contemporary",
-  period: "context",
-  regional: "regional"
-};
-
-/** 从当前 URL 读取并清洗初始筛选状态。 */
-function initialFilters(): { query: string; category: CategoryFilter } {
-  const params = new URLSearchParams(window.location.search);
-  const rawCategory = params.get("type") ?? "all";
-  const mappedCategory = LEGACY_CATEGORY_MAP[rawCategory] ?? rawCategory;
-  return {
-    query: params.get("q") ?? "",
-    category: VALID_CATEGORIES.has(mappedCategory as CategoryFilter)
-      ? (mappedCategory as CategoryFilter)
-      : "all"
-  };
-}
-
 /** 组合筛选状态、时间轴、详情弹窗和 URL 同步的应用根组件。 */
 export function App({ data }: AppProps) {
-  const initial = useMemo(initialFilters, []);
-  const [query, setQuery] = useState(initial.query);
-  const [category, setCategory] = useState<CategoryFilter>(initial.category);
+  const yearBounds = useMemo(() => getHistoricalYearBounds(data), [data]);
+  const [browseState, setBrowseState] = useState<BrowseState>(() => {
+    return readBrowseState(window.location.search, yearBounds);
+  });
   const [selectedEntityId, setSelectedEntityId] = useState<string | null>(null);
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
-  const matches = useMemo(() => filterEntities(data, query, category), [data, query, category]);
+  const results = useMemo(() => {
+    const filters = {
+      query: browseState.query,
+      category: browseState.category
+    };
+    return browseState.mode === "point"
+      ? selectBrowseResults(data, { ...filters, year: browseState.year })
+      : selectBrowseResults(data, filters);
+  }, [browseState, data]);
+  const allMatches = useMemo(() => filterEntities(data, "", "all"), [data]);
   // 即使筛选状态变化，也要允许已打开的详情继续读取完整实体记录。
   const selectedMatch = selectedEntityId
-    ? matches.find(({ entity }) => entity.id === selectedEntityId) ??
-      data.timelineSections
-        .flatMap((section) => {
-          return data.entities
-            .filter((entity) => section.entityIds.includes(entity.id))
-            .map((entity) => ({ entity, section }));
-        })
-        .find(({ entity }) => entity.id === selectedEntityId)
+    ? allMatches.find(({ entity }) => entity.id === selectedEntityId)
     : undefined;
-  const visibleSections = new Set(matches.map(({ section }) => section.id)).size;
+  const visibleSections = new Set(results.all.map(({ section }) => section.id)).size;
 
   useEffect(() => {
-    // 使用 replaceState 避免用户每输入一个字符就新增一条浏览器历史。
-    const params = new URLSearchParams(window.location.search);
-    if (query.trim()) params.set("q", query.trim());
-    else params.delete("q");
-    if (category !== "all") params.set("type", category);
-    else params.delete("type");
+    const params = writeBrowseState(browseState, yearBounds, window.location.search);
     const next = `${window.location.pathname}${params.toString() ? `?${params}` : ""}${window.location.hash}`;
     window.history.replaceState(null, "", next);
-  }, [category, query]);
+  }, [browseState, yearBounds]);
 
   useEffect(() => {
     // 等待原生 dialog 卸载后再恢复焦点，避免浏览器默认焦点处理覆盖结果。
@@ -127,13 +102,19 @@ export function App({ data }: AppProps) {
 
       <main id="main-content" className="site-shell">
         <FilterPanel
-          query={query}
-          category={category}
-          onQueryChange={setQuery}
-          onCategoryChange={setCategory}
+          mode={browseState.mode}
+          year={browseState.year}
+          yearBounds={yearBounds}
+          query={browseState.query}
+          category={browseState.category}
+          onModeChange={(mode) => setBrowseState((current) => ({ ...current, mode }))}
+          onYearChange={(year) => setBrowseState((current) => ({ ...current, year }))}
+          onQueryChange={(query) => setBrowseState((current) => ({ ...current, query }))}
+          onCategoryChange={(category) => {
+            setBrowseState((current) => ({ ...current, category }));
+          }}
           onClear={() => {
-            setQuery("");
-            setCategory("all");
+            setBrowseState((current) => ({ ...current, query: "", category: "all" }));
           }}
         />
 
@@ -146,12 +127,30 @@ export function App({ data }: AppProps) {
           </p>
         </aside>
 
-        <div className="results-line">
-          <span>{`显示 ${matches.length} / ${data.entities.length} 个条目，涉及 ${visibleSections} 个历史阶段`}</span>
-          <span>点击任意时间条查看说明</span>
+        <div className="results-line" role="status" aria-atomic="true">
+          {browseState.mode === "overview" ? (
+            <>
+              <span>{`显示 ${results.all.length} / ${data.entities.length} 个条目，涉及 ${visibleSections} 个历史阶段`}</span>
+              <span>点击任意时间条查看说明</span>
+            </>
+          ) : (
+            <>
+              <span>{`显示 ${results.polities.length} 个政权，另有 ${results.historicalPeriods.length} 条历史背景`}</span>
+              <span>点击任意条目查看说明</span>
+            </>
+          )}
         </div>
 
-        <Timeline data={data} matches={matches} onSelect={openDetail} />
+        {browseState.mode === "overview" ? (
+          <Timeline data={data} matches={results.all} onSelect={openDetail} />
+        ) : (
+          <TimepointView
+            year={browseState.year}
+            polities={results.polities}
+            historicalPeriods={results.historicalPeriods}
+            onSelect={openDetail}
+          />
+        )}
 
         <footer className="footer-note">
           <p>
