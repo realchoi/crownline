@@ -56,5 +56,8 @@ htmlcov/
 playwright-report/
 test-results/
 
+# Python（字体工具本地虚拟环境）
+.venv-fonts/
+
 # Local-only files
 *.local

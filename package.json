@@ -8,6 +8,8 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "validate:data": "node --import tsx scripts/validate-data.ts",
+    "check:fonts": "bash scripts/font-venv.sh scripts/check-font-subset.py",
+    "regen:fonts": "bash scripts/font-venv.sh scripts/regen-font-subsets.py",
     "build": "npm run typecheck && vite build",
     "preview": "vite preview"
   },

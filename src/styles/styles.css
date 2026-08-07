@@ -146,13 +146,24 @@ a:hover { color: var(--accent-hover); }
 
 h1, h2, h3, p { margin-top: 0; }
 
-h1 {
-  max-width: 880px;
-  margin-bottom: 18px;
+/* 全站标题排版的唯一规则：拉丁字符走 Source Serif 4、中文走 Noto Serif SC；
+   关闭合成加粗与合成斜体，光学尺寸随字号自动匹配，避免各处标题各自声明逐渐漂移 */
+h1,
+.year-current output,
+.stage-title,
+.timepoint-heading h2,
+.timepoint-section-heading h3,
+.timepoint-card-name,
+.dialog-title {
   font-family: var(--font-display);
   font-weight: 700;
   font-optical-sizing: auto;
   font-synthesis: none;
+}
+
+h1 {
+  max-width: 880px;
+  margin-bottom: 18px;
   font-size: clamp(2.4rem, 6vw, 5.4rem);
   line-height: 1.08;
   letter-spacing: -0.035em;
@@ -282,9 +293,7 @@ main { padding-bottom: 60px; }
 
 .year-current output {
   color: var(--accent);
-  font-family: var(--font-display);
   font-size: 1.08rem;
-  font-weight: 700;
   font-variant-numeric: tabular-nums;
   line-height: 1.2;
 }
@@ -642,10 +651,6 @@ main { padding-bottom: 60px; }
 
 .stage-title {
   margin: 0;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-optical-sizing: auto;
-  font-synthesis: none;
   font-size: clamp(1.35rem, 3vw, 2rem);
 }
 
@@ -800,10 +805,7 @@ main { padding-bottom: 60px; }
 
 .timepoint-heading h2 {
   margin-bottom: 8px;
-  font-family: var(--font-display);
   font-size: clamp(1.8rem, 5vw, 3.4rem);
-  font-optical-sizing: auto;
-  font-weight: 700;
   line-height: 1.15;
 }
 
@@ -841,9 +843,7 @@ main { padding-bottom: 60px; }
 
 .timepoint-section-heading h3 {
   margin: 0;
-  font-family: var(--font-display);
   font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 700;
 }
 
 .timepoint-section-heading > span {
@@ -903,9 +903,7 @@ main { padding-bottom: 60px; }
 }
 
 .timepoint-card-name {
-  font-family: var(--font-display);
   font-size: 1.35rem;
-  font-weight: 700;
   line-height: 1.25;
 }
 
@@ -1024,10 +1022,6 @@ dialog::backdrop {
 
 .dialog-title {
   margin-bottom: 4px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-optical-sizing: auto;
-  font-synthesis: none;
   font-size: 2rem;
   line-height: 1.2;
 }

@@ -98,11 +98,17 @@ npm test
 
 页面字体位于 `src/assets/fonts/`，通过 `@font-face` 从站内加载：
 
-- 正文使用 Noto Sans SC 页面字符子集
-- 拉丁标题使用 Source Serif 4
-- 中文标题使用 Noto Serif SC
+- 正文使用 Noto Sans SC 页面字符子集（可变字重 100–900）
+- 拉丁标题使用 Source Serif 4（含数字，可变字重与光学尺寸）
+- 中文标题使用 Noto Serif SC（700）
 
-字体均为 WOFF2，并附 SIL Open Font License 1.1。新增页面文案、名称或语言时，需要检查并重新生成相应字符子集，避免新字符回退到设备字体。
+字体均为 WOFF2，并附 SIL Open Font License 1.1。新增页面文案、名称或语言时，需要检查并重新生成相应字符子集，避免新字符回退到设备字体、与相邻文字混排两套字体。修改文案或数据后请运行：
+
+```bash
+npm run check:fonts
+```
+
+只需系统装有 Python 3：首次运行会自动在项目内创建 `.venv-fonts/` 虚拟环境并安装 fonttools 与 brotli，无需手动 pip。检查失败时运行 `npm run regen:fonts`，以全量字体重新生成三个子集（脚本会自动下载字体源文件）；`names.local` 等外文原名暂未渲染，不在中文字体子集的覆盖范围内。
 
 ## 部署到 GitHub Pages
 
