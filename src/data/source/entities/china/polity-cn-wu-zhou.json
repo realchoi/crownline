@@ -1,0 +1,48 @@
+{
+  "order": 430,
+  "entities": [
+    {
+      "id": "polity-cn-wu-zhou",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "武周",
+        "aliases": [
+          "周",
+          "武则天政权"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 690,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 705,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "武则天建立，处于唐朝中断期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

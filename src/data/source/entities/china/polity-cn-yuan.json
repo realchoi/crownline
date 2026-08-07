@@ -1,0 +1,507 @@
+{
+  "order": 690,
+  "entities": [
+    {
+      "id": "polity-cn-yuan",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "元",
+        "aliases": [
+          "元朝",
+          "大元"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1271,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1368,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "1271年定国号元；1368年退出中原，北元继续存在。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-yuan-shizu",
+      "names": {
+        "primary": "元世祖",
+        "aliases": [
+          "忽必烈"
+        ]
+      },
+      "description": "元世祖，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-chengzong",
+      "names": {
+        "primary": "元成宗",
+        "aliases": []
+      },
+      "description": "元成宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-wuzong",
+      "names": {
+        "primary": "元武宗",
+        "aliases": []
+      },
+      "description": "元武宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-renzong",
+      "names": {
+        "primary": "元仁宗",
+        "aliases": []
+      },
+      "description": "元仁宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-yingzong",
+      "names": {
+        "primary": "元英宗",
+        "aliases": []
+      },
+      "description": "元英宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-taiding",
+      "names": {
+        "primary": "泰定帝",
+        "aliases": []
+      },
+      "description": "泰定帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-tianshun",
+      "names": {
+        "primary": "天顺帝",
+        "aliases": []
+      },
+      "description": "天顺帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-wenzong",
+      "names": {
+        "primary": "元文宗",
+        "aliases": []
+      },
+      "description": "元文宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-mingzong",
+      "names": {
+        "primary": "元明宗",
+        "aliases": []
+      },
+      "description": "元明宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-ningzong",
+      "names": {
+        "primary": "元宁宗",
+        "aliases": []
+      },
+      "description": "元宁宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yuan-shun",
+      "names": {
+        "primary": "元顺帝",
+        "aliases": [
+          "妥懽帖睦尔"
+        ]
+      },
+      "description": "元顺帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-yuan-shizu",
+      "personId": "person-cn-yuan-shizu",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1271,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1294,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-yuan-chengzong",
+      "personId": "person-cn-yuan-chengzong",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1294,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1307,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-yuan-wuzong",
+      "personId": "person-cn-yuan-wuzong",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1307,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1311,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-yuan-renzong",
+      "personId": "person-cn-yuan-renzong",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1311,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1320,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-yuan-yingzong",
+      "personId": "person-cn-yuan-yingzong",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1320,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1323,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-yuan-taiding",
+      "personId": "person-cn-yuan-taiding",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1323,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1328,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-yuan-tianshun",
+      "personId": "person-cn-yuan-tianshun",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1328,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1328,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "disputed",
+      "note": "两都之战中的争位君主，与元文宗的即位口径并存。",
+      "confidenceNote": "两都之战中的争位君主，与元文宗的即位口径并存。"
+    },
+    {
+      "id": "reign-cn-yuan-wenzong",
+      "personId": "person-cn-yuan-wenzong",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1328,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1332,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-yuan-mingzong",
+      "personId": "person-cn-yuan-mingzong",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1329,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1329,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-yuan-ningzong",
+      "personId": "person-cn-yuan-ningzong",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1332,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1332,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-yuan-shun",
+      "personId": "person-cn-yuan-shun",
+      "polityId": "polity-cn-yuan",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1333,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1368,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

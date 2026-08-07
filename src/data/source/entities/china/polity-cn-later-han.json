@@ -1,0 +1,47 @@
+{
+  "order": 470,
+  "entities": [
+    {
+      "id": "polity-cn-later-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后汉",
+        "aliases": [
+          "刘汉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 947,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 951,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "五代第四朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

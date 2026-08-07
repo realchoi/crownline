@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 3,
+  "chronologyPolicy": {
+    "calendar": "historical-year",
+    "hasYearZero": false,
+    "intervalBoundary": "inclusive",
+    "yearSelection": "exists-at-any-time-during-year"
+  }
+}

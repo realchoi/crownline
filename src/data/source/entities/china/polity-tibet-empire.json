@@ -1,0 +1,48 @@
+{
+  "order": 590,
+  "entities": [
+    {
+      "id": "polity-tibet-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "吐蕃",
+        "aliases": [
+          "吐蕃王朝"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 618,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 842,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "青藏高原的重要区域政权；不属于传统中原王朝序列。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "青藏高原的重要区域政权；不属于传统中原王朝序列。"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

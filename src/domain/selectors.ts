@@ -1,7 +1,7 @@
 import { formatPeriods, isYearInPeriods } from "./chronology";
 import { entityMatchesRegionScope, type RegionScope } from "./regionScope";
 import type {
-  CrownlineData,
+  BrowseData,
   DisplayCategory,
   HistoricalEntity,
   TimelineSection
@@ -31,7 +31,7 @@ export interface BrowseResults {
 }
 
 function searchableText(
-  data: CrownlineData,
+  data: BrowseData,
   entity: HistoricalEntity,
   section?: TimelineSection
 ): string {
@@ -64,7 +64,7 @@ function normalizeText(value: string): string {
  * 返回值保持时间轴阶段及阶段内部原有顺序，避免筛选后视觉位置跳动。
  */
 export function filterEntities(
-  data: CrownlineData,
+  data: BrowseData,
   query: string,
   category: CategoryFilter
 ): MatchedEntity[] {
@@ -92,7 +92,7 @@ export function filterEntities(
  * 未提供年份时保持全览模式的原有结果。
  */
 export function selectBrowseResults(
-  data: CrownlineData,
+  data: BrowseData,
   filters: EntityFilters
 ): BrowseResults {
   const normalizedQuery = normalizeText(filters.query);

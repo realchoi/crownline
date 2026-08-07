@@ -1,0 +1,47 @@
+{
+  "order": 580,
+  "entities": [
+    {
+      "id": "polity-cn-northern-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北汉",
+        "aliases": [
+          "刘汉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 951,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 979,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一，979年为北宋所灭。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

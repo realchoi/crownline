@@ -1,0 +1,47 @@
+{
+  "order": 280,
+  "entities": [
+    {
+      "id": "polity-cn-southern-yan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南燕",
+        "aliases": [
+          "慕容燕"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 398,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 410,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

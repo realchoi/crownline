@@ -1,0 +1,47 @@
+{
+  "order": 350,
+  "entities": [
+    {
+      "id": "polity-cn-northern-qi",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北齐",
+        "aliases": [
+          "高齐"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 550,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 577,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "承东魏而立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

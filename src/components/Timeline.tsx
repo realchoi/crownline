@@ -2,12 +2,12 @@ import { formatHistoricalYear, fromOrdinal, toOrdinal } from "../domain/chronolo
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
 import type { RegionScope } from "../domain/regionScope";
 import type { MatchedEntity } from "../domain/selectors";
-import type { CrownlineData, Region } from "../domain/types";
+import type { BrowseData, Region } from "../domain/types";
 import { TimelineStage } from "./TimelineStage";
 
 /** 时间轴列表所需的数据和详情选择事件。 */
 interface TimelineProps {
-  data: CrownlineData;
+  data: Pick<BrowseData, "timelineSections" | "regions">;
   matches: MatchedEntity[];
   regions: Region[];
   regionScope: RegionScope;

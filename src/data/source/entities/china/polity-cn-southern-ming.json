@@ -1,0 +1,51 @@
+{
+  "order": 730,
+  "entities": [
+    {
+      "id": "polity-cn-southern-ming",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南明",
+        "aliases": [
+          "明朝延续",
+          "弘光",
+          "隆武",
+          "永历"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1644,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1662,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "明朝宗室在南方建立的延续政权；终止年在不同口径中存在差异。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "明朝宗室在南方建立的延续政权；终止年在不同口径中存在差异。"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

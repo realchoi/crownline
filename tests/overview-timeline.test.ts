@@ -1,12 +1,12 @@
 import { describe, expect, it } from "vitest";
 
-import { loadCrownlineData } from "../src/data/loadCrownlineData";
+import { loadSourceData } from "../scripts/data-source";
 import { buildOverviewTimelineGroups } from "../src/domain/overviewTimeline";
 import type { RegionScope } from "../src/domain/regionScope";
 import { selectBrowseResults, type MatchedEntity } from "../src/domain/selectors";
 import type { HistoricalEntity } from "../src/domain/types";
 
-const data = loadCrownlineData();
+const data = await loadSourceData();
 
 function overviewMatches(regionScope: RegionScope): MatchedEntity[] {
   return selectBrowseResults(data, {

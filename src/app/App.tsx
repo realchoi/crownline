@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { DetailDialog } from "../components/DetailDialog";
+import type { DetailLoadState } from "../components/DetailLoadPanel";
 import { FilterPanel } from "../components/FilterPanel";
 import { Timeline } from "../components/Timeline";
 import { TimepointView } from "../components/TimepointView";
@@ -12,21 +13,25 @@ import {
 } from "../domain/browseState";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
 import { selectBrowseResults } from "../domain/selectors";
-import type { CrownlineData } from "../domain/types";
+import type { CrownlineIndex, TimelineSection } from "../domain/types";
+import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
 
 /** 应用根组件接收的已校验数据。 */
 interface AppProps {
-  data: CrownlineData;
+  data: CrownlineIndex;
+  loadDetail: CrownlineDetailLoader;
 }
 
 /** 组合筛选状态、时间轴、详情弹窗和 URL 同步的应用根组件。 */
-export function App({ data }: AppProps) {
+export function App({ data, loadDetail }: AppProps) {
   const yearBounds = useMemo(() => getHistoricalYearBounds(data), [data]);
   const [browseState, setBrowseState] = useState<BrowseState>(() => {
     return readBrowseState(window.location.search, yearBounds, data.regions);
   });
   const [selectedEntityId, setSelectedEntityId] = useState<string | null>(null);
+  const [detailState, setDetailState] = useState<DetailLoadState>({ status: "missing" });
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const requestSequenceRef = useRef(0);
   const results = useMemo(() => {
     const filters = {
       query: browseState.query,
@@ -38,7 +43,7 @@ export function App({ data }: AppProps) {
       : selectBrowseResults(data, filters);
   }, [browseState, data]);
   const allMatches = useMemo(() => {
-    const sectionByEntityId = new Map<string, CrownlineData["timelineSections"][number]>();
+    const sectionByEntityId = new Map<string, TimelineSection>();
     data.timelineSections.forEach((section) => {
       section.entityIds.forEach((entityId) => sectionByEntityId.set(entityId, section));
     });
@@ -72,14 +77,35 @@ export function App({ data }: AppProps) {
     return () => cancelAnimationFrame(animationFrame);
   }, [selectedEntityId]);
 
-  /** 记录触发元素并打开对应实体详情。 */
+  const startDetailLoad = useCallback((entityId: string) => {
+    const requestSequence = ++requestSequenceRef.current;
+    if (!data.detailEntityIds.includes(entityId)) {
+      setDetailState({ status: "missing" });
+      return;
+    }
+    setDetailState({ status: "loading" });
+    void loadDetail(entityId).then((detail) => {
+      if (requestSequence !== requestSequenceRef.current) return;
+      setDetailState(detail ? { status: "ready", detail } : { status: "missing" });
+    }).catch((error: unknown) => {
+      if (requestSequence !== requestSequenceRef.current) return;
+      setDetailState({
+        status: "error",
+        message: error instanceof Error ? error.message : String(error)
+      });
+    });
+  }, [data.detailEntityIds, loadDetail]);
+
+  /** 记录触发元素、打开对应实体详情并启动按需加载。 */
   const openDetail = (entityId: string, trigger: HTMLButtonElement) => {
     lastTriggerRef.current = trigger;
     setSelectedEntityId(entityId);
+    startDetailLoad(entityId);
   };
 
   /** 关闭详情；焦点恢复由上方 effect 在卸载完成后处理。 */
   const closeDetail = useCallback(() => {
+    requestSequenceRef.current += 1;
     setSelectedEntityId(null);
   }, []);
 
@@ -221,8 +247,10 @@ export function App({ data }: AppProps) {
         <DetailDialog
           entity={selectedMatch.entity}
           sectionTitle={selectedMatch.section?.title}
-          data={data}
+          regions={data.regions}
+          detailState={detailState}
           {...(browseState.mode === "point" ? { currentYear: browseState.year } : {})}
+          onRetry={() => startDetailLoad(selectedMatch.entity.id)}
           onClose={closeDetail}
         />
       )}

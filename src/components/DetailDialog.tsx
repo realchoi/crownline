@@ -1,20 +1,11 @@
 import { useEffect, useRef } from "react";
 
-import {
-  calculatePeriodsDuration,
-  formatHistoricalYear,
-  formatPeriods
-} from "../domain/chronology";
+import { calculatePeriodsDuration, formatHistoricalYear, formatPeriods } from "../domain/chronology";
 import { selectRulerSnapshot, type RulerSnapshot } from "../domain/rulerSnapshot";
-import type {
-  ConfidenceLevel,
-  CrownlineData,
-  HistoricalEntity,
-  PolityForm,
-  ReignRole,
-  SourceRef
-} from "../domain/types";
+import type { ConfidenceLevel, CrownlineDetail, HistoricalEntity } from "../domain/types";
+import type { PolityForm, Region, ReignRole, SourceRef } from "../domain/types";
 import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
+import { DetailLoadPanel, type DetailLoadState } from "./DetailLoadPanel";
 
 const POLITY_FORM_NAMES: Record<PolityForm, string> = {
   dynasty: "王朝",
@@ -42,14 +33,16 @@ const CONFIDENCE_NAMES: Record<ConfidenceLevel, string> = {
 interface DetailDialogProps {
   entity: HistoricalEntity;
   sectionTitle: string | undefined;
-  data: CrownlineData;
+  regions: Region[];
+  detailState: DetailLoadState;
   currentYear?: number;
+  onRetry: () => void;
   onClose: () => void;
 }
 
 /** 收集实体、人物和任期来源；同一来源只展示一次，同时保留页码等定位信息。 */
 function collectSourceGroups(
-  data: CrownlineData,
+  detail: CrownlineDetail,
   entity: HistoricalEntity,
   snapshot: RulerSnapshot | undefined
 ) {
@@ -72,7 +65,7 @@ function collectSourceGroups(
   });
   if (snapshot?.vacancy) addRefs(snapshot.vacancy.sourceRefs);
 
-  const sourceById = new Map(data.sources.map((source) => [source.id, source]));
+  const sourceById = new Map(detail.sources.map((source) => [source.id, source]));
   return Array.from(refsBySourceId, ([sourceId, refs]) => ({
     source: sourceById.get(sourceId),
     refs
@@ -85,22 +78,25 @@ function collectSourceGroups(
 export function DetailDialog({
   entity,
   sectionTitle,
-  data,
+  regions,
+  detailState,
   currentYear,
+  onRetry,
   onClose
 }: DetailDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const duration = calculatePeriodsDuration(entity.existencePeriods);
-  const regionById = new Map(data.regions.map((region) => [region.id, region]));
+  const regionById = new Map(regions.map((region) => [region.id, region]));
   const regionNames = entity.historicalRegionIds.flatMap((regionId) => {
     const region = regionById.get(regionId);
     return region ? [region.names.primary] : [];
   });
-  const snapshot = entity.entityKind === "polity" && currentYear !== undefined
-    ? selectRulerSnapshot(data, entity.id, currentYear)
+  const detail = detailState.status === "ready" ? detailState.detail : undefined;
+  const snapshot = detail && entity.entityKind === "polity" && currentYear !== undefined
+    ? selectRulerSnapshot(entity, detail, currentYear)
     : undefined;
-  const sourceGroups = collectSourceGroups(data, entity, snapshot);
+  const sourceGroups = detail ? collectSourceGroups(detail, entity, snapshot) : [];
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -206,7 +202,9 @@ export function DetailDialog({
           </section>
         )}
 
-        {entity.entityKind === "polity" && currentYear === undefined && (
+        <DetailLoadPanel state={detailState} onRetry={onRetry} />
+
+        {detail && entity.entityKind === "polity" && currentYear === undefined && (
           <section className="detail-section ruler-overview" aria-labelledby="ruler-overview-title">
             <h3 id="ruler-overview-title">统治者资料</h3>
             <p>切换到时间点模式，可查看指定年份的在位统治者、摄政者和争位者。</p>

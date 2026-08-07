@@ -1,0 +1,48 @@
+{
+  "order": 500,
+  "entities": [
+    {
+      "id": "polity-cn-southern-tang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南唐",
+        "aliases": [
+          "李唐",
+          "江南国"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 937,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 976,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

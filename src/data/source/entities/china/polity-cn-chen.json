@@ -1,0 +1,47 @@
+{
+  "order": 400,
+  "entities": [
+    {
+      "id": "polity-cn-chen",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "陈",
+        "aliases": [
+          "南陈"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 557,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 589,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "南朝第四朝，589年为隋所灭。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

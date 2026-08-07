@@ -1,0 +1,52 @@
+{
+  "order": 750,
+  "entities": [
+    {
+      "id": "polity-abbasid-caliphate",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "阿拔斯哈里发",
+        "aliases": [
+          "阿拔斯王朝",
+          "黑衣大食",
+          "Abbasid Caliphate"
+        ],
+        "local": "الخلافة العباسية"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 750,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1258,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-west-asia",
+        "region-north-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "750年取代倭马亚哈里发，以伊拉克为政治文化中心；1258年巴格达陷落后，其在当地的统治终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-met-abbasid"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "存续区间按巴格达时期计算，不延伸至1261年后开罗的象征性哈里发世系。"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

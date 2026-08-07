@@ -1,0 +1,502 @@
+{
+  "order": 150,
+  "entities": [
+    {
+      "id": "polity-cn-eastern-jin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "东晋",
+        "aliases": [
+          "晋朝后期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 317,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 420,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "司马睿在建康建立，与北方十六国长期南北并立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-eastern-jin-yuan",
+      "names": {
+        "primary": "晋元帝",
+        "aliases": []
+      },
+      "description": "晋元帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-ming",
+      "names": {
+        "primary": "晋明帝",
+        "aliases": []
+      },
+      "description": "晋明帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-cheng",
+      "names": {
+        "primary": "晋成帝",
+        "aliases": []
+      },
+      "description": "晋成帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-kang",
+      "names": {
+        "primary": "晋康帝",
+        "aliases": []
+      },
+      "description": "晋康帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-mu",
+      "names": {
+        "primary": "晋穆帝",
+        "aliases": []
+      },
+      "description": "晋穆帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-ai",
+      "names": {
+        "primary": "晋哀帝",
+        "aliases": []
+      },
+      "description": "晋哀帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-fei",
+      "names": {
+        "primary": "晋废帝",
+        "aliases": [
+          "海西公"
+        ]
+      },
+      "description": "晋废帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-jianwen",
+      "names": {
+        "primary": "晋简文帝",
+        "aliases": []
+      },
+      "description": "晋简文帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-xiaowu",
+      "names": {
+        "primary": "晋孝武帝",
+        "aliases": []
+      },
+      "description": "晋孝武帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-an",
+      "names": {
+        "primary": "晋安帝",
+        "aliases": []
+      },
+      "description": "晋安帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-jin-gong",
+      "names": {
+        "primary": "晋恭帝",
+        "aliases": []
+      },
+      "description": "晋恭帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-eastern-jin-yuan",
+      "personId": "person-cn-eastern-jin-yuan",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 317,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 322,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-ming",
+      "personId": "person-cn-eastern-jin-ming",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 322,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 325,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-cheng",
+      "personId": "person-cn-eastern-jin-cheng",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 325,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 342,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-kang",
+      "personId": "person-cn-eastern-jin-kang",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 342,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 344,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-mu",
+      "personId": "person-cn-eastern-jin-mu",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 344,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 361,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-ai",
+      "personId": "person-cn-eastern-jin-ai",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 361,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 365,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-fei",
+      "personId": "person-cn-eastern-jin-fei",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 365,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 371,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-jianwen",
+      "personId": "person-cn-eastern-jin-jianwen",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 371,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 372,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-xiaowu",
+      "personId": "person-cn-eastern-jin-xiaowu",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 372,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 396,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-an",
+      "personId": "person-cn-eastern-jin-an",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 396,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 418,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-jin-gong",
+      "personId": "person-cn-eastern-jin-gong",
+      "polityId": "polity-cn-eastern-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 418,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 420,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

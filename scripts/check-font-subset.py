@@ -38,7 +38,7 @@ def collect_usage() -> tuple[dict[str, set[str]], dict]:
         if ch.strip() and ord(ch) > 127:
             usage[ch].add("index.html")
 
-    data = json.loads((ROOT / "src/data/crownline-data.json").read_text(encoding="utf-8"))
+    data = json.loads((ROOT / ".generated/data/crownline-data.json").read_text(encoding="utf-8"))
 
     def walk(node, trail: str):
         if isinstance(node, str):

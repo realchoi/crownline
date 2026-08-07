@@ -1,0 +1,47 @@
+{
+  "order": 200,
+  "entities": [
+    {
+      "id": "polity-cn-former-yan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "前燕",
+        "aliases": [
+          "慕容燕"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 337,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 370,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

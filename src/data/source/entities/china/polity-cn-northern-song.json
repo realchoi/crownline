@@ -1,0 +1,421 @@
+{
+  "order": 640,
+  "entities": [
+    {
+      "id": "polity-cn-northern-song",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "北宋",
+        "aliases": [
+          "宋朝前期",
+          "赵宋"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 960,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1127,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "宋朝前期，以开封为都，1127年靖康之变后结束。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-northern-song-taizu",
+      "names": {
+        "primary": "宋太祖",
+        "aliases": [
+          "赵匡胤"
+        ]
+      },
+      "description": "宋太祖，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-song-taizong",
+      "names": {
+        "primary": "宋太宗",
+        "aliases": []
+      },
+      "description": "宋太宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-song-zhenzong",
+      "names": {
+        "primary": "宋真宗",
+        "aliases": []
+      },
+      "description": "宋真宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-song-renzong",
+      "names": {
+        "primary": "宋仁宗",
+        "aliases": []
+      },
+      "description": "宋仁宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-song-yingzong",
+      "names": {
+        "primary": "宋英宗",
+        "aliases": []
+      },
+      "description": "宋英宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-song-shenzong",
+      "names": {
+        "primary": "宋神宗",
+        "aliases": []
+      },
+      "description": "宋神宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-song-zhezong",
+      "names": {
+        "primary": "宋哲宗",
+        "aliases": []
+      },
+      "description": "宋哲宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-song-huizong",
+      "names": {
+        "primary": "宋徽宗",
+        "aliases": []
+      },
+      "description": "宋徽宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-song-qinzong",
+      "names": {
+        "primary": "宋钦宗",
+        "aliases": []
+      },
+      "description": "宋钦宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-northern-song-taizu",
+      "personId": "person-cn-northern-song-taizu",
+      "polityId": "polity-cn-northern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 960,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 976,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-northern-song-taizong",
+      "personId": "person-cn-northern-song-taizong",
+      "polityId": "polity-cn-northern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 976,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 997,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-northern-song-zhenzong",
+      "personId": "person-cn-northern-song-zhenzong",
+      "polityId": "polity-cn-northern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 997,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1022,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-northern-song-renzong",
+      "personId": "person-cn-northern-song-renzong",
+      "polityId": "polity-cn-northern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1022,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1063,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-northern-song-yingzong",
+      "personId": "person-cn-northern-song-yingzong",
+      "polityId": "polity-cn-northern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1063,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1067,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-northern-song-shenzong",
+      "personId": "person-cn-northern-song-shenzong",
+      "polityId": "polity-cn-northern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1067,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1085,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-northern-song-zhezong",
+      "personId": "person-cn-northern-song-zhezong",
+      "polityId": "polity-cn-northern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1085,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1100,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-northern-song-huizong",
+      "personId": "person-cn-northern-song-huizong",
+      "polityId": "polity-cn-northern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1100,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1125,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-northern-song-qinzong",
+      "personId": "person-cn-northern-song-qinzong",
+      "polityId": "polity-cn-northern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1125,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1127,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

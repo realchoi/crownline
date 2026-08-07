@@ -1,7 +1,7 @@
 import { formatHistoricalYear, fromOrdinal, toOrdinal } from "./chronology";
 import type { RegionScope } from "./regionScope";
 import type { MatchedEntity } from "./selectors";
-import type { CrownlineData, Region } from "./types";
+import type { BrowseData, Region } from "./types";
 
 /** 全览时间轴使用的通用分组；中国阶段与动态地区组共享同一渲染契约。 */
 export interface OverviewTimelineGroup {
@@ -64,7 +64,7 @@ function getGroupRange(matches: MatchedEntity[]) {
  * 中国沿用既有历史阶段；多地区范围按顶层地区分组，跨地区实体只出现一次。
  */
 export function buildOverviewTimelineGroups(
-  data: CrownlineData,
+  data: Pick<BrowseData, "timelineSections" | "regions">,
   matches: MatchedEntity[],
   scope: RegionScope
 ): OverviewTimelineGroup[] {

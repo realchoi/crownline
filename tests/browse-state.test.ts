@@ -5,9 +5,9 @@ import {
   readBrowseState,
   writeBrowseState
 } from "../src/domain/browseState";
-import { loadCrownlineData } from "../src/data/loadCrownlineData";
+import { loadSourceData } from "../scripts/data-source";
 
-const data = loadCrownlineData();
+const data = await loadSourceData();
 const bounds = getHistoricalYearBounds(data);
 
 describe("浏览状态", () => {

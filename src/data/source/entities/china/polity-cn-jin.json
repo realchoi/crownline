@@ -1,0 +1,48 @@
+{
+  "order": 660,
+  "entities": [
+    {
+      "id": "polity-cn-jin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "金",
+        "aliases": [
+          "金朝",
+          "女真金"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1115,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1234,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "女真建立，先后与辽、北宋、南宋并立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

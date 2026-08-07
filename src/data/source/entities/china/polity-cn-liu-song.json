@@ -1,0 +1,48 @@
+{
+  "order": 370,
+  "entities": [
+    {
+      "id": "polity-cn-liu-song",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "刘宋",
+        "aliases": [
+          "南朝宋",
+          "宋"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 420,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 479,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "南朝第一朝，通常称刘宋以区别于赵宋。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

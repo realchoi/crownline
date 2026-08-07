@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
 
-import { loadCrownlineData } from "../src/data/loadCrownlineData";
+import { loadSourceData } from "../scripts/data-source";
 import { selectBrowseResults } from "../src/domain/selectors";
 import type { CrownlineData, HistoricalEntity } from "../src/domain/types";
 
-const data = loadCrownlineData();
+const data = await loadSourceData();
 
 function makeCrossRegionData(): CrownlineData {
   const result = structuredClone(data);

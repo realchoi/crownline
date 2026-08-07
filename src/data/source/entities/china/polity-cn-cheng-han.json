@@ -1,0 +1,49 @@
+{
+  "order": 170,
+  "entities": [
+    {
+      "id": "polity-cn-cheng-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "成汉",
+        "aliases": [
+          "成",
+          "蜀",
+          "李蜀"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 304,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 347,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一，前期国号成，后改汉。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

@@ -1,0 +1,52 @@
+{
+  "order": 770,
+  "entities": [
+    {
+      "id": "polity-chola-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "朱罗帝国",
+        "aliases": [
+          "朱罗王朝",
+          "Chola Empire",
+          "Chola dynasty"
+        ],
+        "local": "சோழப் பேரரசு"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 850,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1279,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-south-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "以印度南部为核心的朱罗政权；约850年维查耶罗耶重建势力，延续至1279年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "朱罗传统早于九世纪；所列年代聚焦约850年开始的中世纪帝国阶段。"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

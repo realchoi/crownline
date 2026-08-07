@@ -1,0 +1,123 @@
+[
+  {
+    "id": "source-cn-chronology-table",
+    "title": "中国历史纪年简表",
+    "sourceType": "institutional",
+    "citation": "中国机构编制网：《中国历史纪年简表》。",
+    "publisher": "中国机构编制网",
+    "url": "https://scopsr.gov.cn/zlzx/lsgk/201811/t20181120_326615.html",
+    "accessedAt": "2026-08-06"
+  },
+  {
+    "id": "source-national-museum",
+    "title": "中国古代史资料",
+    "sourceType": "institutional",
+    "citation": "中国国家博物馆：中国古代史相关资料。",
+    "publisher": "中国国家博物馆",
+    "url": "https://www.chnmuseum.cn/",
+    "accessedAt": "2026-08-06"
+  },
+  {
+    "id": "source-crownline-coverage",
+    "title": "Crownline 数据覆盖说明",
+    "sourceType": "dataset",
+    "citation": "Crownline：阶段2地区范围数据覆盖记录。"
+  },
+  {
+    "id": "source-met-byzantium",
+    "title": "Byzantium (ca. 330–1453)",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: Byzantium (ca. 330–1453).",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/essays/byzantium-ca-330-1453",
+    "accessedAt": "2026-08-06"
+  },
+  {
+    "id": "source-met-abbasid",
+    "title": "The Art of the Abbasid Period (750–1258)",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: The Art of the Abbasid Period (750–1258).",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/essays/the-art-of-the-abbasid-period-750-1258",
+    "accessedAt": "2026-08-06"
+  },
+  {
+    "id": "source-dhm-hre",
+    "title": "Heiliges Römisches Reich Deutscher Nation: 962–1806",
+    "sourceType": "institutional",
+    "citation": "Deutsches Historisches Museum: Heiliges Römisches Reich Deutscher Nation: 962–1806.",
+    "publisher": "Deutsches Historisches Museum",
+    "url": "https://www.dhm.de/publikation/heiliges-roemisches-reich-deutscher-nation-962-1806/",
+    "accessedAt": "2026-08-06"
+  },
+  {
+    "id": "source-met-hre",
+    "title": "The Holy Roman Empire and the Habsburgs, 1400–1600",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: The Holy Roman Empire and the Habsburgs, 1400–1600.",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/essays/the-holy-roman-empire-and-the-habsburgs-1400-1600",
+    "accessedAt": "2026-08-06"
+  },
+  {
+    "id": "source-inflibnet-chola",
+    "title": "The Cholas",
+    "sourceType": "institutional",
+    "citation": "INFLIBNET Centre, Outlines of Indian History: The Cholas.",
+    "publisher": "INFLIBNET Centre",
+    "url": "https://ebooks.inflibnet.ac.in/icp01/chapter/the-cholas/",
+    "accessedAt": "2026-08-06"
+  },
+  {
+    "id": "source-moe-emperor-chronology",
+    "title": "Chronology of Chinese Emperors’ Reigns",
+    "sourceType": "institutional",
+    "citation": "中华民国教育部《重编国语辞典修订本》：中国历代帝王年表。",
+    "publisher": "中华民国教育部",
+    "url": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=42&la=0&powerMode=0&ver=5",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-chinese-monarchs-reference",
+    "title": "List of Chinese monarchs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Chinese monarchs；条目汇集传统史籍、断代史与现代研究中的君主序列及纪年，并披露早期年代争议。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Chinese_monarchs",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-cambridge-ancient-china",
+    "title": "The Cambridge History of Ancient China",
+    "sourceType": "secondary",
+    "citation": "Michael Loewe and Edward L. Shaughnessy, eds., The Cambridge History of Ancient China: From the Origins of Civilization to 221 BC, Cambridge University Press, 1999.",
+    "authors": [
+      "Michael Loewe",
+      "Edward L. Shaughnessy"
+    ],
+    "publisher": "Cambridge University Press",
+    "url": "https://doi.org/10.1017/CHOL9780521470308",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-ctext-shiji-xia",
+    "title": "史记·夏本纪",
+    "sourceType": "primary",
+    "citation": "司马迁《史记·夏本纪》，中国哲学书电子化计划电子本。",
+    "authors": [
+      "司马迁"
+    ],
+    "publisher": "中国哲学书电子化计划",
+    "url": "https://ctext.org/shiji/xia-ben-ji/zhs",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-ibiblio-cixi",
+    "title": "Qing Era Biographical Database: Empress Dowager Cixi",
+    "sourceType": "tertiary",
+    "citation": "Exploring Chinese History: Qing Era Biographical Database, Empress Dowager Cixi and the late-Qing regencies.",
+    "publisher": "ibiblio",
+    "url": "https://www.ibiblio.org/chinesehistory/contents/06dat/bio.2qin.html",
+    "accessedAt": "2026-08-07"
+  }
+]

@@ -56,8 +56,13 @@ htmlcov/
 playwright-report/
 test-results/
 
+# Generated historical data (rebuilt from src/data/source)
+/.generated/
+/public/data/generated/
+
 # Python（字体工具本地虚拟环境）
 .venv-fonts/
+__pycache__/
 
 # Local-only files
 *.local

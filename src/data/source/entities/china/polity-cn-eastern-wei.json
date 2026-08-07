@@ -1,0 +1,47 @@
+{
+  "order": 330,
+  "entities": [
+    {
+      "id": "polity-cn-eastern-wei",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "东魏",
+        "aliases": [
+          "高魏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 534,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 550,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "北魏分裂后的东部政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

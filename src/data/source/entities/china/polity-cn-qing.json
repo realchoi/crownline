@@ -1,0 +1,648 @@
+{
+  "order": 720,
+  "entities": [
+    {
+      "id": "polity-cn-qing",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "清",
+        "aliases": [
+          "清朝",
+          "大清",
+          "后金"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1636,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1912,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "1636年改国号为清，1644年入关；1912年清帝退位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "displayRangeOverride": "1636（1644入关）—1912"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-qing-hong-taiji",
+      "names": {
+        "primary": "皇太极",
+        "aliases": [
+          "清太宗"
+        ]
+      },
+      "description": "皇太极，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-shunzhi",
+      "names": {
+        "primary": "顺治帝",
+        "aliases": [
+          "清世祖",
+          "福临"
+        ]
+      },
+      "description": "顺治帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-kangxi",
+      "names": {
+        "primary": "康熙帝",
+        "aliases": [
+          "清圣祖",
+          "玄烨"
+        ]
+      },
+      "description": "康熙帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-yongzheng",
+      "names": {
+        "primary": "雍正帝",
+        "aliases": [
+          "清世宗",
+          "胤禛"
+        ]
+      },
+      "description": "雍正帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-qianlong",
+      "names": {
+        "primary": "乾隆帝",
+        "aliases": [
+          "清高宗",
+          "弘历"
+        ]
+      },
+      "description": "乾隆帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-jiaqing",
+      "names": {
+        "primary": "嘉庆帝",
+        "aliases": [
+          "清仁宗",
+          "颙琰"
+        ]
+      },
+      "description": "嘉庆帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-daoguang",
+      "names": {
+        "primary": "道光帝",
+        "aliases": [
+          "清宣宗",
+          "旻宁"
+        ]
+      },
+      "description": "道光帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-xianfeng",
+      "names": {
+        "primary": "咸丰帝",
+        "aliases": [
+          "清文宗",
+          "奕詝"
+        ]
+      },
+      "description": "咸丰帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-tongzhi",
+      "names": {
+        "primary": "同治帝",
+        "aliases": [
+          "清穆宗",
+          "载淳"
+        ]
+      },
+      "description": "同治帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-guangxu",
+      "names": {
+        "primary": "光绪帝",
+        "aliases": [
+          "清德宗",
+          "载湉"
+        ]
+      },
+      "description": "光绪帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-xuantong",
+      "names": {
+        "primary": "宣统帝",
+        "aliases": [
+          "溥仪"
+        ]
+      },
+      "description": "宣统帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-cian",
+      "names": {
+        "primary": "慈安太后",
+        "aliases": []
+      },
+      "description": "慈安太后，晚清皇太后与摄政者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ibiblio-cixi"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qing-cixi",
+      "names": {
+        "primary": "慈禧太后",
+        "aliases": []
+      },
+      "description": "慈禧太后，晚清皇太后与摄政者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ibiblio-cixi"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-qing-hong-taiji",
+      "personId": "person-cn-qing-hong-taiji",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1636,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1643,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-shunzhi",
+      "personId": "person-cn-qing-shunzhi",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1643,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1661,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-kangxi",
+      "personId": "person-cn-qing-kangxi",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1661,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1722,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-yongzheng",
+      "personId": "person-cn-qing-yongzheng",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1722,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1735,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-qianlong",
+      "personId": "person-cn-qing-qianlong",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1735,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1796,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-jiaqing",
+      "personId": "person-cn-qing-jiaqing",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1796,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1820,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-daoguang",
+      "personId": "person-cn-qing-daoguang",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1820,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1850,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-xianfeng",
+      "personId": "person-cn-qing-xianfeng",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1850,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1861,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-tongzhi",
+      "personId": "person-cn-qing-tongzhi",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1861,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1875,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-guangxu",
+      "personId": "person-cn-qing-guangxu",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1875,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1908,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-xuantong",
+      "personId": "person-cn-qing-xuantong",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1908,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1912,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-cian",
+      "personId": "person-cn-qing-cian",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇太后"
+      ],
+      "role": "regent",
+      "periods": [
+        {
+          "start": {
+            "year": 1861,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1873,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1875,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1881,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "与慈禧太后共同垂帘听政，先后摄政于同治帝与光绪帝初年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ibiblio-cixi"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qing-cixi",
+      "personId": "person-cn-qing-cixi",
+      "polityId": "polity-cn-qing",
+      "titles": [
+        "皇太后"
+      ],
+      "role": "regent",
+      "periods": [
+        {
+          "start": {
+            "year": 1861,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1873,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1875,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1889,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1898,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1908,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "同治、光绪年间分段摄政；1889至1898年不列作正式摄政期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ibiblio-cixi"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

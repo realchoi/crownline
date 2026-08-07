@@ -1,0 +1,47 @@
+{
+  "order": 250,
+  "entities": [
+    {
+      "id": "polity-cn-later-liang-lu",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后凉",
+        "aliases": [
+          "吕凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 386,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 403,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

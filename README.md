@@ -40,11 +40,14 @@ Crownline（王冠纪）是一个面向全球历史的交互式王朝图谱项�
 │   ├── app/                  # React 应用状态与页面组合
 │   ├── components/           # 筛选、时间轴与详情组件
 │   ├── data/
-│   │   ├── crownline-data.json
+│   │   ├── source/           # 按实体与职责拆分的人工维护数据
+│   │   ├── artifacts.ts      # 首屏索引与详情闭包派生
 │   │   └── crownline-data.schema.json
 │   ├── domain/               # 类型、纪年运算、选择器与数据校验
 │   ├── assets/               # 字体资源
 │   └── styles/               # 页面样式
+├── scripts/data-source.ts    # 源分片聚合
+├── scripts/generate-data.ts  # 生成浏览器运行时数据
 ├── scripts/validate-data.ts  # 独立数据校验入口
 ├── tests/                    # 单元与界面回归测试
 ├── docs/                     # 数据契约与实施设计
@@ -80,12 +83,23 @@ npm run preview
 
 ## 数据维护
 
-历史数据以纯 JSON 存放在 `src/data/crownline-data.json`，机器契约位于 `src/data/crownline-data.schema.json`，TypeScript 领域类型位于 `src/domain/types.ts`。完整的人类可读规则见 [数据契约说明](docs/data-contract.md)。
+历史数据以纯 JSON 分片存放在 `src/data/source/`。每个政权或历史分期由 `entities/<地区>/<entity-id>.json` 维护，人物、任期和明确空位优先与所属实体放在一起；阶段、地区、来源、关系和事件按职责单独维护。机器契约位于 `src/data/crownline-data.schema.json`，TypeScript 领域类型位于 `src/domain/types.ts`。完整的人类可读规则见 [数据契约说明](docs/data-contract.md)。
+
+实体分片中的 `order` 是唯一正整数，控制聚合后的稳定顺序。现有记录以 10 为间隔；插入记录时优先使用相邻值之间的空位。所有分片仍共享全局 ID 命名空间，跨文件引用只能使用稳定 ID。
+
+`npm run generate:data` 会先聚合并全量校验分片，再生成：
+
+- `.generated/data/crownline-data.json`：仅供测试和字体工具使用的完整数据，不进入生产包。
+- `public/data/generated/index.json`：首屏时间轴、搜索和筛选数据。
+- `public/data/generated/details/<entity-id>.json`：打开详情时按需加载的人物、任期、关系、事件和来源闭包。
+
+这些生成产物均已忽略，不要手工编辑或提交。`dev`、`test`、`build` 和字体命令会自动先执行生成。
 
 修改数据后至少运行：
 
 ```bash
 npm run validate:data
+npm run generate:data
 npm test
 ```
 

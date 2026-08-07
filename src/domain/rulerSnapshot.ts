@@ -1,5 +1,11 @@
 import { isYearInPeriods, toOrdinal } from "./chronology";
-import type { CrownlineData, Person, Reign, ReignVacancy } from "./types";
+import type {
+  CrownlineDetail,
+  HistoricalEntity,
+  Person,
+  Reign,
+  ReignVacancy
+} from "./types";
 
 export type RulerSnapshotStatus = "known" | "disputed" | "vacant" | "unrecorded";
 
@@ -25,18 +31,17 @@ const ROLE_ORDER: Record<Reign["role"], number> = {
 
 /** 根据闭区间年份口径生成可供详情和后续政权对比复用的统治者快照。 */
 export function selectRulerSnapshot(
-  data: CrownlineData,
-  polityId: string,
+  polity: HistoricalEntity,
+  detail: CrownlineDetail,
   year: number
 ): RulerSnapshot {
-  const polity = data.entities.find((entity) => entity.id === polityId);
-  if (!polity || polity.entityKind !== "polity") {
-    throw new Error(`无法为不存在的政权 ${polityId} 生成统治者快照`);
+  if (polity.entityKind !== "polity" || detail.entityId !== polity.id) {
+    throw new Error(`无法为不存在的政权 ${polity.id} 生成统治者快照`);
   }
 
-  const personById = new Map(data.persons.map((item) => [item.id, item]));
-  const entries = data.reigns
-    .filter((reign) => reign.polityId === polityId && isYearInPeriods(year, reign.periods))
+  const personById = new Map(detail.persons.map((item) => [item.id, item]));
+  const entries = detail.reigns
+    .filter((reign) => reign.polityId === polity.id && isYearInPeriods(year, reign.periods))
     .map((reign) => {
       const person = personById.get(reign.personId);
       if (!person) throw new Error(`任期 ${reign.id} 引用的人物 ${reign.personId} 不存在`);
@@ -56,14 +61,14 @@ export function selectRulerSnapshot(
         reign.chronologyStatus === "disputed" ||
         reign.confidence === "disputed";
     });
-    return { polityId, year, status: disputed ? "disputed" : "known", entries };
+    return { polityId: polity.id, year, status: disputed ? "disputed" : "known", entries };
   }
 
-  const vacancy = data.reignVacancies.find((record) => {
-    return record.polityId === polityId && isYearInPeriods(year, record.periods);
+  const vacancy = detail.reignVacancies.find((record) => {
+    return record.polityId === polity.id && isYearInPeriods(year, record.periods);
   });
-  if (vacancy) return { polityId, year, status: "vacant", entries, vacancy };
+  if (vacancy) return { polityId: polity.id, year, status: "vacant", entries, vacancy };
 
   // 普通任期空档只代表当前数据未校订，不能从“没有记录”推断“当时空位”。
-  return { polityId, year, status: "unrecorded", entries };
+  return { polityId: polity.id, year, status: "unrecorded", entries };
 }

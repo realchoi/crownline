@@ -1,0 +1,178 @@
+{
+  "order": 70,
+  "entities": [
+    {
+      "id": "polity-cn-qin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "秦",
+        "aliases": [
+          "秦朝"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -221,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -206,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "秦始皇统一六国后建立的统一王朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-qin-shi-huang",
+      "names": {
+        "primary": "秦始皇",
+        "aliases": [
+          "嬴政"
+        ]
+      },
+      "description": "秦始皇，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qin-er-shi",
+      "names": {
+        "primary": "秦二世",
+        "aliases": [
+          "胡亥"
+        ]
+      },
+      "description": "秦二世，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-qin-ziying",
+      "names": {
+        "primary": "子婴",
+        "aliases": []
+      },
+      "description": "子婴，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-qin-shi-huang",
+      "personId": "person-cn-qin-shi-huang",
+      "polityId": "polity-cn-qin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -221,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -210,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qin-er-shi",
+      "personId": "person-cn-qin-er-shi",
+      "polityId": "polity-cn-qin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -209,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -207,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-qin-ziying",
+      "personId": "person-cn-qin-ziying",
+      "polityId": "polity-cn-qin",
+      "titles": [
+        "秦王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -207,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -206,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "note": "子婴称秦王而非皇帝；终年按本项目秦政权存在区间口径展示。",
+      "confidenceNote": "子婴称秦王而非皇帝；终年按本项目秦政权存在区间口径展示。"
+    }
+  ],
+  "reignVacancies": []
+}

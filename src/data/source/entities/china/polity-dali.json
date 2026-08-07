@@ -1,0 +1,48 @@
+{
+  "order": 630,
+  "entities": [
+    {
+      "id": "polity-dali",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "大理",
+        "aliases": [
+          "大理国",
+          "后理"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 937,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1253,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "西南地区的重要区域政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

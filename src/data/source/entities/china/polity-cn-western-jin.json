@@ -1,0 +1,213 @@
+{
+  "order": 140,
+  "entities": [
+    {
+      "id": "polity-cn-western-jin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "西晋",
+        "aliases": [
+          "晋朝前期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 265,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 316,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "司马炎代魏建立，280年统一三国，后因内乱与北方政局崩溃而亡。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-western-jin-wu",
+      "names": {
+        "primary": "晋武帝",
+        "aliases": []
+      },
+      "description": "晋武帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-jin-hui",
+      "names": {
+        "primary": "晋惠帝",
+        "aliases": []
+      },
+      "description": "晋惠帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-jin-huai",
+      "names": {
+        "primary": "晋怀帝",
+        "aliases": []
+      },
+      "description": "晋怀帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-jin-min",
+      "names": {
+        "primary": "晋愍帝",
+        "aliases": []
+      },
+      "description": "晋愍帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-western-jin-wu",
+      "personId": "person-cn-western-jin-wu",
+      "polityId": "polity-cn-western-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 265,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 290,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-jin-hui",
+      "personId": "person-cn-western-jin-hui",
+      "polityId": "polity-cn-western-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 290,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 306,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-jin-huai",
+      "personId": "person-cn-western-jin-huai",
+      "polityId": "polity-cn-western-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 306,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 311,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-jin-min",
+      "personId": "person-cn-western-jin-min",
+      "polityId": "polity-cn-western-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 313,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 316,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

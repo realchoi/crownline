@@ -1,0 +1,948 @@
+{
+  "order": 420,
+  "entities": [
+    {
+      "id": "polity-cn-tang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "唐",
+        "aliases": [
+          "唐朝",
+          "李唐"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 618,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 690,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 705,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 907,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "690至705年间由武周取代，神龙政变后复唐。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "690至705年间由武周取代，神龙政变后复唐。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-tang-gaozu",
+      "names": {
+        "primary": "唐高祖",
+        "aliases": [
+          "李渊"
+        ]
+      },
+      "description": "唐高祖，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-taizong",
+      "names": {
+        "primary": "唐太宗",
+        "aliases": [
+          "李世民"
+        ]
+      },
+      "description": "唐太宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-gaozong",
+      "names": {
+        "primary": "唐高宗",
+        "aliases": []
+      },
+      "description": "唐高宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-zhongzong",
+      "names": {
+        "primary": "唐中宗",
+        "aliases": []
+      },
+      "description": "唐中宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-ruizong",
+      "names": {
+        "primary": "唐睿宗",
+        "aliases": []
+      },
+      "description": "唐睿宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-shang",
+      "names": {
+        "primary": "唐殇帝",
+        "aliases": [
+          "李重茂"
+        ]
+      },
+      "description": "唐殇帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-xuanzong",
+      "names": {
+        "primary": "唐玄宗",
+        "aliases": []
+      },
+      "description": "唐玄宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-suzong",
+      "names": {
+        "primary": "唐肃宗",
+        "aliases": []
+      },
+      "description": "唐肃宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-daizong",
+      "names": {
+        "primary": "唐代宗",
+        "aliases": []
+      },
+      "description": "唐代宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-dezong",
+      "names": {
+        "primary": "唐德宗",
+        "aliases": []
+      },
+      "description": "唐德宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-shunzong",
+      "names": {
+        "primary": "唐顺宗",
+        "aliases": []
+      },
+      "description": "唐顺宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-xianzong",
+      "names": {
+        "primary": "唐宪宗",
+        "aliases": []
+      },
+      "description": "唐宪宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-muzong",
+      "names": {
+        "primary": "唐穆宗",
+        "aliases": []
+      },
+      "description": "唐穆宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-jingzong",
+      "names": {
+        "primary": "唐敬宗",
+        "aliases": []
+      },
+      "description": "唐敬宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-wenzong",
+      "names": {
+        "primary": "唐文宗",
+        "aliases": []
+      },
+      "description": "唐文宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-wuzong",
+      "names": {
+        "primary": "唐武宗",
+        "aliases": []
+      },
+      "description": "唐武宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-xuanzong-2",
+      "names": {
+        "primary": "唐宣宗",
+        "aliases": []
+      },
+      "description": "唐宣宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-yizong",
+      "names": {
+        "primary": "唐懿宗",
+        "aliases": []
+      },
+      "description": "唐懿宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-xizong",
+      "names": {
+        "primary": "唐僖宗",
+        "aliases": []
+      },
+      "description": "唐僖宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-zhaozong",
+      "names": {
+        "primary": "唐昭宗",
+        "aliases": []
+      },
+      "description": "唐昭宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tang-ai",
+      "names": {
+        "primary": "唐哀帝",
+        "aliases": []
+      },
+      "description": "唐哀帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-tang-gaozu",
+      "personId": "person-cn-tang-gaozu",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 618,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 626,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-taizong",
+      "personId": "person-cn-tang-taizong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 626,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 649,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-gaozong",
+      "personId": "person-cn-tang-gaozong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 649,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 683,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-zhongzong",
+      "personId": "person-cn-tang-zhongzong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 684,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 684,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 705,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 710,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-ruizong",
+      "personId": "person-cn-tang-ruizong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 684,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 690,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 710,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 712,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-shang",
+      "personId": "person-cn-tang-shang",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 710,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 710,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-xuanzong",
+      "personId": "person-cn-tang-xuanzong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 712,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 756,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-suzong",
+      "personId": "person-cn-tang-suzong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 756,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 762,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-daizong",
+      "personId": "person-cn-tang-daizong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 762,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 779,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-dezong",
+      "personId": "person-cn-tang-dezong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 779,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 805,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-shunzong",
+      "personId": "person-cn-tang-shunzong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 805,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 805,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-xianzong",
+      "personId": "person-cn-tang-xianzong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 805,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 820,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-muzong",
+      "personId": "person-cn-tang-muzong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 820,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 824,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-jingzong",
+      "personId": "person-cn-tang-jingzong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 824,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 826,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-wenzong",
+      "personId": "person-cn-tang-wenzong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 826,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 840,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-wuzong",
+      "personId": "person-cn-tang-wuzong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 840,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 846,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-xuanzong-2",
+      "personId": "person-cn-tang-xuanzong-2",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 846,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 859,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-yizong",
+      "personId": "person-cn-tang-yizong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 859,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 873,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-xizong",
+      "personId": "person-cn-tang-xizong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 873,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 888,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-zhaozong",
+      "personId": "person-cn-tang-zhaozong",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 888,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 904,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-tang-ai",
+      "personId": "person-cn-tang-ai",
+      "polityId": "polity-cn-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 904,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 907,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

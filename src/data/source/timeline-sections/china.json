@@ -1,0 +1,152 @@
+[
+  {
+    "id": "section-cn-early-states",
+    "title": "早期国家与先秦",
+    "displayRange": "约前2070—前206",
+    "range": {
+      "startYear": -2070,
+      "endYear": -206
+    },
+    "entityIds": [
+      "polity-cn-xia",
+      "polity-cn-shang",
+      "polity-cn-western-zhou",
+      "polity-cn-eastern-zhou",
+      "period-cn-spring-autumn",
+      "period-cn-warring-states",
+      "polity-cn-qin"
+    ]
+  },
+  {
+    "id": "section-cn-han-three-kingdoms",
+    "title": "汉与三国",
+    "displayRange": "前202—280",
+    "range": {
+      "startYear": -202,
+      "endYear": 280
+    },
+    "entityIds": [
+      "polity-cn-western-han",
+      "polity-cn-xin",
+      "polity-cn-eastern-han",
+      "polity-cn-cao-wei",
+      "polity-cn-shu-han",
+      "polity-cn-eastern-wu"
+    ]
+  },
+  {
+    "id": "section-cn-jin-sixteen-kingdoms",
+    "title": "两晋与十六国",
+    "displayRange": "265—439",
+    "range": {
+      "startYear": 265,
+      "endYear": 439
+    },
+    "entityIds": [
+      "polity-cn-western-jin",
+      "polity-cn-eastern-jin",
+      "polity-cn-former-liang",
+      "polity-cn-cheng-han",
+      "polity-cn-han-zhao",
+      "polity-cn-later-zhao",
+      "polity-cn-former-yan",
+      "polity-cn-former-qin",
+      "polity-cn-later-qin",
+      "polity-cn-later-yan",
+      "polity-cn-western-qin",
+      "polity-cn-later-liang-lu",
+      "polity-cn-southern-liang-tufa",
+      "polity-cn-northern-liang",
+      "polity-cn-southern-yan",
+      "polity-cn-western-liang",
+      "polity-cn-hu-xia",
+      "polity-cn-northern-yan"
+    ]
+  },
+  {
+    "id": "section-cn-northern-southern-dynasties",
+    "title": "南北朝",
+    "displayRange": "386—589",
+    "range": {
+      "startYear": 386,
+      "endYear": 589
+    },
+    "entityIds": [
+      "polity-cn-northern-wei",
+      "polity-cn-eastern-wei",
+      "polity-cn-western-wei",
+      "polity-cn-northern-qi",
+      "polity-cn-northern-zhou",
+      "polity-cn-liu-song",
+      "polity-cn-southern-qi",
+      "polity-cn-liang",
+      "polity-cn-chen"
+    ]
+  },
+  {
+    "id": "section-cn-sui-tang-five-dynasties",
+    "title": "隋唐与五代十国",
+    "displayRange": "581—979",
+    "range": {
+      "startYear": 581,
+      "endYear": 979
+    },
+    "entityIds": [
+      "polity-cn-sui",
+      "polity-cn-tang",
+      "polity-cn-wu-zhou",
+      "polity-cn-later-liang-zhu",
+      "polity-cn-later-tang",
+      "polity-cn-later-jin",
+      "polity-cn-later-han",
+      "polity-cn-later-zhou",
+      "polity-cn-yang-wu",
+      "polity-cn-southern-tang",
+      "polity-cn-wuyue",
+      "polity-cn-min",
+      "polity-cn-ma-chu",
+      "polity-cn-former-shu",
+      "polity-cn-later-shu",
+      "polity-cn-southern-han",
+      "polity-cn-jingnan",
+      "polity-cn-northern-han",
+      "polity-tibet-empire",
+      "polity-balhae",
+      "polity-nanzhao"
+    ]
+  },
+  {
+    "id": "section-cn-liao-song-xia-jin-yuan",
+    "title": "辽宋夏金元",
+    "displayRange": "916—1368",
+    "range": {
+      "startYear": 916,
+      "endYear": 1368
+    },
+    "entityIds": [
+      "polity-cn-liao",
+      "polity-dali",
+      "polity-cn-northern-song",
+      "polity-cn-western-xia",
+      "polity-cn-jin",
+      "polity-cn-southern-song",
+      "polity-mongol-empire",
+      "polity-cn-yuan"
+    ]
+  },
+  {
+    "id": "section-cn-ming-qing",
+    "title": "明清",
+    "displayRange": "1368—1912",
+    "range": {
+      "startYear": 1368,
+      "endYear": 1912
+    },
+    "entityIds": [
+      "polity-cn-ming",
+      "polity-cn-later-jin-jurchen",
+      "polity-cn-qing",
+      "polity-cn-southern-ming"
+    ]
+  }
+]

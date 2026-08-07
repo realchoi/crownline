@@ -1,0 +1,47 @@
+{
+  "order": 270,
+  "entities": [
+    {
+      "id": "polity-cn-northern-liang",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北凉",
+        "aliases": [
+          "沮渠凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 397,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 439,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一；部分余部延续时间更久。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

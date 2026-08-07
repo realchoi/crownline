@@ -1,0 +1,47 @@
+{
+  "order": 290,
+  "entities": [
+    {
+      "id": "polity-cn-western-liang",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "西凉",
+        "aliases": [
+          "李凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 400,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 421,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

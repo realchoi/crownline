@@ -1,0 +1,46 @@
+{
+  "order": 50,
+  "entities": [
+    {
+      "id": "period-cn-spring-autumn",
+      "entityKind": "historical-period",
+      "polityForms": [],
+      "displayCategory": "context",
+      "names": {
+        "primary": "春秋",
+        "aliases": [
+          "春秋时期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -770,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -476,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "历史分期，并非单一王朝；起止年在不同史学口径中略有差异。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "历史分期，并非单一王朝；起止年在不同史学口径中略有差异。"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

@@ -1,0 +1,48 @@
+{
+  "order": 390,
+  "entities": [
+    {
+      "id": "polity-cn-liang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "梁",
+        "aliases": [
+          "南梁",
+          "萧梁"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 502,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 557,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "南朝第三朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

@@ -1,0 +1,632 @@
+{
+  "order": 80,
+  "entities": [
+    {
+      "id": "polity-cn-western-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "西汉",
+        "aliases": [
+          "前汉",
+          "汉朝前期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -202,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 8,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "汉高祖刘邦建立；公元9年王莽建立新朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-western-han-gaozu",
+      "names": {
+        "primary": "汉高祖",
+        "aliases": [
+          "刘邦"
+        ]
+      },
+      "description": "汉高祖，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-hui",
+      "names": {
+        "primary": "汉惠帝",
+        "aliases": []
+      },
+      "description": "汉惠帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-qianshao",
+      "names": {
+        "primary": "汉前少帝",
+        "aliases": [
+          "少帝恭"
+        ]
+      },
+      "description": "汉前少帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-houshao",
+      "names": {
+        "primary": "汉后少帝",
+        "aliases": [
+          "少帝弘"
+        ]
+      },
+      "description": "汉后少帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-wen",
+      "names": {
+        "primary": "汉文帝",
+        "aliases": []
+      },
+      "description": "汉文帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-jing",
+      "names": {
+        "primary": "汉景帝",
+        "aliases": []
+      },
+      "description": "汉景帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-wu",
+      "names": {
+        "primary": "汉武帝",
+        "aliases": []
+      },
+      "description": "汉武帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-zhao",
+      "names": {
+        "primary": "汉昭帝",
+        "aliases": []
+      },
+      "description": "汉昭帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-xuan",
+      "names": {
+        "primary": "汉宣帝",
+        "aliases": []
+      },
+      "description": "汉宣帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-yuan",
+      "names": {
+        "primary": "汉元帝",
+        "aliases": []
+      },
+      "description": "汉元帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-cheng",
+      "names": {
+        "primary": "汉成帝",
+        "aliases": []
+      },
+      "description": "汉成帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-ai",
+      "names": {
+        "primary": "汉哀帝",
+        "aliases": []
+      },
+      "description": "汉哀帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-ping",
+      "names": {
+        "primary": "汉平帝",
+        "aliases": []
+      },
+      "description": "汉平帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-han-ruzi",
+      "names": {
+        "primary": "孺子婴",
+        "aliases": []
+      },
+      "description": "孺子婴，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-western-han-gaozu",
+      "personId": "person-cn-western-han-gaozu",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -202,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -195,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-hui",
+      "personId": "person-cn-western-han-hui",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -195,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -188,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-qianshao",
+      "personId": "person-cn-western-han-qianshao",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -188,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -184,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-houshao",
+      "personId": "person-cn-western-han-houshao",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -184,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -180,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-wen",
+      "personId": "person-cn-western-han-wen",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -180,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -157,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-jing",
+      "personId": "person-cn-western-han-jing",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -157,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -141,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-wu",
+      "personId": "person-cn-western-han-wu",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -141,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -87,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-zhao",
+      "personId": "person-cn-western-han-zhao",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -87,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -74,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-xuan",
+      "personId": "person-cn-western-han-xuan",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -74,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -49,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-yuan",
+      "personId": "person-cn-western-han-yuan",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -49,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -33,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-cheng",
+      "personId": "person-cn-western-han-cheng",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -33,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -7,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-ai",
+      "personId": "person-cn-western-han-ai",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -7,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -1,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-ping",
+      "personId": "person-cn-western-han-ping",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 5,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-western-han-ruzi",
+      "personId": "person-cn-western-han-ruzi",
+      "polityId": "polity-cn-western-han",
+      "titles": [
+        "皇太子"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 6,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 8,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "disputed",
+      "note": "孺子婴未正式即皇帝，王莽以摄皇帝身份临朝；此处保留争议身份。",
+      "confidenceNote": "孺子婴未正式即皇帝，王莽以摄皇帝身份临朝；此处保留争议身份。"
+    }
+  ],
+  "reignVacancies": []
+}

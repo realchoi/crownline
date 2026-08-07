@@ -1,0 +1,49 @@
+{
+  "order": 680,
+  "entities": [
+    {
+      "id": "polity-mongol-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire",
+        "khanate"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "大蒙古国",
+        "aliases": [
+          "蒙古帝国",
+          "蒙古汗国"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1206,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1271,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "1206年成吉思汗建立；1271年忽必烈定国号为元。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

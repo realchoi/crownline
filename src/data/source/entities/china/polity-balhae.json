@@ -1,0 +1,48 @@
+{
+  "order": 600,
+  "entities": [
+    {
+      "id": "polity-balhae",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "渤海国",
+        "aliases": [
+          "渤海",
+          "海东盛国"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 698,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 926,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "东北地区的重要区域政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

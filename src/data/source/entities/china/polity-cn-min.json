@@ -1,0 +1,47 @@
+{
+  "order": 520,
+  "entities": [
+    {
+      "id": "polity-cn-min",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "闽",
+        "aliases": [
+          "王闽"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 909,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 945,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

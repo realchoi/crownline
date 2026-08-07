@@ -1,5 +1,5 @@
 import type { RegionScope } from "./regionScope";
-import type { CrownlineData, DisplayCategory, Region } from "./types";
+import type { BrowseData, DisplayCategory, Region } from "./types";
 import type { CategoryFilter } from "./selectors";
 
 export type BrowseMode = "overview" | "point";
@@ -33,7 +33,7 @@ const LEGACY_CATEGORY_MAP: Record<string, DisplayCategory> = {
 };
 
 /** 从已加载实体的全部存在区间推导年份控件边界。 */
-export function getHistoricalYearBounds(data: CrownlineData): HistoricalYearBounds {
+export function getHistoricalYearBounds(data: Pick<BrowseData, "entities">): HistoricalYearBounds {
   const years = data.entities.flatMap((entity) => {
     return entity.existencePeriods.flatMap((period) => [period.start.year, period.end.year]);
   });

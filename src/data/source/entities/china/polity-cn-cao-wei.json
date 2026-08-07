@@ -1,0 +1,48 @@
+{
+  "order": 110,
+  "entities": [
+    {
+      "id": "polity-cn-cao-wei",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "曹魏",
+        "aliases": [
+          "魏",
+          "三国魏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 220,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 265,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "三国之一，通常简称魏。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

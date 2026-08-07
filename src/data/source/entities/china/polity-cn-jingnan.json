@@ -1,0 +1,49 @@
+{
+  "order": 570,
+  "entities": [
+    {
+      "id": "polity-cn-jingnan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "荆南（南平）",
+        "aliases": [
+          "荆南",
+          "南平",
+          "高季兴"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 924,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 963,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

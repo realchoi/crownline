@@ -1,0 +1,178 @@
+{
+  "order": 410,
+  "entities": [
+    {
+      "id": "polity-cn-sui",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "隋",
+        "aliases": [
+          "隋朝"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 581,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 618,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "结束南北朝长期分裂，为唐朝统一奠定制度基础。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-sui-wen",
+      "names": {
+        "primary": "隋文帝",
+        "aliases": [
+          "杨坚"
+        ]
+      },
+      "description": "隋文帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-sui-yang",
+      "names": {
+        "primary": "隋炀帝",
+        "aliases": [
+          "杨广"
+        ]
+      },
+      "description": "隋炀帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-sui-gong",
+      "names": {
+        "primary": "隋恭帝",
+        "aliases": [
+          "杨侑"
+        ]
+      },
+      "description": "隋恭帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-sui-wen",
+      "personId": "person-cn-sui-wen",
+      "polityId": "polity-cn-sui",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 581,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 604,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-sui-yang",
+      "personId": "person-cn-sui-yang",
+      "polityId": "polity-cn-sui",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 604,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 617,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-sui-gong",
+      "personId": "person-cn-sui-gong",
+      "polityId": "polity-cn-sui",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 617,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 618,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

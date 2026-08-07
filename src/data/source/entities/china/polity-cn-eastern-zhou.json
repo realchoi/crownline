@@ -1,0 +1,1074 @@
+{
+  "order": 40,
+  "entities": [
+    {
+      "id": "polity-cn-eastern-zhou",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "东周",
+        "aliases": [
+          "周朝后期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -770,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -256,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "周平王东迁洛邑后的周朝，与春秋、战国分期部分重叠。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-eastern-zhou-ping",
+      "names": {
+        "primary": "周平王",
+        "aliases": []
+      },
+      "description": "周平王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-huan",
+      "names": {
+        "primary": "周桓王",
+        "aliases": []
+      },
+      "description": "周桓王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-zhuang",
+      "names": {
+        "primary": "周庄王",
+        "aliases": []
+      },
+      "description": "周庄王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-xi",
+      "names": {
+        "primary": "周僖王",
+        "aliases": []
+      },
+      "description": "周僖王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-hui",
+      "names": {
+        "primary": "周惠王",
+        "aliases": []
+      },
+      "description": "周惠王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-xiang",
+      "names": {
+        "primary": "周襄王",
+        "aliases": []
+      },
+      "description": "周襄王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-qing",
+      "names": {
+        "primary": "周顷王",
+        "aliases": []
+      },
+      "description": "周顷王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-kuang",
+      "names": {
+        "primary": "周匡王",
+        "aliases": []
+      },
+      "description": "周匡王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-ding",
+      "names": {
+        "primary": "周定王",
+        "aliases": []
+      },
+      "description": "周定王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-jian",
+      "names": {
+        "primary": "周简王",
+        "aliases": []
+      },
+      "description": "周简王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-ling",
+      "names": {
+        "primary": "周灵王",
+        "aliases": []
+      },
+      "description": "周灵王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-jing-1",
+      "names": {
+        "primary": "周景王",
+        "aliases": []
+      },
+      "description": "周景王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-dao",
+      "names": {
+        "primary": "周悼王",
+        "aliases": []
+      },
+      "description": "周悼王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-jing-2",
+      "names": {
+        "primary": "周敬王",
+        "aliases": []
+      },
+      "description": "周敬王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-yuan",
+      "names": {
+        "primary": "周元王",
+        "aliases": []
+      },
+      "description": "周元王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-zhending",
+      "names": {
+        "primary": "周贞定王",
+        "aliases": []
+      },
+      "description": "周贞定王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-ai",
+      "names": {
+        "primary": "周哀王",
+        "aliases": []
+      },
+      "description": "周哀王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-si",
+      "names": {
+        "primary": "周思王",
+        "aliases": []
+      },
+      "description": "周思王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-kao",
+      "names": {
+        "primary": "周考王",
+        "aliases": []
+      },
+      "description": "周考王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-weilie",
+      "names": {
+        "primary": "周威烈王",
+        "aliases": []
+      },
+      "description": "周威烈王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-an",
+      "names": {
+        "primary": "周安王",
+        "aliases": []
+      },
+      "description": "周安王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-lie",
+      "names": {
+        "primary": "周烈王",
+        "aliases": []
+      },
+      "description": "周烈王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-xian",
+      "names": {
+        "primary": "周显王",
+        "aliases": []
+      },
+      "description": "周显王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-shenjing",
+      "names": {
+        "primary": "周慎靓王",
+        "aliases": []
+      },
+      "description": "周慎靓王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-zhou-nan",
+      "names": {
+        "primary": "周赧王",
+        "aliases": []
+      },
+      "description": "周赧王，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-eastern-zhou-ping",
+      "personId": "person-cn-eastern-zhou-ping",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -770,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -720,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-huan",
+      "personId": "person-cn-eastern-zhou-huan",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -719,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -697,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-zhuang",
+      "personId": "person-cn-eastern-zhou-zhuang",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -696,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -682,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-xi",
+      "personId": "person-cn-eastern-zhou-xi",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -681,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -677,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-hui",
+      "personId": "person-cn-eastern-zhou-hui",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -676,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -652,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-xiang",
+      "personId": "person-cn-eastern-zhou-xiang",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -651,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -619,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-qing",
+      "personId": "person-cn-eastern-zhou-qing",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -618,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -613,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-kuang",
+      "personId": "person-cn-eastern-zhou-kuang",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -612,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -607,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-ding",
+      "personId": "person-cn-eastern-zhou-ding",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -606,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -586,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-jian",
+      "personId": "person-cn-eastern-zhou-jian",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -585,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -572,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-ling",
+      "personId": "person-cn-eastern-zhou-ling",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -571,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -545,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-jing-1",
+      "personId": "person-cn-eastern-zhou-jing-1",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -544,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -521,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-dao",
+      "personId": "person-cn-eastern-zhou-dao",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -520,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -520,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-jing-2",
+      "personId": "person-cn-eastern-zhou-jing-2",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -519,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -476,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-yuan",
+      "personId": "person-cn-eastern-zhou-yuan",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -475,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -469,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-zhending",
+      "personId": "person-cn-eastern-zhou-zhending",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -468,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -442,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-ai",
+      "personId": "person-cn-eastern-zhou-ai",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -441,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -441,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-si",
+      "personId": "person-cn-eastern-zhou-si",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -441,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -441,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-kao",
+      "personId": "person-cn-eastern-zhou-kao",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -440,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -426,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-weilie",
+      "personId": "person-cn-eastern-zhou-weilie",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -425,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -402,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-an",
+      "personId": "person-cn-eastern-zhou-an",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -401,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -376,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-lie",
+      "personId": "person-cn-eastern-zhou-lie",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -375,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -369,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-xian",
+      "personId": "person-cn-eastern-zhou-xian",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -368,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -321,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-shenjing",
+      "personId": "person-cn-eastern-zhou-shenjing",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -320,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -315,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-zhou-nan",
+      "personId": "person-cn-eastern-zhou-nan",
+      "polityId": "polity-cn-eastern-zhou",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -314,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -256,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

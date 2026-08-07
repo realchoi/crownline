@@ -1,0 +1,48 @@
+{
+  "order": 90,
+  "entities": [
+    {
+      "id": "polity-cn-xin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "新",
+        "aliases": [
+          "新朝",
+          "王莽政权"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 9,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 23,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "王莽建立的短期王朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

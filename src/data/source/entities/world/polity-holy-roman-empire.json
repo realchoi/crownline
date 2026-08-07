@@ -1,0 +1,73 @@
+{
+  "order": 760,
+  "entities": [
+    {
+      "id": "polity-holy-roman-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "神圣罗马帝国",
+        "aliases": [
+          "Holy Roman Empire",
+          "德意志民族神圣罗马帝国"
+        ],
+        "local": "Sacrum Imperium Romanum"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 962,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1806,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-europe"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "以中欧诸政治实体为主体的复合帝国结构；962年奥托一世加冕，1806年帝国解体。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "部分研究从800年查理曼加冕追溯帝国传统；页面按德国历史博物馆所列的962—1806年展示。",
+      "alternativeChronologies": [
+        {
+          "label": "查理曼起点口径",
+          "existencePeriods": [
+            {
+              "start": {
+                "year": 800,
+                "precision": "exact"
+              },
+              "end": {
+                "year": 1806,
+                "precision": "exact"
+              }
+            }
+          ],
+          "note": "将800年查理曼加冕视为帝国传统的起点。",
+          "sourceRefs": [
+            {
+              "sourceId": "source-met-hre"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

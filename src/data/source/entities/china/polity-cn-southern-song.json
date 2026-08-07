@@ -1,0 +1,422 @@
+{
+  "order": 670,
+  "entities": [
+    {
+      "id": "polity-cn-southern-song",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "南宋",
+        "aliases": [
+          "宋朝后期",
+          "赵宋"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1127,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1279,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "宋朝后期，以临安为都，1279年崖山海战后结束。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-southern-song-gaozong",
+      "names": {
+        "primary": "宋高宗",
+        "aliases": []
+      },
+      "description": "宋高宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-song-xiaozong",
+      "names": {
+        "primary": "宋孝宗",
+        "aliases": []
+      },
+      "description": "宋孝宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-song-guangzong",
+      "names": {
+        "primary": "宋光宗",
+        "aliases": []
+      },
+      "description": "宋光宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-song-ningzong",
+      "names": {
+        "primary": "宋宁宗",
+        "aliases": []
+      },
+      "description": "宋宁宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-song-lizong",
+      "names": {
+        "primary": "宋理宗",
+        "aliases": []
+      },
+      "description": "宋理宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-song-duzong",
+      "names": {
+        "primary": "宋度宗",
+        "aliases": []
+      },
+      "description": "宋度宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-song-gong",
+      "names": {
+        "primary": "宋恭帝",
+        "aliases": []
+      },
+      "description": "宋恭帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-song-duanzong",
+      "names": {
+        "primary": "宋端宗",
+        "aliases": []
+      },
+      "description": "宋端宗，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-song-zhao-bing",
+      "names": {
+        "primary": "赵昺",
+        "aliases": [
+          "宋少帝",
+          "卫王"
+        ]
+      },
+      "description": "赵昺，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-southern-song-gaozong",
+      "personId": "person-cn-southern-song-gaozong",
+      "polityId": "polity-cn-southern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1127,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1162,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-southern-song-xiaozong",
+      "personId": "person-cn-southern-song-xiaozong",
+      "polityId": "polity-cn-southern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1162,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1189,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-southern-song-guangzong",
+      "personId": "person-cn-southern-song-guangzong",
+      "polityId": "polity-cn-southern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1189,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1194,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-southern-song-ningzong",
+      "personId": "person-cn-southern-song-ningzong",
+      "polityId": "polity-cn-southern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1194,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1224,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-southern-song-lizong",
+      "personId": "person-cn-southern-song-lizong",
+      "polityId": "polity-cn-southern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1224,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1264,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-southern-song-duzong",
+      "personId": "person-cn-southern-song-duzong",
+      "polityId": "polity-cn-southern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1264,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1274,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-southern-song-gong",
+      "personId": "person-cn-southern-song-gong",
+      "polityId": "polity-cn-southern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1274,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1276,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-southern-song-duanzong",
+      "personId": "person-cn-southern-song-duanzong",
+      "polityId": "polity-cn-southern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1276,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1278,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-southern-song-zhao-bing",
+      "personId": "person-cn-southern-song-zhao-bing",
+      "polityId": "polity-cn-southern-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1278,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1279,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

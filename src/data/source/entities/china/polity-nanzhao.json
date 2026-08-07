@@ -1,0 +1,47 @@
+{
+  "order": 610,
+  "entities": [
+    {
+      "id": "polity-nanzhao",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom"
+      ],
+      "displayCategory": "regional",
+      "names": {
+        "primary": "南诏",
+        "aliases": [
+          "蒙舍诏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 738,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 902,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "西南地区的重要区域政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

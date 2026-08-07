@@ -1,0 +1,47 @@
+{
+  "order": 310,
+  "entities": [
+    {
+      "id": "polity-cn-northern-yan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北燕",
+        "aliases": [
+          "冯燕"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 409,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 436,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

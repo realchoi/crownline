@@ -241,3 +241,28 @@ export interface CrownlineData {
   events: HistoricalEvent[];
   sources: Source[];
 }
+
+/** 首屏浏览所需的轻量数据；人物、任期和来源在详情打开时加载。 */
+export interface CrownlineIndex {
+  schemaVersion: 3;
+  chronologyPolicy: ChronologyPolicy;
+  timelineSections: TimelineSection[];
+  entities: HistoricalEntity[];
+  regions: Region[];
+  detailEntityIds: string[];
+}
+
+/** 一个实体可独立加载的引用闭包。 */
+export interface CrownlineDetail {
+  schemaVersion: 3;
+  entityId: string;
+  persons: Person[];
+  reigns: Reign[];
+  reignVacancies: ReignVacancy[];
+  relationships: Relationship[];
+  events: HistoricalEvent[];
+  sources: Source[];
+}
+
+/** 搜索、筛选和时间轴共同依赖的最窄数据边界。 */
+export type BrowseData = Pick<CrownlineIndex, "timelineSections" | "entities" | "regions">;

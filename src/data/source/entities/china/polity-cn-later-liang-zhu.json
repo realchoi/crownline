@@ -1,0 +1,47 @@
+{
+  "order": 440,
+  "entities": [
+    {
+      "id": "polity-cn-later-liang-zhu",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后梁",
+        "aliases": [
+          "朱梁"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 907,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 923,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "五代第一朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

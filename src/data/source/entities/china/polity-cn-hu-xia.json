@@ -1,0 +1,48 @@
+{
+  "order": 300,
+  "entities": [
+    {
+      "id": "polity-cn-hu-xia",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "夏（胡夏）",
+        "aliases": [
+          "胡夏",
+          "大夏"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 407,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 431,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一，由赫连勃勃建立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

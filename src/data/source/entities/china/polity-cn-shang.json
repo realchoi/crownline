@@ -1,0 +1,474 @@
+{
+  "order": 20,
+  "entities": [
+    {
+      "id": "polity-cn-shang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "商",
+        "aliases": [
+          "商朝",
+          "殷商"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -1600,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1046,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "又称殷商；早期年代为约数，晚期有较丰富甲骨文记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "又称殷商；早期年代为约数，晚期有较丰富甲骨文记录。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-shang-tang",
+      "names": {
+        "primary": "商汤",
+        "aliases": []
+      },
+      "description": "商汤，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-shang-wu-ding",
+      "names": {
+        "primary": "商王武丁",
+        "aliases": []
+      },
+      "description": "商王武丁，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-shang-zu-geng",
+      "names": {
+        "primary": "商王祖庚",
+        "aliases": []
+      },
+      "description": "商王祖庚，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-shang-zu-jia",
+      "names": {
+        "primary": "商王祖甲",
+        "aliases": []
+      },
+      "description": "商王祖甲，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-shang-lin-xin",
+      "names": {
+        "primary": "商王廪辛",
+        "aliases": []
+      },
+      "description": "商王廪辛，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-shang-kang-ding",
+      "names": {
+        "primary": "商王康丁",
+        "aliases": []
+      },
+      "description": "商王康丁，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-shang-wu-yi",
+      "names": {
+        "primary": "商王武乙",
+        "aliases": []
+      },
+      "description": "商王武乙，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-shang-wen-ding",
+      "names": {
+        "primary": "商王文丁",
+        "aliases": []
+      },
+      "description": "商王文丁，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-shang-di-yi",
+      "names": {
+        "primary": "商王帝乙",
+        "aliases": []
+      },
+      "description": "商王帝乙，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-shang-di-xin",
+      "names": {
+        "primary": "商王帝辛",
+        "aliases": [
+          "商纣王"
+        ]
+      },
+      "description": "商王帝辛，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-shang-tang",
+      "personId": "person-cn-shang-tang",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1600,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1600,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "note": "传统记载中的商朝开创者；仅以约前1600年标示采用的王朝起点。",
+      "confidenceNote": "传统记载中的商朝开创者；仅以约前1600年标示采用的王朝起点。"
+    },
+    {
+      "id": "reign-cn-shang-wu-ding",
+      "personId": "person-cn-shang-wu-ding",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1250,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1189,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "早期王年存在多种重建方案，本记录采用所引来源的通行口径。"
+    },
+    {
+      "id": "reign-cn-shang-zu-geng",
+      "personId": "person-cn-shang-zu-geng",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1188,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1178,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "早期王年存在多种重建方案，本记录采用所引来源的通行口径。"
+    },
+    {
+      "id": "reign-cn-shang-zu-jia",
+      "personId": "person-cn-shang-zu-jia",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1177,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1158,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "早期王年存在多种重建方案，本记录采用所引来源的通行口径。"
+    },
+    {
+      "id": "reign-cn-shang-lin-xin",
+      "personId": "person-cn-shang-lin-xin",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1157,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1149,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "早期王年存在多种重建方案，本记录采用所引来源的通行口径。"
+    },
+    {
+      "id": "reign-cn-shang-kang-ding",
+      "personId": "person-cn-shang-kang-ding",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1148,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1132,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "早期王年存在多种重建方案，本记录采用所引来源的通行口径。"
+    },
+    {
+      "id": "reign-cn-shang-wu-yi",
+      "personId": "person-cn-shang-wu-yi",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1131,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1117,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "早期王年存在多种重建方案，本记录采用所引来源的通行口径。"
+    },
+    {
+      "id": "reign-cn-shang-wen-ding",
+      "personId": "person-cn-shang-wen-ding",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1116,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1106,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "早期王年存在多种重建方案，本记录采用所引来源的通行口径。"
+    },
+    {
+      "id": "reign-cn-shang-di-yi",
+      "personId": "person-cn-shang-di-yi",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1105,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1087,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "早期王年存在多种重建方案，本记录采用所引来源的通行口径。"
+    },
+    {
+      "id": "reign-cn-shang-di-xin",
+      "personId": "person-cn-shang-di-xin",
+      "polityId": "polity-cn-shang",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -1086,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -1046,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chinese-monarchs-reference"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "早期王年存在多种重建方案，本记录采用所引来源的通行口径。"
+    }
+  ],
+  "reignVacancies": []
+}

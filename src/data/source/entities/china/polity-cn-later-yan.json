@@ -1,0 +1,47 @@
+{
+  "order": 230,
+  "entities": [
+    {
+      "id": "polity-cn-later-yan",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后燕",
+        "aliases": [
+          "慕容燕"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 384,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 409,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

@@ -1,0 +1,627 @@
+{
+  "order": 100,
+  "entities": [
+    {
+      "id": "polity-cn-eastern-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "东汉",
+        "aliases": [
+          "后汉",
+          "汉朝后期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 25,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 220,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "汉光武帝刘秀建立，后期进入群雄割据。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-eastern-han-guangwu",
+      "names": {
+        "primary": "汉光武帝",
+        "aliases": []
+      },
+      "description": "汉光武帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-ming",
+      "names": {
+        "primary": "汉明帝",
+        "aliases": []
+      },
+      "description": "汉明帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-zhang",
+      "names": {
+        "primary": "汉章帝",
+        "aliases": []
+      },
+      "description": "汉章帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-he",
+      "names": {
+        "primary": "汉和帝",
+        "aliases": []
+      },
+      "description": "汉和帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-shang",
+      "names": {
+        "primary": "汉殇帝",
+        "aliases": []
+      },
+      "description": "汉殇帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-an",
+      "names": {
+        "primary": "汉安帝",
+        "aliases": []
+      },
+      "description": "汉安帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-beixiang",
+      "names": {
+        "primary": "北乡侯",
+        "aliases": []
+      },
+      "description": "北乡侯，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-shun",
+      "names": {
+        "primary": "汉顺帝",
+        "aliases": []
+      },
+      "description": "汉顺帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-chong",
+      "names": {
+        "primary": "汉冲帝",
+        "aliases": []
+      },
+      "description": "汉冲帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-zhi",
+      "names": {
+        "primary": "汉质帝",
+        "aliases": []
+      },
+      "description": "汉质帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-huan",
+      "names": {
+        "primary": "汉桓帝",
+        "aliases": []
+      },
+      "description": "汉桓帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-ling",
+      "names": {
+        "primary": "汉灵帝",
+        "aliases": []
+      },
+      "description": "汉灵帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-shaodi",
+      "names": {
+        "primary": "汉少帝",
+        "aliases": [
+          "弘农王"
+        ]
+      },
+      "description": "汉少帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-eastern-han-xian",
+      "names": {
+        "primary": "汉献帝",
+        "aliases": []
+      },
+      "description": "汉献帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-eastern-han-guangwu",
+      "personId": "person-cn-eastern-han-guangwu",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 25,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 57,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-ming",
+      "personId": "person-cn-eastern-han-ming",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 57,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 75,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-zhang",
+      "personId": "person-cn-eastern-han-zhang",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 75,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 88,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-he",
+      "personId": "person-cn-eastern-han-he",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 88,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 105,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-shang",
+      "personId": "person-cn-eastern-han-shang",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 105,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 106,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-an",
+      "personId": "person-cn-eastern-han-an",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 106,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 125,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-beixiang",
+      "personId": "person-cn-eastern-han-beixiang",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 125,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 125,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high",
+      "note": "在位不足一年，未获正式帝号。"
+    },
+    {
+      "id": "reign-cn-eastern-han-shun",
+      "personId": "person-cn-eastern-han-shun",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 125,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 144,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-chong",
+      "personId": "person-cn-eastern-han-chong",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 144,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 145,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-zhi",
+      "personId": "person-cn-eastern-han-zhi",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 145,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 146,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-huan",
+      "personId": "person-cn-eastern-han-huan",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 146,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 167,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-ling",
+      "personId": "person-cn-eastern-han-ling",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 167,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 189,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-shaodi",
+      "personId": "person-cn-eastern-han-shaodi",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 189,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 189,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-eastern-han-xian",
+      "personId": "person-cn-eastern-han-xian",
+      "polityId": "polity-cn-eastern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 189,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 220,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

@@ -1,13 +1,20 @@
 import { describe, expect, it } from "vitest";
 
-import dataJson from "../src/data/crownline-data.json";
-import { loadCrownlineData } from "../src/data/loadCrownlineData";
+import { loadSourceData } from "../scripts/data-source";
+import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import { isYearInPeriods } from "../src/domain/chronology";
 import { validateCrownlineData } from "../src/domain/dataValidation";
 import { selectRulerSnapshot } from "../src/domain/rulerSnapshot";
-import type { CrownlineData } from "../src/domain/types";
 
-const data = dataJson as CrownlineData;
+const data = await loadSourceData();
+const details = buildGeneratedArtifacts(data).details;
+
+function rulerSnapshot(entityId: string, year: number) {
+  const entity = data.entities.find(({ id }) => id === entityId);
+  const detail = details.get(entityId);
+  if (!entity || !detail) throw new Error(`缺少测试详情 ${entityId}`);
+  return selectRulerSnapshot(entity, detail, year);
+}
 
 describe("生产历史数据", () => {
   it("保留中国七个阶段和七十三个时间轴实体，并加入四个外部代表条目", () => {
@@ -52,7 +59,7 @@ describe("生产历史数据", () => {
 
   it("通过结构和跨记录校验", () => {
     expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
-    expect(loadCrownlineData().entities).toHaveLength(77);
+    expect(data.entities).toHaveLength(77);
   });
 
   it("为全部十六个中国主线政权提供经过校订的任期数据", () => {
@@ -71,15 +78,15 @@ describe("生产历史数据", () => {
   });
 
   it("在真实数据中覆盖单人、摄政、争议、空位和未校订状态", () => {
-    expect(selectRulerSnapshot(data, "polity-cn-ming", 1400).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-ming", 1400).status).toBe("known");
 
-    const qing = selectRulerSnapshot(data, "polity-cn-qing", 1862);
+    const qing = rulerSnapshot("polity-cn-qing", 1862);
     expect(qing.status).toBe("known");
     expect(qing.entries.map(({ reign }) => reign.role)).toEqual(["ruler", "regent", "regent"]);
 
-    expect(selectRulerSnapshot(data, "polity-cn-xia", -2070).status).toBe("disputed");
-    expect(selectRulerSnapshot(data, "polity-cn-western-zhou", -840).status).toBe("vacant");
-    expect(selectRulerSnapshot(data, "polity-byzantine-empire", 1000).status).toBe(
+    expect(rulerSnapshot("polity-cn-xia", -2070).status).toBe("disputed");
+    expect(rulerSnapshot("polity-cn-western-zhou", -840).status).toBe("vacant");
+    expect(rulerSnapshot("polity-byzantine-empire", 1000).status).toBe(
       "unrecorded"
     );
   });

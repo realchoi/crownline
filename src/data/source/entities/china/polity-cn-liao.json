@@ -1,0 +1,48 @@
+{
+  "order": 620,
+  "entities": [
+    {
+      "id": "polity-cn-liao",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "辽",
+        "aliases": [
+          "契丹",
+          "辽朝"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 916,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1125,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "契丹建立，与五代、北宋等政权长期并立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

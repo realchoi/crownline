@@ -109,13 +109,18 @@ a:hover { color: var(--accent-hover); }
 
 .skip-link:focus { transform: translateY(0); }
 
-.data-error {
+.data-error,
+.data-loading {
   margin-top: 72px;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--surface-strong);
   padding: 28px;
 }
+
+.data-loading { color: var(--muted); }
+
+.data-loading p { margin: 0; }
 
 .site-shell {
   width: min(1120px, calc(100% - 32px));
@@ -1112,6 +1117,13 @@ dialog::backdrop {
   border-top: 1px solid var(--border);
   padding-top: 20px;
 }
+
+.detail-loading { color: var(--muted); }
+
+.detail-loading p,
+.detail-load-error p { margin-bottom: 0; }
+
+.detail-retry { margin-top: 14px; }
 
 .detail-section h3,
 .ruler-card h4 {

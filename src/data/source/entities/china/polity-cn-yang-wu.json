@@ -1,0 +1,48 @@
+{
+  "order": 490,
+  "entities": [
+    {
+      "id": "polity-cn-yang-wu",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "吴",
+        "aliases": [
+          "杨吴",
+          "南吴"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 902,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 937,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十国之一，常称杨吴。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

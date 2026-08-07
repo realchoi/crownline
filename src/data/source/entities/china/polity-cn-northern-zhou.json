@@ -1,0 +1,47 @@
+{
+  "order": 360,
+  "entities": [
+    {
+      "id": "polity-cn-northern-zhou",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北周",
+        "aliases": [
+          "宇文周"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 557,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 581,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "承西魏而立，后为隋所代。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

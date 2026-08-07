@@ -1,0 +1,48 @@
+{
+  "order": 450,
+  "entities": [
+    {
+      "id": "polity-cn-later-tang",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后唐",
+        "aliases": [
+          "李唐",
+          "沙陀唐"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 923,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 936,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "五代第二朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

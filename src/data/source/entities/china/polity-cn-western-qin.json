@@ -1,0 +1,58 @@
+{
+  "order": 240,
+  "entities": [
+    {
+      "id": "polity-cn-western-qin",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "西秦",
+        "aliases": [
+          "乞伏秦"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 385,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 400,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 409,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 431,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一；400至409年间政权中断。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "十六国之一；400至409年间政权中断。"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

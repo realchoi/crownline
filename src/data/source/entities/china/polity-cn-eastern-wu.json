@@ -1,0 +1,48 @@
+{
+  "order": 130,
+  "entities": [
+    {
+      "id": "polity-cn-eastern-wu",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "孙吴",
+        "aliases": [
+          "吴",
+          "东吴"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 222,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 280,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "三国之一，通常简称吴或东吴。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

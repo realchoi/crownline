@@ -1,0 +1,47 @@
+{
+  "order": 190,
+  "entities": [
+    {
+      "id": "polity-cn-later-zhao",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后赵",
+        "aliases": [
+          "石赵"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 319,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 351,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

@@ -1,0 +1,47 @@
+{
+  "order": 160,
+  "entities": [
+    {
+      "id": "polity-cn-former-liang",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "前凉",
+        "aliases": [
+          "张凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 301,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 376,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

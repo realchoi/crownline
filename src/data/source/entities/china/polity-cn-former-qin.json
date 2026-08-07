@@ -1,0 +1,47 @@
+{
+  "order": 210,
+  "entities": [
+    {
+      "id": "polity-cn-former-qin",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "前秦",
+        "aliases": [
+          "苻秦"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 351,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 394,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一，曾一度统一北方大部。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

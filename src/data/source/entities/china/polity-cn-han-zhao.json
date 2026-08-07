@@ -1,0 +1,49 @@
+{
+  "order": 180,
+  "entities": [
+    {
+      "id": "polity-cn-han-zhao",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "汉赵（前赵）",
+        "aliases": [
+          "汉赵",
+          "前赵",
+          "匈奴汉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 304,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 329,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一；前期国号汉，后改赵。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

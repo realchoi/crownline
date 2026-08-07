@@ -1,0 +1,47 @@
+{
+  "order": 460,
+  "entities": [
+    {
+      "id": "polity-cn-later-jin",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后晋",
+        "aliases": [
+          "石晋"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 936,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 947,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "五代第三朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

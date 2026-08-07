@@ -1,0 +1,48 @@
+{
+  "order": 650,
+  "entities": [
+    {
+      "id": "polity-cn-western-xia",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "西夏",
+        "aliases": [
+          "大夏",
+          "邦泥定国"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1038,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1227,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "党项建立，与宋、辽、金等政权并立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

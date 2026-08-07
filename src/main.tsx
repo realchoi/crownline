@@ -2,7 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import { App } from "./app/App";
-import { loadCrownlineData } from "./data/loadCrownlineData";
+import { createCrownlineDetailLoader } from "./data/loadCrownlineDetail";
+import { loadCrownlineIndex } from "./data/loadCrownlineIndex";
 import "./styles/styles.css";
 
 const rootElement = document.getElementById("root");
@@ -11,11 +12,18 @@ if (!rootElement) {
 }
 
 const root = createRoot(rootElement);
+root.render(
+  <StrictMode>
+    <main className="site-shell data-loading" role="status">
+      <p>正在加载历史数据…</p>
+    </main>
+  </StrictMode>
+);
 try {
-  // 数据在首次渲染前完成校验，避免坏数据进入组件树后产生部分页面。
+  const data = await loadCrownlineIndex();
   root.render(
     <StrictMode>
-      <App data={loadCrownlineData()} />
+      <App data={data} loadDetail={createCrownlineDetailLoader(data)} />
     </StrictMode>
   );
 } catch (error) {

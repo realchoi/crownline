@@ -1,0 +1,47 @@
+{
+  "order": 220,
+  "entities": [
+    {
+      "id": "polity-cn-later-qin",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后秦",
+        "aliases": [
+          "姚秦"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 384,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 417,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

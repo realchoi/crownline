@@ -1,0 +1,755 @@
+{
+  "order": 700,
+  "entities": [
+    {
+      "id": "polity-cn-ming",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "mainline",
+      "names": {
+        "primary": "明",
+        "aliases": [
+          "明朝",
+          "大明"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1368,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1644,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "传统主线通常以1644年北京失守、崇祯帝自缢为终点。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-cn-ming-hongwu",
+      "names": {
+        "primary": "洪武帝",
+        "aliases": [
+          "明太祖",
+          "朱元璋"
+        ]
+      },
+      "description": "洪武帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-jianwen",
+      "names": {
+        "primary": "建文帝",
+        "aliases": [
+          "明惠帝",
+          "朱允炆"
+        ]
+      },
+      "description": "建文帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-yongle",
+      "names": {
+        "primary": "永乐帝",
+        "aliases": [
+          "明成祖",
+          "朱棣"
+        ]
+      },
+      "description": "永乐帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-hongxi",
+      "names": {
+        "primary": "洪熙帝",
+        "aliases": [
+          "明仁宗"
+        ]
+      },
+      "description": "洪熙帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-xuande",
+      "names": {
+        "primary": "宣德帝",
+        "aliases": [
+          "明宣宗"
+        ]
+      },
+      "description": "宣德帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-zhengtong-tianshun",
+      "names": {
+        "primary": "正统帝",
+        "aliases": [
+          "天顺帝",
+          "明英宗",
+          "朱祁镇"
+        ]
+      },
+      "description": "正统帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-jingtai",
+      "names": {
+        "primary": "景泰帝",
+        "aliases": [
+          "明代宗",
+          "朱祁钰"
+        ]
+      },
+      "description": "景泰帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-chenghua",
+      "names": {
+        "primary": "成化帝",
+        "aliases": [
+          "明宪宗"
+        ]
+      },
+      "description": "成化帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-hongzhi",
+      "names": {
+        "primary": "弘治帝",
+        "aliases": [
+          "明孝宗"
+        ]
+      },
+      "description": "弘治帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-zhengde",
+      "names": {
+        "primary": "正德帝",
+        "aliases": [
+          "明武宗"
+        ]
+      },
+      "description": "正德帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-jiajing",
+      "names": {
+        "primary": "嘉靖帝",
+        "aliases": [
+          "明世宗"
+        ]
+      },
+      "description": "嘉靖帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-longqing",
+      "names": {
+        "primary": "隆庆帝",
+        "aliases": [
+          "明穆宗"
+        ]
+      },
+      "description": "隆庆帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-wanli",
+      "names": {
+        "primary": "万历帝",
+        "aliases": [
+          "明神宗"
+        ]
+      },
+      "description": "万历帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-taichang",
+      "names": {
+        "primary": "泰昌帝",
+        "aliases": [
+          "明光宗"
+        ]
+      },
+      "description": "泰昌帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-tianqi",
+      "names": {
+        "primary": "天启帝",
+        "aliases": [
+          "明熹宗"
+        ]
+      },
+      "description": "天启帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ming-chongzhen",
+      "names": {
+        "primary": "崇祯帝",
+        "aliases": [
+          "明思宗",
+          "朱由检"
+        ]
+      },
+      "description": "崇祯帝，该政权通行年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-ming-hongwu",
+      "personId": "person-cn-ming-hongwu",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1368,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1398,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-jianwen",
+      "personId": "person-cn-ming-jianwen",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1398,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1402,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-yongle",
+      "personId": "person-cn-ming-yongle",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1402,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1424,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-hongxi",
+      "personId": "person-cn-ming-hongxi",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1424,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1425,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-xuande",
+      "personId": "person-cn-ming-xuande",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1425,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1435,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-zhengtong-tianshun",
+      "personId": "person-cn-ming-zhengtong-tianshun",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1435,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1449,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1457,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1464,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-jingtai",
+      "personId": "person-cn-ming-jingtai",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1449,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1457,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-chenghua",
+      "personId": "person-cn-ming-chenghua",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1464,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1487,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-hongzhi",
+      "personId": "person-cn-ming-hongzhi",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1487,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1505,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-zhengde",
+      "personId": "person-cn-ming-zhengde",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1505,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1521,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-jiajing",
+      "personId": "person-cn-ming-jiajing",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1521,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1566,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-longqing",
+      "personId": "person-cn-ming-longqing",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1566,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1572,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-wanli",
+      "personId": "person-cn-ming-wanli",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1572,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1620,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-taichang",
+      "personId": "person-cn-ming-taichang",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1620,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1620,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-tianqi",
+      "personId": "person-cn-ming-tianqi",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1620,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1627,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-cn-ming-chongzhen",
+      "personId": "person-cn-ming-chongzhen",
+      "polityId": "polity-cn-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1627,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1644,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

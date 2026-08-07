@@ -5,7 +5,7 @@
 #   - NotoSansSC[wght].ttf        正文(保留可变字重 100-900)
 #   - NotoSerifSC[wght].ttf       中文标题(实例化 wght=700 静态字体)
 #   - SourceSerif4[opsz,wght].ttf 拉丁标题(保留两个可变轴)
-# 字符集由全站源码文案与 crownline-data.json 的实际用字生成,
+# 字符集由全站源码文案与聚合后的完整历史数据实际用字生成,
 # 与 scripts/check-font-subset.py 的口径一致。
 import json
 import subprocess
@@ -45,7 +45,7 @@ def subset(src: Path, chars: set[str], out: Path, workdir: Path):
 
 
 def main() -> int:
-    data = json.loads((ROOT / "src/data/crownline-data.json").read_text(encoding="utf-8"))
+    data = json.loads((ROOT / ".generated/data/crownline-data.json").read_text(encoding="utf-8"))
     # 生成和检查共用同一套字符收集规则，避免新增标题字段时只更新一侧。
     sans_chars, song_chars, latin_chars = collect_font_charsets(ROOT, data)
 

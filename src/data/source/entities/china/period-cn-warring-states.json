@@ -1,0 +1,45 @@
+{
+  "order": 60,
+  "entities": [
+    {
+      "id": "period-cn-warring-states",
+      "entityKind": "historical-period",
+      "polityForms": [],
+      "displayCategory": "context",
+      "names": {
+        "primary": "战国",
+        "aliases": [
+          "战国时期"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -475,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -221,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "历史分期，并非单一王朝；通常以秦统一六国为终点。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

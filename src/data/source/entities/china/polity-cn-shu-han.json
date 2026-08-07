@@ -1,0 +1,48 @@
+{
+  "order": 120,
+  "entities": [
+    {
+      "id": "polity-cn-shu-han",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "蜀汉",
+        "aliases": [
+          "蜀",
+          "季汉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 221,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 263,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "三国之一，通常简称蜀。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

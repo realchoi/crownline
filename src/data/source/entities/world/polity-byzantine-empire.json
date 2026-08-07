@@ -1,0 +1,52 @@
+{
+  "order": 740,
+  "entities": [
+    {
+      "id": "polity-byzantine-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "拜占庭帝国",
+        "aliases": [
+          "东罗马帝国",
+          "Byzantine Empire",
+          "Eastern Roman Empire"
+        ],
+        "local": "Βασιλεία Ῥωμαίων"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 330,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1453,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-europe",
+        "region-west-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "罗马帝国东部延续形成的帝国，以君士坦丁堡为政治中心；约330年君士坦丁迁都于此，1453年君士坦丁堡陷落。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-met-byzantium"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "“拜占庭帝国”是后世称谓；约330—1453年是常见的艺术史分期口径。"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

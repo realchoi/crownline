@@ -1,0 +1,48 @@
+{
+  "order": 710,
+  "entities": [
+    {
+      "id": "polity-cn-later-jin-jurchen",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "后金",
+        "aliases": [
+          "后金国",
+          "女真"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1616,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1636,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "清朝前身，1636年皇太极改国号为清。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

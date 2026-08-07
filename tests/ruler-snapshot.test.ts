@@ -1,7 +1,13 @@
 import { describe, expect, it } from "vitest";
 
 import { selectRulerSnapshot } from "../src/domain/rulerSnapshot";
-import type { CrownlineData, HistoricalInterval, Person, Reign } from "../src/domain/types";
+import type {
+  CrownlineData,
+  CrownlineDetail,
+  HistoricalInterval,
+  Person,
+  Reign
+} from "../src/domain/types";
 
 const period = (start: number, end: number): HistoricalInterval => ({
   start: { year: start, precision: "exact" },
@@ -99,38 +105,54 @@ function makeData(): CrownlineData {
   };
 }
 
+function snapshot(data: CrownlineData, year: number) {
+  const polity = data.entities[0];
+  if (!polity) throw new Error("缺少测试政权");
+  const detail: CrownlineDetail = {
+    schemaVersion: 3,
+    entityId: polity.id,
+    persons: data.persons,
+    reigns: data.reigns,
+    reignVacancies: data.reignVacancies,
+    relationships: data.relationships,
+    events: data.events,
+    sources: data.sources
+  };
+  return selectRulerSnapshot(polity, detail, year);
+}
+
 describe("当年统治者快照", () => {
   it("在闭区间端点命中单一统治者", () => {
     const data = makeData();
 
-    expect(selectRulerSnapshot(data, "polity-test", 1)).toMatchObject({
+    expect(snapshot(data, 1)).toMatchObject({
       status: "known",
       entries: [{ person: { names: { primary: "甲王" } } }]
     });
-    expect(selectRulerSnapshot(data, "polity-test", 5).status).toBe("known");
+    expect(snapshot(data, 5).status).toBe("known");
   });
 
   it("稳定返回同年的统治者和摄政者且不误标争议", () => {
-    const snapshot = selectRulerSnapshot(makeData(), "polity-test", 4);
+    const result = snapshot(makeData(), 4);
 
-    expect(snapshot.status).toBe("known");
-    expect(snapshot.entries.map(({ reign }) => reign.role)).toEqual(["ruler", "regent"]);
+    expect(result.status).toBe("known");
+    expect(result.entries.map(({ reign }) => reign.role)).toEqual(["ruler", "regent"]);
   });
 
   it("把争位者或争议任期标成争议", () => {
     const data = makeData();
-    expect(selectRulerSnapshot(data, "polity-test", 6).status).toBe("disputed");
+    expect(snapshot(data, 6).status).toBe("disputed");
 
     data.reigns[0]!.chronologyStatus = "disputed";
-    expect(selectRulerSnapshot(data, "polity-test", 2).status).toBe("disputed");
+    expect(snapshot(data, 2).status).toBe("disputed");
   });
 
   it("区分明确空位和未收录资料", () => {
-    expect(selectRulerSnapshot(makeData(), "polity-test", 8)).toMatchObject({
+    expect(snapshot(makeData(), 8)).toMatchObject({
       status: "vacant",
       vacancy: { id: "vacancy-test" }
     });
-    expect(selectRulerSnapshot(makeData(), "polity-test", 10)).toMatchObject({
+    expect(snapshot(makeData(), 10)).toMatchObject({
       status: "unrecorded",
       entries: []
     });
@@ -139,8 +161,8 @@ describe("当年统治者快照", () => {
   it("任期中断时只在实际分段内命中", () => {
     const data = makeData();
 
-    expect(selectRulerSnapshot(data, "polity-test", 7).status).toBe("unrecorded");
-    expect(selectRulerSnapshot(data, "polity-test", 11).status).toBe("known");
+    expect(snapshot(data, 7).status).toBe("unrecorded");
+    expect(snapshot(data, 11).status).toBe("known");
   });
 
   it("跨越公元前后时跳过公元零年", () => {
@@ -150,13 +172,24 @@ describe("当年统治者快照", () => {
     data.reigns = [data.reigns[0]!];
     data.reignVacancies = [];
 
-    expect(selectRulerSnapshot(data, "polity-test", -1).status).toBe("known");
-    expect(selectRulerSnapshot(data, "polity-test", 1).status).toBe("known");
+    expect(snapshot(data, -1).status).toBe("known");
+    expect(snapshot(data, 1).status).toBe("known");
   });
 
-  it("拒绝不存在的政权 ID", () => {
-    expect(() => selectRulerSnapshot(makeData(), "polity-missing", 2)).toThrow(
-      "polity-missing"
-    );
+  it("拒绝详情与政权不匹配", () => {
+    const data = makeData();
+    const polity = data.entities[0]!;
+    const detail: CrownlineDetail = {
+      schemaVersion: 3,
+      entityId: "polity-missing",
+      persons: data.persons,
+      reigns: data.reigns,
+      reignVacancies: data.reignVacancies,
+      relationships: [],
+      events: [],
+      sources: data.sources
+    };
+
+    expect(() => selectRulerSnapshot(polity, detail, 2)).toThrow("polity-test");
   });
 });

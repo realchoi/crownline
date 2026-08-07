@@ -1,0 +1,48 @@
+{
+  "order": 380,
+  "entities": [
+    {
+      "id": "polity-cn-southern-qi",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南齐",
+        "aliases": [
+          "萧齐",
+          "齐"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 479,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 502,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "南朝第二朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}

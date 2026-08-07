@@ -1,0 +1,47 @@
+{
+  "order": 260,
+  "entities": [
+    {
+      "id": "polity-cn-southern-liang-tufa",
+      "entityKind": "polity",
+      "polityForms": [
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "南凉",
+        "aliases": [
+          "秃发凉"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 397,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 414,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-china"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "十六国之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-cn-chronology-table"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": []
+}
