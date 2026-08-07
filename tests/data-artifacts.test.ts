@@ -33,6 +33,15 @@ describe("运行时数据产物", () => {
     );
   });
 
+  it("为新增非主线政权生成可独立加载的详情闭包", () => {
+    const wei = buildGeneratedArtifacts(data).details.get("polity-cn-cao-wei");
+
+    expect(wei?.persons.length).toBeGreaterThan(0);
+    expect(wei?.reigns.every(({ polityId }) => polityId === "polity-cn-cao-wei"))
+      .toBe(true);
+    expect(wei?.sources.length).toBeGreaterThan(0);
+  });
+
   it("共享关系、关系事件和来源进入双方详情", () => {
     const fixture: CrownlineData = structuredClone(data);
     fixture.events.push({

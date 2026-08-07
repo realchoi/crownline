@@ -33,16 +33,49 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "三国之一，通常简称吴或东吴。",
+      "description": "孙权承继孙策在江东的基业，于222年受魏封吴王后建立独立政权，229年称帝，先后以武昌、建业为都，史称孙吴或东吴。其统治范围以长江中下游和岭南为主，通过屯田、航运与江南开发维持国力，并与曹魏、蜀汉长期并立。后期宗室斗争和政治动荡加剧，280年晋军攻克建业，末帝孙皓投降。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-zgbk-three-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-eastern-wu-sun-quan",
+      "names": { "primary": "吴大帝", "aliases": ["孙权", "吴王"] },
+      "description": "孙吴建立者，222年称吴王，229年称帝。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    },
+    {
+      "id": "person-cn-eastern-wu-sun-liang",
+      "names": { "primary": "会稽王", "aliases": ["孙亮"] },
+      "description": "孙吴第二位皇帝，后被权臣孙綝废黜。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    },
+    {
+      "id": "person-cn-eastern-wu-sun-xiu",
+      "names": { "primary": "吴景帝", "aliases": ["孙休"] },
+      "description": "孙吴第三位皇帝。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    },
+    {
+      "id": "person-cn-eastern-wu-sun-hao",
+      "names": { "primary": "吴末帝", "aliases": ["孙皓", "乌程侯"] },
+      "description": "孙吴末代皇帝，280年向西晋投降。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    }
+  ],
+  "reigns": [
+    { "id": "reign-cn-eastern-wu-sun-quan", "personId": "person-cn-eastern-wu-sun-quan", "polityId": "polity-cn-eastern-wu", "titles": ["吴王", "皇帝"], "role": "ruler", "periods": [{ "start": { "year": 222, "precision": "exact" }, "end": { "year": 252, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "222年称吴王，229年称帝；按现有政权起点记录统治期。", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" },
+    { "id": "reign-cn-eastern-wu-sun-liang", "personId": "person-cn-eastern-wu-sun-liang", "polityId": "polity-cn-eastern-wu", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 252, "precision": "exact" }, "end": { "year": 258, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" },
+    { "id": "reign-cn-eastern-wu-sun-xiu", "personId": "person-cn-eastern-wu-sun-xiu", "polityId": "polity-cn-eastern-wu", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 258, "precision": "exact" }, "end": { "year": 264, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" },
+    { "id": "reign-cn-eastern-wu-sun-hao", "personId": "person-cn-eastern-wu-sun-hao", "polityId": "polity-cn-eastern-wu", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 264, "precision": "exact" }, "end": { "year": 280, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" }
+  ],
   "reignVacancies": []
 }

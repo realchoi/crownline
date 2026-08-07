@@ -33,16 +33,68 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "王莽建立的短期王朝。",
+      "description": "西汉外戚王莽于公元9年代汉建立，定都长安。政权以恢复周礼为理想，推行王田、币制、官名与地名等多项改制，但措施反复且执行困难，又遭遇灾害、财政紧张及绿林、赤眉起义。公元23年起义军攻入长安，王莽被杀，新朝灭亡，此后群雄争夺，东汉逐步重建统一。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-ccdi-xin-fall"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-xin-wang-mang",
+      "names": {
+        "primary": "王莽",
+        "aliases": [
+          "新帝",
+          "字巨君"
+        ]
+      },
+      "description": "新朝建立者和唯一一位正式在位君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        },
+        {
+          "sourceId": "source-ccdi-xin-fall"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-xin-wang-mang",
+      "personId": "person-cn-xin-wang-mang",
+      "polityId": "polity-cn-xin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 9,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 23,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
   "reignVacancies": []
 }

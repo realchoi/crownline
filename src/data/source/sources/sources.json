@@ -119,5 +119,23 @@
     "publisher": "ibiblio",
     "url": "https://www.ibiblio.org/chinesehistory/contents/06dat/bio.2qin.html",
     "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-zgbk-three-kingdoms",
+    "title": "三国",
+    "sourceType": "secondary",
+    "citation": "《中国大百科全书》第三版网络版：〈三国〉。",
+    "publisher": "中国大百科全书出版社",
+    "url": "https://www.zgbk.com/ecph/words?ID=74911&SiteID=1&SubID=44026&Type=bkzyb",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-ccdi-xin-fall",
+    "title": "2020丨公元20年代：光武中兴",
+    "sourceType": "institutional",
+    "citation": "中央纪委国家监委网站：〈2020丨公元20年代：光武中兴〉，历史顾问卜宪群。",
+    "publisher": "中央纪委国家监委网站",
+    "url": "https://m.ccdi.gov.cn/content/41/a8/57067.html",
+    "accessedAt": "2026-08-07"
   }
 ]

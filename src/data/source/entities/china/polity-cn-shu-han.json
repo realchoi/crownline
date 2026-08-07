@@ -33,16 +33,35 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "三国之一，通常简称蜀。",
+      "description": "刘备在东汉末年据有益州，于221年在成都称帝，沿用汉国号，自认继承汉室，后世称蜀汉或季汉。其疆域以今四川、重庆及云南、贵州、陕西南部部分地区为核心，在诸葛亮辅政时期多次北伐曹魏。263年魏军攻入成都，后主刘禅投降，蜀汉灭亡，其故地随后归入曹魏和西晋。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-zgbk-three-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-shu-han-liu-bei",
+      "names": { "primary": "汉昭烈帝", "aliases": ["刘备", "先主"] },
+      "description": "蜀汉开国皇帝，以继承汉室自居。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    },
+    {
+      "id": "person-cn-shu-han-liu-shan",
+      "names": { "primary": "蜀汉后主", "aliases": ["刘禅", "安乐公"] },
+      "description": "蜀汉末代皇帝，263年向曹魏投降。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    }
+  ],
+  "reigns": [
+    { "id": "reign-cn-shu-han-liu-bei", "personId": "person-cn-shu-han-liu-bei", "polityId": "polity-cn-shu-han", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 221, "precision": "exact" }, "end": { "year": 223, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" },
+    { "id": "reign-cn-shu-han-liu-shan", "personId": "person-cn-shu-han-liu-shan", "polityId": "polity-cn-shu-han", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 223, "precision": "exact" }, "end": { "year": 263, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" }
+  ],
   "reignVacancies": []
 }

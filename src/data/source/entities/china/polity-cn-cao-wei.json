@@ -33,16 +33,56 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "三国之一，通常简称魏。",
+      "description": "东汉末年曹操控制北方并受封魏王，其子曹丕于220年迫使汉献帝禅位，建立魏国，定都洛阳，史称曹魏。曹魏据有黄河流域及西北、东北广大地区，以屯田和整顿选官巩固统治，并先后灭蜀汉、平辽东。后期朝政逐渐由司马氏掌握，265年魏元帝曹奂禅位于司马炎，曹魏亡，西晋建立。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-zgbk-three-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-cao-wei-cao-pi",
+      "names": { "primary": "魏文帝", "aliases": ["曹丕"] },
+      "description": "曹魏开国皇帝，曹操之子。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    },
+    {
+      "id": "person-cn-cao-wei-cao-rui",
+      "names": { "primary": "魏明帝", "aliases": ["曹叡"] },
+      "description": "曹魏第二位皇帝，魏文帝曹丕之子。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    },
+    {
+      "id": "person-cn-cao-wei-cao-fang",
+      "names": { "primary": "齐王", "aliases": ["曹芳", "邵陵厉公"] },
+      "description": "曹魏第三位皇帝，后被权臣司马师废黜。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    },
+    {
+      "id": "person-cn-cao-wei-cao-mao",
+      "names": { "primary": "高贵乡公", "aliases": ["曹髦"] },
+      "description": "曹魏第四位皇帝，反抗司马昭时遇害。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    },
+    {
+      "id": "person-cn-cao-wei-cao-huan",
+      "names": { "primary": "魏元帝", "aliases": ["曹奂", "陈留王"] },
+      "description": "曹魏末代皇帝，265年禅位于司马炎。",
+      "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }]
+    }
+  ],
+  "reigns": [
+    { "id": "reign-cn-cao-wei-cao-pi", "personId": "person-cn-cao-wei-cao-pi", "polityId": "polity-cn-cao-wei", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 220, "precision": "exact" }, "end": { "year": 226, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" },
+    { "id": "reign-cn-cao-wei-cao-rui", "personId": "person-cn-cao-wei-cao-rui", "polityId": "polity-cn-cao-wei", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 226, "precision": "exact" }, "end": { "year": 239, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" },
+    { "id": "reign-cn-cao-wei-cao-fang", "personId": "person-cn-cao-wei-cao-fang", "polityId": "polity-cn-cao-wei", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 239, "precision": "exact" }, "end": { "year": 254, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" },
+    { "id": "reign-cn-cao-wei-cao-mao", "personId": "person-cn-cao-wei-cao-mao", "polityId": "polity-cn-cao-wei", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 254, "precision": "exact" }, "end": { "year": 260, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" },
+    { "id": "reign-cn-cao-wei-cao-huan", "personId": "person-cn-cao-wei-cao-huan", "polityId": "polity-cn-cao-wei", "titles": ["皇帝"], "role": "ruler", "periods": [{ "start": { "year": 260, "precision": "exact" }, "end": { "year": 265, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-moe-emperor-chronology" }], "confidence": "high" }
+  ],
   "reignVacancies": []
 }

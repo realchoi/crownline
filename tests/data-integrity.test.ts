@@ -9,6 +9,50 @@ import { selectRulerSnapshot } from "../src/domain/rulerSnapshot";
 const data = await loadSourceData();
 const details = buildGeneratedArtifacts(data).details;
 
+const NON_MAINLINE_POLITY_BATCHES = {
+  hanThreeKingdoms: [
+    "polity-cn-xin",
+    "polity-cn-cao-wei",
+    "polity-cn-shu-han",
+    "polity-cn-eastern-wu"
+  ],
+  sixteenKingdoms: [
+    "polity-cn-former-liang", "polity-cn-cheng-han", "polity-cn-han-zhao",
+    "polity-cn-later-zhao", "polity-cn-former-yan", "polity-cn-former-qin",
+    "polity-cn-later-qin", "polity-cn-later-yan", "polity-cn-western-qin",
+    "polity-cn-later-liang-lu", "polity-cn-southern-liang-tufa",
+    "polity-cn-northern-liang", "polity-cn-southern-yan", "polity-cn-western-liang",
+    "polity-cn-hu-xia", "polity-cn-northern-yan"
+  ],
+  northernSouthernDynasties: [
+    "polity-cn-northern-wei", "polity-cn-eastern-wei", "polity-cn-western-wei",
+    "polity-cn-northern-qi", "polity-cn-northern-zhou", "polity-cn-liu-song",
+    "polity-cn-southern-qi", "polity-cn-liang", "polity-cn-chen"
+  ],
+  suiTangFiveDynasties: [
+    "polity-cn-wu-zhou", "polity-cn-later-liang-zhu", "polity-cn-later-tang",
+    "polity-cn-later-jin", "polity-cn-later-han", "polity-cn-later-zhou",
+    "polity-cn-yang-wu", "polity-cn-southern-tang", "polity-cn-wuyue",
+    "polity-cn-min", "polity-cn-ma-chu", "polity-cn-former-shu",
+    "polity-cn-later-shu", "polity-cn-southern-han", "polity-cn-jingnan",
+    "polity-cn-northern-han", "polity-tibet-empire", "polity-balhae", "polity-nanzhao"
+  ],
+  laterPolities: [
+    "polity-cn-liao", "polity-dali", "polity-cn-western-xia", "polity-cn-jin",
+    "polity-mongol-empire", "polity-cn-later-jin-jurchen", "polity-cn-southern-ming"
+  ]
+} as const;
+
+function expectPolityDetails(entityIds: readonly string[]) {
+  for (const entityId of entityIds) {
+    const entity = data.entities.find(({ id }) => id === entityId);
+    expect(entity, entityId).toBeDefined();
+    expect(entity?.description.length, entityId).toBeGreaterThanOrEqual(60);
+    expect(entity?.sourceRefs.length, entityId).toBeGreaterThan(0);
+    expect(data.reigns.some(({ polityId }) => polityId === entityId), entityId).toBe(true);
+  }
+}
+
 function rulerSnapshot(entityId: string, year: number) {
   const entity = data.entities.find(({ id }) => id === entityId);
   const detail = details.get(entityId);
@@ -70,7 +114,8 @@ describe("生产历史数据", () => {
       .map(({ id }) => id);
 
     expect(mainlineIds).toHaveLength(16);
-    expect(new Set(data.reigns.map(({ polityId }) => polityId))).toEqual(new Set(mainlineIds));
+    expect(mainlineIds.every((id) => data.reigns.some(({ polityId }) => polityId === id)))
+      .toBe(true);
     expect(data.persons.length).toBeGreaterThan(0);
     expect(
       data.reignVacancies.some(({ polityId }) => polityId === "polity-cn-western-zhou")
@@ -89,5 +134,13 @@ describe("生产历史数据", () => {
     expect(rulerSnapshot("polity-byzantine-empire", 1000).status).toBe(
       "unrecorded"
     );
+  });
+
+  it("补全汉与三国四个非主线政权的详情", () => {
+    expectPolityDetails(NON_MAINLINE_POLITY_BATCHES.hanThreeKingdoms);
+    expect(rulerSnapshot("polity-cn-xin", 15).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-cao-wei", 240).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-shu-han", 250).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-eastern-wu", 252).status).toBe("known");
   });
 });
