@@ -153,10 +153,22 @@ export interface Reign {
   personId: string;
   polityId: string;
   titles: string[];
+  localTitles?: string[];
   role: ReignRole;
   periods: HistoricalInterval[];
   chronologyStatus: ChronologyStatus;
   note?: string;
+  sourceRefs: SourceRef[];
+  confidence: ConfidenceLevel;
+  confidenceNote?: string;
+}
+
+/** 有来源明确支持的无在位统治者时段；没有此记录的任期空档仍表示资料未收录。 */
+export interface ReignVacancy {
+  id: string;
+  polityId: string;
+  periods: HistoricalInterval[];
+  note: string;
   sourceRefs: SourceRef[];
   confidence: ConfidenceLevel;
   confidenceNote?: string;
@@ -215,15 +227,16 @@ export interface ChronologyPolicy {
   yearSelection: "exists-at-any-time-during-year";
 }
 
-/** Crownline 数据契约 v2 的根对象。 */
+/** Crownline 数据契约 v3 的根对象。 */
 export interface CrownlineData {
-  schemaVersion: 2;
+  schemaVersion: 3;
   chronologyPolicy: ChronologyPolicy;
   timelineSections: TimelineSection[];
   entities: HistoricalEntity[];
   regions: Region[];
   persons: Person[];
   reigns: Reign[];
+  reignVacancies: ReignVacancy[];
   relationships: Relationship[];
   events: HistoricalEvent[];
   sources: Source[];

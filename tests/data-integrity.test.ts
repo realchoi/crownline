@@ -4,6 +4,7 @@ import dataJson from "../src/data/crownline-data.json";
 import { loadCrownlineData } from "../src/data/loadCrownlineData";
 import { isYearInPeriods } from "../src/domain/chronology";
 import { validateCrownlineData } from "../src/domain/dataValidation";
+import { selectRulerSnapshot } from "../src/domain/rulerSnapshot";
 import type { CrownlineData } from "../src/domain/types";
 
 const data = dataJson as CrownlineData;
@@ -52,5 +53,34 @@ describe("生产历史数据", () => {
   it("通过结构和跨记录校验", () => {
     expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
     expect(loadCrownlineData().entities).toHaveLength(77);
+  });
+
+  it("为全部十六个中国主线政权提供经过校订的任期数据", () => {
+    const mainlineIds = data.entities
+      .filter(({ entityKind, displayCategory }) => {
+        return entityKind === "polity" && displayCategory === "mainline";
+      })
+      .map(({ id }) => id);
+
+    expect(mainlineIds).toHaveLength(16);
+    expect(new Set(data.reigns.map(({ polityId }) => polityId))).toEqual(new Set(mainlineIds));
+    expect(data.persons.length).toBeGreaterThan(0);
+    expect(
+      data.reignVacancies.some(({ polityId }) => polityId === "polity-cn-western-zhou")
+    ).toBe(true);
+  });
+
+  it("在真实数据中覆盖单人、摄政、争议、空位和未校订状态", () => {
+    expect(selectRulerSnapshot(data, "polity-cn-ming", 1400).status).toBe("known");
+
+    const qing = selectRulerSnapshot(data, "polity-cn-qing", 1862);
+    expect(qing.status).toBe("known");
+    expect(qing.entries.map(({ reign }) => reign.role)).toEqual(["ruler", "regent", "regent"]);
+
+    expect(selectRulerSnapshot(data, "polity-cn-xia", -2070).status).toBe("disputed");
+    expect(selectRulerSnapshot(data, "polity-cn-western-zhou", -840).status).toBe("vacant");
+    expect(selectRulerSnapshot(data, "polity-byzantine-empire", 1000).status).toBe(
+      "unrecorded"
+    );
   });
 });

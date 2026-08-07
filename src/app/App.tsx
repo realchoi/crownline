@@ -221,7 +221,8 @@ export function App({ data }: AppProps) {
         <DetailDialog
           entity={selectedMatch.entity}
           sectionTitle={selectedMatch.section?.title}
-          regions={data.regions}
+          data={data}
+          {...(browseState.mode === "point" ? { currentYear: browseState.year } : {})}
           onClose={closeDetail}
         />
       )}

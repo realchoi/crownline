@@ -1,7 +1,13 @@
 import { describe, expect, it } from "vitest";
 
 import { validateCrownlineData } from "../src/domain/dataValidation";
-import type { CrownlineData, HistoricalEntity } from "../src/domain/types";
+import type {
+  CrownlineData,
+  HistoricalEntity,
+  Person,
+  Reign,
+  ReignVacancy
+} from "../src/domain/types";
 
 function makeEntity(overrides: Partial<HistoricalEntity> = {}): HistoricalEntity {
   return {
@@ -29,7 +35,7 @@ function makeEntity(overrides: Partial<HistoricalEntity> = {}): HistoricalEntity
 
 function makeValidData(): CrownlineData {
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     chronologyPolicy: {
       calendar: "historical-year",
       hasYearZero: false,
@@ -58,6 +64,7 @@ function makeValidData(): CrownlineData {
     ],
     persons: [],
     reigns: [],
+    reignVacancies: [],
     relationships: [],
     events: [],
     sources: [
@@ -76,12 +83,12 @@ function issueCodes(input: unknown): string[] {
 }
 
 describe("JSON Schema 结构校验", () => {
-  it("接受带层级、名称与覆盖说明的地区契约 v2", () => {
+  it("接受带统治者空位记录的地区契约 v3", () => {
     const data = makeValidData() as unknown as {
       schemaVersion: number;
       regions: Array<Record<string, unknown>>;
     };
-    data.schemaVersion = 2;
+    data.schemaVersion = 3;
     data.regions[0] = {
       id: "region-east-asia",
       names: { primary: "东亚", aliases: ["Eastern Asia"] },
@@ -241,5 +248,137 @@ describe("跨记录语义校验", () => {
       confidence: "high"
     });
     expect(issueCodes(data)).toContain("DUPLICATE_RELATIONSHIP_PARTICIPANT");
+  });
+
+  it("拒绝任期引用历史分期或越出政权存在区间", () => {
+    const makePerson = (): Person => ({
+      id: "person-test",
+      names: { primary: "测试君主", aliases: [] },
+      description: "用于测试任期边界。",
+      sourceRefs: [{ sourceId: "source-test" }]
+    });
+    const makeReign = (): Reign => ({
+      id: "reign-test",
+      personId: "person-test",
+      polityId: "polity-cn-test",
+      titles: ["君主"],
+      role: "ruler",
+      periods: [
+        {
+          start: { year: 2, precision: "exact" },
+          end: { year: 4, precision: "exact" }
+        }
+      ],
+      chronologyStatus: "accepted",
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    });
+
+    const reignOnHistoricalPeriod = makeValidData();
+    reignOnHistoricalPeriod.entities.push(makeEntity({
+      id: "period-test",
+      entityKind: "historical-period",
+      polityForms: []
+    }));
+    reignOnHistoricalPeriod.persons.push(makePerson());
+    reignOnHistoricalPeriod.reigns.push({ ...makeReign(), polityId: "period-test" });
+    expect(issueCodes(reignOnHistoricalPeriod)).toContain("INVALID_REIGN_POLITY");
+
+    const reignOutsidePolity = makeValidData();
+    reignOutsidePolity.persons.push(makePerson());
+    reignOutsidePolity.reigns.push({
+      ...makeReign(),
+      periods: [
+        {
+          start: { year: 9, precision: "exact" },
+          end: { year: 11, precision: "exact" }
+        }
+      ]
+    });
+    expect(issueCodes(reignOutsidePolity)).toContain("REIGN_OUTSIDE_POLITY");
+  });
+
+  it("拒绝越界、悬空来源或与任期重叠的明确空位", () => {
+    const person: Person = {
+      id: "person-test",
+      names: { primary: "测试君主", aliases: [] },
+      description: "用于测试空位边界。",
+      sourceRefs: [{ sourceId: "source-test" }]
+    };
+    const reign: Reign = {
+      id: "reign-test",
+      personId: person.id,
+      polityId: "polity-cn-test",
+      titles: ["君主"],
+      role: "ruler",
+      periods: [
+        {
+          start: { year: 2, precision: "exact" },
+          end: { year: 4, precision: "exact" }
+        }
+      ],
+      chronologyStatus: "accepted",
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    };
+    const vacancy: ReignVacancy = {
+      id: "vacancy-test",
+      polityId: "polity-cn-test",
+      periods: [
+        {
+          start: { year: 6, precision: "exact" },
+          end: { year: 7, precision: "exact" }
+        }
+      ],
+      note: "测试空位。",
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    };
+
+    const vacancyOutsidePolity = makeValidData();
+    vacancyOutsidePolity.reignVacancies.push({
+      ...vacancy,
+      periods: [
+        {
+          start: { year: 10, precision: "exact" },
+          end: { year: 11, precision: "exact" }
+        }
+      ]
+    });
+    expect(issueCodes(vacancyOutsidePolity)).toContain("VACANCY_OUTSIDE_POLITY");
+
+    const overlappingVacancy = makeValidData();
+    overlappingVacancy.persons.push(person);
+    overlappingVacancy.reigns.push(reign);
+    overlappingVacancy.reignVacancies.push({
+      ...vacancy,
+      periods: [
+        {
+          start: { year: 4, precision: "exact" },
+          end: { year: 5, precision: "exact" }
+        }
+      ]
+    });
+    expect(issueCodes(overlappingVacancy)).toContain("VACANCY_REIGN_OVERLAP");
+
+    const danglingVacancySource = makeValidData();
+    danglingVacancySource.reignVacancies.push({
+      ...vacancy,
+      sourceRefs: [{ sourceId: "source-missing" }]
+    });
+    expect(issueCodes(danglingVacancySource)).toContain("DANGLING_SOURCE_REF");
+
+    const duplicateVacancy = makeValidData();
+    duplicateVacancy.reignVacancies.push(vacancy, {
+      ...vacancy,
+      id: "vacancy-overlap",
+      periods: [
+        {
+          start: { year: 7, precision: "exact" },
+          end: { year: 8, precision: "exact" }
+        }
+      ]
+    });
+    expect(issueCodes(duplicateVacancy)).toContain("OVERLAPPING_VACANCIES");
   });
 });

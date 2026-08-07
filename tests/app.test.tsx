@@ -323,4 +323,82 @@ describe("Crownline 时间轴", () => {
       "没有匹配当前搜索与类别的政权"
     );
   });
+
+  it("在时间点详情展示单一在位统治者、完整任期和来源", async () => {
+    window.history.replaceState(null, "", "/?mode=point&year=1400");
+    const user = userEvent.setup();
+    render(<App data={data} />);
+
+    await user.click(screen.getByRole("button", { name: /^明，/ }));
+
+    const dialog = screen.getByRole("dialog", { name: "明" });
+    expect(within(dialog).getByRole("heading", { name: "1400年 · 在位统治者" }))
+      .toBeInTheDocument();
+    expect(within(dialog).getByRole("heading", { name: "建文帝" })).toBeInTheDocument();
+    expect(within(dialog).getByText("1398—1402")).toBeInTheDocument();
+    expect(within(dialog).getByRole("link", { name: /中国历代帝王年表/ }))
+      .toHaveAttribute("target", "_blank");
+  });
+
+  it("同年展示皇帝与两位摄政者且不误标争议", async () => {
+    window.history.replaceState(null, "", "/?mode=point&year=1862");
+    const user = userEvent.setup();
+    render(<App data={data} />);
+
+    await user.click(screen.getByRole("button", { name: /^清，/ }));
+
+    const dialog = screen.getByRole("dialog", { name: "清" });
+    expect(within(dialog).getByRole("heading", { name: "同治帝" })).toBeInTheDocument();
+    expect(within(dialog).getByRole("heading", { name: "慈安太后" })).toBeInTheDocument();
+    expect(within(dialog).getByRole("heading", { name: "慈禧太后" })).toBeInTheDocument();
+    expect(within(dialog).getAllByText("摄政者")).toHaveLength(2);
+    expect(within(dialog).queryByText("存在争议")).not.toBeInTheDocument();
+  });
+
+  it("明确披露早期王年争议", async () => {
+    window.history.replaceState(null, "", "/?mode=point&year=-2070");
+    const user = userEvent.setup();
+    render(<App data={data} />);
+
+    await user.click(screen.getByRole("button", { name: /^夏，/ }));
+
+    const dialog = screen.getByRole("dialog", { name: "夏" });
+    expect(within(dialog).getByText("存在争议")).toBeInTheDocument();
+    expect(within(dialog).getByRole("heading", { name: "夏禹" })).toBeInTheDocument();
+    expect(within(dialog).getByText(/完整任期无法可靠核定/)).toBeInTheDocument();
+  });
+
+  it("区分明确空位和资料尚未校订", async () => {
+    const user = userEvent.setup();
+    window.history.replaceState(null, "", "/?mode=point&year=-840");
+    const firstRender = render(<App data={data} />);
+
+    await user.click(screen.getByRole("button", { name: /^西周，/ }));
+    expect(within(screen.getByRole("dialog", { name: "西周" })).getByText("已有资料记为空位期"))
+      .toBeInTheDocument();
+
+    firstRender.unmount();
+    window.history.replaceState(null, "", "/?mode=point&year=312");
+    render(<App data={data} />);
+    await user.click(screen.getByRole("button", { name: /^西晋，/ }));
+
+    const dialog = screen.getByRole("dialog", { name: "西晋" });
+    expect(within(dialog).getByText("这一年的统治者资料尚未校订")).toBeInTheDocument();
+    expect(within(dialog).getByText(/不等于当时无人统治/)).toBeInTheDocument();
+  });
+
+  it("全览详情不使用隐藏年份且历史分期不显示统治者区域", async () => {
+    const user = userEvent.setup();
+    render(<App data={data} />);
+
+    await user.click(screen.getByRole("button", { name: /明，1368—1644/ }));
+    const mingDialog = screen.getByRole("dialog", { name: "明" });
+    expect(within(mingDialog).getByText(/切换到时间点模式/)).toBeInTheDocument();
+    expect(within(mingDialog).queryByText(/1912年 · 在位统治者/)).not.toBeInTheDocument();
+    await user.click(within(mingDialog).getByRole("button", { name: "关闭详情" }));
+
+    await user.click(screen.getByRole("button", { name: /春秋.*历史分期/ }));
+    expect(within(screen.getByRole("dialog", { name: "春秋" })).queryByText(/在位统治者/))
+      .not.toBeInTheDocument();
+  });
 });

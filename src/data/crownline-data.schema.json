@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://crownline.example/schema/crownline-data-v2.json",
-  "title": "Crownline Data Contract v2",
+  "$id": "https://crownline.example/schema/crownline-data-v3.json",
+  "title": "Crownline Data Contract v3",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -12,12 +12,13 @@
     "regions",
     "persons",
     "reigns",
+    "reignVacancies",
     "relationships",
     "events",
     "sources"
   ],
   "properties": {
-    "schemaVersion": { "const": 2 },
+    "schemaVersion": { "const": 3 },
     "chronologyPolicy": { "$ref": "#/$defs/chronologyPolicy" },
     "timelineSections": {
       "type": "array",
@@ -32,6 +33,7 @@
     "regions": { "type": "array", "items": { "$ref": "#/$defs/region" } },
     "persons": { "type": "array", "items": { "$ref": "#/$defs/person" } },
     "reigns": { "type": "array", "items": { "$ref": "#/$defs/reign" } },
+    "reignVacancies": { "type": "array", "items": { "$ref": "#/$defs/reignVacancy" } },
     "relationships": { "type": "array", "items": { "$ref": "#/$defs/relationship" } },
     "events": { "type": "array", "items": { "$ref": "#/$defs/event" } },
     "sources": {
@@ -268,6 +270,11 @@
           "minItems": 1,
           "items": { "$ref": "#/$defs/nonEmptyString" }
         },
+        "localTitles": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
         "role": { "enum": ["ruler", "co-ruler", "regent", "contender"] },
         "periods": {
           "type": "array",
@@ -275,6 +282,24 @@
           "items": { "$ref": "#/$defs/interval" }
         },
         "chronologyStatus": { "enum": ["accepted", "disputed"] },
+        "note": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" },
+        "confidence": { "enum": ["high", "medium", "low", "disputed"] },
+        "confidenceNote": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "reignVacancy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "polityId", "periods", "note", "sourceRefs", "confidence"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "polityId": { "$ref": "#/$defs/id" },
+        "periods": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/interval" }
+        },
         "note": { "$ref": "#/$defs/nonEmptyString" },
         "sourceRefs": { "$ref": "#/$defs/sourceRefs" },
         "confidence": { "enum": ["high", "medium", "low", "disputed"] },

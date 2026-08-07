@@ -124,6 +124,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
   const data = input;
   const issues: ValidationIssue[] = [];
   const entityIds = new Set(data.entities.map(({ id }) => id));
+  const entityById = new Map(data.entities.map((entity) => [entity.id, entity]));
   const regionIds = new Set(data.regions.map(({ id }) => id));
   const regionById = new Map(data.regions.map((region) => [region.id, region]));
   const personIds = new Set(data.persons.map(({ id }) => id));
@@ -137,6 +138,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
     ...data.regions,
     ...data.persons,
     ...data.reigns,
+    ...data.reignVacancies,
     ...data.relationships,
     ...data.events,
     ...data.sources
@@ -281,16 +283,108 @@ export function validateCrownlineData(input: unknown): ValidationResult {
         message: `人物 ${reign.personId} 不存在`
       });
     }
-    if (!entityIds.has(reign.polityId)) {
+    const polity = entityById.get(reign.polityId);
+    if (!polity) {
       issues.push({
         code: "DANGLING_ENTITY_REF",
         path: `${path}/polityId`,
         message: `政权 ${reign.polityId} 不存在`
       });
+    } else if (polity.entityKind !== "polity") {
+      issues.push({
+        code: "INVALID_REIGN_POLITY",
+        path: `${path}/polityId`,
+        message: `任期只能引用政权，${reign.polityId} 是历史分期`
+      });
+    } else {
+      reign.periods.forEach((period, periodIndex) => {
+        // 区间必须完整落在同一个存在分段中，不能跨越唐、复立政权等中断期。
+        const contained = polity.existencePeriods.some((existencePeriod) => {
+          return toOrdinal(period.start.year) >= toOrdinal(existencePeriod.start.year) &&
+            toOrdinal(period.end.year) <= toOrdinal(existencePeriod.end.year);
+        });
+        if (!contained) {
+          issues.push({
+            code: "REIGN_OUTSIDE_POLITY",
+            path: `${path}/periods/${periodIndex}`,
+            message: `任期区间必须完整落在政权 ${reign.polityId} 的存在区间内`
+          });
+        }
+      });
     }
     validatePeriods(reign.periods, `${path}/periods`, issues);
     validateSourceRefs(reign.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
     validateConfidenceNote(reign.confidence, reign.confidenceNote, `${path}/confidenceNote`, issues);
+  });
+
+  data.reignVacancies.forEach((vacancy, vacancyIndex) => {
+    const path = `/reignVacancies/${vacancyIndex}`;
+    const polity = entityById.get(vacancy.polityId);
+    if (!polity) {
+      issues.push({
+        code: "DANGLING_ENTITY_REF",
+        path: `${path}/polityId`,
+        message: `政权 ${vacancy.polityId} 不存在`
+      });
+    } else if (polity.entityKind !== "polity") {
+      issues.push({
+        code: "INVALID_VACANCY_POLITY",
+        path: `${path}/polityId`,
+        message: `空位记录只能引用政权，${vacancy.polityId} 是历史分期`
+      });
+    } else {
+      vacancy.periods.forEach((period, periodIndex) => {
+        const contained = polity.existencePeriods.some((existencePeriod) => {
+          return toOrdinal(period.start.year) >= toOrdinal(existencePeriod.start.year) &&
+            toOrdinal(period.end.year) <= toOrdinal(existencePeriod.end.year);
+        });
+        if (!contained) {
+          issues.push({
+            code: "VACANCY_OUTSIDE_POLITY",
+            path: `${path}/periods/${periodIndex}`,
+            message: `空位区间必须完整落在政权 ${vacancy.polityId} 的存在区间内`
+          });
+        }
+
+        data.reigns
+          .filter(({ polityId }) => polityId === vacancy.polityId)
+          .flatMap((reign) => reign.periods)
+          .forEach((reignPeriod) => {
+            const overlaps = toOrdinal(period.start.year) <= toOrdinal(reignPeriod.end.year) &&
+              toOrdinal(period.end.year) >= toOrdinal(reignPeriod.start.year);
+            if (overlaps) {
+              issues.push({
+                code: "VACANCY_REIGN_OVERLAP",
+                path: `${path}/periods/${periodIndex}`,
+                message: "明确空位不能与同一政权的统治任期重叠"
+              });
+            }
+          });
+
+        data.reignVacancies.slice(0, vacancyIndex)
+          .filter(({ polityId }) => polityId === vacancy.polityId)
+          .flatMap((record) => record.periods)
+          .forEach((previousPeriod) => {
+            const overlaps = toOrdinal(period.start.year) <= toOrdinal(previousPeriod.end.year) &&
+              toOrdinal(period.end.year) >= toOrdinal(previousPeriod.start.year);
+            if (overlaps) {
+              issues.push({
+                code: "OVERLAPPING_VACANCIES",
+                path: `${path}/periods/${periodIndex}`,
+                message: "同一政权的明确空位记录不得互相重叠"
+              });
+            }
+          });
+      });
+    }
+    validatePeriods(vacancy.periods, `${path}/periods`, issues);
+    validateSourceRefs(vacancy.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
+    validateConfidenceNote(
+      vacancy.confidence,
+      vacancy.confidenceNote,
+      `${path}/confidenceNote`,
+      issues
+    );
   });
 
   data.relationships.forEach((relationship, relationshipIndex) => {
