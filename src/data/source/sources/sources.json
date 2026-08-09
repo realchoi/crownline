@@ -33,6 +33,15 @@
     "accessedAt": "2026-08-06"
   },
   {
+    "id": "source-wikipedia-byzantine-emperors",
+    "title": "List of Byzantine emperors",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Byzantine emperors；用于交叉核对皇帝姓名、称号、共治关系与任期区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Byzantine_emperors",
+    "accessedAt": "2026-08-09"
+  },
+  {
     "id": "source-met-abbasid",
     "title": "The Art of the Abbasid Period (750–1258)",
     "sourceType": "institutional",

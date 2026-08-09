@@ -42,6 +42,20 @@ describe("运行时数据产物", () => {
     expect(wei?.sources.length).toBeGreaterThan(0);
   });
 
+  it("为拜占庭帝国生成独立详情闭包", () => {
+    const detail = buildGeneratedArtifacts(data).details.get("polity-byzantine-empire");
+
+    expect(detail?.persons.length).toBeGreaterThanOrEqual(80);
+    expect(detail?.reigns.every(({ polityId }) => polityId === "polity-byzantine-empire"))
+      .toBe(true);
+    expect(new Set(detail?.persons.map(({ id }) => id)))
+      .toEqual(new Set(detail?.reigns.map(({ personId }) => personId)));
+    expect(detail?.sources.map(({ id }) => id)).toEqual(expect.arrayContaining([
+      "source-met-byzantium",
+      "source-wikipedia-byzantine-emperors"
+    ]));
+  });
+
   it("共享关系、关系事件和来源进入双方详情", () => {
     const fixture: CrownlineData = structuredClone(data);
     fixture.events.push({

@@ -36,17 +36,4574 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "罗马帝国东部延续形成的帝国，以君士坦丁堡为政治中心；约330年君士坦丁迁都于此，1453年君士坦丁堡陷落。",
+      "description": "罗马帝国东部以君士坦丁堡为政治中心延续形成的帝国，国家与居民始终自称罗马。其制度、基督教文化和希腊语传统深刻影响东地中海与东欧；1204年第四次十字军攻占首都后，皇统由尼西亚帝国延续，1261年恢复君士坦丁堡，最终于1453年为奥斯曼帝国所灭。",
       "sourceRefs": [
         {
           "sourceId": "source-met-byzantium"
+        },
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
         }
       ],
       "confidence": "medium",
-      "chronologyNote": "“拜占庭帝国”是后世称谓；约330—1453年是常见的艺术史分期口径。"
+      "chronologyNote": "“拜占庭帝国”是后世称谓；页面沿用约330—1453年的常见口径。1204—1261年按尼西亚帝国延续东罗马皇统，不把占据君士坦丁堡的拉丁帝国并入统治者序列。"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-byzantine-constantine-i",
+      "names": {
+        "primary": "君士坦丁一世",
+        "aliases": [
+          "Constantine I"
+        ]
+      },
+      "description": "君士坦丁一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantius-ii",
+      "names": {
+        "primary": "君士坦提乌斯二世",
+        "aliases": [
+          "Constantius II"
+        ]
+      },
+      "description": "君士坦提乌斯二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-julian",
+      "names": {
+        "primary": "尤利安",
+        "aliases": [
+          "Julian"
+        ]
+      },
+      "description": "尤利安，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-jovian",
+      "names": {
+        "primary": "约维安",
+        "aliases": [
+          "Jovian"
+        ]
+      },
+      "description": "约维安，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-valentinian-i",
+      "names": {
+        "primary": "瓦伦提尼安一世",
+        "aliases": [
+          "Valentinian I"
+        ]
+      },
+      "description": "瓦伦提尼安一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-valens",
+      "names": {
+        "primary": "瓦伦斯",
+        "aliases": [
+          "Valens"
+        ]
+      },
+      "description": "瓦伦斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-gratian",
+      "names": {
+        "primary": "格拉提安",
+        "aliases": [
+          "Gratian"
+        ]
+      },
+      "description": "格拉提安，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-procopius",
+      "names": {
+        "primary": "普罗科皮乌斯",
+        "aliases": [
+          "Procopius"
+        ]
+      },
+      "description": "普罗科皮乌斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-theodosius-i",
+      "names": {
+        "primary": "狄奥多西一世",
+        "aliases": [
+          "Theodosius I"
+        ]
+      },
+      "description": "狄奥多西一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-arcadius",
+      "names": {
+        "primary": "阿卡狄奥斯",
+        "aliases": [
+          "Arcadius"
+        ]
+      },
+      "description": "阿卡狄奥斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-theodosius-ii",
+      "names": {
+        "primary": "狄奥多西二世",
+        "aliases": [
+          "Theodosius II"
+        ]
+      },
+      "description": "狄奥多西二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-marcian",
+      "names": {
+        "primary": "马尔西安",
+        "aliases": [
+          "Marcian"
+        ]
+      },
+      "description": "马尔西安，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-leo-i",
+      "names": {
+        "primary": "利奥一世",
+        "aliases": [
+          "Leo I"
+        ]
+      },
+      "description": "利奥一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-leo-ii",
+      "names": {
+        "primary": "利奥二世",
+        "aliases": [
+          "Leo II"
+        ]
+      },
+      "description": "利奥二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-zeno",
+      "names": {
+        "primary": "芝诺",
+        "aliases": [
+          "Zeno"
+        ]
+      },
+      "description": "芝诺，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-basiliscus",
+      "names": {
+        "primary": "巴西利斯库斯",
+        "aliases": [
+          "Basiliscus"
+        ]
+      },
+      "description": "巴西利斯库斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-anastasius-i",
+      "names": {
+        "primary": "阿纳斯塔修斯一世",
+        "aliases": [
+          "Anastasius I"
+        ]
+      },
+      "description": "阿纳斯塔修斯一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-justin-i",
+      "names": {
+        "primary": "查士丁一世",
+        "aliases": [
+          "Justin I"
+        ]
+      },
+      "description": "查士丁一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-justinian-i",
+      "names": {
+        "primary": "查士丁尼一世",
+        "aliases": [
+          "Justinian I"
+        ]
+      },
+      "description": "查士丁尼一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-justin-ii",
+      "names": {
+        "primary": "查士丁二世",
+        "aliases": [
+          "Justin II"
+        ]
+      },
+      "description": "查士丁二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-tiberius-ii",
+      "names": {
+        "primary": "提比略二世",
+        "aliases": [
+          "Tiberius II Constantine"
+        ]
+      },
+      "description": "提比略二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-maurice",
+      "names": {
+        "primary": "莫里斯",
+        "aliases": [
+          "Maurice"
+        ]
+      },
+      "description": "莫里斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-phocas",
+      "names": {
+        "primary": "福卡斯",
+        "aliases": [
+          "Phocas"
+        ]
+      },
+      "description": "福卡斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-heraclius",
+      "names": {
+        "primary": "希拉克略",
+        "aliases": [
+          "Heraclius"
+        ]
+      },
+      "description": "希拉克略，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-iii",
+      "names": {
+        "primary": "君士坦丁三世",
+        "aliases": [
+          "Constantine III"
+        ]
+      },
+      "description": "君士坦丁三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-heraclonas",
+      "names": {
+        "primary": "希拉克略二世",
+        "aliases": [
+          "Heraclonas"
+        ]
+      },
+      "description": "希拉克略二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constans-ii",
+      "names": {
+        "primary": "君士坦斯二世",
+        "aliases": [
+          "Constans II"
+        ]
+      },
+      "description": "君士坦斯二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-iv",
+      "names": {
+        "primary": "君士坦丁四世",
+        "aliases": [
+          "Constantine IV"
+        ]
+      },
+      "description": "君士坦丁四世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-justinian-ii",
+      "names": {
+        "primary": "查士丁尼二世",
+        "aliases": [
+          "Justinian II"
+        ]
+      },
+      "description": "查士丁尼二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-leontius",
+      "names": {
+        "primary": "列昂提",
+        "aliases": [
+          "Leontius"
+        ]
+      },
+      "description": "列昂提，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-tiberius-iii",
+      "names": {
+        "primary": "提比略三世",
+        "aliases": [
+          "Tiberius III"
+        ]
+      },
+      "description": "提比略三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-philippicus",
+      "names": {
+        "primary": "菲利皮科斯",
+        "aliases": [
+          "Philippicus"
+        ]
+      },
+      "description": "菲利皮科斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-anastasius-ii",
+      "names": {
+        "primary": "阿纳斯塔修斯二世",
+        "aliases": [
+          "Anastasius II"
+        ]
+      },
+      "description": "阿纳斯塔修斯二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-theodosius-iii",
+      "names": {
+        "primary": "狄奥多西三世",
+        "aliases": [
+          "Theodosius III"
+        ]
+      },
+      "description": "狄奥多西三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-leo-iii",
+      "names": {
+        "primary": "利奥三世",
+        "aliases": [
+          "Leo III"
+        ]
+      },
+      "description": "利奥三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-v",
+      "names": {
+        "primary": "君士坦丁五世",
+        "aliases": [
+          "Constantine V"
+        ]
+      },
+      "description": "君士坦丁五世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-artabasdos",
+      "names": {
+        "primary": "阿尔塔瓦兹德",
+        "aliases": [
+          "Artabasdos"
+        ]
+      },
+      "description": "阿尔塔瓦兹德，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-leo-iv",
+      "names": {
+        "primary": "利奥四世",
+        "aliases": [
+          "Leo IV"
+        ]
+      },
+      "description": "利奥四世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-vi",
+      "names": {
+        "primary": "君士坦丁六世",
+        "aliases": [
+          "Constantine VI"
+        ]
+      },
+      "description": "君士坦丁六世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-irene",
+      "names": {
+        "primary": "伊琳娜",
+        "aliases": [
+          "Irene of Athens"
+        ]
+      },
+      "description": "伊琳娜，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-nikephoros-i",
+      "names": {
+        "primary": "尼基弗鲁斯一世",
+        "aliases": [
+          "Nikephoros I"
+        ]
+      },
+      "description": "尼基弗鲁斯一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-staurakios",
+      "names": {
+        "primary": "斯陶拉基奥斯",
+        "aliases": [
+          "Staurakios"
+        ]
+      },
+      "description": "斯陶拉基奥斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-michael-i",
+      "names": {
+        "primary": "米海尔一世",
+        "aliases": [
+          "Michael I Rangabe"
+        ]
+      },
+      "description": "米海尔一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-leo-v",
+      "names": {
+        "primary": "利奥五世",
+        "aliases": [
+          "Leo V"
+        ]
+      },
+      "description": "利奥五世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-michael-ii",
+      "names": {
+        "primary": "米海尔二世",
+        "aliases": [
+          "Michael II"
+        ]
+      },
+      "description": "米海尔二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-theophilos",
+      "names": {
+        "primary": "狄奥菲洛",
+        "aliases": [
+          "Theophilos"
+        ]
+      },
+      "description": "狄奥菲洛，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-michael-iii",
+      "names": {
+        "primary": "米海尔三世",
+        "aliases": [
+          "Michael III"
+        ]
+      },
+      "description": "米海尔三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-basil-i",
+      "names": {
+        "primary": "巴西尔一世",
+        "aliases": [
+          "Basil I"
+        ]
+      },
+      "description": "巴西尔一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-leo-vi",
+      "names": {
+        "primary": "利奥六世",
+        "aliases": [
+          "Leo VI"
+        ]
+      },
+      "description": "利奥六世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-alexander",
+      "names": {
+        "primary": "亚历山大",
+        "aliases": [
+          "Alexander"
+        ]
+      },
+      "description": "亚历山大，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-vii",
+      "names": {
+        "primary": "君士坦丁七世",
+        "aliases": [
+          "Constantine VII"
+        ]
+      },
+      "description": "君士坦丁七世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-romanos-i",
+      "names": {
+        "primary": "罗曼努斯一世",
+        "aliases": [
+          "Romanos I Lekapenos"
+        ]
+      },
+      "description": "罗曼努斯一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-romanos-ii",
+      "names": {
+        "primary": "罗曼努斯二世",
+        "aliases": [
+          "Romanos II"
+        ]
+      },
+      "description": "罗曼努斯二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-nikephoros-ii",
+      "names": {
+        "primary": "尼基弗鲁斯二世",
+        "aliases": [
+          "Nikephoros II Phokas"
+        ]
+      },
+      "description": "尼基弗鲁斯二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-john-i",
+      "names": {
+        "primary": "约翰一世",
+        "aliases": [
+          "John I Tzimiskes"
+        ]
+      },
+      "description": "约翰一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-basil-ii",
+      "names": {
+        "primary": "巴西尔二世",
+        "aliases": [
+          "Basil II"
+        ]
+      },
+      "description": "巴西尔二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-viii",
+      "names": {
+        "primary": "君士坦丁八世",
+        "aliases": [
+          "Constantine VIII"
+        ]
+      },
+      "description": "君士坦丁八世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-romanos-iii",
+      "names": {
+        "primary": "罗曼努斯三世",
+        "aliases": [
+          "Romanos III Argyros"
+        ]
+      },
+      "description": "罗曼努斯三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-michael-iv",
+      "names": {
+        "primary": "米海尔四世",
+        "aliases": [
+          "Michael IV"
+        ]
+      },
+      "description": "米海尔四世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-michael-v",
+      "names": {
+        "primary": "米海尔五世",
+        "aliases": [
+          "Michael V"
+        ]
+      },
+      "description": "米海尔五世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-zoe",
+      "names": {
+        "primary": "佐伊女皇",
+        "aliases": [
+          "Zoe Porphyrogenita"
+        ]
+      },
+      "description": "佐伊女皇，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-theodora",
+      "names": {
+        "primary": "狄奥多拉女皇",
+        "aliases": [
+          "Theodora Porphyrogenita"
+        ]
+      },
+      "description": "狄奥多拉女皇，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-ix",
+      "names": {
+        "primary": "君士坦丁九世",
+        "aliases": [
+          "Constantine IX Monomachos"
+        ]
+      },
+      "description": "君士坦丁九世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-michael-vi",
+      "names": {
+        "primary": "米海尔六世",
+        "aliases": [
+          "Michael VI Bringas"
+        ]
+      },
+      "description": "米海尔六世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-isaac-i",
+      "names": {
+        "primary": "伊萨克一世",
+        "aliases": [
+          "Isaac I Komnenos"
+        ]
+      },
+      "description": "伊萨克一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-x",
+      "names": {
+        "primary": "君士坦丁十世",
+        "aliases": [
+          "Constantine X Doukas"
+        ]
+      },
+      "description": "君士坦丁十世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-eudokia-makrembolitissa",
+      "names": {
+        "primary": "欧多基娅·玛克勒姆博利提萨",
+        "aliases": [
+          "Eudokia Makrembolitissa"
+        ]
+      },
+      "description": "欧多基娅·玛克勒姆博利提萨，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-romanos-iv",
+      "names": {
+        "primary": "罗曼努斯四世",
+        "aliases": [
+          "Romanos IV Diogenes"
+        ]
+      },
+      "description": "罗曼努斯四世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-michael-vii",
+      "names": {
+        "primary": "米海尔七世",
+        "aliases": [
+          "Michael VII Doukas"
+        ]
+      },
+      "description": "米海尔七世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-nikephoros-iii",
+      "names": {
+        "primary": "尼基弗鲁斯三世",
+        "aliases": [
+          "Nikephoros III Botaneiates"
+        ]
+      },
+      "description": "尼基弗鲁斯三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-alexios-i",
+      "names": {
+        "primary": "阿历克塞一世",
+        "aliases": [
+          "Alexios I Komnenos"
+        ]
+      },
+      "description": "阿历克塞一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-john-ii",
+      "names": {
+        "primary": "约翰二世",
+        "aliases": [
+          "John II Komnenos"
+        ]
+      },
+      "description": "约翰二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-manuel-i",
+      "names": {
+        "primary": "曼努埃尔一世",
+        "aliases": [
+          "Manuel I Komnenos"
+        ]
+      },
+      "description": "曼努埃尔一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-alexios-ii",
+      "names": {
+        "primary": "阿历克塞二世",
+        "aliases": [
+          "Alexios II Komnenos"
+        ]
+      },
+      "description": "阿历克塞二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-andronikos-i",
+      "names": {
+        "primary": "安德洛尼卡一世",
+        "aliases": [
+          "Andronikos I Komnenos"
+        ]
+      },
+      "description": "安德洛尼卡一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-isaac-ii",
+      "names": {
+        "primary": "伊萨克二世",
+        "aliases": [
+          "Isaac II Angelos"
+        ]
+      },
+      "description": "伊萨克二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-alexios-iii",
+      "names": {
+        "primary": "阿历克塞三世",
+        "aliases": [
+          "Alexios III Angelos"
+        ]
+      },
+      "description": "阿历克塞三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-alexios-iv",
+      "names": {
+        "primary": "阿历克塞四世",
+        "aliases": [
+          "Alexios IV Angelos"
+        ]
+      },
+      "description": "阿历克塞四世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-nicholas-kanabos",
+      "names": {
+        "primary": "尼古拉斯·卡纳波斯",
+        "aliases": [
+          "Nicholas Kanabos"
+        ]
+      },
+      "description": "尼古拉斯·卡纳波斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-alexios-v",
+      "names": {
+        "primary": "阿历克塞五世",
+        "aliases": [
+          "Alexios V Doukas"
+        ]
+      },
+      "description": "阿历克塞五世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-laskaris",
+      "names": {
+        "primary": "君士坦丁·拉斯卡里斯",
+        "aliases": [
+          "Constantine Laskaris"
+        ]
+      },
+      "description": "君士坦丁·拉斯卡里斯，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-theodore-i",
+      "names": {
+        "primary": "狄奥多尔一世",
+        "aliases": [
+          "Theodore I Laskaris"
+        ]
+      },
+      "description": "狄奥多尔一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-john-iii",
+      "names": {
+        "primary": "约翰三世",
+        "aliases": [
+          "John III Vatatzes"
+        ]
+      },
+      "description": "约翰三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-theodore-ii",
+      "names": {
+        "primary": "狄奥多尔二世",
+        "aliases": [
+          "Theodore II Laskaris"
+        ]
+      },
+      "description": "狄奥多尔二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-john-iv",
+      "names": {
+        "primary": "约翰四世",
+        "aliases": [
+          "John IV Laskaris"
+        ]
+      },
+      "description": "约翰四世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-michael-viii",
+      "names": {
+        "primary": "米海尔八世",
+        "aliases": [
+          "Michael VIII Palaiologos"
+        ]
+      },
+      "description": "米海尔八世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-andronikos-ii",
+      "names": {
+        "primary": "安德洛尼卡二世",
+        "aliases": [
+          "Andronikos II Palaiologos"
+        ]
+      },
+      "description": "安德洛尼卡二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-michael-ix",
+      "names": {
+        "primary": "米海尔九世",
+        "aliases": [
+          "Michael IX Palaiologos"
+        ]
+      },
+      "description": "米海尔九世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-andronikos-iii",
+      "names": {
+        "primary": "安德洛尼卡三世",
+        "aliases": [
+          "Andronikos III Palaiologos"
+        ]
+      },
+      "description": "安德洛尼卡三世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-john-v",
+      "names": {
+        "primary": "约翰五世",
+        "aliases": [
+          "John V Palaiologos"
+        ]
+      },
+      "description": "约翰五世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-john-vi",
+      "names": {
+        "primary": "约翰六世",
+        "aliases": [
+          "John VI Kantakouzenos"
+        ]
+      },
+      "description": "约翰六世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-andronikos-iv",
+      "names": {
+        "primary": "安德洛尼卡四世",
+        "aliases": [
+          "Andronikos IV Palaiologos"
+        ]
+      },
+      "description": "安德洛尼卡四世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-john-vii",
+      "names": {
+        "primary": "约翰七世",
+        "aliases": [
+          "John VII Palaiologos"
+        ]
+      },
+      "description": "约翰七世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-manuel-ii",
+      "names": {
+        "primary": "曼努埃尔二世",
+        "aliases": [
+          "Manuel II Palaiologos"
+        ]
+      },
+      "description": "曼努埃尔二世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-john-viii",
+      "names": {
+        "primary": "约翰八世",
+        "aliases": [
+          "John VIII Palaiologos"
+        ]
+      },
+      "description": "约翰八世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-byzantine-constantine-xi",
+      "names": {
+        "primary": "君士坦丁十一世",
+        "aliases": [
+          "Constantine XI Palaiologos"
+        ]
+      },
+      "description": "君士坦丁十一世，拜占庭帝国通行皇帝年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-byzantine-constantine-i",
+      "personId": "person-byzantine-constantine-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 330,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 337,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantius-ii",
+      "personId": "person-byzantine-constantius-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 337,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 361,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-julian",
+      "personId": "person-byzantine-julian",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 361,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 363,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-jovian",
+      "personId": "person-byzantine-jovian",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 363,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 364,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-valentinian-i",
+      "personId": "person-byzantine-valentinian-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 364,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 375,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-valens",
+      "personId": "person-byzantine-valens",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 364,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 378,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-gratian",
+      "personId": "person-byzantine-gratian",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 378,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 379,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-procopius",
+      "personId": "person-byzantine-procopius",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "争位皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 365,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 366,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-theodosius-i",
+      "personId": "person-byzantine-theodosius-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 379,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 395,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-arcadius",
+      "personId": "person-byzantine-arcadius",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 395,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 408,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-theodosius-ii",
+      "personId": "person-byzantine-theodosius-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 408,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 450,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-marcian",
+      "personId": "person-byzantine-marcian",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 450,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 457,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-leo-i",
+      "personId": "person-byzantine-leo-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 457,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 474,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-leo-ii",
+      "personId": "person-byzantine-leo-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 474,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 474,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-zeno",
+      "personId": "person-byzantine-zeno",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 474,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 491,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-basiliscus",
+      "personId": "person-byzantine-basiliscus",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 475,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 476,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-anastasius-i",
+      "personId": "person-byzantine-anastasius-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 491,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 518,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-justin-i",
+      "personId": "person-byzantine-justin-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 518,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 527,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-justinian-i",
+      "personId": "person-byzantine-justinian-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 527,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 565,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-justin-ii",
+      "personId": "person-byzantine-justin-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 565,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 578,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-tiberius-ii",
+      "personId": "person-byzantine-tiberius-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 578,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 582,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-maurice",
+      "personId": "person-byzantine-maurice",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 582,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 602,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-phocas",
+      "personId": "person-byzantine-phocas",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 602,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 610,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-heraclius",
+      "personId": "person-byzantine-heraclius",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 610,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 641,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-iii",
+      "personId": "person-byzantine-constantine-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 641,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 641,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-heraclonas",
+      "personId": "person-byzantine-heraclonas",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 641,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 641,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constans-ii",
+      "personId": "person-byzantine-constans-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 641,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 668,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-iv",
+      "personId": "person-byzantine-constantine-iv",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 668,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 685,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-justinian-ii",
+      "personId": "person-byzantine-justinian-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 685,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 695,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 705,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 711,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-leontius",
+      "personId": "person-byzantine-leontius",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 695,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 698,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-tiberius-iii",
+      "personId": "person-byzantine-tiberius-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 698,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 705,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-philippicus",
+      "personId": "person-byzantine-philippicus",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 711,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 713,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-anastasius-ii",
+      "personId": "person-byzantine-anastasius-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 713,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 715,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-theodosius-iii",
+      "personId": "person-byzantine-theodosius-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 715,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 717,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-leo-iii",
+      "personId": "person-byzantine-leo-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 717,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 741,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-v",
+      "personId": "person-byzantine-constantine-v",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 741,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 775,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-artabasdos",
+      "personId": "person-byzantine-artabasdos",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "争位皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 741,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 743,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-leo-iv",
+      "personId": "person-byzantine-leo-iv",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 775,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 780,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-vi",
+      "personId": "person-byzantine-constantine-vi",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 780,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 797,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-irene",
+      "personId": "person-byzantine-irene",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 797,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 802,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-nikephoros-i",
+      "personId": "person-byzantine-nikephoros-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 802,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 811,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-staurakios",
+      "personId": "person-byzantine-staurakios",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 811,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 811,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-michael-i",
+      "personId": "person-byzantine-michael-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 811,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 813,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-leo-v",
+      "personId": "person-byzantine-leo-v",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 813,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 820,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-michael-ii",
+      "personId": "person-byzantine-michael-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 820,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 829,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-theophilos",
+      "personId": "person-byzantine-theophilos",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 829,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 842,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-michael-iii",
+      "personId": "person-byzantine-michael-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 842,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 867,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-basil-i",
+      "personId": "person-byzantine-basil-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 867,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 886,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-leo-vi",
+      "personId": "person-byzantine-leo-vi",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 886,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 912,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-alexander",
+      "personId": "person-byzantine-alexander",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 912,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 913,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-vii",
+      "personId": "person-byzantine-constantine-vii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 913,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 959,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-romanos-i",
+      "personId": "person-byzantine-romanos-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 920,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 944,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-romanos-ii",
+      "personId": "person-byzantine-romanos-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 959,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 963,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-nikephoros-ii",
+      "personId": "person-byzantine-nikephoros-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 963,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 969,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-john-i",
+      "personId": "person-byzantine-john-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 969,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 976,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-basil-ii",
+      "personId": "person-byzantine-basil-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 976,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1025,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-viii",
+      "personId": "person-byzantine-constantine-viii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1025,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1028,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-romanos-iii",
+      "personId": "person-byzantine-romanos-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1028,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1034,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-michael-iv",
+      "personId": "person-byzantine-michael-iv",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1034,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1041,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-michael-v",
+      "personId": "person-byzantine-michael-v",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1041,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1042,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-zoe",
+      "personId": "person-byzantine-zoe",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1028,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1050,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-theodora",
+      "personId": "person-byzantine-theodora",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1042,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1042,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1055,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1056,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-ix",
+      "personId": "person-byzantine-constantine-ix",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1042,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1055,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-michael-vi",
+      "personId": "person-byzantine-michael-vi",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1056,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1057,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-isaac-i",
+      "personId": "person-byzantine-isaac-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1057,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1059,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-x",
+      "personId": "person-byzantine-constantine-x",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1059,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1067,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-eudokia-makrembolitissa",
+      "personId": "person-byzantine-eudokia-makrembolitissa",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "摄政"
+      ],
+      "localTitles": [
+        "ἐπίτροπος"
+      ],
+      "role": "regent",
+      "periods": [
+        {
+          "start": {
+            "year": 1067,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1067,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-romanos-iv",
+      "personId": "person-byzantine-romanos-iv",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1068,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1071,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-michael-vii",
+      "personId": "person-byzantine-michael-vii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1071,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1078,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-nikephoros-iii",
+      "personId": "person-byzantine-nikephoros-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1078,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1081,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-alexios-i",
+      "personId": "person-byzantine-alexios-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1081,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1118,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-john-ii",
+      "personId": "person-byzantine-john-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1118,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1143,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-manuel-i",
+      "personId": "person-byzantine-manuel-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1143,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1180,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-alexios-ii",
+      "personId": "person-byzantine-alexios-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1180,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1183,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-andronikos-i",
+      "personId": "person-byzantine-andronikos-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1183,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1185,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-isaac-ii",
+      "personId": "person-byzantine-isaac-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1185,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1195,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1203,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1204,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-alexios-iii",
+      "personId": "person-byzantine-alexios-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1195,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1203,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-alexios-iv",
+      "personId": "person-byzantine-alexios-iv",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1203,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1204,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-nicholas-kanabos",
+      "personId": "person-byzantine-nicholas-kanabos",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "争位皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1204,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1204,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-alexios-v",
+      "personId": "person-byzantine-alexios-v",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1204,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1204,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-laskaris",
+      "personId": "person-byzantine-constantine-laskaris",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "争位皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1204,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1204,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-theodore-i",
+      "personId": "person-byzantine-theodore-i",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1205,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1221,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-john-iii",
+      "personId": "person-byzantine-john-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1221,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1254,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-theodore-ii",
+      "personId": "person-byzantine-theodore-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1254,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1258,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-john-iv",
+      "personId": "person-byzantine-john-iv",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1258,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1261,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-michael-viii",
+      "personId": "person-byzantine-michael-viii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1259,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1282,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-andronikos-ii",
+      "personId": "person-byzantine-andronikos-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1282,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1328,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-michael-ix",
+      "personId": "person-byzantine-michael-ix",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1294,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1320,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-andronikos-iii",
+      "personId": "person-byzantine-andronikos-iii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1328,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1341,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-john-v",
+      "personId": "person-byzantine-john-v",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1341,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1376,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1379,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1391,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-john-vi",
+      "personId": "person-byzantine-john-vi",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1347,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1354,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-andronikos-iv",
+      "personId": "person-byzantine-andronikos-iv",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1376,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1379,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-john-vii",
+      "personId": "person-byzantine-john-vii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1390,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1390,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-manuel-ii",
+      "personId": "person-byzantine-manuel-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1391,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1425,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-john-viii",
+      "personId": "person-byzantine-john-viii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1425,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1448,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-xi",
+      "personId": "person-byzantine-constantine-xi",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "罗马人的皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1449,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1453,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-irene-regent",
+      "personId": "person-byzantine-irene",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "摄政"
+      ],
+      "localTitles": [
+        "ἐπίτροπος"
+      ],
+      "role": "regent",
+      "periods": [
+        {
+          "start": {
+            "year": 780,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 790,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "君士坦丁六世年幼时摄政。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-basil-ii-co-ruler",
+      "personId": "person-byzantine-basil-ii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "共治皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 960,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 976,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "幼年受立为共治皇帝，976年起成为主要皇帝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-byzantine-constantine-viii-co-ruler",
+      "personId": "person-byzantine-constantine-viii",
+      "polityId": "polity-byzantine-empire",
+      "titles": [
+        "共治皇帝"
+      ],
+      "localTitles": [
+        "βασιλεύς"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 962,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1025,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "长期作为巴西尔二世的共治皇帝，1025年起成为主要皇帝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-byzantine-emperors"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

@@ -53,6 +53,17 @@ function expectPolityDetails(entityIds: readonly string[]) {
   }
 }
 
+function expectWorldPolityDetails(entityId: string, minimumReignCount: number) {
+  const entity = data.entities.find(({ id }) => id === entityId);
+  const reigns = data.reigns.filter(({ polityId }) => polityId === entityId);
+
+  expect(entity, entityId).toBeDefined();
+  expect(entity?.description.length, entityId).toBeGreaterThanOrEqual(60);
+  expect(entity?.sourceRefs.length, entityId).toBeGreaterThan(0);
+  expect(reigns.length, entityId).toBeGreaterThanOrEqual(minimumReignCount);
+  expect(reigns.every(({ sourceRefs }) => sourceRefs.length > 0), entityId).toBe(true);
+}
+
 function rulerSnapshot(entityId: string, year: number) {
   const entity = data.entities.find(({ id }) => id === entityId);
   const detail = details.get(entityId);
@@ -131,9 +142,24 @@ describe("生产历史数据", () => {
 
     expect(rulerSnapshot("polity-cn-xia", -2070).status).toBe("disputed");
     expect(rulerSnapshot("polity-cn-western-zhou", -840).status).toBe("vacant");
-    expect(rulerSnapshot("polity-byzantine-empire", 1000).status).toBe(
+    expect(rulerSnapshot("polity-cn-xia", -2069).status).toBe(
       "unrecorded"
     );
+  });
+
+  it("补全拜占庭帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-byzantine-empire", 80);
+
+    const year1000 = rulerSnapshot("polity-byzantine-empire", 1000);
+    expect(year1000.status).toBe("known");
+    expect(year1000.entries.map(({ person }) => person.id)).toEqual(expect.arrayContaining([
+      "person-byzantine-basil-ii",
+      "person-byzantine-constantine-viii"
+    ]));
+
+    expect(rulerSnapshot("polity-byzantine-empire", 1220).status).toBe("known");
+    expect(rulerSnapshot("polity-byzantine-empire", 1453).entries.map(({ person }) => person.id))
+      .toContain("person-byzantine-constantine-xi");
   });
 
   it("补全汉与三国四个非主线政权的详情", () => {
