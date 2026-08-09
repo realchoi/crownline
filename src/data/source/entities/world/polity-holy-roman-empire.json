@@ -883,6 +883,60 @@
           "sourceId": "source-wikipedia-holy-roman-emperors"
         }
       ]
+    },
+    {
+      "id": "person-hre-alfonso-x",
+      "names": {
+        "primary": "阿方索十世",
+        "aliases": [
+          "Alfonso X of Castile"
+        ]
+      },
+      "description": "阿方索十世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-frederick-the-fair",
+      "names": {
+        "primary": "腓特烈（美男子）",
+        "aliases": [
+          "Frederick the Fair"
+        ]
+      },
+      "description": "腓特烈（美男子），神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-jobst-of-moravia",
+      "names": {
+        "primary": "摩拉维亚的约布斯特",
+        "aliases": [
+          "Jobst of Moravia"
+        ]
+      },
+      "description": "摩拉维亚的约布斯特，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
     }
   ],
   "reigns": [
@@ -3001,6 +3055,146 @@
       ],
       "chronologyStatus": "accepted",
       "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-alfonso-x-contender",
+      "personId": "person-hre-alfonso-x",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "对立国王"
+      ],
+      "localTitles": [
+        "Gegenkönig"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1257,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1275,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "竞争选举中的主要争位者；未并入帝国主要统治者序列。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-frederick-the-fair-contender",
+      "personId": "person-hre-frederick-the-fair",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "对立国王"
+      ],
+      "localTitles": [
+        "Gegenkönig"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1314,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1325,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1314年双重选举后的主要争位者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-frederick-the-fair-co-ruler",
+      "personId": "person-hre-frederick-the-fair",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "共治国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1325,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1330,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1325年与路易四世和解后获承认为共治国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-jobst-of-moravia-contender",
+      "personId": "person-hre-jobst-of-moravia",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "对立国王"
+      ],
+      "localTitles": [
+        "Gegenkönig"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1410,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1411,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1410年双重选举中的主要争位者。",
       "sourceRefs": [
         {
           "sourceId": "source-dhm-hre"

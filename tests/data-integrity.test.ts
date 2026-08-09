@@ -174,6 +174,14 @@ describe("生产历史数据", () => {
     expectWorldPolityDetails("polity-holy-roman-empire", 45);
     expect(rulerSnapshot("polity-holy-roman-empire", 1000).entries.map(({ person }) => person.id))
       .toContain("person-hre-otto-iii");
+    expect(rulerSnapshot("polity-holy-roman-empire", 1260).entries.map(({ person }) => person.id))
+      .toEqual(expect.arrayContaining(["person-hre-richard-of-cornwall", "person-hre-alfonso-x"]));
+    expect(rulerSnapshot("polity-holy-roman-empire", 1320).entries.map(({ person }) => person.id))
+      .toEqual(expect.arrayContaining(["person-hre-louis-iv", "person-hre-frederick-the-fair"]));
+    expect(rulerSnapshot("polity-holy-roman-empire", 1326).entries
+      .find(({ person }) => person.id === "person-hre-frederick-the-fair")?.reign.role).toBe("co-ruler");
+    expect(rulerSnapshot("polity-holy-roman-empire", 1410).entries.map(({ person }) => person.id))
+      .toContain("person-hre-jobst-of-moravia");
     expect(rulerSnapshot("polity-holy-roman-empire", 1700).entries.map(({ person }) => person.id))
       .toContain("person-hre-leopold-i");
     expect(rulerSnapshot("polity-holy-roman-empire", 1741).status).toBe("vacant");
