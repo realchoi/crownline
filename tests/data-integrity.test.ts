@@ -176,6 +176,7 @@ describe("生产历史数据", () => {
       .toContain("person-hre-otto-iii");
     expect(rulerSnapshot("polity-holy-roman-empire", 1700).entries.map(({ person }) => person.id))
       .toContain("person-hre-leopold-i");
+    expect(rulerSnapshot("polity-holy-roman-empire", 1741).status).toBe("vacant");
     expect(rulerSnapshot("polity-holy-roman-empire", 1806).entries.map(({ person }) => person.id))
       .toContain("person-hre-francis-ii");
   });

@@ -3012,5 +3012,32 @@
       "confidence": "medium"
     }
   ],
-  "reignVacancies": []
+  "reignVacancies": [
+    {
+      "id": "vacancy-hre-1741",
+      "polityId": "polity-holy-roman-empire",
+      "periods": [
+        {
+          "start": {
+            "year": 1741,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1741,
+            "precision": "exact"
+          }
+        }
+      ],
+      "note": "查理六世于1740年去世后，帝位在1741年全年没有在位皇帝，直至查理七世于1742年当选。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ]
 }
