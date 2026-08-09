@@ -32,16 +32,197 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "前秦将领吕光远征西域后返回河西，乘前秦瓦解据有姑臧，于386年建立后凉，后称天王。其政权控制河西走廊部分地区，延续当地交通与佛教文化交流，但内部宗室争夺和族群矛盾日益激烈，南凉、北凉相继分立。401年吕隆继位后势力收缩，403年向后秦投降，后凉灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-liang-lu-lu-guang",
+      "names": {
+        "primary": "后凉懿武帝",
+        "aliases": [
+          "吕光"
+        ]
+      },
+      "description": "后凉懿武帝（吕光），后凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-liang-lu-lu-shao",
+      "names": {
+        "primary": "吕绍",
+        "aliases": [
+          "后凉隐王"
+        ]
+      },
+      "description": "吕绍（后凉隐王），后凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-liang-lu-lu-zuan",
+      "names": {
+        "primary": "后凉灵帝",
+        "aliases": [
+          "吕纂"
+        ]
+      },
+      "description": "后凉灵帝（吕纂），后凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-liang-lu-lu-long",
+      "names": {
+        "primary": "吕隆",
+        "aliases": [
+          "后凉末主"
+        ]
+      },
+      "description": "吕隆（后凉末主），后凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-liang-lu-lu-guang",
+      "personId": "person-cn-later-liang-lu-lu-guang",
+      "polityId": "polity-cn-later-liang-lu",
+      "titles": [
+        "凉王",
+        "天王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 386,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 399,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-liang-lu-lu-shao",
+      "personId": "person-cn-later-liang-lu-lu-shao",
+      "polityId": "polity-cn-later-liang-lu",
+      "titles": [
+        "凉王",
+        "天王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 399,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 399,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-liang-lu-lu-zuan",
+      "personId": "person-cn-later-liang-lu-lu-zuan",
+      "polityId": "polity-cn-later-liang-lu",
+      "titles": [
+        "凉王",
+        "天王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 399,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 401,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-liang-lu-lu-long",
+      "personId": "person-cn-later-liang-lu-lu-long",
+      "polityId": "polity-cn-later-liang-lu",
+      "titles": [
+        "凉王",
+        "天王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 401,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 403,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

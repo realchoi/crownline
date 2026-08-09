@@ -33,16 +33,322 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "南朝第二朝。",
+      "description": "刘宋权臣萧道成于479年受宋顺帝禅位，建立齐朝，定都建康，史称南齐。高帝、武帝时期延续南朝门阀与州郡体制，并与北魏在淮河流域对峙。武帝死后皇位更替频繁，萧鸾夺位并大规模诛杀宗室，东昏侯时期政治进一步失序。502年萧宝融禅位于萧衍，南齐被梁取代。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-southern-qi-xiao-daocheng",
+      "names": {
+        "primary": "齐高帝",
+        "aliases": [
+          "萧道成"
+        ]
+      },
+      "description": "齐高帝（萧道成），南齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-qi-xiao-ze",
+      "names": {
+        "primary": "齐武帝",
+        "aliases": [
+          "萧赜"
+        ]
+      },
+      "description": "齐武帝（萧赜），南齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-qi-xiao-zhaoye",
+      "names": {
+        "primary": "郁林王",
+        "aliases": [
+          "萧昭业"
+        ]
+      },
+      "description": "郁林王（萧昭业），南齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-qi-xiao-zhaowen",
+      "names": {
+        "primary": "海陵王",
+        "aliases": [
+          "萧昭文"
+        ]
+      },
+      "description": "海陵王（萧昭文），南齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-qi-xiao-luan",
+      "names": {
+        "primary": "齐明帝",
+        "aliases": [
+          "萧鸾"
+        ]
+      },
+      "description": "齐明帝（萧鸾），南齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-qi-xiao-baojuan",
+      "names": {
+        "primary": "东昏侯",
+        "aliases": [
+          "萧宝卷"
+        ]
+      },
+      "description": "东昏侯（萧宝卷），南齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-qi-xiao-baorong",
+      "names": {
+        "primary": "齐和帝",
+        "aliases": [
+          "萧宝融"
+        ]
+      },
+      "description": "齐和帝（萧宝融），南齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-southern-qi-xiao-daocheng",
+      "personId": "person-cn-southern-qi-xiao-daocheng",
+      "polityId": "polity-cn-southern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 479,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 482,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-qi-xiao-ze",
+      "personId": "person-cn-southern-qi-xiao-ze",
+      "polityId": "polity-cn-southern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 482,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 493,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-qi-xiao-zhaoye",
+      "personId": "person-cn-southern-qi-xiao-zhaoye",
+      "polityId": "polity-cn-southern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 493,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 494,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-qi-xiao-zhaowen",
+      "personId": "person-cn-southern-qi-xiao-zhaowen",
+      "polityId": "polity-cn-southern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 494,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 494,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-qi-xiao-luan",
+      "personId": "person-cn-southern-qi-xiao-luan",
+      "polityId": "polity-cn-southern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 494,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 498,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-qi-xiao-baojuan",
+      "personId": "person-cn-southern-qi-xiao-baojuan",
+      "polityId": "polity-cn-southern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 498,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 501,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-qi-xiao-baorong",
+      "personId": "person-cn-southern-qi-xiao-baorong",
+      "polityId": "polity-cn-southern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 501,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 502,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

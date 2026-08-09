@@ -32,16 +32,417 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "西晋凉州刺史张轨于301年开始经营河西，张氏世守凉州，名义上长期奉晋正朔，后逐渐形成独立政权，治所以姑臧为中心。前凉在北方战乱中保全河西农业、交通与学术文化，并联结西域。统治后期宗室内争加剧，国力衰落，376年张天锡向前秦军投降，前凉灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-former-liang-zhang-gui",
+      "names": {
+        "primary": "前凉武王",
+        "aliases": [
+          "张轨"
+        ]
+      },
+      "description": "前凉武王（张轨），前凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-liang-zhang-shi",
+      "names": {
+        "primary": "前凉昭王",
+        "aliases": [
+          "张寔"
+        ]
+      },
+      "description": "前凉昭王（张寔），前凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-liang-zhang-mao",
+      "names": {
+        "primary": "前凉成王",
+        "aliases": [
+          "张茂"
+        ]
+      },
+      "description": "前凉成王（张茂），前凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-liang-zhang-jun",
+      "names": {
+        "primary": "前凉文王",
+        "aliases": [
+          "张骏"
+        ]
+      },
+      "description": "前凉文王（张骏），前凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-liang-zhang-chonghua",
+      "names": {
+        "primary": "前凉桓王",
+        "aliases": [
+          "张重华"
+        ]
+      },
+      "description": "前凉桓王（张重华），前凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-liang-zhang-yaoling",
+      "names": {
+        "primary": "张曜灵",
+        "aliases": [
+          "西平哀公"
+        ]
+      },
+      "description": "张曜灵（西平哀公），前凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-liang-zhang-zuo",
+      "names": {
+        "primary": "张祚",
+        "aliases": [
+          "前凉威王"
+        ]
+      },
+      "description": "张祚（前凉威王），前凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-liang-zhang-xuanjing",
+      "names": {
+        "primary": "张玄靓",
+        "aliases": [
+          "前凉冲王"
+        ]
+      },
+      "description": "张玄靓（前凉冲王），前凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-liang-zhang-tianxi",
+      "names": {
+        "primary": "张天锡",
+        "aliases": [
+          "西平悼公"
+        ]
+      },
+      "description": "张天锡（西平悼公），前凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-former-liang-zhang-gui",
+      "personId": "person-cn-former-liang-zhang-gui",
+      "polityId": "polity-cn-former-liang",
+      "titles": [
+        "凉州牧",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 301,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 314,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-liang-zhang-shi",
+      "personId": "person-cn-former-liang-zhang-shi",
+      "polityId": "polity-cn-former-liang",
+      "titles": [
+        "凉州牧",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 314,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 320,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-liang-zhang-mao",
+      "personId": "person-cn-former-liang-zhang-mao",
+      "polityId": "polity-cn-former-liang",
+      "titles": [
+        "凉州牧",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 320,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 324,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-liang-zhang-jun",
+      "personId": "person-cn-former-liang-zhang-jun",
+      "polityId": "polity-cn-former-liang",
+      "titles": [
+        "凉州牧",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 324,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 346,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-liang-zhang-chonghua",
+      "personId": "person-cn-former-liang-zhang-chonghua",
+      "polityId": "polity-cn-former-liang",
+      "titles": [
+        "凉州牧",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 346,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 353,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-liang-zhang-yaoling",
+      "personId": "person-cn-former-liang-zhang-yaoling",
+      "polityId": "polity-cn-former-liang",
+      "titles": [
+        "凉州牧",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 353,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 353,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-liang-zhang-zuo",
+      "personId": "person-cn-former-liang-zhang-zuo",
+      "polityId": "polity-cn-former-liang",
+      "titles": [
+        "凉州牧",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 353,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 355,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-liang-zhang-xuanjing",
+      "personId": "person-cn-former-liang-zhang-xuanjing",
+      "polityId": "polity-cn-former-liang",
+      "titles": [
+        "凉州牧",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 355,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 363,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-liang-zhang-tianxi",
+      "personId": "person-cn-former-liang-zhang-tianxi",
+      "polityId": "polity-cn-former-liang",
+      "titles": [
+        "凉州牧",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 363,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 376,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

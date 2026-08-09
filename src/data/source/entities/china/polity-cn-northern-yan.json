@@ -32,16 +32,107 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "后燕末年冯跋等在龙城发动政变，高云死后冯跋于409年即位，政权史称北燕。北燕以辽西为核心，统治汉人、鲜卑、高句丽等多族人口，在北魏扩张压力下维持辽东和辽西的割据。冯弘继位后内部不稳，北魏持续进攻；436年冯弘率余众逃往高句丽，北燕在本土的统治结束。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-northern-yan-feng-ba",
+      "names": {
+        "primary": "北燕文成帝",
+        "aliases": [
+          "冯跋"
+        ]
+      },
+      "description": "北燕文成帝（冯跋），北燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-yan-feng-hong",
+      "names": {
+        "primary": "北燕昭成帝",
+        "aliases": [
+          "冯弘"
+        ]
+      },
+      "description": "北燕昭成帝（冯弘），北燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-northern-yan-feng-ba",
+      "personId": "person-cn-northern-yan-feng-ba",
+      "polityId": "polity-cn-northern-yan",
+      "titles": [
+        "天王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 409,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 430,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-yan-feng-hong",
+      "personId": "person-cn-northern-yan-feng-hong",
+      "polityId": "polity-cn-northern-yan",
+      "titles": [
+        "天王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 430,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 436,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

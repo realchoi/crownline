@@ -33,16 +33,656 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "东北地区的重要区域政权。",
+      "description": "粟末靺鞨首领大祚荣于698年在东北建立震国，713年接受唐朝册封为渤海郡王，此后专称渤海。渤海以靺鞨人为主体并吸收高句丽遗民，设置五京十五府，积极学习唐制，发展农业、手工业、佛教与对外交通，被称为海东盛国。十世纪初国势衰落，926年契丹攻破上京，渤海灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-jilin-bohai-history"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-balhae-da-zuorong",
+      "names": {
+        "primary": "渤海高王",
+        "aliases": [
+          "大祚荣"
+        ]
+      },
+      "description": "渤海高王（大祚荣），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-wuyi",
+      "names": {
+        "primary": "渤海武王",
+        "aliases": [
+          "大武艺"
+        ]
+      },
+      "description": "渤海武王（大武艺），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-qinmao",
+      "names": {
+        "primary": "渤海文王",
+        "aliases": [
+          "大钦茂"
+        ]
+      },
+      "description": "渤海文王（大钦茂），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-yuanyi",
+      "names": {
+        "primary": "大元义",
+        "aliases": []
+      },
+      "description": "大元义，渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-huayu",
+      "names": {
+        "primary": "渤海成王",
+        "aliases": [
+          "大华玙"
+        ]
+      },
+      "description": "渤海成王（大华玙），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-songlin",
+      "names": {
+        "primary": "渤海康王",
+        "aliases": [
+          "大嵩璘"
+        ]
+      },
+      "description": "渤海康王（大嵩璘），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-yuanyu",
+      "names": {
+        "primary": "渤海定王",
+        "aliases": [
+          "大元瑜"
+        ]
+      },
+      "description": "渤海定王（大元瑜），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-yanyi",
+      "names": {
+        "primary": "渤海僖王",
+        "aliases": [
+          "大言义"
+        ]
+      },
+      "description": "渤海僖王（大言义），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-mingzhong",
+      "names": {
+        "primary": "渤海简王",
+        "aliases": [
+          "大明忠"
+        ]
+      },
+      "description": "渤海简王（大明忠），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-renxiu",
+      "names": {
+        "primary": "渤海宣王",
+        "aliases": [
+          "大仁秀"
+        ]
+      },
+      "description": "渤海宣王（大仁秀），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-yizhen",
+      "names": {
+        "primary": "大彝震",
+        "aliases": []
+      },
+      "description": "大彝震，渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-qianhuang",
+      "names": {
+        "primary": "大虔晃",
+        "aliases": []
+      },
+      "description": "大虔晃，渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-xuanxi",
+      "names": {
+        "primary": "大玄锡",
+        "aliases": []
+      },
+      "description": "大玄锡，渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-weijie",
+      "names": {
+        "primary": "大玮瑎",
+        "aliases": []
+      },
+      "description": "大玮瑎，渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-balhae-da-yinzhuan",
+      "names": {
+        "primary": "大諲譔",
+        "aliases": [
+          "渤海末王"
+        ]
+      },
+      "description": "大諲譔（渤海末王），渤海国在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-balhae-da-zuorong",
+      "personId": "person-cn-balhae-da-zuorong",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 698,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 719,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-wuyi",
+      "personId": "person-cn-balhae-da-wuyi",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 719,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 737,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-qinmao",
+      "personId": "person-cn-balhae-da-qinmao",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 737,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 793,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-yuanyi",
+      "personId": "person-cn-balhae-da-yuanyi",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 793,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 793,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-huayu",
+      "personId": "person-cn-balhae-da-huayu",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 793,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 794,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-songlin",
+      "personId": "person-cn-balhae-da-songlin",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 794,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 809,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-yuanyu",
+      "personId": "person-cn-balhae-da-yuanyu",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 809,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 812,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-yanyi",
+      "personId": "person-cn-balhae-da-yanyi",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 812,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 817,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-mingzhong",
+      "personId": "person-cn-balhae-da-mingzhong",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 817,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 818,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-renxiu",
+      "personId": "person-cn-balhae-da-renxiu",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 818,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 830,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-yizhen",
+      "personId": "person-cn-balhae-da-yizhen",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 830,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 857,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-qianhuang",
+      "personId": "person-cn-balhae-da-qianhuang",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 857,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 871,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-xuanxi",
+      "personId": "person-cn-balhae-da-xuanxi",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 871,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 895,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-weijie",
+      "personId": "person-cn-balhae-da-weijie",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 895,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 906,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-balhae-da-yinzhuan",
+      "personId": "person-cn-balhae-da-yinzhuan",
+      "polityId": "polity-balhae",
+      "titles": [
+        "王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 906,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 926,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-balhae-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

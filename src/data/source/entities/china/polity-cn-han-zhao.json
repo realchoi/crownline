@@ -34,16 +34,279 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一；前期国号汉，后改赵。",
+      "description": "匈奴贵族刘渊于304年在并州称汉王，建立以恢复汉室为政治号召的政权，后世称汉赵或前赵。刘聪时期军队先后攻陷洛阳、长安，俘获西晋怀帝、愍帝，促成西晋灭亡。刘曜掌权后改国号为赵并迁都长安，与后赵石勒争夺北方。329年刘熙残部被后赵消灭，汉赵终结。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-han-zhao-liu-yuan",
+      "names": {
+        "primary": "汉赵光文帝",
+        "aliases": [
+          "刘渊"
+        ]
+      },
+      "description": "汉赵光文帝（刘渊），汉赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-han-zhao-liu-he",
+      "names": {
+        "primary": "刘和",
+        "aliases": [
+          "汉赵废帝"
+        ]
+      },
+      "description": "刘和（汉赵废帝），汉赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-han-zhao-liu-cong",
+      "names": {
+        "primary": "汉赵昭武帝",
+        "aliases": [
+          "刘聪"
+        ]
+      },
+      "description": "汉赵昭武帝（刘聪），汉赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-han-zhao-liu-can",
+      "names": {
+        "primary": "汉赵隐帝",
+        "aliases": [
+          "刘粲"
+        ]
+      },
+      "description": "汉赵隐帝（刘粲），汉赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-han-zhao-liu-yao",
+      "names": {
+        "primary": "刘曜",
+        "aliases": [
+          "赵帝"
+        ]
+      },
+      "description": "刘曜（赵帝），汉赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-han-zhao-liu-xi",
+      "names": {
+        "primary": "刘熙",
+        "aliases": [
+          "前赵末主"
+        ]
+      },
+      "description": "刘熙（前赵末主），汉赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-han-zhao-liu-yuan",
+      "personId": "person-cn-han-zhao-liu-yuan",
+      "polityId": "polity-cn-han-zhao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 304,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 310,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-han-zhao-liu-he",
+      "personId": "person-cn-han-zhao-liu-he",
+      "polityId": "polity-cn-han-zhao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 310,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 310,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-han-zhao-liu-cong",
+      "personId": "person-cn-han-zhao-liu-cong",
+      "polityId": "polity-cn-han-zhao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 310,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 318,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-han-zhao-liu-can",
+      "personId": "person-cn-han-zhao-liu-can",
+      "polityId": "polity-cn-han-zhao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 318,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 318,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-han-zhao-liu-yao",
+      "personId": "person-cn-han-zhao-liu-yao",
+      "polityId": "polity-cn-han-zhao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 318,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 328,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-han-zhao-liu-xi",
+      "personId": "person-cn-han-zhao-liu-xi",
+      "polityId": "polity-cn-han-zhao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 328,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 329,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

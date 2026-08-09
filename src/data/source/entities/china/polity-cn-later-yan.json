@@ -32,16 +32,242 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "前燕宗室慕容垂在前秦淝水战败后起兵，于384年称燕王，复建燕政权，史称后燕，以中山为都。后燕一度占有河北、山东和辽西部分地区，参合陂之战后遭北魏持续进攻，国土分裂，南部另建南燕。慕容氏后期政变频繁，高云取代慕容熙后政权进一步转入北燕，409年后燕告终。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-yan-murong-chui",
+      "names": {
+        "primary": "后燕成武帝",
+        "aliases": [
+          "慕容垂"
+        ]
+      },
+      "description": "后燕成武帝（慕容垂），后燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-yan-murong-bao",
+      "names": {
+        "primary": "后燕惠愍帝",
+        "aliases": [
+          "慕容宝"
+        ]
+      },
+      "description": "后燕惠愍帝（慕容宝），后燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-yan-murong-sheng",
+      "names": {
+        "primary": "后燕昭武帝",
+        "aliases": [
+          "慕容盛"
+        ]
+      },
+      "description": "后燕昭武帝（慕容盛），后燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-yan-murong-xi",
+      "names": {
+        "primary": "后燕昭文帝",
+        "aliases": [
+          "慕容熙"
+        ]
+      },
+      "description": "后燕昭文帝（慕容熙），后燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-yan-gao-yun",
+      "names": {
+        "primary": "高云",
+        "aliases": [
+          "慕容云",
+          "惠懿帝"
+        ]
+      },
+      "description": "高云（慕容云），后燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-yan-murong-chui",
+      "personId": "person-cn-later-yan-murong-chui",
+      "polityId": "polity-cn-later-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 384,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 396,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-yan-murong-bao",
+      "personId": "person-cn-later-yan-murong-bao",
+      "polityId": "polity-cn-later-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 396,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 398,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-yan-murong-sheng",
+      "personId": "person-cn-later-yan-murong-sheng",
+      "polityId": "polity-cn-later-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 398,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 401,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-yan-murong-xi",
+      "personId": "person-cn-later-yan-murong-xi",
+      "polityId": "polity-cn-later-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 401,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 407,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-yan-gao-yun",
+      "personId": "person-cn-later-yan-gao-yun",
+      "polityId": "polity-cn-later-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 407,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 409,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

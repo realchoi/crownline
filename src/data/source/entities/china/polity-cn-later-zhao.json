@@ -32,16 +32,321 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "羯族首领石勒在汉赵势力中崛起，于319年称赵王，以襄国为都，后灭汉赵并控制北方大部，史称后赵。石虎迁都邺城，扩张军政力量，但徭役、战争和严酷统治加重社会负担。石虎死后诸子争位，冉闵夺取邺城，宗室残余相继败亡，351年石祗被杀，后赵政权结束。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-zhao-shi-le",
+      "names": {
+        "primary": "后赵明帝",
+        "aliases": [
+          "石勒"
+        ]
+      },
+      "description": "后赵明帝（石勒），后赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-zhao-shi-hong",
+      "names": {
+        "primary": "石弘",
+        "aliases": [
+          "海阳王"
+        ]
+      },
+      "description": "石弘（海阳王），后赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-zhao-shi-hu",
+      "names": {
+        "primary": "后赵武帝",
+        "aliases": [
+          "石虎"
+        ]
+      },
+      "description": "后赵武帝（石虎），后赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-zhao-shi-shi",
+      "names": {
+        "primary": "石世",
+        "aliases": []
+      },
+      "description": "石世，后赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-zhao-shi-zun",
+      "names": {
+        "primary": "石遵",
+        "aliases": []
+      },
+      "description": "石遵，后赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-zhao-shi-jian",
+      "names": {
+        "primary": "石鉴",
+        "aliases": []
+      },
+      "description": "石鉴，后赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-zhao-shi-zhi",
+      "names": {
+        "primary": "石祗",
+        "aliases": []
+      },
+      "description": "石祗，后赵在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-zhao-shi-le",
+      "personId": "person-cn-later-zhao-shi-le",
+      "polityId": "polity-cn-later-zhao",
+      "titles": [
+        "赵王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 319,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 333,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-zhao-shi-hong",
+      "personId": "person-cn-later-zhao-shi-hong",
+      "polityId": "polity-cn-later-zhao",
+      "titles": [
+        "赵王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 333,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 334,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-zhao-shi-hu",
+      "personId": "person-cn-later-zhao-shi-hu",
+      "polityId": "polity-cn-later-zhao",
+      "titles": [
+        "赵王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 334,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 349,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-zhao-shi-shi",
+      "personId": "person-cn-later-zhao-shi-shi",
+      "polityId": "polity-cn-later-zhao",
+      "titles": [
+        "赵王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 349,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 349,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-zhao-shi-zun",
+      "personId": "person-cn-later-zhao-shi-zun",
+      "polityId": "polity-cn-later-zhao",
+      "titles": [
+        "赵王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 349,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 349,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-zhao-shi-jian",
+      "personId": "person-cn-later-zhao-shi-jian",
+      "polityId": "polity-cn-later-zhao",
+      "titles": [
+        "赵王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 349,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 350,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-zhao-shi-zhi",
+      "personId": "person-cn-later-zhao-shi-zhi",
+      "polityId": "polity-cn-later-zhao",
+      "titles": [
+        "赵王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 350,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 351,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

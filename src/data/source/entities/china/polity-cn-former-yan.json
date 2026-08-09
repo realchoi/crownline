@@ -32,16 +32,153 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "鲜卑慕容部在辽西、辽东长期发展，慕容皝于337年称燕王，建立前燕。慕容儁乘后赵崩溃进入中原，迁都蓟城，后又迁邺并称帝，疆域扩展至河北、河南和山东等地。慕容暐年幼即位后，朝政受宗室权臣影响，内部矛盾加深。370年前秦攻克邺城，慕容暐被俘，前燕灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-former-yan-murong-huang",
+      "names": {
+        "primary": "燕文明王",
+        "aliases": [
+          "慕容皝"
+        ]
+      },
+      "description": "燕文明王（慕容皝），前燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-yan-murong-jun",
+      "names": {
+        "primary": "前燕景昭帝",
+        "aliases": [
+          "慕容儁"
+        ]
+      },
+      "description": "前燕景昭帝（慕容儁），前燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-yan-murong-wei",
+      "names": {
+        "primary": "前燕幽帝",
+        "aliases": [
+          "慕容暐"
+        ]
+      },
+      "description": "前燕幽帝（慕容暐），前燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-former-yan-murong-huang",
+      "personId": "person-cn-former-yan-murong-huang",
+      "polityId": "polity-cn-former-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 337,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 348,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-yan-murong-jun",
+      "personId": "person-cn-former-yan-murong-jun",
+      "polityId": "polity-cn-former-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 348,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 360,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-yan-murong-wei",
+      "personId": "person-cn-former-yan-murong-wei",
+      "polityId": "polity-cn-former-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 360,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 370,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

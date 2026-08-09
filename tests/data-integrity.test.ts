@@ -143,4 +143,48 @@ describe("生产历史数据", () => {
     expect(rulerSnapshot("polity-cn-shu-han", 250).status).toBe("known");
     expect(rulerSnapshot("polity-cn-eastern-wu", 252).status).toBe("known");
   });
+
+  it("补全两晋与十六国十六个并立政权的详情", () => {
+    expectPolityDetails(NON_MAINLINE_POLITY_BATCHES.sixteenKingdoms);
+    expect(rulerSnapshot("polity-cn-former-qin", 383).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-western-qin", 405).status).toBe("unrecorded");
+    expect(rulerSnapshot("polity-cn-western-qin", 410).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-northern-liang", 420).status).toBe("known");
+  });
+
+  it("补全南北朝九个并立政权的详情", () => {
+    expectPolityDetails(NON_MAINLINE_POLITY_BATCHES.northernSouthernDynasties);
+    expect(rulerSnapshot("polity-cn-northern-wei", 500).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-liu-song", 450).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-chen", 580).status).toBe("known");
+  });
+
+  it("补全隋唐五代十国及同期区域政权详情", () => {
+    expectPolityDetails(NON_MAINLINE_POLITY_BATCHES.suiTangFiveDynasties);
+    expect(rulerSnapshot("polity-cn-wu-zhou", 700).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-later-tang", 930).status).toBe("known");
+    expect(rulerSnapshot("polity-tibet-empire", 755).status).toBe("known");
+    expect(rulerSnapshot("polity-nanzhao", 800).status).toBe("known");
+  });
+
+  it("补全辽夏金元与明清并立政权详情", () => {
+    expectPolityDetails(NON_MAINLINE_POLITY_BATCHES.laterPolities);
+    expect(rulerSnapshot("polity-cn-liao", 1000).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-western-xia", 1100).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-jin", 1200).status).toBe("known");
+    expect(rulerSnapshot("polity-cn-southern-ming", 1646).entries.length)
+      .toBeGreaterThan(0);
+  });
+
+  it("为全部七十一个中国政权提供统治者详情", () => {
+    const chinesePolityIds = data.entities
+      .filter(({ entityKind, historicalRegionIds }) => {
+        return entityKind === "polity" && historicalRegionIds.includes("region-china");
+      })
+      .map(({ id }) => id);
+
+    expect(chinesePolityIds).toHaveLength(71);
+    expect(chinesePolityIds.every((id) => data.reigns.some(({ polityId }) => polityId === id)))
+      .toBe(true);
+  });
 });

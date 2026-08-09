@@ -33,16 +33,107 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "清朝前身，1636年皇太极改国号为清。",
+      "description": "后金是建州女真首领努尔哈赤在统一女真诸部、创立八旗后，于1616年在赫图阿拉建立的政权，国号大金，史称后金。努尔哈赤起兵反明并扩张至辽东，皇太极继位后继续整合女真、蒙古与汉军力量，改革制度。1636年皇太极称帝，改族名满洲、国号大清，后金阶段结束。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-later-jin"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-jin-jurchen-nurhaci",
+      "names": {
+        "primary": "后金汗努尔哈赤",
+        "aliases": [
+          "努尔哈赤"
+        ]
+      },
+      "description": "后金汗努尔哈赤（努尔哈赤），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-later-jin"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-jin-jurchen-hong-taiji",
+      "names": {
+        "primary": "后金汗皇太极",
+        "aliases": [
+          "皇太极"
+        ]
+      },
+      "description": "后金汗皇太极（皇太极），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-later-jin"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-jin-jurchen-nurhaci",
+      "personId": "person-cn-later-jin-jurchen-nurhaci",
+      "polityId": "polity-cn-later-jin-jurchen",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1616,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1626,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-later-jin"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-jin-jurchen-hong-taiji",
+      "personId": "person-cn-later-jin-jurchen-hong-taiji",
+      "polityId": "polity-cn-later-jin-jurchen",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1626,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1636,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-later-jin"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

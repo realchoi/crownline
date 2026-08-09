@@ -33,16 +33,279 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十国之一，常称马楚。",
+      "description": "唐末武安军节度使马殷据有湖南，于907年受后梁封楚王，建立楚国，史称马楚，以潭州为中心。政权利用茶叶、铅铁和南北贸易发展财政，并向中原王朝称臣。马希范死后诸弟争位，内战严重破坏统治，南唐乘机出兵；951年马希崇投降，马楚灭亡，湖南随后又进入地方割据。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-ma-chu-ma-yin",
+      "names": {
+        "primary": "楚武穆王",
+        "aliases": [
+          "马殷"
+        ]
+      },
+      "description": "楚武穆王（马殷），马楚在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ma-chu-ma-xisheng",
+      "names": {
+        "primary": "衡阳王",
+        "aliases": [
+          "马希声"
+        ]
+      },
+      "description": "衡阳王（马希声），马楚在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ma-chu-ma-xifan",
+      "names": {
+        "primary": "楚文昭王",
+        "aliases": [
+          "马希范"
+        ]
+      },
+      "description": "楚文昭王（马希范），马楚在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ma-chu-ma-xiguang",
+      "names": {
+        "primary": "楚废王",
+        "aliases": [
+          "马希广"
+        ]
+      },
+      "description": "楚废王（马希广），马楚在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ma-chu-ma-xie",
+      "names": {
+        "primary": "楚恭孝王",
+        "aliases": [
+          "马希萼"
+        ]
+      },
+      "description": "楚恭孝王（马希萼），马楚在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-ma-chu-ma-xichong",
+      "names": {
+        "primary": "马希崇",
+        "aliases": [
+          "楚末主"
+        ]
+      },
+      "description": "马希崇（楚末主），马楚在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-ma-chu-ma-yin",
+      "personId": "person-cn-ma-chu-ma-yin",
+      "polityId": "polity-cn-ma-chu",
+      "titles": [
+        "楚王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 907,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 930,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-ma-chu-ma-xisheng",
+      "personId": "person-cn-ma-chu-ma-xisheng",
+      "polityId": "polity-cn-ma-chu",
+      "titles": [
+        "楚王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 930,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 932,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-ma-chu-ma-xifan",
+      "personId": "person-cn-ma-chu-ma-xifan",
+      "polityId": "polity-cn-ma-chu",
+      "titles": [
+        "楚王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 932,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 947,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-ma-chu-ma-xiguang",
+      "personId": "person-cn-ma-chu-ma-xiguang",
+      "polityId": "polity-cn-ma-chu",
+      "titles": [
+        "楚王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 947,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 950,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-ma-chu-ma-xie",
+      "personId": "person-cn-ma-chu-ma-xie",
+      "polityId": "polity-cn-ma-chu",
+      "titles": [
+        "楚王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 950,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 951,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-ma-chu-ma-xichong",
+      "personId": "person-cn-ma-chu-ma-xichong",
+      "polityId": "polity-cn-ma-chu",
+      "titles": [
+        "楚王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 951,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 951,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

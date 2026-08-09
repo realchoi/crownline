@@ -32,16 +32,163 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "河西鲜卑秃发部首领秃发乌孤于397年脱离后凉，自称西平王，建立南凉，先后以西平、乐都等地为统治中心。政权与后凉、北凉、后秦和西秦反复争夺河西，秃发傉檀一度向后秦称臣，后恢复凉王称号。连年战争削弱部众和粮食基础，414年秃发傉檀降于西秦，南凉灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-southern-liang-tufa-wugu",
+      "names": {
+        "primary": "南凉武王",
+        "aliases": [
+          "秃发乌孤"
+        ]
+      },
+      "description": "南凉武王（秃发乌孤），南凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-liang-tufa-lilugu",
+      "names": {
+        "primary": "南凉康王",
+        "aliases": [
+          "秃发利鹿孤"
+        ]
+      },
+      "description": "南凉康王（秃发利鹿孤），南凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-liang-tufa-nutan",
+      "names": {
+        "primary": "南凉景王",
+        "aliases": [
+          "秃发傉檀"
+        ]
+      },
+      "description": "南凉景王（秃发傉檀），南凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-southern-liang-tufa-wugu",
+      "personId": "person-cn-southern-liang-tufa-wugu",
+      "polityId": "polity-cn-southern-liang-tufa",
+      "titles": [
+        "西平王",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 397,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 399,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-liang-tufa-lilugu",
+      "personId": "person-cn-southern-liang-tufa-lilugu",
+      "polityId": "polity-cn-southern-liang-tufa",
+      "titles": [
+        "西平王",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 399,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 402,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-liang-tufa-nutan",
+      "personId": "person-cn-southern-liang-tufa-nutan",
+      "polityId": "polity-cn-southern-liang-tufa",
+      "titles": [
+        "西平王",
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 402,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 404,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 408,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 414,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

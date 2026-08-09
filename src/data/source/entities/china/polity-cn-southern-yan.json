@@ -32,16 +32,110 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "后燕宗室慕容德在北魏进攻中率部南迁，于398年在滑台称燕王，后转入山东，以广固为都并称帝，史称南燕。政权主要控制今山东及周边部分地区，与东晋边境冲突频繁。慕容超继位后政治失序，又扣留东晋使者。409年刘裕北伐围攻广固，次年城破，慕容超被俘，南燕灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-southern-yan-murong-de",
+      "names": {
+        "primary": "南燕献武帝",
+        "aliases": [
+          "慕容德",
+          "慕容备德"
+        ]
+      },
+      "description": "南燕献武帝（慕容德），南燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-yan-murong-chao",
+      "names": {
+        "primary": "慕容超",
+        "aliases": [
+          "南燕末主"
+        ]
+      },
+      "description": "慕容超（南燕末主），南燕在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-southern-yan-murong-de",
+      "personId": "person-cn-southern-yan-murong-de",
+      "polityId": "polity-cn-southern-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 398,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 405,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-yan-murong-chao",
+      "personId": "person-cn-southern-yan-murong-chao",
+      "polityId": "polity-cn-southern-yan",
+      "titles": [
+        "燕王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 405,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 410,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

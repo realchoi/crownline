@@ -32,17 +32,429 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "青藏高原的重要区域政权；不属于传统中原王朝序列。",
+      "description": "雅隆部落联盟在松赞干布时期完成青藏高原主要地区的整合，形成吐蕃王朝，并以逻些为政治中心。吐蕃与唐朝长期存在战争、会盟、和亲及频繁文化交流，鼎盛时势力进入河陇、西域和喜马拉雅周边。九世纪王室内争、宗教冲突和属民起义相继爆发，朗达玛死后中央权力瓦解，842年后进入分裂时期。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-neac-tibetan-history"
         }
       ],
       "confidence": "medium",
       "chronologyNote": "青藏高原的重要区域政权；不属于传统中原王朝序列。"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-tibet-empire-songtsen-gampo",
+      "names": {
+        "primary": "松赞干布",
+        "aliases": [
+          "弃宗弄赞"
+        ]
+      },
+      "description": "松赞干布（弃宗弄赞），吐蕃在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tibet-empire-mangsong-mangtsen",
+      "names": {
+        "primary": "芒松芒赞",
+        "aliases": []
+      },
+      "description": "芒松芒赞，吐蕃在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tibet-empire-tridu-songtsen",
+      "names": {
+        "primary": "赤都松赞",
+        "aliases": []
+      },
+      "description": "赤都松赞，吐蕃在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tibet-empire-tride-tsuktsen",
+      "names": {
+        "primary": "赤德祖赞",
+        "aliases": [
+          "尺带珠丹"
+        ]
+      },
+      "description": "赤德祖赞（尺带珠丹），吐蕃在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tibet-empire-trisong-detsen",
+      "names": {
+        "primary": "赤松德赞",
+        "aliases": []
+      },
+      "description": "赤松德赞，吐蕃在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tibet-empire-mune-tsenpo",
+      "names": {
+        "primary": "牟尼赞普",
+        "aliases": []
+      },
+      "description": "牟尼赞普，吐蕃在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tibet-empire-sadnalegs",
+      "names": {
+        "primary": "赤德松赞",
+        "aliases": [
+          "塞那累"
+        ]
+      },
+      "description": "赤德松赞（塞那累），吐蕃在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tibet-empire-ralpachen",
+      "names": {
+        "primary": "赤祖德赞",
+        "aliases": [
+          "热巴巾"
+        ]
+      },
+      "description": "赤祖德赞（热巴巾），吐蕃在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-tibet-empire-langdarma",
+      "names": {
+        "primary": "朗达玛",
+        "aliases": [
+          "达磨"
+        ]
+      },
+      "description": "朗达玛（达磨），吐蕃在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-tibet-empire-songtsen-gampo",
+      "personId": "person-cn-tibet-empire-songtsen-gampo",
+      "polityId": "polity-tibet-empire",
+      "titles": [
+        "赞普"
+      ],
+      "localTitles": [
+        "btsan po"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 618,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 650,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "早年纪年存在不同推算；按本数据政权起点采用约618年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-tibet-empire-mangsong-mangtsen",
+      "personId": "person-cn-tibet-empire-mangsong-mangtsen",
+      "polityId": "polity-tibet-empire",
+      "titles": [
+        "赞普"
+      ],
+      "localTitles": [
+        "btsan po"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 650,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 676,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-tibet-empire-tridu-songtsen",
+      "personId": "person-cn-tibet-empire-tridu-songtsen",
+      "polityId": "polity-tibet-empire",
+      "titles": [
+        "赞普"
+      ],
+      "localTitles": [
+        "btsan po"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 676,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 704,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-tibet-empire-tride-tsuktsen",
+      "personId": "person-cn-tibet-empire-tride-tsuktsen",
+      "polityId": "polity-tibet-empire",
+      "titles": [
+        "赞普"
+      ],
+      "localTitles": [
+        "btsan po"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 705,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 755,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-tibet-empire-trisong-detsen",
+      "personId": "person-cn-tibet-empire-trisong-detsen",
+      "polityId": "polity-tibet-empire",
+      "titles": [
+        "赞普"
+      ],
+      "localTitles": [
+        "btsan po"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 755,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 797,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-tibet-empire-mune-tsenpo",
+      "personId": "person-cn-tibet-empire-mune-tsenpo",
+      "polityId": "polity-tibet-empire",
+      "titles": [
+        "赞普"
+      ],
+      "localTitles": [
+        "btsan po"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 797,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 799,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-tibet-empire-sadnalegs",
+      "personId": "person-cn-tibet-empire-sadnalegs",
+      "polityId": "polity-tibet-empire",
+      "titles": [
+        "赞普"
+      ],
+      "localTitles": [
+        "btsan po"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 800,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 815,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-tibet-empire-ralpachen",
+      "personId": "person-cn-tibet-empire-ralpachen",
+      "polityId": "polity-tibet-empire",
+      "titles": [
+        "赞普"
+      ],
+      "localTitles": [
+        "btsan po"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 815,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 841,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-tibet-empire-langdarma",
+      "personId": "person-cn-tibet-empire-langdarma",
+      "polityId": "polity-tibet-empire",
+      "titles": [
+        "赞普"
+      ],
+      "localTitles": [
+        "btsan po"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 841,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 842,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-tibetan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

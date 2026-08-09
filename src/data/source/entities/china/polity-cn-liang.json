@@ -33,16 +33,279 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "南朝第三朝。",
+      "description": "南齐将领萧衍起兵控制建康，于502年受禅建立梁朝，史称南梁。梁武帝前期整顿政治、提倡文教与佛教，江南经济文化继续发展；晚年侯景之乱攻陷建康，中央权威瓦解，长江上游和淮南大片领土被西魏夺取。陈霸先平定局势后控制朝廷，557年梁敬帝禅位，陈朝建立。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-liang-xiao-yan",
+      "names": {
+        "primary": "梁武帝",
+        "aliases": [
+          "萧衍"
+        ]
+      },
+      "description": "梁武帝（萧衍），梁在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liang-xiao-gang",
+      "names": {
+        "primary": "梁简文帝",
+        "aliases": [
+          "萧纲"
+        ]
+      },
+      "description": "梁简文帝（萧纲），梁在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liang-xiao-dong",
+      "names": {
+        "primary": "豫章王",
+        "aliases": [
+          "萧栋"
+        ]
+      },
+      "description": "豫章王（萧栋），梁在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liang-xiao-yi",
+      "names": {
+        "primary": "梁元帝",
+        "aliases": [
+          "萧绎"
+        ]
+      },
+      "description": "梁元帝（萧绎），梁在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liang-xiao-yuanming",
+      "names": {
+        "primary": "贞阳侯",
+        "aliases": [
+          "萧渊明"
+        ]
+      },
+      "description": "贞阳侯（萧渊明），梁在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liang-xiao-fangzhi",
+      "names": {
+        "primary": "梁敬帝",
+        "aliases": [
+          "萧方智"
+        ]
+      },
+      "description": "梁敬帝（萧方智），梁在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-liang-xiao-yan",
+      "personId": "person-cn-liang-xiao-yan",
+      "polityId": "polity-cn-liang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 502,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 549,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liang-xiao-gang",
+      "personId": "person-cn-liang-xiao-gang",
+      "polityId": "polity-cn-liang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 549,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 551,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liang-xiao-dong",
+      "personId": "person-cn-liang-xiao-dong",
+      "polityId": "polity-cn-liang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 551,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 552,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liang-xiao-yi",
+      "personId": "person-cn-liang-xiao-yi",
+      "polityId": "polity-cn-liang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 552,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 554,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liang-xiao-yuanming",
+      "personId": "person-cn-liang-xiao-yuanming",
+      "polityId": "polity-cn-liang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 555,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 555,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liang-xiao-fangzhi",
+      "personId": "person-cn-liang-xiao-fangzhi",
+      "polityId": "polity-cn-liang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 555,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 557,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

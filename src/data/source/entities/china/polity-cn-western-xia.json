@@ -33,16 +33,451 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "党项建立，与宋、辽、金等政权并立。",
+      "description": "西夏是党项首领李元昊于1038年在西北建立的多民族王朝，国号大夏，统治核心为河套、河西走廊及今宁夏一带，都兴庆府。它创制西夏文并吸收宋、辽制度，凭借地缘与军事力量在宋、辽、金之间维持独立。十三世纪蒙古军连续进攻，末帝李睍于1227年投降，西夏灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-zgbk-western-xia"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-western-xia-li-yuanhao",
+      "names": {
+        "primary": "夏景宗",
+        "aliases": [
+          "李元昊"
+        ]
+      },
+      "description": "夏景宗（李元昊），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-xia-li-liangzuo",
+      "names": {
+        "primary": "夏毅宗",
+        "aliases": [
+          "李谅祚"
+        ]
+      },
+      "description": "夏毅宗（李谅祚），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-xia-li-bingchang",
+      "names": {
+        "primary": "夏惠宗",
+        "aliases": [
+          "李秉常"
+        ]
+      },
+      "description": "夏惠宗（李秉常），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-xia-li-qianshun",
+      "names": {
+        "primary": "夏崇宗",
+        "aliases": [
+          "李乾顺"
+        ]
+      },
+      "description": "夏崇宗（李乾顺），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-xia-li-renxiao",
+      "names": {
+        "primary": "夏仁宗",
+        "aliases": [
+          "李仁孝"
+        ]
+      },
+      "description": "夏仁宗（李仁孝），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-xia-li-chunyou",
+      "names": {
+        "primary": "夏桓宗",
+        "aliases": [
+          "李纯祐"
+        ]
+      },
+      "description": "夏桓宗（李纯祐），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-xia-li-anquan",
+      "names": {
+        "primary": "夏襄宗",
+        "aliases": [
+          "李安全"
+        ]
+      },
+      "description": "夏襄宗（李安全），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-xia-li-zunxu",
+      "names": {
+        "primary": "夏神宗",
+        "aliases": [
+          "李遵顼"
+        ]
+      },
+      "description": "夏神宗（李遵顼），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-xia-li-dewang",
+      "names": {
+        "primary": "夏献宗",
+        "aliases": [
+          "李德旺"
+        ]
+      },
+      "description": "夏献宗（李德旺），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-xia-li-xian",
+      "names": {
+        "primary": "西夏末帝",
+        "aliases": [
+          "李睍"
+        ]
+      },
+      "description": "西夏末帝（李睍），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-western-xia-li-yuanhao",
+      "personId": "person-cn-western-xia-li-yuanhao",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1038,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1048,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-xia-li-liangzuo",
+      "personId": "person-cn-western-xia-li-liangzuo",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1048,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1067,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-xia-li-bingchang",
+      "personId": "person-cn-western-xia-li-bingchang",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1067,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1086,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-xia-li-qianshun",
+      "personId": "person-cn-western-xia-li-qianshun",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1086,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1139,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-xia-li-renxiao",
+      "personId": "person-cn-western-xia-li-renxiao",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1139,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1193,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-xia-li-chunyou",
+      "personId": "person-cn-western-xia-li-chunyou",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1193,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1206,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-xia-li-anquan",
+      "personId": "person-cn-western-xia-li-anquan",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1206,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1211,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-xia-li-zunxu",
+      "personId": "person-cn-western-xia-li-zunxu",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1211,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1223,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-xia-li-dewang",
+      "personId": "person-cn-western-xia-li-dewang",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1223,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1226,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-xia-li-xian",
+      "personId": "person-cn-western-xia-li-xian",
+      "polityId": "polity-cn-western-xia",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1226,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1227,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

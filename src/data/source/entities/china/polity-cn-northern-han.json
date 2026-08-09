@@ -32,16 +32,194 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十国之一，979年为北宋所灭。",
+      "description": "后汉被后周取代后，刘知远之弟刘崇于951年在太原称帝，延续汉国号，史称北汉。政权控制河东部分地区，疆域和人口有限，长期依靠辽朝援助对抗后周与北宋。北宋建立后多次进攻太原，北汉日益孤立；979年宋太宗亲征围城，末主刘继元投降，北汉灭亡，五代十国割据基本结束。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-northern-han-liu-chong",
+      "names": {
+        "primary": "北汉世祖",
+        "aliases": [
+          "刘崇",
+          "刘旻"
+        ]
+      },
+      "description": "北汉世祖（刘崇），北汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-han-liu-jun",
+      "names": {
+        "primary": "北汉睿宗",
+        "aliases": [
+          "刘钧"
+        ]
+      },
+      "description": "北汉睿宗（刘钧），北汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-han-liu-jien",
+      "names": {
+        "primary": "北汉少主",
+        "aliases": [
+          "刘继恩"
+        ]
+      },
+      "description": "北汉少主（刘继恩），北汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-han-liu-jiyuan",
+      "names": {
+        "primary": "北汉英武帝",
+        "aliases": [
+          "刘继元"
+        ]
+      },
+      "description": "北汉英武帝（刘继元），北汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-northern-han-liu-chong",
+      "personId": "person-cn-northern-han-liu-chong",
+      "polityId": "polity-cn-northern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 951,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 954,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-han-liu-jun",
+      "personId": "person-cn-northern-han-liu-jun",
+      "polityId": "polity-cn-northern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 954,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 968,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-han-liu-jien",
+      "personId": "person-cn-northern-han-liu-jien",
+      "polityId": "polity-cn-northern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 968,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 968,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-han-liu-jiyuan",
+      "personId": "person-cn-northern-han-liu-jiyuan",
+      "polityId": "polity-cn-northern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 968,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 979,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

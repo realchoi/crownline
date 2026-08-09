@@ -33,16 +33,193 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "五代第二朝。",
+      "description": "沙陀军事集团首领李存勖继承晋王势力，于923年称帝并灭后梁，以洛阳为都，国号唐，史称后唐。庄宗一度灭前蜀、扩展至长江上游，但用人和财政失策引发兵变。明宗李嗣源即位后政局稍安，晚年继承争夺再起。936年石敬瑭借契丹援军攻入洛阳，末帝李从珂自焚，后唐灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-tang-li-cunxu",
+      "names": {
+        "primary": "后唐庄宗",
+        "aliases": [
+          "李存勖"
+        ]
+      },
+      "description": "后唐庄宗（李存勖），后唐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-tang-li-siyuan",
+      "names": {
+        "primary": "后唐明宗",
+        "aliases": [
+          "李嗣源"
+        ]
+      },
+      "description": "后唐明宗（李嗣源），后唐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-tang-li-conghou",
+      "names": {
+        "primary": "后唐闵帝",
+        "aliases": [
+          "李从厚"
+        ]
+      },
+      "description": "后唐闵帝（李从厚），后唐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-tang-li-congke",
+      "names": {
+        "primary": "后唐末帝",
+        "aliases": [
+          "李从珂"
+        ]
+      },
+      "description": "后唐末帝（李从珂），后唐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-tang-li-cunxu",
+      "personId": "person-cn-later-tang-li-cunxu",
+      "polityId": "polity-cn-later-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 923,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 926,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-tang-li-siyuan",
+      "personId": "person-cn-later-tang-li-siyuan",
+      "polityId": "polity-cn-later-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 926,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 933,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-tang-li-conghou",
+      "personId": "person-cn-later-tang-li-conghou",
+      "polityId": "polity-cn-later-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 933,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 934,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-tang-li-congke",
+      "personId": "person-cn-later-tang-li-congke",
+      "polityId": "polity-cn-later-tang",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 934,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 936,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

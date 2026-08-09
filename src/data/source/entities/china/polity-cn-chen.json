@@ -32,16 +32,237 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "南朝第四朝，589年为隋所灭。",
+      "description": "侯景之乱后，陈霸先在平乱和南朝内部战争中掌握军政，于557年受梁敬帝禅位，建立陈朝，定都建康。陈朝疆域主要限于长江中下游及岭南，北方边境先后面对北齐、北周和隋，但文帝、宣帝时期逐步恢复江南秩序。589年隋军渡江攻克建康，后主陈叔宝被俘，陈亡，南北重新统一。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-chen-chen-baxian",
+      "names": {
+        "primary": "陈武帝",
+        "aliases": [
+          "陈霸先"
+        ]
+      },
+      "description": "陈武帝（陈霸先），陈在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-chen-chen-qian",
+      "names": {
+        "primary": "陈文帝",
+        "aliases": [
+          "陈蒨"
+        ]
+      },
+      "description": "陈文帝（陈蒨），陈在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-chen-chen-bozong",
+      "names": {
+        "primary": "临海王",
+        "aliases": [
+          "陈伯宗",
+          "陈废帝"
+        ]
+      },
+      "description": "临海王（陈伯宗），陈在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-chen-chen-xu",
+      "names": {
+        "primary": "陈宣帝",
+        "aliases": [
+          "陈顼"
+        ]
+      },
+      "description": "陈宣帝（陈顼），陈在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-chen-chen-shubao",
+      "names": {
+        "primary": "陈后主",
+        "aliases": [
+          "陈叔宝"
+        ]
+      },
+      "description": "陈后主（陈叔宝），陈在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-chen-chen-baxian",
+      "personId": "person-cn-chen-chen-baxian",
+      "polityId": "polity-cn-chen",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 557,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 559,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-chen-chen-qian",
+      "personId": "person-cn-chen-chen-qian",
+      "polityId": "polity-cn-chen",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 559,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 566,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-chen-chen-bozong",
+      "personId": "person-cn-chen-chen-bozong",
+      "polityId": "polity-cn-chen",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 566,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 568,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-chen-chen-xu",
+      "personId": "person-cn-chen-chen-xu",
+      "polityId": "polity-cn-chen",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 568,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 582,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-chen-chen-shubao",
+      "personId": "person-cn-chen-chen-shubao",
+      "polityId": "polity-cn-chen",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 582,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 589,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

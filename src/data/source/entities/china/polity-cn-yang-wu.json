@@ -33,16 +33,197 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十国之一，常称杨吴。",
+      "description": "唐末淮南节度使杨行密控制扬州及淮南、江南部分地区，902年受封吴王，形成吴政权，史称杨吴。杨行密死后，其子相继即位，实际权力逐渐落入徐温及养子徐知诰手中。杨溥于927年称帝，但仍受徐氏控制；937年杨溥禅位于徐知诰，徐知诰改国号齐，后又恢复李姓建立南唐。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-yang-wu-yang-xingmi",
+      "names": {
+        "primary": "吴武忠王",
+        "aliases": [
+          "杨行密"
+        ]
+      },
+      "description": "吴武忠王（杨行密），杨吴在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yang-wu-yang-wo",
+      "names": {
+        "primary": "吴景王",
+        "aliases": [
+          "杨渥"
+        ]
+      },
+      "description": "吴景王（杨渥），杨吴在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yang-wu-yang-longyan",
+      "names": {
+        "primary": "吴宣王",
+        "aliases": [
+          "杨隆演"
+        ]
+      },
+      "description": "吴宣王（杨隆演），杨吴在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-yang-wu-yang-pu",
+      "names": {
+        "primary": "吴睿帝",
+        "aliases": [
+          "杨溥"
+        ]
+      },
+      "description": "吴睿帝（杨溥），杨吴在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-yang-wu-yang-xingmi",
+      "personId": "person-cn-yang-wu-yang-xingmi",
+      "polityId": "polity-cn-yang-wu",
+      "titles": [
+        "吴王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 902,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 905,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-yang-wu-yang-wo",
+      "personId": "person-cn-yang-wu-yang-wo",
+      "polityId": "polity-cn-yang-wu",
+      "titles": [
+        "吴王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 905,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 908,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-yang-wu-yang-longyan",
+      "personId": "person-cn-yang-wu-yang-longyan",
+      "polityId": "polity-cn-yang-wu",
+      "titles": [
+        "吴王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 908,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 920,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-yang-wu-yang-pu",
+      "personId": "person-cn-yang-wu-yang-pu",
+      "polityId": "polity-cn-yang-wu",
+      "titles": [
+        "吴王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 920,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 937,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

@@ -34,16 +34,234 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十国之一。",
+      "description": "后梁荆南节度使高季兴以江陵为中心，于924年前后受封南平王，建立荆南政权，又称南平。其疆域狭小，控制长江中游交通要地，在五代和十国之间灵活称臣，通过转运和商贸维持生存。北宋建立后，高继冲面对宋军南下，于963年纳地归降，荆南结束。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-jingnan-gao-jixing",
+      "names": {
+        "primary": "荆南武信王",
+        "aliases": [
+          "高季兴"
+        ]
+      },
+      "description": "荆南武信王（高季兴），荆南在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jingnan-gao-conghui",
+      "names": {
+        "primary": "荆南文献王",
+        "aliases": [
+          "高从诲"
+        ]
+      },
+      "description": "荆南文献王（高从诲），荆南在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jingnan-gao-baorong",
+      "names": {
+        "primary": "荆南贞懿王",
+        "aliases": [
+          "高保融"
+        ]
+      },
+      "description": "荆南贞懿王（高保融），荆南在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jingnan-gao-baoxu",
+      "names": {
+        "primary": "高保勖",
+        "aliases": []
+      },
+      "description": "高保勖，荆南在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jingnan-gao-jichong",
+      "names": {
+        "primary": "高继冲",
+        "aliases": [
+          "荆南末主"
+        ]
+      },
+      "description": "高继冲（荆南末主），荆南在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-jingnan-gao-jixing",
+      "personId": "person-cn-jingnan-gao-jixing",
+      "polityId": "polity-cn-jingnan",
+      "titles": [
+        "南平王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 924,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 929,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jingnan-gao-conghui",
+      "personId": "person-cn-jingnan-gao-conghui",
+      "polityId": "polity-cn-jingnan",
+      "titles": [
+        "南平王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 929,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 948,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jingnan-gao-baorong",
+      "personId": "person-cn-jingnan-gao-baorong",
+      "polityId": "polity-cn-jingnan",
+      "titles": [
+        "南平王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 948,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 960,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jingnan-gao-baoxu",
+      "personId": "person-cn-jingnan-gao-baoxu",
+      "polityId": "polity-cn-jingnan",
+      "titles": [
+        "南平王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 960,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 962,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jingnan-gao-jichong",
+      "personId": "person-cn-jingnan-gao-jichong",
+      "polityId": "polity-cn-jingnan",
+      "titles": [
+        "南平王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 962,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 963,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

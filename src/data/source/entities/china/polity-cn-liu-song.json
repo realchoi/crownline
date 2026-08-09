@@ -33,16 +33,366 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "南朝第一朝，通常称刘宋以区别于赵宋。",
+      "description": "东晋将领刘裕通过北伐和军政整合掌握朝廷，于420年受晋恭帝禅位，建立宋朝，定都建康，为区别赵宋而称刘宋。文帝时期社会相对安定，史称元嘉之治，但多次北伐未能恢复中原。中后期宗室冲突、废立和内战频繁，权臣萧道成控制朝政，479年宋顺帝禅位，南齐取代刘宋。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-liu-song-liu-yu",
+      "names": {
+        "primary": "宋武帝",
+        "aliases": [
+          "刘裕"
+        ]
+      },
+      "description": "宋武帝（刘裕），刘宋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liu-song-liu-yifu",
+      "names": {
+        "primary": "宋少帝",
+        "aliases": [
+          "刘义符"
+        ]
+      },
+      "description": "宋少帝（刘义符），刘宋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liu-song-liu-yilong",
+      "names": {
+        "primary": "宋文帝",
+        "aliases": [
+          "刘义隆"
+        ]
+      },
+      "description": "宋文帝（刘义隆），刘宋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liu-song-liu-jun",
+      "names": {
+        "primary": "宋孝武帝",
+        "aliases": [
+          "刘骏"
+        ]
+      },
+      "description": "宋孝武帝（刘骏），刘宋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liu-song-liu-ziye",
+      "names": {
+        "primary": "宋前废帝",
+        "aliases": [
+          "刘子业"
+        ]
+      },
+      "description": "宋前废帝（刘子业），刘宋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liu-song-liu-yu-ming",
+      "names": {
+        "primary": "宋明帝",
+        "aliases": [
+          "刘彧"
+        ]
+      },
+      "description": "宋明帝（刘彧），刘宋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liu-song-liu-yu-cangwu",
+      "names": {
+        "primary": "苍梧王",
+        "aliases": [
+          "刘昱",
+          "宋后废帝"
+        ]
+      },
+      "description": "苍梧王（刘昱），刘宋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liu-song-liu-zhun",
+      "names": {
+        "primary": "宋顺帝",
+        "aliases": [
+          "刘准"
+        ]
+      },
+      "description": "宋顺帝（刘准），刘宋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-liu-song-liu-yu",
+      "personId": "person-cn-liu-song-liu-yu",
+      "polityId": "polity-cn-liu-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 420,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 422,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liu-song-liu-yifu",
+      "personId": "person-cn-liu-song-liu-yifu",
+      "polityId": "polity-cn-liu-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 422,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 424,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liu-song-liu-yilong",
+      "personId": "person-cn-liu-song-liu-yilong",
+      "polityId": "polity-cn-liu-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 424,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 453,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liu-song-liu-jun",
+      "personId": "person-cn-liu-song-liu-jun",
+      "polityId": "polity-cn-liu-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 453,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 464,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liu-song-liu-ziye",
+      "personId": "person-cn-liu-song-liu-ziye",
+      "polityId": "polity-cn-liu-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 464,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 465,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liu-song-liu-yu-ming",
+      "personId": "person-cn-liu-song-liu-yu-ming",
+      "polityId": "polity-cn-liu-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 465,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 472,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liu-song-liu-yu-cangwu",
+      "personId": "person-cn-liu-song-liu-yu-cangwu",
+      "polityId": "polity-cn-liu-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 472,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 477,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liu-song-liu-zhun",
+      "personId": "person-cn-liu-song-liu-zhun",
+      "polityId": "polity-cn-liu-song",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 477,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 479,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

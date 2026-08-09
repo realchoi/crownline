@@ -32,16 +32,279 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "承东魏而立。",
+      "description": "高洋于550年迫使东魏孝静帝禅位，在邺城建立齐朝，史称北齐。政权据有山东、河北、河南及山西东部等地，继承东魏军事力量，与北周、南朝梁陈长期对峙。北齐前期整顿军政，后期皇室内斗、权臣和近侍干政加剧，边防削弱。577年北周攻克邺城，幼主高恒被俘，北齐灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-northern-qi-gao-yang",
+      "names": {
+        "primary": "北齐文宣帝",
+        "aliases": [
+          "高洋"
+        ]
+      },
+      "description": "北齐文宣帝（高洋），北齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-qi-gao-yin",
+      "names": {
+        "primary": "北齐废帝",
+        "aliases": [
+          "高殷"
+        ]
+      },
+      "description": "北齐废帝（高殷），北齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-qi-gao-yan",
+      "names": {
+        "primary": "北齐孝昭帝",
+        "aliases": [
+          "高演"
+        ]
+      },
+      "description": "北齐孝昭帝（高演），北齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-qi-gao-zhan",
+      "names": {
+        "primary": "北齐武成帝",
+        "aliases": [
+          "高湛"
+        ]
+      },
+      "description": "北齐武成帝（高湛），北齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-qi-gao-wei",
+      "names": {
+        "primary": "北齐后主",
+        "aliases": [
+          "高纬"
+        ]
+      },
+      "description": "北齐后主（高纬），北齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-qi-gao-heng",
+      "names": {
+        "primary": "北齐幼主",
+        "aliases": [
+          "高恒"
+        ]
+      },
+      "description": "北齐幼主（高恒），北齐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-northern-qi-gao-yang",
+      "personId": "person-cn-northern-qi-gao-yang",
+      "polityId": "polity-cn-northern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 550,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 559,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-qi-gao-yin",
+      "personId": "person-cn-northern-qi-gao-yin",
+      "polityId": "polity-cn-northern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 559,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 560,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-qi-gao-yan",
+      "personId": "person-cn-northern-qi-gao-yan",
+      "polityId": "polity-cn-northern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 560,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 561,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-qi-gao-zhan",
+      "personId": "person-cn-northern-qi-gao-zhan",
+      "polityId": "polity-cn-northern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 561,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 565,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-qi-gao-wei",
+      "personId": "person-cn-northern-qi-gao-wei",
+      "polityId": "polity-cn-northern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 565,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 576,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-qi-gao-heng",
+      "personId": "person-cn-northern-qi-gao-heng",
+      "polityId": "polity-cn-northern-qi",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 576,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 577,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

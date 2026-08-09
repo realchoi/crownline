@@ -35,17 +35,237 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "明朝宗室在南方建立的延续政权；终止年在不同口径中存在差异。",
+      "description": "南明是1644年北京失陷后，明宗室与官员在南方先后建立的若干延续政权统称，并非始终统一的单一朝廷。弘光、鲁王监国、隆武、绍武与永历政权曾并立或相继活动于江南、浙闽、两广及云贵，内部存在正统之争。清军持续南下后各政权相继覆灭，永历帝于1662年被杀，南明结束。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-southern-ming"
         }
       ],
       "confidence": "medium",
       "chronologyNote": "明朝宗室在南方建立的延续政权；终止年在不同口径中存在差异。"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-southern-ming-zhu-yousong",
+      "names": {
+        "primary": "弘光帝",
+        "aliases": [
+          "朱由崧"
+        ]
+      },
+      "description": "弘光帝（朱由崧），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-ming-zhu-yihai",
+      "names": {
+        "primary": "鲁王监国",
+        "aliases": [
+          "朱以海"
+        ]
+      },
+      "description": "鲁王监国（朱以海），重要争位者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-ming-zhu-yujian",
+      "names": {
+        "primary": "隆武帝",
+        "aliases": [
+          "朱聿键"
+        ]
+      },
+      "description": "隆武帝（朱聿键），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-ming-zhu-yuyue",
+      "names": {
+        "primary": "绍武帝",
+        "aliases": [
+          "朱聿鐭"
+        ]
+      },
+      "description": "绍武帝（朱聿鐭），重要争位者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-ming-zhu-youlang",
+      "names": {
+        "primary": "永历帝",
+        "aliases": [
+          "朱由榔"
+        ]
+      },
+      "description": "永历帝（朱由榔），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-southern-ming-zhu-yousong",
+      "personId": "person-cn-southern-ming-zhu-yousong",
+      "polityId": "polity-cn-southern-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1644,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1645,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-ming-zhu-yihai",
+      "personId": "person-cn-southern-ming-zhu-yihai",
+      "polityId": "polity-cn-southern-ming",
+      "titles": [
+        "监国"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1645,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1653,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-ming-zhu-yujian",
+      "personId": "person-cn-southern-ming-zhu-yujian",
+      "polityId": "polity-cn-southern-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1645,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1646,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-ming-zhu-yuyue",
+      "personId": "person-cn-southern-ming-zhu-yuyue",
+      "polityId": "polity-cn-southern-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1646,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1646,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-ming-zhu-youlang",
+      "personId": "person-cn-southern-ming-zhu-youlang",
+      "polityId": "polity-cn-southern-ming",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1646,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1662,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dpm-southern-ming"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

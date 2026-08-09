@@ -32,16 +32,107 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "五代第三朝。",
+      "description": "后唐河东节度使石敬瑭借契丹援助起兵，于936年称帝，建立晋朝，史称后晋，并向契丹割让燕云十六州。政权以开封为都，统治中原大部，对契丹长期称臣纳贡。出帝石重贵即位后转向对抗契丹，连年战争耗损国力；947年契丹军攻入开封，石重贵被俘，后晋灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-jin-shi-jingtang",
+      "names": {
+        "primary": "后晋高祖",
+        "aliases": [
+          "石敬瑭"
+        ]
+      },
+      "description": "后晋高祖（石敬瑭），后晋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-jin-shi-chonggui",
+      "names": {
+        "primary": "后晋出帝",
+        "aliases": [
+          "石重贵"
+        ]
+      },
+      "description": "后晋出帝（石重贵），后晋在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-jin-shi-jingtang",
+      "personId": "person-cn-later-jin-shi-jingtang",
+      "polityId": "polity-cn-later-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 936,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 942,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-jin-shi-chonggui",
+      "personId": "person-cn-later-jin-shi-chonggui",
+      "polityId": "polity-cn-later-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 942,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 947,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

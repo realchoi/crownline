@@ -32,16 +32,194 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十国之一。",
+      "description": "刘隐、刘䶮兄弟在唐末控制岭南，刘䶮于917年在广州称帝，国号先为大越，次年改汉，史称南汉。政权据有今广东、广西及海南部分地区，依靠海上贸易维持财政，也多次与楚、南唐交战。中后期宦官势力膨胀、刑罚严酷，971年北宋军攻入广州，后主刘鋹投降，南汉灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-southern-han-liu-yan",
+      "names": {
+        "primary": "南汉高祖",
+        "aliases": [
+          "刘䶮",
+          "刘岩"
+        ]
+      },
+      "description": "南汉高祖（刘䶮），南汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-han-liu-bin",
+      "names": {
+        "primary": "南汉殇帝",
+        "aliases": [
+          "刘玢"
+        ]
+      },
+      "description": "南汉殇帝（刘玢），南汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-han-liu-sheng",
+      "names": {
+        "primary": "南汉中宗",
+        "aliases": [
+          "刘晟"
+        ]
+      },
+      "description": "南汉中宗（刘晟），南汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-han-liu-chang",
+      "names": {
+        "primary": "南汉后主",
+        "aliases": [
+          "刘鋹"
+        ]
+      },
+      "description": "南汉后主（刘鋹），南汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-southern-han-liu-yan",
+      "personId": "person-cn-southern-han-liu-yan",
+      "polityId": "polity-cn-southern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 917,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 942,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-han-liu-bin",
+      "personId": "person-cn-southern-han-liu-bin",
+      "polityId": "polity-cn-southern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 942,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 943,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-han-liu-sheng",
+      "personId": "person-cn-southern-han-liu-sheng",
+      "polityId": "polity-cn-southern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 943,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 958,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-han-liu-chang",
+      "personId": "person-cn-southern-han-liu-chang",
+      "polityId": "polity-cn-southern-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 958,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 971,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

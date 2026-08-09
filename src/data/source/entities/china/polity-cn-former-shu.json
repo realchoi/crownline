@@ -32,16 +32,107 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十国之一。",
+      "description": "唐末西川节度使王建控制四川，于907年唐亡后在成都称帝，建立蜀国，史称前蜀。四川地势险固，受中原战争影响较小，经济文化一度延续发展。王建死后后主王衍奢侈用事，军政逐渐松弛；925年后唐庄宗派军入蜀，地方守军迅速瓦解，王衍投降，前蜀灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-former-shu-wang-jian",
+      "names": {
+        "primary": "前蜀高祖",
+        "aliases": [
+          "王建"
+        ]
+      },
+      "description": "前蜀高祖（王建），前蜀在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-shu-wang-yan",
+      "names": {
+        "primary": "前蜀后主",
+        "aliases": [
+          "王衍"
+        ]
+      },
+      "description": "前蜀后主（王衍），前蜀在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-former-shu-wang-jian",
+      "personId": "person-cn-former-shu-wang-jian",
+      "polityId": "polity-cn-former-shu",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 907,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 918,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-shu-wang-yan",
+      "personId": "person-cn-former-shu-wang-yan",
+      "polityId": "polity-cn-former-shu",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 918,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 925,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

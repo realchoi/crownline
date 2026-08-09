@@ -32,16 +32,151 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "五代第一朝。",
+      "description": "唐末宣武军节度使朱温控制朝廷，于907年迫使唐哀帝禅位，在开封建立梁朝，史称后梁，五代由此开始。后梁据有黄河中下游，与河东李克用、李存勖集团长期争夺河北。朱温死后宫廷政变和继承冲突削弱统治，923年后唐军攻入开封，末帝朱友贞自尽，后梁灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-liang-zhu-zhu-wen",
+      "names": {
+        "primary": "后梁太祖",
+        "aliases": [
+          "朱温",
+          "朱晃"
+        ]
+      },
+      "description": "后梁太祖（朱温），后梁在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-liang-zhu-zhu-yougui",
+      "names": {
+        "primary": "郢王",
+        "aliases": [
+          "朱友珪"
+        ]
+      },
+      "description": "郢王（朱友珪），后梁在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-liang-zhu-zhu-youzhen",
+      "names": {
+        "primary": "后梁末帝",
+        "aliases": [
+          "朱友贞"
+        ]
+      },
+      "description": "后梁末帝（朱友贞），后梁在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-liang-zhu-zhu-wen",
+      "personId": "person-cn-later-liang-zhu-zhu-wen",
+      "polityId": "polity-cn-later-liang-zhu",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 907,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 912,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-liang-zhu-zhu-yougui",
+      "personId": "person-cn-later-liang-zhu-zhu-yougui",
+      "polityId": "polity-cn-later-liang-zhu",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 912,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 913,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-liang-zhu-zhu-youzhen",
+      "personId": "person-cn-later-liang-zhu-zhu-youzhen",
+      "polityId": "polity-cn-later-liang-zhu",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 913,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 923,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

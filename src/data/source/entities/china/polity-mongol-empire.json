@@ -34,16 +34,404 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "1206年成吉思汗建立；1271年忽必烈定国号为元。",
+      "description": "蒙古帝国由铁木真在1206年忽里勒台获尊为成吉思汗后建立，以蒙古高原为核心迅速征服欧亚大陆大片地区。成吉思汗诸子后裔分掌各地，大汗之位经历监国、选举与争夺，帝国逐渐形成多个汗国。1260年忽必烈与阿里不哥争位，1271年忽必烈定国号为大元，本条由此衔接元朝。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-inner-mongolia-mongol-empire"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-mongol-empire-temujin",
+      "names": {
+        "primary": "成吉思汗",
+        "aliases": [
+          "铁木真"
+        ]
+      },
+      "description": "成吉思汗（铁木真），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mongol-empire-tolui",
+      "names": {
+        "primary": "拖雷",
+        "aliases": []
+      },
+      "description": "拖雷，摄政者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mongol-empire-ogedei",
+      "names": {
+        "primary": "窝阔台汗",
+        "aliases": [
+          "窝阔台"
+        ]
+      },
+      "description": "窝阔台汗（窝阔台），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mongol-empire-toregene",
+      "names": {
+        "primary": "乃马真后",
+        "aliases": [
+          "脱列哥那"
+        ]
+      },
+      "description": "乃马真后（脱列哥那），摄政者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mongol-empire-guyuk",
+      "names": {
+        "primary": "贵由汗",
+        "aliases": [
+          "贵由"
+        ]
+      },
+      "description": "贵由汗（贵由），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mongol-empire-oghul-qaimish",
+      "names": {
+        "primary": "海迷失后",
+        "aliases": [
+          "斡兀立海迷失"
+        ]
+      },
+      "description": "海迷失后（斡兀立海迷失），摄政者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mongol-empire-mongke",
+      "names": {
+        "primary": "蒙哥汗",
+        "aliases": [
+          "蒙哥"
+        ]
+      },
+      "description": "蒙哥汗（蒙哥），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mongol-empire-kublai",
+      "names": {
+        "primary": "忽必烈汗",
+        "aliases": [
+          "忽必烈"
+        ]
+      },
+      "description": "忽必烈汗（忽必烈），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mongol-empire-ariq-boke",
+      "names": {
+        "primary": "阿里不哥",
+        "aliases": []
+      },
+      "description": "阿里不哥，重要争位者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-mongol-empire-temujin",
+      "personId": "person-mongol-empire-temujin",
+      "polityId": "polity-mongol-empire",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1206,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1227,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mongol-empire-tolui",
+      "personId": "person-mongol-empire-tolui",
+      "polityId": "polity-mongol-empire",
+      "titles": [
+        "监国"
+      ],
+      "role": "regent",
+      "periods": [
+        {
+          "start": {
+            "year": 1227,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1229,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mongol-empire-ogedei",
+      "personId": "person-mongol-empire-ogedei",
+      "polityId": "polity-mongol-empire",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1229,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1241,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mongol-empire-toregene",
+      "personId": "person-mongol-empire-toregene",
+      "polityId": "polity-mongol-empire",
+      "titles": [
+        "称制"
+      ],
+      "role": "regent",
+      "periods": [
+        {
+          "start": {
+            "year": 1241,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1246,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mongol-empire-guyuk",
+      "personId": "person-mongol-empire-guyuk",
+      "polityId": "polity-mongol-empire",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1246,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1248,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mongol-empire-oghul-qaimish",
+      "personId": "person-mongol-empire-oghul-qaimish",
+      "polityId": "polity-mongol-empire",
+      "titles": [
+        "称制"
+      ],
+      "role": "regent",
+      "periods": [
+        {
+          "start": {
+            "year": 1248,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1251,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mongol-empire-mongke",
+      "personId": "person-mongol-empire-mongke",
+      "polityId": "polity-mongol-empire",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1251,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1259,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mongol-empire-kublai",
+      "personId": "person-mongol-empire-kublai",
+      "polityId": "polity-mongol-empire",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1260,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1271,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mongol-empire-ariq-boke",
+      "personId": "person-mongol-empire-ariq-boke",
+      "polityId": "polity-mongol-empire",
+      "titles": [
+        "争位大汗"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1260,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1264,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-mongol-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

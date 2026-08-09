@@ -32,16 +32,236 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "承西魏而立，后为隋所代。",
+      "description": "宇文泰奠定关陇政权基础后，其子宇文觉于557年受西魏恭帝禅位，建立周朝，史称北周，定都长安。早期朝政由宇文护掌握，武帝宇文邕亲政后整顿军政，于577年灭北齐，统一北方。宣帝、静帝时期皇权迅速转弱，外戚杨坚控制朝廷，581年受禅建立隋朝，北周灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-northern-zhou-yuwen-jue",
+      "names": {
+        "primary": "北周孝闵帝",
+        "aliases": [
+          "宇文觉"
+        ]
+      },
+      "description": "北周孝闵帝（宇文觉），北周在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-zhou-yuwen-yu",
+      "names": {
+        "primary": "北周明帝",
+        "aliases": [
+          "宇文毓"
+        ]
+      },
+      "description": "北周明帝（宇文毓），北周在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-zhou-yuwen-yong",
+      "names": {
+        "primary": "北周武帝",
+        "aliases": [
+          "宇文邕"
+        ]
+      },
+      "description": "北周武帝（宇文邕），北周在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-zhou-yuwen-yun",
+      "names": {
+        "primary": "北周宣帝",
+        "aliases": [
+          "宇文赟"
+        ]
+      },
+      "description": "北周宣帝（宇文赟），北周在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-zhou-yuwen-chan",
+      "names": {
+        "primary": "北周静帝",
+        "aliases": [
+          "宇文阐"
+        ]
+      },
+      "description": "北周静帝（宇文阐），北周在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-northern-zhou-yuwen-jue",
+      "personId": "person-cn-northern-zhou-yuwen-jue",
+      "polityId": "polity-cn-northern-zhou",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 557,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 557,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-zhou-yuwen-yu",
+      "personId": "person-cn-northern-zhou-yuwen-yu",
+      "polityId": "polity-cn-northern-zhou",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 557,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 560,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-zhou-yuwen-yong",
+      "personId": "person-cn-northern-zhou-yuwen-yong",
+      "polityId": "polity-cn-northern-zhou",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 560,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 578,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-zhou-yuwen-yun",
+      "personId": "person-cn-northern-zhou-yuwen-yun",
+      "polityId": "polity-cn-northern-zhou",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 578,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 579,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-zhou-yuwen-chan",
+      "personId": "person-cn-northern-zhou-yuwen-chan",
+      "polityId": "polity-cn-northern-zhou",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 579,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 581,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

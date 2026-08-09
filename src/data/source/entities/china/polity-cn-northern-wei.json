@@ -33,16 +33,624 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "北朝第一朝，后分裂为东魏和西魏。",
+      "description": "鲜卑拓跋部首领拓跋珪于386年重建代国并改国号为魏，史称北魏。道武帝定都平城，太武帝于439年统一北方；孝文帝迁都洛阳，推行制度改革与汉化政策，促进北方各族交融。六镇起事后军政集团争权，朝廷分裂，534年孝武帝西走关中，北魏随即分为东魏与西魏。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-northern-wei-tuoba-gui",
+      "names": {
+        "primary": "北魏道武帝",
+        "aliases": [
+          "拓跋珪"
+        ]
+      },
+      "description": "北魏道武帝（拓跋珪），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-tuoba-si",
+      "names": {
+        "primary": "北魏明元帝",
+        "aliases": [
+          "拓跋嗣"
+        ]
+      },
+      "description": "北魏明元帝（拓跋嗣），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-tuoba-tao",
+      "names": {
+        "primary": "北魏太武帝",
+        "aliases": [
+          "拓跋焘"
+        ]
+      },
+      "description": "北魏太武帝（拓跋焘），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-tuoba-yu",
+      "names": {
+        "primary": "南安王",
+        "aliases": [
+          "拓跋余"
+        ]
+      },
+      "description": "南安王（拓跋余），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-tuoba-jun",
+      "names": {
+        "primary": "北魏文成帝",
+        "aliases": [
+          "拓跋濬"
+        ]
+      },
+      "description": "北魏文成帝（拓跋濬），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-tuoba-hong-xianwen",
+      "names": {
+        "primary": "北魏献文帝",
+        "aliases": [
+          "拓跋弘"
+        ]
+      },
+      "description": "北魏献文帝（拓跋弘），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-yuan-hong",
+      "names": {
+        "primary": "北魏孝文帝",
+        "aliases": [
+          "元宏",
+          "拓跋宏"
+        ]
+      },
+      "description": "北魏孝文帝（元宏），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-yuan-ke",
+      "names": {
+        "primary": "北魏宣武帝",
+        "aliases": [
+          "元恪"
+        ]
+      },
+      "description": "北魏宣武帝（元恪），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-yuan-xu",
+      "names": {
+        "primary": "北魏孝明帝",
+        "aliases": [
+          "元诩"
+        ]
+      },
+      "description": "北魏孝明帝（元诩），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-yuan-zhao",
+      "names": {
+        "primary": "元钊",
+        "aliases": [
+          "北魏幼主"
+        ]
+      },
+      "description": "元钊（北魏幼主），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-yuan-ziyou",
+      "names": {
+        "primary": "北魏孝庄帝",
+        "aliases": [
+          "元子攸"
+        ]
+      },
+      "description": "北魏孝庄帝（元子攸），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-yuan-ye",
+      "names": {
+        "primary": "东海王",
+        "aliases": [
+          "元晔"
+        ]
+      },
+      "description": "东海王（元晔），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-yuan-gong",
+      "names": {
+        "primary": "北魏节闵帝",
+        "aliases": [
+          "元恭"
+        ]
+      },
+      "description": "北魏节闵帝（元恭），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-wei-yuan-xiu",
+      "names": {
+        "primary": "北魏孝武帝",
+        "aliases": [
+          "元修"
+        ]
+      },
+      "description": "北魏孝武帝（元修），北魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-northern-wei-tuoba-gui",
+      "personId": "person-cn-northern-wei-tuoba-gui",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 386,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 409,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-tuoba-si",
+      "personId": "person-cn-northern-wei-tuoba-si",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 409,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 423,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-tuoba-tao",
+      "personId": "person-cn-northern-wei-tuoba-tao",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 423,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 452,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-tuoba-yu",
+      "personId": "person-cn-northern-wei-tuoba-yu",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 452,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 452,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-tuoba-jun",
+      "personId": "person-cn-northern-wei-tuoba-jun",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 452,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 465,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-tuoba-hong-xianwen",
+      "personId": "person-cn-northern-wei-tuoba-hong-xianwen",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 465,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 471,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-yuan-hong",
+      "personId": "person-cn-northern-wei-yuan-hong",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 471,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 499,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-yuan-ke",
+      "personId": "person-cn-northern-wei-yuan-ke",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 499,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 515,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-yuan-xu",
+      "personId": "person-cn-northern-wei-yuan-xu",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 515,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 528,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-yuan-zhao",
+      "personId": "person-cn-northern-wei-yuan-zhao",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 528,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 528,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-yuan-ziyou",
+      "personId": "person-cn-northern-wei-yuan-ziyou",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 528,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 530,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-yuan-ye",
+      "personId": "person-cn-northern-wei-yuan-ye",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 530,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 531,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-yuan-gong",
+      "personId": "person-cn-northern-wei-yuan-gong",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 531,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 532,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-wei-yuan-xiu",
+      "personId": "person-cn-northern-wei-yuan-xiu",
+      "polityId": "polity-cn-northern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 532,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 534,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

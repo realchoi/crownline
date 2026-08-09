@@ -32,16 +32,150 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "汉族豪族李暠于400年在敦煌自称凉公，建立西凉，后迁治酒泉，控制河西西部部分地区。政权重视农桑、学校与汉文化传统，并依靠敦煌、酒泉的绿洲和丝路交通维持统治，长期同北凉争夺河西。李歆对北凉用兵失败身亡，李恂退守敦煌，421年城陷，西凉灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-western-liang-li-gao",
+      "names": {
+        "primary": "西凉武昭王",
+        "aliases": [
+          "李暠"
+        ]
+      },
+      "description": "西凉武昭王（李暠），西凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-liang-li-xin",
+      "names": {
+        "primary": "李歆",
+        "aliases": [
+          "西凉后主"
+        ]
+      },
+      "description": "李歆（西凉后主），西凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-liang-li-xun",
+      "names": {
+        "primary": "李恂",
+        "aliases": [
+          "西凉末主"
+        ]
+      },
+      "description": "李恂（西凉末主），西凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-western-liang-li-gao",
+      "personId": "person-cn-western-liang-li-gao",
+      "polityId": "polity-cn-western-liang",
+      "titles": [
+        "凉公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 400,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 417,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-liang-li-xin",
+      "personId": "person-cn-western-liang-li-xin",
+      "polityId": "polity-cn-western-liang",
+      "titles": [
+        "凉公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 417,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 420,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-liang-li-xun",
+      "personId": "person-cn-western-liang-li-xun",
+      "polityId": "polity-cn-western-liang",
+      "titles": [
+        "凉公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 420,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 421,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

@@ -33,16 +33,65 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "武则天建立，处于唐朝中断期。",
+      "description": "武则天在唐高宗后期参与朝政，690年改唐为周，自立为皇帝，定都神都洛阳，史称武周。她继续推行科举、整顿吏治并扩充统治基础，同时借酷吏打击政治反对者。晚年张柬之等发动神龙政变，迫使武则天退位；705年唐中宗复国号唐，武周结束，唐朝进入第二个存续阶段。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-moe-emperor-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-wu-zhou-wu-zetian",
+      "names": {
+        "primary": "武则天",
+        "aliases": [
+          "武周圣神皇帝",
+          "则天大圣皇帝"
+        ]
+      },
+      "description": "武则天（武周圣神皇帝），武周在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-wu-zhou-wu-zetian",
+      "personId": "person-cn-wu-zhou-wu-zetian",
+      "polityId": "polity-cn-wu-zhou",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 690,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 705,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-moe-emperor-chronology"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

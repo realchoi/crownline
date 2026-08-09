@@ -32,16 +32,285 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一，曾一度统一北方大部。",
+      "description": "氐族苻氏在关中建立的政权，苻健于351年在长安称天王，次年称帝。苻坚在王猛辅佐下整顿政治、发展生产，先后消灭前燕、前凉等政权，于376年统一北方。383年南征东晋在淝水之战中失败，各族势力相继脱离。此后前秦退守关陇，394年苻崇败亡，政权终结。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-former-qin-fu-jian-founder",
+      "names": {
+        "primary": "前秦景明帝",
+        "aliases": [
+          "苻健"
+        ]
+      },
+      "description": "前秦景明帝（苻健），前秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-qin-fu-sheng",
+      "names": {
+        "primary": "苻生",
+        "aliases": [
+          "越厉王"
+        ]
+      },
+      "description": "苻生（越厉王），前秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-qin-fu-jian",
+      "names": {
+        "primary": "前秦宣昭帝",
+        "aliases": [
+          "苻坚"
+        ]
+      },
+      "description": "前秦宣昭帝（苻坚），前秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-qin-fu-pi",
+      "names": {
+        "primary": "前秦哀平帝",
+        "aliases": [
+          "苻丕"
+        ]
+      },
+      "description": "前秦哀平帝（苻丕），前秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-qin-fu-deng",
+      "names": {
+        "primary": "前秦高帝",
+        "aliases": [
+          "苻登"
+        ]
+      },
+      "description": "前秦高帝（苻登），前秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-former-qin-fu-chong",
+      "names": {
+        "primary": "苻崇",
+        "aliases": [
+          "前秦末主"
+        ]
+      },
+      "description": "苻崇（前秦末主），前秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-former-qin-fu-jian-founder",
+      "personId": "person-cn-former-qin-fu-jian-founder",
+      "polityId": "polity-cn-former-qin",
+      "titles": [
+        "天王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 351,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 355,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-qin-fu-sheng",
+      "personId": "person-cn-former-qin-fu-sheng",
+      "polityId": "polity-cn-former-qin",
+      "titles": [
+        "天王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 355,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 357,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-qin-fu-jian",
+      "personId": "person-cn-former-qin-fu-jian",
+      "polityId": "polity-cn-former-qin",
+      "titles": [
+        "天王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 357,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 385,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-qin-fu-pi",
+      "personId": "person-cn-former-qin-fu-pi",
+      "polityId": "polity-cn-former-qin",
+      "titles": [
+        "天王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 385,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 386,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-qin-fu-deng",
+      "personId": "person-cn-former-qin-fu-deng",
+      "polityId": "polity-cn-former-qin",
+      "titles": [
+        "天王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 386,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 394,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-former-qin-fu-chong",
+      "personId": "person-cn-former-qin-fu-chong",
+      "polityId": "polity-cn-former-qin",
+      "titles": [
+        "天王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 394,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 394,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

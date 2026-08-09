@@ -32,16 +32,64 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "北魏分裂后的东部政权。",
+      "description": "北魏孝武帝西走关中后，权臣高欢于534年拥立元善见为帝，迁都邺城，建立东魏。政权控制黄河下游和东北广大地区，皇帝长期受高氏军政集团控制，并与宇文泰主导的西魏持续交战。高欢死后高澄、高洋相继掌权，550年元善见禅位于高洋，东魏灭亡，北齐建立。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-eastern-wei-yuan-shanjian",
+      "names": {
+        "primary": "东魏孝静帝",
+        "aliases": [
+          "元善见"
+        ]
+      },
+      "description": "东魏孝静帝（元善见），东魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-eastern-wei-yuan-shanjian",
+      "personId": "person-cn-eastern-wei-yuan-shanjian",
+      "polityId": "polity-cn-eastern-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 534,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 550,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

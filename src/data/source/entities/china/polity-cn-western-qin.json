@@ -42,17 +42,204 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一；400至409年间政权中断。",
+      "description": "陇西鲜卑乞伏部首领乞伏国仁于385年自立，建立西秦，活动中心在苑川、金城及枹罕一带。政权夹处后秦、南凉、吐谷浑和胡夏之间，依靠部族联盟多次迁徙。400年乞伏乾归降于后秦，政权中断；409年复国后曾灭南凉。431年胡夏攻灭西秦，末主乞伏暮末被杀。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium",
       "chronologyNote": "十六国之一；400至409年间政权中断。"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-western-qin-qifu-guoren",
+      "names": {
+        "primary": "西秦宣烈王",
+        "aliases": [
+          "乞伏国仁"
+        ]
+      },
+      "description": "西秦宣烈王（乞伏国仁），西秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-qin-qifu-gangui",
+      "names": {
+        "primary": "西秦武元王",
+        "aliases": [
+          "乞伏乾归"
+        ]
+      },
+      "description": "西秦武元王（乞伏乾归），西秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-qin-qifu-chipan",
+      "names": {
+        "primary": "西秦文昭王",
+        "aliases": [
+          "乞伏炽磐"
+        ]
+      },
+      "description": "西秦文昭王（乞伏炽磐），西秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-qin-qifu-mumo",
+      "names": {
+        "primary": "乞伏暮末",
+        "aliases": [
+          "西秦末主"
+        ]
+      },
+      "description": "乞伏暮末（西秦末主），西秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-western-qin-qifu-guoren",
+      "personId": "person-cn-western-qin-qifu-guoren",
+      "polityId": "polity-cn-western-qin",
+      "titles": [
+        "秦王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 385,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 388,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-qin-qifu-gangui",
+      "personId": "person-cn-western-qin-qifu-gangui",
+      "polityId": "polity-cn-western-qin",
+      "titles": [
+        "秦王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 388,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 400,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 409,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 412,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-qin-qifu-chipan",
+      "personId": "person-cn-western-qin-qifu-chipan",
+      "polityId": "polity-cn-western-qin",
+      "titles": [
+        "秦王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 412,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 428,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-qin-qifu-mumo",
+      "personId": "person-cn-western-qin-qifu-mumo",
+      "polityId": "polity-cn-western-qin",
+      "titles": [
+        "秦王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 428,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 431,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

@@ -33,16 +33,153 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一，由赫连勃勃建立。",
+      "description": "匈奴铁弗部首领赫连勃勃于407年脱离后秦，自称大夏天王，建立夏国，后世为区别古代夏朝而称胡夏或赫连夏。政权以统万城为中心，一度乘东晋撤军占领长安。赫连勃勃死后继承争夺削弱国力，北魏攻占统万，残余势力向西转移。431年末主赫连定被吐谷浑俘获，胡夏灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-hu-xia-helian-bobo",
+      "names": {
+        "primary": "胡夏武烈帝",
+        "aliases": [
+          "赫连勃勃"
+        ]
+      },
+      "description": "胡夏武烈帝（赫连勃勃），胡夏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-hu-xia-helian-chang",
+      "names": {
+        "primary": "赫连昌",
+        "aliases": [
+          "胡夏废主"
+        ]
+      },
+      "description": "赫连昌（胡夏废主），胡夏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-hu-xia-helian-ding",
+      "names": {
+        "primary": "赫连定",
+        "aliases": [
+          "胡夏末主"
+        ]
+      },
+      "description": "赫连定（胡夏末主），胡夏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-hu-xia-helian-bobo",
+      "personId": "person-cn-hu-xia-helian-bobo",
+      "polityId": "polity-cn-hu-xia",
+      "titles": [
+        "大夏天王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 407,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 425,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-hu-xia-helian-chang",
+      "personId": "person-cn-hu-xia-helian-chang",
+      "polityId": "polity-cn-hu-xia",
+      "titles": [
+        "大夏天王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 425,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 428,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-hu-xia-helian-ding",
+      "personId": "person-cn-hu-xia-helian-ding",
+      "polityId": "polity-cn-hu-xia",
+      "titles": [
+        "大夏天王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 428,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 431,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

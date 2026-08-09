@@ -32,16 +32,449 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "西南地区的重要区域政权。",
+      "description": "蒙舍诏首领皮逻阁在唐朝支持下统一洱海地区六诏，于738年受封云南王，建立南诏，以太和城、羊苴咩城为中心。南诏在唐、吐蕃之间多次调整关系，势力扩展至云南大部及周边地区，佛教和多族文化兴盛。长期战争和权臣专政削弱王室，902年清平官郑买嗣夺位，南诏灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-zgbk-nanzhao"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-nanzhao-piluoge",
+      "names": {
+        "primary": "皮逻阁",
+        "aliases": [
+          "蒙归义"
+        ]
+      },
+      "description": "皮逻阁（蒙归义），南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-nanzhao-geluofeng",
+      "names": {
+        "primary": "阁罗凤",
+        "aliases": []
+      },
+      "description": "阁罗凤，南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-nanzhao-yimouxun",
+      "names": {
+        "primary": "异牟寻",
+        "aliases": []
+      },
+      "description": "异牟寻，南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-nanzhao-xungequan",
+      "names": {
+        "primary": "寻阁劝",
+        "aliases": []
+      },
+      "description": "寻阁劝，南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-nanzhao-quanlongsheng",
+      "names": {
+        "primary": "劝龙晟",
+        "aliases": []
+      },
+      "description": "劝龙晟，南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-nanzhao-quanlisheng",
+      "names": {
+        "primary": "劝利晟",
+        "aliases": []
+      },
+      "description": "劝利晟，南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-nanzhao-quanfengyou",
+      "names": {
+        "primary": "劝丰祐",
+        "aliases": []
+      },
+      "description": "劝丰祐，南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-nanzhao-shilong",
+      "names": {
+        "primary": "世隆",
+        "aliases": [
+          "酋龙"
+        ]
+      },
+      "description": "世隆（酋龙），南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-nanzhao-longshun",
+      "names": {
+        "primary": "隆舜",
+        "aliases": [
+          "法"
+        ]
+      },
+      "description": "隆舜（法），南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-nanzhao-shunhuazhen",
+      "names": {
+        "primary": "舜化贞",
+        "aliases": [
+          "南诏末王"
+        ]
+      },
+      "description": "舜化贞（南诏末王），南诏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-nanzhao-piluoge",
+      "personId": "person-cn-nanzhao-piluoge",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 738,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 748,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-nanzhao-geluofeng",
+      "personId": "person-cn-nanzhao-geluofeng",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 748,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 779,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-nanzhao-yimouxun",
+      "personId": "person-cn-nanzhao-yimouxun",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 779,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 808,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-nanzhao-xungequan",
+      "personId": "person-cn-nanzhao-xungequan",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 808,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 809,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-nanzhao-quanlongsheng",
+      "personId": "person-cn-nanzhao-quanlongsheng",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 809,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 816,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-nanzhao-quanlisheng",
+      "personId": "person-cn-nanzhao-quanlisheng",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 816,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 823,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-nanzhao-quanfengyou",
+      "personId": "person-cn-nanzhao-quanfengyou",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 823,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 859,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-nanzhao-shilong",
+      "personId": "person-cn-nanzhao-shilong",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 859,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 877,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-nanzhao-longshun",
+      "personId": "person-cn-nanzhao-longshun",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 877,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 897,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-nanzhao-shunhuazhen",
+      "personId": "person-cn-nanzhao-shunhuazhen",
+      "polityId": "polity-nanzhao",
+      "titles": [
+        "云南王",
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 897,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 902,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-nanzhao-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

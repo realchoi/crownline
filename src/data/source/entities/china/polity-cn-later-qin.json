@@ -32,16 +32,153 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一。",
+      "description": "羌族姚苌在淝水之战后脱离前秦，于384年称万年秦王，后据长安称帝，史称后秦。姚兴在位时控制关中和陇右部分地区，重视佛教译经，鸠摩罗什等人在长安译出大量经典。后期北受胡夏侵扰、东晋军队西进，国势转弱。417年刘裕北伐攻克长安，姚泓投降，后秦灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-qin-yao-chang",
+      "names": {
+        "primary": "后秦武昭帝",
+        "aliases": [
+          "姚苌"
+        ]
+      },
+      "description": "后秦武昭帝（姚苌），后秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-qin-yao-xing",
+      "names": {
+        "primary": "后秦文桓帝",
+        "aliases": [
+          "姚兴"
+        ]
+      },
+      "description": "后秦文桓帝（姚兴），后秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-qin-yao-hong",
+      "names": {
+        "primary": "姚泓",
+        "aliases": [
+          "后秦末主"
+        ]
+      },
+      "description": "姚泓（后秦末主），后秦在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-qin-yao-chang",
+      "personId": "person-cn-later-qin-yao-chang",
+      "polityId": "polity-cn-later-qin",
+      "titles": [
+        "秦王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 384,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 394,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-qin-yao-xing",
+      "personId": "person-cn-later-qin-yao-xing",
+      "polityId": "polity-cn-later-qin",
+      "titles": [
+        "秦王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 394,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 416,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-qin-yao-hong",
+      "personId": "person-cn-later-qin-yao-hong",
+      "polityId": "polity-cn-later-qin",
+      "titles": [
+        "秦王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 416,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 417,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

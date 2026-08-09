@@ -32,16 +32,150 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一；部分余部延续时间更久。",
+      "description": "卢水胡首领沮渠蒙逊等于397年拥立段业，在张掖建立北凉；401年蒙逊夺取政权，后迁都姑臧，控制河西走廊大部。北凉处在北魏、西秦、南凉与西域诸国之间，佛教译经、石窟营造和丝路交流较为活跃。439年北魏攻克姑臧，沮渠牧犍投降，河西本土的北凉政权结束。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-northern-liang-duan-ye",
+      "names": {
+        "primary": "段业",
+        "aliases": [
+          "北凉建康公"
+        ]
+      },
+      "description": "段业（北凉建康公），北凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-liang-juqu-mengxun",
+      "names": {
+        "primary": "北凉武宣王",
+        "aliases": [
+          "沮渠蒙逊"
+        ]
+      },
+      "description": "北凉武宣王（沮渠蒙逊），北凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-northern-liang-juqu-mujian",
+      "names": {
+        "primary": "北凉哀王",
+        "aliases": [
+          "沮渠牧犍"
+        ]
+      },
+      "description": "北凉哀王（沮渠牧犍），北凉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-northern-liang-duan-ye",
+      "personId": "person-cn-northern-liang-duan-ye",
+      "polityId": "polity-cn-northern-liang",
+      "titles": [
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 397,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 401,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-liang-juqu-mengxun",
+      "personId": "person-cn-northern-liang-juqu-mengxun",
+      "polityId": "polity-cn-northern-liang",
+      "titles": [
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 401,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 433,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-northern-liang-juqu-mujian",
+      "personId": "person-cn-northern-liang-juqu-mujian",
+      "polityId": "polity-cn-northern-liang",
+      "titles": [
+        "凉王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 433,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 439,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

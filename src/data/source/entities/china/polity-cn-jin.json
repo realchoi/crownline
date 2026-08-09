@@ -33,16 +33,451 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "女真建立，先后与辽、北宋、南宋并立。",
+      "description": "金由女真完颜部首领阿骨打于1115年在东北建立，先灭辽，又于1127年攻破北宋都城，控制华北与东北广大地区。金朝逐步采用中原官制、法律与礼仪，同时保留女真军事传统，长期与南宋对峙。十三世纪遭蒙古持续进攻并迁都汴京，1234年蔡州陷落，哀宗与末帝相继死去，金亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-jin-wanyan-aguda",
+      "names": {
+        "primary": "金太祖",
+        "aliases": [
+          "完颜阿骨打"
+        ]
+      },
+      "description": "金太祖（完颜阿骨打），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jin-wanyan-wuqimai",
+      "names": {
+        "primary": "金太宗",
+        "aliases": [
+          "完颜晟"
+        ]
+      },
+      "description": "金太宗（完颜晟），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jin-wanyan-dan",
+      "names": {
+        "primary": "金熙宗",
+        "aliases": [
+          "完颜亶"
+        ]
+      },
+      "description": "金熙宗（完颜亶），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jin-wanyan-liang",
+      "names": {
+        "primary": "海陵王",
+        "aliases": [
+          "完颜亮"
+        ]
+      },
+      "description": "海陵王（完颜亮），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jin-wanyan-yong",
+      "names": {
+        "primary": "金世宗",
+        "aliases": [
+          "完颜雍"
+        ]
+      },
+      "description": "金世宗（完颜雍），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jin-wanyan-jing",
+      "names": {
+        "primary": "金章宗",
+        "aliases": [
+          "完颜璟"
+        ]
+      },
+      "description": "金章宗（完颜璟），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jin-wanyan-yongji",
+      "names": {
+        "primary": "卫绍王",
+        "aliases": [
+          "完颜永济"
+        ]
+      },
+      "description": "卫绍王（完颜永济），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jin-wanyan-xun",
+      "names": {
+        "primary": "金宣宗",
+        "aliases": [
+          "完颜珣"
+        ]
+      },
+      "description": "金宣宗（完颜珣），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jin-wanyan-shouxu",
+      "names": {
+        "primary": "金哀宗",
+        "aliases": [
+          "完颜守绪"
+        ]
+      },
+      "description": "金哀宗（完颜守绪），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-jin-wanyan-chenglin",
+      "names": {
+        "primary": "金末帝",
+        "aliases": [
+          "完颜承麟"
+        ]
+      },
+      "description": "金末帝（完颜承麟），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-jin-wanyan-aguda",
+      "personId": "person-cn-jin-wanyan-aguda",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1115,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1123,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jin-wanyan-wuqimai",
+      "personId": "person-cn-jin-wanyan-wuqimai",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1123,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1135,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jin-wanyan-dan",
+      "personId": "person-cn-jin-wanyan-dan",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1135,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1150,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jin-wanyan-liang",
+      "personId": "person-cn-jin-wanyan-liang",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1150,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1161,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jin-wanyan-yong",
+      "personId": "person-cn-jin-wanyan-yong",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1161,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1189,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jin-wanyan-jing",
+      "personId": "person-cn-jin-wanyan-jing",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1189,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1208,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jin-wanyan-yongji",
+      "personId": "person-cn-jin-wanyan-yongji",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1208,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1213,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jin-wanyan-xun",
+      "personId": "person-cn-jin-wanyan-xun",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1213,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1224,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jin-wanyan-shouxu",
+      "personId": "person-cn-jin-wanyan-shouxu",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1224,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1234,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-jin-wanyan-chenglin",
+      "personId": "person-cn-jin-wanyan-chenglin",
+      "polityId": "polity-cn-jin",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1234,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1234,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

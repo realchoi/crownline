@@ -32,16 +32,287 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十国之一。",
+      "description": "唐末王潮、王审知兄弟控制福建，王审知于909年受后梁封闽王，闽国由此形成，以福州为中心。王审知在位时保境发展海贸，死后宗室争位频繁，王延钧称帝，王延政又在建州分立。内战使政权迅速衰弱，945年南唐军攻灭建州政权，福州余部随后也被吴越控制。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-min-wang-shenzhi",
+      "names": {
+        "primary": "闽太祖",
+        "aliases": [
+          "王审知"
+        ]
+      },
+      "description": "闽太祖（王审知），闽在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-min-wang-yanhan",
+      "names": {
+        "primary": "王延翰",
+        "aliases": [
+          "闽嗣王"
+        ]
+      },
+      "description": "王延翰（闽嗣王），闽在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-min-wang-yanjun",
+      "names": {
+        "primary": "闽惠宗",
+        "aliases": [
+          "王延钧"
+        ]
+      },
+      "description": "闽惠宗（王延钧），闽在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-min-wang-jipeng",
+      "names": {
+        "primary": "闽康宗",
+        "aliases": [
+          "王继鹏"
+        ]
+      },
+      "description": "闽康宗（王继鹏），闽在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-min-wang-yanxi",
+      "names": {
+        "primary": "闽景宗",
+        "aliases": [
+          "王延羲"
+        ]
+      },
+      "description": "闽景宗（王延羲），闽在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-min-wang-yanzheng",
+      "names": {
+        "primary": "王延政",
+        "aliases": [
+          "殷帝",
+          "闽末帝"
+        ]
+      },
+      "description": "王延政（殷帝），闽在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-min-wang-shenzhi",
+      "personId": "person-cn-min-wang-shenzhi",
+      "polityId": "polity-cn-min",
+      "titles": [
+        "闽王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 909,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 925,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-min-wang-yanhan",
+      "personId": "person-cn-min-wang-yanhan",
+      "polityId": "polity-cn-min",
+      "titles": [
+        "闽王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 925,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 926,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-min-wang-yanjun",
+      "personId": "person-cn-min-wang-yanjun",
+      "polityId": "polity-cn-min",
+      "titles": [
+        "闽王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 926,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 935,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-min-wang-jipeng",
+      "personId": "person-cn-min-wang-jipeng",
+      "polityId": "polity-cn-min",
+      "titles": [
+        "闽王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 935,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 939,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-min-wang-yanxi",
+      "personId": "person-cn-min-wang-yanxi",
+      "polityId": "polity-cn-min",
+      "titles": [
+        "闽王",
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 939,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 944,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-min-wang-yanzheng",
+      "personId": "person-cn-min-wang-yanzheng",
+      "polityId": "polity-cn-min",
+      "titles": [
+        "闽王",
+        "皇帝"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 943,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 945,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "943年在建州称帝分立，后继承闽国残余；以主要争位者记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

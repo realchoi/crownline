@@ -33,16 +33,408 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "契丹建立，与五代、北宋等政权长期并立。",
+      "description": "辽由契丹首领耶律阿保机整合诸部后于916年称帝建立，先后号契丹、辽，统治核心涵盖今东北、内蒙古及燕云地区。它以南北面官制度分别治理游牧与农耕社会，长期与五代、北宋、西夏并立。辽末政治内耗，女真崛起建立金朝，天祚帝败亡后辽于1125年终结。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-liao-yelv-abaoji",
+      "names": {
+        "primary": "辽太祖",
+        "aliases": [
+          "耶律阿保机"
+        ]
+      },
+      "description": "辽太祖（耶律阿保机），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liao-yelv-deguang",
+      "names": {
+        "primary": "辽太宗",
+        "aliases": [
+          "耶律德光"
+        ]
+      },
+      "description": "辽太宗（耶律德光），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liao-yelv-ruan",
+      "names": {
+        "primary": "辽世宗",
+        "aliases": [
+          "耶律阮"
+        ]
+      },
+      "description": "辽世宗（耶律阮），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liao-yelv-jing",
+      "names": {
+        "primary": "辽穆宗",
+        "aliases": [
+          "耶律璟"
+        ]
+      },
+      "description": "辽穆宗（耶律璟），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liao-yelv-xian",
+      "names": {
+        "primary": "辽景宗",
+        "aliases": [
+          "耶律贤"
+        ]
+      },
+      "description": "辽景宗（耶律贤），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liao-yelv-longxu",
+      "names": {
+        "primary": "辽圣宗",
+        "aliases": [
+          "耶律隆绪"
+        ]
+      },
+      "description": "辽圣宗（耶律隆绪），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liao-yelv-zongzhen",
+      "names": {
+        "primary": "辽兴宗",
+        "aliases": [
+          "耶律宗真"
+        ]
+      },
+      "description": "辽兴宗（耶律宗真），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liao-yelv-hongji",
+      "names": {
+        "primary": "辽道宗",
+        "aliases": [
+          "耶律洪基"
+        ]
+      },
+      "description": "辽道宗（耶律洪基），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-liao-yelv-yanxi",
+      "names": {
+        "primary": "辽天祚帝",
+        "aliases": [
+          "耶律延禧"
+        ]
+      },
+      "description": "辽天祚帝（耶律延禧），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-liao-yelv-abaoji",
+      "personId": "person-cn-liao-yelv-abaoji",
+      "polityId": "polity-cn-liao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 916,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 926,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liao-yelv-deguang",
+      "personId": "person-cn-liao-yelv-deguang",
+      "polityId": "polity-cn-liao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 926,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 947,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liao-yelv-ruan",
+      "personId": "person-cn-liao-yelv-ruan",
+      "polityId": "polity-cn-liao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 947,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 951,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liao-yelv-jing",
+      "personId": "person-cn-liao-yelv-jing",
+      "polityId": "polity-cn-liao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 951,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 969,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liao-yelv-xian",
+      "personId": "person-cn-liao-yelv-xian",
+      "polityId": "polity-cn-liao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 969,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 982,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liao-yelv-longxu",
+      "personId": "person-cn-liao-yelv-longxu",
+      "polityId": "polity-cn-liao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 982,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1031,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liao-yelv-zongzhen",
+      "personId": "person-cn-liao-yelv-zongzhen",
+      "polityId": "polity-cn-liao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1031,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1055,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liao-yelv-hongji",
+      "personId": "person-cn-liao-yelv-hongji",
+      "polityId": "polity-cn-liao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1055,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1101,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-liao-yelv-yanxi",
+      "personId": "person-cn-liao-yelv-yanxi",
+      "polityId": "polity-cn-liao",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1101,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1125,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-late-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

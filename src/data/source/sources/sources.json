@@ -137,5 +137,203 @@
     "publisher": "中央纪委国家监委网站",
     "url": "https://m.ccdi.gov.cn/content/41/a8/57067.html",
     "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-dpm-sixteen-kingdoms",
+    "title": "十六国",
+    "sourceType": "institutional",
+    "citation": "故宫博物院：〈十六国〉。",
+    "publisher": "故宫博物院",
+    "url": "https://www.dpm.org.cn/lemmas/244349.html",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-moe-sixteen-kingdoms",
+    "title": "十六国",
+    "sourceType": "institutional",
+    "citation": "中华民国教育部《重编国语辞典修订本》：〈十六国〉。",
+    "publisher": "中华民国教育部",
+    "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=127424&la=0&powerMode=0",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-ucsd-imperial-reigns",
+    "title": "Table of Chinese Imperial Reigns: First Intermediate Era",
+    "sourceType": "secondary",
+    "citation": "David K. Jordan, University of California San Diego: Table of Chinese Imperial Reigns, First Intermediate Era.",
+    "authors": [
+      "David K. Jordan"
+    ],
+    "publisher": "University of California San Diego",
+    "url": "https://pages.ucsd.edu/~dkjordan/chin/chinahistory/dyn13-u.html",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-wikipedia-sixteen-rulers",
+    "title": "五胡十六国君主列表",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: 〈五胡十六国君主列表〉；用于交叉核对君主姓名、称号与在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E8%83%A1%E5%8D%81%E5%85%AD%E5%9B%BD%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-shanxi-yungang-chronology",
+    "title": "云冈学文献历史纪年：南北朝",
+    "sourceType": "institutional",
+    "citation": "山西大学云冈学研究院：〈云冈学文献历史纪年·南北朝〉；据《中国大百科全书》和中国社会科学院《中国历史年表》整理。",
+    "publisher": "山西大学云冈学研究院",
+    "url": "https://ygx.sxu.edu.cn/portals/12nbc",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-shanxi-yungang-five-dynasties",
+    "title": "云冈学文献历史纪年：五代十国",
+    "sourceType": "institutional",
+    "citation": "山西大学云冈学研究院：〈云冈学文献历史纪年·五代十国〉；据《中国大百科全书》和中国社会科学院《中国历史年表》整理。",
+    "publisher": "山西大学云冈学研究院",
+    "url": "https://ygx.sxu.edu.cn/portals/15wdsg",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-ucsd-five-dynasties",
+    "title": "Table of Chinese Imperial Reigns: Second Intermediate Era",
+    "sourceType": "secondary",
+    "citation": "David K. Jordan, University of California San Diego: Table of Chinese Imperial Reigns, Five Dynasties and Ten Kingdoms.",
+    "authors": [
+      "David K. Jordan"
+    ],
+    "publisher": "University of California San Diego",
+    "url": "https://pages.ucsd.edu/~dkjordan/chin/chinahistory/dyn15-u.html",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-neac-tibetan-history",
+    "title": "藏族历史沿革",
+    "sourceType": "institutional",
+    "citation": "中华人民共和国国家民族事务委员会：〈藏族历史沿革〉。",
+    "publisher": "中华人民共和国国家民族事务委员会",
+    "url": "https://www.neac.gov.cn/seac/ztzl/zz/lsyg.shtml",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-wikipedia-tibetan-rulers",
+    "title": "List of rulers of Tibet",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of rulers of Tibet；条目列明吐蕃赞普序列，并引用 Beckwith、Tucci、Sørensen 与 Hazod 等研究。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_rulers_of_Tibet",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-jilin-bohai-history",
+    "title": "浅谈渤海简史",
+    "sourceType": "institutional",
+    "citation": "吉林省地方志编纂委员会：〈浅谈渤海简史〉。",
+    "publisher": "吉林省地方志编纂委员会",
+    "url": "https://dfz.jl.gov.cn/zsjl/201701/t20170106_5216392.html",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-wikipedia-balhae-rulers",
+    "title": "List of Balhae monarchs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Balhae monarchs；用于交叉核对十五世渤海王姓名与在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Balhae_monarchs",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-zgbk-nanzhao",
+    "title": "南诏国",
+    "sourceType": "secondary",
+    "citation": "《中国大百科全书》第三版网络版：〈南诏国〉。",
+    "publisher": "中国大百科全书出版社",
+    "url": "https://www.zgbk.com/ecph/words?ID=85169&Preview=false&SiteID=1&Type=bkzyb",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-wikipedia-nanzhao-rulers",
+    "title": "南诏",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: 〈南诏〉；用于交叉核对南诏王名与在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://zh.wikipedia.org/wiki/%E5%8D%97%E8%AF%8F",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-ucsd-late-imperial-reigns",
+    "title": "Table of Chinese Imperial Reigns: Five Dynasties through Qing",
+    "sourceType": "secondary",
+    "citation": "David K. Jordan, University of California San Diego: Table of Chinese Imperial Reigns, Five Dynasties through Qing.",
+    "authors": [
+      "David K. Jordan"
+    ],
+    "publisher": "University of California San Diego",
+    "url": "https://pages.ucsd.edu/~dkjordan/chin/chinahistory/dynasty3.html",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-zgbk-western-xia",
+    "title": "西夏",
+    "sourceType": "secondary",
+    "citation": "《中国大百科全书》第三版网络版：〈西夏〉。",
+    "publisher": "中国大百科全书出版社",
+    "url": "https://www.zgbk.com/ecph/words?ID=49860&SiteID=1&SubID=44130&Type=bkzyb",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-yunnan-dali-history",
+    "title": "宋代（大理国时期）",
+    "sourceType": "institutional",
+    "citation": "大理白族自治州人民政府：〈宋代（大理国时期）〉。",
+    "publisher": "大理白族自治州人民政府",
+    "url": "https://www.dali.gov.cn/dlzrmzf/c101711/pc/content/1968886764683759616/content_1968886764683759616.html",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-wikipedia-dali-rulers",
+    "title": "大理君主列表",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: 〈大理君主列表〉；用于交叉核对段氏君主姓名与在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E7%90%86%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-inner-mongolia-mongol-empire",
+    "title": "成吉思汗",
+    "sourceType": "institutional",
+    "citation": "内蒙古博物院：〈成吉思汗〉，灿烂的中国文明专题。",
+    "publisher": "内蒙古博物院",
+    "url": "https://chiculture.org.hk/sites/mainsite/files/2021-10/0113_chengjisihan_yuanwen_cn_0.pdf",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-wikipedia-mongol-rulers",
+    "title": "蒙古汗国君主列表",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: 〈蒙古汗国君主列表〉；用于交叉核对大汗、监国与争位者的在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://zh.wikipedia.org/wiki/%E8%92%99%E5%8F%A4%E6%B1%97%E5%9B%BD%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-dpm-later-jin",
+    "title": "清廷迁都北京",
+    "sourceType": "institutional",
+    "citation": "故宫博物院：〈清廷迁都北京〉；载努尔哈赤建后金及皇太极改国号为清。",
+    "publisher": "故宫博物院",
+    "url": "https://www.dpm.org.cn/court/event/159873.html",
+    "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-dpm-southern-ming",
+    "title": "永历政权",
+    "sourceType": "institutional",
+    "citation": "故宫博物院：〈永历政权〉；概述弘光、鲁王监国、隆武、绍武与永历等南明政权。",
+    "publisher": "故宫博物院",
+    "url": "https://www.dpm.org.cn/court/event/160186.html",
+    "accessedAt": "2026-08-07"
   }
 ]

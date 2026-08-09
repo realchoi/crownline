@@ -32,16 +32,107 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十国之一。",
+      "description": "后唐西川节度使孟知祥在中原政局动荡中割据四川，于934年在成都称帝，建立蜀国，史称后蜀。孟昶长期在位，前期整顿吏治、发展农业和文化，但后期边备松弛，秦凤等州被后周夺取。965年北宋军队由两路入蜀，孟昶投降，后蜀灭亡，四川并入北宋。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-shu-meng-zhixiang",
+      "names": {
+        "primary": "后蜀高祖",
+        "aliases": [
+          "孟知祥"
+        ]
+      },
+      "description": "后蜀高祖（孟知祥），后蜀在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-shu-meng-chang",
+      "names": {
+        "primary": "后蜀后主",
+        "aliases": [
+          "孟昶"
+        ]
+      },
+      "description": "后蜀后主（孟昶），后蜀在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-shu-meng-zhixiang",
+      "personId": "person-cn-later-shu-meng-zhixiang",
+      "polityId": "polity-cn-later-shu",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 934,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 934,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-shu-meng-chang",
+      "personId": "person-cn-later-shu-meng-chang",
+      "polityId": "polity-cn-later-shu",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 934,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 965,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

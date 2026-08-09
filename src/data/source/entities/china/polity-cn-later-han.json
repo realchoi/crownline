@@ -32,16 +32,108 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "五代第四朝。",
+      "description": "契丹灭后晋后，河东节度使刘知远于947年在太原称帝，随后进入洛阳、开封，建立汉朝，史称后汉。政权承接后晋中原疆域，但开国皇帝次年即死，隐帝刘承祐年少即位，朝政由重臣把持。950年隐帝诛杀大臣引发郭威起兵，次年郭威称帝建立后周，后汉在中原的统治结束。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-han-liu-zhiyuan",
+      "names": {
+        "primary": "后汉高祖",
+        "aliases": [
+          "刘知远",
+          "刘暠"
+        ]
+      },
+      "description": "后汉高祖（刘知远），后汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-han-liu-chengyou",
+      "names": {
+        "primary": "后汉隐帝",
+        "aliases": [
+          "刘承祐"
+        ]
+      },
+      "description": "后汉隐帝（刘承祐），后汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-han-liu-zhiyuan",
+      "personId": "person-cn-later-han-liu-zhiyuan",
+      "polityId": "polity-cn-later-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 947,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 948,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-han-liu-chengyou",
+      "personId": "person-cn-later-han-liu-chengyou",
+      "polityId": "polity-cn-later-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 948,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 951,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

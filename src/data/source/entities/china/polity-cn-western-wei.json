@@ -32,16 +32,151 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "北魏分裂后的西部政权。",
+      "description": "北魏孝武帝进入关中后，宇文泰于535年拥立元宝炬为帝，以长安为都，建立西魏。政权控制关陇、河西及巴蜀部分地区，与东魏长期对峙；宇文泰掌握实权，推行府兵等军政改革，为北周和隋唐制度奠定基础。556年恭帝元廓被迫禅位于宇文觉，次年北周正式建立，西魏终结。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-chronology"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-western-wei-yuan-baoju",
+      "names": {
+        "primary": "西魏文帝",
+        "aliases": [
+          "元宝炬"
+        ]
+      },
+      "description": "西魏文帝（元宝炬），西魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-wei-yuan-qin",
+      "names": {
+        "primary": "西魏废帝",
+        "aliases": [
+          "元钦"
+        ]
+      },
+      "description": "西魏废帝（元钦），西魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-western-wei-yuan-kuo",
+      "names": {
+        "primary": "西魏恭帝",
+        "aliases": [
+          "元廓",
+          "拓跋廓"
+        ]
+      },
+      "description": "西魏恭帝（元廓），西魏在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-western-wei-yuan-baoju",
+      "personId": "person-cn-western-wei-yuan-baoju",
+      "polityId": "polity-cn-western-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 535,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 551,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-wei-yuan-qin",
+      "personId": "person-cn-western-wei-yuan-qin",
+      "polityId": "polity-cn-western-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 551,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 554,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-western-wei-yuan-kuo",
+      "personId": "person-cn-western-wei-yuan-kuo",
+      "polityId": "polity-cn-western-wei",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 554,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 556,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-imperial-reigns"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

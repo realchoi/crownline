@@ -33,16 +33,155 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十国之一。",
+      "description": "徐知诰于937年代杨吴称帝，建国号齐，后恢复李姓并改国号唐，史称南唐，定都金陵。烈祖、元宗时期控制江淮和江西等地，文化经济发达；与后周战争失败后割让江北，去帝号称国主。后主李煜时期国势继续受北宋压迫，975年金陵陷落，次年相关建制终止，南唐灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-southern-tang-li-bian",
+      "names": {
+        "primary": "南唐烈祖",
+        "aliases": [
+          "李昪",
+          "徐知诰"
+        ]
+      },
+      "description": "南唐烈祖（李昪），南唐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-tang-li-jing",
+      "names": {
+        "primary": "南唐元宗",
+        "aliases": [
+          "李璟"
+        ]
+      },
+      "description": "南唐元宗（李璟），南唐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-southern-tang-li-yu",
+      "names": {
+        "primary": "南唐后主",
+        "aliases": [
+          "李煜"
+        ]
+      },
+      "description": "南唐后主（李煜），南唐在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-southern-tang-li-bian",
+      "personId": "person-cn-southern-tang-li-bian",
+      "polityId": "polity-cn-southern-tang",
+      "titles": [
+        "皇帝",
+        "国主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 937,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 943,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-tang-li-jing",
+      "personId": "person-cn-southern-tang-li-jing",
+      "polityId": "polity-cn-southern-tang",
+      "titles": [
+        "皇帝",
+        "国主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 943,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 961,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-southern-tang-li-yu",
+      "personId": "person-cn-southern-tang-li-yu",
+      "polityId": "polity-cn-southern-tang",
+      "titles": [
+        "皇帝",
+        "国主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 961,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 976,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "975年向北宋投降；按现有政权终点记录至976年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

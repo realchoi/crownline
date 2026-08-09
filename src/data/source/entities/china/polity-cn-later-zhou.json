@@ -33,16 +33,150 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "五代第五朝。",
+      "description": "后汉枢密使郭威起兵控制开封，于951年建立周朝，史称后周。郭威减轻部分苛税、整顿军政，世宗柴荣继位后改革禁军、发展财政，并向北汉、南唐和辽发动战争，为北宋统一奠定基础。柴荣早逝后幼主柴宗训即位，960年赵匡胤发动陈桥兵变受禅称帝，后周被北宋取代。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-shanxi-yungang-five-dynasties"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-later-zhou-guo-wei",
+      "names": {
+        "primary": "后周太祖",
+        "aliases": [
+          "郭威"
+        ]
+      },
+      "description": "后周太祖（郭威），后周在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-zhou-chai-rong",
+      "names": {
+        "primary": "后周世宗",
+        "aliases": [
+          "柴荣"
+        ]
+      },
+      "description": "后周世宗（柴荣），后周在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-later-zhou-chai-zongxun",
+      "names": {
+        "primary": "后周恭帝",
+        "aliases": [
+          "柴宗训"
+        ]
+      },
+      "description": "后周恭帝（柴宗训），后周在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-later-zhou-guo-wei",
+      "personId": "person-cn-later-zhou-guo-wei",
+      "polityId": "polity-cn-later-zhou",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 951,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 954,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-zhou-chai-rong",
+      "personId": "person-cn-later-zhou-chai-rong",
+      "polityId": "polity-cn-later-zhou",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 954,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 959,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-later-zhou-chai-zongxun",
+      "personId": "person-cn-later-zhou-chai-zongxun",
+      "polityId": "polity-cn-later-zhou",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 959,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 960,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ucsd-five-dynasties"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

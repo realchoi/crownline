@@ -33,16 +33,978 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "西南地区的重要区域政权。",
+      "description": "大理由段思平联合滇东诸部于937年推翻大义宁国后建立，定都羊苴咩城，疆域以今云南为核心并及周边地区。政权尊崇佛教，段氏君主与高氏相国长期共治，1094至1096年一度被高昇泰建立的大中国取代，史称前、后大理。1253年蒙古军攻占都城，段氏王朝结束。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-yunnan-dali-history"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-dali-duan-siping",
+      "names": {
+        "primary": "大理太祖",
+        "aliases": [
+          "段思平"
+        ]
+      },
+      "description": "大理太祖（段思平），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-siying",
+      "names": {
+        "primary": "段思英",
+        "aliases": []
+      },
+      "description": "段思英，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-siliang",
+      "names": {
+        "primary": "段思良",
+        "aliases": []
+      },
+      "description": "段思良，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-sicong",
+      "names": {
+        "primary": "段思聪",
+        "aliases": []
+      },
+      "description": "段思聪，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-sushun",
+      "names": {
+        "primary": "段素顺",
+        "aliases": []
+      },
+      "description": "段素顺，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-suying",
+      "names": {
+        "primary": "段素英",
+        "aliases": []
+      },
+      "description": "段素英，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-sulian",
+      "names": {
+        "primary": "段素廉",
+        "aliases": []
+      },
+      "description": "段素廉，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-sulong",
+      "names": {
+        "primary": "段素隆",
+        "aliases": []
+      },
+      "description": "段素隆，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-suzhen",
+      "names": {
+        "primary": "段素真",
+        "aliases": []
+      },
+      "description": "段素真，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-suxing",
+      "names": {
+        "primary": "段素兴",
+        "aliases": []
+      },
+      "description": "段素兴，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-silian",
+      "names": {
+        "primary": "大理世宗",
+        "aliases": [
+          "段思廉"
+        ]
+      },
+      "description": "大理世宗（段思廉），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-lianyi",
+      "names": {
+        "primary": "段廉义",
+        "aliases": []
+      },
+      "description": "段廉义，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-shouhui",
+      "names": {
+        "primary": "段寿辉",
+        "aliases": []
+      },
+      "description": "段寿辉，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-zhengming",
+      "names": {
+        "primary": "段正明",
+        "aliases": []
+      },
+      "description": "段正明，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-gao-shengtai",
+      "names": {
+        "primary": "高昇泰",
+        "aliases": []
+      },
+      "description": "高昇泰，重要争位者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-zhengchun",
+      "names": {
+        "primary": "大理中宗",
+        "aliases": [
+          "段正淳"
+        ]
+      },
+      "description": "大理中宗（段正淳），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-zhengyan",
+      "names": {
+        "primary": "大理宪宗",
+        "aliases": [
+          "段正严"
+        ]
+      },
+      "description": "大理宪宗（段正严），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-zhengxing",
+      "names": {
+        "primary": "大理景宗",
+        "aliases": [
+          "段正兴"
+        ]
+      },
+      "description": "大理景宗（段正兴），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-zhixing",
+      "names": {
+        "primary": "大理宣宗",
+        "aliases": [
+          "段智兴"
+        ]
+      },
+      "description": "大理宣宗（段智兴），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-zhilian",
+      "names": {
+        "primary": "段智廉",
+        "aliases": []
+      },
+      "description": "段智廉，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-zhixiang",
+      "names": {
+        "primary": "大理神宗",
+        "aliases": [
+          "段智祥"
+        ]
+      },
+      "description": "大理神宗（段智祥），在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-xiangxing",
+      "names": {
+        "primary": "段祥兴",
+        "aliases": []
+      },
+      "description": "段祥兴，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-dali-duan-xingzhi",
+      "names": {
+        "primary": "段兴智",
+        "aliases": []
+      },
+      "description": "段兴智，在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-dali-duan-siping",
+      "personId": "person-dali-duan-siping",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 937,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 944,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-siying",
+      "personId": "person-dali-duan-siying",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 944,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 945,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-siliang",
+      "personId": "person-dali-duan-siliang",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 945,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 952,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-sicong",
+      "personId": "person-dali-duan-sicong",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 952,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 968,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-sushun",
+      "personId": "person-dali-duan-sushun",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 968,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 985,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-suying",
+      "personId": "person-dali-duan-suying",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 985,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1009,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-sulian",
+      "personId": "person-dali-duan-sulian",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1009,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1022,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-sulong",
+      "personId": "person-dali-duan-sulong",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1022,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1026,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-suzhen",
+      "personId": "person-dali-duan-suzhen",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1026,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1041,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-suxing",
+      "personId": "person-dali-duan-suxing",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1041,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1044,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-silian",
+      "personId": "person-dali-duan-silian",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1044,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1075,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-lianyi",
+      "personId": "person-dali-duan-lianyi",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1075,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1080,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-shouhui",
+      "personId": "person-dali-duan-shouhui",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1080,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1081,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-zhengming",
+      "personId": "person-dali-duan-zhengming",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1081,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1094,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-gao-shengtai",
+      "personId": "person-dali-gao-shengtai",
+      "polityId": "polity-dali",
+      "titles": [
+        "大中国皇帝"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1094,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1096,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-zhengchun",
+      "personId": "person-dali-duan-zhengchun",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1096,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1108,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-zhengyan",
+      "personId": "person-dali-duan-zhengyan",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1108,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1147,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-zhengxing",
+      "personId": "person-dali-duan-zhengxing",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1147,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1171,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-zhixing",
+      "personId": "person-dali-duan-zhixing",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1171,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1200,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-zhilian",
+      "personId": "person-dali-duan-zhilian",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1200,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1204,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-zhixiang",
+      "personId": "person-dali-duan-zhixiang",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1204,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1238,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-xiangxing",
+      "personId": "person-dali-duan-xiangxing",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1238,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1251,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-dali-duan-xingzhi",
+      "personId": "person-dali-duan-xingzhi",
+      "polityId": "polity-dali",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1251,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1253,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-dali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

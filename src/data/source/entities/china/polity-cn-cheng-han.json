@@ -34,16 +34,236 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "十六国之一，前期国号成，后改汉。",
+      "description": "西晋末年巴氐流民首领李雄据成都，于304年称王，后称帝，国号先为成，李寿改国号为汉，合称成汉。政权控制益州大部，在中原和北方长期战乱时维持巴蜀相对独立，也接纳大量流民。后期宫廷政变频仍、统治削弱，347年东晋将领桓温攻入成都，李势投降，成汉灭亡。",
       "sourceRefs": [
         {
           "sourceId": "source-cn-chronology-table"
+        },
+        {
+          "sourceId": "source-dpm-sixteen-kingdoms"
         }
       ],
       "confidence": "medium"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-cn-cheng-han-li-xiong",
+      "names": {
+        "primary": "成武帝",
+        "aliases": [
+          "李雄"
+        ]
+      },
+      "description": "成武帝（李雄），成汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-cheng-han-li-ban",
+      "names": {
+        "primary": "成哀帝",
+        "aliases": [
+          "李班"
+        ]
+      },
+      "description": "成哀帝（李班），成汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-cheng-han-li-qi",
+      "names": {
+        "primary": "李期",
+        "aliases": [
+          "邛都幽公"
+        ]
+      },
+      "description": "李期（邛都幽公），成汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-cheng-han-li-shou",
+      "names": {
+        "primary": "汉昭文帝",
+        "aliases": [
+          "李寿"
+        ]
+      },
+      "description": "汉昭文帝（李寿），成汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-cn-cheng-han-li-shi",
+      "names": {
+        "primary": "李势",
+        "aliases": [
+          "归义侯"
+        ]
+      },
+      "description": "李势（归义侯），成汉在位统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-cn-cheng-han-li-xiong",
+      "personId": "person-cn-cheng-han-li-xiong",
+      "polityId": "polity-cn-cheng-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 304,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 334,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-cheng-han-li-ban",
+      "personId": "person-cn-cheng-han-li-ban",
+      "polityId": "polity-cn-cheng-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 334,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 334,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-cheng-han-li-qi",
+      "personId": "person-cn-cheng-han-li-qi",
+      "polityId": "polity-cn-cheng-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 334,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 338,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-cheng-han-li-shou",
+      "personId": "person-cn-cheng-han-li-shou",
+      "polityId": "polity-cn-cheng-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 338,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 343,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-cn-cheng-han-li-shi",
+      "personId": "person-cn-cheng-han-li-shi",
+      "polityId": "polity-cn-cheng-han",
+      "titles": [
+        "皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 343,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 347,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-sixteen-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }
