@@ -78,6 +78,15 @@
     "accessedAt": "2026-08-06"
   },
   {
+    "id": "source-wikipedia-holy-roman-emperors",
+    "title": "List of Holy Roman emperors",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Holy Roman emperors；用于交叉核对罗马人的国王、皇帝、对立国王与任期区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Holy_Roman_emperors",
+    "accessedAt": "2026-08-09"
+  },
+  {
     "id": "source-inflibnet-chola",
     "title": "The Cholas",
     "sourceType": "institutional",

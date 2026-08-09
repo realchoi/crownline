@@ -34,10 +34,16 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "以中欧诸政治实体为主体的复合帝国结构；962年奥托一世加冕，1806年帝国解体。",
+      "description": "以德意志王国为核心、并涵盖中欧和意大利部分地区的复合政治体。962年奥托一世受皇帝加冕后，罗马人的国王通常由诸侯选举，并在不同时期接受教皇加冕或直接采用当选皇帝称号；哈布斯堡家族后来长期掌握皇位，1806年弗朗茨二世在拿破仑战争压力下解散帝国。",
       "sourceRefs": [
         {
           "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-met-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
         }
       ],
       "confidence": "medium",
@@ -67,7 +73,2944 @@
       ]
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-hre-otto-i",
+      "names": {
+        "primary": "奥托一世",
+        "aliases": [
+          "Otto I"
+        ]
+      },
+      "description": "奥托一世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-otto-ii",
+      "names": {
+        "primary": "奥托二世",
+        "aliases": [
+          "Otto II"
+        ]
+      },
+      "description": "奥托二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-otto-iii",
+      "names": {
+        "primary": "奥托三世",
+        "aliases": [
+          "Otto III"
+        ]
+      },
+      "description": "奥托三世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-henry-ii",
+      "names": {
+        "primary": "亨利二世",
+        "aliases": [
+          "Henry II"
+        ]
+      },
+      "description": "亨利二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-conrad-ii",
+      "names": {
+        "primary": "康拉德二世",
+        "aliases": [
+          "Conrad II"
+        ]
+      },
+      "description": "康拉德二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-henry-iii",
+      "names": {
+        "primary": "亨利三世",
+        "aliases": [
+          "Henry III"
+        ]
+      },
+      "description": "亨利三世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-henry-iv",
+      "names": {
+        "primary": "亨利四世",
+        "aliases": [
+          "Henry IV"
+        ]
+      },
+      "description": "亨利四世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-henry-v",
+      "names": {
+        "primary": "亨利五世",
+        "aliases": [
+          "Henry V"
+        ]
+      },
+      "description": "亨利五世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-lothair-iii",
+      "names": {
+        "primary": "洛泰尔三世",
+        "aliases": [
+          "Lothair III"
+        ]
+      },
+      "description": "洛泰尔三世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-conrad-iii",
+      "names": {
+        "primary": "康拉德三世",
+        "aliases": [
+          "Conrad III"
+        ]
+      },
+      "description": "康拉德三世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-frederick-i",
+      "names": {
+        "primary": "腓特烈一世",
+        "aliases": [
+          "Frederick I Barbarossa"
+        ]
+      },
+      "description": "腓特烈一世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-henry-vi",
+      "names": {
+        "primary": "亨利六世",
+        "aliases": [
+          "Henry VI"
+        ]
+      },
+      "description": "亨利六世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-philip-of-swabia",
+      "names": {
+        "primary": "士瓦本的菲利普",
+        "aliases": [
+          "Philip of Swabia"
+        ]
+      },
+      "description": "士瓦本的菲利普，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-otto-iv",
+      "names": {
+        "primary": "奥托四世",
+        "aliases": [
+          "Otto IV"
+        ]
+      },
+      "description": "奥托四世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-frederick-ii",
+      "names": {
+        "primary": "腓特烈二世",
+        "aliases": [
+          "Frederick II"
+        ]
+      },
+      "description": "腓特烈二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-conrad-iv",
+      "names": {
+        "primary": "康拉德四世",
+        "aliases": [
+          "Conrad IV"
+        ]
+      },
+      "description": "康拉德四世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-william-of-holland",
+      "names": {
+        "primary": "荷兰的威廉",
+        "aliases": [
+          "William of Holland"
+        ]
+      },
+      "description": "荷兰的威廉，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-richard-of-cornwall",
+      "names": {
+        "primary": "康沃尔的理查",
+        "aliases": [
+          "Richard of Cornwall"
+        ]
+      },
+      "description": "康沃尔的理查，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-rudolf-i",
+      "names": {
+        "primary": "鲁道夫一世",
+        "aliases": [
+          "Rudolf I"
+        ]
+      },
+      "description": "鲁道夫一世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-adolf",
+      "names": {
+        "primary": "阿道夫",
+        "aliases": [
+          "Adolf"
+        ]
+      },
+      "description": "阿道夫，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-albert-i",
+      "names": {
+        "primary": "阿尔布雷希特一世",
+        "aliases": [
+          "Albert I"
+        ]
+      },
+      "description": "阿尔布雷希特一世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-henry-vii",
+      "names": {
+        "primary": "亨利七世",
+        "aliases": [
+          "Henry VII"
+        ]
+      },
+      "description": "亨利七世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-louis-iv",
+      "names": {
+        "primary": "路易四世",
+        "aliases": [
+          "Louis IV"
+        ]
+      },
+      "description": "路易四世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-charles-iv",
+      "names": {
+        "primary": "查理四世",
+        "aliases": [
+          "Charles IV"
+        ]
+      },
+      "description": "查理四世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-wenceslaus",
+      "names": {
+        "primary": "文策尔",
+        "aliases": [
+          "Wenceslaus IV"
+        ]
+      },
+      "description": "文策尔，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-rupert",
+      "names": {
+        "primary": "鲁普雷希特",
+        "aliases": [
+          "Rupert"
+        ]
+      },
+      "description": "鲁普雷希特，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-sigismund",
+      "names": {
+        "primary": "西吉斯蒙德",
+        "aliases": [
+          "Sigismund"
+        ]
+      },
+      "description": "西吉斯蒙德，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-albert-ii",
+      "names": {
+        "primary": "阿尔布雷希特二世",
+        "aliases": [
+          "Albert II"
+        ]
+      },
+      "description": "阿尔布雷希特二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-frederick-iii",
+      "names": {
+        "primary": "腓特烈三世",
+        "aliases": [
+          "Frederick III"
+        ]
+      },
+      "description": "腓特烈三世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-maximilian-i",
+      "names": {
+        "primary": "马克西米利安一世",
+        "aliases": [
+          "Maximilian I"
+        ]
+      },
+      "description": "马克西米利安一世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-charles-v",
+      "names": {
+        "primary": "查理五世",
+        "aliases": [
+          "Charles V"
+        ]
+      },
+      "description": "查理五世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-ferdinand-i",
+      "names": {
+        "primary": "斐迪南一世",
+        "aliases": [
+          "Ferdinand I"
+        ]
+      },
+      "description": "斐迪南一世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-maximilian-ii",
+      "names": {
+        "primary": "马克西米利安二世",
+        "aliases": [
+          "Maximilian II"
+        ]
+      },
+      "description": "马克西米利安二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-rudolf-ii",
+      "names": {
+        "primary": "鲁道夫二世",
+        "aliases": [
+          "Rudolf II"
+        ]
+      },
+      "description": "鲁道夫二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-matthias",
+      "names": {
+        "primary": "马蒂亚斯",
+        "aliases": [
+          "Matthias"
+        ]
+      },
+      "description": "马蒂亚斯，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-ferdinand-ii",
+      "names": {
+        "primary": "斐迪南二世",
+        "aliases": [
+          "Ferdinand II"
+        ]
+      },
+      "description": "斐迪南二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-ferdinand-iii",
+      "names": {
+        "primary": "斐迪南三世",
+        "aliases": [
+          "Ferdinand III"
+        ]
+      },
+      "description": "斐迪南三世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-leopold-i",
+      "names": {
+        "primary": "利奥波德一世",
+        "aliases": [
+          "Leopold I"
+        ]
+      },
+      "description": "利奥波德一世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-joseph-i",
+      "names": {
+        "primary": "约瑟夫一世",
+        "aliases": [
+          "Joseph I"
+        ]
+      },
+      "description": "约瑟夫一世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-charles-vi",
+      "names": {
+        "primary": "查理六世",
+        "aliases": [
+          "Charles VI"
+        ]
+      },
+      "description": "查理六世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-charles-vii",
+      "names": {
+        "primary": "查理七世",
+        "aliases": [
+          "Charles VII"
+        ]
+      },
+      "description": "查理七世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-francis-i",
+      "names": {
+        "primary": "弗朗茨一世",
+        "aliases": [
+          "Francis I"
+        ]
+      },
+      "description": "弗朗茨一世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-joseph-ii",
+      "names": {
+        "primary": "约瑟夫二世",
+        "aliases": [
+          "Joseph II"
+        ]
+      },
+      "description": "约瑟夫二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-leopold-ii",
+      "names": {
+        "primary": "利奥波德二世",
+        "aliases": [
+          "Leopold II"
+        ]
+      },
+      "description": "利奥波德二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    },
+    {
+      "id": "person-hre-francis-ii",
+      "names": {
+        "primary": "弗朗茨二世",
+        "aliases": [
+          "Francis II"
+        ]
+      },
+      "description": "弗朗茨二世，神圣罗马帝国通行统治者年表中的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-hre-otto-i",
+      "personId": "person-hre-otto-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 962,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 973,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-otto-ii",
+      "personId": "person-hre-otto-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 973,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 983,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-otto-iii",
+      "personId": "person-hre-otto-iii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 983,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1002,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-ii",
+      "personId": "person-hre-henry-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1002,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1024,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-conrad-ii",
+      "personId": "person-hre-conrad-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1024,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1039,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-iii",
+      "personId": "person-hre-henry-iii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1039,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1056,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-iv",
+      "personId": "person-hre-henry-iv",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1056,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1105,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-v",
+      "personId": "person-hre-henry-v",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1105,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1125,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-lothair-iii",
+      "personId": "person-hre-lothair-iii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1125,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1137,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-conrad-iii",
+      "personId": "person-hre-conrad-iii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1138,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1152,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-frederick-i",
+      "personId": "person-hre-frederick-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1152,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1190,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-vi",
+      "personId": "person-hre-henry-vi",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1190,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1197,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-philip-of-swabia",
+      "personId": "person-hre-philip-of-swabia",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1198,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1208,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-otto-iv",
+      "personId": "person-hre-otto-iv",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1208,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1215,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-frederick-ii",
+      "personId": "person-hre-frederick-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1212,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1250,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-conrad-iv",
+      "personId": "person-hre-conrad-iv",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1250,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1254,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-william-of-holland",
+      "personId": "person-hre-william-of-holland",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1254,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1256,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-richard-of-cornwall",
+      "personId": "person-hre-richard-of-cornwall",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1257,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1272,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-rudolf-i",
+      "personId": "person-hre-rudolf-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1273,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1291,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-adolf",
+      "personId": "person-hre-adolf",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1292,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1298,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-albert-i",
+      "personId": "person-hre-albert-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1298,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1308,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-vii",
+      "personId": "person-hre-henry-vii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1308,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1313,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-louis-iv",
+      "personId": "person-hre-louis-iv",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1314,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1347,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-charles-iv",
+      "personId": "person-hre-charles-iv",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1347,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1378,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-wenceslaus",
+      "personId": "person-hre-wenceslaus",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1378,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1400,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-rupert",
+      "personId": "person-hre-rupert",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1400,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1410,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-sigismund",
+      "personId": "person-hre-sigismund",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1410,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1437,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-albert-ii",
+      "personId": "person-hre-albert-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1438,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1439,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-frederick-iii",
+      "personId": "person-hre-frederick-iii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1440,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1493,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-maximilian-i",
+      "personId": "person-hre-maximilian-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1493,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1519,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-charles-v",
+      "personId": "person-hre-charles-v",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1519,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1556,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-ferdinand-i",
+      "personId": "person-hre-ferdinand-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1556,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1564,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-maximilian-ii",
+      "personId": "person-hre-maximilian-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1564,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1576,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-rudolf-ii",
+      "personId": "person-hre-rudolf-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1576,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1612,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-matthias",
+      "personId": "person-hre-matthias",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1612,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1619,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-ferdinand-ii",
+      "personId": "person-hre-ferdinand-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1619,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1637,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-ferdinand-iii",
+      "personId": "person-hre-ferdinand-iii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1637,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1657,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-leopold-i",
+      "personId": "person-hre-leopold-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1658,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1705,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-joseph-i",
+      "personId": "person-hre-joseph-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1705,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1711,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-charles-vi",
+      "personId": "person-hre-charles-vi",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1711,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1740,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-charles-vii",
+      "personId": "person-hre-charles-vii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1742,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1745,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-francis-i",
+      "personId": "person-hre-francis-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1745,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1765,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-joseph-ii",
+      "personId": "person-hre-joseph-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1765,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1790,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-leopold-ii",
+      "personId": "person-hre-leopold-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1790,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1792,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-francis-ii",
+      "personId": "person-hre-francis-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "神圣罗马皇帝"
+      ],
+      "localTitles": [
+        "Imperator Romanorum"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1792,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1806,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-otto-ii-co-ruler",
+      "personId": "person-hre-otto-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王、共治皇帝"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 962,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 973,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-iii-co-ruler",
+      "personId": "person-hre-henry-iii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1028,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1039,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-iv-co-ruler",
+      "personId": "person-hre-henry-iv",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1054,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1056,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-v-co-ruler",
+      "personId": "person-hre-henry-v",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1099,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1105,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-henry-vi-co-ruler",
+      "personId": "person-hre-henry-vi",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1169,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1190,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-otto-iv-contender",
+      "personId": "person-hre-otto-iv",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "对立国王"
+      ],
+      "localTitles": [
+        "Gegenkönig"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1198,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1208,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "竞争选举阶段；其后是否成为主要统治者按独立任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-conrad-iv-co-ruler",
+      "personId": "person-hre-conrad-iv",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1237,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1250,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-william-of-holland-contender",
+      "personId": "person-hre-william-of-holland",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "对立国王"
+      ],
+      "localTitles": [
+        "Gegenkönig"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1247,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1254,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "竞争选举阶段；其后是否成为主要统治者按独立任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-charles-iv-contender",
+      "personId": "person-hre-charles-iv",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "对立国王"
+      ],
+      "localTitles": [
+        "Gegenkönig"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1346,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1347,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "竞争选举阶段；其后是否成为主要统治者按独立任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-wenceslaus-co-ruler",
+      "personId": "person-hre-wenceslaus",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1376,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1378,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-maximilian-i-co-ruler",
+      "personId": "person-hre-maximilian-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1486,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1493,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-ferdinand-i-co-ruler",
+      "personId": "person-hre-ferdinand-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1531,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1556,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-maximilian-ii-co-ruler",
+      "personId": "person-hre-maximilian-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1562,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1564,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-rudolf-ii-co-ruler",
+      "personId": "person-hre-rudolf-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1575,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1576,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-ferdinand-iii-co-ruler",
+      "personId": "person-hre-ferdinand-iii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1636,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1637,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-joseph-i-co-ruler",
+      "personId": "person-hre-joseph-i",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1690,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1705,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-hre-joseph-ii-co-ruler",
+      "personId": "person-hre-joseph-ii",
+      "polityId": "polity-holy-roman-empire",
+      "titles": [
+        "罗马人的国王"
+      ],
+      "localTitles": [
+        "Rex Romanorum"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1764,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1765,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时受选为罗马人的国王。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-dhm-hre"
+        },
+        {
+          "sourceId": "source-wikipedia-holy-roman-emperors"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

@@ -170,6 +170,16 @@ describe("生产历史数据", () => {
       .toContain("person-abbasid-al-mustasim");
   });
 
+  it("补全神圣罗马帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-holy-roman-empire", 45);
+    expect(rulerSnapshot("polity-holy-roman-empire", 1000).entries.map(({ person }) => person.id))
+      .toContain("person-hre-otto-iii");
+    expect(rulerSnapshot("polity-holy-roman-empire", 1700).entries.map(({ person }) => person.id))
+      .toContain("person-hre-leopold-i");
+    expect(rulerSnapshot("polity-holy-roman-empire", 1806).entries.map(({ person }) => person.id))
+      .toContain("person-hre-francis-ii");
+  });
+
   it("补全汉与三国四个非主线政权的详情", () => {
     expectPolityDetails(NON_MAINLINE_POLITY_BATCHES.hanThreeKingdoms);
     expect(rulerSnapshot("polity-cn-xin", 15).status).toBe("known");
