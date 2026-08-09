@@ -36,17 +36,1734 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "750年取代倭马亚哈里发，以伊拉克为政治文化中心；1258年巴格达陷落后，其在当地的统治终结。",
+      "description": "750年阿拔斯家族推翻倭马亚王朝后建立哈里发政权，762年营建巴格达，并以伊拉克为政治与文化中心。九世纪以后，军人集团和地方王朝逐渐掌握实际权力，但阿拔斯哈里发仍保持重要宗教与象征地位；1258年蒙古军攻陷巴格达，巴格达时期的统治终结。",
       "sourceRefs": [
         {
           "sourceId": "source-met-abbasid"
+        },
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
         }
       ],
       "confidence": "medium",
       "chronologyNote": "存续区间按巴格达时期计算，不延伸至1261年后开罗的象征性哈里发世系。"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-abbasid-al-saffah",
+      "names": {
+        "primary": "萨法赫",
+        "aliases": [
+          "al-Saffah"
+        ]
+      },
+      "description": "萨法赫，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mansur",
+      "names": {
+        "primary": "曼苏尔",
+        "aliases": [
+          "al-Mansur"
+        ]
+      },
+      "description": "曼苏尔，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mahdi",
+      "names": {
+        "primary": "马赫迪",
+        "aliases": [
+          "al-Mahdi"
+        ]
+      },
+      "description": "马赫迪，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-hadi",
+      "names": {
+        "primary": "哈迪",
+        "aliases": [
+          "al-Hadi"
+        ]
+      },
+      "description": "哈迪，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-harun-al-rashid",
+      "names": {
+        "primary": "哈伦·拉希德",
+        "aliases": [
+          "Harun al-Rashid"
+        ]
+      },
+      "description": "哈伦·拉希德，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-amin",
+      "names": {
+        "primary": "阿明",
+        "aliases": [
+          "al-Amin"
+        ]
+      },
+      "description": "阿明，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mamun",
+      "names": {
+        "primary": "马蒙",
+        "aliases": [
+          "al-Ma'mun"
+        ]
+      },
+      "description": "马蒙，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mutasim",
+      "names": {
+        "primary": "穆阿台绥姆",
+        "aliases": [
+          "al-Mu'tasim"
+        ]
+      },
+      "description": "穆阿台绥姆，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-wathiq",
+      "names": {
+        "primary": "瓦西格",
+        "aliases": [
+          "al-Wathiq"
+        ]
+      },
+      "description": "瓦西格，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mutawakkil",
+      "names": {
+        "primary": "穆塔瓦基勒",
+        "aliases": [
+          "al-Mutawakkil"
+        ]
+      },
+      "description": "穆塔瓦基勒，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-muntasir",
+      "names": {
+        "primary": "蒙塔西尔",
+        "aliases": [
+          "al-Muntasir"
+        ]
+      },
+      "description": "蒙塔西尔，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mustain",
+      "names": {
+        "primary": "穆斯塔因",
+        "aliases": [
+          "al-Musta'in"
+        ]
+      },
+      "description": "穆斯塔因，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mutazz",
+      "names": {
+        "primary": "穆阿台兹",
+        "aliases": [
+          "al-Mu'tazz"
+        ]
+      },
+      "description": "穆阿台兹，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-muhtadi",
+      "names": {
+        "primary": "穆赫塔迪",
+        "aliases": [
+          "al-Muhtadi"
+        ]
+      },
+      "description": "穆赫塔迪，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mutamid",
+      "names": {
+        "primary": "穆阿台米德",
+        "aliases": [
+          "al-Mu'tamid"
+        ]
+      },
+      "description": "穆阿台米德，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mutadid",
+      "names": {
+        "primary": "穆阿台迪德",
+        "aliases": [
+          "al-Mu'tadid"
+        ]
+      },
+      "description": "穆阿台迪德，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-muktafi",
+      "names": {
+        "primary": "穆克塔菲",
+        "aliases": [
+          "al-Muktafi"
+        ]
+      },
+      "description": "穆克塔菲，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-muqtadir",
+      "names": {
+        "primary": "穆克塔迪尔",
+        "aliases": [
+          "al-Muqtadir"
+        ]
+      },
+      "description": "穆克塔迪尔，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-qahir",
+      "names": {
+        "primary": "卡希尔",
+        "aliases": [
+          "al-Qahir"
+        ]
+      },
+      "description": "卡希尔，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-radi",
+      "names": {
+        "primary": "拉迪",
+        "aliases": [
+          "al-Radi"
+        ]
+      },
+      "description": "拉迪，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-muttaqi",
+      "names": {
+        "primary": "穆塔基",
+        "aliases": [
+          "al-Muttaqi"
+        ]
+      },
+      "description": "穆塔基，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mustakfi",
+      "names": {
+        "primary": "穆斯塔克菲",
+        "aliases": [
+          "al-Mustakfi"
+        ]
+      },
+      "description": "穆斯塔克菲，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-muti",
+      "names": {
+        "primary": "穆提",
+        "aliases": [
+          "al-Muti"
+        ]
+      },
+      "description": "穆提，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-tai",
+      "names": {
+        "primary": "塔伊",
+        "aliases": [
+          "al-Ta'i"
+        ]
+      },
+      "description": "塔伊，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-qadir",
+      "names": {
+        "primary": "卡迪尔",
+        "aliases": [
+          "al-Qadir"
+        ]
+      },
+      "description": "卡迪尔，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-qaim",
+      "names": {
+        "primary": "卡伊姆",
+        "aliases": [
+          "al-Qa'im"
+        ]
+      },
+      "description": "卡伊姆，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-muqtadi",
+      "names": {
+        "primary": "穆克塔迪",
+        "aliases": [
+          "al-Muqtadi"
+        ]
+      },
+      "description": "穆克塔迪，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mustazhir",
+      "names": {
+        "primary": "穆斯塔兹希尔",
+        "aliases": [
+          "al-Mustazhir"
+        ]
+      },
+      "description": "穆斯塔兹希尔，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mustarshid",
+      "names": {
+        "primary": "穆斯塔尔希德",
+        "aliases": [
+          "al-Mustarshid"
+        ]
+      },
+      "description": "穆斯塔尔希德，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-rashid",
+      "names": {
+        "primary": "拉希德",
+        "aliases": [
+          "al-Rashid"
+        ]
+      },
+      "description": "拉希德，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-muqtafi",
+      "names": {
+        "primary": "穆克塔菲",
+        "aliases": [
+          "al-Muqtafi"
+        ]
+      },
+      "description": "穆克塔菲，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mustanjid",
+      "names": {
+        "primary": "穆斯坦吉德",
+        "aliases": [
+          "al-Mustanjid"
+        ]
+      },
+      "description": "穆斯坦吉德，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mustadi",
+      "names": {
+        "primary": "穆斯塔迪",
+        "aliases": [
+          "al-Mustadi"
+        ]
+      },
+      "description": "穆斯塔迪，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-nasir",
+      "names": {
+        "primary": "纳赛尔",
+        "aliases": [
+          "al-Nasir"
+        ]
+      },
+      "description": "纳赛尔，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-zahir",
+      "names": {
+        "primary": "扎希尔",
+        "aliases": [
+          "al-Zahir"
+        ]
+      },
+      "description": "扎希尔，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mustansir",
+      "names": {
+        "primary": "穆斯坦绥尔",
+        "aliases": [
+          "al-Mustansir"
+        ]
+      },
+      "description": "穆斯坦绥尔，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-abbasid-al-mustasim",
+      "names": {
+        "primary": "穆斯台绥木",
+        "aliases": [
+          "al-Musta'sim"
+        ]
+      },
+      "description": "穆斯台绥木，阿拔斯哈里发巴格达时期通行年表中的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-abbasid-al-saffah",
+      "personId": "person-abbasid-al-saffah",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 750,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 754,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mansur",
+      "personId": "person-abbasid-al-mansur",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 754,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 775,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mahdi",
+      "personId": "person-abbasid-al-mahdi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 775,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 785,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-hadi",
+      "personId": "person-abbasid-al-hadi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 785,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 786,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-harun-al-rashid",
+      "personId": "person-abbasid-harun-al-rashid",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 786,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 809,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-amin",
+      "personId": "person-abbasid-al-amin",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 809,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 813,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mamun",
+      "personId": "person-abbasid-al-mamun",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 813,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 833,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mutasim",
+      "personId": "person-abbasid-al-mutasim",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 833,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 842,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-wathiq",
+      "personId": "person-abbasid-al-wathiq",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 842,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 847,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mutawakkil",
+      "personId": "person-abbasid-al-mutawakkil",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 847,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 861,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-muntasir",
+      "personId": "person-abbasid-al-muntasir",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 861,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 862,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mustain",
+      "personId": "person-abbasid-al-mustain",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 862,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 866,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mutazz",
+      "personId": "person-abbasid-al-mutazz",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 866,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 869,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-muhtadi",
+      "personId": "person-abbasid-al-muhtadi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 869,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 870,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mutamid",
+      "personId": "person-abbasid-al-mutamid",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 870,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 892,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mutadid",
+      "personId": "person-abbasid-al-mutadid",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 892,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 902,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-muktafi",
+      "personId": "person-abbasid-al-muktafi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 902,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 908,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-muqtadir",
+      "personId": "person-abbasid-al-muqtadir",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 908,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 932,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-qahir",
+      "personId": "person-abbasid-al-qahir",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 929,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 929,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 932,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 934,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-radi",
+      "personId": "person-abbasid-al-radi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 934,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 940,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-muttaqi",
+      "personId": "person-abbasid-al-muttaqi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 940,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 944,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mustakfi",
+      "personId": "person-abbasid-al-mustakfi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 944,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 946,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-muti",
+      "personId": "person-abbasid-al-muti",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 946,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 974,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-tai",
+      "personId": "person-abbasid-al-tai",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 974,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 991,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-qadir",
+      "personId": "person-abbasid-al-qadir",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 991,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1031,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-qaim",
+      "personId": "person-abbasid-al-qaim",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1031,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1075,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-muqtadi",
+      "personId": "person-abbasid-al-muqtadi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1075,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1094,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mustazhir",
+      "personId": "person-abbasid-al-mustazhir",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1094,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1118,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mustarshid",
+      "personId": "person-abbasid-al-mustarshid",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1118,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1135,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-rashid",
+      "personId": "person-abbasid-al-rashid",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1135,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1136,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-muqtafi",
+      "personId": "person-abbasid-al-muqtafi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1136,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1160,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mustanjid",
+      "personId": "person-abbasid-al-mustanjid",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1160,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1170,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mustadi",
+      "personId": "person-abbasid-al-mustadi",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1170,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1180,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-nasir",
+      "personId": "person-abbasid-al-nasir",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1180,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1225,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-zahir",
+      "personId": "person-abbasid-al-zahir",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1225,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1226,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mustansir",
+      "personId": "person-abbasid-al-mustansir",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1226,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1242,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-abbasid-al-mustasim",
+      "personId": "person-abbasid-al-mustasim",
+      "polityId": "polity-abbasid-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "localTitles": [
+        "خليفة"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1242,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1258,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-wikipedia-abbasid-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }

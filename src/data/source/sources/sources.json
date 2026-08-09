@@ -51,6 +51,15 @@
     "accessedAt": "2026-08-06"
   },
   {
+    "id": "source-wikipedia-abbasid-caliphs",
+    "title": "List of Abbasid caliphs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Abbasid caliphs；用于交叉核对巴格达时期哈里发姓名、称号与任期区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Abbasid_caliphs",
+    "accessedAt": "2026-08-09"
+  },
+  {
     "id": "source-dhm-hre",
     "title": "Heiliges Römisches Reich Deutscher Nation: 962–1806",
     "sourceType": "institutional",

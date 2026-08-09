@@ -162,6 +162,14 @@ describe("生产历史数据", () => {
       .toContain("person-byzantine-constantine-xi");
   });
 
+  it("补全阿拔斯哈里发详情与统治者", () => {
+    expectWorldPolityDetails("polity-abbasid-caliphate", 37);
+    expect(rulerSnapshot("polity-abbasid-caliphate", 800).entries.map(({ person }) => person.id))
+      .toContain("person-abbasid-harun-al-rashid");
+    expect(rulerSnapshot("polity-abbasid-caliphate", 1258).entries.map(({ person }) => person.id))
+      .toContain("person-abbasid-al-mustasim");
+  });
+
   it("补全汉与三国四个非主线政权的详情", () => {
     expectPolityDetails(NON_MAINLINE_POLITY_BATCHES.hanThreeKingdoms);
     expect(rulerSnapshot("polity-cn-xin", 15).status).toBe("known");
