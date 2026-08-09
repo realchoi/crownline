@@ -453,7 +453,7 @@ Expected: PASS；任一详情包都不得携带其他三个政权的任期或无
 先运行以下只读统计命令：
 
 ```bash
-npx tsx -e 'import { loadSourceData } from "./scripts/data-source.ts"; const data = await loadSourceData(); const world = new Set(["polity-byzantine-empire", "polity-abbasid-caliphate", "polity-holy-roman-empire", "polity-chola-empire"]); console.log(JSON.stringify({ persons: data.persons.length, reigns: data.reigns.length, worldPersons: data.persons.filter((person) => data.reigns.some((reign) => reign.personId === person.id && world.has(reign.polityId))).length, worldReigns: data.reigns.filter((reign) => world.has(reign.polityId)).length }, null, 2));'
+node --import tsx -e 'import { loadSourceData } from "./scripts/data-source.ts"; (async () => { const data = await loadSourceData(); const world = new Set(["polity-byzantine-empire", "polity-abbasid-caliphate", "polity-holy-roman-empire", "polity-chola-empire"]); console.log(JSON.stringify({ persons: data.persons.length, reigns: data.reigns.length, worldPersons: data.persons.filter((person) => data.reigns.some((reign) => reign.personId === person.id && world.has(reign.polityId))).length, worldReigns: data.reigns.filter((reign) => world.has(reign.polityId)).length }, null, 2)); })();'
 ```
 
 使用命令输出的确切数字更新：

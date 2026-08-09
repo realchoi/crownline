@@ -56,6 +56,24 @@ describe("运行时数据产物", () => {
     ]));
   });
 
+  it("为四个世界政权生成可独立加载的详情闭包", () => {
+    for (const entityId of [
+      "polity-byzantine-empire",
+      "polity-abbasid-caliphate",
+      "polity-holy-roman-empire",
+      "polity-chola-empire"
+    ]) {
+      const detail = buildGeneratedArtifacts(data).details.get(entityId);
+      expect(detail?.persons.length, entityId).toBeGreaterThan(0);
+      expect(detail?.reigns.length, entityId).toBeGreaterThan(0);
+      expect(detail?.reigns.every(({ polityId }) => polityId === entityId), entityId)
+        .toBe(true);
+      expect(new Set(detail?.persons.map(({ id }) => id)), entityId)
+        .toEqual(new Set(detail?.reigns.map(({ personId }) => personId)));
+      expect(detail?.sources.length, entityId).toBeGreaterThan(0);
+    }
+  });
+
   it("共享关系、关系事件和来源进入双方详情", () => {
     const fixture: CrownlineData = structuredClone(data);
     fixture.events.push({
