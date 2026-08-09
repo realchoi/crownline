@@ -96,6 +96,15 @@
     "accessedAt": "2026-08-06"
   },
   {
+    "id": "source-wikipedia-chola-dynasty",
+    "title": "Chola dynasty",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Chola dynasty；用于交叉核对中世纪朱罗统治者姓名、共治关系与任期区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Chola_dynasty",
+    "accessedAt": "2026-08-09"
+  },
+  {
     "id": "source-moe-emperor-chronology",
     "title": "Chronology of Chinese Emperors’ Reigns",
     "sourceType": "institutional",

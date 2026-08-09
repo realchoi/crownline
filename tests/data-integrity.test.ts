@@ -180,6 +180,16 @@ describe("生产历史数据", () => {
       .toContain("person-hre-francis-ii");
   });
 
+  it("补全朱罗帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-chola-empire", 20);
+    expect(rulerSnapshot("polity-chola-empire", 1010).entries.map(({ person }) => person.id))
+      .toContain("person-chola-rajaraja-i");
+    expect(rulerSnapshot("polity-chola-empire", 1070).entries.map(({ person }) => person.id))
+      .toContain("person-chola-kulottunga-i");
+    expect(rulerSnapshot("polity-chola-empire", 1279).entries.map(({ person }) => person.id))
+      .toContain("person-chola-rajendra-iii");
+  });
+
   it("补全汉与三国四个非主线政权的详情", () => {
     expectPolityDetails(NON_MAINLINE_POLITY_BATCHES.hanThreeKingdoms);
     expect(rulerSnapshot("polity-cn-xin", 15).status).toBe("known");

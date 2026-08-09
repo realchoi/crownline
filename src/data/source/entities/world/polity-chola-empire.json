@@ -36,17 +36,1620 @@
       ],
       "culturalSphereIds": [],
       "modernAreaIds": [],
-      "description": "以印度南部为核心的朱罗政权；约850年维查耶罗耶重建势力，延续至1279年。",
+      "description": "九世纪中叶，维阇耶洛耶夺取坦贾武尔并复兴朱罗政权，其核心位于南印度高韦里河流域。罗阇罗阇一世和罗阇因陀罗一世时期，朱罗扩张至斯里兰卡并以海军影响孟加拉湾贸易网络；十二世纪后在潘地亚等势力竞争下逐渐衰落，末代君主罗阇因陀罗三世于1279年失去统治。",
       "sourceRefs": [
         {
           "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
         }
       ],
       "confidence": "medium",
       "chronologyNote": "朱罗传统早于九世纪；所列年代聚焦约850年开始的中世纪帝国阶段。"
     }
   ],
-  "persons": [],
-  "reigns": [],
+  "persons": [
+    {
+      "id": "person-chola-vijayalaya",
+      "names": {
+        "primary": "维阇耶洛耶",
+        "aliases": [
+          "Vijayalaya Chola"
+        ]
+      },
+      "description": "维阇耶洛耶，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-aditya-i",
+      "names": {
+        "primary": "阿迪提亚一世",
+        "aliases": [
+          "Aditya I"
+        ]
+      },
+      "description": "阿迪提亚一世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-parantaka-i",
+      "names": {
+        "primary": "波兰多伽一世",
+        "aliases": [
+          "Parantaka I"
+        ]
+      },
+      "description": "波兰多伽一世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajaditya",
+      "names": {
+        "primary": "罗阇阿迪提亚",
+        "aliases": [
+          "Rajaditya Chola"
+        ]
+      },
+      "description": "罗阇阿迪提亚，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-gandaraditya",
+      "names": {
+        "primary": "甘达罗阿迪提亚",
+        "aliases": [
+          "Gandaraditya"
+        ]
+      },
+      "description": "甘达罗阿迪提亚，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-arinjaya",
+      "names": {
+        "primary": "阿林阇耶",
+        "aliases": [
+          "Arinjaya"
+        ]
+      },
+      "description": "阿林阇耶，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-parantaka-ii",
+      "names": {
+        "primary": "波兰多伽二世",
+        "aliases": [
+          "Parantaka II"
+        ]
+      },
+      "description": "波兰多伽二世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-aditya-ii",
+      "names": {
+        "primary": "阿迪提亚二世",
+        "aliases": [
+          "Aditya II Karikala"
+        ]
+      },
+      "description": "阿迪提亚二世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-uttama",
+      "names": {
+        "primary": "乌达摩",
+        "aliases": [
+          "Uttama Chola"
+        ]
+      },
+      "description": "乌达摩，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajaraja-i",
+      "names": {
+        "primary": "罗阇罗阇一世",
+        "aliases": [
+          "Rajaraja I"
+        ]
+      },
+      "description": "罗阇罗阇一世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajendra-i",
+      "names": {
+        "primary": "罗阇因陀罗一世",
+        "aliases": [
+          "Rajendra I"
+        ]
+      },
+      "description": "罗阇因陀罗一世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajadhiraja-i",
+      "names": {
+        "primary": "罗阇提罗阇一世",
+        "aliases": [
+          "Rajadhiraja I"
+        ]
+      },
+      "description": "罗阇提罗阇一世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajendra-ii",
+      "names": {
+        "primary": "罗阇因陀罗二世",
+        "aliases": [
+          "Rajendra II"
+        ]
+      },
+      "description": "罗阇因陀罗二世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajamahendra",
+      "names": {
+        "primary": "罗阇摩亨德罗",
+        "aliases": [
+          "Rajamahendra Chola"
+        ]
+      },
+      "description": "罗阇摩亨德罗，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-virarajendra",
+      "names": {
+        "primary": "毗罗罗阇因陀罗",
+        "aliases": [
+          "Virarajendra"
+        ]
+      },
+      "description": "毗罗罗阇因陀罗，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-athirajendra",
+      "names": {
+        "primary": "阿提罗阇因陀罗",
+        "aliases": [
+          "Athirajendra"
+        ]
+      },
+      "description": "阿提罗阇因陀罗，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-kulottunga-i",
+      "names": {
+        "primary": "俱卢通伽一世",
+        "aliases": [
+          "Kulottunga I"
+        ]
+      },
+      "description": "俱卢通伽一世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-vikrama",
+      "names": {
+        "primary": "毗拘罗摩",
+        "aliases": [
+          "Vikrama Chola"
+        ]
+      },
+      "description": "毗拘罗摩，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-kulottunga-ii",
+      "names": {
+        "primary": "俱卢通伽二世",
+        "aliases": [
+          "Kulottunga II"
+        ]
+      },
+      "description": "俱卢通伽二世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajaraja-ii",
+      "names": {
+        "primary": "罗阇罗阇二世",
+        "aliases": [
+          "Rajaraja II"
+        ]
+      },
+      "description": "罗阇罗阇二世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajadhiraja-ii",
+      "names": {
+        "primary": "罗阇提罗阇二世",
+        "aliases": [
+          "Rajadhiraja II"
+        ]
+      },
+      "description": "罗阇提罗阇二世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-kulottunga-iii",
+      "names": {
+        "primary": "俱卢通伽三世",
+        "aliases": [
+          "Kulottunga III"
+        ]
+      },
+      "description": "俱卢通伽三世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajaraja-iii",
+      "names": {
+        "primary": "罗阇罗阇三世",
+        "aliases": [
+          "Rajaraja III"
+        ]
+      },
+      "description": "罗阇罗阇三世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    },
+    {
+      "id": "person-chola-rajendra-iii",
+      "names": {
+        "primary": "罗阇因陀罗三世",
+        "aliases": [
+          "Rajendra III"
+        ]
+      },
+      "description": "罗阇因陀罗三世，中世纪朱罗统治者年表中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-chola-vijayalaya",
+      "personId": "person-chola-vijayalaya",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 850,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 871,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-aditya-i",
+      "personId": "person-chola-aditya-i",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 871,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 907,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-parantaka-i",
+      "personId": "person-chola-parantaka-i",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 907,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 955,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajaditya",
+      "personId": "person-chola-rajaditya",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 935,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 949,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-gandaraditya",
+      "personId": "person-chola-gandaraditya",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 955,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 957,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-arinjaya",
+      "personId": "person-chola-arinjaya",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 955,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 956,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-parantaka-ii",
+      "personId": "person-chola-parantaka-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 957,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 970,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-aditya-ii",
+      "personId": "person-chola-aditya-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 966,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 971,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-uttama",
+      "personId": "person-chola-uttama",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 970,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 985,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajaraja-i",
+      "personId": "person-chola-rajaraja-i",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 985,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1014,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajendra-i",
+      "personId": "person-chola-rajendra-i",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1014,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1044,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajadhiraja-i",
+      "personId": "person-chola-rajadhiraja-i",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1044,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1054,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajendra-ii",
+      "personId": "person-chola-rajendra-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1054,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1063,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajamahendra",
+      "personId": "person-chola-rajamahendra",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1060,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1063,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-virarajendra",
+      "personId": "person-chola-virarajendra",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1063,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1070,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-athirajendra",
+      "personId": "person-chola-athirajendra",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1070,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1070,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-kulottunga-i",
+      "personId": "person-chola-kulottunga-i",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1070,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1120,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-vikrama",
+      "personId": "person-chola-vikrama",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1120,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1135,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-kulottunga-ii",
+      "personId": "person-chola-kulottunga-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1135,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1150,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajaraja-ii",
+      "personId": "person-chola-rajaraja-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1150,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1173,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajadhiraja-ii",
+      "personId": "person-chola-rajadhiraja-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1173,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1178,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-kulottunga-iii",
+      "personId": "person-chola-kulottunga-iii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1178,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1218,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajaraja-iii",
+      "personId": "person-chola-rajaraja-iii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1218,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1256,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajendra-iii",
+      "personId": "person-chola-rajendra-iii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "朱罗王"
+      ],
+      "localTitles": [
+        "சோழ மன்னன்"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1256,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1279,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajendra-i-co-ruler",
+      "personId": "person-chola-rajendra-i",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1012,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1014,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajadhiraja-i-co-ruler",
+      "personId": "person-chola-rajadhiraja-i",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1018,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1044,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajendra-ii-co-ruler",
+      "personId": "person-chola-rajendra-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1051,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1054,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-athirajendra-co-ruler",
+      "personId": "person-chola-athirajendra",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1067,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1070,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-vikrama-co-ruler",
+      "personId": "person-chola-vikrama",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1118,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1120,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-kulottunga-ii-co-ruler",
+      "personId": "person-chola-kulottunga-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1133,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1135,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajaraja-ii-co-ruler",
+      "personId": "person-chola-rajaraja-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1146,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1150,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajadhiraja-ii-co-ruler",
+      "personId": "person-chola-rajadhiraja-ii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1166,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1173,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajaraja-iii-co-ruler",
+      "personId": "person-chola-rajaraja-iii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1216,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1218,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chola-rajendra-iii-co-ruler",
+      "personId": "person-chola-rajendra-iii",
+      "polityId": "polity-chola-empire",
+      "titles": [
+        "共治王"
+      ],
+      "localTitles": [
+        "இளவரசர்"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1246,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1256,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "在前任主要统治者在位时参与共同统治；独立统治阶段按另一条任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inflibnet-chola"
+        },
+        {
+          "sourceId": "source-wikipedia-chola-dynasty"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
   "reignVacancies": []
 }
