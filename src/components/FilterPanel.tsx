@@ -1,3 +1,5 @@
+import type { Ref } from "react";
+
 import {
   formatHistoricalYear,
   fromOrdinal,
@@ -21,6 +23,7 @@ export const DISPLAY_CATEGORY_NAMES: Record<DisplayCategory, string> = {
 
 /** 筛选面板的受控状态与事件。 */
 export interface FilterPanelProps {
+  panelRef?: Ref<HTMLElement>;
   showModeSwitch: boolean;
   showYearControls: boolean;
   mode: BrowseMode;
@@ -40,6 +43,7 @@ export interface FilterPanelProps {
 
 /** 渲染搜索、类别筛选、清除按钮和类别图例。 */
 export function FilterPanel({
+  panelRef,
   showModeSwitch,
   showYearControls,
   mode,
@@ -61,6 +65,7 @@ export function FilterPanel({
 
   return (
     <section
+      ref={panelRef}
       className={`controls-panel controls-${mode}${showModeSwitch ? "" : " controls-map"}`}
       aria-label="浏览与筛选工具"
     >

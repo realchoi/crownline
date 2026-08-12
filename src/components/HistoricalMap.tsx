@@ -102,6 +102,24 @@ export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
           );
         })}
       </div>
+      <ul className="map-marker-legend" aria-label="地图点位图例">
+        <li>
+          <span className="map-legend-symbol map-legend-capital" aria-hidden="true" />
+          <span>都城</span>
+        </li>
+        <li>
+          <span className="map-legend-symbol map-legend-political-center" aria-hidden="true" />
+          <span>政治中心</span>
+        </li>
+        <li>
+          <span className="map-legend-symbol map-legend-representative-center" aria-hidden="true" />
+          <span>代表性中心</span>
+        </li>
+        <li>
+          <span className="map-legend-symbol map-legend-cluster" aria-hidden="true">2</span>
+          <span>数字表示邻近点位聚合</span>
+        </li>
+      </ul>
       <p className="map-boundary-note">
         点位仅表示已校订的都城、政治中心或浏览定位，不表示政权疆域与控制范围。
       </p>

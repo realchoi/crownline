@@ -51,6 +51,8 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
   const requestSequenceRef = useRef(0);
   const geographyRequestSequenceRef = useRef(0);
+  const mainRef = useRef<HTMLElement>(null);
+  const controlsPanelRef = useRef<HTMLElement>(null);
   const results = useMemo(() => {
     const filters = {
       query: browseState.query,
@@ -151,6 +153,28 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
   }, [browseState.viewMode, geographyState.status, startGeographyLoad]);
 
   useEffect(() => {
+    const main = mainRef.current;
+    const controlsPanel = controlsPanelRef.current;
+    if (browseState.viewMode !== "map" || !main || !controlsPanel) {
+      main?.style.removeProperty("--map-controls-height");
+      return;
+    }
+
+    const syncControlsHeight = () => {
+      main.style.setProperty(
+        "--map-controls-height",
+        `${controlsPanel.getBoundingClientRect().height}px`
+      );
+    };
+    syncControlsHeight();
+
+    if (typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(syncControlsHeight);
+    observer.observe(controlsPanel);
+    return () => observer.disconnect();
+  }, [browseState.viewMode]);
+
+  useEffect(() => {
     // 等待原生 dialog 卸载后再恢复焦点，避免浏览器默认焦点处理覆盖结果。
     if (selectedEntityId || !lastTriggerRef.current) return;
     const animationFrame = requestAnimationFrame(() => lastTriggerRef.current?.focus());
@@ -223,12 +247,17 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
         </div>
       </header>
 
-      <main id="main-content" className="site-shell">
+      <main
+        ref={mainRef}
+        id="main-content"
+        className={`site-shell${browseState.viewMode === "map" ? " map-view-active" : ""}`}
+      >
         <ViewModeControl
           value={browseState.viewMode}
           onChange={(viewMode) => setBrowseState((current) => ({ ...current, viewMode }))}
         />
         <FilterPanel
+          panelRef={controlsPanelRef}
           showModeSwitch={browseState.viewMode === "timeline"}
           showYearControls={browseState.viewMode === "map" || browseState.mode === "point"}
           mode={browseState.mode}

@@ -51,6 +51,12 @@ describe("历史地图组件", () => {
     const map = screen.getByRole("region", { name: "当前年份历史政权示意地图" });
     const marker = within(map).getByRole("button", { name: "北魏，洛阳，都城" });
     expect(within(map).getByRole("presentation")).toBeInTheDocument();
+    const legend = within(map).getByRole("list", { name: "地图点位图例" });
+    expect(within(legend).getAllByRole("listitem")).toHaveLength(4);
+    expect(legend).toHaveTextContent("都城");
+    expect(legend).toHaveTextContent("政治中心");
+    expect(legend).toHaveTextContent("代表性中心");
+    expect(legend).toHaveTextContent("数字表示邻近点位聚合");
     await user.click(marker);
     expect(onSelect).toHaveBeenCalledWith("polity-cn-northern-wei", marker);
   });
@@ -107,6 +113,7 @@ describe("历史地图组件", () => {
     expect(list).toHaveTextContent("尚未校订地理数据");
     expect(list).toHaveTextContent("隋");
     const item = within(list).getByRole("button", { name: "北魏，洛阳，都城" });
+    expect(within(item).getByText("洛阳")).toHaveClass("map-result-place");
     await user.click(item);
     expect(onSelect).toHaveBeenCalledWith("polity-cn-northern-wei", item);
   });

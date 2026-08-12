@@ -1693,6 +1693,14 @@ noscript {
   padding: 14px;
 }
 
+@media (min-width: 981px) {
+  .historical-map {
+    position: sticky;
+    /* 筛选面板顶部 10px，再留出 12px 呼吸间距。 */
+    top: calc(var(--map-controls-height, 250px) + 22px);
+  }
+}
+
 .world-map {
   position: relative;
   width: 100%;
@@ -1775,6 +1783,59 @@ noscript {
   background: var(--accent-hover);
   transform: scale(1.08);
 }
+
+.map-marker-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 16px;
+  margin: 12px 4px 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  list-style: none;
+}
+
+.map-marker-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-legend-symbol {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--surface-strong);
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 2px 6px rgba(38, 29, 25, 0.24);
+}
+
+.map-legend-symbol::after {
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  content: "";
+}
+
+.map-legend-capital::after { border-radius: 50%; }
+.map-legend-political-center::after { transform: rotate(45deg); }
+.map-legend-representative-center::after {
+  width: 8px;
+  height: 7px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.map-legend-cluster {
+  border-radius: 6px;
+  font-size: 0.58rem;
+  font-weight: 800;
+}
+
+.map-legend-cluster::after { content: none; }
 
 .map-cluster-panel {
   position: absolute;
@@ -1882,7 +1943,10 @@ noscript {
   font-size: 1.08rem;
 }
 
-.map-result-detail > span:not(.map-result-role) { color: var(--accent); }
+.map-result-place {
+  grid-column: 1 / -1;
+  color: var(--accent);
+}
 .map-result-detail small {
   grid-column: 1 / -1;
   color: var(--muted);
@@ -1891,12 +1955,14 @@ noscript {
 
 .map-result-role {
   align-self: center;
+  justify-self: start;
   border: 1px solid currentColor;
   border-radius: 999px;
   color: var(--accent);
   padding: 1px 7px;
   font-size: 0.68rem;
   font-weight: 750;
+  white-space: nowrap;
 }
 
 .role-political-center { border-radius: 5px; color: var(--parallel); }

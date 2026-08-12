@@ -54,7 +54,7 @@ export function MapResultList({
                     {GEOGRAPHIC_ROLE_NAMES[point.snapshot.role]}
                   </span>
                   <strong>{point.entity.names.primary}</strong>
-                  <span>{point.snapshot.placeName}</span>
+                  <span className="map-result-place">{point.snapshot.placeName}</span>
                   <small>{point.snapshot.positionNote}</small>
                 </button>
                 <ComparisonToggle
