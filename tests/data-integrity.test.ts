@@ -7,7 +7,7 @@ import { validateCrownlineData } from "../src/domain/dataValidation";
 import { selectRulerSnapshot } from "../src/domain/rulerSnapshot";
 import { RELATIONSHIP_TYPES } from "../src/domain/types";
 import { GLOBAL_SAMPLE_POLITY_IDS } from "./global-sample-polities";
-import { WORLD_MAP_POLITY_IDS } from "./map-sample-polities";
+import { CHINA_MAP_POLITY_IDS, WORLD_MAP_POLITY_IDS } from "./map-sample-polities";
 
 const data = await loadSourceData();
 const details = buildGeneratedArtifacts(data).details;
@@ -74,6 +74,31 @@ function rulerSnapshot(entityId: string, year: number) {
   return selectRulerSnapshot(entity, detail, year);
 }
 
+function activePlaces(polityId: string, year: number): string[] {
+  return data.geographicSnapshots
+    .filter((snapshot) => {
+      return snapshot.polityId === polityId && isYearInPeriods(year, snapshot.periods);
+    })
+    .map(({ placeName }) => placeName);
+}
+
+function mappedTopLevelRegionIds(): Set<string> {
+  const mappedPolityIds = new Set(data.geographicSnapshots.map(({ polityId }) => polityId));
+  const regionById = new Map(data.regions.map((region) => [region.id, region]));
+  const topLevelIds = new Set<string>();
+
+  data.entities
+    .filter(({ id }) => mappedPolityIds.has(id))
+    .flatMap(({ historicalRegionIds }) => historicalRegionIds)
+    .forEach((regionId) => {
+      let current = regionById.get(regionId);
+      while (current?.parentRegionId) current = regionById.get(current.parentRegionId);
+      if (current) topLevelIds.add(current.id);
+    });
+
+  return topLevelIds;
+}
+
 describe("生产历史数据", () => {
   it("保留中国七个阶段和七十三个时间轴实体，并扩展全球总实体数量", () => {
     expect(data.timelineSections).toHaveLength(7);
@@ -112,6 +137,41 @@ describe("生产历史数据", () => {
         polityId
       ).toBe(true);
     }
+  });
+
+  it("为十五个中国代表政权提供二十二条地理快照并覆盖九个顶层地区", () => {
+    const chinaSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
+      return CHINA_MAP_POLITY_IDS.some((id) => id === polityId);
+    });
+
+    expect(chinaSnapshots).toHaveLength(22);
+    expect(data.geographicSnapshots).toHaveLength(59);
+    for (const polityId of CHINA_MAP_POLITY_IDS) {
+      expect(
+        chinaSnapshots.some((snapshot) => snapshot.polityId === polityId),
+        polityId
+      ).toBe(true);
+    }
+    expect(mappedTopLevelRegionIds()).toEqual(new Set([
+      "region-east-asia",
+      "region-south-asia",
+      "region-southeast-asia",
+      "region-central-asia",
+      "region-west-asia",
+      "region-europe",
+      "region-north-africa",
+      "region-west-africa",
+      "region-americas"
+    ]));
+  });
+
+  it("按年份切换中国政权的迁都点位", () => {
+    expect(activePlaces("polity-cn-northern-wei", 450)).toEqual(["平城"]);
+    expect(activePlaces("polity-cn-northern-wei", 500)).toEqual(["洛阳"]);
+    expect(activePlaces("polity-cn-ming", 1400)).toEqual(["南京"]);
+    expect(activePlaces("polity-cn-ming", 1500)).toEqual(["北京"]);
+    expect(activePlaces("polity-cn-qing", 1640)).toEqual(["盛京"]);
+    expect(activePlaces("polity-cn-qing", 1700)).toEqual(["北京"]);
   });
 
   it("提供可自选的外部地区和明确覆盖状态", () => {

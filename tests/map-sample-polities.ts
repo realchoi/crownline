@@ -20,3 +20,21 @@ export const WORLD_MAP_POLITY_IDS = [
   "polity-aztec-empire",
   "polity-inca-empire"
 ] as const;
+
+export const CHINA_MAP_POLITY_IDS = [
+  "polity-cn-shang",
+  "polity-cn-western-zhou",
+  "polity-cn-qin",
+  "polity-cn-western-han",
+  "polity-cn-eastern-han",
+  "polity-cn-cao-wei",
+  "polity-cn-shu-han",
+  "polity-cn-eastern-wu",
+  "polity-cn-northern-wei",
+  "polity-cn-tang",
+  "polity-cn-northern-song",
+  "polity-cn-southern-song",
+  "polity-cn-yuan",
+  "polity-cn-ming",
+  "polity-cn-qing"
+] as const;
