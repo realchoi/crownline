@@ -1,5 +1,14 @@
-/* 可变字体（wght 100–900），按范围声明后各档字重才能精确实例化，
-   否则 650/750 等中间字重会全部塌陷到 400 或 700 */
+/* 拉丁正文保留 wdth 与 wght 轴，中文正文保留 wght 轴；按范围声明后，
+   650/750 等中间字重才能精确实例化，而不会塌陷到 400 或 700。 */
+@font-face {
+  font-family: "Crownline Latin Sans";
+  src: url("../assets/fonts/noto-sans-latin-page-var.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62.5% 100%;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "Crownline Sans SC";
   src: url("../assets/fonts/noto-sans-sc-page-400-700.woff2") format("woff2");
@@ -46,7 +55,7 @@
   --radius-md: 16px;
   --radius-sm: 10px;
   --label-column: 166px;
-  --font-body: "Crownline Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-body: "Crownline Latin Sans", "Crownline Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
   --font-display: "Crownline Latin Serif", "Crownline Song SC", "Songti SC", "STSong", "SimSun", serif;
   font-family: var(--font-body);
 }
@@ -1994,7 +2003,9 @@ noscript {
   .row-years { font-size: 0.63rem; }
   .detail-grid { grid-template-columns: 1fr; }
   .ruler-list { grid-template-columns: 1fr; }
-  .year-slider-row { grid-template-columns: 36px minmax(0, 1fr) 36px; gap: 6px; }
+  .mode-switch button,
+  .year-step-button { min-height: 44px; }
+  .year-slider-row { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 6px; }
   .year-range { grid-template-columns: auto auto; }
   .year-range span:nth-child(2) { display: none; }
   .year-range span:last-child { text-align: right; }
@@ -2009,7 +2020,13 @@ noscript {
   .relationship-events li { grid-template-columns: 1fr; gap: 2px; }
   .historical-map { padding: 8px; }
   .map-results { padding: 16px; }
-  .map-result-detail { padding-right: 54px; }
+  .map-result-detail { padding-right: 62px; }
+  .map-result-item > .comparison-toggle {
+    top: 4px;
+    right: 4px;
+    min-width: 52px;
+    min-height: 44px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

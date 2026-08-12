@@ -58,14 +58,16 @@ def collect_usage() -> tuple[dict[str, set[str]], dict]:
 
 
 def main() -> int:
+    latin_body = cmap_chars(FONTS / "noto-sans-latin-page-var.woff2")
     sans = cmap_chars(FONTS / "noto-sans-sc-page-400-700.woff2")
     song = cmap_chars(FONTS / "noto-serif-sc-display-700.woff2")
     latin = cmap_chars(FONTS / "source-serif-4-latin-var.woff2")
     usage, data = collect_usage()
 
     problems: list[str] = []
+    body_cover = latin_body | sans
     for ch in sorted(usage, key=ord):
-        if ord(ch) not in sans:
+        if ord(ch) not in body_cover:
             problems.append(f"正文子集缺失 U+{ord(ch):04X} {ch} ← {sorted(usage[ch])[:3]}")
     display_cover = song | latin
     # 与生成脚本共享标题字符集，检查结果即代表下一次生成所采用的规则。
@@ -76,7 +78,7 @@ def main() -> int:
         if ord(ch) not in latin:
             problems.append(f"拉丁衬线子集缺失数字 {ch}(当前年份等标题数字会用系统字体渲染)")
     for ch in ASCII - {" "}:
-        if ord(ch) not in sans:
+        if ord(ch) not in body_cover:
             problems.append(f"正文子集缺失 ASCII {ch!r}")
 
     if problems:
@@ -86,7 +88,11 @@ def main() -> int:
             print(f"... 以及另外 {len(problems) - 60} 处")
         print("请按 README「字体资源」一节重新生成字符子集。")
         return 1
-    print(f"字体子集覆盖检查通过:正文 {len(sans)} 字符,标题 {len(song)} 字符,拉丁 {len(latin)} 字符,全站用字均已覆盖。")
+    print(
+        f"字体子集覆盖检查通过:拉丁正文 {len(latin_body)} 字符,"
+        f"中文正文 {len(sans)} 字符,标题 {len(song)} 字符,"
+        f"拉丁标题 {len(latin)} 字符,全站用字均已覆盖。"
+    )
     return 0
 
 

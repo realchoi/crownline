@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import worldLandUrl from "../assets/maps/world-land.svg";
 import {
@@ -19,6 +19,14 @@ function pointLabel({ entity, snapshot }: MapPoint): string {
 /** 呈现离线世界轮廓、单点标记与可展开的密集点位聚合。 */
 export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
   const [expandedClusterId, setExpandedClusterId] = useState<string | null>(null);
+  const expandedTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const clusterPanelRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (expandedClusterId) {
+      clusterPanelRef.current?.querySelector("button")?.focus();
+    }
+  }, [expandedClusterId]);
 
   return (
     <section className="historical-map" aria-label="当前年份历史政权示意地图">
@@ -54,7 +62,10 @@ export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
                 type="button"
                 aria-label={`此处有 ${cluster.points.length} 个历史点位`}
                 aria-expanded={expanded}
-                onClick={() => setExpandedClusterId(expanded ? null : cluster.id)}
+                onClick={(event) => {
+                  if (!expanded) expandedTriggerRef.current = event.currentTarget;
+                  setExpandedClusterId(expanded ? null : cluster.id);
+                }}
               >
                 <span aria-hidden="true">{cluster.points.length}</span>
               </button>
@@ -62,6 +73,13 @@ export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
                 <section
                   className="map-cluster-popover map-cluster-panel"
                   aria-label="聚合历史点位"
+                  ref={clusterPanelRef}
+                  onKeyDown={(event) => {
+                    if (event.key !== "Escape") return;
+                    event.preventDefault();
+                    setExpandedClusterId(null);
+                    expandedTriggerRef.current?.focus();
+                  }}
                 >
                   <ul>
                     {cluster.points.map((point) => (

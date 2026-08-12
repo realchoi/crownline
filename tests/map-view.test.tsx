@@ -73,8 +73,18 @@ describe("历史地图组件", () => {
     const beijingButton = within(expanded).getByRole("button", {
       name: "明，北京，都城"
     });
-    await user.click(beijingButton);
-    expect(onSelect).toHaveBeenCalledWith("polity-cn-ming", beijingButton);
+    expect(beijingButton).toHaveFocus();
+
+    await user.keyboard("{Escape}");
+    expect(cluster).toHaveAttribute("aria-expanded", "false");
+    expect(cluster).toHaveFocus();
+
+    await user.click(cluster);
+    const reopenedBeijingButton = within(screen.getByRole("region", {
+      name: "聚合历史点位"
+    })).getByRole("button", { name: "明，北京，都城" });
+    await user.click(reopenedBeijingButton);
+    expect(onSelect).toHaveBeenCalledWith("polity-cn-ming", reopenedBeijingButton);
   });
 
   it("结果列表提供等价详情入口并单列缺少地理数据的政权", async () => {
