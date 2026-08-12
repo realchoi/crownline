@@ -240,6 +240,20 @@ h1 {
 
 main { padding-bottom: 60px; }
 
+.view-mode-control {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 12px;
+  padding: 10px 12px 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
+}
+
+.view-mode-control .field-label { margin-bottom: 10px; }
+
 .controls-panel {
   position: sticky;
   top: 10px;
@@ -367,6 +381,10 @@ main { padding-bottom: 60px; }
   padding: 0;
   border: 0;
   background: transparent;
+}
+
+.controls-map .region-scope-control {
+  grid-column: 1 / -1;
 }
 
 .controls-point .text-input,
@@ -1662,6 +1680,7 @@ noscript {
   .hero { padding-top: 48px; }
   .stat-grid { grid-template-columns: 1fr; }
   .controls-panel { position: static; }
+  .view-mode-control { align-items: center; }
   .controls-point,
   .controls-overview { display: block; padding: 18px; }
   .controls-point .region-scope-control,

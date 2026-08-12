@@ -3,6 +3,7 @@ import type { BrowseData, DisplayCategory, HistoricalEntity, Region } from "./ty
 import type { CategoryFilter } from "./selectors";
 
 export type BrowseMode = "overview" | "point";
+export type ViewMode = "timeline" | "map";
 
 export interface HistoricalYearBounds {
   min: number;
@@ -10,6 +11,7 @@ export interface HistoricalYearBounds {
 }
 
 export interface BrowseState {
+  viewMode: ViewMode;
   mode: BrowseMode;
   year: number;
   query: string;
@@ -77,6 +79,7 @@ export function readBrowseState(
     .slice(0, 2);
 
   return {
+    viewMode: params.get("view") === "map" ? "map" : "timeline",
     mode,
     year,
     query: params.get("q") ?? "",
@@ -95,9 +98,10 @@ export function writeBrowseState(
   currentSearch = ""
 ): URLSearchParams {
   const params = new URLSearchParams(currentSearch);
-  ["mode", "year", "q", "type", "scope", "region", "compare"]
+  ["view", "mode", "year", "q", "type", "scope", "region", "compare"]
     .forEach((name) => params.delete(name));
 
+  if (state.viewMode === "map") params.set("view", "map");
   if (state.mode === "point") params.set("mode", "point");
   if (state.year !== bounds.max) params.set("year", String(state.year));
   if (state.query.trim()) params.set("q", state.query.trim());

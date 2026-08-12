@@ -20,7 +20,9 @@ export const DISPLAY_CATEGORY_NAMES: Record<DisplayCategory, string> = {
 };
 
 /** 筛选面板的受控状态与事件。 */
-interface FilterPanelProps {
+export interface FilterPanelProps {
+  showModeSwitch: boolean;
+  showYearControls: boolean;
   mode: BrowseMode;
   year: number;
   yearBounds: HistoricalYearBounds;
@@ -38,6 +40,8 @@ interface FilterPanelProps {
 
 /** 渲染搜索、类别筛选、清除按钮和类别图例。 */
 export function FilterPanel({
+  showModeSwitch,
+  showYearControls,
   mode,
   year,
   yearBounds,
@@ -56,28 +60,33 @@ export function FilterPanel({
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
 
   return (
-    <section className={`controls-panel controls-${mode}`} aria-label="浏览与筛选工具">
-      <div className="browse-mode-row">
-        <div>
-          <span className="field-label">浏览方式</span>
-          <div className="mode-switch" role="group" aria-label="浏览方式">
-            <button
-              type="button"
-              aria-pressed={mode === "overview"}
-              onClick={() => onModeChange("overview")}
-            >
-              全览
-            </button>
-            <button
-              type="button"
-              aria-pressed={mode === "point"}
-              onClick={() => onModeChange("point")}
-            >
-              时间点
-            </button>
+    <section
+      className={`controls-panel controls-${mode}${showModeSwitch ? "" : " controls-map"}`}
+      aria-label="浏览与筛选工具"
+    >
+      {showModeSwitch && (
+        <div className="browse-mode-row">
+          <div>
+            <span className="field-label">浏览方式</span>
+            <div className="mode-switch" role="group" aria-label="浏览方式">
+              <button
+                type="button"
+                aria-pressed={mode === "overview"}
+                onClick={() => onModeChange("overview")}
+              >
+                全览
+              </button>
+              <button
+                type="button"
+                aria-pressed={mode === "point"}
+                onClick={() => onModeChange("point")}
+              >
+                时间点
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <RegionScopeControl
         regions={regions}
@@ -86,7 +95,7 @@ export function FilterPanel({
       />
 
       <div className="controls-grid">
-        {mode === "point" && (
+        {showYearControls && (
           <div className="year-panel">
             <div className="year-current">
               <span className="field-label">当前年份</span>
@@ -165,7 +174,7 @@ export function FilterPanel({
           清除筛选
         </button>
       </div>
-      {mode === "overview" && (
+      {showModeSwitch && mode === "overview" && (
         <div className="legend" aria-label="类别图例">
           {Object.entries(DISPLAY_CATEGORY_NAMES).map(([value, label]) => (
             <span className={`legend-item legend-${value}`} key={value}>

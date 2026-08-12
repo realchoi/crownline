@@ -17,6 +17,7 @@ describe("浏览状态", () => {
 
   it("从 URL 恢复时间点、年份、搜索和兼容类别", () => {
     expect(readBrowseState("?mode=point&year=-221&q=%E7%A7%A6&type=parallel", bounds)).toEqual({
+      viewMode: "timeline",
       mode: "point",
       year: -221,
       query: "秦",
@@ -28,6 +29,7 @@ describe("浏览状态", () => {
 
   it("清洗非法模式、年份和类别", () => {
     expect(readBrowseState("?mode=map&year=0&type=unknown", bounds)).toEqual({
+      viewMode: "timeline",
       mode: "overview",
       year: 1922,
       query: "",
@@ -39,9 +41,27 @@ describe("浏览状态", () => {
     expect(readBrowseState("?mode=point&year=9999", bounds).year).toBe(1922);
   });
 
+  it("独立恢复并清洗地图视图，不改写时间轴浏览模式", () => {
+    expect(readBrowseState("?view=map&year=1400", bounds)).toMatchObject({
+      viewMode: "map",
+      mode: "overview",
+      year: 1400
+    });
+    expect(readBrowseState("?view=unknown", bounds).viewMode).toBe("timeline");
+  });
+
+  it("只为地图视图写入 view 参数", () => {
+    const defaultState = readBrowseState("", bounds);
+
+    expect(writeBrowseState({ ...defaultState, viewMode: "map" }, bounds).get("view"))
+      .toBe("map");
+    expect(writeBrowseState(defaultState, bounds).has("view")).toBe(false);
+  });
+
   it("序列化非默认状态并保留未知参数", () => {
     const params = writeBrowseState(
       {
+        viewMode: "timeline",
         mode: "point",
         year: -221,
         query: "  秦  ",
@@ -59,6 +79,7 @@ describe("浏览状态", () => {
   it("从 URL 省略默认值", () => {
     const params = writeBrowseState(
       {
+        viewMode: "timeline",
         mode: "overview",
         year: 1922,
         query: "",
@@ -89,6 +110,7 @@ describe("浏览状态", () => {
   it("序列化自选与全球范围，默认中国范围不写入 URL", () => {
     const custom = writeBrowseState(
       {
+        viewMode: "timeline",
         mode: "point",
         year: 1000,
         query: "",
@@ -104,6 +126,7 @@ describe("浏览状态", () => {
 
     const global = writeBrowseState(
       {
+        viewMode: "timeline",
         mode: "point",
         year: 1000,
         query: "",
@@ -122,6 +145,7 @@ describe("浏览状态", () => {
     });
     const params = writeBrowseState(
       {
+        viewMode: "timeline",
         mode: "overview",
         year: 1922,
         query: "",
@@ -174,6 +198,7 @@ describe("浏览状态", () => {
   it("按左右顺序序列化两个对比政权", () => {
     const params = writeBrowseState(
       {
+        viewMode: "timeline",
         mode: "overview",
         year: 1922,
         query: "",

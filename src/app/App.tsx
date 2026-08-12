@@ -6,6 +6,7 @@ import type { DetailLoadState } from "../components/DetailLoadPanel";
 import { FilterPanel } from "../components/FilterPanel";
 import { Timeline } from "../components/Timeline";
 import { TimepointView } from "../components/TimepointView";
+import { ViewModeControl } from "../components/ViewModeControl";
 import {
   getHistoricalYearBounds,
   readBrowseState,
@@ -164,7 +165,13 @@ export function App({ data, loadDetail }: AppProps) {
       </header>
 
       <main id="main-content" className="site-shell">
+        <ViewModeControl
+          value={browseState.viewMode}
+          onChange={(viewMode) => setBrowseState((current) => ({ ...current, viewMode }))}
+        />
         <FilterPanel
+          showModeSwitch={browseState.viewMode === "timeline"}
+          showYearControls={browseState.viewMode === "map" || browseState.mode === "point"}
           mode={browseState.mode}
           year={browseState.year}
           yearBounds={yearBounds}

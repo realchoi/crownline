@@ -389,6 +389,28 @@ describe("Crownline 时间轴", () => {
     expect(new URLSearchParams(window.location.search).has("mode")).toBe(false);
   });
 
+  it("切换地图时保留年份控件并在返回时间轴后恢复原浏览模式", async () => {
+    const user = userEvent.setup();
+    renderApp();
+
+    await user.click(screen.getByRole("button", { name: "时间点" }));
+    await user.click(screen.getByRole("button", { name: "地图" }));
+
+    expect(screen.getByLabelText("当前年份")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "全览" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "时间点" })).not.toBeInTheDocument();
+    expect(new URLSearchParams(window.location.search).get("view")).toBe("map");
+
+    await user.click(screen.getByRole("button", { name: "时间轴" }));
+
+    expect(screen.getByRole("button", { name: "时间点" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    expect(screen.getByRole("region", { name: "1922 年时间点结果" })).toBeInTheDocument();
+    expect(new URLSearchParams(window.location.search).has("view")).toBe(false);
+  });
+
   it("在时间点模式切换全球已收录并同步覆盖说明与 URL", async () => {
     const user = userEvent.setup();
     renderApp();
