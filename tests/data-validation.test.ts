@@ -3,11 +3,17 @@ import { describe, expect, it } from "vitest";
 import { validateCrownlineData } from "../src/domain/dataValidation";
 import type {
   CrownlineData,
+  GeographicSnapshot,
   HistoricalEntity,
   Person,
   Reign,
   ReignVacancy
 } from "../src/domain/types";
+
+const period = (start: number, end: number) => ({
+  start: { year: start, precision: "exact" as const },
+  end: { year: end, precision: "exact" as const }
+});
 
 function makeEntity(overrides: Partial<HistoricalEntity> = {}): HistoricalEntity {
   return {
@@ -79,6 +85,30 @@ function makeValidData(): CrownlineData {
   };
 }
 
+function makeGeographicSnapshot(
+  overrides: Partial<GeographicSnapshot> = {}
+): GeographicSnapshot {
+  return {
+    id: "geo-polity-test-capital",
+    polityId: "polity-cn-test",
+    periods: [period(1, 10)],
+    placeName: "甲城",
+    role: "capital",
+    coordinates: { latitude: 30, longitude: 110 },
+    positionPrecision: "approximate",
+    positionNote: "现代坐标仅用于示意历史地点。",
+    sourceRefs: [{ sourceId: "source-test" }],
+    confidence: "high",
+    ...overrides
+  };
+}
+
+function makeValidDataWithGeography(): CrownlineData {
+  const data = makeValidData();
+  data.geographicSnapshots.push(makeGeographicSnapshot());
+  return data;
+}
+
 function issueCodes(input: unknown): string[] {
   return validateCrownlineData(input).issues.map((issue) => issue.code);
 }
@@ -110,46 +140,18 @@ describe("JSON Schema 结构校验", () => {
   });
 
   it("接受带来源地理快照的数据契约 v4", () => {
-    const data = makeValidData();
-    data.geographicSnapshots.push({
-      id: "geo-polity-test-capital",
-      polityId: "polity-cn-test",
-      periods: [{
-        start: { year: 1, precision: "exact" },
-        end: { year: 10, precision: "exact" }
-      }],
-      placeName: "甲城",
-      role: "capital",
-      coordinates: { latitude: 30, longitude: 110 },
-      positionPrecision: "approximate",
-      positionNote: "现代坐标仅用于示意历史地点。",
-      sourceRefs: [{ sourceId: "source-test" }],
-      confidence: "high"
+    expect(validateCrownlineData(makeValidDataWithGeography())).toEqual({
+      valid: true,
+      issues: []
     });
-
-    expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
   });
 
   it.each([
     ["纬度", { latitude: 91, longitude: 110 }],
     ["经度", { latitude: 30, longitude: 181 }]
   ])("拒绝超出范围的%s", (_label, coordinates) => {
-    const data = makeValidData();
-    data.geographicSnapshots.push({
-      id: "geo-polity-test-capital",
-      polityId: "polity-cn-test",
-      periods: [{
-        start: { year: 1, precision: "exact" },
-        end: { year: 10, precision: "exact" }
-      }],
-      placeName: "甲城",
-      role: "capital",
-      coordinates,
-      positionPrecision: "approximate",
-      positionNote: "现代坐标仅用于示意历史地点。",
-      sourceRefs: [{ sourceId: "source-test" }],
-      confidence: "high"
-    });
+    const data = makeValidDataWithGeography();
+    data.geographicSnapshots[0]!.coordinates = coordinates;
 
     expect(issueCodes(data)).toContain("SCHEMA_ERROR");
   });
@@ -172,6 +174,63 @@ describe("JSON Schema 结构校验", () => {
 });
 
 describe("跨记录语义校验", () => {
+  const invalidGeographicSnapshots: Array<[
+    string,
+    Partial<GeographicSnapshot>,
+    string
+  ]> = [
+    ["悬空政权", { polityId: "polity-missing" }, "DANGLING_ENTITY_REF"],
+    ["悬空来源", { sourceRefs: [{ sourceId: "source-missing" }] }, "DANGLING_SOURCE_REF"],
+    ["倒置区间", { periods: [period(8, 7)] }, "INVALID_INTERVAL"],
+    ["越过政权存在期", { periods: [period(1, 11)] }, "GEOGRAPHY_OUTSIDE_POLITY"],
+    ["空位置说明", { positionNote: "   " }, "EMPTY_POSITION_NOTE"],
+    ["争议说明缺失", { confidence: "disputed" }, "MISSING_CONFIDENCE_NOTE"]
+  ];
+
+  it.each(invalidGeographicSnapshots)("拒绝地理快照的%s", (_label, overrides, code) => {
+    const data = makeValidData();
+    data.geographicSnapshots.push(makeGeographicSnapshot(overrides));
+
+    expect(issueCodes(data)).toContain(code);
+  });
+
+  it("拒绝地理快照引用历史分期", () => {
+    const data = makeValidData();
+    data.entities.push(makeEntity({
+      id: "period-test",
+      entityKind: "historical-period",
+      polityForms: []
+    }));
+    data.geographicSnapshots.push(makeGeographicSnapshot({ polityId: "period-test" }));
+
+    expect(issueCodes(data)).toContain("INVALID_GEOGRAPHIC_POLITY");
+  });
+
+  it("拒绝重叠、相邻和内容重复的地理快照", () => {
+    const overlapping = makeValidData();
+    overlapping.geographicSnapshots.push(makeGeographicSnapshot({
+      periods: [period(1, 5), period(5, 10)]
+    }));
+    expect(issueCodes(overlapping)).toContain("OVERLAPPING_INTERVALS");
+
+    const adjacent = makeValidData();
+    adjacent.geographicSnapshots.push(makeGeographicSnapshot({
+      periods: [period(1, 5), period(6, 10)]
+    }));
+    expect(issueCodes(adjacent)).toContain("ADJACENT_INTERVALS");
+
+    const duplicate = makeValidDataWithGeography();
+    duplicate.geographicSnapshots.push(makeGeographicSnapshot({ id: "geo-polity-test-copy" }));
+    expect(issueCodes(duplicate)).toContain("DUPLICATE_GEOGRAPHIC_SNAPSHOT");
+  });
+
+  it("把地理快照 ID 纳入全局命名空间", () => {
+    const data = makeValidData();
+    data.geographicSnapshots.push(makeGeographicSnapshot({ id: "polity-cn-test" }));
+
+    expect(issueCodes(data)).toContain("DUPLICATE_ID");
+  });
+
   it("发现全局重复 ID", () => {
     const data = makeValidData();
     data.regions[0]!.id = data.entities[0]!.id;

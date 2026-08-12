@@ -88,6 +88,17 @@ function periodsOverlap(
   });
 }
 
+/** 判断一个业务区间是否完整落在某一个存在分段中。 */
+function periodIsContained(
+  period: HistoricalInterval,
+  containerPeriods: HistoricalInterval[]
+): boolean {
+  return containerPeriods.some((container) => {
+    return toOrdinal(period.start.year) >= toOrdinal(container.start.year) &&
+      toOrdinal(period.end.year) <= toOrdinal(container.end.year);
+  });
+}
+
 /** 检查业务记录引用的来源是否存在。 */
 function validateSourceRefs(
   refs: SourceRef[],
@@ -154,6 +165,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
     ...data.reignVacancies,
     ...data.relationships,
     ...data.events,
+    ...data.geographicSnapshots,
     ...data.sources
   ];
   const firstPathById = new Map<string, string>();
@@ -312,10 +324,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
     } else {
       reign.periods.forEach((period, periodIndex) => {
         // 区间必须完整落在同一个存在分段中，不能跨越唐、复立政权等中断期。
-        const contained = polity.existencePeriods.some((existencePeriod) => {
-          return toOrdinal(period.start.year) >= toOrdinal(existencePeriod.start.year) &&
-            toOrdinal(period.end.year) <= toOrdinal(existencePeriod.end.year);
-        });
+        const contained = periodIsContained(period, polity.existencePeriods);
         if (!contained) {
           issues.push({
             code: "REIGN_OUTSIDE_POLITY",
@@ -347,10 +356,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
       });
     } else {
       vacancy.periods.forEach((period, periodIndex) => {
-        const contained = polity.existencePeriods.some((existencePeriod) => {
-          return toOrdinal(period.start.year) >= toOrdinal(existencePeriod.start.year) &&
-            toOrdinal(period.end.year) <= toOrdinal(existencePeriod.end.year);
-        });
+        const contained = periodIsContained(period, polity.existencePeriods);
         if (!contained) {
           issues.push({
             code: "VACANCY_OUTSIDE_POLITY",
@@ -476,6 +482,67 @@ export function validateCrownlineData(input: unknown): ValidationResult {
     validatePeriods(event.periods, `${path}/periods`, issues);
     validateSourceRefs(event.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
     validateConfidenceNote(event.confidence, event.confidenceNote, `${path}/confidenceNote`, issues);
+  });
+
+  const geographicKeys = new Set<string>();
+  data.geographicSnapshots.forEach((snapshot, snapshotIndex) => {
+    const path = `/geographicSnapshots/${snapshotIndex}`;
+    const polity = entityById.get(snapshot.polityId);
+    if (!polity) {
+      issues.push({
+        code: "DANGLING_ENTITY_REF",
+        path: `${path}/polityId`,
+        message: `政权 ${snapshot.polityId} 不存在`
+      });
+    } else if (polity.entityKind !== "polity") {
+      issues.push({
+        code: "INVALID_GEOGRAPHIC_POLITY",
+        path: `${path}/polityId`,
+        message: `地理快照只能引用政权，${snapshot.polityId} 是历史分期`
+      });
+    } else {
+      snapshot.periods.forEach((period, periodIndex) => {
+        if (!periodIsContained(period, polity.existencePeriods)) {
+          issues.push({
+            code: "GEOGRAPHY_OUTSIDE_POLITY",
+            path: `${path}/periods/${periodIndex}`,
+            message: `地理快照必须完整落在政权 ${snapshot.polityId} 的存在区间内`
+          });
+        }
+      });
+    }
+
+    if (!snapshot.positionNote.trim()) {
+      issues.push({
+        code: "EMPTY_POSITION_NOTE",
+        path: `${path}/positionNote`,
+        message: "地理快照必须说明坐标口径或示意限制"
+      });
+    }
+
+    const geographicKey = JSON.stringify([
+      snapshot.polityId,
+      snapshot.placeName,
+      snapshot.role,
+      snapshot.periods.map(({ start, end }) => [start.year, end.year])
+    ]);
+    if (geographicKeys.has(geographicKey)) {
+      issues.push({
+        code: "DUPLICATE_GEOGRAPHIC_SNAPSHOT",
+        path,
+        message: "同一政权、地点、角色和适用区间的地理快照重复"
+      });
+    }
+    geographicKeys.add(geographicKey);
+
+    validatePeriods(snapshot.periods, `${path}/periods`, issues);
+    validateSourceRefs(snapshot.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
+    validateConfidenceNote(
+      snapshot.confidence,
+      snapshot.confidenceNote,
+      `${path}/confidenceNote`,
+      issues
+    );
   });
 
   return { valid: issues.length === 0, issues };
