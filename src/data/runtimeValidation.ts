@@ -1,5 +1,20 @@
 import type { ValidationIssue, ValidationResult } from "../domain/dataValidation";
-import type { CrownlineDetail, CrownlineIndex } from "../domain/types";
+import {
+  CONFIDENCE_LEVELS,
+  DATE_PRECISIONS,
+  GEOGRAPHIC_ROLES,
+  POSITION_PRECISIONS,
+  type CrownlineDetail,
+  type CrownlineGeography,
+  type CrownlineIndex,
+  type GeographicSnapshot,
+  type Source
+} from "../domain/types";
+
+export interface GeographyLoadResult {
+  geography: CrownlineGeography;
+  omittedCount: number;
+}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -18,6 +33,46 @@ function hasPeriods(value: unknown): boolean {
     return isRecord(period) && isRecord(period.start) && isRecord(period.end) &&
       typeof period.start.year === "number" && typeof period.end.year === "number";
   });
+}
+
+function hasValidGeographicPeriods(value: unknown): boolean {
+  return Array.isArray(value) && value.length > 0 && value.every((period) => {
+    if (!isRecord(period) || !isRecord(period.start) || !isRecord(period.end)) return false;
+    const start = period.start;
+    const end = period.end;
+    const startYear = start.year;
+    const endYear = end.year;
+    return Number.isInteger(startYear) && startYear !== 0 &&
+      Number.isInteger(endYear) && endYear !== 0 &&
+      (startYear as number) <= (endYear as number) &&
+      DATE_PRECISIONS.some((precision) => precision === start.precision) &&
+      DATE_PRECISIONS.some((precision) => precision === end.precision);
+  });
+}
+
+function hasValidSourceRefs(value: unknown, sourceIds: Set<string>): boolean {
+  return Array.isArray(value) && value.length > 0 && value.every((ref) => {
+    return isRecord(ref) && typeof ref.sourceId === "string" && sourceIds.has(ref.sourceId) &&
+      (ref.locator === undefined || typeof ref.locator === "string") &&
+      (ref.note === undefined || typeof ref.note === "string");
+  });
+}
+
+function isValidGeographicSnapshot(value: unknown, sourceIds: Set<string>): value is GeographicSnapshot {
+  if (!isRecord(value) || !isRecord(value.coordinates)) return false;
+  const { latitude, longitude } = value.coordinates;
+  return typeof value.id === "string" && value.id.length > 0 &&
+    typeof value.polityId === "string" && value.polityId.length > 0 &&
+    hasValidGeographicPeriods(value.periods) &&
+    typeof value.placeName === "string" && value.placeName.trim().length > 0 &&
+    GEOGRAPHIC_ROLES.some((role) => role === value.role) &&
+    typeof latitude === "number" && Number.isFinite(latitude) && latitude >= -90 && latitude <= 90 &&
+    typeof longitude === "number" && Number.isFinite(longitude) && longitude >= -180 && longitude <= 180 &&
+    POSITION_PRECISIONS.some((precision) => precision === value.positionPrecision) &&
+    typeof value.positionNote === "string" && value.positionNote.trim().length > 0 &&
+    hasValidSourceRefs(value.sourceRefs, sourceIds) &&
+    CONFIDENCE_LEVELS.some((confidence) => confidence === value.confidence) &&
+    (value.confidenceNote === undefined || typeof value.confidenceNote === "string");
 }
 
 function requireField(
@@ -233,6 +288,60 @@ export function asCrownlineDetail(input: unknown, entityId: string): CrownlineDe
   const result = validateCrownlineDetail(input, entityId);
   if (!result.valid) throw new Error(formatRuntimeIssues("详情数据校验失败", result));
   return input as CrownlineDetail;
+}
+
+/** 严格校验地理根对象，并逐条隔离无法安全使用的地理快照。 */
+export function asCrownlineGeography(input: unknown): GeographyLoadResult {
+  const issues: ValidationIssue[] = [];
+  if (!isRecord(input)) {
+    throw new Error(formatRuntimeIssues("地理数据校验失败", {
+      valid: false,
+      issues: [{ code: "SCHEMA_ERROR", path: "/", message: "地理数据必须是对象" }]
+    }));
+  }
+  if (input.schemaVersion !== 4) {
+    issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 4" });
+  }
+  if (!Array.isArray(input.geographicSnapshots)) {
+    issues.push({
+      code: "SCHEMA_ERROR",
+      path: "/geographicSnapshots",
+      message: "geographicSnapshots 必须是数组"
+    });
+  }
+  const sources = requireRecordArray(input, "sources", issues);
+  const sourceIds = new Set<string>();
+  sources.forEach((source, index) => {
+    const valid = typeof source.id === "string" && source.id.length > 0 &&
+      typeof source.title === "string" && source.title.trim().length > 0 &&
+      typeof source.citation === "string" && source.citation.trim().length > 0 &&
+      typeof source.sourceType === "string";
+    if (!valid || (typeof source.id === "string" && sourceIds.has(source.id))) {
+      issues.push({
+        code: "SCHEMA_ERROR",
+        path: `/sources/${index}`,
+        message: "来源缺少必需字段或 ID 重复"
+      });
+      return;
+    }
+    sourceIds.add(source.id as string);
+  });
+  if (issues.length > 0) {
+    throw new Error(formatRuntimeIssues("地理数据校验失败", { valid: false, issues }));
+  }
+
+  const snapshots = input.geographicSnapshots as unknown[];
+  const validSnapshots = snapshots.filter((snapshot) => {
+    return isValidGeographicSnapshot(snapshot, sourceIds);
+  });
+  return {
+    geography: {
+      schemaVersion: 4,
+      geographicSnapshots: validSnapshots,
+      sources: sources as unknown as Source[]
+    },
+    omittedCount: snapshots.length - validSnapshots.length
+  };
 }
 
 function formatRuntimeIssues(label: string, result: ValidationResult): string {

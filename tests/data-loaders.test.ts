@@ -3,8 +3,10 @@ import { describe, expect, it } from "vitest";
 import { loadSourceData } from "../scripts/data-source";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import { createCrownlineDetailLoader } from "../src/data/loadCrownlineDetail";
+import { loadGeneratedGeography } from "../src/data/loadCrownlineGeography";
 import { loadCrownlineIndex } from "../src/data/loadCrownlineIndex";
 import {
+  asCrownlineGeography,
   validateCrownlineDetail,
   validateCrownlineIndex
 } from "../src/data/runtimeValidation";
@@ -12,6 +14,7 @@ import type { CrownlineDetail, CrownlineIndex } from "../src/domain/types";
 
 const artifacts = buildGeneratedArtifacts(await loadSourceData());
 const index = artifacts.index;
+const geography = artifacts.geography;
 const tangDetail = artifacts.details.get("polity-cn-tang");
 if (!tangDetail) throw new Error("缺少唐详情测试数据");
 
@@ -103,6 +106,26 @@ describe("运行时数据校验", () => {
       expect.objectContaining({ code: "SCHEMA_ERROR", path: `/${key}` })
     );
   });
+
+  it("严格拒绝缺少必需根字段的地理数据", () => {
+    expect(() => asCrownlineGeography({ schemaVersion: 4 })).toThrow("地理数据校验失败");
+  });
+
+  it("逐条隔离损坏的地理快照且不修改输入", () => {
+    const validSnapshot = geography.geographicSnapshots[0];
+    if (!validSnapshot) throw new Error("缺少地理快照测试数据");
+    const input = {
+      ...structuredClone(geography),
+      geographicSnapshots: [structuredClone(validSnapshot), { broken: true }]
+    };
+    const original = structuredClone(input);
+
+    const result = asCrownlineGeography(input);
+
+    expect(result.geography.geographicSnapshots).toEqual([validSnapshot]);
+    expect(result.omittedCount).toBe(1);
+    expect(input).toEqual(original);
+  });
 });
 
 describe("运行时数据加载", () => {
@@ -159,5 +182,29 @@ describe("运行时数据加载", () => {
 
     await expect(loadDetail("polity-not-indexed")).resolves.toBeNull();
     expect(requested).toBe(false);
+  });
+
+  it("从文档基准地址按需加载独立地理数据", async () => {
+    const urls: string[] = [];
+    const fetcher = async (input: RequestInfo | URL) => {
+      urls.push(String(input));
+      return jsonResponse(geography);
+    };
+
+    await expect(loadGeneratedGeography(fetcher)).resolves.toEqual({
+      geography,
+      omittedCount: 0
+    });
+    expect(urls).toEqual([
+      String(new URL("./data/generated/geography.json", document.baseURI))
+    ]);
+  });
+
+  it("用明确状态描述地理数据请求失败", async () => {
+    const fetcher = async () => jsonResponse({ message: "unavailable" }, 503);
+
+    await expect(loadGeneratedGeography(fetcher)).rejects.toThrow(
+      "无法加载地理数据（HTTP 503）"
+    );
   });
 });
