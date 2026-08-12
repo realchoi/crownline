@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { DetailDialog } from "../components/DetailDialog";
+import { ComparisonPanel } from "../components/ComparisonPanel";
 import type { DetailLoadState } from "../components/DetailLoadPanel";
 import { FilterPanel } from "../components/FilterPanel";
 import { Timeline } from "../components/Timeline";
@@ -26,7 +27,7 @@ interface AppProps {
 export function App({ data, loadDetail }: AppProps) {
   const yearBounds = useMemo(() => getHistoricalYearBounds(data), [data]);
   const [browseState, setBrowseState] = useState<BrowseState>(() => {
-    return readBrowseState(window.location.search, yearBounds, data.regions);
+    return readBrowseState(window.location.search, yearBounds, data.regions, data.entities);
   });
   const [selectedEntityId, setSelectedEntityId] = useState<string | null>(null);
   const [detailState, setDetailState] = useState<DetailLoadState>({ status: "missing" });
@@ -63,6 +64,25 @@ export function App({ data, loadDetail }: AppProps) {
       regionScope: browseState.regionScope
     }).all.length;
   }, [browseState.regionScope, data]);
+  const comparisonEntities = useMemo(() => {
+    return browseState.compareEntityIds.flatMap((entityId) => {
+      const entity = data.entities.find(({ id }) => id === entityId);
+      return entity ? [entity] : [];
+    });
+  }, [browseState.compareEntityIds, data.entities]);
+
+  const toggleComparison = useCallback((entityId: string) => {
+    setBrowseState((current) => {
+      if (current.compareEntityIds.includes(entityId)) {
+        return {
+          ...current,
+          compareEntityIds: current.compareEntityIds.filter((id) => id !== entityId)
+        };
+      }
+      if (current.compareEntityIds.length >= 2) return current;
+      return { ...current, compareEntityIds: [...current.compareEntityIds, entityId] };
+    });
+  }, []);
 
   useEffect(() => {
     const params = writeBrowseState(browseState, yearBounds, window.location.search);
@@ -195,6 +215,19 @@ export function App({ data, loadDetail }: AppProps) {
           )}
         </div>
 
+        {comparisonEntities.length > 0 && (
+          <ComparisonPanel
+            entities={comparisonEntities}
+            regions={data.regions}
+            {...(browseState.mode === "point" ? { currentYear: browseState.year } : {})}
+            loadDetail={loadDetail}
+            onRemove={toggleComparison}
+            onClear={() => {
+              setBrowseState((current) => ({ ...current, compareEntityIds: [] }));
+            }}
+          />
+        )}
+
         {browseState.mode === "overview" ? (
           <Timeline
             data={data}
@@ -202,6 +235,8 @@ export function App({ data, loadDetail }: AppProps) {
             regions={data.regions}
             regionScope={browseState.regionScope}
             emptyReason={results.polityEmptyReason}
+            comparisonEntityIds={browseState.compareEntityIds}
+            onToggleComparison={toggleComparison}
             onSelect={openDetail}
           />
         ) : (
@@ -212,6 +247,8 @@ export function App({ data, loadDetail }: AppProps) {
             regions={data.regions}
             regionScope={browseState.regionScope}
             polityEmptyReason={results.polityEmptyReason}
+            comparisonEntityIds={browseState.compareEntityIds}
+            onToggleComparison={toggleComparison}
             onSelect={openDetail}
           />
         )}

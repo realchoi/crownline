@@ -12,6 +12,8 @@ interface TimelineProps {
   regions: Region[];
   regionScope: RegionScope;
   emptyReason: "unindexed" | "limited-coverage" | "filtered-out" | null;
+  comparisonEntityIds: string[];
+  onToggleComparison: (entityId: string) => void;
   onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
 }
 
@@ -22,6 +24,8 @@ export function Timeline({
   regions,
   regionScope,
   emptyReason,
+  comparisonEntityIds,
+  onToggleComparison,
   onSelect
 }: TimelineProps) {
   const groups = buildOverviewTimelineGroups(data, matches, regionScope);
@@ -83,6 +87,8 @@ export function Timeline({
           regions={regions}
           scaleRange={sharedRange ?? group.range}
           showAxis={!sharedRange}
+          comparisonEntityIds={comparisonEntityIds}
+          onToggleComparison={onToggleComparison}
           onSelect={onSelect}
         />
       ))}

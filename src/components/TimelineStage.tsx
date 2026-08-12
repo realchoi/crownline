@@ -1,6 +1,7 @@
 import { fromOrdinal, formatHistoricalYear, formatPeriods, toOrdinal } from "../domain/chronology";
 import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
 import type { Region } from "../domain/types";
+import { ComparisonToggle } from "./ComparisonToggle";
 import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 
 /** 单个时间轴分组的渲染参数；多地区模式可注入共享比例。 */
@@ -9,6 +10,8 @@ interface TimelineStageProps {
   regions: Region[];
   scaleRange?: OverviewTimelineGroup["range"];
   showAxis?: boolean;
+  comparisonEntityIds: string[];
+  onToggleComparison: (entityId: string) => void;
   onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
 }
 
@@ -21,6 +24,8 @@ export function TimelineStage({
   regions,
   scaleRange = group.range,
   showAxis = true,
+  comparisonEntityIds,
+  onToggleComparison,
   onSelect
 }: TimelineStageProps) {
   const startOrdinal = toOrdinal(scaleRange.startYear);
@@ -51,6 +56,7 @@ export function TimelineStage({
 
       {group.matches.map(({ entity }) => {
         const displayRange = formatPeriods(entity.existencePeriods, entity.displayRangeOverride);
+        const comparisonSelected = comparisonEntityIds.includes(entity.id);
         const regionNames = group.kind === "cross-region"
           ? entity.historicalRegionIds.flatMap((regionId) => {
               const region = regions.find(({ id }) => id === regionId);
@@ -58,7 +64,10 @@ export function TimelineStage({
             })
           : [];
         return (
-          <div className="timeline-row" key={entity.id}>
+          <div
+            className={`timeline-row${comparisonSelected ? " is-comparison-selected" : ""}`}
+            key={entity.id}
+          >
             <div className="row-label">
               <div className="row-name" title={entity.names.primary}>
                 {entity.names.primary}
@@ -70,6 +79,14 @@ export function TimelineStage({
                 <div className="row-regions" title={regionNames.join(" · ")}>
                   {regionNames.join(" · ")}
                 </div>
+              )}
+              {entity.entityKind === "polity" && (
+                <ComparisonToggle
+                  entityName={entity.names.primary}
+                  selected={comparisonSelected}
+                  disabled={comparisonEntityIds.length >= 2}
+                  onToggle={() => onToggleComparison(entity.id)}
+                />
               )}
             </div>
             <div className="track">

@@ -2,6 +2,7 @@ import { formatHistoricalYear, formatPeriods } from "../domain/chronology";
 import type { MatchedEntity } from "../domain/selectors";
 import type { RegionScope } from "../domain/regionScope";
 import type { Region } from "../domain/types";
+import { ComparisonToggle } from "./ComparisonToggle";
 import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 
 interface TimepointViewProps {
@@ -11,17 +12,23 @@ interface TimepointViewProps {
   regions: Region[];
   regionScope: RegionScope;
   polityEmptyReason: "unindexed" | "limited-coverage" | "filtered-out" | null;
+  comparisonEntityIds: string[];
+  onToggleComparison: (entityId: string) => void;
   onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
 }
 
 function TimepointCard({
   match,
   onSelect,
-  regions
+  regions,
+  comparisonEntityIds,
+  onToggleComparison
 }: {
   match: MatchedEntity;
   onSelect: TimepointViewProps["onSelect"];
   regions: Region[];
+  comparisonEntityIds: string[];
+  onToggleComparison: TimepointViewProps["onToggleComparison"];
 }) {
   const { entity, section } = match;
   const regionNames = entity.historicalRegionIds.flatMap((regionId) => {
@@ -33,29 +40,40 @@ function TimepointCard({
     return period.start.precision !== "exact" || period.end.precision !== "exact";
   });
 
+  const comparisonSelected = comparisonEntityIds.includes(entity.id);
   return (
-    <button
-      className={`timepoint-card timepoint-${entity.displayCategory}`}
-      type="button"
-      aria-label={`${entity.names.primary}，${periods}，${DISPLAY_CATEGORY_NAMES[entity.displayCategory]}。点击查看详情。`}
-      onClick={(event) => onSelect(entity.id, event.currentTarget)}
-    >
-      <span className="timepoint-card-topline">
-        <span className={`type-badge detail-${entity.displayCategory}`}>
-          {DISPLAY_CATEGORY_NAMES[entity.displayCategory]}
+    <div className={`timepoint-card-shell${comparisonSelected ? " is-comparison-selected" : ""}`}>
+      <button
+        className={`timepoint-card timepoint-${entity.displayCategory}`}
+        type="button"
+        aria-label={`${entity.names.primary}，${periods}，${DISPLAY_CATEGORY_NAMES[entity.displayCategory]}。点击查看详情。`}
+        onClick={(event) => onSelect(entity.id, event.currentTarget)}
+      >
+        <span className="timepoint-card-topline">
+          <span className={`type-badge detail-${entity.displayCategory}`}>
+            {DISPLAY_CATEGORY_NAMES[entity.displayCategory]}
+          </span>
+          <span className="timepoint-card-section">{section?.title ?? regionNames.join(" · ")}</span>
         </span>
-        <span className="timepoint-card-section">{section?.title ?? regionNames.join(" · ")}</span>
-      </span>
-      <strong className="timepoint-card-name">{entity.names.primary}</strong>
-      <span className="timepoint-card-periods">{periods}</span>
-      <span className="timepoint-card-regions">{regionNames.join(" · ")}</span>
-      {(isApproximate || entity.chronologyStatus === "disputed") && (
-        <span className="timepoint-card-flags">
-          {isApproximate && <span>年代约略</span>}
-          {entity.chronologyStatus === "disputed" && <span>年代有争议</span>}
-        </span>
+        <strong className="timepoint-card-name">{entity.names.primary}</strong>
+        <span className="timepoint-card-periods">{periods}</span>
+        <span className="timepoint-card-regions">{regionNames.join(" · ")}</span>
+        {(isApproximate || entity.chronologyStatus === "disputed") && (
+          <span className="timepoint-card-flags">
+            {isApproximate && <span>年代约略</span>}
+            {entity.chronologyStatus === "disputed" && <span>年代有争议</span>}
+          </span>
+        )}
+      </button>
+      {entity.entityKind === "polity" && (
+        <ComparisonToggle
+          entityName={entity.names.primary}
+          selected={comparisonSelected}
+          disabled={comparisonEntityIds.length >= 2}
+          onToggle={() => onToggleComparison(entity.id)}
+        />
       )}
-    </button>
+    </div>
   );
 }
 
@@ -67,6 +85,8 @@ export function TimepointView({
   regions,
   regionScope,
   polityEmptyReason,
+  comparisonEntityIds,
+  onToggleComparison,
   onSelect
 }: TimepointViewProps) {
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
@@ -120,7 +140,14 @@ export function TimepointView({
         {polities.length > 0 ? (
           <div className="timepoint-grid">
             {polities.map((match) => (
-              <TimepointCard key={match.entity.id} match={match} onSelect={onSelect} regions={regions} />
+              <TimepointCard
+                key={match.entity.id}
+                match={match}
+                onSelect={onSelect}
+                regions={regions}
+                comparisonEntityIds={comparisonEntityIds}
+                onToggleComparison={onToggleComparison}
+              />
             ))}
           </div>
         ) : (
@@ -149,7 +176,14 @@ export function TimepointView({
         {historicalPeriods.length > 0 ? (
           <div className="timepoint-grid context-grid">
             {historicalPeriods.map((match) => (
-              <TimepointCard key={match.entity.id} match={match} onSelect={onSelect} regions={regions} />
+              <TimepointCard
+                key={match.entity.id}
+                match={match}
+                onSelect={onSelect}
+                regions={regions}
+                comparisonEntityIds={comparisonEntityIds}
+                onToggleComparison={onToggleComparison}
+              />
             ))}
           </div>
         ) : (

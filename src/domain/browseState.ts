@@ -1,5 +1,5 @@
 import type { RegionScope } from "./regionScope";
-import type { BrowseData, DisplayCategory, Region } from "./types";
+import type { BrowseData, DisplayCategory, HistoricalEntity, Region } from "./types";
 import type { CategoryFilter } from "./selectors";
 
 export type BrowseMode = "overview" | "point";
@@ -15,6 +15,7 @@ export interface BrowseState {
   query: string;
   category: CategoryFilter;
   regionScope: RegionScope;
+  compareEntityIds: string[];
 }
 
 const VALID_CATEGORIES = new Set<CategoryFilter>([
@@ -45,7 +46,8 @@ export function getHistoricalYearBounds(data: Pick<BrowseData, "entities">): His
 export function readBrowseState(
   search: string,
   bounds: HistoricalYearBounds,
-  regions: Region[] = []
+  regions: Region[] = [],
+  entities: HistoricalEntity[] = []
 ): BrowseState {
   const params = new URLSearchParams(search);
   const rawYear = Number(params.get("year"));
@@ -67,6 +69,12 @@ export function readBrowseState(
     : rawScope === "custom" && customRegionIds.length > 0
       ? { mode: "custom", regionIds: customRegionIds }
       : { mode: "china" };
+  const polityIds = new Set(
+    entities.filter(({ entityKind }) => entityKind === "polity").map(({ id }) => id)
+  );
+  const compareEntityIds = [...new Set(params.getAll("compare"))]
+    .filter((id) => polityIds.has(id))
+    .slice(0, 2);
 
   return {
     mode,
@@ -75,7 +83,8 @@ export function readBrowseState(
     category: VALID_CATEGORIES.has(mappedCategory as CategoryFilter)
       ? (mappedCategory as CategoryFilter)
       : "all",
-    regionScope
+    regionScope,
+    compareEntityIds
   };
 }
 
@@ -86,7 +95,8 @@ export function writeBrowseState(
   currentSearch = ""
 ): URLSearchParams {
   const params = new URLSearchParams(currentSearch);
-  ["mode", "year", "q", "type", "scope", "region"].forEach((name) => params.delete(name));
+  ["mode", "year", "q", "type", "scope", "region", "compare"]
+    .forEach((name) => params.delete(name));
 
   if (state.mode === "point") params.set("mode", "point");
   if (state.year !== bounds.max) params.set("year", String(state.year));
@@ -99,5 +109,8 @@ export function writeBrowseState(
       params.append("region", regionId);
     });
   }
+  [...new Set(state.compareEntityIds)].slice(0, 2).forEach((entityId) => {
+    params.append("compare", entityId);
+  });
   return params;
 }

@@ -21,7 +21,8 @@ describe("浏览状态", () => {
       year: -221,
       query: "秦",
       category: "contemporary",
-      regionScope: { mode: "china" }
+      regionScope: { mode: "china" },
+      compareEntityIds: []
     });
   });
 
@@ -31,7 +32,8 @@ describe("浏览状态", () => {
       year: 1922,
       query: "",
       category: "all",
-      regionScope: { mode: "china" }
+      regionScope: { mode: "china" },
+      compareEntityIds: []
     });
     expect(readBrowseState("?mode=point&year=-9999", bounds).year).toBe(-2070);
     expect(readBrowseState("?mode=point&year=9999", bounds).year).toBe(1922);
@@ -44,7 +46,8 @@ describe("浏览状态", () => {
         year: -221,
         query: "  秦  ",
         category: "mainline",
-        regionScope: { mode: "china" }
+        regionScope: { mode: "china" },
+        compareEntityIds: []
       },
       bounds,
       "?ref=shared"
@@ -60,7 +63,8 @@ describe("浏览状态", () => {
         year: 1922,
         query: "",
         category: "all",
-        regionScope: { mode: "china" }
+        regionScope: { mode: "china" },
+        compareEntityIds: []
       },
       bounds
     );
@@ -89,7 +93,8 @@ describe("浏览状态", () => {
         year: 1000,
         query: "",
         category: "all",
-        regionScope: { mode: "custom", regionIds: ["region-south-asia", "region-europe"] }
+        regionScope: { mode: "custom", regionIds: ["region-south-asia", "region-europe"] },
+        compareEntityIds: []
       },
       bounds
     );
@@ -103,7 +108,8 @@ describe("浏览状态", () => {
         year: 1000,
         query: "",
         category: "all",
-        regionScope: { mode: "global" }
+        regionScope: { mode: "global" },
+        compareEntityIds: []
       },
       bounds
     );
@@ -120,7 +126,8 @@ describe("浏览状态", () => {
         year: 1922,
         query: "",
         category: "all",
-        regionScope: { mode: "global" }
+        regionScope: { mode: "global" },
+        compareEntityIds: []
       },
       bounds
     );
@@ -144,5 +151,39 @@ describe("浏览状态", () => {
     expect(writeBrowseState(state, bounds).toString()).toBe(
       "scope=custom&region=region-europe&region=region-west-asia"
     );
+  });
+
+  it("恢复对比政权时去重、过滤无效实体并保留前两个顺序", () => {
+    const state = readBrowseState(
+      [
+        "?compare=polity-cn-tang",
+        "compare=period-cn-spring-autumn",
+        "compare=polity-missing",
+        "compare=polity-cn-tang",
+        "compare=polity-cn-ming",
+        "compare=polity-cn-qing"
+      ].join("&"),
+      bounds,
+      data.regions,
+      data.entities
+    );
+
+    expect(state.compareEntityIds).toEqual(["polity-cn-tang", "polity-cn-ming"]);
+  });
+
+  it("按左右顺序序列化两个对比政权", () => {
+    const params = writeBrowseState(
+      {
+        mode: "overview",
+        year: 1922,
+        query: "",
+        category: "all",
+        regionScope: { mode: "china" },
+        compareEntityIds: ["polity-cn-ming", "polity-cn-tang"]
+      },
+      bounds
+    );
+
+    expect(params.toString()).toBe("compare=polity-cn-ming&compare=polity-cn-tang");
   });
 });
