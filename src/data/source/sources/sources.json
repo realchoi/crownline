@@ -725,5 +725,14 @@
     "publisher": "National Institute of Korean History",
     "url": "https://contents.history.go.kr/resources/common/pdf/A%20History%20of%20Korea_The%20Understanding%20Korea%20Series.pdf",
     "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-geonames",
+    "title": "GeoNames Geographical Database",
+    "sourceType": "dataset",
+    "citation": "GeoNames geographical database；用于将历史地点对应到现代 WGS 84 示意坐标，数据采用 CC BY 4.0。",
+    "publisher": "GeoNames",
+    "url": "https://www.geonames.org/",
+    "accessedAt": "2026-08-12"
   }
 ]

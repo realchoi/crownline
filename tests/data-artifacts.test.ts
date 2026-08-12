@@ -61,7 +61,11 @@ describe("运行时数据产物", () => {
       schemaVersion: 4,
       geographicSnapshots: fixture.geographicSnapshots
     });
-    expect(geography.sources.map(({ id }) => id)).toEqual(["source-map-test"]);
+    const geographySourceIds = geography.sources.map(({ id }) => id);
+    expect(geographySourceIds).toContain("source-map-test");
+    expect(geographySourceIds).not.toContain("source-map-unrelated");
+    expect(geography.geographicSnapshots.flatMap(({ sourceRefs }) => sourceRefs)
+      .every(({ sourceId }) => geographySourceIds.includes(sourceId))).toBe(true);
   });
 
   it("详情只收集目标政权的任期及其人物和来源闭包", () => {

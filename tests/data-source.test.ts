@@ -5,6 +5,7 @@ import { basename, join } from "node:path";
 
 import { loadSourceData } from "../scripts/data-source";
 import { generateData } from "../scripts/generate-data";
+import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import type { CrownlineData } from "../src/domain/types";
 
 const data: CrownlineData = await loadSourceData();
@@ -112,11 +113,9 @@ describe("源数据分片", () => {
     expect(await readJson(join(publicOutputRoot, "index.json"))).toMatchObject({
       schemaVersion: 4
     });
-    expect(await readJson(join(publicOutputRoot, "geography.json"))).toEqual({
-      schemaVersion: 4,
-      geographicSnapshots: data.geographicSnapshots,
-      sources: []
-    });
+    expect(await readJson(join(publicOutputRoot, "geography.json"))).toEqual(
+      buildGeneratedArtifacts(data).geography
+    );
     expect(await readJson(join(publicOutputRoot, "details", "polity-cn-tang.json"))).toMatchObject({
       entityId: "polity-cn-tang"
     });

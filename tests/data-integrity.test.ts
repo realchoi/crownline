@@ -7,6 +7,7 @@ import { validateCrownlineData } from "../src/domain/dataValidation";
 import { selectRulerSnapshot } from "../src/domain/rulerSnapshot";
 import { RELATIONSHIP_TYPES } from "../src/domain/types";
 import { GLOBAL_SAMPLE_POLITY_IDS } from "./global-sample-polities";
+import { WORLD_MAP_POLITY_IDS } from "./map-sample-polities";
 
 const data = await loadSourceData();
 const details = buildGeneratedArtifacts(data).details;
@@ -95,6 +96,21 @@ describe("生产历史数据", () => {
     );
     for (const entityId of GLOBAL_SAMPLE_POLITY_IDS) {
       expect(data.reigns.some(({ polityId }) => polityId === entityId), entityId).toBe(true);
+    }
+  });
+
+  it("为二十个世界样本政权提供三十七条可追溯地理快照", () => {
+    const worldSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
+      return WORLD_MAP_POLITY_IDS.some((id) => id === polityId);
+    });
+
+    expect(worldSnapshots).toHaveLength(37);
+    expect(worldSnapshots.every(({ sourceRefs }) => sourceRefs.length > 0)).toBe(true);
+    for (const polityId of WORLD_MAP_POLITY_IDS) {
+      expect(
+        worldSnapshots.some((snapshot) => snapshot.polityId === polityId),
+        polityId
+      ).toBe(true);
     }
   });
 
