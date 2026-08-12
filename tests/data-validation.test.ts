@@ -250,6 +250,64 @@ describe("跨记录语义校验", () => {
     expect(issueCodes(data)).toContain("DUPLICATE_RELATIONSHIP_PARTICIPANT");
   });
 
+  it("拒绝与任一参与政权存续期完全错位的关系", () => {
+    const data = makeValidData();
+    data.entities.push(makeEntity({
+      id: "polity-cn-later-test",
+      names: { primary: "后期测试政权", aliases: [] },
+      existencePeriods: [{
+        start: { year: 20, precision: "exact" },
+        end: { year: 30, precision: "exact" }
+      }]
+    }));
+    data.relationships.push({
+      id: "relationship-outside-participant",
+      type: "alliance",
+      participants: [
+        { entityId: "polity-cn-test", role: "盟约方" },
+        { entityId: "polity-cn-later-test", role: "盟约方" }
+      ],
+      periods: [{
+        start: { year: 2, precision: "exact" },
+        end: { year: 4, precision: "exact" }
+      }],
+      summary: "测试时间错位关系。",
+      eventIds: [],
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    });
+
+    expect(issueCodes(data)).toContain("RELATIONSHIP_OUTSIDE_PARTICIPANT_EXISTENCE");
+  });
+
+  it("拒绝与任一参与政权存续期完全错位的事件", () => {
+    const data = makeValidData();
+    data.entities.push(makeEntity({
+      id: "polity-cn-later-test",
+      names: { primary: "后期测试政权", aliases: [] },
+      existencePeriods: [{
+        start: { year: 20, precision: "exact" },
+        end: { year: 30, precision: "exact" }
+      }]
+    }));
+    data.events.push({
+      id: "event-outside-participant",
+      type: "treaty",
+      title: "测试错位事件",
+      periods: [{
+        start: { year: 2, precision: "exact" },
+        end: { year: 4, precision: "exact" }
+      }],
+      participantEntityIds: ["polity-cn-test", "polity-cn-later-test"],
+      regionIds: ["region-east-asia"],
+      summary: "测试事件时间完全早于其中一个参与政权。",
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    });
+
+    expect(issueCodes(data)).toContain("EVENT_OUTSIDE_PARTICIPANT_EXISTENCE");
+  });
+
   it("拒绝任期引用历史分期或越出政权存在区间", () => {
     const makePerson = (): Person => ({
       id: "person-test",

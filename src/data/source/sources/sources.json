@@ -662,5 +662,68 @@
     "publisher": "Wikimedia Foundation",
     "url": "https://en.wikipedia.org/wiki/Sapa_Inca",
     "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-worldhistory-manzikert",
+    "title": "Battle of Manzikert",
+    "sourceType": "secondary",
+    "citation": "Mark Cartwright: ‘Battle of Manzikert’, World History Encyclopedia, 2018；用于校订1071年拜占庭帝国与塞尔柱帝国的曼齐克特战役。",
+    "publisher": "World History Encyclopedia",
+    "url": "https://www.worldhistory.org/article/1189/battle-of-manzikert/",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-cambridge-song-jin-alliance",
+    "title": "North and south: the twelfth and thirteenth centuries",
+    "sourceType": "secondary",
+    "citation": "Michael Fuller and Shuen-Fu Lin: ‘North and south: the twelfth and thirteenth centuries’, The Cambridge History of Chinese Literature, Cambridge University Press, 2010, pp. 465–556；相关章节概述1120年宋金结盟及其约定。",
+    "publisher": "Cambridge University Press",
+    "url": "https://www.cambridge.org/core/books/abs/cambridge-history-of-chinese-literature/north-and-south-the-twelfth-and-thirteenth-centuries/61601DC54708F14962001A8CCF558427",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-li-tang-tibet-treaty",
+    "title": "The Inscription of the Sino-Tibetan Treaty of 821-822",
+    "sourceType": "secondary",
+    "citation": "Fang-Kuei Li: ‘The Inscription of the Sino-Tibetan Treaty of 821-822’, T'oung Pao, vol. 44, no. 1, 1956, pp. 1–99；用于校订唐蕃长庆会盟及碑文纪年。",
+    "publisher": "Brill",
+    "url": "https://doi.org/10.1163/156853256X00018",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-kci-balhae-tang-tribute",
+    "title": "A Basic Examination on the Balhae and Malgal Tribes’ Relations with Tang in 8th Century",
+    "sourceType": "secondary",
+    "citation": "Kim Jongbok: ‘A Basic Examination on the Balhae and Malgal Tribes’ Relations with Tang in 8th Century’, Journal of History and Culture Research, no. 39, 2011, pp. 33–66；以《册府元龟》朝贡、褒异条校订八世纪渤海与唐交涉。",
+    "publisher": "Institute of History and Culture, Hankuk University of Foreign Studies",
+    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001562385",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-history-korea-goryeo-mongol",
+    "title": "A History of Korea: Goryeo and the Mongol Empire",
+    "sourceType": "institutional",
+    "citation": "National Institute of Korean History: A History of Korea, Chapter 5 ‘Goryeo and the Mongol Empire’, 2020；用于校订高丽在蒙古—元影响下的王统、婚姻与政治关系。",
+    "publisher": "National Institute of Korean History",
+    "url": "https://contents.history.go.kr/resources/common/pdf/A%20History%20of%20Korea_The%20Understanding%20Korea%20Series.pdf",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-aga-khan-lost-dhow",
+    "title": "The Lost Dhow: A Discovery from the Maritime Silk Route",
+    "sourceType": "institutional",
+    "citation": "Aga Khan Museum: ‘The Lost Dhow: A Discovery from the Maritime Silk Route’；以约九世纪黑石号沉船及其唐代货物说明唐与阿拔斯时期海上贸易网络。",
+    "publisher": "Aga Khan Museum",
+    "url": "https://agakhanmuseum.org/whats-on/the-lost-dhow-a-discovery-from-the-maritime-silk-route/",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-history-korea-balhae-culture",
+    "title": "A History of Korea: Balhae culture and exchange",
+    "sourceType": "institutional",
+    "citation": "National Institute of Korean History: A History of Korea, 2020；相关章节用于校订渤海在自身传统基础上吸收唐代制度与文化要素的过程。",
+    "publisher": "National Institute of Korean History",
+    "url": "https://contents.history.go.kr/resources/common/pdf/A%20History%20of%20Korea_The%20Understanding%20Korea%20Series.pdf",
+    "accessedAt": "2026-08-12"
   }
 ]

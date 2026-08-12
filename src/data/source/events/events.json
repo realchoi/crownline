@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "id": "event-battle-of-manzikert",
+    "type": "battle",
+    "title": "曼齐克特战役",
+    "periods": [
+      {
+        "start": { "year": 1071, "precision": "exact" },
+        "end": { "year": 1071, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-byzantine-empire", "polity-seljuk-empire"],
+    "regionIds": ["region-west-asia"],
+    "summary": "1071年，拜占庭皇帝罗曼努斯四世率军与阿尔普·阿尔斯兰统治下的塞尔柱军队在曼齐克特交战；拜占庭战败，皇帝被俘。",
+    "sourceRefs": [{ "sourceId": "source-worldhistory-manzikert" }],
+    "confidence": "high"
+  },
+  {
+    "id": "event-alliance-conducted-at-sea",
+    "type": "treaty",
+    "title": "宋金海上之盟",
+    "periods": [
+      {
+        "start": { "year": 1120, "precision": "exact" },
+        "end": { "year": 1120, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-cn-northern-song", "polity-cn-jin"],
+    "regionIds": ["region-china", "region-east-asia"],
+    "summary": "1120年，北宋与金约定共同攻辽，并商定辽亡后的领土与既有岁币安排；双方使者经海路联络，故后世常称海上之盟。",
+    "sourceRefs": [{ "sourceId": "source-cambridge-song-jin-alliance" }],
+    "confidence": "high"
+  },
+  {
+    "id": "event-tang-tibet-changqing-treaty",
+    "type": "treaty",
+    "title": "唐蕃长庆会盟",
+    "periods": [
+      {
+        "start": { "year": 821, "precision": "exact" },
+        "end": { "year": 822, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-cn-tang", "polity-tibet-empire"],
+    "regionIds": ["region-china", "region-east-asia"],
+    "summary": "唐与吐蕃于821至822年先后举行盟誓并确认和约，相关条文刻于拉萨会盟碑，约定恢复和平与边界秩序。",
+    "sourceRefs": [{ "sourceId": "source-li-tang-tibet-treaty" }],
+    "confidence": "high"
+  },
+  {
+    "id": "event-belitung-shipwreck",
+    "type": "other",
+    "title": "黑石号沉船所见海上贸易",
+    "periods": [
+      {
+        "start": { "year": 830, "precision": "circa" },
+        "end": { "year": 830, "precision": "circa" }
+      }
+    ],
+    "participantEntityIds": ["polity-cn-tang", "polity-abbasid-caliphate"],
+    "regionIds": ["region-east-asia", "region-southeast-asia", "region-west-asia"],
+    "summary": "约九世纪的黑石号沉船装载大量唐代商品并驶向西亚方向，为唐与阿拔斯时期海上贸易网络中的跨区域商品流通提供考古证据。",
+    "sourceRefs": [{ "sourceId": "source-aga-khan-lost-dhow" }],
+    "confidence": "medium"
+  }
+]

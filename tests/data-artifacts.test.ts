@@ -138,4 +138,24 @@ describe("运行时数据产物", () => {
       expect(detail?.sources.map(({ id }) => id)).toContain("source-cn-chronology-table");
     }
   });
+
+  it("把生产关系闭包分发给双方且不污染无关详情", () => {
+    const { details } = buildGeneratedArtifacts(data);
+    const relationshipId = "relationship-byzantine-seljuk-manzikert-war";
+
+    for (const entityId of ["polity-byzantine-empire", "polity-seljuk-empire"]) {
+      const detail = details.get(entityId);
+      expect(detail?.relationships.map(({ id }) => id)).toContain(relationshipId);
+      expect(detail?.events.map(({ id }) => id)).toContain("event-battle-of-manzikert");
+      expect(detail?.sources.map(({ id }) => id)).toContain("source-worldhistory-manzikert");
+    }
+
+    expect(details.get("polity-cn-ming")?.relationships.map(({ id }) => id))
+      .not.toContain(relationshipId);
+    expect(details.get("polity-cn-tang")?.relationships.map(({ id }) => id))
+      .toEqual(expect.arrayContaining([
+        "relationship-tang-balhae-tribute",
+        "relationship-tang-balhae-cultural-exchange"
+      ]));
+  });
 });

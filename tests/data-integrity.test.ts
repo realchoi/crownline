@@ -5,6 +5,7 @@ import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import { isYearInPeriods } from "../src/domain/chronology";
 import { validateCrownlineData } from "../src/domain/dataValidation";
 import { selectRulerSnapshot } from "../src/domain/rulerSnapshot";
+import { RELATIONSHIP_TYPES } from "../src/domain/types";
 import { GLOBAL_SAMPLE_POLITY_IDS } from "./global-sample-polities";
 
 const data = await loadSourceData();
@@ -129,6 +130,66 @@ describe("生产历史数据", () => {
   it("通过结构和跨记录校验", () => {
     expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
     expect(data.entities).toHaveLength(93);
+  });
+
+  it("首批结构化关系覆盖七种类型并保持事件与来源闭合", () => {
+    expect(new Set(data.relationships.map(({ type }) => type))).toEqual(
+      new Set(RELATIONSHIP_TYPES)
+    );
+    expect(data.relationships).toHaveLength(7);
+    expect(data.events).toHaveLength(4);
+    expect(data.relationships.every(({ sourceRefs }) => sourceRefs.length > 0)).toBe(true);
+
+    expect(data.relationships.map(({ id, participants, eventIds }) => ({
+      id,
+      participants: participants.map(({ entityId }) => entityId),
+      eventIds
+    }))).toEqual([
+      {
+        id: "relationship-byzantine-seljuk-manzikert-war",
+        participants: ["polity-byzantine-empire", "polity-seljuk-empire"],
+        eventIds: ["event-battle-of-manzikert"]
+      },
+      {
+        id: "relationship-northern-song-jurchen-jin-alliance",
+        participants: ["polity-cn-northern-song", "polity-cn-jin"],
+        eventIds: ["event-alliance-conducted-at-sea"]
+      },
+      {
+        id: "relationship-tang-tibet-changqing-diplomacy",
+        participants: ["polity-cn-tang", "polity-tibet-empire"],
+        eventIds: ["event-tang-tibet-changqing-treaty"]
+      },
+      {
+        id: "relationship-tang-balhae-tribute",
+        participants: ["polity-cn-tang", "polity-balhae"],
+        eventIds: []
+      },
+      {
+        id: "relationship-yuan-goryeo-vassalage",
+        participants: ["polity-cn-yuan", "polity-goryeo"],
+        eventIds: []
+      },
+      {
+        id: "relationship-tang-abbasid-maritime-trade",
+        participants: ["polity-cn-tang", "polity-abbasid-caliphate"],
+        eventIds: ["event-belitung-shipwreck"]
+      },
+      {
+        id: "relationship-tang-balhae-cultural-exchange",
+        participants: ["polity-cn-tang", "polity-balhae"],
+        eventIds: []
+      }
+    ]);
+
+    expect(Object.fromEntries(data.relationships.map(({ id, periods }) => [
+      id,
+      periods.map(({ start, end }) => [start.year, end.year])
+    ]))).toMatchObject({
+      "relationship-northern-song-jurchen-jin-alliance": [[1120, 1122]],
+      "relationship-tang-balhae-tribute": [[713, 800]],
+      "relationship-tang-abbasid-maritime-trade": [[830, 830]]
+    });
   });
 
   it("为全部十六个中国主线政权提供经过校订的任期数据", () => {

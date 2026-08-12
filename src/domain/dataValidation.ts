@@ -75,6 +75,19 @@ function validatePeriods(
   });
 }
 
+/** 判断两组历史区间是否至少存在一个共同年份。 */
+function periodsOverlap(
+  leftPeriods: HistoricalInterval[],
+  rightPeriods: HistoricalInterval[]
+): boolean {
+  return leftPeriods.some((left) => {
+    return rightPeriods.some((right) => {
+      return toOrdinal(left.start.year) <= toOrdinal(right.end.year) &&
+        toOrdinal(left.end.year) >= toOrdinal(right.start.year);
+    });
+  });
+}
+
 /** 检查业务记录引用的来源是否存在。 */
 function validateSourceRefs(
   refs: SourceRef[],
@@ -391,11 +404,18 @@ export function validateCrownlineData(input: unknown): ValidationResult {
     const path = `/relationships/${relationshipIndex}`;
     const participants = new Set<string>();
     relationship.participants.forEach((participant, participantIndex) => {
-      if (!entityIds.has(participant.entityId)) {
+      const entity = entityById.get(participant.entityId);
+      if (!entity) {
         issues.push({
           code: "DANGLING_ENTITY_REF",
           path: `${path}/participants/${participantIndex}/entityId`,
           message: `实体 ${participant.entityId} 不存在`
+        });
+      } else if (!periodsOverlap(relationship.periods, entity.existencePeriods)) {
+        issues.push({
+          code: "RELATIONSHIP_OUTSIDE_PARTICIPANT_EXISTENCE",
+          path: `${path}/participants/${participantIndex}/entityId`,
+          message: `关系区间与参与实体 ${participant.entityId} 的存续期完全错位`
         });
       }
       if (participants.has(participant.entityId)) {
@@ -429,11 +449,18 @@ export function validateCrownlineData(input: unknown): ValidationResult {
   data.events.forEach((event, eventIndex) => {
     const path = `/events/${eventIndex}`;
     event.participantEntityIds.forEach((entityId, participantIndex) => {
-      if (!entityIds.has(entityId)) {
+      const entity = entityById.get(entityId);
+      if (!entity) {
         issues.push({
           code: "DANGLING_ENTITY_REF",
           path: `${path}/participantEntityIds/${participantIndex}`,
           message: `实体 ${entityId} 不存在`
+        });
+      } else if (!periodsOverlap(event.periods, entity.existencePeriods)) {
+        issues.push({
+          code: "EVENT_OUTSIDE_PARTICIPANT_EXISTENCE",
+          path: `${path}/participantEntityIds/${participantIndex}`,
+          message: `事件区间与参与实体 ${entityId} 的存续期完全错位`
         });
       }
     });

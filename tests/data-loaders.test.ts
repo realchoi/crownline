@@ -83,6 +83,26 @@ describe("运行时数据校验", () => {
       expect.objectContaining({ code: "SCHEMA_ERROR", path: "/persons/0/names" })
     );
   });
+
+  it("把单条关系或事件留给领域层隔离", () => {
+    const broken: CrownlineDetail = structuredClone(tangDetail);
+    broken.relationships.push({ broken: true } as never);
+    broken.events.push({ id: 42 } as never);
+
+    expect(validateCrownlineDetail(broken, "polity-cn-tang")).toEqual({
+      valid: true,
+      issues: []
+    });
+  });
+
+  it.each(["relationships", "events"] as const)("仍拒绝非数组的%s根字段", (key) => {
+    const broken = structuredClone(tangDetail) as unknown as Record<string, unknown>;
+    broken[key] = { broken: true };
+
+    expect(validateCrownlineDetail(broken, "polity-cn-tang").issues).toContainEqual(
+      expect.objectContaining({ code: "SCHEMA_ERROR", path: `/${key}` })
+    );
+  });
 });
 
 describe("运行时数据加载", () => {

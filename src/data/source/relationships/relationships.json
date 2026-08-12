@@ -1,1 +1,132 @@
-[]
+[
+  {
+    "id": "relationship-byzantine-seljuk-manzikert-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-byzantine-empire", "role": "交战方" },
+      { "entityId": "polity-seljuk-empire", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1071, "precision": "exact" },
+        "end": { "year": 1071, "precision": "exact" }
+      }
+    ],
+    "summary": "1071年的曼齐克特战役是拜占庭帝国与塞尔柱帝国军事冲突中的关键节点；拜占庭皇帝被俘，战后帝国内乱也削弱了其在安纳托利亚的防御。",
+    "eventIds": ["event-battle-of-manzikert"],
+    "sourceRefs": [{ "sourceId": "source-worldhistory-manzikert" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-song-jurchen-jin-alliance",
+    "type": "alliance",
+    "participants": [
+      { "entityId": "polity-cn-northern-song", "role": "盟约方" },
+      { "entityId": "polity-cn-jin", "role": "盟约方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1120, "precision": "exact" },
+        "end": { "year": 1122, "precision": "exact" }
+      }
+    ],
+    "summary": "北宋与金于1120年结盟攻辽，并约定辽亡后的领土和岁币安排；宋军未能完成约定攻势，原有联合行动在1122年破裂。",
+    "eventIds": ["event-alliance-conducted-at-sea"],
+    "sourceRefs": [{ "sourceId": "source-cambridge-song-jin-alliance" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-tang-tibet-changqing-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      { "entityId": "polity-cn-tang", "role": "缔约方" },
+      { "entityId": "polity-tibet-empire", "role": "缔约方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 821, "precision": "exact" },
+        "end": { "year": 822, "precision": "exact" }
+      }
+    ],
+    "summary": "唐与吐蕃在长期战争与多次议和后，于821至822年完成长庆会盟；现存碑文记录双方恢复和平、尊重既定边界和保障往来的约定。",
+    "eventIds": ["event-tang-tibet-changqing-treaty"],
+    "sourceRefs": [{ "sourceId": "source-li-tang-tibet-treaty" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-tang-balhae-tribute",
+    "type": "tribute",
+    "participants": [
+      { "entityId": "polity-cn-tang", "role": "册封与受贡方" },
+      { "entityId": "polity-balhae", "role": "遣使与入贡方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 713, "precision": "exact" },
+        "end": { "year": 800, "precision": "exact" }
+      }
+    ],
+    "summary": "713年唐册封渤海统治者后，八世纪双方通过使节、册封与贡物往来维持关系；期间亦曾出现战争和关系中断，故本记录描述的是反复恢复的礼仪与外交框架。",
+    "eventIds": [],
+    "sourceRefs": [{ "sourceId": "source-kci-balhae-tang-tribute" }],
+    "confidence": "disputed",
+    "confidenceNote": "“朝贡”只描述唐代册封、遣使和礼仪框架；不据此把渤海解释为唐的地方行政单位，也不否认其对内、对外自主性。"
+  },
+  {
+    "id": "relationship-yuan-goryeo-vassalage",
+    "type": "vassalage",
+    "participants": [
+      { "entityId": "polity-cn-yuan", "role": "宗主政权" },
+      { "entityId": "polity-goryeo", "role": "保留王统的附属王国" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1271, "precision": "exact" },
+        "end": { "year": 1356, "precision": "exact" }
+      }
+    ],
+    "summary": "蒙古征服战争后，高丽王室与元皇室建立婚姻关系，元廷通过驻军、征东行省和人事干预施加强烈影响；1356年恭愍王改革标志这种控制结构开始被系统解除。",
+    "eventIds": [],
+    "sourceRefs": [{ "sourceId": "source-history-korea-goryeo-mongol", "locator": "Chapter 5" }],
+    "confidence": "medium",
+    "confidenceNote": "高丽保留王室和相当程度的内部治理；本记录描述附属关系，不把高丽误写为已被元直接撤销的政权。1271年起点对应本项目元政权的建号口径，蒙古压力与臣服过程则早于此年。"
+  },
+  {
+    "id": "relationship-tang-abbasid-maritime-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-cn-tang", "role": "贸易网络东端政权" },
+      { "entityId": "polity-abbasid-caliphate", "role": "贸易网络西端政权" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 830, "precision": "circa" },
+        "end": { "year": 830, "precision": "circa" }
+      }
+    ],
+    "summary": "唐与阿拔斯时期的商人、港口和中介网络连接东亚、东南亚与西亚；约九世纪黑石号所载唐代商品是这条海上贸易链路的代表性考古证据。",
+    "eventIds": ["event-belitung-shipwreck"],
+    "sourceRefs": [{ "sourceId": "source-aga-khan-lost-dhow" }],
+    "confidence": "medium",
+    "confidenceNote": "沉船与器物证明跨区域贸易网络及商品流通，不证明贸易由唐与阿拔斯中央政府直接缔约或经营。"
+  },
+  {
+    "id": "relationship-tang-balhae-cultural-exchange",
+    "type": "cultural-exchange",
+    "participants": [
+      { "entityId": "polity-cn-tang", "role": "制度与文化参照方" },
+      { "entityId": "polity-balhae", "role": "吸收与重构方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 713, "precision": "exact" },
+        "end": { "year": 907, "precision": "exact" }
+      }
+    ],
+    "summary": "渤海通过使节、留学生、典章制度和物质文化交流吸收唐代要素，并在自身高句丽、靺鞨传统及东北亚环境中进行重构。",
+    "eventIds": [],
+    "sourceRefs": [{ "sourceId": "source-history-korea-balhae-culture" }],
+    "confidence": "medium",
+    "confidenceNote": "文化交流描述选择性吸收与再创造，不表示双方文化同一，也不据此推导政治从属。"
+  }
+]

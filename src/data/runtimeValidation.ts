@@ -51,6 +51,19 @@ function requireRecordArray(
   return value as Record<string, unknown>[];
 }
 
+function requireOpaqueArray(
+  input: Record<string, unknown>,
+  key: string,
+  issues: ValidationIssue[]
+): unknown[] {
+  const value = input[key];
+  if (!Array.isArray(value)) {
+    issues.push({ code: "SCHEMA_ERROR", path: `/${key}`, message: `${key} 必须是数组` });
+    return [];
+  }
+  return value;
+}
+
 function collectIds(records: Record<string, unknown>[], path: string, issues: ValidationIssue[]) {
   const ids = new Set<string>();
   records.forEach((record, index) => {
@@ -144,7 +157,7 @@ export function validateCrownlineIndex(input: unknown): ValidationResult {
   return { valid: issues.length === 0, issues };
 }
 
-/** 校验单个详情包与请求实体一致，并且人物、事件和来源引用闭合。 */
+/** 校验详情核心结构；关系与事件项目由领域层逐条隔离。 */
 export function validateCrownlineDetail(
   input: unknown,
   expectedEntityId: string
@@ -167,11 +180,10 @@ export function validateCrownlineDetail(
   const persons = requireRecordArray(input, "persons", issues);
   const reigns = requireRecordArray(input, "reigns", issues);
   const vacancies = requireRecordArray(input, "reignVacancies", issues);
-  const relationships = requireRecordArray(input, "relationships", issues);
-  const events = requireRecordArray(input, "events", issues);
+  requireOpaqueArray(input, "relationships", issues);
+  requireOpaqueArray(input, "events", issues);
   const sources = requireRecordArray(input, "sources", issues);
   const personIds = collectIds(persons, "/persons", issues);
-  const eventIds = collectIds(events, "/events", issues);
   const sourceIds = collectIds(sources, "/sources", issues);
   requireField(persons, "/persons", "names", hasNames, issues);
   requireField(persons, "/persons", "description", (value) => typeof value === "string", issues);
@@ -205,24 +217,9 @@ export function validateCrownlineDetail(
       });
     }
   });
-  relationships.forEach((relationship, relationshipIndex) => {
-    if (Array.isArray(relationship.eventIds)) {
-      relationship.eventIds.forEach((eventId, eventIndex) => {
-        if (typeof eventId !== "string" || !eventIds.has(eventId)) {
-          issues.push({
-            code: "DANGLING_EVENT_REF",
-            path: `/relationships/${relationshipIndex}/eventIds/${eventIndex}`,
-            message: `关系事件 ${String(eventId)} 不存在`
-          });
-        }
-      });
-    }
-  });
   validateRefs(persons, "/persons", sourceIds, issues);
   validateRefs(reigns, "/reigns", sourceIds, issues);
   validateRefs(vacancies, "/reignVacancies", sourceIds, issues);
-  validateRefs(relationships, "/relationships", sourceIds, issues);
-  validateRefs(events, "/events", sourceIds, issues);
   return { valid: issues.length === 0, issues };
 }
 

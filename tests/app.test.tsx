@@ -162,6 +162,98 @@ describe("Crownline 时间轴", () => {
     expect(panel).toHaveTextContent("这不表示双方没有历史关系");
   });
 
+  it("把有来源的战争与相关事件显示在独立历史关系区块", async () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?compare=polity-byzantine-empire&compare=polity-seljuk-empire"
+    );
+    renderApp();
+
+    const panel = screen.getByRole("region", { name: "政权时间对比" });
+    const relationships = await within(panel).findByRole("region", {
+      name: "已校订历史关系"
+    });
+    expect(panel).toHaveTextContent("共同存在区间");
+    expect(relationships).toHaveTextContent("战争");
+    expect(relationships).toHaveTextContent("曼齐克特");
+    expect(relationships).toHaveTextContent("1071");
+    expect(relationships).toHaveTextContent("拜占庭帝国 · 交战方");
+    expect(relationships).toHaveTextContent("塞尔柱帝国 · 交战方");
+    expect(relationships).toHaveTextContent("高可信度");
+    expect(relationships).toHaveTextContent("相关事件");
+    expect(within(relationships).getByRole("link", { name: /查看来源/ }))
+      .toHaveAttribute("target", "_blank");
+  });
+
+  it("为北宋与金展示宋金联盟及海上之盟", async () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?compare=polity-cn-jin&compare=polity-cn-northern-song"
+    );
+    renderApp();
+
+    const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
+    expect(relationships).toHaveTextContent("联盟");
+    expect(relationships).toHaveTextContent("海上之盟");
+    expect(relationships).toHaveTextContent("金 · 盟约方");
+    expect(relationships).toHaveTextContent("北宋 · 盟约方");
+  });
+
+  it("同一政权对按类型展示多条关系及其口径说明", async () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?compare=polity-cn-tang&compare=polity-balhae"
+    );
+    renderApp();
+
+    const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
+    expect(relationships).toHaveTextContent("朝贡");
+    expect(relationships).toHaveTextContent("文化交流");
+    expect(relationships).toHaveTextContent("存在争议");
+    expect(relationships).toHaveTextContent("不据此把渤海解释为唐的地方行政单位");
+    expect(relationships).toHaveTextContent("不表示双方文化同一");
+    expect(within(relationships).getAllByText(/来源 · 1 项/)).toHaveLength(2);
+  });
+
+  it("没有匹配关系时只说明尚未校订", async () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?compare=polity-cn-qin&compare=polity-cn-ming"
+    );
+    renderApp();
+
+    const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
+    expect(relationships).toHaveTextContent("暂无已校订关系数据");
+    expect(relationships).toHaveTextContent("不代表双方历史上没有关系");
+  });
+
+  it("单条坏关系只产生提示，不破坏有效关系与统治者", async () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?compare=polity-byzantine-empire&compare=polity-seljuk-empire"
+    );
+    renderApp(async (entityId) => {
+      const detail = artifacts.details.get(entityId);
+      if (!detail) return null;
+      const copy = structuredClone(detail);
+      if (entityId === "polity-byzantine-empire") {
+        copy.relationships.push({ broken: true } as never);
+      }
+      return copy;
+    });
+
+    const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
+    expect(relationships).toHaveTextContent("曼齐克特");
+    expect(relationships).toHaveTextContent("有 1 条关系数据格式异常，已跳过");
+    expect(screen.getByRole("region", { name: "政权时间对比" }))
+      .toHaveTextContent("罗曼努斯四世");
+  });
+
   it("切换对比政权后忽略旧详情请求的迟到错误", async () => {
     window.history.replaceState(
       null,

@@ -15,6 +15,7 @@ import type {
   Region,
   ReignRole
 } from "../domain/types";
+import { HistoricalRelationships } from "./HistoricalRelationships";
 
 const POLITY_FORM_NAMES: Record<PolityForm, string> = {
   dynasty: "王朝",
@@ -212,7 +213,7 @@ export function ComparisonPanel({
     <section className="comparison-panel" aria-labelledby="comparison-title">
       <div className="comparison-panel-heading">
         <div>
-          <p className="comparison-kicker">阶段 4A · 时间关系</p>
+          <p className="comparison-kicker">阶段 4 · 时间与历史关系</p>
           <h2 id="comparison-title">政权时间对比</h2>
         </div>
         <button className="comparison-clear" type="button" onClick={onClear}>清空对比</button>
@@ -259,7 +260,7 @@ export function ComparisonPanel({
               <>
                 <p>时间关系</p>
                 <strong>存续时间没有重叠</strong>
-                <span>这不表示双方没有历史关系；关系数据将在阶段 4B 单独校订。</span>
+                <span>这不表示双方没有历史关系；请查看下方已校订记录。</span>
               </>
             )}
           </div>
@@ -280,6 +281,14 @@ export function ComparisonPanel({
               {...(comparisonYear !== undefined ? { currentYear: comparisonYear } : {})}
             />
           </div>
+
+          {readyDetails && (
+            <HistoricalRelationships
+              left={comparison.left}
+              right={comparison.right}
+              details={readyDetails}
+            />
+          )}
 
           {!readyDetails && detailState.status === "loading" && (
             <p className="comparison-load-state" role="status">正在加载双方统治者详情…</p>
