@@ -16,8 +16,52 @@ describe("运行时数据产物", () => {
     expect(index).not.toHaveProperty("reignVacancies");
     expect(index).not.toHaveProperty("relationships");
     expect(index).not.toHaveProperty("events");
+    expect(index).not.toHaveProperty("geographicSnapshots");
     expect(index).not.toHaveProperty("sources");
     expect(index.detailEntityIds).toEqual(data.entities.map(({ id }) => id));
+  });
+
+  it("独立地理产物只收集地理快照引用的来源", () => {
+    const fixture: CrownlineData = structuredClone(data);
+    fixture.sources.push(
+      {
+        id: "source-map-test",
+        title: "地图测试来源",
+        sourceType: "dataset",
+        citation: "用于验证地理来源闭包。"
+      },
+      {
+        id: "source-map-unrelated",
+        title: "无关地图测试来源",
+        sourceType: "dataset",
+        citation: "不得进入地理来源闭包。"
+      }
+    );
+    fixture.geographicSnapshots.push({
+      id: "geo-tang-changan-test",
+      polityId: "polity-cn-tang",
+      periods: [
+        {
+          start: { year: 618, precision: "exact" },
+          end: { year: 690, precision: "exact" }
+        }
+      ],
+      placeName: "长安",
+      role: "capital",
+      coordinates: { latitude: 34.2658, longitude: 108.9541 },
+      positionPrecision: "approximate",
+      positionNote: "测试坐标，仅用于示意。",
+      sourceRefs: [{ sourceId: "source-map-test" }],
+      confidence: "high"
+    });
+
+    const { geography } = buildGeneratedArtifacts(fixture);
+
+    expect(geography).toMatchObject({
+      schemaVersion: 4,
+      geographicSnapshots: fixture.geographicSnapshots
+    });
+    expect(geography.sources.map(({ id }) => id)).toEqual(["source-map-test"]);
   });
 
   it("详情只收集目标政权的任期及其人物和来源闭包", () => {

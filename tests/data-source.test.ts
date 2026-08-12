@@ -92,7 +92,7 @@ describe("源数据分片", () => {
     await expect(loadSourceData(sourceRoot)).rejects.toThrow("order 10 重复");
   });
 
-  it("生成完整工具数据、首屏索引和实体详情", async () => {
+  it("生成完整工具数据、首屏索引、独立地理数据和实体详情", async () => {
     const root = await createTemporaryRoot();
     const sourceRoot = join(root, "source");
     const toolOutputRoot = join(root, "tool-output");
@@ -101,12 +101,21 @@ describe("源数据分片", () => {
 
     const summary = await generateData({ sourceRoot, toolOutputRoot, publicOutputRoot });
 
-    expect(summary).toMatchObject({ entities: 93, details: 93 });
+    expect(summary).toMatchObject({
+      entities: 93,
+      details: 93,
+      geographicSnapshots: data.geographicSnapshots.length
+    });
     expect(summary.persons).toBe(data.persons.length);
     expect(summary.reigns).toBe(data.reigns.length);
     expect(await readJson(join(toolOutputRoot, "crownline-data.json"))).toEqual(data);
     expect(await readJson(join(publicOutputRoot, "index.json"))).toMatchObject({
       schemaVersion: 4
+    });
+    expect(await readJson(join(publicOutputRoot, "geography.json"))).toEqual({
+      schemaVersion: 4,
+      geographicSnapshots: data.geographicSnapshots,
+      sources: []
     });
     expect(await readJson(join(publicOutputRoot, "details", "polity-cn-tang.json"))).toMatchObject({
       entityId: "polity-cn-tang"

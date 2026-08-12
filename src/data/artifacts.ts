@@ -1,12 +1,14 @@
 import type {
   CrownlineData,
   CrownlineDetail,
+  CrownlineGeography,
   CrownlineIndex,
   SourceRef
 } from "../domain/types";
 
 export interface GeneratedArtifacts {
   index: CrownlineIndex;
+  geography: CrownlineGeography;
   details: Map<string, CrownlineDetail>;
 }
 
@@ -19,6 +21,16 @@ export function buildGeneratedArtifacts(data: CrownlineData): GeneratedArtifacts
     entities: data.entities,
     regions: data.regions,
     detailEntityIds: data.entities.map(({ id }) => id)
+  };
+  const geographySourceIds = new Set(
+    data.geographicSnapshots.flatMap(({ sourceRefs }) => {
+      return sourceRefs.map(({ sourceId }) => sourceId);
+    })
+  );
+  const geography: CrownlineGeography = {
+    schemaVersion: data.schemaVersion,
+    geographicSnapshots: data.geographicSnapshots,
+    sources: data.sources.filter(({ id }) => geographySourceIds.has(id))
   };
   const details = new Map<string, CrownlineDetail>();
 
@@ -59,5 +71,5 @@ export function buildGeneratedArtifacts(data: CrownlineData): GeneratedArtifacts
     });
   });
 
-  return { index, details };
+  return { index, geography, details };
 }
