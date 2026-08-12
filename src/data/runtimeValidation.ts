@@ -103,8 +103,8 @@ export function validateCrownlineIndex(input: unknown): ValidationResult {
   if (!isRecord(input)) {
     return { valid: false, issues: [{ code: "SCHEMA_ERROR", path: "/", message: "索引必须是对象" }] };
   }
-  if (input.schemaVersion !== 3) {
-    issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 3" });
+  if (input.schemaVersion !== 4) {
+    issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 4" });
   }
   if (!isRecord(input.chronologyPolicy)) {
     issues.push({ code: "SCHEMA_ERROR", path: "/chronologyPolicy", message: "缺少纪年规则" });
@@ -166,8 +166,8 @@ export function validateCrownlineDetail(
   if (!isRecord(input)) {
     return { valid: false, issues: [{ code: "SCHEMA_ERROR", path: "/", message: "详情必须是对象" }] };
   }
-  if (input.schemaVersion !== 3) {
-    issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 3" });
+  if (input.schemaVersion !== 4) {
+    issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 4" });
   }
   if (input.entityId !== expectedEntityId) {
     issues.push({

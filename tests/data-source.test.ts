@@ -31,6 +31,10 @@ async function writeSourceTree(root: string, value: CrownlineData = data): Promi
   await writeJson(join(root, "sources", "sources.json"), value.sources);
   await writeJson(join(root, "relationships", "relationships.json"), value.relationships);
   await writeJson(join(root, "events", "events.json"), value.events);
+  await writeJson(
+    join(root, "geography", "geographic-snapshots.json"),
+    value.geographicSnapshots
+  );
 
   const sectionEntityIds = new Set(value.timelineSections.flatMap(({ entityIds }) => entityIds));
   const firstPolityByPersonId = new Map<string, string>();
@@ -102,7 +106,7 @@ describe("源数据分片", () => {
     expect(summary.reigns).toBe(data.reigns.length);
     expect(await readJson(join(toolOutputRoot, "crownline-data.json"))).toEqual(data);
     expect(await readJson(join(publicOutputRoot, "index.json"))).toMatchObject({
-      schemaVersion: 3
+      schemaVersion: 4
     });
     expect(await readJson(join(publicOutputRoot, "details", "polity-cn-tang.json"))).toMatchObject({
       entityId: "polity-cn-tang"

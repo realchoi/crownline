@@ -55,7 +55,7 @@ function detail(
   sources: Source[] = [source]
 ): CrownlineDetail {
   return {
-    schemaVersion: 3,
+    schemaVersion: 4,
     entityId,
     persons: [],
     reigns: [],

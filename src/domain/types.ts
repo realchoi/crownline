@@ -38,6 +38,14 @@ export const EVENT_TYPES = [
 ] as const;
 /** 来源的资料层级或载体类别。 */
 export const SOURCE_TYPES = ["primary", "secondary", "tertiary", "dataset", "institutional"] as const;
+/** 历史点位在对应时期承担的空间角色。 */
+export const GEOGRAPHIC_ROLES = [
+  "capital",
+  "political-center",
+  "representative-center"
+] as const;
+/** 历史地点映射到现代坐标时的定位精度。 */
+export const POSITION_PRECISIONS = ["exact", "approximate", "regional"] as const;
 
 export type DatePrecision = (typeof DATE_PRECISIONS)[number];
 export type EntityKind = (typeof ENTITY_KINDS)[number];
@@ -51,6 +59,8 @@ export type ReignRole = (typeof REIGN_ROLES)[number];
 export type RelationshipType = (typeof RELATIONSHIP_TYPES)[number];
 export type EventType = (typeof EVENT_TYPES)[number];
 export type SourceType = (typeof SOURCE_TYPES)[number];
+export type GeographicRole = (typeof GEOGRAPHIC_ROLES)[number];
+export type PositionPrecision = (typeof POSITION_PRECISIONS)[number];
 
 /**
  * 不含公元 0 年的历史日期。
@@ -207,6 +217,27 @@ export interface HistoricalEvent {
   confidenceNote?: string;
 }
 
+/** WGS 84 十进制度坐标，仅用于历史地点示意。 */
+export interface GeographicCoordinates {
+  latitude: number;
+  longitude: number;
+}
+
+/** 一处带适用时间、精度说明和来源的政权地理点位。 */
+export interface GeographicSnapshot {
+  id: string;
+  polityId: string;
+  periods: HistoricalInterval[];
+  placeName: string;
+  role: GeographicRole;
+  coordinates: GeographicCoordinates;
+  positionPrecision: PositionPrecision;
+  positionNote: string;
+  sourceRefs: SourceRef[];
+  confidence: ConfidenceLevel;
+  confidenceNote?: string;
+}
+
 /** 集中管理的可追溯资料来源。 */
 export interface Source {
   id: string;
@@ -227,9 +258,9 @@ export interface ChronologyPolicy {
   yearSelection: "exists-at-any-time-during-year";
 }
 
-/** Crownline 数据契约 v3 的根对象。 */
+/** Crownline 数据契约 v4 的根对象。 */
 export interface CrownlineData {
-  schemaVersion: 3;
+  schemaVersion: 4;
   chronologyPolicy: ChronologyPolicy;
   timelineSections: TimelineSection[];
   entities: HistoricalEntity[];
@@ -239,12 +270,13 @@ export interface CrownlineData {
   reignVacancies: ReignVacancy[];
   relationships: Relationship[];
   events: HistoricalEvent[];
+  geographicSnapshots: GeographicSnapshot[];
   sources: Source[];
 }
 
 /** 首屏浏览所需的轻量数据；人物、任期和来源在详情打开时加载。 */
 export interface CrownlineIndex {
-  schemaVersion: 3;
+  schemaVersion: 4;
   chronologyPolicy: ChronologyPolicy;
   timelineSections: TimelineSection[];
   entities: HistoricalEntity[];
@@ -254,13 +286,20 @@ export interface CrownlineIndex {
 
 /** 一个实体可独立加载的引用闭包。 */
 export interface CrownlineDetail {
-  schemaVersion: 3;
+  schemaVersion: 4;
   entityId: string;
   persons: Person[];
   reigns: Reign[];
   reignVacancies: ReignVacancy[];
   relationships: Relationship[];
   events: HistoricalEvent[];
+  sources: Source[];
+}
+
+/** 地图首次打开时按需加载的地理快照及其来源闭包。 */
+export interface CrownlineGeography {
+  schemaVersion: 4;
+  geographicSnapshots: GeographicSnapshot[];
   sources: Source[];
 }
 

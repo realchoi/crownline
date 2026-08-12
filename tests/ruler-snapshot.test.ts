@@ -42,7 +42,7 @@ const reign = (
 
 function makeData(): CrownlineData {
   return {
-    schemaVersion: 3,
+    schemaVersion: 4,
     chronologyPolicy: {
       calendar: "historical-year",
       hasYearZero: false,
@@ -94,6 +94,7 @@ function makeData(): CrownlineData {
     ],
     relationships: [],
     events: [],
+    geographicSnapshots: [],
     sources: [
       {
         id: "source-test",
@@ -109,7 +110,7 @@ function snapshot(data: CrownlineData, year: number) {
   const polity = data.entities[0];
   if (!polity) throw new Error("缺少测试政权");
   const detail: CrownlineDetail = {
-    schemaVersion: 3,
+    schemaVersion: 4,
     entityId: polity.id,
     persons: data.persons,
     reigns: data.reigns,
@@ -180,7 +181,7 @@ describe("当年统治者快照", () => {
     const data = makeData();
     const polity = data.entities[0]!;
     const detail: CrownlineDetail = {
-      schemaVersion: 3,
+      schemaVersion: 4,
       entityId: "polity-missing",
       persons: data.persons,
       reigns: data.reigns,

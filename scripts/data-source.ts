@@ -100,6 +100,7 @@ export async function loadSourceData(
     reignVacancies: fragments.flatMap(({ reignVacancies }) => reignVacancies),
     relationships: await readArrayFiles(join(sourceRoot, "relationships"), "关系"),
     events: await readArrayFiles(join(sourceRoot, "events"), "事件"),
+    geographicSnapshots: await readArrayFiles(join(sourceRoot, "geography"), "地理快照"),
     sources: await readArrayFiles(join(sourceRoot, "sources"), "来源")
   };
 }

@@ -35,7 +35,7 @@ function makeEntity(overrides: Partial<HistoricalEntity> = {}): HistoricalEntity
 
 function makeValidData(): CrownlineData {
   return {
-    schemaVersion: 3,
+    schemaVersion: 4,
     chronologyPolicy: {
       calendar: "historical-year",
       hasYearZero: false,
@@ -67,6 +67,7 @@ function makeValidData(): CrownlineData {
     reignVacancies: [],
     relationships: [],
     events: [],
+    geographicSnapshots: [],
     sources: [
       {
         id: "source-test",
@@ -83,12 +84,12 @@ function issueCodes(input: unknown): string[] {
 }
 
 describe("JSON Schema 结构校验", () => {
-  it("接受带统治者空位记录的地区契约 v3", () => {
+  it("接受带统治者空位记录的地区契约 v4", () => {
     const data = makeValidData() as unknown as {
       schemaVersion: number;
       regions: Array<Record<string, unknown>>;
     };
-    data.schemaVersion = 3;
+    data.schemaVersion = 4;
     data.regions[0] = {
       id: "region-east-asia",
       names: { primary: "东亚", aliases: ["Eastern Asia"] },
@@ -106,6 +107,51 @@ describe("JSON Schema 结构校验", () => {
 
   it("接受完整的最小数据集", () => {
     expect(validateCrownlineData(makeValidData())).toEqual({ valid: true, issues: [] });
+  });
+
+  it("接受带来源地理快照的数据契约 v4", () => {
+    const data = makeValidData();
+    data.geographicSnapshots.push({
+      id: "geo-polity-test-capital",
+      polityId: "polity-cn-test",
+      periods: [{
+        start: { year: 1, precision: "exact" },
+        end: { year: 10, precision: "exact" }
+      }],
+      placeName: "甲城",
+      role: "capital",
+      coordinates: { latitude: 30, longitude: 110 },
+      positionPrecision: "approximate",
+      positionNote: "现代坐标仅用于示意历史地点。",
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    });
+
+    expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
+  });
+
+  it.each([
+    ["纬度", { latitude: 91, longitude: 110 }],
+    ["经度", { latitude: 30, longitude: 181 }]
+  ])("拒绝超出范围的%s", (_label, coordinates) => {
+    const data = makeValidData();
+    data.geographicSnapshots.push({
+      id: "geo-polity-test-capital",
+      polityId: "polity-cn-test",
+      periods: [{
+        start: { year: 1, precision: "exact" },
+        end: { year: 10, precision: "exact" }
+      }],
+      placeName: "甲城",
+      role: "capital",
+      coordinates,
+      positionPrecision: "approximate",
+      positionNote: "现代坐标仅用于示意历史地点。",
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    });
+
+    expect(issueCodes(data)).toContain("SCHEMA_ERROR");
   });
 
   it("拒绝缺失必填字段、未知枚举和公元 0 年", () => {
