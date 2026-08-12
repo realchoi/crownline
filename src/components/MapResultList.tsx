@@ -36,7 +36,7 @@ export function MapResultList({
       </div>
 
       {points.length > 0 ? (
-        <ul className="map-results-list">
+        <ul className="map-results-list map-result-list">
           {points.map((point) => {
             const selected = comparisonEntityIds.includes(point.entity.id);
             return (
@@ -75,7 +75,7 @@ export function MapResultList({
         <section className="map-missing" aria-label="尚未校订地理数据">
           <h3>尚未校订地理数据</h3>
           <p>这些政权在当前年份存在，但尚无可用点位；这不表示它们在地理上不存在。</p>
-          <ul>
+          <ul className="map-missing-list">
             {missingEntities.map((entity) => <li key={entity.id}>{entity.names.primary}</li>)}
           </ul>
         </section>

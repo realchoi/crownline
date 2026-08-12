@@ -22,7 +22,7 @@ export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
 
   return (
     <section className="historical-map" aria-label="当前年份历史政权示意地图">
-      <div className="historical-map-canvas">
+      <div className="historical-map-canvas world-map">
         <img className="historical-map-land" src={worldLandUrl} alt="" role="presentation" />
         {clusters.map((cluster) => {
           const [firstPoint] = cluster.points;
@@ -59,7 +59,10 @@ export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
                 <span aria-hidden="true">{cluster.points.length}</span>
               </button>
               {expanded && (
-                <section className="map-cluster-popover" aria-label="聚合历史点位">
+                <section
+                  className="map-cluster-popover map-cluster-panel"
+                  aria-label="聚合历史点位"
+                >
                   <ul>
                     {cluster.points.map((point) => (
                       <li key={point.snapshot.id}>

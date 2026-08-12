@@ -4,6 +4,9 @@ import { DetailDialog } from "../components/DetailDialog";
 import { ComparisonPanel } from "../components/ComparisonPanel";
 import type { DetailLoadState } from "../components/DetailLoadPanel";
 import { FilterPanel } from "../components/FilterPanel";
+import { HistoricalMap } from "../components/HistoricalMap";
+import { MapLoadPanel } from "../components/MapLoadPanel";
+import { MapResultList } from "../components/MapResultList";
 import { Timeline } from "../components/Timeline";
 import { TimepointView } from "../components/TimepointView";
 import { ViewModeControl } from "../components/ViewModeControl";
@@ -14,26 +17,40 @@ import {
   type BrowseState
 } from "../domain/browseState";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
+import { selectMapSnapshots } from "../domain/mapSnapshots";
 import { selectBrowseResults } from "../domain/selectors";
 import type { CrownlineIndex, TimelineSection } from "../domain/types";
 import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
+import type {
+  CrownlineGeographyLoader,
+  GeographyLoadResult
+} from "../data/loadCrownlineGeography";
+
+type GeographyState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "ready"; result: GeographyLoadResult }
+  | { status: "error"; message: string };
 
 /** 应用根组件接收的已校验数据。 */
 interface AppProps {
   data: CrownlineIndex;
   loadDetail: CrownlineDetailLoader;
+  loadGeography: CrownlineGeographyLoader;
 }
 
 /** 组合筛选状态、时间轴、详情弹窗和 URL 同步的应用根组件。 */
-export function App({ data, loadDetail }: AppProps) {
+export function App({ data, loadDetail, loadGeography }: AppProps) {
   const yearBounds = useMemo(() => getHistoricalYearBounds(data), [data]);
   const [browseState, setBrowseState] = useState<BrowseState>(() => {
     return readBrowseState(window.location.search, yearBounds, data.regions, data.entities);
   });
   const [selectedEntityId, setSelectedEntityId] = useState<string | null>(null);
   const [detailState, setDetailState] = useState<DetailLoadState>({ status: "missing" });
+  const [geographyState, setGeographyState] = useState<GeographyState>({ status: "idle" });
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
   const requestSequenceRef = useRef(0);
+  const geographyRequestSequenceRef = useRef(0);
   const results = useMemo(() => {
     const filters = {
       query: browseState.query,
@@ -51,6 +68,22 @@ export function App({ data, loadDetail }: AppProps) {
     });
     return data.entities.map((entity) => ({ entity, section: sectionByEntityId.get(entity.id) }));
   }, [data]);
+  const mapBrowseResults = useMemo(() => {
+    return selectBrowseResults(data, {
+      query: browseState.query,
+      category: browseState.category,
+      regionScope: browseState.regionScope,
+      year: browseState.year
+    });
+  }, [browseState.category, browseState.query, browseState.regionScope, browseState.year, data]);
+  const mapSelection = useMemo(() => {
+    if (geographyState.status !== "ready") return null;
+    return selectMapSnapshots(
+      mapBrowseResults.polities.map(({ entity }) => entity),
+      geographyState.result.geography.geographicSnapshots,
+      browseState.year
+    );
+  }, [browseState.year, geographyState, mapBrowseResults.polities]);
   // 即使筛选状态变化，也要允许已打开的详情继续读取完整实体记录。
   const selectedMatch = selectedEntityId
     ? allMatches.find(({ entity }) => entity.id === selectedEntityId)
@@ -85,11 +118,37 @@ export function App({ data, loadDetail }: AppProps) {
     });
   }, []);
 
+  const startGeographyLoad = useCallback(() => {
+    const requestSequence = ++geographyRequestSequenceRef.current;
+    setGeographyState({ status: "loading" });
+    void loadGeography().then((result) => {
+      if (requestSequence !== geographyRequestSequenceRef.current) return;
+      setGeographyState({ status: "ready", result });
+    }).catch((error: unknown) => {
+      if (requestSequence !== geographyRequestSequenceRef.current) return;
+      setGeographyState({
+        status: "error",
+        message: error instanceof Error ? error.message : String(error)
+      });
+    });
+  }, [loadGeography]);
+
   useEffect(() => {
     const params = writeBrowseState(browseState, yearBounds, window.location.search);
     const next = `${window.location.pathname}${params.toString() ? `?${params}` : ""}${window.location.hash}`;
     window.history.replaceState(null, "", next);
   }, [browseState, yearBounds]);
+
+  useEffect(() => {
+    if (browseState.viewMode === "map" && geographyState.status === "idle") {
+      startGeographyLoad();
+      return;
+    }
+    if (browseState.viewMode === "timeline" && geographyState.status === "loading") {
+      geographyRequestSequenceRef.current += 1;
+      setGeographyState({ status: "idle" });
+    }
+  }, [browseState.viewMode, geographyState.status, startGeographyLoad]);
 
   useEffect(() => {
     // 等待原生 dialog 卸载后再恢复焦点，避免浏览器默认焦点处理覆盖结果。
@@ -205,7 +264,22 @@ export function App({ data, loadDetail }: AppProps) {
         </aside>
 
         <div className="results-line" role="status" aria-atomic="true">
-          {browseState.mode === "overview" ? (
+          {browseState.viewMode === "map" ? (
+            <>
+              <span>
+                {browseState.category === "context"
+                  ? "历史分期不进入地图；请选择真实政权类别。"
+                  : mapBrowseResults.polities.length === 0
+                    ? "没有当年匹配的政权。"
+                    : mapSelection && mapSelection.points.length === 0
+                      ? "当年有匹配政权，但这些政权尚未校订地理数据。"
+                      : mapSelection
+                        ? `显示 ${mapBrowseResults.polities.length} 个政权、${mapSelection.points.length} 个地图点位，${mapSelection.missingEntities.length} 个政权尚未校订地理数据。`
+                        : "正在准备地图结果。"}
+              </span>
+              <span>点位仅作历史浏览定位，不表示疆域</span>
+            </>
+          ) : browseState.mode === "overview" ? (
             <>
               <span>
                 {browseState.regionScope.mode === "china"
@@ -226,7 +300,9 @@ export function App({ data, loadDetail }: AppProps) {
           <ComparisonPanel
             entities={comparisonEntities}
             regions={data.regions}
-            {...(browseState.mode === "point" ? { currentYear: browseState.year } : {})}
+            {...(browseState.viewMode === "map" || browseState.mode === "point"
+              ? { currentYear: browseState.year }
+              : {})}
             loadDetail={loadDetail}
             onRemove={toggleComparison}
             onClear={() => {
@@ -235,7 +311,32 @@ export function App({ data, loadDetail }: AppProps) {
           />
         )}
 
-        {browseState.mode === "overview" ? (
+        {browseState.viewMode === "map" ? (
+          geographyState.status === "ready" && mapSelection ? (
+            <section className="historical-map-shell" aria-label="历史地图浏览结果">
+              {geographyState.result.omittedCount > 0 && (
+                <p className="map-data-warning" role="status">
+                  有 {geographyState.result.omittedCount} 条地理记录格式异常，已跳过。
+                </p>
+              )}
+              <HistoricalMap clusters={mapSelection.clusters} onSelect={openDetail} />
+              <MapResultList
+                points={mapSelection.points}
+                missingEntities={mapSelection.missingEntities}
+                comparisonEntityIds={browseState.compareEntityIds}
+                onSelect={openDetail}
+                onToggleComparison={toggleComparison}
+              />
+            </section>
+          ) : (
+            <MapLoadPanel
+              state={geographyState.status === "error"
+                ? { error: geographyState.message }
+                : "loading"}
+              onRetry={startGeographyLoad}
+            />
+          )
+        ) : browseState.mode === "overview" ? (
           <Timeline
             data={data}
             matches={results.all}
@@ -293,7 +394,9 @@ export function App({ data, loadDetail }: AppProps) {
           sectionTitle={selectedMatch.section?.title}
           regions={data.regions}
           detailState={detailState}
-          {...(browseState.mode === "point" ? { currentYear: browseState.year } : {})}
+          {...(browseState.viewMode === "map" || browseState.mode === "point"
+            ? { currentYear: browseState.year }
+            : {})}
           onRetry={() => startDetailLoad(selectedMatch.entity.id)}
           onClose={closeDetail}
         />

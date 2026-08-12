@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 
 import { App } from "./app/App";
 import { createCrownlineDetailLoader } from "./data/loadCrownlineDetail";
+import { loadGeneratedGeography } from "./data/loadCrownlineGeography";
 import { loadCrownlineIndex } from "./data/loadCrownlineIndex";
 import "./styles/styles.css";
 
@@ -23,7 +24,11 @@ try {
   const data = await loadCrownlineIndex();
   root.render(
     <StrictMode>
-      <App data={data} loadDetail={createCrownlineDetailLoader(data)} />
+      <App
+        data={data}
+        loadDetail={createCrownlineDetailLoader(data)}
+        loadGeography={() => loadGeneratedGeography()}
+      />
     </StrictMode>
   );
 } catch (error) {
