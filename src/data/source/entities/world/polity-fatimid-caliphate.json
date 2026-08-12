@@ -1,0 +1,791 @@
+{
+  "order": 900,
+  "entities": [
+    {
+      "id": "polity-fatimid-caliphate",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "法蒂玛王朝",
+        "aliases": [
+          "法蒂玛哈里发国",
+          "法蒂玛哈里发王朝",
+          "Fatimid Caliphate",
+          "Fatimid dynasty"
+        ],
+        "local": "الخلافة الفاطمية"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 909,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1171,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-north-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "法蒂玛王朝是伊斯玛仪派什叶派建立的哈里发政权，909年在伊夫里基叶推翻阿格拉卜王朝后于北非起家，早期以拉卡达、迈赫迪耶与曼苏里亚为中心。969年征服埃及、973年迁都开罗后，埃及成为其政治、宗教与财政核心；虽然王朝一度控制或影响马格里布、地中海岛屿与东地中海部分地区，但十一至十二世纪逐步失去伊夫里基叶、叙利亚和巴勒斯坦等地，最终于1171年被阿尤布政权取代。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片按909—1171年的常见法蒂玛哈里发国口径记录。由于数据按整数年份闭区间快照展示，绝大多数年内交接沿用通行简表的整年起止；1130年阿米尔遇刺后到1132年哈菲兹正式自立之间存在明确的宫廷危机，因此以1131年的空位段单独表达。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-fatimid-al-mahdi",
+      "names": {
+        "primary": "迈赫迪",
+        "aliases": [
+          "al-Mahdi bi'llah",
+          "Abd Allah al-Mahdi Billah"
+        ]
+      },
+      "description": "迈赫迪，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-qaim",
+      "names": {
+        "primary": "卡伊姆",
+        "aliases": [
+          "al-Qa'im bi-Amr Allah",
+          "Muhammad al-Qa'im"
+        ]
+      },
+      "description": "卡伊姆，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-mansur",
+      "names": {
+        "primary": "曼苏尔",
+        "aliases": [
+          "al-Mansur bi-Nasr Allah",
+          "Isma'il al-Mansur"
+        ]
+      },
+      "description": "曼苏尔，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-muizz",
+      "names": {
+        "primary": "穆伊兹",
+        "aliases": [
+          "al-Mu'izz li-Din Allah",
+          "Ma'ad al-Mu'izz"
+        ]
+      },
+      "description": "穆伊兹，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-aziz",
+      "names": {
+        "primary": "阿齐兹",
+        "aliases": [
+          "al-Aziz bi'llah",
+          "Nizar al-Aziz"
+        ]
+      },
+      "description": "阿齐兹，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-hakim",
+      "names": {
+        "primary": "哈基姆",
+        "aliases": [
+          "al-Hakim bi-Amr Allah",
+          "Mansur al-Hakim"
+        ]
+      },
+      "description": "哈基姆，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-zahir",
+      "names": {
+        "primary": "扎希尔",
+        "aliases": [
+          "al-Zahir li-I'zaz Din Allah",
+          "Ali al-Zahir"
+        ]
+      },
+      "description": "扎希尔，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-mustansir",
+      "names": {
+        "primary": "穆斯坦西尔",
+        "aliases": [
+          "al-Mustansir bi'llah",
+          "Ma'ad al-Mustansir"
+        ]
+      },
+      "description": "穆斯坦西尔，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-mustali",
+      "names": {
+        "primary": "穆斯塔利",
+        "aliases": [
+          "al-Musta'li bi'llah",
+          "Ahmad al-Musta'li"
+        ]
+      },
+      "description": "穆斯塔利，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-amir",
+      "names": {
+        "primary": "阿米尔",
+        "aliases": [
+          "al-Amir bi-Ahkam Allah",
+          "Mansur al-Amir"
+        ]
+      },
+      "description": "阿米尔，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-hafiz",
+      "names": {
+        "primary": "哈菲兹",
+        "aliases": [
+          "al-Hafiz li-Din Allah",
+          "Abd al-Majid al-Hafiz"
+        ]
+      },
+      "description": "哈菲兹，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-zafir",
+      "names": {
+        "primary": "扎菲尔",
+        "aliases": [
+          "al-Zafir bi-Amr Allah",
+          "Isma'il al-Zafir"
+        ]
+      },
+      "description": "扎菲尔，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-faiz",
+      "names": {
+        "primary": "法伊兹",
+        "aliases": [
+          "al-Fa'iz bi-Nasr Allah",
+          "Isa al-Fa'iz"
+        ]
+      },
+      "description": "法伊兹，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-fatimid-al-adid",
+      "names": {
+        "primary": "阿迪德",
+        "aliases": [
+          "al-Adid li-Din Allah",
+          "Abd Allah al-Adid"
+        ]
+      },
+      "description": "阿迪德，法蒂玛王朝主要哈里发序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-fatimid-al-mahdi",
+      "personId": "person-fatimid-al-mahdi",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 909,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 934,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-qaim",
+      "personId": "person-fatimid-al-qaim",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 934,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 946,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-mansur",
+      "personId": "person-fatimid-al-mansur",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 946,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 953,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-muizz",
+      "personId": "person-fatimid-al-muizz",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 953,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 975,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "穆伊兹在位时完成对埃及的征服，并于973年把法蒂玛宫廷重心迁往开罗。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-aziz",
+      "personId": "person-fatimid-al-aziz",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 975,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 996,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-hakim",
+      "personId": "person-fatimid-al-hakim",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 996,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1021,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1000年年度快照按本分片口径命中哈基姆在位期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-zahir",
+      "personId": "person-fatimid-al-zahir",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1021,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1036,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-mustansir",
+      "personId": "person-fatimid-al-mustansir",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1036,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1094,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "部分年表把其即位年记为1035年；本分片采用更常见的1036年主线。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-mustali",
+      "personId": "person-fatimid-al-mustali",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1094,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1101,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "阿尔-穆斯坦西尔去世与穆斯塔利即位在1094年末至1095年初之间存在细节分歧；此处沿用常见概览表的1094—1101口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-amir",
+      "personId": "person-fatimid-al-amir",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1101,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1130,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "阿米尔于1130年遇刺；其后到哈菲兹正式称哈里发前的宫廷危机，以1131年空位段表示。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-hafiz",
+      "personId": "person-fatimid-al-hafiz",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1132,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1149,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "哈菲兹在1130年后先以摄政者身份维持政局，1132年正式取得哈里发位号；本分片仅记录其正式哈里发任期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-zafir",
+      "personId": "person-fatimid-al-zafir",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1149,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1154,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-faiz",
+      "personId": "person-fatimid-al-faiz",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1154,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1160,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-fatimid-al-adid",
+      "personId": "person-fatimid-al-adid",
+      "polityId": "polity-fatimid-caliphate",
+      "titles": [
+        "法蒂玛哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1160,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1171,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": [
+    {
+      "id": "vacancy-fatimid-interregnum-1131",
+      "polityId": "polity-fatimid-caliphate",
+      "periods": [
+        {
+          "start": {
+            "year": 1131,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1131,
+            "precision": "exact"
+          }
+        }
+      ],
+      "note": "阿米尔于1130年遇刺后，法蒂玛宫廷在摄政、库泰法特掌权与哈菲兹自立之间经历明确的继承危机；本分片以1131年的空位段表示没有稳定公认哈里发的一整年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-fatimid-history"
+        },
+        {
+          "sourceId": "source-fatimid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

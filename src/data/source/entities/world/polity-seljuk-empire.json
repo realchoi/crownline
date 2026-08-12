@@ -1,0 +1,913 @@
+{
+  "order": 860,
+  "entities": [
+    {
+      "id": "polity-seljuk-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "塞尔柱帝国",
+        "aliases": [
+          "大塞尔柱帝国",
+          "塞尔柱王朝",
+          "Seljuk Empire",
+          "Great Seljuk Empire",
+          "Seljuk dynasty"
+        ],
+        "local": "سلجوقیان بزرگ"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1037,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1194,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-west-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "塞尔柱帝国由乌古斯突厥出身的塞尔柱家族在呼罗珊崛起，并以尼沙布尔、雷伊、伊斯法罕、哈马丹与梅尔夫等宫廷中心统合伊朗高原、伊拉克与更广泛的西亚腹地。阿尔普·阿尔斯兰和马立克沙一世时期帝国达到军事与制度高峰，但1092年后王族分治伊拉克—伊朗西部、呼罗珊及诸支属地，权力呈多中心继承；这里仍按常见 Great Seljuk 口径，将主体政权延续至1194年图格里勒三世败于花剌子模为止。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "页面采用通行的 Great Seljuk 1037—1194 口径。1092年马立克沙一世死后，塞尔柱王族围绕伊拉克—伊朗西部与呼罗珊形成并行权力中心；为让这种分治可见，年表既保留常见西部苏丹序列，也显式列出1097年后在呼罗珊执政、1118年后成为最高苏丹的桑贾尔。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-seljuk-tughril-i",
+      "names": {
+        "primary": "图格里勒一世",
+        "aliases": [
+          "Tughril I",
+          "Toghrul Beg",
+          "Tugrul Bey"
+        ]
+      },
+      "description": "图格里勒一世，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-alp-arslan",
+      "names": {
+        "primary": "阿尔普·阿尔斯兰",
+        "aliases": [
+          "Alp Arslan"
+        ]
+      },
+      "description": "阿尔普·阿尔斯兰，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-malik-shah-i",
+      "names": {
+        "primary": "马立克沙一世",
+        "aliases": [
+          "Malik Shah I",
+          "Malik-Shah I"
+        ]
+      },
+      "description": "马立克沙一世，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-mahmud-i",
+      "names": {
+        "primary": "马哈茂德一世",
+        "aliases": [
+          "Mahmud I"
+        ]
+      },
+      "description": "马哈茂德一世，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-barkiyaruq",
+      "names": {
+        "primary": "贝尔基亚鲁克",
+        "aliases": [
+          "Barkiyaruq",
+          "Berkyaruq"
+        ]
+      },
+      "description": "贝尔基亚鲁克，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-malik-shah-ii",
+      "names": {
+        "primary": "马立克沙二世",
+        "aliases": [
+          "Malik Shah II",
+          "Malik-Shah II"
+        ]
+      },
+      "description": "马立克沙二世，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-muhammad-i-tapar",
+      "names": {
+        "primary": "穆罕默德一世·塔帕尔",
+        "aliases": [
+          "Muhammad I Tapar",
+          "Muhammad Tapar"
+        ]
+      },
+      "description": "穆罕默德一世·塔帕尔，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-ahmad-sanjar",
+      "names": {
+        "primary": "艾哈迈德·桑贾尔",
+        "aliases": [
+          "Ahmad Sanjar",
+          "Sanjar",
+          "Sultan Sanjar"
+        ]
+      },
+      "description": "艾哈迈德·桑贾尔，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-mahmud-ii",
+      "names": {
+        "primary": "马哈茂德二世",
+        "aliases": [
+          "Mahmud II"
+        ]
+      },
+      "description": "马哈茂德二世，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-dawud",
+      "names": {
+        "primary": "达乌德",
+        "aliases": [
+          "Dawud"
+        ]
+      },
+      "description": "达乌德，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-tughril-ii",
+      "names": {
+        "primary": "图格里勒二世",
+        "aliases": [
+          "Tughril II"
+        ]
+      },
+      "description": "图格里勒二世，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-masud",
+      "names": {
+        "primary": "马苏德",
+        "aliases": [
+          "Masud",
+          "Mas'ud"
+        ]
+      },
+      "description": "马苏德，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-malik-shah-iii",
+      "names": {
+        "primary": "马立克沙三世",
+        "aliases": [
+          "Malik Shah III",
+          "Malik-Shah III"
+        ]
+      },
+      "description": "马立克沙三世，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-muhammad-ii",
+      "names": {
+        "primary": "穆罕默德二世",
+        "aliases": [
+          "Muhammad II",
+          "Muhammad Shah"
+        ]
+      },
+      "description": "穆罕默德二世，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-suleiman-shah",
+      "names": {
+        "primary": "苏莱曼沙",
+        "aliases": [
+          "Suleiman Shah",
+          "Suleiman-Shah"
+        ]
+      },
+      "description": "苏莱曼沙，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-arslan-shah",
+      "names": {
+        "primary": "阿尔斯兰沙",
+        "aliases": [
+          "Arslan Shah",
+          "Arslan-Shah"
+        ]
+      },
+      "description": "阿尔斯兰沙，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-seljuk-tughril-iii",
+      "names": {
+        "primary": "图格里勒三世",
+        "aliases": [
+          "Tughril III",
+          "Toghrul III"
+        ]
+      },
+      "description": "图格里勒三世，塞尔柱帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-seljuk-tughril-i",
+      "personId": "person-seljuk-tughril-i",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1037,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1063,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-alp-arslan",
+      "personId": "person-seljuk-alp-arslan",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1063,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1072,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-malik-shah-i",
+      "personId": "person-seljuk-malik-shah-i",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1072,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1092,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-mahmud-i",
+      "personId": "person-seljuk-mahmud-i",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1092,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1094,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "马立克沙一世死后，马哈茂德一世在伊斯法罕一系被拥立，与贝尔基亚鲁克等竞争者并行争位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-barkiyaruq",
+      "personId": "person-seljuk-barkiyaruq",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1094,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1105,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "贝尔基亚鲁克的在位贯穿塞尔柱王族的长期内战；穆罕默德·塔帕尔与桑贾尔在东部逐步形成独立军政基础。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-malik-shah-ii",
+      "personId": "person-seljuk-malik-shah-ii",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1105,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1105,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "马立克沙二世在1105年短暂继位，很快被穆罕默德·塔帕尔取代。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-muhammad-i-tapar",
+      "personId": "person-seljuk-muhammad-i-tapar",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1105,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1118,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-ahmad-sanjar",
+      "personId": "person-seljuk-ahmad-sanjar",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1097,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1153,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "桑贾尔自1097年起作为呼罗珊的附属苏丹执政，1118年后成为塞尔柱王族公认的最高苏丹；此任期有意与西部苏丹线并列，以披露帝国后期的多中心结构。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-mahmud-ii",
+      "personId": "person-seljuk-mahmud-ii",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1118,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1131,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1118年后马哈茂德二世在伊拉克—伊朗西部被立为苏丹，其地位低于东部的最高苏丹桑贾尔。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-dawud",
+      "personId": "person-seljuk-dawud",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1131,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1132,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "达乌德在西部苏丹继承战中短暂获立，很快被图格里勒二世取代。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-tughril-ii",
+      "personId": "person-seljuk-tughril-ii",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1132,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1134,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-masud",
+      "personId": "person-seljuk-masud",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1134,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1152,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-malik-shah-iii",
+      "personId": "person-seljuk-malik-shah-iii",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1152,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1153,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-muhammad-ii",
+      "personId": "person-seljuk-muhammad-ii",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1153,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1159,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-suleiman-shah",
+      "personId": "person-seljuk-suleiman-shah",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1159,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1161,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-arslan-shah",
+      "personId": "person-seljuk-arslan-shah",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1161,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1176,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-seljuk-tughril-iii",
+      "personId": "person-seljuk-tughril-iii",
+      "polityId": "polity-seljuk-empire",
+      "titles": [
+        "塞尔柱苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1176,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1194,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "图格里勒三世在1191年曾被伊勒德尼兹诸王朝权臣奇兹勒·阿尔斯兰废黜，1192年复位；但按当前整年闭区间模型与项目校验规则，这一短暂中断在概览任期中合并记作1176—1194的连续单段。1194年败亡后塞尔柱主体政权终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-seljuk-history"
+        },
+        {
+          "sourceId": "source-seljuk-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

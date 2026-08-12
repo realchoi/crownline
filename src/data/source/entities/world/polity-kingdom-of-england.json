@@ -1,0 +1,179 @@
+{
+  "order": 890,
+  "entities": [
+    {
+      "id": "polity-kingdom-of-england",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "英格兰王国",
+        "aliases": [
+          "Kingdom of England",
+          "England"
+        ],
+        "local": "Regnum Anglorum"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 927,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1649,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1660,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1707,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-europe"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "以英格兰本土为核心、并在不同时期直接统辖威尔士及其边区的中世纪与近世王国。该政权通常以阿塞尔斯坦在927年控制约克后的统一为起点，经历诺曼征服、金雀花与都铎—斯图亚特诸王朝，至1707年依《联合法案》并入大不列颠王国；1649至1660年英格兰为共和国与护国公政体，此处按王国口径视为中断。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-england-history"
+        },
+        {
+          "sourceId": "source-england-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本条采用“927年形成统一的英格兰王国、1707年并入大不列颠”的常见口径；阿塞尔斯坦的个人在位常记为924/925—939，但其对全英格兰的统合通常追溯到927年。1649年查理一世被处决后王政被废止，1660年王政复辟；为避免把英格兰共和国阶段误记为王国延续，此处把1649—1660处理为存在区间中断。主序列不单列未加冕的埃德加·埃塞林、皇后玛蒂尔达或九日女王简·格雷。",
+      "alternativeChronologies": [
+        {
+          "label": "连续王国口径",
+          "existencePeriods": [
+            {
+              "start": {
+                "year": 927,
+                "precision": "exact"
+              },
+              "end": {
+                "year": 1707,
+                "precision": "exact"
+              }
+            }
+          ],
+          "note": "部分宪制叙事会将1649—1660视为英格兰国家连续史中的非常时期，仍以1707年前的英格兰王国作连续称呼。",
+          "sourceRefs": [
+            {
+              "sourceId": "source-england-history"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "persons": [
+    { "id": "person-england-athelstan", "names": { "primary": "阿塞尔斯坦", "aliases": ["Athelstan", "Æthelstan"] }, "description": "阿塞尔斯坦，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edmund-i", "names": { "primary": "埃德蒙一世", "aliases": ["Edmund I"] }, "description": "埃德蒙一世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edred", "names": { "primary": "埃德雷德", "aliases": ["Edred", "Eadred"] }, "description": "埃德雷德，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edwy", "names": { "primary": "埃德威", "aliases": ["Edwy", "Eadwig"] }, "description": "埃德威，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edgar", "names": { "primary": "埃德加", "aliases": ["Edgar"] }, "description": "埃德加，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edward-the-martyr", "names": { "primary": "爱德华殉道王", "aliases": ["Edward the Martyr", "Edward II 'The Martyr'"] }, "description": "爱德华殉道王，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-aethelred-ii", "names": { "primary": "埃塞尔雷德二世", "aliases": ["Æthelred II", "Ethelred II", "Ethelred the Unready"] }, "description": "埃塞尔雷德二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-sweyn-forkbeard", "names": { "primary": "斯文·叉须", "aliases": ["Sweyn", "Sweyn Forkbeard"] }, "description": "斯文·叉须，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edmund-ii", "names": { "primary": "埃德蒙二世", "aliases": ["Edmund II", "Edmund Ironside"] }, "description": "埃德蒙二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-cnut", "names": { "primary": "克努特大帝", "aliases": ["Cnut", "Canute the Great"] }, "description": "克努特大帝，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-harold-i", "names": { "primary": "哈罗德一世", "aliases": ["Harold I", "Harold Harefoot"] }, "description": "哈罗德一世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-harthacnut", "names": { "primary": "哈德克努特", "aliases": ["Harthacnut", "Hardicanute"] }, "description": "哈德克努特，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edward-the-confessor", "names": { "primary": "忏悔者爱德华", "aliases": ["Edward the Confessor"] }, "description": "忏悔者爱德华，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-harold-ii", "names": { "primary": "哈罗德二世", "aliases": ["Harold II", "Harold Godwinson"] }, "description": "哈罗德二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-william-i", "names": { "primary": "征服者威廉", "aliases": ["William I", "William the Conqueror"] }, "description": "征服者威廉，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-william-ii", "names": { "primary": "威廉二世", "aliases": ["William II", "William Rufus"] }, "description": "威廉二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-henry-i", "names": { "primary": "亨利一世", "aliases": ["Henry I", "Henry I Beauclerc"] }, "description": "亨利一世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-stephen", "names": { "primary": "斯蒂芬", "aliases": ["Stephen", "Stephen of Blois"] }, "description": "斯蒂芬，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-henry-ii", "names": { "primary": "亨利二世", "aliases": ["Henry II", "Henry II Curtmantle"] }, "description": "亨利二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-richard-i", "names": { "primary": "理查一世", "aliases": ["Richard I", "Richard the Lionheart"] }, "description": "理查一世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-john", "names": { "primary": "约翰", "aliases": ["John", "John Lackland"] }, "description": "约翰，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-henry-iii", "names": { "primary": "亨利三世", "aliases": ["Henry III"] }, "description": "亨利三世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edward-i", "names": { "primary": "爱德华一世", "aliases": ["Edward I", "Edward I Longshanks"] }, "description": "爱德华一世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edward-ii", "names": { "primary": "爱德华二世", "aliases": ["Edward II"] }, "description": "爱德华二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edward-iii", "names": { "primary": "爱德华三世", "aliases": ["Edward III"] }, "description": "爱德华三世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-richard-ii", "names": { "primary": "理查二世", "aliases": ["Richard II"] }, "description": "理查二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-henry-iv", "names": { "primary": "亨利四世", "aliases": ["Henry IV"] }, "description": "亨利四世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-henry-v", "names": { "primary": "亨利五世", "aliases": ["Henry V"] }, "description": "亨利五世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-henry-vi", "names": { "primary": "亨利六世", "aliases": ["Henry VI"] }, "description": "亨利六世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edward-iv", "names": { "primary": "爱德华四世", "aliases": ["Edward IV"] }, "description": "爱德华四世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edward-v", "names": { "primary": "爱德华五世", "aliases": ["Edward V"] }, "description": "爱德华五世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-richard-iii", "names": { "primary": "理查三世", "aliases": ["Richard III"] }, "description": "理查三世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-henry-vii", "names": { "primary": "亨利七世", "aliases": ["Henry VII"] }, "description": "亨利七世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-henry-viii", "names": { "primary": "亨利八世", "aliases": ["Henry VIII"] }, "description": "亨利八世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-edward-vi", "names": { "primary": "爱德华六世", "aliases": ["Edward VI"] }, "description": "爱德华六世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-mary-i", "names": { "primary": "玛丽一世", "aliases": ["Mary I"] }, "description": "玛丽一世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-elizabeth-i", "names": { "primary": "伊丽莎白一世", "aliases": ["Elizabeth I"] }, "description": "伊丽莎白一世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-james-i", "names": { "primary": "詹姆斯一世", "aliases": ["James I", "James VI and I"] }, "description": "詹姆斯一世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-charles-i", "names": { "primary": "查理一世", "aliases": ["Charles I"] }, "description": "查理一世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-charles-ii", "names": { "primary": "查理二世", "aliases": ["Charles II"] }, "description": "查理二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-james-ii", "names": { "primary": "詹姆斯二世", "aliases": ["James II"] }, "description": "詹姆斯二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-william-iii", "names": { "primary": "威廉三世", "aliases": ["William III", "William of Orange"] }, "description": "威廉三世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-mary-ii", "names": { "primary": "玛丽二世", "aliases": ["Mary II"] }, "description": "玛丽二世，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] },
+    { "id": "person-england-anne", "names": { "primary": "安妮", "aliases": ["Anne", "Queen Anne"] }, "description": "安妮，英格兰王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }] }
+  ],
+  "reigns": [
+    { "id": "reign-england-athelstan", "personId": "person-england-athelstan", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 927, "precision": "exact" }, "end": { "year": 939, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "阿塞尔斯坦的个人在位通常上推至924或925年；此处按927年后统一的英格兰王国口径起算。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edmund-i", "personId": "person-england-edmund-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 939, "precision": "exact" }, "end": { "year": 946, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edred", "personId": "person-england-edred", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 946, "precision": "exact" }, "end": { "year": 955, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edwy", "personId": "person-england-edwy", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 955, "precision": "exact" }, "end": { "year": 959, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edgar", "personId": "person-england-edgar", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 959, "precision": "exact" }, "end": { "year": 975, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edward-the-martyr", "personId": "person-england-edward-the-martyr", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 975, "precision": "exact" }, "end": { "year": 978, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-aethelred-ii-first", "personId": "person-england-aethelred-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 978, "precision": "exact" }, "end": { "year": 1013, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-sweyn-forkbeard", "personId": "person-england-sweyn-forkbeard", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1013, "precision": "exact" }, "end": { "year": 1014, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "斯文于1013年被英格兰贵族承认为王并在1014年去世；按年度闭区间口径，两年均保留在其任期内。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-aethelred-ii-restored", "personId": "person-england-aethelred-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1014, "precision": "exact" }, "end": { "year": 1016, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "埃塞尔雷德在1014年复位；以独立任期记录可避免把复位段与先前任期误合并。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edmund-ii", "personId": "person-england-edmund-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1016, "precision": "exact" }, "end": { "year": 1016, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-cnut", "personId": "person-england-cnut", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1016, "precision": "exact" }, "end": { "year": 1035, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-harold-i", "personId": "person-england-harold-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1035, "precision": "exact" }, "end": { "year": 1040, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "哈罗德一世在其弟哈德克努特滞留丹麦期间逐步成为英格兰事实上的唯一统治者。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-harthacnut", "personId": "person-england-harthacnut", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1035, "precision": "exact" }, "end": { "year": 1042, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "皇家年表将哈德克努特列作1035—1042年在位者；其中1035—1040年与哈罗德一世存在并行主张，1040年后独治。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edward-the-confessor", "personId": "person-england-edward-the-confessor", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1042, "precision": "exact" }, "end": { "year": 1065, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "爱德华于1066年1月去世；为使年度快照更清楚地呈现1066年的继承危机，此处将1066年留给哈罗德二世与征服者威廉。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-harold-ii", "personId": "person-england-harold-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1066, "precision": "exact" }, "end": { "year": 1066, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "哈罗德二世于1066年1月即位，同年10月战死于黑斯廷斯；按“当年任一时点存在即命中”的规则，1066年快照会保留其记录。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-william-i", "personId": "person-england-william-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1066, "precision": "exact" }, "end": { "year": 1087, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "征服者威廉在1066年圣诞节加冕；因此1066年快照会同时命中哈罗德二世与威廉一世，以明确表现诺曼征服年的继承转换。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-william-ii", "personId": "person-england-william-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1087, "precision": "exact" }, "end": { "year": 1100, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-henry-i", "personId": "person-england-henry-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1100, "precision": "exact" }, "end": { "year": 1135, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-stephen", "personId": "person-england-stephen", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1135, "precision": "exact" }, "end": { "year": 1154, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "此处按主流加冕君主序列列入斯蒂芬，不单列未完成加冕统治的玛蒂尔达皇后主张。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-henry-ii", "personId": "person-england-henry-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1154, "precision": "exact" }, "end": { "year": 1189, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-richard-i", "personId": "person-england-richard-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1189, "precision": "exact" }, "end": { "year": 1199, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-john", "personId": "person-england-john", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1199, "precision": "exact" }, "end": { "year": 1216, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-henry-iii", "personId": "person-england-henry-iii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1216, "precision": "exact" }, "end": { "year": 1272, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edward-i", "personId": "person-england-edward-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1272, "precision": "exact" }, "end": { "year": 1307, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edward-ii", "personId": "person-england-edward-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1307, "precision": "exact" }, "end": { "year": 1327, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edward-iii", "personId": "person-england-edward-iii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1327, "precision": "exact" }, "end": { "year": 1377, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-richard-ii", "personId": "person-england-richard-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1377, "precision": "exact" }, "end": { "year": 1399, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-henry-iv", "personId": "person-england-henry-iv", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1399, "precision": "exact" }, "end": { "year": 1413, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-henry-v", "personId": "person-england-henry-v", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1413, "precision": "exact" }, "end": { "year": 1422, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-henry-vi-first", "personId": "person-england-henry-vi", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1422, "precision": "exact" }, "end": { "year": 1461, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edward-iv-first", "personId": "person-england-edward-iv", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1461, "precision": "exact" }, "end": { "year": 1470, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-henry-vi-restored", "personId": "person-england-henry-vi", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1470, "precision": "exact" }, "end": { "year": 1471, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "亨利六世在玫瑰战争中曾短暂复辟，故以独立任期记录复位段。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edward-iv-restored", "personId": "person-england-edward-iv", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1471, "precision": "exact" }, "end": { "year": 1482, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "爱德华四世于1471年复位；此处将1483年留给其继承危机与后继者，以便更清楚表达该年的王位转换。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edward-v", "personId": "person-england-edward-v", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1483, "precision": "exact" }, "end": { "year": 1483, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "爱德华五世仅在1483年短暂在位，未及加冕。此处保留其年内统治主张，以反映王位危机。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-richard-iii", "personId": "person-england-richard-iii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1483, "precision": "exact" }, "end": { "year": 1485, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-henry-vii", "personId": "person-england-henry-vii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1485, "precision": "exact" }, "end": { "year": 1509, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-henry-viii", "personId": "person-england-henry-viii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1509, "precision": "exact" }, "end": { "year": 1547, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-edward-vi", "personId": "person-england-edward-vi", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1547, "precision": "exact" }, "end": { "year": 1553, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-mary-i", "personId": "person-england-mary-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰女王"], "role": "ruler", "periods": [{ "start": { "year": 1553, "precision": "exact" }, "end": { "year": 1558, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "此处不单列九日女王简·格雷，而按加冕并稳定统治的主线口径将1553年纳入玛丽一世。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-elizabeth-i", "personId": "person-england-elizabeth-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰女王"], "role": "ruler", "periods": [{ "start": { "year": 1558, "precision": "exact" }, "end": { "year": 1603, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-james-i", "personId": "person-england-james-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1603, "precision": "exact" }, "end": { "year": 1625, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1603年起英格兰与苏格兰共戴一君，但两国在1707年前仍是法律与议会分立的王国。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-charles-i", "personId": "person-england-charles-i", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1625, "precision": "exact" }, "end": { "year": 1649, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "查理一世于1649年被处决；同年王权被正式废止，故王国存在区间到1649年止。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-charles-ii", "personId": "person-england-charles-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1660, "precision": "exact" }, "end": { "year": 1685, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "王政在1660年复辟后，由查理二世重新作为英格兰君主在位。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-james-ii", "personId": "person-england-james-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1685, "precision": "exact" }, "end": { "year": 1688, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-william-iii", "personId": "person-england-william-iii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰国王"], "role": "ruler", "periods": [{ "start": { "year": 1689, "precision": "exact" }, "end": { "year": 1702, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "威廉三世与玛丽二世自1689年起作为联合君主受位。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-mary-ii", "personId": "person-england-mary-ii", "polityId": "polity-kingdom-of-england", "titles": ["英格兰女王"], "role": "ruler", "periods": [{ "start": { "year": 1689, "precision": "exact" }, "end": { "year": 1694, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "玛丽二世与威廉三世联合在位，1694年去世后由威廉独治至1702年。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" },
+    { "id": "reign-england-anne", "personId": "person-england-anne", "polityId": "polity-kingdom-of-england", "titles": ["英格兰女王"], "role": "ruler", "periods": [{ "start": { "year": 1702, "precision": "exact" }, "end": { "year": 1707, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1707年《联合法案》生效后，安妮继续作为大不列颠女王在位至1714年；此处仅保留其作为英格兰女王的阶段。", "sourceRefs": [{ "sourceId": "source-england-history" }, { "sourceId": "source-england-rulers" }], "confidence": "medium" }
+  ],
+  "reignVacancies": []
+}

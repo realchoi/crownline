@@ -1,0 +1,786 @@
+{
+  "order": 850,
+  "entities": [
+    {
+      "id": "polity-mughal-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "莫卧儿帝国",
+        "aliases": [
+          "莫卧儿王朝",
+          "Mughal Empire",
+          "Mughal dynasty"
+        ],
+        "local": "سلطنت مغلیہ"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1526,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1857,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-south-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "莫卧儿帝国由帖木儿后裔巴布尔在第一次帕尼帕特战役后建立，以德里、阿格拉、拉合尔等宫廷中心统合北印度并逐步扩张到次大陆大部。阿克巴至奥朗则布时期帝国疆域和财政能力达到顶峰；胡马雍失国与复辟、十八世纪后的地方离心及英属东印度公司的扩张，则构成其由强盛转入名义统治并最终在1857年终结的主线。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用1526至1857年的常见莫卧儿帝国口径，聚焦德里与阿格拉宫廷主线。由于数据按闭区间年度快照展示，为保证1605年快照仍落在阿克巴任内，贾汉吉尔的完整在位年从1606年起算，并以任期注记说明其在1605年末完成继位。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-mughal-babur",
+      "names": {
+        "primary": "巴布尔",
+        "aliases": [
+          "Babur"
+        ]
+      },
+      "description": "巴布尔，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-humayun",
+      "names": {
+        "primary": "胡马雍",
+        "aliases": [
+          "Humayun"
+        ]
+      },
+      "description": "胡马雍，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-akbar",
+      "names": {
+        "primary": "阿克巴",
+        "aliases": [
+          "Akbar",
+          "Akbar I"
+        ]
+      },
+      "description": "阿克巴，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-jahangir",
+      "names": {
+        "primary": "贾汉吉尔",
+        "aliases": [
+          "Jahangir"
+        ]
+      },
+      "description": "贾汉吉尔，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-shah-jahan",
+      "names": {
+        "primary": "沙贾汗",
+        "aliases": [
+          "Shah Jahan"
+        ]
+      },
+      "description": "沙贾汗，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-aurangzeb",
+      "names": {
+        "primary": "奥朗则布",
+        "aliases": [
+          "Aurangzeb",
+          "Alamgir I"
+        ]
+      },
+      "description": "奥朗则布，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-bahadur-shah-i",
+      "names": {
+        "primary": "巴哈杜尔·沙一世",
+        "aliases": [
+          "Bahadur Shah I",
+          "Shah Alam I"
+        ]
+      },
+      "description": "巴哈杜尔·沙一世，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-farrukhsiyar",
+      "names": {
+        "primary": "法鲁赫西亚尔",
+        "aliases": [
+          "Farrukhsiyar"
+        ]
+      },
+      "description": "法鲁赫西亚尔，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-muhammad-shah",
+      "names": {
+        "primary": "穆罕默德·沙",
+        "aliases": [
+          "Muhammad Shah"
+        ]
+      },
+      "description": "穆罕默德·沙，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-ahmad-shah-bahadur",
+      "names": {
+        "primary": "艾哈迈德·沙·巴哈杜尔",
+        "aliases": [
+          "Ahmad Shah Bahadur"
+        ]
+      },
+      "description": "艾哈迈德·沙·巴哈杜尔，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-alamgir-ii",
+      "names": {
+        "primary": "阿拉姆吉尔二世",
+        "aliases": [
+          "Alamgir II"
+        ]
+      },
+      "description": "阿拉姆吉尔二世，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-shah-alam-ii",
+      "names": {
+        "primary": "沙阿拉姆二世",
+        "aliases": [
+          "Shah Alam II"
+        ]
+      },
+      "description": "沙阿拉姆二世，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-akbar-ii",
+      "names": {
+        "primary": "阿克巴二世",
+        "aliases": [
+          "Akbar II"
+        ]
+      },
+      "description": "阿克巴二世，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mughal-bahadur-shah-ii",
+      "names": {
+        "primary": "巴哈杜尔·沙二世",
+        "aliases": [
+          "Bahadur Shah II",
+          "Bahadur Shah Zafar"
+        ]
+      },
+      "description": "巴哈杜尔·沙二世，莫卧儿帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-mughal-babur",
+      "personId": "person-mughal-babur",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1526,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1530,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-humayun",
+      "personId": "person-mughal-humayun",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1530,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1540,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1555,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1556,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "胡马雍在1540年失去德里与阿格拉，1555年在波斯支持下复辟；两段在位在同一王朝实体下合并展示。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-akbar",
+      "personId": "person-mughal-akbar",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1556,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1605,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-jahangir",
+      "personId": "person-mughal-jahangir",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1606,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1627,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "贾汉吉尔于1605年末继位；为避免年度闭区间快照在1605年同时命中阿克巴与贾汉吉尔，这里将其完整在位年从1606年起算。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-shah-jahan",
+      "personId": "person-mughal-shah-jahan",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1628,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1658,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-aurangzeb",
+      "personId": "person-mughal-aurangzeb",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1658,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1707,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-bahadur-shah-i",
+      "personId": "person-mughal-bahadur-shah-i",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1707,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1712,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-farrukhsiyar",
+      "personId": "person-mughal-farrukhsiyar",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1713,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1719,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-muhammad-shah",
+      "personId": "person-mughal-muhammad-shah",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1719,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1748,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-ahmad-shah-bahadur",
+      "personId": "person-mughal-ahmad-shah-bahadur",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1748,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1754,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-alamgir-ii",
+      "personId": "person-mughal-alamgir-ii",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1754,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1759,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-shah-alam-ii",
+      "personId": "person-mughal-shah-alam-ii",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1760,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1806,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-akbar-ii",
+      "personId": "person-mughal-akbar-ii",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1806,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1837,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mughal-bahadur-shah-ii",
+      "personId": "person-mughal-bahadur-shah-ii",
+      "polityId": "polity-mughal-empire",
+      "titles": [
+        "莫卧儿皇帝"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1837,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1857,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": [
+    {
+      "id": "vacancy-mughal-sur-interregnum",
+      "polityId": "polity-mughal-empire",
+      "periods": [
+        {
+          "start": {
+            "year": 1541,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1554,
+            "precision": "exact"
+          }
+        }
+      ],
+      "note": "胡马雍在1540年失去德里与阿格拉后长期流亡，至1555年才恢复核心统治；此段按常见王朝口径视为莫卧儿失位期，而不补造并不存在的在位莫卧儿皇帝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mughal-history"
+        },
+        {
+          "sourceId": "source-mughal-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,485 @@
+{
+  "order": 920,
+  "entities": [
+    {
+      "id": "polity-aztec-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "阿兹特克帝国",
+        "aliases": [
+          "Aztec Empire",
+          "Mexica Empire",
+          "Triple Alliance",
+          "Aztec Triple Alliance"
+        ],
+        "local": "Ēxcān Tlahtōlōyān"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1428,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1521,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-americas"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "阿兹特克帝国通常指1428年后三方同盟形成后、由墨西卡人主导的中部墨西哥进贡帝国，以特诺奇蒂特兰为核心，并与特斯科科、特拉科潘共同分享征服与赋贡收益。十五世纪后期起，特诺奇蒂特兰的大特拉托阿尼逐步成为联盟的主导权力中心；阿维特索特尔和蒙特苏马二世时期帝国达到极盛，1521年特诺奇蒂特兰在西班牙人与原住民盟军围攻下陷落后，这一“阿兹特克帝国”口径通常即告终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片把“阿兹特克帝国”限定为1428—1521年的三方同盟／墨西卡帝国主线，不把1428年前仅属特诺奇蒂特兰城邦阶段的早期统治者并入，也不把1521年陷落后西班牙控制下的名义性原住民官长视作帝国延续。为避免整数年份闭区间快照在年内交接时出现双重统治者，常见年表中的交接年一般归入继任者：因此阿维特索特尔止于1501年、蒙特苏马二世止于1519年、夸乌特莫克仅保留1521年的帝国末段。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-aztec-itzcoatl",
+      "names": {
+        "primary": "伊茨科阿特尔",
+        "aliases": [
+          "Itzcoatl",
+          "Itzcóatl"
+        ]
+      },
+      "description": "伊茨科阿特尔，阿兹特克帝国主线大特拉托阿尼序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aztec-moctezuma-i",
+      "names": {
+        "primary": "蒙特苏马一世",
+        "aliases": [
+          "Motecuhzoma I",
+          "Moctezuma I",
+          "Motecuhzoma Ilhuicamina",
+          "Montezuma I"
+        ]
+      },
+      "description": "蒙特苏马一世，阿兹特克帝国主线大特拉托阿尼序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aztec-axayacatl",
+      "names": {
+        "primary": "阿沙亚卡特尔",
+        "aliases": [
+          "Axayacatl"
+        ]
+      },
+      "description": "阿沙亚卡特尔，阿兹特克帝国主线大特拉托阿尼序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aztec-tizoc",
+      "names": {
+        "primary": "蒂索克",
+        "aliases": [
+          "Tizoc",
+          "Tizocic"
+        ]
+      },
+      "description": "蒂索克，阿兹特克帝国主线大特拉托阿尼序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aztec-ahuitzotl",
+      "names": {
+        "primary": "阿维特索特尔",
+        "aliases": [
+          "Ahuitzotl"
+        ]
+      },
+      "description": "阿维特索特尔，阿兹特克帝国主线大特拉托阿尼序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aztec-moctezuma-ii",
+      "names": {
+        "primary": "蒙特苏马二世",
+        "aliases": [
+          "Motecuhzoma II",
+          "Moctezuma II",
+          "Montezuma II",
+          "Motecuhzoma Xocoyotzin"
+        ]
+      },
+      "description": "蒙特苏马二世，阿兹特克帝国主线大特拉托阿尼序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aztec-cuitlahuac",
+      "names": {
+        "primary": "奎特拉瓦克",
+        "aliases": [
+          "Cuitlahuac",
+          "Cuitláhuac"
+        ]
+      },
+      "description": "奎特拉瓦克，阿兹特克帝国主线大特拉托阿尼序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aztec-cuauhtemoc",
+      "names": {
+        "primary": "夸乌特莫克",
+        "aliases": [
+          "Cuauhtemoc",
+          "Cuauhtémoc"
+        ]
+      },
+      "description": "夸乌特莫克，阿兹特克帝国主线大特拉托阿尼序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-aztec-itzcoatl",
+      "personId": "person-aztec-itzcoatl",
+      "polityId": "polity-aztec-empire",
+      "titles": [
+        "阿兹特克帝国大特拉托阿尼"
+      ],
+      "localTitles": [
+        "Huey Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1428,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1439,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-aztec-moctezuma-i",
+      "personId": "person-aztec-moctezuma-i",
+      "polityId": "polity-aztec-empire",
+      "titles": [
+        "阿兹特克帝国大特拉托阿尼"
+      ],
+      "localTitles": [
+        "Huey Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1440,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1468,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-aztec-axayacatl",
+      "personId": "person-aztec-axayacatl",
+      "polityId": "polity-aztec-empire",
+      "titles": [
+        "阿兹特克帝国大特拉托阿尼"
+      ],
+      "localTitles": [
+        "Huey Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1469,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1480,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-aztec-tizoc",
+      "personId": "person-aztec-tizoc",
+      "polityId": "polity-aztec-empire",
+      "titles": [
+        "阿兹特克帝国大特拉托阿尼"
+      ],
+      "localTitles": [
+        "Huey Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1481,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1485,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-aztec-ahuitzotl",
+      "personId": "person-aztec-ahuitzotl",
+      "polityId": "polity-aztec-empire",
+      "titles": [
+        "阿兹特克帝国大特拉托阿尼"
+      ],
+      "localTitles": [
+        "Huey Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1486,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1501,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-aztec-moctezuma-ii",
+      "personId": "person-aztec-moctezuma-ii",
+      "polityId": "polity-aztec-empire",
+      "titles": [
+        "阿兹特克帝国大特拉托阿尼"
+      ],
+      "localTitles": [
+        "Huey Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1502,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1519,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-aztec-cuitlahuac",
+      "personId": "person-aztec-cuitlahuac",
+      "polityId": "polity-aztec-empire",
+      "titles": [
+        "阿兹特克帝国大特拉托阿尼"
+      ],
+      "localTitles": [
+        "Huey Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1520,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1520,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "常见叙述多把其在位压缩为1520年的数月；本分片按整年快照模型把1520年归入奎特拉瓦克。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-aztec-cuauhtemoc",
+      "personId": "person-aztec-cuauhtemoc",
+      "polityId": "polity-aztec-empire",
+      "titles": [
+        "阿兹特克帝国大特拉托阿尼"
+      ],
+      "localTitles": [
+        "Huey Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1521,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1521,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "常见人物年表会把夸乌特莫克写到1524或1525；此处分片只记录1521年特诺奇蒂特兰陷落前后的帝国末段，不把其被俘后的名义地位视作阿兹特克帝国延续。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aztec-history"
+        },
+        {
+          "sourceId": "source-aztec-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

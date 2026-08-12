@@ -1,0 +1,554 @@
+{
+  "order": 830,
+  "entities": [
+    {
+      "id": "polity-timurid-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "帖木儿帝国",
+        "aliases": [
+          "帖木儿王朝",
+          "Timurid Empire",
+          "Timurid dynasty"
+        ],
+        "local": "تیموریان"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1370,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1507,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-central-asia",
+        "region-west-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "以帖木儿为名的征服王朝，兴起于河中地区并以撒马尔罕为都，势力一度扩展至伊朗、阿富汗与两河流域。英国博物馆将其界定为1370至1507年的王朝：帖木儿凭借与成吉思汗家族联姻取得“驸马”合法性，后期诸支主要分治河中与呼罗珊，最终在1507年被乌兹别克的昔班尼势力取代。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "帖木儿死后很快出现多个权力中心；这里按常见概览年表，保留撒马尔罕—赫拉特主线上的核心君主。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-timurid-timur",
+      "names": {
+        "primary": "帖木儿",
+        "aliases": [
+          "Timur",
+          "Tamerlane",
+          "Timur Lang"
+        ]
+      },
+      "description": "帖木儿，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-timurid-khalil-sultan",
+      "names": {
+        "primary": "哈利勒·苏丹",
+        "aliases": [
+          "Khalil Sultan"
+        ]
+      },
+      "description": "哈利勒·苏丹，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-timurid-shah-rukh",
+      "names": {
+        "primary": "沙哈鲁赫",
+        "aliases": [
+          "Shah Rukh",
+          "Shahrukh"
+        ]
+      },
+      "description": "沙哈鲁赫，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-timurid-ulugh-beg",
+      "names": {
+        "primary": "兀鲁伯",
+        "aliases": [
+          "Ulugh Beg",
+          "Muhammad Taragai"
+        ]
+      },
+      "description": "兀鲁伯，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-timurid-abd-al-latif",
+      "names": {
+        "primary": "阿卜杜·拉提夫",
+        "aliases": [
+          "Abd al-Latif Mirza"
+        ]
+      },
+      "description": "阿卜杜·拉提夫，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-timurid-abdullah",
+      "names": {
+        "primary": "阿卜杜拉",
+        "aliases": [
+          "Abdullah Mirza"
+        ]
+      },
+      "description": "阿卜杜拉，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-timurid-abu-said",
+      "names": {
+        "primary": "阿布·赛义德·米尔扎",
+        "aliases": [
+          "Abu Sa'id Mirza",
+          "Sultan Abu Sa'id"
+        ]
+      },
+      "description": "阿布·赛义德·米尔扎，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-timurid-yadgar-muhammad",
+      "names": {
+        "primary": "亚德加尔·穆罕默德",
+        "aliases": [
+          "Yadgar Muhammad"
+        ]
+      },
+      "description": "亚德加尔·穆罕默德，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-timurid-husayn-bayqara",
+      "names": {
+        "primary": "侯赛因·拜卡拉",
+        "aliases": [
+          "Husayn Bayqara",
+          "Sultan Husayn"
+        ]
+      },
+      "description": "侯赛因·拜卡拉，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-timurid-badi-al-zaman",
+      "names": {
+        "primary": "巴迪·乌兹-扎曼·米尔扎",
+        "aliases": [
+          "Badi al-Zaman Mirza"
+        ]
+      },
+      "description": "巴迪·乌兹-扎曼·米尔扎，帖木儿帝国概览年表中的核心君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-timurid-timur",
+      "personId": "person-timurid-timur",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1370,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1405,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-timurid-khalil-sultan",
+      "personId": "person-timurid-khalil-sultan",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1405,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1409,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-timurid-shah-rukh",
+      "personId": "person-timurid-shah-rukh",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1409,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1447,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-timurid-ulugh-beg",
+      "personId": "person-timurid-ulugh-beg",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1447,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1449,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-timurid-abd-al-latif",
+      "personId": "person-timurid-abd-al-latif",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1449,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1450,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-timurid-abdullah",
+      "personId": "person-timurid-abdullah",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1450,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1451,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-timurid-abu-said",
+      "personId": "person-timurid-abu-said",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1451,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1469,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-timurid-yadgar-muhammad",
+      "personId": "person-timurid-yadgar-muhammad",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1470,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1470,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-timurid-husayn-bayqara",
+      "personId": "person-timurid-husayn-bayqara",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1470,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1506,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-timurid-badi-al-zaman",
+      "personId": "person-timurid-badi-al-zaman",
+      "polityId": "polity-timurid-empire",
+      "titles": [
+        "帖木儿帝国君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1506,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1507,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-timurid-history"
+        },
+        {
+          "sourceId": "source-timurid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

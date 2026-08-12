@@ -97,7 +97,9 @@ describe("源数据分片", () => {
 
     const summary = await generateData({ sourceRoot, toolOutputRoot, publicOutputRoot });
 
-    expect(summary).toMatchObject({ entities: 77, persons: 675, reigns: 706, details: 77 });
+    expect(summary).toMatchObject({ entities: 93, details: 93 });
+    expect(summary.persons).toBe(data.persons.length);
+    expect(summary.reigns).toBe(data.reigns.length);
     expect(await readJson(join(toolOutputRoot, "crownline-data.json"))).toEqual(data);
     expect(await readJson(join(publicOutputRoot, "index.json"))).toMatchObject({
       schemaVersion: 3

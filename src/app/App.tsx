@@ -130,7 +130,7 @@ export function App({ data, loadDetail }: AppProps) {
         <div className="stat-grid" aria-label="时间轴概览">
           <div className="stat-card">
             <span className="stat-label">覆盖时段</span>
-            <strong className="stat-value">约前2070—1912</strong>
+            <strong className="stat-value">约前2070—1922</strong>
           </div>
           <div className="stat-card">
             <span className="stat-label">收录条目</span>

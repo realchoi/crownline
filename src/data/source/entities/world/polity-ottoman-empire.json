@@ -1,0 +1,1894 @@
+{
+  "order": 870,
+  "entities": [
+    {
+      "id": "polity-ottoman-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "奥斯曼帝国",
+        "aliases": [
+          "奥斯曼土耳其帝国",
+          "Ottoman Empire",
+          "Ottoman Turkish Empire"
+        ],
+        "local": "دولت عثمانیه"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1299,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1922,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-west-asia",
+        "region-europe"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "奥斯曼帝国起于安纳托利亚西北边疆的奥斯曼家族政权，先后以布尔萨、埃迪尔内和1453年后的君士坦丁堡／伊斯坦布尔为核心，统合巴尔干、安纳托利亚与阿拉伯诸省，成为连接东地中海、黑海与西亚的重要帝国。其疆域与制度在十五至十六世纪达到高峰，十九世纪以后则在地方民族主义、列强干预与大战失败中持续收缩，最终于1922年废除苏丹制。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "奥斯曼国家的早期建国年份常见有约1299、1302或依文书改记1323／1324等不同口径；本分片采用通行的约1299—1922帝国序列。1402年安卡拉战败后的诸皇子争位期不并入单一苏丹主线，而以1403—1412年的空位段表达。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-ottoman-osman-i",
+      "names": {
+        "primary": "奥斯曼一世",
+        "aliases": [
+          "Osman I",
+          "Osman Gazi"
+        ]
+      },
+      "description": "奥斯曼一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-orhan",
+      "names": {
+        "primary": "奥尔汗",
+        "aliases": [
+          "Orhan",
+          "Orhan Gazi"
+        ]
+      },
+      "description": "奥尔汗，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-murad-i",
+      "names": {
+        "primary": "穆拉德一世",
+        "aliases": [
+          "Murad I"
+        ]
+      },
+      "description": "穆拉德一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-bayezid-i",
+      "names": {
+        "primary": "巴耶济德一世",
+        "aliases": [
+          "Bayezid I",
+          "Yildirim Bayezid"
+        ]
+      },
+      "description": "巴耶济德一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mehmed-i",
+      "names": {
+        "primary": "穆罕默德一世",
+        "aliases": [
+          "Mehmed I",
+          "Mehmed Çelebi"
+        ]
+      },
+      "description": "穆罕默德一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-murad-ii",
+      "names": {
+        "primary": "穆拉德二世",
+        "aliases": [
+          "Murad II"
+        ]
+      },
+      "description": "穆拉德二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mehmed-ii",
+      "names": {
+        "primary": "穆罕默德二世",
+        "aliases": [
+          "Mehmed II",
+          "Mehmed the Conqueror"
+        ]
+      },
+      "description": "穆罕默德二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-bayezid-ii",
+      "names": {
+        "primary": "巴耶济德二世",
+        "aliases": [
+          "Bayezid II"
+        ]
+      },
+      "description": "巴耶济德二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-selim-i",
+      "names": {
+        "primary": "塞利姆一世",
+        "aliases": [
+          "Selim I"
+        ]
+      },
+      "description": "塞利姆一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-suleiman-i",
+      "names": {
+        "primary": "苏莱曼一世",
+        "aliases": [
+          "Suleiman I",
+          "Suleiman the Magnificent"
+        ]
+      },
+      "description": "苏莱曼一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-selim-ii",
+      "names": {
+        "primary": "塞利姆二世",
+        "aliases": [
+          "Selim II"
+        ]
+      },
+      "description": "塞利姆二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-murad-iii",
+      "names": {
+        "primary": "穆拉德三世",
+        "aliases": [
+          "Murad III"
+        ]
+      },
+      "description": "穆拉德三世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mehmed-iii",
+      "names": {
+        "primary": "穆罕默德三世",
+        "aliases": [
+          "Mehmed III"
+        ]
+      },
+      "description": "穆罕默德三世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-ahmed-i",
+      "names": {
+        "primary": "艾哈迈德一世",
+        "aliases": [
+          "Ahmed I"
+        ]
+      },
+      "description": "艾哈迈德一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mustafa-i",
+      "names": {
+        "primary": "穆斯塔法一世",
+        "aliases": [
+          "Mustafa I"
+        ]
+      },
+      "description": "穆斯塔法一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-osman-ii",
+      "names": {
+        "primary": "奥斯曼二世",
+        "aliases": [
+          "Osman II"
+        ]
+      },
+      "description": "奥斯曼二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-murad-iv",
+      "names": {
+        "primary": "穆拉德四世",
+        "aliases": [
+          "Murad IV"
+        ]
+      },
+      "description": "穆拉德四世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-ibrahim",
+      "names": {
+        "primary": "易卜拉欣",
+        "aliases": [
+          "Ibrahim"
+        ]
+      },
+      "description": "易卜拉欣，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mehmed-iv",
+      "names": {
+        "primary": "穆罕默德四世",
+        "aliases": [
+          "Mehmed IV"
+        ]
+      },
+      "description": "穆罕默德四世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-suleiman-ii",
+      "names": {
+        "primary": "苏莱曼二世",
+        "aliases": [
+          "Suleiman II"
+        ]
+      },
+      "description": "苏莱曼二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-ahmed-ii",
+      "names": {
+        "primary": "艾哈迈德二世",
+        "aliases": [
+          "Ahmed II"
+        ]
+      },
+      "description": "艾哈迈德二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mustafa-ii",
+      "names": {
+        "primary": "穆斯塔法二世",
+        "aliases": [
+          "Mustafa II"
+        ]
+      },
+      "description": "穆斯塔法二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-ahmed-iii",
+      "names": {
+        "primary": "艾哈迈德三世",
+        "aliases": [
+          "Ahmed III"
+        ]
+      },
+      "description": "艾哈迈德三世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mahmud-i",
+      "names": {
+        "primary": "马哈茂德一世",
+        "aliases": [
+          "Mahmud I"
+        ]
+      },
+      "description": "马哈茂德一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-osman-iii",
+      "names": {
+        "primary": "奥斯曼三世",
+        "aliases": [
+          "Osman III"
+        ]
+      },
+      "description": "奥斯曼三世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mustafa-iii",
+      "names": {
+        "primary": "穆斯塔法三世",
+        "aliases": [
+          "Mustafa III"
+        ]
+      },
+      "description": "穆斯塔法三世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-abdul-hamid-i",
+      "names": {
+        "primary": "阿卜杜勒-哈米德一世",
+        "aliases": [
+          "Abdul Hamid I"
+        ]
+      },
+      "description": "阿卜杜勒-哈米德一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-selim-iii",
+      "names": {
+        "primary": "塞利姆三世",
+        "aliases": [
+          "Selim III"
+        ]
+      },
+      "description": "塞利姆三世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mustafa-iv",
+      "names": {
+        "primary": "穆斯塔法四世",
+        "aliases": [
+          "Mustafa IV"
+        ]
+      },
+      "description": "穆斯塔法四世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mahmud-ii",
+      "names": {
+        "primary": "马哈茂德二世",
+        "aliases": [
+          "Mahmud II"
+        ]
+      },
+      "description": "马哈茂德二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-abdulmejid-i",
+      "names": {
+        "primary": "阿卜杜勒-迈吉德一世",
+        "aliases": [
+          "Abdulmejid I",
+          "Abdülmecid I"
+        ]
+      },
+      "description": "阿卜杜勒-迈吉德一世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-abdulaziz",
+      "names": {
+        "primary": "阿卜杜勒-阿齐兹",
+        "aliases": [
+          "Abdulaziz"
+        ]
+      },
+      "description": "阿卜杜勒-阿齐兹，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-murad-v",
+      "names": {
+        "primary": "穆拉德五世",
+        "aliases": [
+          "Murad V"
+        ]
+      },
+      "description": "穆拉德五世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-abdul-hamid-ii",
+      "names": {
+        "primary": "阿卜杜勒-哈米德二世",
+        "aliases": [
+          "Abdul Hamid II",
+          "Abdülhamid II"
+        ]
+      },
+      "description": "阿卜杜勒-哈米德二世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mehmed-v",
+      "names": {
+        "primary": "穆罕默德五世",
+        "aliases": [
+          "Mehmed V",
+          "Mehmed Resad"
+        ]
+      },
+      "description": "穆罕默德五世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ottoman-mehmed-vi",
+      "names": {
+        "primary": "穆罕默德六世",
+        "aliases": [
+          "Mehmed VI",
+          "Mehmed Vahideddin"
+        ]
+      },
+      "description": "穆罕默德六世，奥斯曼帝国主要苏丹序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-ottoman-osman-i",
+      "personId": "person-ottoman-osman-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1299,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1324,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "早期奥斯曼文书稀少，奥斯曼一世的起讫年常见约1299至1323／1324等口径；此处采用通行的约1299—1324展示。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-orhan",
+      "personId": "person-ottoman-orhan",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1324,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1362,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-murad-i",
+      "personId": "person-ottoman-murad-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1362,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1389,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-bayezid-i",
+      "personId": "person-ottoman-bayezid-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1389,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1402,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mehmed-i",
+      "personId": "person-ottoman-mehmed-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1413,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1421,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "此处以1413年记穆罕默德一世完成内战后重新统一奥斯曼主权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-murad-ii",
+      "personId": "person-ottoman-murad-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1421,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1444,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1446,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1451,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "穆拉德二世曾于1444年让位于其子穆罕默德二世，1446年复位后继续统治至1451年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mehmed-ii",
+      "personId": "person-ottoman-mehmed-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1444,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1446,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1451,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1481,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "穆罕默德二世两度在位，第二段任内于1453年攻取君士坦丁堡并将帝国重心转向伊斯坦布尔。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-bayezid-ii",
+      "personId": "person-ottoman-bayezid-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1481,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1512,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-selim-i",
+      "personId": "person-ottoman-selim-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1512,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1520,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-suleiman-i",
+      "personId": "person-ottoman-suleiman-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1520,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1566,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-selim-ii",
+      "personId": "person-ottoman-selim-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1566,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1574,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-murad-iii",
+      "personId": "person-ottoman-murad-iii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1574,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1595,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mehmed-iii",
+      "personId": "person-ottoman-mehmed-iii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1595,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1603,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-ahmed-i",
+      "personId": "person-ottoman-ahmed-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1603,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1617,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mustafa-i",
+      "personId": "person-ottoman-mustafa-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1617,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1618,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 1622,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1623,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "穆斯塔法一世两度在位，均因宫廷政变与身心状况问题被废黜。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-osman-ii",
+      "personId": "person-ottoman-osman-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1618,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1622,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-murad-iv",
+      "personId": "person-ottoman-murad-iv",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1623,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1640,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-ibrahim",
+      "personId": "person-ottoman-ibrahim",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1640,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1648,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mehmed-iv",
+      "personId": "person-ottoman-mehmed-iv",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1648,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1687,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-suleiman-ii",
+      "personId": "person-ottoman-suleiman-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1687,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1691,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-ahmed-ii",
+      "personId": "person-ottoman-ahmed-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1691,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1695,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mustafa-ii",
+      "personId": "person-ottoman-mustafa-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1695,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1703,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-ahmed-iii",
+      "personId": "person-ottoman-ahmed-iii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1703,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1730,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mahmud-i",
+      "personId": "person-ottoman-mahmud-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1730,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1754,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-osman-iii",
+      "personId": "person-ottoman-osman-iii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1754,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1757,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mustafa-iii",
+      "personId": "person-ottoman-mustafa-iii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1757,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1774,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-abdul-hamid-i",
+      "personId": "person-ottoman-abdul-hamid-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1774,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1789,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-selim-iii",
+      "personId": "person-ottoman-selim-iii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1789,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1807,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mustafa-iv",
+      "personId": "person-ottoman-mustafa-iv",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1807,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1808,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mahmud-ii",
+      "personId": "person-ottoman-mahmud-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1808,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1839,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-abdulmejid-i",
+      "personId": "person-ottoman-abdulmejid-i",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1839,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1861,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-abdulaziz",
+      "personId": "person-ottoman-abdulaziz",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1861,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1876,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-murad-v",
+      "personId": "person-ottoman-murad-v",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1876,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1876,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-abdul-hamid-ii",
+      "personId": "person-ottoman-abdul-hamid-ii",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1876,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1909,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mehmed-v",
+      "personId": "person-ottoman-mehmed-v",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1909,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1918,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ottoman-mehmed-vi",
+      "personId": "person-ottoman-mehmed-vi",
+      "polityId": "polity-ottoman-empire",
+      "titles": [
+        "奥斯曼苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1918,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1922,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": [
+    {
+      "id": "vacancy-ottoman-interregnum",
+      "polityId": "polity-ottoman-empire",
+      "periods": [
+        {
+          "start": {
+            "year": 1403,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1412,
+            "precision": "exact"
+          }
+        }
+      ],
+      "note": "巴耶济德一世在1402年安卡拉战败后，奥斯曼主权进入多位皇子并立的争位阶段；此处不将诸竞争者并入单一主线，而把1403—1412年记作帝国主序列的空位段，1413年起由穆罕默德一世恢复统一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ottoman-history"
+        },
+        {
+          "sourceId": "source-ottoman-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

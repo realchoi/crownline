@@ -1,0 +1,1228 @@
+{
+  "order": 910,
+  "entities": [
+    {
+      "id": "polity-mali-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "马里帝国",
+        "aliases": [
+          "Mali Empire",
+          "Empire of Mali",
+          "Manden Duguba"
+        ],
+        "local": "Mandé"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1235,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1610,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-west-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "马里帝国兴起于上尼日尔河与曼丁腹地之间的西非萨赫勒—苏丹草原地带，通过金盐贸易、尼日尔河城镇网络与跨撒哈拉通道扩张影响力。曼萨·穆萨时期其财富与声望最为著名，后期则在桑海崛起、地方离心与王统记载稀疏中逐步瓦解；这里将其理解为覆盖西非内陆贸易走廊的历史政权网络，不直接等同于任何单一现代国家边界。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用常见的约1235—1610年帝国口径：早期世系主要依赖伊本·赫勒敦所载王表与后出曼丁口传整理，13世纪中后叶若干交接年只宜作约年处理；1450年前后和16世纪后半叶的君主连续性文献明显稀疏，因此保守保留已知曼萨并以空位段表达缺载期。命名上，阿拉伯文献常写作 Mali，而曼丁语传统常以 Mandé / Manden 指称其核心地区。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-mali-sundiata",
+      "names": {
+        "primary": "松迪亚塔·凯塔",
+        "aliases": [
+          "Sundiata Keita",
+          "Mari Djata I",
+          "Sunjata"
+        ]
+      },
+      "description": "松迪亚塔·凯塔，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-uli-i",
+      "names": {
+        "primary": "乌利·凯塔",
+        "aliases": [
+          "Uli Keita",
+          "Uli I"
+        ]
+      },
+      "description": "乌利·凯塔，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-wati",
+      "names": {
+        "primary": "瓦蒂·凯塔",
+        "aliases": [
+          "Wati Keita"
+        ]
+      },
+      "description": "瓦蒂·凯塔，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-khalifa",
+      "names": {
+        "primary": "哈利法·凯塔",
+        "aliases": [
+          "Khalifa Keita"
+        ]
+      },
+      "description": "哈利法·凯塔，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-abubakari-i",
+      "names": {
+        "primary": "阿布巴卡里一世",
+        "aliases": [
+          "Abubakari Keita I",
+          "Abubakari I"
+        ]
+      },
+      "description": "阿布巴卡里一世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-sakura",
+      "names": {
+        "primary": "萨库拉",
+        "aliases": [
+          "Sakura"
+        ]
+      },
+      "description": "萨库拉，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-gao",
+      "names": {
+        "primary": "加奥·凯塔",
+        "aliases": [
+          "Gao Keita",
+          "Qu"
+        ]
+      },
+      "description": "加奥·凯塔，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-muhammad-ibn-gao",
+      "names": {
+        "primary": "穆罕默德·伊本·加奥·凯塔",
+        "aliases": [
+          "Muhammad ibn Gao Keita",
+          "Muhammad"
+        ]
+      },
+      "description": "穆罕默德·伊本·加奥·凯塔，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-musa-i",
+      "names": {
+        "primary": "曼萨·穆萨",
+        "aliases": [
+          "Mansa Musa",
+          "Musa I",
+          "Kankan Musa"
+        ]
+      },
+      "description": "曼萨·穆萨，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-maghan-i",
+      "names": {
+        "primary": "马甘一世",
+        "aliases": [
+          "Maghan Keita I",
+          "Maghan I"
+        ]
+      },
+      "description": "马甘一世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-suleyman",
+      "names": {
+        "primary": "苏莱曼",
+        "aliases": [
+          "Souleyman Keita",
+          "Mansa Suleyman",
+          "Sulayman"
+        ]
+      },
+      "description": "苏莱曼，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-camba",
+      "names": {
+        "primary": "坎巴",
+        "aliases": [
+          "Camba Keita",
+          "Camba"
+        ]
+      },
+      "description": "坎巴，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-mari-djata-ii",
+      "names": {
+        "primary": "马里·贾塔二世",
+        "aliases": [
+          "Mari Djata Keita II",
+          "Mari Djata II"
+        ]
+      },
+      "description": "马里·贾塔二世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-musa-ii",
+      "names": {
+        "primary": "穆萨二世",
+        "aliases": [
+          "Musa Keita II",
+          "Musa II"
+        ]
+      },
+      "description": "穆萨二世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-maghan-ii",
+      "names": {
+        "primary": "马甘二世",
+        "aliases": [
+          "Maghan Keita II",
+          "Maghan II"
+        ]
+      },
+      "description": "马甘二世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-sandaki",
+      "names": {
+        "primary": "桑达基",
+        "aliases": [
+          "Sandaki"
+        ]
+      },
+      "description": "桑达基，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-mahmud-i",
+      "names": {
+        "primary": "马哈茂德一世",
+        "aliases": [
+          "Mahmud Keita I",
+          "Mahmud I",
+          "Maghan Keita III"
+        ]
+      },
+      "description": "马哈茂德一世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-musa-iii",
+      "names": {
+        "primary": "穆萨三世",
+        "aliases": [
+          "Musa Keita III",
+          "Musa III"
+        ]
+      },
+      "description": "穆萨三世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-uli-ii",
+      "names": {
+        "primary": "乌利二世",
+        "aliases": [
+          "Uli Keita II",
+          "Uli II"
+        ]
+      },
+      "description": "乌利二世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-mahmud-ii",
+      "names": {
+        "primary": "马哈茂德二世",
+        "aliases": [
+          "Mahmud Keita II",
+          "Mahmud II",
+          "Mamadou Keita"
+        ]
+      },
+      "description": "马哈茂德二世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-mahmud-iii",
+      "names": {
+        "primary": "马哈茂德三世",
+        "aliases": [
+          "Mahmud Keita III",
+          "Mahmud III"
+        ]
+      },
+      "description": "马哈茂德三世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mali-mahmud-iv",
+      "names": {
+        "primary": "马哈茂德四世",
+        "aliases": [
+          "Mahmud Keita IV",
+          "Mahmud IV"
+        ]
+      },
+      "description": "马哈茂德四世，马里帝国主要曼萨序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-mali-sundiata",
+      "personId": "person-mali-sundiata",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1235,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1255,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "松迪亚塔的起年通常与基里纳战役和索索覆灭联系在一起，常见写法为约1235年；更早生卒和即位年并不稳定。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-uli-i",
+      "personId": "person-mali-uli-i",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1255,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1270,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "乌利的起年常随松迪亚塔终年取整方式略有浮动，此处沿用常见约1255—1270年表。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-wati",
+      "personId": "person-mali-wati",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1270,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1274,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-khalifa",
+      "personId": "person-mali-khalifa",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1274,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1275,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-abubakari-i",
+      "personId": "person-mali-abubakari-i",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1275,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1285,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-sakura",
+      "personId": "person-mali-sakura",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1285,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1300,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "萨库拉通常被视为篡位而来的强势统治者，但其起年同样只见约略口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-gao",
+      "personId": "person-mali-gao",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1300,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1305,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-muhammad-ibn-gao",
+      "personId": "person-mali-muhammad-ibn-gao",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1305,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1312,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "部分通俗叙述把穆萨前任与所谓“阿布巴卡尔二世”远航故事合并；此处按较常见的王表整理记为穆罕默德·伊本·加奥·凯塔，并保留其身份对应存在争议的事实。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-musa-i",
+      "personId": "person-mali-musa-i",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1312,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1337,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-maghan-i",
+      "personId": "person-mali-maghan-i",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1337,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1341,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-suleyman",
+      "personId": "person-mali-suleyman",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1341,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1359,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "常见王表作1341—1360。为在整年闭区间模型中给1360年的坎巴短暂统治留出独立快照，此处分片把苏莱曼主段写到1359年；1350年快照仍稳定落在苏莱曼任内。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-camba",
+      "personId": "person-mali-camba",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1360,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1360,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "坎巴通常仅被记作1360年的极短统治者；这里把整个1360年归入其名下，以避免与前后君主发生三重年度重叠。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-mari-djata-ii",
+      "personId": "person-mali-mari-djata-ii",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1361,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1374,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "常见王表会把其起年写成1360；为给坎巴保留单独的1360年快照，此处在整年模型中从1361年起算。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-musa-ii",
+      "personId": "person-mali-musa-ii",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1374,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1387,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-maghan-ii",
+      "personId": "person-mali-maghan-ii",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1387,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1389,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-sandaki",
+      "personId": "person-mali-sandaki",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1389,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1390,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "桑达基通常被视为篡位或摄政转为夺位者，资料虽简略，但王表普遍承认其短期在位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-mahmud-i",
+      "personId": "person-mali-mahmud-i",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1390,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1404,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-musa-iii",
+      "personId": "person-mali-musa-iii",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1404,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1440,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "穆萨三世的终年通常只写作约1440年，之后一段王统文献明显残缺。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "终年为约年，且与后续乌利二世之间存在资料空白。"
+    },
+    {
+      "id": "reign-mali-uli-ii",
+      "personId": "person-mali-uli-ii",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1460,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1480,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "乌利二世的起年通常只写作约1460年，终年在部分王表中作1480/1481；此处按便于与马哈茂德二世衔接的口径记为约1460—1480。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "该段年表仅保留近似边界。"
+    },
+    {
+      "id": "reign-mali-mahmud-ii",
+      "personId": "person-mali-mahmud-ii",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1481,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1496,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "其起年常被写为1480/1481，此处取1481以与乌利二世的终段分离。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-mahmud-iii",
+      "personId": "person-mali-mahmud-iii",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1496,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1559,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mali-mahmud-iv",
+      "personId": "person-mali-mahmud-iv",
+      "polityId": "polity-mali-empire",
+      "titles": [
+        "马里帝国曼萨"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1590,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1610,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "马哈茂德四世通常被视为帝国主线的最后一位已知曼萨，帝国在其去世后不久即分裂为若干后继支系。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "晚期起讫年只见约略写法。"
+    }
+  ],
+  "reignVacancies": [
+    {
+      "id": "vacancy-mali-mid-15th-century-gap",
+      "polityId": "polity-mali-empire",
+      "periods": [
+        {
+          "start": {
+            "year": 1441,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1459,
+            "precision": "exact"
+          }
+        }
+      ],
+      "note": "现存王表在穆萨三世后至乌利二世前出现近二十年的缺载；为避免伪造连续曼萨序列，此处把1441—1459年记作资料空白段。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "这是基于现存王表缺载的保守推断，不是对1441—1459年存在确定政权空位的断言。"
+    },
+    {
+      "id": "vacancy-mali-late-16th-century-gap",
+      "polityId": "polity-mali-empire",
+      "periods": [
+        {
+          "start": {
+            "year": 1560,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1589,
+            "precision": "exact"
+          }
+        }
+      ],
+      "note": "王表把1559—约1590年写作未知曼萨或空位；此处保守处理为缺载期，并把约1590年起的最后一位已知曼萨单列。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mali-history"
+        },
+        {
+          "sourceId": "source-mali-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "这是基于现存王表缺载的保守推断，不是对1560—1589年存在确定政权空位的断言。"
+    }
+  ]
+}

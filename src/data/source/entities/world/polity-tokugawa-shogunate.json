@@ -1,0 +1,65 @@
+{
+  "order": 790,
+  "entities": [
+    {
+      "id": "polity-tokugawa-shogunate",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "德川幕府",
+        "aliases": ["江户幕府", "Tokugawa shogunate", "Edo bakufu"],
+        "local": "徳川幕府"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 1603, "precision": "exact" },
+          "end": { "year": 1868, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "PBS 的将军序列止于1867年德川庆喜；本分片按通常所称幕府体制在1868年明治维新中终结来记录政权存在区间。",
+      "historicalRegionIds": ["region-east-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "1603年，德川家康受封征夷大将军后建立德川幕府，以江户为政治中枢，结合幕府直辖与各藩领主形成幕藩体制。该政权通过武家诸法度、参勤交代和等级秩序维持两百余年的相对和平，并推动都市商业、出版与武士—町人文化发展。十九世纪中叶西方压力与内政危机加剧，1867年德川庆喜奉还大政，1868年明治维新使幕府体制终结。",
+      "sourceRefs": [{ "sourceId": "source-tokugawa-history" }, { "sourceId": "source-tokugawa-rulers" }],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    { "id": "person-tokugawa-ieyasu", "names": { "primary": "德川家康", "aliases": ["Tokugawa Ieyasu"] }, "description": "德川幕府初代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-hidetada", "names": { "primary": "德川秀忠", "aliases": ["Tokugawa Hidetada"] }, "description": "德川幕府第2代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-iemitsu", "names": { "primary": "德川家光", "aliases": ["Tokugawa Iemitsu"] }, "description": "德川幕府第3代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-ietsuna", "names": { "primary": "德川家纲", "aliases": ["Tokugawa Ietsuna"] }, "description": "德川幕府第4代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-tsunayoshi", "names": { "primary": "德川纲吉", "aliases": ["Tokugawa Tsunayoshi"] }, "description": "德川幕府第5代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-ienobu", "names": { "primary": "德川家宣", "aliases": ["Tokugawa Ienobu"] }, "description": "德川幕府第6代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-ietsugu", "names": { "primary": "德川家继", "aliases": ["Tokugawa Ietsugu"] }, "description": "德川幕府第7代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-yoshimune", "names": { "primary": "德川吉宗", "aliases": ["Tokugawa Yoshimune"] }, "description": "德川幕府第8代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-ieshige", "names": { "primary": "德川家重", "aliases": ["Tokugawa Ieshige"] }, "description": "德川幕府第9代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-ieharu", "names": { "primary": "德川家治", "aliases": ["Tokugawa Ieharu"] }, "description": "德川幕府第10代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-ienari", "names": { "primary": "德川家齐", "aliases": ["Tokugawa Ienari"] }, "description": "德川幕府第11代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-ieyoshi", "names": { "primary": "德川家庆", "aliases": ["Tokugawa Ieyoshi"] }, "description": "德川幕府第12代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-iesada", "names": { "primary": "德川家定", "aliases": ["Tokugawa Iesada"] }, "description": "德川幕府第13代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-iemochi", "names": { "primary": "德川家茂", "aliases": ["Tokugawa Iemochi"] }, "description": "德川幕府第14代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] },
+    { "id": "person-tokugawa-yoshinobu", "names": { "primary": "德川庆喜", "aliases": ["Tokugawa Yoshinobu"] }, "description": "德川幕府末代征夷大将军。", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }] }
+  ],
+  "reigns": [
+    { "id": "reign-tokugawa-ieyasu", "personId": "person-tokugawa-ieyasu", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1603, "precision": "exact" }, "end": { "year": 1605, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-hidetada", "personId": "person-tokugawa-hidetada", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1605, "precision": "exact" }, "end": { "year": 1623, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-iemitsu", "personId": "person-tokugawa-iemitsu", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1623, "precision": "exact" }, "end": { "year": 1651, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-ietsuna", "personId": "person-tokugawa-ietsuna", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1651, "precision": "exact" }, "end": { "year": 1680, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-tsunayoshi", "personId": "person-tokugawa-tsunayoshi", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1680, "precision": "exact" }, "end": { "year": 1709, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-ienobu", "personId": "person-tokugawa-ienobu", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1709, "precision": "exact" }, "end": { "year": 1712, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-ietsugu", "personId": "person-tokugawa-ietsugu", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1713, "precision": "exact" }, "end": { "year": 1716, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-yoshimune", "personId": "person-tokugawa-yoshimune", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1716, "precision": "exact" }, "end": { "year": 1745, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-ieshige", "personId": "person-tokugawa-ieshige", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1745, "precision": "exact" }, "end": { "year": 1760, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-ieharu", "personId": "person-tokugawa-ieharu", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1760, "precision": "exact" }, "end": { "year": 1786, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-ienari", "personId": "person-tokugawa-ienari", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1787, "precision": "exact" }, "end": { "year": 1837, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-ieyoshi", "personId": "person-tokugawa-ieyoshi", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1837, "precision": "exact" }, "end": { "year": 1853, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-iesada", "personId": "person-tokugawa-iesada", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1853, "precision": "exact" }, "end": { "year": 1858, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-iemochi", "personId": "person-tokugawa-iemochi", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1858, "precision": "exact" }, "end": { "year": 1866, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" },
+    { "id": "reign-tokugawa-yoshinobu", "personId": "person-tokugawa-yoshinobu", "polityId": "polity-tokugawa-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1867, "precision": "exact" }, "end": { "year": 1867, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-tokugawa-rulers" }], "confidence": "high" }
+  ],
+  "reignVacancies": []
+}

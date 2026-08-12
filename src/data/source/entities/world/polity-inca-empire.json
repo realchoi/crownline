@@ -1,0 +1,538 @@
+{
+  "order": 930,
+  "entities": [
+    {
+      "id": "polity-inca-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "印加帝国",
+        "aliases": [
+          "印加",
+          "Inca Empire",
+          "Incan Empire",
+          "Tawantinsuyu",
+          "Tahuantinsuyo"
+        ],
+        "local": "Tawantinsuyu"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1438,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1533,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-americas"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "印加帝国是十五至十六世纪安第斯中部形成的高地帝国，以库斯科为政治与宗教中心，并通过道路、仓储、贡役与地方贵族整合把势力扩展到今厄瓜多尔南部、秘鲁高原、玻利维亚西部及智利、阿根廷西北一线。其常见克丘亚国号为 Tawantinsuyu（西语常写 Tahuantinsuyo，意为“四方之地”）；瓦伊纳·卡帕克时期达到疆域高峰，随后在1530年代的兄弟内战、西班牙征服与扶立傀儡萨帕·印加过程中迅速瓦解。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用“帝国阶段”口径，自帕查库提在库斯科击退昌卡后约1438年起，止于1533年阿塔瓦尔帕被处死、图帕克·瓦尔帕与曼科·印加相继在西班牙压力下被扶立即位的崩解年；不把更早的库斯科地方王系并入，也不把1536年后以维尔卡班巴为中心的“新印加国”继续算作本条目的延长。晚期王位继承、阿马鲁·印加的共治资格，以及 1533 年同年多次改立都存在编年争议，因此相关任期分别以 note 和 confidenceNote 披露。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-inca-pachacuti",
+      "names": {
+        "primary": "帕查库提",
+        "aliases": [
+          "Pachacuti",
+          "Pachacuti Inca Yupanqui",
+          "Pachacútec",
+          "Pachakutiq Inka Yupanki"
+        ]
+      },
+      "description": "帕查库提，印加帝国主要统治者序列中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-inca-amaru-inca-yupanqui",
+      "names": {
+        "primary": "阿马鲁·印加·尤潘基",
+        "aliases": [
+          "Amaru Inca Yupanqui",
+          "Amaru Inka Yupanki",
+          "Amaru Yupanqui"
+        ]
+      },
+      "description": "阿马鲁·印加·尤潘基，印加帝国主要统治者序列中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-inca-topa-inca-yupanqui",
+      "names": {
+        "primary": "托帕·印加·尤潘基",
+        "aliases": [
+          "Topa Inca Yupanqui",
+          "Túpac Inca Yupanqui",
+          "Thupa Inka Yupanki",
+          "Tupac Yupanqui"
+        ]
+      },
+      "description": "托帕·印加·尤潘基，印加帝国主要统治者序列中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-inca-huayna-capac",
+      "names": {
+        "primary": "瓦伊纳·卡帕克",
+        "aliases": [
+          "Huayna Capac",
+          "Huayna Cápac",
+          "Wayna Qhapaq"
+        ]
+      },
+      "description": "瓦伊纳·卡帕克，印加帝国主要统治者序列中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-inca-huascar",
+      "names": {
+        "primary": "瓦斯卡尔",
+        "aliases": [
+          "Huascar",
+          "Huáscar",
+          "Waskar Inka"
+        ]
+      },
+      "description": "瓦斯卡尔，印加帝国主要统治者序列中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-inca-atahualpa",
+      "names": {
+        "primary": "阿塔瓦尔帕",
+        "aliases": [
+          "Atahualpa",
+          "Atahuallpa",
+          "Ataw Wallpa"
+        ]
+      },
+      "description": "阿塔瓦尔帕，印加帝国主要统治者序列中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-inca-tupac-huallpa",
+      "names": {
+        "primary": "图帕克·瓦尔帕",
+        "aliases": [
+          "Túpac Huallpa",
+          "Topa Huallpa",
+          "Tupaq Wallpa",
+          "Huallpa Túpac"
+        ]
+      },
+      "description": "图帕克·瓦尔帕，印加帝国主要统治者序列中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-inca-manco-inca-yupanqui",
+      "names": {
+        "primary": "曼科·印加·尤潘基",
+        "aliases": [
+          "Manco Inca Yupanqui",
+          "Manco Inca",
+          "Manku Inka Yupanki"
+        ]
+      },
+      "description": "曼科·印加·尤潘基，印加帝国主要统治者序列中的君主或共治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-inca-pachacuti",
+      "personId": "person-inca-pachacuti",
+      "polityId": "polity-inca-empire",
+      "titles": [
+        "印加帝国君主"
+      ],
+      "localTitles": [
+        "Sapa Inka"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1438,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1471,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-inca-amaru-inca-yupanqui",
+      "personId": "person-inca-amaru-inca-yupanqui",
+      "polityId": "polity-inca-empire",
+      "titles": [
+        "印加帝国共治者"
+      ],
+      "localTitles": [
+        "Sapa Inka"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1463,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1471,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "部分编年把阿马鲁视为帕查库提晚年的共治太子，甚至短暂受立的继承人；也有口径完全不把他列入萨帕·印加序列。此处仅以共治者记录，用来表达晚期 succession experiment，不把他写成明确单独统治全国的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "阿马鲁·印加的在位资格主要见于后出编年和殖民期叙述，绝对年份与政治地位都缺乏统一共识。"
+    },
+    {
+      "id": "reign-inca-topa-inca-yupanqui",
+      "personId": "person-inca-topa-inca-yupanqui",
+      "polityId": "polity-inca-empire",
+      "titles": [
+        "印加帝国君主"
+      ],
+      "localTitles": [
+        "Sapa Inka"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1471,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1493,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-inca-huayna-capac",
+      "personId": "person-inca-huayna-capac",
+      "polityId": "polity-inca-empire",
+      "titles": [
+        "印加帝国君主"
+      ],
+      "localTitles": [
+        "Sapa Inka"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1493,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1527,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "瓦伊纳·卡帕克的末年与死年在常见工具书中常见 1525、1527 或 1528 等差异；此处采用便于与后续内战段衔接的 1493—1527 口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-inca-huascar",
+      "personId": "person-inca-huascar",
+      "polityId": "polity-inca-empire",
+      "titles": [
+        "印加帝国君主"
+      ],
+      "localTitles": [
+        "Sapa Inka"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1527,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1532,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "瓦斯卡尔代表库斯科本部承认的萨帕·印加序列；其末段与阿塔瓦尔帕北方军政集团的胜利重叠于 1532 年内，因此本记录保留该闭区间年份。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-inca-atahualpa-contender",
+      "personId": "person-inca-atahualpa",
+      "polityId": "polity-inca-empire",
+      "titles": [
+        "印加帝国争位者"
+      ],
+      "localTitles": [
+        "Sapa Inka"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 1529,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1531,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "这里用 1529—1531 年表达阿塔瓦尔帕在北方军事集团支持下与瓦斯卡尔公开争位的阶段，不试图把危机前的地方军政影响力回推成全国统治。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-inca-atahualpa",
+      "personId": "person-inca-atahualpa",
+      "polityId": "polity-inca-empire",
+      "titles": [
+        "印加帝国君主"
+      ],
+      "localTitles": [
+        "Sapa Inka"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1532,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1533,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "本记录把 1532 年按闭区间模型归给战胜瓦斯卡尔后的阿塔瓦尔帕，但 1533 年又出现西班牙扶立的新继位者，因此该年快照应理解为征服期的争议状态。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-inca-tupac-huallpa",
+      "personId": "person-inca-tupac-huallpa",
+      "polityId": "polity-inca-empire",
+      "titles": [
+        "印加帝国君主"
+      ],
+      "localTitles": [
+        "Sapa Inka"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1533,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1533,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "图帕克·瓦尔帕由皮萨罗阵营扶立，统治极短且高度依附征服军；按年粒度无法与阿塔瓦尔帕同年的处决和稍后曼科的加冕完全分离。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "仅能在“1533 年短命扶立”这一粒度上安全表示；更细月份序列与政治实权分配超出当前数据口径。"
+    },
+    {
+      "id": "reign-inca-manco-inca-yupanqui",
+      "personId": "person-inca-manco-inca-yupanqui",
+      "polityId": "polity-inca-empire",
+      "titles": [
+        "印加帝国君主"
+      ],
+      "localTitles": [
+        "Sapa Inka"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1533,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1533,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "本分片只把曼科·印加记作 1533 年征服转折中的又一次扶立即位；1536 年后的独立抵抗与维尔卡班巴政权另属“新印加国”口径，不在此继续延长。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inca-history"
+        },
+        {
+          "sourceId": "source-inca-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "由于条目本身在 1533 年止讫，曼科只以同年继位的最小安全表达纳入，不代表其后续抵抗时期已被本分片完整建模。"
+    }
+  ],
+  "reignVacancies": []
+}

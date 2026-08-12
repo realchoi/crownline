@@ -12,7 +12,7 @@ const bounds = getHistoricalYearBounds(data);
 
 describe("浏览状态", () => {
   it("从已加载实体的存在区间推导年份范围", () => {
-    expect(bounds).toEqual({ min: -2070, max: 1912 });
+    expect(bounds).toEqual({ min: -2070, max: 1922 });
   });
 
   it("从 URL 恢复时间点、年份、搜索和兼容类别", () => {
@@ -28,13 +28,13 @@ describe("浏览状态", () => {
   it("清洗非法模式、年份和类别", () => {
     expect(readBrowseState("?mode=map&year=0&type=unknown", bounds)).toEqual({
       mode: "overview",
-      year: 1912,
+      year: 1922,
       query: "",
       category: "all",
       regionScope: { mode: "china" }
     });
     expect(readBrowseState("?mode=point&year=-9999", bounds).year).toBe(-2070);
-    expect(readBrowseState("?mode=point&year=9999", bounds).year).toBe(1912);
+    expect(readBrowseState("?mode=point&year=9999", bounds).year).toBe(1922);
   });
 
   it("序列化非默认状态并保留未知参数", () => {
@@ -57,7 +57,7 @@ describe("浏览状态", () => {
     const params = writeBrowseState(
       {
         mode: "overview",
-        year: 1912,
+        year: 1922,
         query: "",
         category: "all",
         regionScope: { mode: "china" }
@@ -117,7 +117,7 @@ describe("浏览状态", () => {
     const params = writeBrowseState(
       {
         mode: "overview",
-        year: 1912,
+        year: 1922,
         query: "",
         category: "all",
         regionScope: { mode: "global" }

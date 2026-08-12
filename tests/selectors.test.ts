@@ -78,9 +78,26 @@ describe("时间点结果", () => {
       }
     );
 
-    expect(select(1000, "", "region-americas").polityEmptyReason).toBe("unindexed");
+    expect(select(1000, "", "region-americas").polityEmptyReason).toBe("limited-coverage");
     expect(select(1300, "", "region-south-asia").polityEmptyReason).toBe("limited-coverage");
     expect(select(1000, "不存在", "region-south-asia").polityEmptyReason).toBe("filtered-out");
+  });
+
+  it("在 1500 年的美洲自选中返回已收录政权", () => {
+    const results = selectBrowseResults(
+      data,
+      {
+        query: "",
+        category: "all",
+        year: 1500,
+        regionScope: { mode: "custom", regionIds: ["region-americas"] }
+      }
+    );
+
+    expect(results.polityEmptyReason).toBeNull();
+    expect(results.polities.map(({ entity }) => entity.names.primary)).toEqual(
+      expect.arrayContaining(["阿兹特克帝国", "印加帝国"])
+    );
   });
 
   it("按多个存在区间排除中断期并包含复立年份", () => {

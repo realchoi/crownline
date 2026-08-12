@@ -1,0 +1,358 @@
+{
+  "order": 820,
+  "entities": [
+    {
+      "id": "polity-kushan-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "贵霜帝国",
+        "aliases": [
+          "贵霜王朝",
+          "Kushan Empire",
+          "Kushan dynasty"
+        ],
+        "local": "Κοϸανο"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 50,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 230,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-central-asia",
+        "region-south-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "由月氏贵霜部统一诸翕侯后建立的跨区域帝国，核心据有巴克特里亚、喀布尔河谷与印度西北部，并在公元一至三世纪间连接中亚、伊朗与南亚的商贸和佛教传播网络。其君主序列主要依靠钱币、汉文记载与铭文重建，尤其迦腻色伽纪元的起算与二世纪中叶诸王先后次序长期存在争议；此处采用常见的前期帝国口径，止于约三世纪前期婆苏提婆一世时期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "贵霜早期与迦腻色伽纪元的绝对年代没有统一定论；页面按 Iranica 的争议说明，并参考 NumisWiki 的通行近似年表组织主要统治者序列。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-kushan-kujula-kadphises",
+      "names": {
+        "primary": "丘就却",
+        "aliases": [
+          "Kujula Kadphises",
+          "Kujula Kadphisa"
+        ]
+      },
+      "description": "丘就却，贵霜帝国通行君主年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kushan-vima-takto",
+      "names": {
+        "primary": "毗摩·塔克图",
+        "aliases": [
+          "Vima Takto",
+          "Wima Takto",
+          "Vima Taktu",
+          "Sadashkana"
+        ]
+      },
+      "description": "毗摩·塔克图，贵霜帝国通行君主年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kushan-vima-kadphises",
+      "names": {
+        "primary": "毗摩·卡德菲塞斯",
+        "aliases": [
+          "Vima Kadphises"
+        ]
+      },
+      "description": "毗摩·卡德菲塞斯，贵霜帝国通行君主年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kushan-kanishka-i",
+      "names": {
+        "primary": "迦腻色伽一世",
+        "aliases": [
+          "Kanishka I",
+          "Kanishka the Great"
+        ]
+      },
+      "description": "迦腻色伽一世，贵霜帝国通行君主年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kushan-huvishka",
+      "names": {
+        "primary": "胡毗色迦",
+        "aliases": [
+          "Huvishka"
+        ]
+      },
+      "description": "胡毗色迦，贵霜帝国通行君主年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kushan-vasudeva-i",
+      "names": {
+        "primary": "婆苏提婆一世",
+        "aliases": [
+          "Vasudeva I"
+        ]
+      },
+      "description": "婆苏提婆一世，贵霜帝国通行君主年表中的统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-kushan-kujula-kadphises",
+      "personId": "person-kushan-kujula-kadphises",
+      "polityId": "polity-kushan-empire",
+      "titles": [
+        "贵霜王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 50,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 90,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kushan-vima-takto",
+      "personId": "person-kushan-vima-takto",
+      "polityId": "polity-kushan-empire",
+      "titles": [
+        "贵霜王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 90,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 113,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kushan-vima-kadphises",
+      "personId": "person-kushan-vima-kadphises",
+      "polityId": "polity-kushan-empire",
+      "titles": [
+        "贵霜王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 113,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 127,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kushan-kanishka-i",
+      "personId": "person-kushan-kanishka-i",
+      "polityId": "polity-kushan-empire",
+      "titles": [
+        "贵霜王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 127,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 150,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "迦腻色伽纪元起算与在位终年存在多种换算；此处按常见约127至150年的近似口径展示，以保留二世纪中叶的争议状态。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kushan-huvishka",
+      "personId": "person-kushan-huvishka",
+      "polityId": "polity-kushan-empire",
+      "titles": [
+        "贵霜王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 151,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 190,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kushan-vasudeva-i",
+      "personId": "person-kushan-vasudeva-i",
+      "polityId": "polity-kushan-empire",
+      "titles": [
+        "贵霜王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 190,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 230,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kushan-history"
+        },
+        {
+          "sourceId": "source-kushan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

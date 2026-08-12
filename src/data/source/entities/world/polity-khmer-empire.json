@@ -1,0 +1,1562 @@
+{
+  "order": 800,
+  "entities": [
+    {
+      "id": "polity-khmer-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "高棉帝国",
+        "aliases": [
+          "吴哥帝国",
+          "Khmer Empire",
+          "Angkor Empire"
+        ],
+        "local": "ចក្រភពខ្មែរ"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 802,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1431,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-southeast-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "高棉帝国是以吴哥地区为中心的东南亚强权。802年阇耶跋摩二世确立王权后，帝国长期控制湄公河中下游要地；苏利耶跋摩二世营建吴哥窟，阇耶跋摩七世在占城入侵后重建王都吴哥通并推动佛教化，1431年吴哥失陷于阿瑜陀耶后这一阶段通常视为结束。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-history"
+        },
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "页面采用常见的吴哥时期口径，将802年阇耶跋摩二世建国到1431年吴哥失陷视为高棉帝国主体阶段；中间的占城与阿瑜陀耶占领期不另立实体。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-khmer-jayavarman-ii",
+      "names": {
+        "primary": "阇耶跋摩二世",
+        "aliases": [
+          "Jayavarman II"
+        ]
+      },
+      "description": "阇耶跋摩二世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-jayavarman-iii",
+      "names": {
+        "primary": "阇耶跋摩三世",
+        "aliases": [
+          "Jayavarman III"
+        ]
+      },
+      "description": "阇耶跋摩三世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-indravarman-i",
+      "names": {
+        "primary": "因陀罗跋摩一世",
+        "aliases": [
+          "Indravarman I"
+        ]
+      },
+      "description": "因陀罗跋摩一世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-yasovarman-i",
+      "names": {
+        "primary": "耶输跋摩一世",
+        "aliases": [
+          "Yasovarman I"
+        ]
+      },
+      "description": "耶输跋摩一世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-harshavarman-i",
+      "names": {
+        "primary": "哈尔沙跋摩一世",
+        "aliases": [
+          "Harshavarman I"
+        ]
+      },
+      "description": "哈尔沙跋摩一世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-ishanavarman-ii",
+      "names": {
+        "primary": "伊奢那跋摩二世",
+        "aliases": [
+          "Ishanavarman II"
+        ]
+      },
+      "description": "伊奢那跋摩二世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-jayavarman-iv",
+      "names": {
+        "primary": "阇耶跋摩四世",
+        "aliases": [
+          "Jayavarman IV"
+        ]
+      },
+      "description": "阇耶跋摩四世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-harshavarman-ii",
+      "names": {
+        "primary": "哈尔沙跋摩二世",
+        "aliases": [
+          "Harshavarman II"
+        ]
+      },
+      "description": "哈尔沙跋摩二世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-rajendravarman-ii",
+      "names": {
+        "primary": "罗真陀罗跋摩二世",
+        "aliases": [
+          "Rajendravarman II"
+        ]
+      },
+      "description": "罗真陀罗跋摩二世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-jayavarman-v",
+      "names": {
+        "primary": "阇耶跋摩五世",
+        "aliases": [
+          "Jayavarman V"
+        ]
+      },
+      "description": "阇耶跋摩五世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-udayadityavarman-i",
+      "names": {
+        "primary": "优陀耶迭多跋摩一世",
+        "aliases": [
+          "Udayadityavarman I"
+        ]
+      },
+      "description": "优陀耶迭多跋摩一世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-jayaviravarman",
+      "names": {
+        "primary": "阇耶毗罗跋摩",
+        "aliases": [
+          "Jayaviravarman"
+        ]
+      },
+      "description": "阇耶毗罗跋摩，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-suryavarman-i",
+      "names": {
+        "primary": "苏利耶跋摩一世",
+        "aliases": [
+          "Suryavarman I"
+        ]
+      },
+      "description": "苏利耶跋摩一世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-udayadityavarman-ii",
+      "names": {
+        "primary": "优陀耶迭多跋摩二世",
+        "aliases": [
+          "Udayadityavarman II"
+        ]
+      },
+      "description": "优陀耶迭多跋摩二世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-harshavarman-iii",
+      "names": {
+        "primary": "哈尔沙跋摩三世",
+        "aliases": [
+          "Harshavarman III"
+        ]
+      },
+      "description": "哈尔沙跋摩三世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-jayavarman-vi",
+      "names": {
+        "primary": "阇耶跋摩六世",
+        "aliases": [
+          "Jayavarman VI"
+        ]
+      },
+      "description": "阇耶跋摩六世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-dharanindravarman-i",
+      "names": {
+        "primary": "陀罗尼因陀罗跋摩一世",
+        "aliases": [
+          "Dharanindravarman I"
+        ]
+      },
+      "description": "陀罗尼因陀罗跋摩一世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-suryavarman-ii",
+      "names": {
+        "primary": "苏利耶跋摩二世",
+        "aliases": [
+          "Suryavarman II"
+        ]
+      },
+      "description": "苏利耶跋摩二世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-dharanindravarman-ii",
+      "names": {
+        "primary": "陀罗尼因陀罗跋摩二世",
+        "aliases": [
+          "Dharanindravarman II"
+        ]
+      },
+      "description": "陀罗尼因陀罗跋摩二世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-yasovarman-ii",
+      "names": {
+        "primary": "耶输跋摩二世",
+        "aliases": [
+          "Yasovarman II"
+        ]
+      },
+      "description": "耶输跋摩二世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-tribhuvanadityavarman",
+      "names": {
+        "primary": "特里布婆那迭多跋摩",
+        "aliases": [
+          "Tribhuvanadityavarman"
+        ]
+      },
+      "description": "特里布婆那迭多跋摩，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-jayavarman-vii",
+      "names": {
+        "primary": "阇耶跋摩七世",
+        "aliases": [
+          "Jayavarman VII"
+        ]
+      },
+      "description": "阇耶跋摩七世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-indravarman-ii",
+      "names": {
+        "primary": "因陀罗跋摩二世",
+        "aliases": [
+          "Indravarman II"
+        ]
+      },
+      "description": "因陀罗跋摩二世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-jayavarman-viii",
+      "names": {
+        "primary": "阇耶跋摩八世",
+        "aliases": [
+          "Jayavarman VIII"
+        ]
+      },
+      "description": "阇耶跋摩八世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-indravarman-iii",
+      "names": {
+        "primary": "因陀罗跋摩三世",
+        "aliases": [
+          "Indravarman III"
+        ]
+      },
+      "description": "因陀罗跋摩三世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-indrajayavarman",
+      "names": {
+        "primary": "因陀阇耶跋摩",
+        "aliases": [
+          "Indrajayavarman"
+        ]
+      },
+      "description": "因陀阇耶跋摩，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-jayavarman-ix",
+      "names": {
+        "primary": "阇耶跋摩九世",
+        "aliases": [
+          "Jayavarman IX"
+        ]
+      },
+      "description": "阇耶跋摩九世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-trasak-paem",
+      "names": {
+        "primary": "特拉萨克·拜姆",
+        "aliases": [
+          "Trasak Paem"
+        ]
+      },
+      "description": "特拉萨克·拜姆，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-nippean-bat",
+      "names": {
+        "primary": "涅边·跋",
+        "aliases": [
+          "Nippean Bat"
+        ]
+      },
+      "description": "涅边·跋，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-sithean-reachea",
+      "names": {
+        "primary": "西甸·列乍",
+        "aliases": [
+          "Sithean Reachea"
+        ]
+      },
+      "description": "西甸·列乍，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-lompong-reachea",
+      "names": {
+        "primary": "隆蓬·列乍",
+        "aliases": [
+          "Lompong Reachea"
+        ]
+      },
+      "description": "隆蓬·列乍，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-soryavong",
+      "names": {
+        "primary": "梭里翁",
+        "aliases": [
+          "Soryavong"
+        ]
+      },
+      "description": "梭里翁，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-barom-reameathibtei",
+      "names": {
+        "primary": "波隆·罗摩提波提",
+        "aliases": [
+          "Barom Reameathibtei"
+        ]
+      },
+      "description": "波隆·罗摩提波提，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-thomma-saok",
+      "names": {
+        "primary": "托玛·索克",
+        "aliases": [
+          "Thomma Saok"
+        ]
+      },
+      "description": "托玛·索克，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-khmer-borom-reachea-i",
+      "names": {
+        "primary": "波隆·列乍一世",
+        "aliases": [
+          "Borom Reachea I",
+          "Ponhea Yat"
+        ]
+      },
+      "description": "波隆·列乍一世，高棉帝国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-khmer-jayavarman-ii",
+      "personId": "person-khmer-jayavarman-ii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 802,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 850,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-jayavarman-iii",
+      "personId": "person-khmer-jayavarman-iii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 850,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 877,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-indravarman-i",
+      "personId": "person-khmer-indravarman-i",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 877,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 889,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-yasovarman-i",
+      "personId": "person-khmer-yasovarman-i",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 889,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 910,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-harshavarman-i",
+      "personId": "person-khmer-harshavarman-i",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 910,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 923,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-ishanavarman-ii",
+      "personId": "person-khmer-ishanavarman-ii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 923,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 928,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-jayavarman-iv",
+      "personId": "person-khmer-jayavarman-iv",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 928,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 941,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-harshavarman-ii",
+      "personId": "person-khmer-harshavarman-ii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 941,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 944,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-rajendravarman-ii",
+      "personId": "person-khmer-rajendravarman-ii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 944,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 968,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-jayavarman-v",
+      "personId": "person-khmer-jayavarman-v",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 968,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1001,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-udayadityavarman-i",
+      "personId": "person-khmer-udayadityavarman-i",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1001,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1002,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-jayaviravarman",
+      "personId": "person-khmer-jayaviravarman",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1002,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1006,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-suryavarman-i",
+      "personId": "person-khmer-suryavarman-i",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1006,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1050,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-udayadityavarman-ii",
+      "personId": "person-khmer-udayadityavarman-ii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1050,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1066,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-harshavarman-iii",
+      "personId": "person-khmer-harshavarman-iii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1066,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1080,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-jayavarman-vi",
+      "personId": "person-khmer-jayavarman-vi",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1080,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1107,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-dharanindravarman-i",
+      "personId": "person-khmer-dharanindravarman-i",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1107,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1113,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-suryavarman-ii",
+      "personId": "person-khmer-suryavarman-ii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1113,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1150,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-dharanindravarman-ii",
+      "personId": "person-khmer-dharanindravarman-ii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1150,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1156,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-yasovarman-ii",
+      "personId": "person-khmer-yasovarman-ii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1156,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1165,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-tribhuvanadityavarman",
+      "personId": "person-khmer-tribhuvanadityavarman",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1165,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1177,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-jayavarman-vii",
+      "personId": "person-khmer-jayavarman-vii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1181,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1218,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-indravarman-ii",
+      "personId": "person-khmer-indravarman-ii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1218,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1243,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-jayavarman-viii",
+      "personId": "person-khmer-jayavarman-viii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1243,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1295,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-indravarman-iii",
+      "personId": "person-khmer-indravarman-iii",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1295,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1308,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-indrajayavarman",
+      "personId": "person-khmer-indrajayavarman",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1308,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1327,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-jayavarman-ix",
+      "personId": "person-khmer-jayavarman-ix",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1327,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1336,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-trasak-paem",
+      "personId": "person-khmer-trasak-paem",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1336,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1340,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-nippean-bat",
+      "personId": "person-khmer-nippean-bat",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1340,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1346,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-sithean-reachea",
+      "personId": "person-khmer-sithean-reachea",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1346,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1347,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-lompong-reachea",
+      "personId": "person-khmer-lompong-reachea",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1347,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1352,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-soryavong",
+      "personId": "person-khmer-soryavong",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1357,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1363,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-barom-reameathibtei",
+      "personId": "person-khmer-barom-reameathibtei",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1363,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1373,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-thomma-saok",
+      "personId": "person-khmer-thomma-saok",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1373,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1393,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khmer-borom-reachea-i",
+      "personId": "person-khmer-borom-reachea-i",
+      "polityId": "polity-khmer-empire",
+      "titles": [
+        "高棉君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1394,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1431,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-khmer-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

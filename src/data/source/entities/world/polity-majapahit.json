@@ -1,0 +1,540 @@
+{
+  "order": 810,
+  "entities": [
+    {
+      "id": "polity-majapahit",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "满者伯夷",
+        "aliases": [
+          "满者伯夷帝国",
+          "Majapahit",
+          "Majapahit Empire"
+        ],
+        "local": "Majapahit"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1293,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1527,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-southeast-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "满者伯夷是以东爪哇为核心的海陆复合政权，1293年由拉登·维查耶在击退元军后建立。哈亚姆·乌鲁克与宰相加查·马达时期，宫廷通过盟约、贸易和军事行动把影响力扩展到群岛多地；十五世纪后内战与沿海新兴伊斯兰政权兴起削弱王朝，末期延续与终结时间在史学上存在不同口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-history"
+        },
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "页面采用1293年建国并延伸至吉林德拉瓦尔达那约1527年的常见扩展口径；1478年后王统连续性与终结年份仍有争议，因此整体时间轴标记为争议。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-majapahit-kertarajasa-jayawardhana",
+      "names": {
+        "primary": "克尔塔拉阇萨·阇耶跋檀那",
+        "aliases": [
+          "Kertarajasa Jayawardhana",
+          "Raden Wijaya",
+          "Sangramawijaya"
+        ]
+      },
+      "description": "克尔塔拉阇萨·阇耶跋檀那，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-jayanagara",
+      "names": {
+        "primary": "阇耶那伽罗",
+        "aliases": [
+          "Jayanagara"
+        ]
+      },
+      "description": "阇耶那伽罗，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-tribhuwana-wijayatunggadewi",
+      "names": {
+        "primary": "特里布婆那·毗阇耶通伽提毗",
+        "aliases": [
+          "Tribhuwana Wijayatunggadewi",
+          "Tribhuvanottunggadewi Jayawishnuwardhani"
+        ]
+      },
+      "description": "特里布婆那·毗阇耶通伽提毗，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-hayam-wuruk",
+      "names": {
+        "primary": "哈亚姆·乌鲁克",
+        "aliases": [
+          "Hayam Wuruk",
+          "Rajasanagara"
+        ]
+      },
+      "description": "哈亚姆·乌鲁克，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-wikramawardhana",
+      "names": {
+        "primary": "维克拉玛瓦尔达那",
+        "aliases": [
+          "Wikramawardhana"
+        ]
+      },
+      "description": "维克拉玛瓦尔达那，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-suhita",
+      "names": {
+        "primary": "苏希塔",
+        "aliases": [
+          "Suhita"
+        ]
+      },
+      "description": "苏希塔，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-kertawijaya",
+      "names": {
+        "primary": "克尔塔维阇耶",
+        "aliases": [
+          "Kertawijaya"
+        ]
+      },
+      "description": "克尔塔维阇耶，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-rajasawardhana",
+      "names": {
+        "primary": "罗阇萨瓦尔达那",
+        "aliases": [
+          "Rajasawardhana",
+          "Vijayakumara"
+        ]
+      },
+      "description": "罗阇萨瓦尔达那，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-girishawardhana",
+      "names": {
+        "primary": "吉里沙瓦尔达那",
+        "aliases": [
+          "Girishawardhana",
+          "Suryavikrama"
+        ]
+      },
+      "description": "吉里沙瓦尔达那，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-singhawikramawardhana",
+      "names": {
+        "primary": "僧哈维克拉玛瓦尔达那",
+        "aliases": [
+          "Singhawikramawardhana",
+          "Suraprabhawa"
+        ]
+      },
+      "description": "僧哈维克拉玛瓦尔达那，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-majapahit-girindrawardhana",
+      "names": {
+        "primary": "吉林德拉瓦尔达那",
+        "aliases": [
+          "Girindrawardhana"
+        ]
+      },
+      "description": "吉林德拉瓦尔达那，满者伯夷主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-majapahit-kertarajasa-jayawardhana",
+      "personId": "person-majapahit-kertarajasa-jayawardhana",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1293,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1309,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-majapahit-jayanagara",
+      "personId": "person-majapahit-jayanagara",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1309,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1328,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-majapahit-tribhuwana-wijayatunggadewi",
+      "personId": "person-majapahit-tribhuwana-wijayatunggadewi",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1328,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1350,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-majapahit-hayam-wuruk",
+      "personId": "person-majapahit-hayam-wuruk",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1350,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1389,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-majapahit-wikramawardhana",
+      "personId": "person-majapahit-wikramawardhana",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1389,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1429,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "来源列表对其起年存在1389或稍后的不同写法，此处采用与哈亚姆·乌鲁克交接的常见口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "起年在不同年表间并不一致。"
+    },
+    {
+      "id": "reign-majapahit-suhita",
+      "personId": "person-majapahit-suhita",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1429,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1447,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-majapahit-kertawijaya",
+      "personId": "person-majapahit-kertawijaya",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1447,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1451,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-majapahit-rajasawardhana",
+      "personId": "person-majapahit-rajasawardhana",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1451,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1453,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-majapahit-girishawardhana",
+      "personId": "person-majapahit-girishawardhana",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1456,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1466,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-majapahit-singhawikramawardhana",
+      "personId": "person-majapahit-singhawikramawardhana",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1466,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1478,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-majapahit-girindrawardhana",
+      "personId": "person-majapahit-girindrawardhana",
+      "polityId": "polity-majapahit",
+      "titles": [
+        "满者伯夷君主"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1486,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1527,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "1478年后满者伯夷宫廷连续性和最终终局存在不同史学口径，此处保留常见的吉林德拉瓦尔达那续统说。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-majapahit-rulers"
+        }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "末期统治与终结年份依赖后出文献与不同编年体系。"
+    }
+  ],
+  "reignVacancies": []
+}

@@ -1,0 +1,504 @@
+{
+  "order": 840,
+  "entities": [
+    {
+      "id": "polity-maurya-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "孔雀帝国",
+        "aliases": [
+          "孔雀王朝",
+          "Maurya Empire",
+          "Mauryan Empire",
+          "Maurya dynasty"
+        ],
+        "local": "मौर्य साम्राज्य"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": -322,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -185,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-south-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "孔雀帝国是古代南亚首个覆盖次大陆大部的泛区域帝国，由旃陀罗笈多在恒河中下游的摩揭陀基础上扩张而成。阿育王时期帝国势力达到高峰，并借由碑铭、道路与行政体系深刻影响南亚政治文化；晚期则在王位继承与地方离心之下迅速收缩，最终于前185年被巽伽政权取代。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "National Geographic 以约前321年概述建国，而常见君主列表多记前322年至前185年；阿育王的即位与加冕年份常相差数年，此处采用约前322年至前185年的常见帝国口径，并把阿育王起年标记为争议。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-maurya-chandragupta",
+      "names": {
+        "primary": "旃陀罗笈多·孔雀",
+        "aliases": [
+          "Chandragupta Maurya"
+        ]
+      },
+      "description": "旃陀罗笈多·孔雀，孔雀帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maurya-bindusara",
+      "names": {
+        "primary": "宾头娑罗",
+        "aliases": [
+          "Bindusara"
+        ]
+      },
+      "description": "宾头娑罗，孔雀帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maurya-ashoka",
+      "names": {
+        "primary": "阿育王",
+        "aliases": [
+          "Ashoka",
+          "Ashoka the Great"
+        ]
+      },
+      "description": "阿育王，孔雀帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maurya-dasharatha",
+      "names": {
+        "primary": "达沙罗陀·孔雀",
+        "aliases": [
+          "Dasharatha Maurya"
+        ]
+      },
+      "description": "达沙罗陀·孔雀，孔雀帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maurya-samprati",
+      "names": {
+        "primary": "三波罗帝",
+        "aliases": [
+          "Samprati"
+        ]
+      },
+      "description": "三波罗帝，孔雀帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maurya-shalishuka",
+      "names": {
+        "primary": "沙利叔迦",
+        "aliases": [
+          "Shalishuka"
+        ]
+      },
+      "description": "沙利叔迦，孔雀帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maurya-devavarman",
+      "names": {
+        "primary": "提婆伐摩",
+        "aliases": [
+          "Devavarman"
+        ]
+      },
+      "description": "提婆伐摩，孔雀帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maurya-shatadhanvan",
+      "names": {
+        "primary": "沙多檀婆",
+        "aliases": [
+          "Shatadhanvan"
+        ]
+      },
+      "description": "沙多檀婆，孔雀帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maurya-brihadratha",
+      "names": {
+        "primary": "布里哈德罗陀",
+        "aliases": [
+          "Brihadratha Maurya",
+          "Brihadratha"
+        ]
+      },
+      "description": "布里哈德罗陀，孔雀帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-maurya-chandragupta",
+      "personId": "person-maurya-chandragupta",
+      "polityId": "polity-maurya-empire",
+      "titles": [
+        "孔雀王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -322,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -297,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "旃陀罗笈多建立孔雀帝国的时间常见前322年与前321年两种写法；此处按通行王朝年表以约前322年记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maurya-bindusara",
+      "personId": "person-maurya-bindusara",
+      "polityId": "polity-maurya-empire",
+      "titles": [
+        "孔雀王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -297,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -273,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maurya-ashoka",
+      "personId": "person-maurya-ashoka",
+      "polityId": "polity-maurya-empire",
+      "titles": [
+        "孔雀王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -273,
+            "precision": "circa"
+          },
+          "end": {
+            "year": -232,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "资料常将阿育王的即位与加冕分别记为约前273年与前268年；此处按王朝承袭口径把其在位起点前移到约前273年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maurya-dasharatha",
+      "personId": "person-maurya-dasharatha",
+      "polityId": "polity-maurya-empire",
+      "titles": [
+        "孔雀王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -232,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -224,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maurya-samprati",
+      "personId": "person-maurya-samprati",
+      "polityId": "polity-maurya-empire",
+      "titles": [
+        "孔雀王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -224,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -215,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maurya-shalishuka",
+      "personId": "person-maurya-shalishuka",
+      "polityId": "polity-maurya-empire",
+      "titles": [
+        "孔雀王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -215,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -202,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maurya-devavarman",
+      "personId": "person-maurya-devavarman",
+      "polityId": "polity-maurya-empire",
+      "titles": [
+        "孔雀王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -202,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -195,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maurya-shatadhanvan",
+      "personId": "person-maurya-shatadhanvan",
+      "polityId": "polity-maurya-empire",
+      "titles": [
+        "孔雀王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -195,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -187,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maurya-brihadratha",
+      "personId": "person-maurya-brihadratha",
+      "polityId": "polity-maurya-empire",
+      "titles": [
+        "孔雀王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": -187,
+            "precision": "exact"
+          },
+          "end": {
+            "year": -185,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "末王被弑年份常见前185年与前184年两种写法；此处依帝国终结于前185年的通行口径记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maurya-history"
+        },
+        {
+          "sourceId": "source-maurya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

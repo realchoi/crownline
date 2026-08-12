@@ -1,0 +1,1588 @@
+{
+  "order": 880,
+  "entities": [
+    {
+      "id": "polity-frankish-kingdom",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "kingdom"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "法兰克王国",
+        "aliases": [
+          "法兰克诸王国",
+          "法兰西亚",
+          "Kingdom of the Franks",
+          "Frankish Kingdom",
+          "Francia"
+        ],
+        "local": "Regnum Francorum"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 481,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 843,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-europe"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "法兰克王国发端于莱茵下游与高卢北部的法兰克诸部联合，在墨洛温王朝时期完成对大部分高卢的征服并逐步转向拉丁基督教世界；加洛林时期又以亚琛、巴黎、梅斯等政治中心向西欧和中欧扩张。它既包括长期存在的纽斯特里亚、奥斯特拉西亚和勃艮第等分王结构，也包括丕平和查理曼时代的再统一王国，最终在843年《凡尔登条约》后分化为西、中、东法兰克诸国。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用自481年克洛维即位至843年《凡尔登条约》的广义 Regnum Francorum／Francia 口径。511—751年间王国常在墨洛温诸支之间分治，因此为避免伪造单一连续王统，相关人物多以并立共治者记录；751年丕平三世废黜希尔德里克三世后，政权虽由墨洛温转入加洛林，仍继续以“法兰克人的国王”为正统名号。由于页面按整数年份闭区间展示，同年交接通常把交接年份归入继任者；737年狄乌德里克四世死后至743年希尔德里克三世复位之间未另立国王，则以明确空位段表示。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-frankish-clovis-i",
+      "names": {
+        "primary": "克洛维一世",
+        "aliases": [
+          "Clovis I",
+          "Chlodovech"
+        ]
+      },
+      "description": "克洛维一世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-theuderic-i",
+      "names": {
+        "primary": "狄乌德里克一世",
+        "aliases": [
+          "Theuderic I",
+          "Thierry I"
+        ]
+      },
+      "description": "狄乌德里克一世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-childebert-i",
+      "names": {
+        "primary": "希尔德贝尔特一世",
+        "aliases": [
+          "Childebert I"
+        ]
+      },
+      "description": "希尔德贝尔特一世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-chlothar-i",
+      "names": {
+        "primary": "克洛泰尔一世",
+        "aliases": [
+          "Chlothar I",
+          "Clotaire I"
+        ]
+      },
+      "description": "克洛泰尔一世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-sigebert-i",
+      "names": {
+        "primary": "西吉贝尔特一世",
+        "aliases": [
+          "Sigebert I"
+        ]
+      },
+      "description": "西吉贝尔特一世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-chilperic-i",
+      "names": {
+        "primary": "希尔佩里克一世",
+        "aliases": [
+          "Chilperic I"
+        ]
+      },
+      "description": "希尔佩里克一世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-guntram",
+      "names": {
+        "primary": "冈特拉姆",
+        "aliases": [
+          "Guntram",
+          "Gontran"
+        ]
+      },
+      "description": "冈特拉姆，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-childebert-ii",
+      "names": {
+        "primary": "希尔德贝尔特二世",
+        "aliases": [
+          "Childebert II"
+        ]
+      },
+      "description": "希尔德贝尔特二世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-chlothar-ii",
+      "names": {
+        "primary": "克洛泰尔二世",
+        "aliases": [
+          "Chlothar II",
+          "Clotaire II"
+        ]
+      },
+      "description": "克洛泰尔二世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-dagobert-i",
+      "names": {
+        "primary": "达戈贝尔特一世",
+        "aliases": [
+          "Dagobert I"
+        ]
+      },
+      "description": "达戈贝尔特一世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-clovis-ii",
+      "names": {
+        "primary": "克洛维二世",
+        "aliases": [
+          "Clovis II"
+        ]
+      },
+      "description": "克洛维二世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-chlothar-iii",
+      "names": {
+        "primary": "克洛泰尔三世",
+        "aliases": [
+          "Chlothar III",
+          "Clotaire III"
+        ]
+      },
+      "description": "克洛泰尔三世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-childeric-ii",
+      "names": {
+        "primary": "希尔德里克二世",
+        "aliases": [
+          "Childeric II"
+        ]
+      },
+      "description": "希尔德里克二世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-theuderic-iii",
+      "names": {
+        "primary": "狄乌德里克三世",
+        "aliases": [
+          "Theuderic III",
+          "Thierry III",
+          "Theoderic III"
+        ]
+      },
+      "description": "狄乌德里克三世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-clovis-iv",
+      "names": {
+        "primary": "克洛维四世",
+        "aliases": [
+          "Clovis IV"
+        ]
+      },
+      "description": "克洛维四世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-childebert-iii",
+      "names": {
+        "primary": "希尔德贝尔特三世",
+        "aliases": [
+          "Childebert III"
+        ]
+      },
+      "description": "希尔德贝尔特三世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-dagobert-iii",
+      "names": {
+        "primary": "达戈贝尔特三世",
+        "aliases": [
+          "Dagobert III"
+        ]
+      },
+      "description": "达戈贝尔特三世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-chilperic-ii",
+      "names": {
+        "primary": "希尔佩里克二世",
+        "aliases": [
+          "Chilperic II"
+        ]
+      },
+      "description": "希尔佩里克二世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-theuderic-iv",
+      "names": {
+        "primary": "狄乌德里克四世",
+        "aliases": [
+          "Theuderic IV",
+          "Thierry IV",
+          "Theoderic IV"
+        ]
+      },
+      "description": "狄乌德里克四世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-childeric-iii",
+      "names": {
+        "primary": "希尔德里克三世",
+        "aliases": [
+          "Childeric III"
+        ]
+      },
+      "description": "希尔德里克三世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-pepin-iii",
+      "names": {
+        "primary": "丕平三世",
+        "aliases": [
+          "Pepin the Short",
+          "Pippin III"
+        ]
+      },
+      "description": "丕平三世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-charlemagne",
+      "names": {
+        "primary": "查理曼",
+        "aliases": [
+          "Charlemagne",
+          "Charles the Great",
+          "Karl der Große"
+        ]
+      },
+      "description": "查理曼，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-carloman-i",
+      "names": {
+        "primary": "卡洛曼一世",
+        "aliases": [
+          "Carloman I"
+        ]
+      },
+      "description": "卡洛曼一世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-louis-the-pious",
+      "names": {
+        "primary": "虔诚者路易",
+        "aliases": [
+          "Louis I",
+          "Louis the Pious",
+          "Louis I the Pious"
+        ]
+      },
+      "description": "虔诚者路易，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-lothair-i",
+      "names": {
+        "primary": "洛泰尔一世",
+        "aliases": [
+          "Lothair I"
+        ]
+      },
+      "description": "洛泰尔一世，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-louis-the-german",
+      "names": {
+        "primary": "德意志人路易",
+        "aliases": [
+          "Louis the German",
+          "Louis II of East Francia"
+        ]
+      },
+      "description": "德意志人路易，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-frankish-charles-the-bald",
+      "names": {
+        "primary": "秃头查理",
+        "aliases": [
+          "Charles the Bald",
+          "Charles II"
+        ]
+      },
+      "description": "秃头查理，法兰克王国主要统治者序列中的君主或并立统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-frankish-clovis-i",
+      "personId": "person-frankish-clovis-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 481,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 510,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-theuderic-i",
+      "personId": "person-frankish-theuderic-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 511,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 534,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "克洛维死后分王体系下的奥斯特拉西亚主线君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-childebert-i",
+      "personId": "person-frankish-childebert-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 511,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 557,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "克洛维死后分王体系下的巴黎主线君主之一；558年交接年归入克洛泰尔一世的再统一王国。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-chlothar-i-co-ruler",
+      "personId": "person-frankish-chlothar-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 511,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 557,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "克洛维死后分王体系下的索瓦松／纽斯特里亚主线君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-chlothar-i-ruler",
+      "personId": "person-frankish-chlothar-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 558,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 561,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "558年在诸兄先后绝嗣后再度统一法兰克王国。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-sigebert-i",
+      "personId": "person-frankish-sigebert-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 561,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 575,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "克洛泰尔一世死后分王体系下的奥斯特拉西亚主线君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-chilperic-i",
+      "personId": "person-frankish-chilperic-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 561,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 583,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "克洛泰尔一世死后分王体系下的纽斯特里亚主线君主之一；584年交接年归入克洛泰尔二世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-guntram",
+      "personId": "person-frankish-guntram",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 561,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 592,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "克洛泰尔一世死后分王体系下的勃艮第主线君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-childebert-ii",
+      "personId": "person-frankish-childebert-ii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 575,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 596,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "先后控制奥斯特拉西亚与勃艮第，是分治时期的关键主线之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-chlothar-ii-co-ruler",
+      "personId": "person-frankish-chlothar-ii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 584,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 612,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "先以纽斯特里亚主线君主身份并立，613年起重建统一王国。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-chlothar-ii-ruler",
+      "personId": "person-frankish-chlothar-ii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 613,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 628,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "613年击败布伦希尔德一系后重建统一法兰克王国；629年交接年归入达戈贝尔特一世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-dagobert-i",
+      "personId": "person-frankish-dagobert-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 629,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 638,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "常被视为晚期墨洛温王权高峰之一；639年交接年归入克洛维二世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-clovis-ii",
+      "personId": "person-frankish-clovis-ii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 639,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 656,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "其时奥斯特拉西亚仍有独立分王主线，因此按并立统治者记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-chlothar-iii",
+      "personId": "person-frankish-chlothar-iii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 657,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 672,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "主要统合纽斯特里亚与勃艮第主线；673年交接年归入希尔德里克二世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-childeric-ii",
+      "personId": "person-frankish-childeric-ii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 673,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 674,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "673年短暂再度统一法兰克王国；675年交接年归入狄乌德里克三世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-theuderic-iii",
+      "personId": "person-frankish-theuderic-iii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 675,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 678,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "675—678年主要控制纽斯特里亚／勃艮第主线，679年后另以统一王国任期记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-theuderic-iii-ruler",
+      "personId": "person-frankish-theuderic-iii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 679,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 690,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "679年达戈贝尔特二世死后，再度把奥斯特拉西亚并入同一王统。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-clovis-iv",
+      "personId": "person-frankish-clovis-iv",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 691,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 694,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-childebert-iii",
+      "personId": "person-frankish-childebert-iii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 695,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 710,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "711年交接年归入达戈贝尔特三世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-dagobert-iii",
+      "personId": "person-frankish-dagobert-iii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 711,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 714,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "715年交接年归入希尔佩里克二世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-chilperic-ii",
+      "personId": "person-frankish-chilperic-ii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 715,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 717,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 719,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 720,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "718年存在克洛泰尔四世的短暂对立王阶段；此处分片保留希尔佩里克二世的两段主要主线任期，并将721年交接年归入狄乌德里克四世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-theuderic-iv",
+      "personId": "person-frankish-theuderic-iv",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 721,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 737,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-childeric-iii",
+      "personId": "person-frankish-childeric-iii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 743,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 750,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "743年在加洛林宫相支持下恢复墨洛温王号；751年交接年归入丕平三世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-pepin-iii",
+      "personId": "person-frankish-pepin-iii",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 751,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 767,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "751年废黜墨洛温末王，开创加洛林王朝；768年交接年归入查理曼与卡洛曼一世的共治。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-charlemagne-co-ruler",
+      "personId": "person-frankish-charlemagne",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 768,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 770,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "与弟卡洛曼一世共治；771年后转入单独统治。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-carloman-i",
+      "personId": "person-frankish-carloman-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "co-ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 768,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 770,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "与兄查理曼共治；771年交接年归入查理曼的单独统治。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-charlemagne-ruler",
+      "personId": "person-frankish-charlemagne",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 771,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 813,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "771年独掌王国，800年加冕为皇帝；此处分片仍按法兰克王国主线记录，因此800年快照对应查理曼单独统治阶段。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-louis-the-pious",
+      "personId": "person-frankish-louis-the-pious",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "法兰克人的国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 814,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 839,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "840年交接年归入诸子继承战争，以显式展示凡尔登分裂前的争位阶段。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-lothair-i",
+      "personId": "person-frankish-lothair-i",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "对立国王"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 840,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 843,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "路易一世死后继承战争中的主要竞争者之一；843年后转入中法兰克王国主线。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-louis-the-german",
+      "personId": "person-frankish-louis-the-german",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "对立国王"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 840,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 843,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "路易一世死后继承战争中的主要竞争者之一；843年后转入东法兰克王国主线。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-frankish-charles-the-bald",
+      "personId": "person-frankish-charles-the-bald",
+      "polityId": "polity-frankish-kingdom",
+      "titles": [
+        "对立国王"
+      ],
+      "role": "contender",
+      "periods": [
+        {
+          "start": {
+            "year": 840,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 843,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "路易一世死后继承战争中的主要竞争者之一；843年后转入西法兰克王国主线。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": [
+    {
+      "id": "vacancy-frankish-738-742",
+      "polityId": "polity-frankish-kingdom",
+      "periods": [
+        {
+          "start": {
+            "year": 738,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 742,
+            "precision": "exact"
+          }
+        }
+      ],
+      "note": "狄乌德里克四世于737年去世后，查理·马特与其子仍掌握政务，但直到743年才恢复墨洛温王号；此段不补造并不存在的国王，而明确记作王位空缺期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-frankish-history"
+        },
+        {
+          "sourceId": "source-frankish-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

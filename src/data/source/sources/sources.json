@@ -371,5 +371,296 @@
     "publisher": "故宫博物院",
     "url": "https://www.dpm.org.cn/court/event/160186.html",
     "accessedAt": "2026-08-07"
+  },
+  {
+    "id": "source-goryeo-history",
+    "title": "The Goryeo dynasty (918–1392)",
+    "sourceType": "institutional",
+    "citation": "Khan Academy: The Goryeo dynasty (918–1392).",
+    "publisher": "Khan Academy",
+    "url": "https://www.khanacademy.org/humanities/art-asia/korea-japan/goryeo-dynasty/a/the-goryeo-dynasty-9181392",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-goryeo-rulers",
+    "title": "List of monarchs of Korea",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of monarchs of Korea；用于交叉核对高丽王朝君主姓名与在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Korea",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-tokugawa-history",
+    "title": "The Tokugawa Period",
+    "sourceType": "institutional",
+    "citation": "North Carolina State University: The Tokugawa Period.",
+    "publisher": "North Carolina State University",
+    "url": "https://scalar.chass.ncsu.edu/bodies-and-structures-2/the-tokugawa-period.57",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-tokugawa-rulers",
+    "title": "Japan: Memoirs of a Secret Empire . Shogun",
+    "sourceType": "institutional",
+    "citation": "PBS: Japan: Memoirs of a Secret Empire . Shogun；页面列出德川幕府将军序列及在任年份。",
+    "publisher": "PBS",
+    "url": "https://www.pbs.org/empires/japan/enteredo_9.html",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-khmer-history",
+    "title": "Angkor",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre: Angkor；概述高棉帝国9至15世纪都城与文明范围。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/668",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-khmer-rulers",
+    "title": "List of monarchs of Cambodia",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of monarchs of Cambodia；用于交叉核对吴哥时期高棉君主姓名与在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Cambodia",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-majapahit-history",
+    "title": "The Cultural Legacy of the Majapahit Empire",
+    "sourceType": "institutional",
+    "citation": "Nusantara Museum: The Cultural Legacy of the Majapahit Empire.",
+    "publisher": "Nusantara Museum",
+    "url": "https://indonesiamuseum.org/en/articles/the-cultural-legacy-of-the-majapahit-empire",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-majapahit-rulers",
+    "title": "Majapahit",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Majapahit；用于交叉核对满者伯夷主要君主姓名与在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Majapahit",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-kushan-history",
+    "title": "KUSHAN DYNASTY i. Dynastic History",
+    "sourceType": "secondary",
+    "citation": "Adrian David Hugh Bivar, Encyclopaedia Iranica: KUSHAN DYNASTY i. Dynastic History.",
+    "authors": [
+      "Adrian David Hugh Bivar"
+    ],
+    "publisher": "Encyclopaedia Iranica Foundation",
+    "url": "https://www.iranicaonline.org/articles/kushan-dynasty-i-history",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-kushan-rulers",
+    "title": "Kushan",
+    "sourceType": "tertiary",
+    "citation": "NumisWiki, The Collaborative Numismatics Project: Kushan；用于交叉核对主要贵霜君主的通行近似年表。",
+    "publisher": "Forum Ancient Coins",
+    "url": "https://www.forumancientcoins.com/numiswiki/view.asp?key=Kushan",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-timurid-history",
+    "title": "Timurid dynasty",
+    "sourceType": "institutional",
+    "citation": "The British Museum Collections Online: Timurid dynasty.",
+    "publisher": "The British Museum",
+    "url": "https://www.britishmuseum.org/collection/term/x23294",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-timurid-rulers",
+    "title": "Timurid Dynasty",
+    "sourceType": "secondary",
+    "citation": "New World Encyclopedia: Timurid Dynasty；用于交叉核对主要帖木儿主君序列与在位区间。",
+    "publisher": "New World Encyclopedia",
+    "url": "https://www.newworldencyclopedia.org/entry/Timurid_Dynasty",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-maurya-history",
+    "title": "Mauryan Empire",
+    "sourceType": "institutional",
+    "citation": "National Geographic Society: Mauryan Empire.",
+    "publisher": "National Geographic Society",
+    "url": "https://education.nationalgeographic.org/resource/mauryan-empire/",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-maurya-rulers",
+    "title": "List of Maurya emperors",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Maurya emperors；用于交叉核对孔雀帝国主要君主姓名与常见在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Maurya_emperors",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-mughal-history",
+    "title": "The arts of the Mughal Empire",
+    "sourceType": "institutional",
+    "citation": "Victoria and Albert Museum: The arts of the Mughal Empire；概述巴布尔建国、胡马雍复辟与阿克巴至沙贾汗时期的王朝发展。",
+    "publisher": "Victoria and Albert Museum",
+    "url": "https://www.vam.ac.uk/articles/the-arts-of-the-mughal-empire",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-mughal-rulers",
+    "title": "List of emperors of the Mughal Empire",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of emperors of the Mughal Empire；用于交叉核对莫卧儿皇帝序列、复辟与晚期在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_emperors_of_the_Mughal_Empire",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-seljuk-history",
+    "title": "Seljuq dynasty",
+    "sourceType": "institutional",
+    "citation": "The British Museum Collections Online: Seljuq dynasty.",
+    "publisher": "The British Museum",
+    "url": "https://www.britishmuseum.org/collection/term/x41057",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-seljuk-rulers",
+    "title": "List of sultans of the Seljuk Empire",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of sultans of the Seljuk Empire；用于交叉核对大塞尔柱苏丹序列、并行继承与复位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_sultans_of_the_Seljuk_Empire",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-ottoman-history",
+    "title": "Ottoman dynasty",
+    "sourceType": "institutional",
+    "citation": "The British Museum Collections Online: Ottoman dynasty.",
+    "publisher": "The British Museum",
+    "url": "https://www.britishmuseum.org/collection/term/x14382",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-ottoman-rulers",
+    "title": "List of sultans of the Ottoman Empire",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of sultans of the Ottoman Empire；用于交叉核对奥斯曼苏丹序列、复位、废黜与终末年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_sultans_of_the_Ottoman_Empire",
+    "accessedAt": "2026-08-09"
+  },
+  {
+    "id": "source-frankish-history",
+    "title": "Franks",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Franks；用于交叉核对法兰克王国形成、分治与843年前后的广义 Francia 口径。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Franks",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-frankish-rulers",
+    "title": "List of Frankish kings",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Frankish kings；用于交叉核对墨洛温、加洛林与分治阶段的法兰克统治者序列。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Frankish_kings",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-england-history",
+    "title": "Kingdom of England",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Kingdom of England；用于交叉核对927年统一、1649—1660中断与1707并入大不列颠的王国口径。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Kingdom_of_England",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-england-rulers",
+    "title": "List of English monarchs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of English monarchs；用于交叉核对英格兰君主序列、1066年继承转换与复位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_English_monarchs",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-fatimid-history",
+    "title": "Fatimid dynasty",
+    "sourceType": "institutional",
+    "citation": "The British Museum Collections Online: Fatimid dynasty.",
+    "publisher": "The British Museum",
+    "url": "https://www.britishmuseum.org/collection/term/x41025",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-fatimid-rulers",
+    "title": "List of Fatimid caliphs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Fatimid caliphs；用于交叉核对法蒂玛哈里发序列、迁都前后阶段与终末年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Fatimid_caliphs",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-mali-history",
+    "title": "The Mali Empire",
+    "sourceType": "institutional",
+    "citation": "National Geographic Society: The Mali Empire.",
+    "publisher": "National Geographic Society",
+    "url": "https://education.nationalgeographic.org/resource/mali-empire/",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-mali-rulers",
+    "title": "Keita dynasty",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Keita dynasty；用于交叉核对马里帝国 imperial mansas 序列、早期约年与王朝分支说明。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Keita_dynasty",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-aztec-history",
+    "title": "Aztec Civilization",
+    "sourceType": "secondary",
+    "citation": "World History Encyclopedia: Aztec Civilization；用于交叉核对1428—1521年三方同盟／墨西卡帝国的常见年代口径与政权概述。",
+    "publisher": "World History Encyclopedia",
+    "url": "https://www.worldhistory.org/Aztec_Civilization/",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-aztec-rulers",
+    "title": "List of tlatoque of Tenochtitlan",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of tlatoque of Tenochtitlan；用于交叉核对阿兹特克帝国主线大特拉托阿尼序列与交接年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_tlatoque_of_Tenochtitlan",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-inca-history",
+    "title": "Inca Civilization",
+    "sourceType": "secondary",
+    "citation": "World History Encyclopedia: Inca Civilization；用于交叉核对1438—1533年印加帝国的常见年代口径、帝国阶段范围与政权概述。",
+    "publisher": "World History Encyclopedia",
+    "url": "https://www.worldhistory.org/Inca_Civilization/",
+    "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-inca-rulers",
+    "title": "Sapa Inca",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Sapa Inca；用于交叉核对印加帝国主要统治者序列、共治与1530年代争位／扶立阶段。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Sapa_Inca",
+    "accessedAt": "2026-08-12"
   }
 ]

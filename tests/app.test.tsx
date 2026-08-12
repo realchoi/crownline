@@ -136,11 +136,10 @@ describe("Crownline 时间轴", () => {
 
     await user.click(screen.getByRole("button", { name: "时间点" }));
 
-    expect(screen.getByRole("region", { name: "1912 年时间点结果" })).toHaveTextContent(
-      "1912年 · 当时存在"
+    expect(screen.getByRole("region", { name: "1922 年时间点结果" })).toHaveTextContent(
+      "1922年 · 当时存在"
     );
-    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1912");
-    expect(screen.getByText("显示 1 个政权，另有 0 条历史背景")).toBeInTheDocument();
+    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1922");
     expect(new URLSearchParams(window.location.search).get("mode")).toBe("point");
 
     await user.click(screen.getByRole("button", { name: "全览" }));
@@ -159,7 +158,7 @@ describe("Crownline 时间轴", () => {
     expect(screen.getByLabelText("地区范围")).toHaveTextContent("当前数据集中的全部已收录条目");
   });
 
-  it("从 URL 恢复自选地区并把未收录与历史不存在区分开", () => {
+  it("从 URL 恢复自选地区并把覆盖有限与历史不存在区分开", () => {
     window.history.replaceState(
       null,
       "",
@@ -170,10 +169,7 @@ describe("Crownline 时间轴", () => {
     expect(screen.getByRole("button", { name: "自选地区" })).toHaveAttribute("aria-pressed", "true");
     expect(screen.getByRole("checkbox", { name: "美洲" })).toBeChecked();
     expect(screen.getByRole("region", { name: "当时存在的政权" })).toHaveTextContent(
-      "美洲尚未收录代表性政权"
-    );
-    expect(screen.getByRole("region", { name: "当时存在的政权" })).not.toHaveTextContent(
-      "当时不存在"
+      "当前数据覆盖有限，不表示当时不存在政权"
     );
   });
 
@@ -196,12 +192,23 @@ describe("Crownline 时间轴", () => {
     window.history.replaceState(null, "", "/?scope=global");
     renderApp();
 
-    expect(screen.getByRole("status")).toHaveTextContent("显示 77 / 77 个条目");
+    expect(screen.getByRole("status")).toHaveTextContent("显示 93 / 93 个条目");
     expect(screen.getByRole("heading", { name: "跨地区政权" })).toBeInTheDocument();
     expect(screen.getAllByText("拜占庭帝国")).toHaveLength(1);
     expect(screen.getAllByText("阿拔斯哈里发")).toHaveLength(1);
     expect(screen.getByRole("button", { name: /神圣罗马帝国/ })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /朱罗帝国/ })).toBeInTheDocument();
+  });
+
+  it("自选地区展示新增全球样本地区复选框", async () => {
+    const user = userEvent.setup();
+    renderApp();
+
+    await user.click(screen.getByRole("button", { name: "自选地区" }));
+
+    expect(screen.getByRole("checkbox", { name: "东南亚" })).toBeInTheDocument();
+    expect(screen.getByRole("checkbox", { name: "中亚" })).toBeInTheDocument();
+    expect(screen.getByRole("checkbox", { name: "西非" })).toBeInTheDocument();
   });
 
   it("多地区全览使用单一共享刻度并按真实时长绘制政权", () => {
@@ -212,15 +219,15 @@ describe("Crownline 时间轴", () => {
     );
     renderApp();
 
-    expect(screen.getAllByRole("img", { name: "统一时间刻度：330—1806，中点1068" }))
+    expect(screen.getAllByRole("img", { name: "统一时间刻度：前322—1922，中点801" }))
       .toHaveLength(1);
 
     const cholaBar = screen.getByRole("button", { name: /朱罗帝国/ });
     const holyRomanEmpireBar = screen.getByRole("button", { name: /神圣罗马帝国/ });
-    expect(Number.parseFloat(cholaBar.style.left)).toBeCloseTo(35.23, 1);
-    expect(Number.parseFloat(cholaBar.style.width)).toBeCloseTo(29.07, 1);
-    expect(Number.parseFloat(holyRomanEmpireBar.style.left)).toBeCloseTo(42.82, 1);
-    expect(Number.parseFloat(holyRomanEmpireBar.style.width)).toBeCloseTo(57.18, 1);
+    expect(Number.parseFloat(cholaBar.style.left)).toBeCloseTo(52.21, 1);
+    expect(Number.parseFloat(cholaBar.style.width)).toBeCloseTo(19.13, 1);
+    expect(Number.parseFloat(holyRomanEmpireBar.style.left)).toBeCloseTo(57.2, 1);
+    expect(Number.parseFloat(holyRomanEmpireBar.style.width)).toBeCloseTo(37.63, 1);
   });
 
   it("自选多地区在两种浏览模式间保持并同步 URL", async () => {
@@ -244,7 +251,7 @@ describe("Crownline 时间轴", () => {
     expect(screen.getByRole("checkbox", { name: "西亚" })).toBeChecked();
   });
 
-  it("未收录地区的全览说明资料缺口而不是历史不存在", () => {
+  it("美洲全览在补样后展示两个代表政权而不再显示未收录提示", () => {
     window.history.replaceState(
       null,
       "",
@@ -253,8 +260,9 @@ describe("Crownline 时间轴", () => {
     renderApp();
 
     const timeline = screen.getByRole("region", { name: "多地区完整时间轴" });
-    expect(timeline).toHaveTextContent("美洲尚未收录代表性政权");
-    expect(timeline).not.toHaveTextContent("当时不存在");
+    expect(within(timeline).getByRole("button", { name: /阿兹特克帝国/ })).toBeInTheDocument();
+    expect(within(timeline).getByRole("button", { name: /印加帝国/ })).toBeInTheDocument();
+    expect(timeline).not.toHaveTextContent("尚未收录代表性政权");
   });
 
   it("时间点模式隐藏重复图例并在全览模式恢复", async () => {

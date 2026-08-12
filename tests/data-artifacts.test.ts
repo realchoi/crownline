@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { loadSourceData } from "../scripts/data-source";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import type { CrownlineData } from "../src/domain/types";
+import { GLOBAL_SAMPLE_POLITY_IDS } from "./global-sample-polities";
 
 const data: CrownlineData = await loadSourceData();
 
@@ -71,6 +72,22 @@ describe("运行时数据产物", () => {
       expect(new Set(detail?.persons.map(({ id }) => id)), entityId)
         .toEqual(new Set(detail?.reigns.map(({ personId }) => personId)));
       expect(detail?.sources.length, entityId).toBeGreaterThan(0);
+    }
+  });
+
+  it("为十六个全球样本政权生成详情闭包契约", () => {
+    const { details } = buildGeneratedArtifacts(data);
+
+    for (const entityId of GLOBAL_SAMPLE_POLITY_IDS) {
+      const detail = details.get(entityId);
+
+      expect(detail, entityId).toBeDefined();
+      expect(detail!.reigns.length, entityId).toBeGreaterThan(0);
+      expect(detail!.reigns.every(({ polityId }) => polityId === entityId), entityId)
+        .toBe(true);
+      expect(new Set(detail!.persons.map(({ id }) => id)), entityId)
+        .toEqual(new Set(detail!.reigns.map(({ personId }) => personId)));
+      expect(detail!.sources.length, entityId).toBeGreaterThan(0);
     }
   });
 
