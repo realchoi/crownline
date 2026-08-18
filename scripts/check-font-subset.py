@@ -33,7 +33,7 @@ def collect_usage() -> tuple[dict[str, set[str]], dict]:
     for path in list((ROOT / "src").rglob("*.ts")) + list((ROOT / "src").rglob("*.tsx")):
         for ch in strip_comments(path.read_text(encoding="utf-8")):
             if ch.strip() and ord(ch) > 127:
-                usage[ch].add(f"src/{path.name}")
+                usage[ch].add(str(path.relative_to(ROOT)))
     for ch in (ROOT / "index.html").read_text(encoding="utf-8"):
         if ch.strip() and ord(ch) > 127:
             usage[ch].add("index.html")
@@ -70,10 +70,12 @@ def main() -> int:
         if ord(ch) not in body_cover:
             problems.append(f"正文子集缺失 U+{ord(ch):04X} {ch} ← {sorted(usage[ch])[:3]}")
     display_cover = song | latin
-    # 与生成脚本共享标题字符集，检查结果即代表下一次生成所采用的规则。
-    for ch in sorted(collect_display_chars(data), key=ord):
+    # 标题字符集覆盖全部源码静态文案与实际使用的动态名称。
+    for ch in sorted(collect_display_chars(ROOT, data), key=ord):
         if ord(ch) not in display_cover:
-            problems.append(f"标题子集缺失 U+{ord(ch):04X} {ch}")
+            origins = sorted(usage.get(ch, set()))[:3]
+            suffix = f" ← {origins}" if origins else ""
+            problems.append(f"标题子集缺失 U+{ord(ch):04X} {ch}{suffix}")
     for ch in "0123456789":
         if ord(ch) not in latin:
             problems.append(f"拉丁衬线子集缺失数字 {ch}(当前年份等标题数字会用系统字体渲染)")

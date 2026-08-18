@@ -123,19 +123,46 @@ describe("Crownline 详情", () => {
     expect(within(dialog).getByText(/不等于当时无人统治/)).toBeInTheDocument();
   });
 
-  it("全览详情不使用隐藏年份且历史分期不显示统治者区域", async () => {
+  it("全览详情展示完整统治序列、支持展开与角色筛选", async () => {
     const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: /明，1368—1644/ }));
     const mingDialog = screen.getByRole("dialog", { name: "明" });
-    expect(within(mingDialog).getByText(/切换到时间点模式/)).toBeInTheDocument();
+    const sequence = within(mingDialog).getByRole("region", { name: "统治序列" });
+    expect(within(sequence).getByText(/收录 16 条任期记录/)).toBeInTheDocument();
+    expect(sequence.querySelectorAll("details")).toHaveLength(16);
+    expect(
+      Array.from(sequence.querySelectorAll(".sequence-name"), (item) => item.textContent)
+    ).toEqual(expect.arrayContaining(["洪武帝", "崇祯帝"]));
     expect(within(mingDialog).queryByText(/1912年 · 在位统治者/)).not.toBeInTheDocument();
+
+    const hongwuEntry = within(sequence).getByText("洪武帝").closest("details");
+    expect(hongwuEntry).not.toBeNull();
+    await user.click(within(sequence).getByText("洪武帝"));
+    expect(within(hongwuEntry!).getByText(/洪武帝，该政权通行年表中的统治者/)).toBeVisible();
+    expect(
+      within(hongwuEntry!).getByRole("link", {
+        name: "Chronology of Chinese Emperors’ Reigns"
+      })
+    ).toHaveAttribute("target", "_blank");
     await user.click(within(mingDialog).getByRole("button", { name: "关闭详情" }));
+
+    await user.click(screen.getByRole("button", { name: /清，1636—1912/ }));
+    const qingDialog = screen.getByRole("dialog", { name: "清" });
+    const qingSequence = within(qingDialog).getByRole("region", { name: "统治序列" });
+    await user.click(within(qingSequence).getByRole("button", { name: /摄政者\s*2/ }));
+    expect(qingSequence.querySelectorAll("details")).toHaveLength(2);
+    expect(within(qingSequence).getByText("慈安太后")).toBeInTheDocument();
+    expect(within(qingSequence).getByText("慈禧太后")).toBeInTheDocument();
+    expect(within(qingSequence).queryByText("同治帝")).not.toBeInTheDocument();
+    await user.click(within(qingDialog).getByRole("button", { name: "关闭详情" }));
 
     await user.click(screen.getByRole("button", { name: /春秋.*历史分期/ }));
     expect(
-      within(screen.getByRole("dialog", { name: "春秋" })).queryByText(/在位统治者/)
+      within(screen.getByRole("dialog", { name: "春秋" })).queryByRole("region", {
+        name: "统治序列"
+      })
     ).not.toBeInTheDocument();
   });
 

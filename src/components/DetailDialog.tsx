@@ -15,6 +15,7 @@ import { selectRulerSnapshot, type RulerSnapshot } from "../domain/rulerSnapshot
 import type { CrownlineDetail, HistoricalEntity, Region, SourceRef } from "../domain/types";
 import { DetailLoadPanel, type DetailLoadState } from "./DetailLoadPanel";
 import { EntityLocalName } from "./EntityLocalName";
+import { RulerOverview } from "./RulerOverview";
 
 interface DetailDialogProps {
   entity: HistoricalEntity;
@@ -60,7 +61,7 @@ function collectSourceGroups(
   });
 }
 
-/** 渲染实体完整元数据，并在时间点模式展示当年统治者快照。 */
+/** 渲染实体完整元数据；全览展示统治序列，时间点展示当年快照。 */
 export function DetailDialog({
   entity,
   sectionTitle,
@@ -221,13 +222,7 @@ export function DetailDialog({
           <DetailLoadPanel state={detailState} onRetry={onRetry} />
 
           {detail && entity.entityKind === "polity" && currentYear === undefined && (
-            <section
-              className="detail-section ruler-overview"
-              aria-labelledby="ruler-overview-title"
-            >
-              <h3 id="ruler-overview-title">统治者资料</h3>
-              <p>切换到时间点模式，可查看指定年份的在位统治者、摄政者和争位者。</p>
-            </section>
+            <RulerOverview key={entity.id} detail={detail} />
           )}
 
           {snapshot && (

@@ -7,12 +7,6 @@ from pathlib import Path
 ASCII = {chr(codepoint) for codepoint in range(0x20, 0x7F)}
 DATA_EXCLUDED_KEYS = {"local"}
 
-# 这些文案由 --font-display 渲染，但不是全部都能从动态数据字段推导出来。
-DISPLAY_STATIC_TEXT = (
-    "世界王朝与帝国时间轴王冠纪跨地区政权当时存在的政权历史背景"
-    "其他年代口径统治者资料在位统治者资料来源年约前（）"
-)
-
 
 def strip_comments(text: str) -> str:
     """移除源码注释，避免为不会渲染的注释文字扩大字体。"""
@@ -49,19 +43,24 @@ def collect_data_chars(data: dict) -> set[str]:
     return chars
 
 
-def collect_display_chars(data: dict) -> set[str]:
-    """收集所有使用 --font-display 的静态文案与动态名称。"""
-    strings = [DISPLAY_STATIC_TEXT]
-    strings += [entity["names"]["primary"] for entity in data["entities"]]
+def collect_display_chars(root: Path, data: dict) -> set[str]:
+    """收集标题可能使用的源码静态文案与动态名称。
+
+    源码静态文案采用非 ASCII 超集，避免新增标题组件后还要同步维护手工字符清单；
+    页面标题动态值仍按实际使用的数据字段收集，避免把全部历史描述装入标题字体。
+    """
+    static_chars = {char for char in collect_source_chars(root) if ord(char) > 127}
+    strings = [entity["names"]["primary"] for entity in data["entities"]]
     strings += [person["names"]["primary"] for person in data["persons"]]
     strings += [section["title"] for section in data["timelineSections"]]
     strings += [region["names"]["primary"] for region in data["regions"]]
-    return {char for string in strings for char in string if char.strip()} - {"·"}
+    dynamic_chars = {char for string in strings for char in string if char.strip()}
+    return (static_chars | dynamic_chars) - {"·"}
 
 
 def collect_font_charsets(root: Path, data: dict) -> tuple[set[str], set[str], set[str]]:
     """返回正文、中文标题与拉丁标题字体的统一生成字符集。"""
     sans = collect_source_chars(root) | collect_data_chars(data) | ASCII
-    song = collect_display_chars(data)
+    song = collect_display_chars(root, data)
     latin = ASCII | {"·", "–", "—"}
     return sans, song, latin
