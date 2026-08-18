@@ -1,8 +1,8 @@
 import { fromOrdinal, formatHistoricalYear, formatPeriods, toOrdinal } from "../domain/chronology";
+import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
 import type { Region } from "../domain/types";
 import { ComparisonToggle } from "./ComparisonToggle";
-import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 
 /** 单个时间轴分组的渲染参数；多地区模式可注入共享比例。 */
 interface TimelineStageProps {

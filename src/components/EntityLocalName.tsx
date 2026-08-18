@@ -10,7 +10,7 @@ export function EntityLocalName({ names, className = "entity-local-name" }: Enti
   const local = names.local?.trim();
   if (!local) return null;
   return (
-    <p className={className} lang="auto">
+    <p className={className} dir="auto">
       {local}
     </p>
   );

@@ -1,9 +1,9 @@
 import { formatHistoricalYear, formatPeriods } from "../domain/chronology";
+import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import type { MatchedEntity } from "../domain/selectors";
 import type { RegionScope } from "../domain/regionScope";
 import type { Region } from "../domain/types";
 import { ComparisonToggle } from "./ComparisonToggle";
-import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 
 interface TimepointViewProps {
   year: number;

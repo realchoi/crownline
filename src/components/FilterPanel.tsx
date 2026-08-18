@@ -8,18 +8,11 @@ import {
   toOrdinal
 } from "../domain/chronology";
 import type { BrowseMode, HistoricalYearBounds } from "../domain/browseState";
+import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import type { RegionScope } from "../domain/regionScope";
 import type { CategoryFilter } from "../domain/selectors";
-import type { DisplayCategory, Region } from "../domain/types";
+import type { Region } from "../domain/types";
 import { RegionScopeControl } from "./RegionScopeControl";
-
-/** 展示类别对应的中文界面名称。 */
-export const DISPLAY_CATEGORY_NAMES: Record<DisplayCategory, string> = {
-  mainline: "主线王朝",
-  contemporary: "主要并立政权",
-  context: "历史分期",
-  regional: "区域政权"
-};
 
 /** 筛选面板的受控状态与事件。 */
 export interface FilterPanelProps {

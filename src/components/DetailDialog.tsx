@@ -5,10 +5,10 @@ import {
   formatHistoricalYear,
   formatPeriods
 } from "../domain/chronology";
+import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import { selectRulerSnapshot, type RulerSnapshot } from "../domain/rulerSnapshot";
 import type { ConfidenceLevel, CrownlineDetail, HistoricalEntity } from "../domain/types";
 import type { PolityForm, Region, ReignRole, SourceRef } from "../domain/types";
-import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 import { DetailLoadPanel, type DetailLoadState } from "./DetailLoadPanel";
 import { EntityLocalName } from "./EntityLocalName";
 
