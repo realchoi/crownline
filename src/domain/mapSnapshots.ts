@@ -77,11 +77,14 @@ export function clusterMapPoints(
   }));
 }
 
-/** 为已经过浏览筛选的真实政权选择指定年份的有效地理快照。 */
+/**
+ * 为已经过浏览筛选的真实政权选择地理快照。
+ * 未提供年份时返回全时期已校订点位；提供年份时只返回当年有效点位。
+ */
 export function selectMapSnapshots(
   polities: readonly HistoricalEntity[],
   snapshots: readonly GeographicSnapshot[],
-  year: number
+  year?: number
 ): MapSelection {
   const polityById = new Map(
     polities
@@ -91,7 +94,7 @@ export function selectMapSnapshots(
   const points = snapshots
     .flatMap((snapshot): MapPoint[] => {
       const entity = polityById.get(snapshot.polityId);
-      if (!entity || !isYearInPeriods(year, snapshot.periods)) return [];
+      if (!entity || (year !== undefined && !isYearInPeriods(year, snapshot.periods))) return [];
       return [{ entity, snapshot, ...projectCoordinates(snapshot.coordinates) }];
     })
     .sort(compareMapPoints);

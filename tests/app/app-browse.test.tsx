@@ -6,12 +6,17 @@ import { installAppTestLifecycle, renderApp } from "../helpers/renderApp";
 installAppTestLifecycle();
 
 describe("Crownline 浏览", () => {
-  it("初始展示全部七十三个实体和七个阶段", () => {
+  it("初始展示全球已收录的全部实体", () => {
     renderApp();
 
-    expect(screen.getByText("显示 73 / 73 个条目，涉及 7 个历史阶段")).toBeInTheDocument();
+    expect(screen.getByRole("status")).toHaveTextContent("显示 116 / 116 个条目");
     expect(screen.getByRole("heading", { name: "Crownline · 王冠纪" })).toBeInTheDocument();
     expect(screen.getByLabelText("地区范围")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    expect(screen.getByRole("region", { name: "多地区完整时间轴" })).toBeInTheDocument();
   });
 
   it("按名称或别名搜索并支持空结果", async () => {
@@ -20,11 +25,11 @@ describe("Crownline 浏览", () => {
     const search = screen.getByRole("searchbox", { name: "搜索名称、别名、年份或说明" });
 
     await user.type(search, "殷商");
-    expect(screen.getByText("显示 1 / 73 个条目，涉及 1 个历史阶段")).toBeInTheDocument();
+    expect(screen.getByRole("status")).toHaveTextContent("显示 1 / 116 个条目");
 
     await user.clear(search);
     await user.type(search, "不存在的政权");
-    expect(screen.getByRole("region", { name: "中国历代王朝时间轴" })).toHaveTextContent(
+    expect(screen.getByRole("region", { name: "多地区完整时间轴" })).toHaveTextContent(
       "没有找到匹配条目。"
     );
   });
@@ -35,10 +40,10 @@ describe("Crownline 浏览", () => {
     const select = screen.getByRole("combobox", { name: "显示类别" });
 
     await user.selectOptions(select, "context");
-    expect(screen.getByText("显示 2 / 73 个条目，涉及 1 个历史阶段")).toBeInTheDocument();
+    expect(screen.getByRole("status")).toHaveTextContent("显示 2 / 116 个条目");
 
     await user.click(screen.getByRole("button", { name: "清除筛选" }));
-    expect(screen.getByText("显示 73 / 73 个条目，涉及 7 个历史阶段")).toBeInTheDocument();
+    expect(screen.getByRole("status")).toHaveTextContent("显示 116 / 116 个条目");
     expect(select).toHaveValue("all");
   });
 
@@ -49,7 +54,7 @@ describe("Crownline 浏览", () => {
 
     expect(screen.getByRole("searchbox")).toHaveValue("时期");
     expect(screen.getByRole("combobox")).toHaveValue("context");
-    expect(screen.getByText("显示 2 / 73 个条目，涉及 1 个历史阶段")).toBeInTheDocument();
+    expect(screen.getByRole("status")).toHaveTextContent("显示 2 / 116 个条目");
 
     await user.selectOptions(screen.getByRole("combobox"), "all");
     expect(new URLSearchParams(window.location.search).has("type")).toBe(false);
@@ -68,7 +73,7 @@ describe("Crownline 浏览", () => {
     expect(new URLSearchParams(window.location.search).get("mode")).toBe("point");
 
     await user.click(screen.getByRole("button", { name: "全览" }));
-    expect(screen.getByRole("region", { name: "中国历代王朝时间轴" })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "多地区完整时间轴" })).toBeInTheDocument();
     expect(new URLSearchParams(window.location.search).has("mode")).toBe(false);
   });
 
@@ -91,14 +96,19 @@ describe("Crownline 浏览", () => {
     expect(new URLSearchParams(window.location.search).has("view")).toBe(false);
   });
 
-  it("在时间点模式切换全球已收录并同步覆盖说明与 URL", async () => {
+  it("默认全球范围不写 URL，切换中国后显式写入并可恢复全球", async () => {
     const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "时间点" }));
+    expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
+
+    await user.click(screen.getByRole("button", { name: "中国" }));
+    expect(new URLSearchParams(window.location.search).get("scope")).toBe("china");
+
     await user.click(screen.getByRole("button", { name: "全球已收录" }));
 
-    expect(new URLSearchParams(window.location.search).get("scope")).toBe("global");
+    expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
     expect(screen.getByLabelText("地区范围")).toHaveTextContent("当前数据集中的全部已收录条目");
   });
 
@@ -127,7 +137,7 @@ describe("Crownline 浏览", () => {
 
     await user.click(screen.getByRole("button", { name: "全览" }));
 
-    expect(new URLSearchParams(window.location.search).get("scope")).toBe("global");
+    expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
     expect(screen.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
       "aria-pressed",
       "true"

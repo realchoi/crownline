@@ -154,6 +154,20 @@ test.describe("Crownline 浏览器冒烟", () => {
     await expectNoSeriousA11yViolations(page);
   });
 
+  test("全时期总览的清除筛选按钮在桌面端保持同行", async ({ page, isMobile }) => {
+    test.skip(isMobile, "桌面网格布局仅在 desktop-chromium 项目覆盖");
+
+    await page.goto("/");
+    await waitForAppReady(page);
+    await page.getByRole("button", { name: "地图" }).click();
+
+    const searchBox = await page.getByRole("searchbox").boundingBox();
+    const clearBox = await page.getByRole("button", { name: "清除筛选" }).boundingBox();
+    expect(searchBox).not.toBeNull();
+    expect(clearBox).not.toBeNull();
+    expect(Math.abs((searchBox?.y ?? 0) - (clearBox?.y ?? 0))).toBeLessThan(2);
+  });
+
   test("深色模式下地图视图可切换且无严重无障碍问题", async ({ page, browserName }) => {
     test.skip(browserName !== "chromium", "深色模式探测仅在 Chromium 项目运行");
 
@@ -162,7 +176,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await waitForAppReady(page);
 
     await page.getByRole("button", { name: "地图" }).click();
-    await expect(page.getByRole("region", { name: "当前年份历史政权示意地图" })).toBeVisible();
+    await expect(page.getByRole("region", { name: "全时期历史政权总览地图" })).toBeVisible();
 
     const pageBackground = await page.evaluate(
       () => getComputedStyle(document.body).backgroundColor

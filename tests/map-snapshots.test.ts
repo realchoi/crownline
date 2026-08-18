@@ -79,6 +79,17 @@ describe("历史地图点位", () => {
     ).toEqual(["长安", "洛阳"]);
   });
 
+  it("未指定年份时选择政权的全部已校订历史点位", () => {
+    const ming = entity("polity-cn-ming");
+    const result = selectMapSnapshots([ming], data.geographicSnapshots);
+
+    expect(result.points.map(({ snapshot }) => snapshot.id)).toEqual([
+      "geo-ming-beijing",
+      "geo-ming-nanjing"
+    ]);
+    expect(result.missingEntities).toEqual([]);
+  });
+
   it("单独列出当年缺少地理快照的政权", () => {
     const chen = entity("polity-cn-chen");
     const result = selectMapSnapshots([chen], data.geographicSnapshots, 580);

@@ -7,6 +7,7 @@ import { EntityLocalName } from "./EntityLocalName";
 
 interface HistoricalMapProps {
   clusters: MapCluster[];
+  isOverview?: boolean;
   onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
 }
 
@@ -15,7 +16,7 @@ function pointLabel({ entity, snapshot }: MapPoint): string {
 }
 
 /** 呈现离线世界轮廓、单点标记与可展开的密集点位聚合。 */
-export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
+export function HistoricalMap({ clusters, isOverview = false, onSelect }: HistoricalMapProps) {
   const [expandedClusterId, setExpandedClusterId] = useState<string | null>(null);
   const expandedTriggerRef = useRef<HTMLButtonElement | null>(null);
   const clusterPanelRef = useRef<HTMLElement | null>(null);
@@ -27,7 +28,10 @@ export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
   }, [expandedClusterId]);
 
   return (
-    <section className="historical-map" aria-label="当前年份历史政权示意地图">
+    <section
+      className="historical-map"
+      aria-label={isOverview ? "全时期历史政权总览地图" : "当前年份历史政权示意地图"}
+    >
       <div className="historical-map-canvas world-map">
         <img className="historical-map-land" src={worldLandUrl} alt="" role="presentation" />
         {clusters.map((cluster) => {
@@ -125,7 +129,9 @@ export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
         </li>
       </ul>
       <p className="map-boundary-note">
-        点位仅表示已校订的都城、政治中心或浏览定位，不表示政权疆域与控制范围。
+        {isOverview
+          ? "总览汇集不同时期的已校订点位，并不表示这些政权同时存在；点位也不表示疆域与控制范围。"
+          : "点位仅表示已校订的都城、政治中心或浏览定位，不表示政权疆域与控制范围。"}
       </p>
     </section>
   );

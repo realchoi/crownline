@@ -55,6 +55,8 @@ export function FilterPanel({
 }: FilterPanelProps) {
   const hasFilters = query.trim().length > 0 || category !== "all";
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
+  const isMapOverview = !showModeSwitch && mode === "overview";
+  const isMapTimepoint = !showModeSwitch && mode === "point";
 
   return (
     <section
@@ -91,11 +93,20 @@ export function FilterPanel({
       <div className="controls-grid">
         {showYearControls && (
           <div className="year-panel">
-            <div className="year-current">
-              <span className="field-label">当前年份</span>
-              <output aria-label="当前年份" aria-live="polite">
-                {formattedYear}
+            <div className={`year-current${isMapOverview ? " is-overview" : ""}`}>
+              <span className="field-label">{isMapOverview ? "地图范围" : "当前年份"}</span>
+              <output aria-label={isMapOverview ? "地图范围" : "当前年份"} aria-live="polite">
+                {isMapOverview ? "全时期总览" : formattedYear}
               </output>
+              {isMapTimepoint && (
+                <button
+                  className="map-overview-return"
+                  type="button"
+                  onClick={() => onModeChange("overview")}
+                >
+                  返回全时期总览
+                </button>
+              )}
             </div>
             <div className="year-slider-row">
               <button
@@ -115,14 +126,14 @@ export function FilterPanel({
                   min={toOrdinal(yearBounds.min)}
                   max={toOrdinal(yearBounds.max)}
                   value={toOrdinal(year)}
-                  aria-label="历史年份滑杆"
+                  aria-label={isMapOverview ? "历史年份滑杆，拖动后按年份显示" : "历史年份滑杆"}
                   aria-valuetext={`${formattedYear}年`}
                   aria-describedby="year-help"
                   onChange={(event) => onYearChange(fromOrdinal(Number(event.currentTarget.value)))}
                 />
                 <div className="year-range" id="year-help">
                   <span>{formatHistoricalYear({ year: yearBounds.min, precision: "exact" })}</span>
-                  <span>自动跳过公元 0 年</span>
+                  <span>{isMapOverview ? "拖动后进入年份视图" : "自动跳过公元 0 年"}</span>
                   <span>{formatHistoricalYear({ year: yearBounds.max, precision: "exact" })}</span>
                 </div>
               </div>

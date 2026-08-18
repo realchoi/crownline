@@ -1,4 +1,4 @@
-import { screen, waitFor, within } from "@testing-library/react";
+import { fireEvent, screen, waitFor, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import type { GeographyLoadResult } from "../../src/data/loadCrownlineGeography";
@@ -15,6 +15,42 @@ import {
 installAppTestLifecycle();
 
 describe("Crownline 地图", () => {
+  it("默认展示全时期点位，调整年份后筛选并可返回总览", async () => {
+    const user = setupUser();
+    renderApp();
+
+    await user.click(screen.getByRole("button", { name: "地图" }));
+    expect(
+      await screen.findByRole("region", { name: "全时期历史政权总览地图" })
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText("地图范围")).toHaveTextContent("全时期总览");
+    expect(screen.getByText(/全时期总览：显示/)).toBeInTheDocument();
+    expect(screen.getByText("跨时期点位不表示这些政权同时存在")).toBeInTheDocument();
+
+    const overviewList = screen.getByRole("region", { name: "地图结果列表" });
+    expect(
+      within(overviewList).getByRole("button", { name: "明，南京，都城" })
+    ).toBeInTheDocument();
+
+    fireEvent.change(screen.getByRole("slider", { name: "历史年份滑杆，拖动后按年份显示" }), {
+      target: { value: "500" }
+    });
+    expect(await screen.findByRole("region", { name: "当前年份历史政权示意地图" })).toBeVisible();
+    expect(screen.getByLabelText("当前年份")).toHaveTextContent("500");
+    expect(screen.getByRole("region", { name: "地图结果列表" })).not.toHaveTextContent("明");
+    expect(new URLSearchParams(window.location.search).get("mode")).toBe("point");
+
+    await user.click(screen.getByRole("button", { name: "返回全时期总览" }));
+    expect(await screen.findByRole("region", { name: "全时期历史政权总览地图" })).toBeVisible();
+    expect(new URLSearchParams(window.location.search).has("mode")).toBe(false);
+    expect(new URLSearchParams(window.location.search).has("year")).toBe(false);
+
+    const restoredList = screen.getByRole("region", { name: "地图结果列表" });
+    await user.click(within(restoredList).getByRole("button", { name: "明，南京，都城" }));
+    expect(await screen.findByRole("heading", { name: "统治序列" })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /500年 · 在位统治者/ })).not.toBeInTheDocument();
+  });
+
   it("首次进入地图时按需加载地理数据并显示当年点位", async () => {
     window.history.replaceState(null, "", "/?view=map&year=500");
     let attempts = 0;

@@ -47,10 +47,15 @@ export function BrowseContent({
             有 {geographyState.result.omittedCount} 条地理记录格式异常，已跳过。
           </p>
         )}
-        <HistoricalMap clusters={mapSelection.clusters} onSelect={onSelect} />
+        <HistoricalMap
+          clusters={mapSelection.clusters}
+          isOverview={browseState.mode === "overview"}
+          onSelect={onSelect}
+        />
         <MapResultList
           points={mapSelection.points}
           missingEntities={mapSelection.missingEntities}
+          isOverview={browseState.mode === "overview"}
           comparisonEntityIds={browseState.compareEntityIds}
           onSelect={onSelect}
           onToggleComparison={onToggleComparison}

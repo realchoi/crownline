@@ -60,7 +60,12 @@ export function readBrowseState(
       : bounds.max;
   const rawCategory = params.get("type") ?? "all";
   const mappedCategory = LEGACY_CATEGORY_MAP[rawCategory] ?? rawCategory;
-  const mode: BrowseMode = params.get("mode") === "point" ? "point" : "overview";
+  const viewMode: ViewMode = params.get("view") === "map" ? "map" : "timeline";
+  const hasExplicitYear = params.has("year") && Number.isSafeInteger(rawYear) && rawYear !== 0;
+  const mode: BrowseMode =
+    params.get("mode") === "point" || (viewMode === "map" && hasExplicitYear)
+      ? "point"
+      : "overview";
   const rawScope = params.get("scope");
   const validHistoricalRegionIds = new Set(
     regions.filter(({ regionKind }) => regionKind === "historical-region").map(({ id }) => id)
@@ -69,11 +74,11 @@ export function readBrowseState(
     .filter((id) => validHistoricalRegionIds.has(id))
     .sort();
   const regionScope: RegionScope =
-    rawScope === "global"
-      ? { mode: "global" }
+    rawScope === "china"
+      ? { mode: "china" }
       : rawScope === "custom" && customRegionIds.length > 0
         ? { mode: "custom", regionIds: customRegionIds }
-        : { mode: "china" };
+        : { mode: "global" };
   const polityIds = new Set(
     entities.filter(({ entityKind }) => entityKind === "polity").map(({ id }) => id)
   );
@@ -85,7 +90,7 @@ export function readBrowseState(
   const detailEntityId = rawDetail && entityIds.has(rawDetail) ? rawDetail : null;
 
   return {
-    viewMode: params.get("view") === "map" ? "map" : "timeline",
+    viewMode,
     mode,
     year,
     query: params.get("q") ?? "",
@@ -111,10 +116,10 @@ export function writeBrowseState(
 
   if (state.viewMode === "map") params.set("view", "map");
   if (state.mode === "point") params.set("mode", "point");
-  if (state.year !== bounds.max) params.set("year", String(state.year));
+  if (state.mode === "point" && state.year !== bounds.max) params.set("year", String(state.year));
   if (state.query.trim()) params.set("q", state.query.trim());
   if (state.category !== "all") params.set("type", state.category);
-  if (state.regionScope.mode === "global") params.set("scope", "global");
+  if (state.regionScope.mode === "china") params.set("scope", "china");
   if (state.regionScope.mode === "custom") {
     params.set("scope", "custom");
     [...new Set(state.regionScope.regionIds)].sort().forEach((regionId) => {

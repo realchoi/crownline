@@ -84,6 +84,31 @@ main {
   line-height: 1.2;
 }
 
+.year-current.is-overview output {
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--border));
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--text);
+  padding: 3px 10px;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+}
+
+.map-overview-return {
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  background: transparent;
+  color: var(--accent);
+  padding: 2px 1px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.map-overview-return:hover {
+  border-bottom-color: var(--accent);
+}
+
 .year-slider-row {
   display: grid;
   grid-template-columns: 38px minmax(0, 1fr) 38px;
@@ -282,7 +307,8 @@ main {
   align-items: end;
 }
 
-.controls-point .controls-grid {
+.controls-point .controls-grid,
+.controls-map .controls-grid {
   grid-template-columns:
     minmax(350px, 1.35fr)
     minmax(210px, 1fr)

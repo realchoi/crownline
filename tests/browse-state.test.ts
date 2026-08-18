@@ -22,7 +22,7 @@ describe("浏览状态", () => {
       year: -221,
       query: "秦",
       category: "contemporary",
-      regionScope: { mode: "china" },
+      regionScope: { mode: "global" },
       compareEntityIds: [],
       detailEntityId: null
     });
@@ -35,7 +35,7 @@ describe("浏览状态", () => {
       year: 1922,
       query: "",
       category: "all",
-      regionScope: { mode: "china" },
+      regionScope: { mode: "global" },
       compareEntityIds: [],
       detailEntityId: null
     });
@@ -43,10 +43,15 @@ describe("浏览状态", () => {
     expect(readBrowseState("?mode=point&year=9999", bounds).year).toBe(1922);
   });
 
-  it("独立恢复并清洗地图视图，不改写时间轴浏览模式", () => {
-    expect(readBrowseState("?view=map&year=1400", bounds)).toMatchObject({
+  it("地图默认进入全览，显式年份链接进入时间点", () => {
+    expect(readBrowseState("?view=map", bounds)).toMatchObject({
       viewMode: "map",
       mode: "overview",
+      year: 1922
+    });
+    expect(readBrowseState("?view=map&year=1400", bounds)).toMatchObject({
+      viewMode: "map",
+      mode: "point",
       year: 1400
     });
     expect(readBrowseState("?view=unknown", bounds).viewMode).toBe("timeline");
@@ -59,7 +64,7 @@ describe("浏览状态", () => {
     expect(writeBrowseState(defaultState, bounds).has("view")).toBe(false);
   });
 
-  it("序列化非默认状态并保留未知参数", () => {
+  it("序列化非默认状态、中国范围并保留未知参数", () => {
     const params = writeBrowseState(
       {
         viewMode: "timeline",
@@ -75,7 +80,9 @@ describe("浏览状态", () => {
       "?ref=shared"
     );
 
-    expect(params.toString()).toBe("ref=shared&mode=point&year=-221&q=%E7%A7%A6&type=mainline");
+    expect(params.toString()).toBe(
+      "ref=shared&mode=point&year=-221&q=%E7%A7%A6&type=mainline&scope=china"
+    );
   });
 
   it("从 URL 省略默认值", () => {
@@ -86,7 +93,7 @@ describe("浏览状态", () => {
         year: 1922,
         query: "",
         category: "all",
-        regionScope: { mode: "china" },
+        regionScope: { mode: "global" },
         compareEntityIds: [],
         detailEntityId: null
       },
@@ -94,6 +101,17 @@ describe("浏览状态", () => {
     );
 
     expect(params.toString()).toBe("");
+  });
+
+  it("全览不写入隐藏年份，地图时间点在最大年份保留模式", () => {
+    const defaultState = readBrowseState("", bounds);
+    expect(writeBrowseState({ ...defaultState, year: 1400 }, bounds).has("year")).toBe(false);
+    expect(
+      writeBrowseState(
+        { ...defaultState, viewMode: "map", mode: "point", year: bounds.max },
+        bounds
+      ).toString()
+    ).toBe("view=map&mode=point");
   });
 
   it("恢复并清洗自选地区参数", () => {
@@ -106,11 +124,11 @@ describe("浏览状态", () => {
     ).toEqual({ mode: "custom", regionIds: ["region-east-asia"] });
 
     expect(readBrowseState("?scope=custom", bounds, data.regions).regionScope).toEqual({
-      mode: "china"
+      mode: "global"
     });
   });
 
-  it("序列化自选与全球范围，默认中国范围不写入 URL", () => {
+  it("序列化自选与中国范围，默认全球范围不写入 URL", () => {
     const custom = writeBrowseState(
       {
         viewMode: "timeline",
@@ -128,20 +146,20 @@ describe("浏览状态", () => {
       "mode=point&year=1000&scope=custom&region=region-europe&region=region-south-asia"
     );
 
-    const global = writeBrowseState(
+    const china = writeBrowseState(
       {
         viewMode: "timeline",
         mode: "point",
         year: 1000,
         query: "",
         category: "all",
-        regionScope: { mode: "global" },
+        regionScope: { mode: "china" },
         compareEntityIds: [],
         detailEntityId: null
       },
       bounds
     );
-    expect(global.toString()).toBe("mode=point&year=1000&scope=global");
+    expect(china.toString()).toBe("mode=point&year=1000&scope=china");
   });
 
   it("全览模式恢复并序列化全球范围", () => {
@@ -161,7 +179,7 @@ describe("浏览状态", () => {
       },
       bounds
     );
-    expect(params.toString()).toBe("scope=global");
+    expect(params.toString()).toBe("");
   });
 
   it("全览模式恢复并规范化自选地区", () => {
@@ -209,7 +227,7 @@ describe("浏览状态", () => {
         year: 1922,
         query: "",
         category: "all",
-        regionScope: { mode: "china" },
+        regionScope: { mode: "global" },
         compareEntityIds: ["polity-cn-ming", "polity-cn-tang"],
         detailEntityId: null
       },

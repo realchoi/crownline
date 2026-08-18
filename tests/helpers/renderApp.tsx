@@ -49,7 +49,7 @@ export function renderApp(
 }
 
 export async function findMapMarker(name: string): Promise<HTMLButtonElement> {
-  const map = await screen.findByRole("region", { name: "当前年份历史政权示意地图" });
+  const map = await screen.findByRole("region", { name: /历史政权(?:总览|示意)地图/ });
   return within(map).getByRole("button", { name });
 }
 

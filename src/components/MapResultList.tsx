@@ -7,6 +7,7 @@ import { EntityLocalName } from "./EntityLocalName";
 interface MapResultListProps {
   points: MapPoint[];
   missingEntities: HistoricalEntity[];
+  isOverview?: boolean;
   comparisonEntityIds: string[];
   onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
   onToggleComparison: (entityId: string) => void;
@@ -20,6 +21,7 @@ function pointLabel({ entity, snapshot }: MapPoint): string {
 export function MapResultList({
   points,
   missingEntities,
+  isOverview = false,
   comparisonEntityIds,
   onSelect,
   onToggleComparison
@@ -29,7 +31,7 @@ export function MapResultList({
       <div className="map-results-heading">
         <div>
           <p className="timepoint-kicker">可访问结果</p>
-          <h2>地图点位</h2>
+          <h2>{isOverview ? "全时期点位" : "地图点位"}</h2>
         </div>
         <span>{points.length} 个</span>
       </div>
@@ -74,7 +76,11 @@ export function MapResultList({
       {missingEntities.length > 0 && (
         <section className="map-missing" aria-label="尚未校订地理数据">
           <h3>尚未校订地理数据</h3>
-          <p>这些政权在当前年份存在，但尚无可用点位；这不表示它们在地理上不存在。</p>
+          <p>
+            {isOverview
+              ? "这些已收录政权尚无可用点位；这不表示它们在地理上不存在。"
+              : "这些政权在当前年份存在，但尚无可用点位；这不表示它们在地理上不存在。"}
+          </p>
           <ul className="map-missing-list">
             {missingEntities.map((entity) => (
               <li key={entity.id}>{entity.names.primary}</li>

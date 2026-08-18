@@ -64,21 +64,30 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
     return data.entities.map((entity) => ({ entity, section: sectionByEntityId.get(entity.id) }));
   }, [data]);
   const mapBrowseResults = useMemo(() => {
-    return selectBrowseResults(data, {
+    const filters = {
       query: browseState.query,
       category: browseState.category,
-      regionScope: browseState.regionScope,
-      year: browseState.year
-    });
-  }, [browseState.category, browseState.query, browseState.regionScope, browseState.year, data]);
+      regionScope: browseState.regionScope
+    };
+    return browseState.mode === "point"
+      ? selectBrowseResults(data, { ...filters, year: browseState.year })
+      : selectBrowseResults(data, filters);
+  }, [
+    browseState.category,
+    browseState.mode,
+    browseState.query,
+    browseState.regionScope,
+    browseState.year,
+    data
+  ]);
   const mapSelection = useMemo(() => {
     if (geographyState.status !== "ready") return null;
     return selectMapSnapshots(
       mapBrowseResults.polities.map(({ entity }) => entity),
       geographyState.result.geography.geographicSnapshots,
-      browseState.year
+      browseState.mode === "point" ? browseState.year : undefined
     );
-  }, [browseState.year, geographyState, mapBrowseResults.polities]);
+  }, [browseState.mode, browseState.year, geographyState, mapBrowseResults.polities]);
   // 即使筛选状态变化，也要允许已打开的详情继续读取完整实体记录。
   const selectedMatch = browseState.detailEntityId
     ? allMatches.find(({ entity }) => entity.id === browseState.detailEntityId)
@@ -187,7 +196,13 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           regions={data.regions}
           regionScope={browseState.regionScope}
           onModeChange={(mode) => setBrowseState((current) => ({ ...current, mode }))}
-          onYearChange={(year) => setBrowseState((current) => ({ ...current, year }))}
+          onYearChange={(year) =>
+            setBrowseState((current) => ({
+              ...current,
+              year,
+              mode: current.viewMode === "map" ? "point" : current.mode
+            }))
+          }
           onQueryChange={(query) => setBrowseState((current) => ({ ...current, query }))}
           onCategoryChange={(category) => {
             setBrowseState((current) => ({ ...current, category }));
@@ -228,9 +243,7 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           <ComparisonPanel
             entities={comparisonEntities}
             regions={data.regions}
-            {...(browseState.viewMode === "map" || browseState.mode === "point"
-              ? { currentYear: browseState.year }
-              : {})}
+            {...(browseState.mode === "point" ? { currentYear: browseState.year } : {})}
             loadDetail={loadDetail}
             onRemove={toggleComparison}
             onClear={() => {
@@ -259,9 +272,7 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           sectionTitle={selectedMatch.section?.title}
           regions={data.regions}
           detailState={detailState}
-          {...(browseState.viewMode === "map" || browseState.mode === "point"
-            ? { currentYear: browseState.year }
-            : {})}
+          {...(browseState.mode === "point" ? { currentYear: browseState.year } : {})}
           onRetry={retryDetail}
           onClose={closeDetail}
         />
