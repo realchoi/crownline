@@ -135,4 +135,21 @@ describe("源数据分片", () => {
     );
     expect(await readJson(join(publicOutputRoot, "sentinel.json"))).toEqual({ stable: true });
   });
+
+  it("并发生成不会冲突", async () => {
+    const root = await createTemporaryRoot();
+    const sourceRoot = join(root, "source");
+    const toolOutputRoot = join(root, "tool-output");
+    const publicOutputRoot = join(root, "public-output");
+    await writeSourceTree(sourceRoot);
+
+    const summaries = await Promise.all(
+      Array.from({ length: 4 }, () =>
+        generateData({ sourceRoot, toolOutputRoot, publicOutputRoot })
+      )
+    );
+
+    expect(summaries.every((summary) => summary.entities === summaries[0]?.entities)).toBe(true);
+    expect(await readJson(join(toolOutputRoot, "crownline-data.json"))).toEqual(data);
+  });
 });

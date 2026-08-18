@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { mkdir, mkdtemp, rename, rm, writeFile } from "node:fs/promises";
 import { basename, dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -5,6 +6,7 @@ import { pathToFileURL } from "node:url";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import { validateCrownlineData } from "../src/domain/dataValidation";
 import { loadSourceData } from "./data-source";
+import { withGenerateDataLock } from "./generate-data-lock";
 
 export interface GenerateDataOptions {
   sourceRoot?: string;
@@ -34,8 +36,25 @@ async function createStagingDirectory(target: string): Promise<string> {
 }
 
 async function replaceDirectory(staging: string, target: string): Promise<void> {
-  await rm(target, { recursive: true, force: true });
-  await rename(staging, target);
+  const parent = dirname(target);
+  const discarded = join(parent, `.${basename(target)}.discarded-${randomUUID()}`);
+
+  try {
+    await rename(target, discarded);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+      throw error;
+    }
+  }
+
+  try {
+    await rename(staging, target);
+  } catch (error) {
+    await rename(discarded, target).catch(() => {});
+    throw error;
+  }
+
+  await rm(discarded, { recursive: true, force: true });
 }
 
 /** 聚合、全量校验并生成工具数据和浏览器运行时数据。 */
@@ -49,46 +68,50 @@ export async function generateData(
   const publicOutputRoot = resolve(
     options.publicOutputRoot ?? join(process.cwd(), "public", "data", "generated")
   );
-  const data = await loadSourceData(sourceRoot);
-  const validation = validateCrownlineData(data);
-  if (!validation.valid) {
-    const details = validation.issues
-      .map((issue) => `[${issue.code}] ${issue.path} ${issue.message}`)
-      .join("\n");
-    throw new Error(`历史数据校验失败：\n${details}`);
-  }
+  const lockRoot = dirname(toolOutputRoot);
 
-  const artifacts = buildGeneratedArtifacts(data);
-  const toolStaging = await createStagingDirectory(toolOutputRoot);
-  const publicStaging = await createStagingDirectory(publicOutputRoot);
-  try {
-    await writeJson(join(toolStaging, "crownline-data.json"), data);
-    await writeJson(join(publicStaging, "index.json"), artifacts.index);
-    await writeJson(join(publicStaging, "geography.json"), artifacts.geography);
-    await Promise.all(
-      Array.from(artifacts.details, ([entityId, detail]) => {
-        return writeJson(join(publicStaging, "details", `${entityId}.json`), detail);
-      })
-    );
-    await replaceDirectory(toolStaging, toolOutputRoot);
-    await replaceDirectory(publicStaging, publicOutputRoot);
-  } catch (error) {
-    await Promise.all([
-      rm(toolStaging, { recursive: true, force: true }),
-      rm(publicStaging, { recursive: true, force: true })
-    ]);
-    throw error;
-  }
+  return withGenerateDataLock(lockRoot, async () => {
+    const data = await loadSourceData(sourceRoot);
+    const validation = validateCrownlineData(data);
+    if (!validation.valid) {
+      const details = validation.issues
+        .map((issue) => `[${issue.code}] ${issue.path} ${issue.message}`)
+        .join("\n");
+      throw new Error(`历史数据校验失败：\n${details}`);
+    }
 
-  return {
-    sections: data.timelineSections.length,
-    entities: data.entities.length,
-    persons: data.persons.length,
-    reigns: data.reigns.length,
-    geographicSnapshots: data.geographicSnapshots.length,
-    details: artifacts.details.size,
-    sources: data.sources.length
-  };
+    const artifacts = buildGeneratedArtifacts(data);
+    const toolStaging = await createStagingDirectory(toolOutputRoot);
+    const publicStaging = await createStagingDirectory(publicOutputRoot);
+    try {
+      await writeJson(join(toolStaging, "crownline-data.json"), data);
+      await writeJson(join(publicStaging, "index.json"), artifacts.index);
+      await writeJson(join(publicStaging, "geography.json"), artifacts.geography);
+      await Promise.all(
+        Array.from(artifacts.details, ([entityId, detail]) => {
+          return writeJson(join(publicStaging, "details", `${entityId}.json`), detail);
+        })
+      );
+      await replaceDirectory(toolStaging, toolOutputRoot);
+      await replaceDirectory(publicStaging, publicOutputRoot);
+    } catch (error) {
+      await Promise.all([
+        rm(toolStaging, { recursive: true, force: true }),
+        rm(publicStaging, { recursive: true, force: true })
+      ]);
+      throw error;
+    }
+
+    return {
+      sections: data.timelineSections.length,
+      entities: data.entities.length,
+      persons: data.persons.length,
+      reigns: data.reigns.length,
+      geographicSnapshots: data.geographicSnapshots.length,
+      details: artifacts.details.size,
+      sources: data.sources.length
+    };
+  });
 }
 
 const entryPath = process.argv[1];
