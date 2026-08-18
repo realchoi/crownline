@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { setupUser } from "./helpers/user";
 
 import { App } from "../src/app/App";
 import { loadSourceData } from "../scripts/data-source";
@@ -67,7 +67,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("从时间轴选择最多两个政权并同步 URL", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     expect(screen.queryByRole("button", { name: "将春秋加入对比" })).not.toBeInTheDocument();
@@ -96,7 +96,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("选择一个政权后显示待完成的对比台并允许清空", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "将唐加入对比" }));
@@ -111,7 +111,7 @@ describe("Crownline 时间轴", () => {
 
   it("展示多段共同存续时间并在当前交集年份并列统治者", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=705");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "将唐加入对比" }));
@@ -149,7 +149,7 @@ describe("Crownline 时间轴", () => {
       "/?mode=point&year=705&compare=polity-cn-tang&compare=polity-cn-wu-zhou"
     );
     let tangAttempts = 0;
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp(async (entityId) => {
       if (entityId === "polity-cn-tang") {
         tangAttempts += 1;
@@ -266,7 +266,7 @@ describe("Crownline 时间轴", () => {
     window.history.replaceState(null, "", "/?compare=polity-cn-tang&compare=polity-cn-wu-zhou");
     const tang = createDeferred<CrownlineDetail | null>();
     const wuZhou = createDeferred<CrownlineDetail | null>();
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp((entityId) => {
       if (entityId === "polity-cn-tang") return tang.promise;
       if (entityId === "polity-cn-wu-zhou") return wuZhou.promise;
@@ -292,7 +292,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("按名称或别名搜索并支持空结果", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
     const search = screen.getByRole("searchbox", { name: "搜索名称、别名、年份或说明" });
 
@@ -307,7 +307,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("按展示类别筛选并清除筛选", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
     const select = screen.getByRole("combobox", { name: "显示类别" });
 
@@ -321,7 +321,7 @@ describe("Crownline 时间轴", () => {
 
   it("从 URL 恢复并同步搜索与类别状态", async () => {
     window.history.replaceState(null, "", "/?q=时期&type=context");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     expect(screen.getByRole("searchbox")).toHaveValue("时期");
@@ -333,7 +333,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("为中断政权绘制多个时间条，并在详情计算实际总时长", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
     const westernQinBars = screen.getAllByRole("button", { name: /^西秦，/ });
 
@@ -350,7 +350,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("在历史分期详情中保留虚线视觉语义", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: /春秋.*历史分期/ }));
@@ -361,7 +361,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("浏览器支持时以原生模态方式打开详情", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const showModal = vi.fn(function openModal(this: HTMLDialogElement) {
       this.setAttribute("open", "");
     });
@@ -377,7 +377,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("在全览和时间点模式间切换并同步 URL", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "时间点" }));
@@ -394,7 +394,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("切换地图时保留年份控件并在返回时间轴后恢复原浏览模式", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "时间点" }));
@@ -426,7 +426,7 @@ describe("Crownline 时间轴", () => {
 
   it("地图成功加载后切换视图复用缓存", async () => {
     window.history.replaceState(null, "", "/?view=map&year=500");
-    const user = userEvent.setup();
+    const user = setupUser();
     let attempts = 0;
     renderApp(loadGeneratedDetail, async () => {
       attempts += 1;
@@ -443,7 +443,7 @@ describe("Crownline 时间轴", () => {
 
   it("地理数据加载失败后可以重试", async () => {
     window.history.replaceState(null, "", "/?view=map&year=500");
-    const user = userEvent.setup();
+    const user = setupUser();
     let attempts = 0;
     renderApp(loadGeneratedDetail, async () => {
       attempts += 1;
@@ -460,7 +460,7 @@ describe("Crownline 时间轴", () => {
 
   it("离开后重新进入地图时忽略旧请求的迟到错误", async () => {
     window.history.replaceState(null, "", "/?view=map&year=500");
-    const user = userEvent.setup();
+    const user = setupUser();
     const first = createDeferred<GeographyLoadResult>();
     let attempts = 0;
     renderApp(loadGeneratedDetail, async () => {
@@ -496,7 +496,7 @@ describe("Crownline 时间轴", () => {
 
   it("地图标记打开既有详情，结果列表可选择两个政权对比", async () => {
     window.history.replaceState(null, "", "/?view=map&year=1400");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(await findMapMarker("明，南京，都城"));
@@ -526,7 +526,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("在时间点模式切换全球已收录并同步覆盖说明与 URL", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "时间点" }));
@@ -556,7 +556,7 @@ describe("Crownline 时间轴", () => {
 
   it("在全览与时间点之间切换时保持全球范围", async () => {
     window.history.replaceState(null, "", "/?mode=point&scope=global");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "全览" }));
@@ -582,7 +582,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("自选地区展示新增全球样本地区复选框", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "自选地区" }));
@@ -618,7 +618,7 @@ describe("Crownline 时间轴", () => {
       "",
       "/?scope=custom&region=region-europe&region=region-west-asia"
     );
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     expect(screen.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
@@ -645,7 +645,7 @@ describe("Crownline 时间轴", () => {
 
   it("时间点模式隐藏重复图例并在全览模式恢复", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=978");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     expect(screen.queryByLabelText("类别图例")).not.toBeInTheDocument();
@@ -684,7 +684,7 @@ describe("Crownline 时间轴", () => {
 
   it("用键盘操作年份首尾按钮并在公元前后步进时跳过零年", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=-1");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
     const currentYear = screen.getByLabelText("当前年份");
 
@@ -713,7 +713,7 @@ describe("Crownline 时间轴", () => {
 
   it("在约年边界给出解释，并为组合筛选提供明确空状态", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=-2070");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     expect(screen.getByText(/起止年份采用约略年代/)).toBeInTheDocument();
@@ -727,7 +727,7 @@ describe("Crownline 时间轴", () => {
 
   it("在时间点详情展示单一在位统治者、完整任期和来源", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=1400");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: /^明，/ }));
@@ -746,7 +746,7 @@ describe("Crownline 时间轴", () => {
 
   it("同年展示皇帝与两位摄政者且不误标争议", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=1862");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: /^清，/ }));
@@ -761,7 +761,7 @@ describe("Crownline 时间轴", () => {
 
   it("明确披露早期王年争议", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=-2070");
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: /^夏，/ }));
@@ -773,7 +773,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("区分明确空位和资料尚未校订", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     window.history.replaceState(null, "", "/?mode=point&year=-840");
     const firstRender = renderApp();
 
@@ -793,7 +793,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("全览详情不使用隐藏年份且历史分期不显示统治者区域", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: /明，1368—1644/ }));
@@ -811,7 +811,7 @@ describe("Crownline 时间轴", () => {
   it("打开详情时立即显示基础信息并在数据到达后展示统治者", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=1400");
     const deferred = createDeferred<CrownlineDetail | null>();
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp(() => deferred.promise);
 
     await user.click(screen.getByRole("button", { name: /^明，/ }));
@@ -827,7 +827,7 @@ describe("Crownline 时间轴", () => {
   it("详情请求失败后可以在弹窗内重试", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=1400");
     let attempts = 0;
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp(async () => {
       attempts += 1;
       if (attempts === 1) throw new Error("临时网络错误");
@@ -844,7 +844,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("实体没有详情包时显示明确空状态", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp(async () => null);
 
     await user.click(screen.getByRole("button", { name: /春秋.*历史分期/ }));
@@ -857,7 +857,7 @@ describe("Crownline 时间轴", () => {
   it("关闭详情后忽略迟到的旧请求结果", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=1400");
     const deferred = createDeferred<CrownlineDetail | null>();
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp(() => deferred.promise);
 
     await user.click(screen.getByRole("button", { name: /^明，/ }));
@@ -883,7 +883,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("打开和关闭详情时同步 detail 参数", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: /明，1368—1644/ }));
@@ -898,7 +898,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("浏览器后退和前进导航详情开关", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: /明，1368—1644/ }));

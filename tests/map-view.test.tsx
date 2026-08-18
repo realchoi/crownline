@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { setupUser } from "./helpers/user";
 
 import { loadSourceData } from "../scripts/data-source";
 import { HistoricalMap } from "../src/components/HistoricalMap";
@@ -38,7 +38,7 @@ function point(entityId: string, snapshotId: string): MapPoint {
 
 describe("历史地图组件", () => {
   it("呈现本地底图和可选择的单点标记", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onSelect = vi.fn();
     const selection = selectMapSnapshots(
       [entity("polity-cn-northern-wei")],
@@ -62,7 +62,7 @@ describe("历史地图组件", () => {
   });
 
   it("展开稳定聚合后提供每个历史点位的详情入口", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onSelect = vi.fn();
     const beijing = point("polity-cn-ming", "geo-ming-beijing");
     const nanjing = point("polity-cn-ming", "geo-ming-nanjing");
@@ -96,7 +96,7 @@ describe("历史地图组件", () => {
   });
 
   it("结果列表提供等价详情入口并单列缺少地理数据的政权", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onSelect = vi.fn();
     const northernWei = point("polity-cn-northern-wei", "geo-northern-wei-luoyang");
     const sui = entity("polity-cn-sui");
@@ -121,7 +121,7 @@ describe("历史地图组件", () => {
   });
 
   it("复用对比按钮标签并禁用第三个未选政权", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onToggleComparison = vi.fn();
     render(
       <MapResultList
@@ -145,7 +145,7 @@ describe("历史地图组件", () => {
   });
 
   it("呈现加载状态和可重试的错误提示", async () => {
-    const user = userEvent.setup();
+    const user = setupUser();
     const onRetry = vi.fn();
     const view = render(<MapLoadPanel state="loading" onRetry={onRetry} />);
 
