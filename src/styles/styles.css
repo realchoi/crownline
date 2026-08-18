@@ -1407,17 +1407,32 @@ dialog::backdrop {
   backdrop-filter: blur(4px);
 }
 
-.dialog-inner {
+.dialog-shell {
+  display: flex;
+  flex-direction: column;
   max-height: calc(100dvh - 34px);
-  overflow-y: auto;
-  padding: 26px;
 }
 
 .dialog-head {
   display: flex;
+  flex: none;
   align-items: flex-start;
   justify-content: space-between;
   gap: 18px;
+  padding: 26px 26px 0;
+}
+
+.dialog-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px 26px 26px;
+}
+
+html:has(dialog[open]),
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 
 .type-badge {

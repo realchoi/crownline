@@ -106,12 +106,36 @@ export function DetailDialog({
     if (typeof dialog.showModal === "function") dialog.showModal();
     else dialog.setAttribute("open", "");
     closeButtonRef.current?.focus();
+
+    const dialogBody = dialog.querySelector(".dialog-body");
+    const handleWheel = (event: WheelEvent) => {
+      if (!(dialogBody instanceof HTMLElement)) {
+        event.preventDefault();
+        return;
+      }
+
+      const target = event.target;
+      if (!(target instanceof Node) || !dialogBody.contains(target)) {
+        event.preventDefault();
+        return;
+      }
+
+      const { scrollTop, scrollHeight, clientHeight } = dialogBody;
+      const atTop = scrollTop <= 0;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+      if ((atTop && event.deltaY < 0) || (atBottom && event.deltaY > 0)) {
+        event.preventDefault();
+      }
+    };
+
+    dialog.addEventListener("wheel", handleWheel, { passive: false });
     // 显式监听 Escape，确保不同浏览器和自动化环境都走统一关闭流程。
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => {
+      dialog.removeEventListener("wheel", handleWheel);
       document.removeEventListener("keydown", handleKeyDown);
       if (dialog.open && typeof dialog.close === "function") dialog.close();
       else dialog.removeAttribute("open");
@@ -132,7 +156,7 @@ export function DetailDialog({
       }}
       onClick={(event) => event.currentTarget === event.target && onClose()}
     >
-      <div className="dialog-inner">
+      <div className="dialog-shell">
         <div className="dialog-head">
           <div>
             <span className={`type-badge detail-${entity.displayCategory}`}>
@@ -154,6 +178,7 @@ export function DetailDialog({
           />
         </div>
 
+        <div className="dialog-body">
         <p className="detail-summary">{entity.description}</p>
         {entity.chronologyNote && (
           <p className="chronology-note">采用口径：{entity.chronologyNote}</p>
@@ -289,6 +314,7 @@ export function DetailDialog({
             </ol>
           </section>
         )}
+        </div>
       </div>
     </dialog>
   );
