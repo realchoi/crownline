@@ -1,4 +1,5 @@
 import type { ValidationIssue, ValidationResult } from "../domain/dataValidation";
+import { isValidLanguageTag } from "../domain/entityNames";
 import {
   CONFIDENCE_LEVELS,
   DATE_PRECISIONS,
@@ -25,7 +26,14 @@ function isStringArray(value: unknown): value is string[] {
 }
 
 function hasNames(value: unknown): boolean {
-  return isRecord(value) && typeof value.primary === "string" && isStringArray(value.aliases);
+  if (!isRecord(value) || typeof value.primary !== "string" || !isStringArray(value.aliases)) {
+    return false;
+  }
+  const hasLocal = typeof value.local === "string" && value.local.trim().length > 0;
+  const hasLanguageTag = isValidLanguageTag(value.localLanguageTag);
+  return value.local === undefined && value.localLanguageTag === undefined
+    ? true
+    : hasLocal && hasLanguageTag;
 }
 
 function hasPeriods(value: unknown): boolean {

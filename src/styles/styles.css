@@ -1839,9 +1839,13 @@ body:has(dialog[open]) {
 .entity-local-name,
 .comparison-local-name,
 .comparison-slot-local-name,
-.map-point-local-name {
+.map-point-local-name,
+.map-result-local-name,
+.timepoint-local-name {
+  display: block;
   margin: 0;
   color: var(--muted);
+  font-family: system-ui, sans-serif;
   font-size: 0.88em;
   line-height: 1.35;
 }
@@ -1857,6 +1861,11 @@ body:has(dialog[open]) {
 .map-cluster-panel li button .map-point-local-name {
   grid-column: 1 / -1;
   font-size: 0.82rem;
+}
+
+.map-result-local-name,
+.timepoint-local-name {
+  margin-top: -2px;
 }
 
 .dialog-years {

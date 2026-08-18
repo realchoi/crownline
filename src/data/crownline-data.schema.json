@@ -88,7 +88,15 @@
           "items": { "$ref": "#/$defs/nonEmptyString" },
           "uniqueItems": true
         },
-        "local": { "$ref": "#/$defs/nonEmptyString" }
+        "local": { "$ref": "#/$defs/nonEmptyString" },
+        "localLanguageTag": {
+          "type": "string",
+          "pattern": "^[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*$"
+        }
+      },
+      "dependentRequired": {
+        "local": ["localLanguageTag"],
+        "localLanguageTag": ["local"]
       }
     },
     "sourceRef": {

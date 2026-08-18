@@ -3,7 +3,14 @@ import type { ErrorObject } from "ajv";
 
 import schema from "../data/crownline-data.schema.json";
 import { toOrdinal } from "./chronology";
-import type { ConfidenceLevel, CrownlineData, HistoricalInterval, SourceRef } from "./types";
+import { isValidLanguageTag } from "./entityNames";
+import type {
+  ConfidenceLevel,
+  CrownlineData,
+  HistoricalInterval,
+  LocalizedNames,
+  SourceRef
+} from "./types";
 
 /** 单条可定位、可机器识别的数据契约问题。 */
 export interface ValidationIssue {
@@ -132,6 +139,21 @@ function validateConfidenceNote(
   }
 }
 
+/** 本地名称存在时，语言标签必须能安全写入 HTML lang。 */
+function validateLocalizedNames(
+  names: LocalizedNames,
+  path: string,
+  issues: ValidationIssue[]
+): void {
+  if (names.local && !isValidLanguageTag(names.localLanguageTag)) {
+    issues.push({
+      code: "INVALID_LANGUAGE_TAG",
+      path: `${path}/localLanguageTag`,
+      message: "本地名称必须使用有效的 BCP 47 语言标签"
+    });
+  }
+}
+
 /**
  * 执行 Crownline 数据契约的完整校验。
  * 第一层由 JSON Schema 检查结构，第二层检查跨记录引用和业务语义。
@@ -204,6 +226,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
 
   data.entities.forEach((entity, entityIndex) => {
     const path = `/entities/${entityIndex}`;
+    validateLocalizedNames(entity.names, `${path}/names`, issues);
     validatePeriods(entity.existencePeriods, `${path}/existencePeriods`, issues);
     if (
       (entity.entityKind === "historical-period" && entity.polityForms.length > 0) ||
@@ -267,6 +290,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
 
   data.regions.forEach((region, regionIndex) => {
     const path = `/regions/${regionIndex}`;
+    validateLocalizedNames(region.names, `${path}/names`, issues);
     validateSourceRefs(region.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
     if (!region.parentRegionId) return;
     const parent = regionById.get(region.parentRegionId);
@@ -305,6 +329,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
   });
 
   data.persons.forEach((person, personIndex) => {
+    validateLocalizedNames(person.names, `/persons/${personIndex}/names`, issues);
     validateSourceRefs(person.sourceRefs, `/persons/${personIndex}/sourceRefs`, sourceIds, issues);
   });
 

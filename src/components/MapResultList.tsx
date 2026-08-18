@@ -1,6 +1,8 @@
 import type { HistoricalEntity } from "../domain/types";
+import { formatEntityNameWithLocal } from "../domain/entityNames";
 import { GEOGRAPHIC_ROLE_NAMES, type MapPoint } from "../domain/mapSnapshots";
 import { ComparisonToggle } from "./ComparisonToggle";
+import { EntityLocalName } from "./EntityLocalName";
 
 interface MapResultListProps {
   points: MapPoint[];
@@ -11,7 +13,7 @@ interface MapResultListProps {
 }
 
 function pointLabel({ entity, snapshot }: MapPoint): string {
-  return `${entity.names.primary}，${snapshot.placeName}，${GEOGRAPHIC_ROLE_NAMES[snapshot.role]}`;
+  return `${formatEntityNameWithLocal(entity.names)}，${snapshot.placeName}，${GEOGRAPHIC_ROLE_NAMES[snapshot.role]}`;
 }
 
 /** 提供与地图标记等价的详情和对比操作入口。 */
@@ -51,11 +53,12 @@ export function MapResultList({
                     {GEOGRAPHIC_ROLE_NAMES[point.snapshot.role]}
                   </span>
                   <strong>{point.entity.names.primary}</strong>
+                  <EntityLocalName names={point.entity.names} className="map-result-local-name" />
                   <span className="map-result-place">{point.snapshot.placeName}</span>
                   <small>{point.snapshot.positionNote}</small>
                 </button>
                 <ComparisonToggle
-                  entityName={point.entity.names.primary}
+                  entityName={formatEntityNameWithLocal(point.entity.names)}
                   selected={selected}
                   disabled={comparisonEntityIds.length >= 2}
                   onToggle={() => onToggleComparison(point.entity.id)}

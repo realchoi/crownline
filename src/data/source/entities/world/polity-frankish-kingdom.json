@@ -18,7 +18,8 @@
           "Frankish Kingdom",
           "Francia"
         ],
-        "local": "Regnum Francorum"
+        "local": "Regnum Francorum",
+        "localLanguageTag": "la"
       },
       "existencePeriods": [
         {

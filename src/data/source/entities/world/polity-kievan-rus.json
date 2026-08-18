@@ -16,7 +16,8 @@
           "Kyivan Rus",
           "基辅大公国"
         ],
-        "local": "Ки́ївська Русь"
+        "local": "Ки́ївська Русь",
+        "localLanguageTag": "uk-Cyrl"
       },
       "existencePeriods": [
         {

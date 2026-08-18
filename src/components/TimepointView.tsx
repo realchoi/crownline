@@ -1,9 +1,11 @@
 import { formatHistoricalYear, formatPeriods } from "../domain/chronology";
 import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
+import { formatEntityNameWithLocal } from "../domain/entityNames";
 import type { MatchedEntity } from "../domain/selectors";
 import type { RegionScope } from "../domain/regionScope";
 import type { Region } from "../domain/types";
 import { ComparisonToggle } from "./ComparisonToggle";
+import { EntityLocalName } from "./EntityLocalName";
 
 interface TimepointViewProps {
   year: number;
@@ -46,7 +48,7 @@ function TimepointCard({
       <button
         className={`timepoint-card timepoint-${entity.displayCategory}`}
         type="button"
-        aria-label={`${entity.names.primary}，${periods}，${DISPLAY_CATEGORY_NAMES[entity.displayCategory]}。点击查看详情。`}
+        aria-label={`${formatEntityNameWithLocal(entity.names)}，${periods}，${DISPLAY_CATEGORY_NAMES[entity.displayCategory]}。点击查看详情。`}
         onClick={(event) => onSelect(entity.id, event.currentTarget)}
       >
         <span className="timepoint-card-topline">
@@ -58,6 +60,7 @@ function TimepointCard({
           </span>
         </span>
         <strong className="timepoint-card-name">{entity.names.primary}</strong>
+        <EntityLocalName names={entity.names} className="timepoint-local-name" />
         <span className="timepoint-card-periods">{periods}</span>
         <span className="timepoint-card-regions">{regionNames.join(" · ")}</span>
         {(isApproximate || entity.chronologyStatus === "disputed") && (
@@ -69,7 +72,7 @@ function TimepointCard({
       </button>
       {entity.entityKind === "polity" && (
         <ComparisonToggle
-          entityName={entity.names.primary}
+          entityName={formatEntityNameWithLocal(entity.names)}
           selected={comparisonSelected}
           disabled={comparisonEntityIds.length >= 2}
           onToggle={() => onToggleComparison(entity.id)}

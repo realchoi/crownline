@@ -14,7 +14,8 @@
           "Kingdom of England",
           "England"
         ],
-        "local": "Regnum Anglorum"
+        "local": "Regnum Anglorum",
+        "localLanguageTag": "la"
       },
       "existencePeriods": [
         {

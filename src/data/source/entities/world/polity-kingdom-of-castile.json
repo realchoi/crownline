@@ -15,7 +15,8 @@
           "Kingdom of Castile",
           "Castile"
         ],
-        "local": "Regnum Castellae"
+        "local": "Regnum Castellae",
+        "localLanguageTag": "la"
       },
       "existencePeriods": [
         {

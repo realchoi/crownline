@@ -112,6 +112,30 @@ function issueCodes(input: unknown): string[] {
 }
 
 describe("JSON Schema 结构校验", () => {
+  it("要求本地名称与 BCP 47 语言标签成对出现", () => {
+    const missingTag = makeValidData();
+    missingTag.entities[0]!.names.local = "Βασιλεία Ῥωμαίων";
+    expect(issueCodes(missingTag)).toContain("SCHEMA_ERROR");
+
+    const invalidTag = makeValidData();
+    invalidTag.entities[0]!.names = {
+      primary: "测试政权",
+      aliases: [],
+      local: "测试",
+      localLanguageTag: "auto"
+    };
+    expect(issueCodes(invalidTag)).toContain("INVALID_LANGUAGE_TAG");
+
+    const validTag = makeValidData();
+    validTag.entities[0]!.names = {
+      primary: "测试政权",
+      aliases: [],
+      local: "Βασιλεία Ῥωμαίων",
+      localLanguageTag: "grc"
+    };
+    expect(validateCrownlineData(validTag).valid).toBe(true);
+  });
+
   it("接受带统治者空位记录的地区契约 v4", () => {
     const data = makeValidData() as unknown as {
       schemaVersion: number;

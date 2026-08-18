@@ -9,7 +9,8 @@
       "names": {
         "primary": "德川幕府",
         "aliases": ["江户幕府", "Tokugawa shogunate", "Edo bakufu"],
-        "local": "徳川幕府"
+        "local": "徳川幕府",
+        "localLanguageTag": "ja"
       },
       "existencePeriods": [
         {

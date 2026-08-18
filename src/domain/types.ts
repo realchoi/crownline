@@ -79,11 +79,12 @@ export interface HistoricalInterval {
   end: HistoricalDate;
 }
 
-/** 实体或人物的主名称、别名与可选本地名称。 */
+/** 实体或人物的主名称、别名与可选本地名称；本地名称必须携带 BCP 47 语言标签。 */
 export interface LocalizedNames {
   primary: string;
   aliases: string[];
   local?: string;
+  localLanguageTag?: string;
 }
 
 /** 指向集中来源表的引用，可进一步精确到页码或章节。 */

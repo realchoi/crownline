@@ -170,6 +170,19 @@ describe("生产历史数据", () => {
     }
   });
 
+  it("有本地名称的实体均携带有效语言标签", () => {
+    const localizedEntities = data.entities.filter(({ names }) => names.local !== undefined);
+
+    expect(localizedEntities).toHaveLength(38);
+    for (const entity of localizedEntities) {
+      expect(entity.names.localLanguageTag, entity.id).toBeTruthy();
+      expect(
+        () => Intl.getCanonicalLocales(entity.names.localLanguageTag!),
+        entity.id
+      ).not.toThrow();
+    }
+  });
+
   it("为四十三个世界样本政权提供六十五条可追溯地理快照", () => {
     const worldSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return WORLD_MAP_POLITY_IDS.some((id) => id === polityId);
@@ -273,7 +286,17 @@ describe("生产历史数据", () => {
     );
     expect(data.relationships).toHaveLength(18);
     expect(data.events).toHaveLength(14);
-    expect(data.relationships.every(({ sourceRefs }) => sourceRefs.length > 0)).toBe(true);
+    expect(data.sources).toHaveLength(131);
+    expect(
+      data.relationships.every(({ sourceRefs }) => {
+        return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));
+      })
+    ).toBe(true);
+    expect(
+      data.events.every(({ sourceRefs }) => {
+        return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));
+      })
+    ).toBe(true);
 
     const relationshipById = new Map(
       data.relationships.map((relationship) => [relationship.id, relationship])
@@ -288,6 +311,10 @@ describe("生产历史数据", () => {
     expect(relationshipById.get("relationship-liao-jin-war")).toMatchObject({
       type: "war",
       eventIds: ["event-liao-fall-to-jin"]
+    });
+    expect(relationshipById.get("relationship-northern-song-western-xia-war")).toMatchObject({
+      type: "war",
+      eventIds: ["event-song-xia-qingli-treaty"]
     });
     expect(relationshipById.get("relationship-mongol-abbasid-war")).toMatchObject({
       type: "war",

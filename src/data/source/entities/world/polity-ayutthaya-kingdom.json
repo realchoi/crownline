@@ -16,7 +16,8 @@
           "Kingdom of Ayutthaya",
           "大城王朝"
         ],
-        "local": "อยุธยา"
+        "local": "อยุธยา",
+        "localLanguageTag": "th"
       },
       "existencePeriods": [
         {

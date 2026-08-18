@@ -16,7 +16,8 @@
           "First Bulgarian Tsardom",
           "保加利亚第一帝国"
         ],
-        "local": "Първо българско царство"
+        "local": "Първо българско царство",
+        "localLanguageTag": "bg-Cyrl"
       },
       "existencePeriods": [
         {

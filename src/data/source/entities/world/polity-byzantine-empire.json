@@ -15,7 +15,8 @@
           "Byzantine Empire",
           "Eastern Roman Empire"
         ],
-        "local": "Βασιλεία Ῥωμαίων"
+        "local": "Βασιλεία Ῥωμαίων",
+        "localLanguageTag": "grc"
       },
       "existencePeriods": [
         {

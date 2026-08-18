@@ -16,7 +16,8 @@
           "Empire of Mali",
           "Manden Duguba"
         ],
-        "local": "Mandé"
+        "local": "Mandé",
+        "localLanguageTag": "man-Latn"
       },
       "existencePeriods": [
         {

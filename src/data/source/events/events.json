@@ -12,7 +12,7 @@
     "participantEntityIds": ["polity-byzantine-empire", "polity-seljuk-empire"],
     "regionIds": ["region-west-asia"],
     "summary": "1071年，拜占庭皇帝罗曼努斯四世率军与阿尔普·阿尔斯兰统治下的塞尔柱军队在曼齐克特交战；拜占庭战败，皇帝被俘。",
-    "sourceRefs": [{ "sourceId": "source-worldhistory-manzikert" }],
+    "sourceRefs": [{ "sourceId": "source-worldhistory-manzikert", "locator": "全文" }],
     "confidence": "high"
   },
   {
@@ -28,7 +28,12 @@
     "participantEntityIds": ["polity-cn-northern-song", "polity-cn-jin"],
     "regionIds": ["region-china", "region-east-asia"],
     "summary": "1120年，北宋与金约定共同攻辽，并商定辽亡后的领土与既有岁币安排；双方使者经海路联络，故后世常称海上之盟。",
-    "sourceRefs": [{ "sourceId": "source-cambridge-song-jin-alliance" }],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-alien-regimes",
+        "locator": "The Chin dynasty: founding and Chin–Sung relations, pp. 220–228"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -44,7 +49,7 @@
     "participantEntityIds": ["polity-cn-tang", "polity-tibet-empire"],
     "regionIds": ["region-china", "region-east-asia"],
     "summary": "唐与吐蕃于821至822年先后举行盟誓并确认和约，相关条文刻于拉萨会盟碑，约定恢复和平与边界秩序。",
-    "sourceRefs": [{ "sourceId": "source-li-tang-tibet-treaty" }],
+    "sourceRefs": [{ "sourceId": "source-li-tang-tibet-treaty", "locator": "pp. 1–99" }],
     "confidence": "high"
   },
   {
@@ -60,7 +65,7 @@
     "participantEntityIds": ["polity-cn-tang", "polity-abbasid-caliphate"],
     "regionIds": ["region-east-asia", "region-southeast-asia", "region-west-asia"],
     "summary": "约九世纪的黑石号沉船装载大量唐代商品并驶向西亚方向，为唐与阿拔斯时期海上贸易网络中的跨区域商品流通提供考古证据。",
-    "sourceRefs": [{ "sourceId": "source-aga-khan-lost-dhow" }],
+    "sourceRefs": [{ "sourceId": "source-aga-khan-lost-dhow", "locator": "展览概述" }],
     "confidence": "medium"
   },
   {
@@ -76,13 +81,13 @@
     "participantEntityIds": ["polity-cn-northern-song", "polity-cn-liao"],
     "regionIds": ["region-china", "region-east-asia"],
     "summary": "1005年，宋辽在澶州议和：双方约为兄弟之国，宋向辽输送岁币并划定边界；此后约百余年大体维持和平。",
-    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "sourceRefs": [{ "sourceId": "source-zgbk-chanyuan-treaty", "locator": "全文" }],
     "confidence": "high"
   },
   {
-    "id": "event-song-xia-tiansheng-treaty",
+    "id": "event-song-xia-qingli-treaty",
     "type": "treaty",
-    "title": "宋夏天圣和约",
+    "title": "宋夏庆历和议",
     "periods": [
       {
         "start": { "year": 1044, "precision": "exact" },
@@ -92,7 +97,10 @@
     "participantEntityIds": ["polity-cn-northern-song", "polity-cn-western-xia"],
     "regionIds": ["region-china", "region-east-asia"],
     "summary": "1044年，北宋与西夏达成和约：西夏向宋称臣，宋册封元昊为夏国主，并约定岁赐与互市；结束持续数年的战争。",
-    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "sourceRefs": [
+      { "sourceId": "source-cambridge-alien-regimes", "locator": "The Hsi Hsia, pp. 180–190" },
+      { "sourceId": "source-cssn-song-xia-boundary", "locator": "pp. 160–166" }
+    ],
     "confidence": "high"
   },
   {
@@ -108,7 +116,12 @@
     "participantEntityIds": ["polity-cn-liao", "polity-cn-jin"],
     "regionIds": ["region-china", "region-east-asia"],
     "summary": "1125年，金军攻灭辽朝，天祚帝被俘；辽残余势力西迁，但本项目所录辽政权至此终结。",
-    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-alien-regimes",
+        "locator": "The Liao, pp. 139–153；The Chin dynasty, pp. 215–226"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -124,7 +137,12 @@
     "participantEntityIds": ["polity-cn-jin", "polity-cn-northern-song"],
     "regionIds": ["region-china", "region-east-asia"],
     "summary": "1127年，金军攻破北宋都城开封，俘徽、钦二帝及大量宗室北去；北宋灭亡，赵构南渡建立南宋。",
-    "sourceRefs": [{ "sourceId": "source-cambridge-song-jin-alliance" }],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-alien-regimes",
+        "locator": "The Chin dynasty: From war to coexistence, pp. 226–235"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -140,7 +158,12 @@
     "participantEntityIds": ["polity-mongol-empire", "polity-cn-jin"],
     "regionIds": ["region-china", "region-east-asia"],
     "summary": "1234年，蒙古与南宋联军攻陷蔡州，金哀宗、末帝相继死去，金朝灭亡。",
-    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-alien-regimes",
+        "locator": "The annihilation of Chin, pp. 249–264"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -156,7 +179,12 @@
     "participantEntityIds": ["polity-mongol-empire", "polity-cn-western-xia"],
     "regionIds": ["region-china", "region-east-asia"],
     "summary": "1227年，蒙古军攻灭西夏，末帝李睍投降；西夏作为独立政权终结。",
-    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-alien-regimes",
+        "locator": "The last years of the Hsi Hsia state and the Mongolian conquest, pp. 205–214"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -172,7 +200,9 @@
     "participantEntityIds": ["polity-mongol-empire", "polity-abbasid-caliphate"],
     "regionIds": ["region-west-asia"],
     "summary": "1258年，旭烈兀率领的蒙古军攻陷巴格达，末代哈里发穆斯塔绥姆被杀；阿拔斯哈里发国作为独立政权终结。",
-    "sourceRefs": [{ "sourceId": "source-met-abbasid" }],
+    "sourceRefs": [
+      { "sourceId": "source-met-abbasid", "locator": "1258年巴格达陷落段落" }
+    ],
     "confidence": "high"
   },
   {
@@ -188,7 +218,9 @@
     "participantEntityIds": ["polity-ottoman-empire", "polity-byzantine-empire"],
     "regionIds": ["region-europe", "region-west-asia"],
     "summary": "1453年，奥斯曼苏丹穆罕默德二世率军攻破拜占庭首都君士坦丁堡，末帝君士坦丁十一世战死；拜占庭帝国终结。",
-    "sourceRefs": [{ "sourceId": "source-met-byzantium" }, { "sourceId": "source-ottoman-history" }],
+    "sourceRefs": [
+      { "sourceId": "source-met-byzantium", "locator": "Late Byzantium：1453年段落" }
+    ],
     "confidence": "high"
   },
   {
@@ -204,7 +236,7 @@
     "participantEntityIds": ["polity-ottoman-empire", "polity-holy-roman-empire"],
     "regionIds": ["region-europe"],
     "summary": "1683年，奥斯曼军围攻维也纳，神圣罗马帝国与波兰联军在卡拉·穆斯塔法指挥的奥斯曼军撤退前解围；此战常被视为奥斯曼向中欧扩张的转折点。",
-    "sourceRefs": [{ "sourceId": "source-ottoman-history" }, { "sourceId": "source-dhm-hre" }],
+    "sourceRefs": [{ "sourceId": "source-ghdi-vienna-1683", "locator": "全文" }],
     "confidence": "high"
   },
   {
@@ -221,8 +253,7 @@
     "regionIds": ["region-south-asia"],
     "summary": "1526年，巴布尔率莫卧儿军队在帕尼帕特击败德里苏丹国末代苏丹易卜拉欣·洛迪；此战标志莫卧儿在北印度建立统治，德里苏丹国终结。",
     "sourceRefs": [
-      { "sourceId": "source-delhi-sultanate-britannica" },
-      { "sourceId": "source-mughal-history" }
+      { "sourceId": "source-panipat-district-first-battle", "locator": "First Battle of Panipat (1526)" }
     ],
     "confidence": "high"
   }

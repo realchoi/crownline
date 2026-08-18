@@ -14,7 +14,8 @@
           "Holy Roman Empire",
           "德意志民族神圣罗马帝国"
         ],
-        "local": "Sacrum Imperium Romanum"
+        "local": "Sacrum Imperium Romanum",
+        "localLanguageTag": "la"
       },
       "existencePeriods": [
         {

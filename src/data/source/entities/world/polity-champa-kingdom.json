@@ -16,7 +16,8 @@
           "Kingdom of Champa",
           "林邑"
         ],
-        "local": "Campa"
+        "local": "Campa",
+        "localLanguageTag": "cja-Latn"
       },
       "existencePeriods": [
         {

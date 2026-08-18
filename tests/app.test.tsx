@@ -507,7 +507,7 @@ describe("Crownline 时间轴", () => {
 
     const list = screen.getByRole("region", { name: "地图结果列表" });
     await user.click(within(list).getByRole("button", { name: "将明加入对比" }));
-    await user.click(within(list).getByRole("button", { name: "将帖木儿帝国加入对比" }));
+    await user.click(within(list).getByRole("button", { name: /^将帖木儿帝国.*加入对比$/ }));
     expect(new URLSearchParams(window.location.search).getAll("compare")).toEqual([
       "polity-cn-ming",
       "polity-timurid-empire"

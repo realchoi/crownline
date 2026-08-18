@@ -9,7 +9,8 @@
       "names": {
         "primary": "高丽",
         "aliases": ["高麗", "高丽王朝", "Goryeo", "Goryeo dynasty"],
-        "local": "고려"
+        "local": "고려",
+        "localLanguageTag": "ko"
       },
       "existencePeriods": [
         {

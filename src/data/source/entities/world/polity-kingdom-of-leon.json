@@ -15,7 +15,8 @@
           "Kingdom of León",
           "León"
         ],
-        "local": "Regnum Legionense"
+        "local": "Regnum Legionense",
+        "localLanguageTag": "la"
       },
       "existencePeriods": [
         {

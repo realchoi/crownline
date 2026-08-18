@@ -1,0 +1,49 @@
+[
+  {
+    "id": "source-cambridge-alien-regimes",
+    "title": "The Cambridge History of China, Volume 6: Alien Regimes and Border States, 907–1368",
+    "sourceType": "secondary",
+    "citation": "Herbert Franke and Denis Twitchett, eds., The Cambridge History of China, Volume 6: Alien Regimes and Border States, 907–1368, Cambridge University Press, 1994.",
+    "authors": ["Herbert Franke", "Denis Twitchett"],
+    "publisher": "Cambridge University Press",
+    "url": "https://doi.org/10.1017/CHOL9780521243315",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-zgbk-chanyuan-treaty",
+    "title": "澶渊之盟",
+    "sourceType": "secondary",
+    "citation": "《中国大百科全书》第三版网络版：〈澶渊之盟〉。",
+    "publisher": "中国大百科全书出版社",
+    "url": "https://www.zgbk.com/ecph/words?ID=50002&SiteID=1&SubID=44118&Type=bkzyb",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-cssn-song-xia-boundary",
+    "title": "从屈野河“侵耕”事件看宋夏边疆危机的管控",
+    "sourceType": "secondary",
+    "citation": "孙方圆：〈从屈野河“侵耕”事件看宋夏边疆危机的管控〉，《理论学刊》2021年第3期，第160–169页。",
+    "authors": ["孙方圆"],
+    "publisher": "《理论学刊》",
+    "url": "https://bjs.cssn.cn/yj/xsyj_xscg/xscg_xslw/202107/P020210730496788935247.pdf",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-ghdi-vienna-1683",
+    "title": "The Turkish Siege of Vienna in the Year 1683",
+    "sourceType": "primary",
+    "citation": "German History in Documents and Images: ‘The Turkish Siege of Vienna in the Year 1683’, contemporary account, c. 1685.",
+    "publisher": "German History in Documents and Images",
+    "url": "https://germanhistorydocs.org/en/the-holy-roman-empire-1648-1815/the-turkish-siege-of-vienna-in-the-year-1683-c-1685.pdf",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-panipat-district-first-battle",
+    "title": "First Battle of Panipat (1526)",
+    "sourceType": "institutional",
+    "citation": "District Administration Panipat, Government of Haryana: ‘First Battle of Panipat (1526)’.",
+    "publisher": "District Administration Panipat, Government of Haryana",
+    "url": "https://panipat.gov.in/first-battle/",
+    "accessedAt": "2026-08-18"
+  }
+]

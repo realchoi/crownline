@@ -54,6 +54,26 @@ describe("运行时数据校验", () => {
     );
   });
 
+  it("拒绝缺少有效语言标签的本地名称", () => {
+    const missingTag: CrownlineIndex = structuredClone(index);
+    const byzantium = missingTag.entities.find(({ id }) => id === "polity-byzantine-empire");
+    if (!byzantium) throw new Error("索引缺少拜占庭帝国测试实体");
+    Reflect.deleteProperty(byzantium.names, "localLanguageTag");
+
+    expect(validateCrownlineIndex(missingTag).issues).toContainEqual(
+      expect.objectContaining({ code: "SCHEMA_ERROR" })
+    );
+
+    const invalidTag: CrownlineIndex = structuredClone(index);
+    const invalidByzantium = invalidTag.entities.find(({ id }) => id === "polity-byzantine-empire");
+    if (!invalidByzantium) throw new Error("索引缺少拜占庭帝国测试实体");
+    invalidByzantium.names.localLanguageTag = "auto";
+
+    expect(validateCrownlineIndex(invalidTag).issues).toContainEqual(
+      expect.objectContaining({ code: "SCHEMA_ERROR" })
+    );
+  });
+
   it("拒绝响应实体与请求实体不一致的详情", () => {
     expect(validateCrownlineDetail(tangDetail, "polity-cn-sui").issues).toContainEqual(
       expect.objectContaining({ code: "DETAIL_ENTITY_MISMATCH" })
