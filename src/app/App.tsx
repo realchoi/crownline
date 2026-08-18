@@ -21,10 +21,7 @@ import { selectMapSnapshots } from "../domain/mapSnapshots";
 import { selectBrowseResults } from "../domain/selectors";
 import type { CrownlineIndex, TimelineSection } from "../domain/types";
 import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
-import type {
-  CrownlineGeographyLoader,
-  GeographyLoadResult
-} from "../data/loadCrownlineGeography";
+import type { CrownlineGeographyLoader, GeographyLoadResult } from "../data/loadCrownlineGeography";
 
 type GeographyState =
   | { status: "idle" }
@@ -124,27 +121,26 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
   const startGeographyLoad = useCallback(() => {
     const requestSequence = ++geographyRequestSequenceRef.current;
     setGeographyState({ status: "loading" });
-    void loadGeography().then((result) => {
-      if (requestSequence !== geographyRequestSequenceRef.current) return;
-      setGeographyState({ status: "ready", result });
-    }).catch((error: unknown) => {
-      if (requestSequence !== geographyRequestSequenceRef.current) return;
-      setGeographyState({
-        status: "error",
-        message: error instanceof Error ? error.message : String(error)
+    void loadGeography()
+      .then((result) => {
+        if (requestSequence !== geographyRequestSequenceRef.current) return;
+        setGeographyState({ status: "ready", result });
+      })
+      .catch((error: unknown) => {
+        if (requestSequence !== geographyRequestSequenceRef.current) return;
+        setGeographyState({
+          status: "error",
+          message: error instanceof Error ? error.message : String(error)
+        });
       });
-    });
   }, [loadGeography]);
 
   useEffect(() => {
     const onPopstate = () => {
       skipUrlSyncRef.current = true;
-      setBrowseState(readBrowseState(
-        window.location.search,
-        yearBounds,
-        data.regions,
-        data.entities
-      ));
+      setBrowseState(
+        readBrowseState(window.location.search, yearBounds, data.regions, data.entities)
+      );
     };
     window.addEventListener("popstate", onPopstate);
     return () => window.removeEventListener("popstate", onPopstate);
@@ -209,24 +205,29 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
     return () => cancelAnimationFrame(animationFrame);
   }, [browseState.detailEntityId]);
 
-  const startDetailLoad = useCallback((entityId: string) => {
-    const requestSequence = ++requestSequenceRef.current;
-    if (!data.detailEntityIds.includes(entityId)) {
-      setDetailState({ status: "missing" });
-      return;
-    }
-    setDetailState({ status: "loading" });
-    void loadDetail(entityId).then((detail) => {
-      if (requestSequence !== requestSequenceRef.current) return;
-      setDetailState(detail ? { status: "ready", detail } : { status: "missing" });
-    }).catch((error: unknown) => {
-      if (requestSequence !== requestSequenceRef.current) return;
-      setDetailState({
-        status: "error",
-        message: error instanceof Error ? error.message : String(error)
-      });
-    });
-  }, [data.detailEntityIds, loadDetail]);
+  const startDetailLoad = useCallback(
+    (entityId: string) => {
+      const requestSequence = ++requestSequenceRef.current;
+      if (!data.detailEntityIds.includes(entityId)) {
+        setDetailState({ status: "missing" });
+        return;
+      }
+      setDetailState({ status: "loading" });
+      void loadDetail(entityId)
+        .then((detail) => {
+          if (requestSequence !== requestSequenceRef.current) return;
+          setDetailState(detail ? { status: "ready", detail } : { status: "missing" });
+        })
+        .catch((error: unknown) => {
+          if (requestSequence !== requestSequenceRef.current) return;
+          setDetailState({
+            status: "error",
+            message: error instanceof Error ? error.message : String(error)
+          });
+        });
+    },
+    [data.detailEntityIds, loadDetail]
+  );
 
   useEffect(() => {
     if (!browseState.detailEntityId) {
@@ -395,9 +396,9 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
             </section>
           ) : (
             <MapLoadPanel
-              state={geographyState.status === "error"
-                ? { error: geographyState.message }
-                : "loading"}
+              state={
+                geographyState.status === "error" ? { error: geographyState.message } : "loading"
+              }
               onRetry={startGeographyLoad}
             />
           )

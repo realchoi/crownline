@@ -31,26 +31,41 @@ function getTopLevelRegionId(regionId: string, regionById: Map<string, Region>):
 /** 让地区组内实体保持稳定的年代优先顺序。 */
 function sortMatches(matches: MatchedEntity[]): MatchedEntity[] {
   return [...matches].sort((left, right) => {
-    const leftStart = Math.min(...left.entity.existencePeriods.map(({ start }) => toOrdinal(start.year)));
-    const rightStart = Math.min(...right.entity.existencePeriods.map(({ start }) => toOrdinal(start.year)));
+    const leftStart = Math.min(
+      ...left.entity.existencePeriods.map(({ start }) => toOrdinal(start.year))
+    );
+    const rightStart = Math.min(
+      ...right.entity.existencePeriods.map(({ start }) => toOrdinal(start.year))
+    );
     if (leftStart !== rightStart) return leftStart - rightStart;
     const leftEnd = Math.max(...left.entity.existencePeriods.map(({ end }) => toOrdinal(end.year)));
-    const rightEnd = Math.max(...right.entity.existencePeriods.map(({ end }) => toOrdinal(end.year)));
-    return leftEnd - rightEnd || left.entity.names.primary.localeCompare(right.entity.names.primary, "zh-CN");
+    const rightEnd = Math.max(
+      ...right.entity.existencePeriods.map(({ end }) => toOrdinal(end.year))
+    );
+    return (
+      leftEnd - rightEnd ||
+      left.entity.names.primary.localeCompare(right.entity.names.primary, "zh-CN")
+    );
   });
 }
 
 /** 从组内实体推导标题年代与安全的分组范围。 */
 function getGroupRange(matches: MatchedEntity[]) {
   const startOrdinal = Math.min(
-    ...matches.flatMap(({ entity }) => entity.existencePeriods.map(({ start }) => toOrdinal(start.year)))
+    ...matches.flatMap(({ entity }) =>
+      entity.existencePeriods.map(({ start }) => toOrdinal(start.year))
+    )
   );
   const actualEndOrdinal = Math.max(
-    ...matches.flatMap(({ entity }) => entity.existencePeriods.map(({ end }) => toOrdinal(end.year)))
+    ...matches.flatMap(({ entity }) =>
+      entity.existencePeriods.map(({ end }) => toOrdinal(end.year))
+    )
   );
   const startYear = fromOrdinal(startOrdinal);
   const actualEndYear = fromOrdinal(actualEndOrdinal);
-  const endYear = fromOrdinal(actualEndOrdinal === startOrdinal ? actualEndOrdinal + 1 : actualEndOrdinal);
+  const endYear = fromOrdinal(
+    actualEndOrdinal === startOrdinal ? actualEndOrdinal + 1 : actualEndOrdinal
+  );
   const startLabel = formatHistoricalYear({ year: startYear, precision: "exact" });
   const endLabel = formatHistoricalYear({ year: actualEndYear, precision: "exact" });
   return {
@@ -78,14 +93,18 @@ export function buildOverviewTimelineGroups(
     });
     return data.timelineSections.flatMap((section): OverviewTimelineGroup[] => {
       const sectionMatches = matchesBySection.get(section.id);
-      return sectionMatches ? [{
-        id: section.id,
-        title: section.title,
-        displayRange: section.displayRange,
-        range: section.range,
-        matches: sectionMatches,
-        kind: "china-section"
-      }] : [];
+      return sectionMatches
+        ? [
+            {
+              id: section.id,
+              title: section.title,
+              displayRange: section.displayRange,
+              range: section.range,
+              matches: sectionMatches,
+              kind: "china-section"
+            }
+          ]
+        : [];
     });
   }
 
@@ -106,10 +125,14 @@ export function buildOverviewTimelineGroups(
   const crossRegionMatches: MatchedEntity[] = [];
 
   matches.forEach((match) => {
-    const matchingTopLevelIds = [...new Set(match.entity.historicalRegionIds.flatMap((regionId) => {
-      const topLevelId = getTopLevelRegionId(regionId, regionById);
-      return topLevelId && activeTopLevelIds.has(topLevelId) ? [topLevelId] : [];
-    }))];
+    const matchingTopLevelIds = [
+      ...new Set(
+        match.entity.historicalRegionIds.flatMap((regionId) => {
+          const topLevelId = getTopLevelRegionId(regionId, regionById);
+          return topLevelId && activeTopLevelIds.has(topLevelId) ? [topLevelId] : [];
+        })
+      )
+    ];
     if (matchingTopLevelIds.length > 1) {
       crossRegionMatches.push(match);
       return;

@@ -32,10 +32,7 @@ async function writeSourceTree(root: string, value: CrownlineData = data): Promi
   await writeJson(join(root, "sources", "sources.json"), value.sources);
   await writeJson(join(root, "relationships", "relationships.json"), value.relationships);
   await writeJson(join(root, "events", "events.json"), value.events);
-  await writeJson(
-    join(root, "geography", "geographic-snapshots.json"),
-    value.geographicSnapshots
-  );
+  await writeJson(join(root, "geography", "geographic-snapshots.json"), value.geographicSnapshots);
 
   const sectionEntityIds = new Set(value.timelineSections.flatMap(({ entityIds }) => entityIds));
   const firstPolityByPersonId = new Map<string, string>();

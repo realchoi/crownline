@@ -94,21 +94,14 @@ function RelationshipRecord({
 }
 
 /** 展示人工校订、可追溯且已通过逐条收窄的政权间历史关系。 */
-export function HistoricalRelationships({
-  left,
-  right,
-  details
-}: HistoricalRelationshipsProps) {
+export function HistoricalRelationships({ left, right, details }: HistoricalRelationshipsProps) {
   const selection = selectHistoricalRelationships(left.id, right.id, details);
   const relationshipCount = selection.groups.reduce((count, group) => {
     return count + group.relationships.length;
   }, 0);
 
   return (
-    <section
-      className="historical-relationships"
-      aria-labelledby="historical-relationships-title"
-    >
+    <section className="historical-relationships" aria-labelledby="historical-relationships-title">
       <header className="historical-relationships-heading">
         <div>
           <p>阶段 4B · 人工校订</p>
@@ -116,7 +109,9 @@ export function HistoricalRelationships({
           <span>与上方自动计算的时间关系分开呈现</span>
         </div>
         {relationshipCount > 0 && (
-          <strong>{relationshipCount} 条记录 · {selection.groups.length} 种类型</strong>
+          <strong>
+            {relationshipCount} 条记录 · {selection.groups.length} 种类型
+          </strong>
         )}
       </header>
 
@@ -156,7 +151,6 @@ export function HistoricalRelationships({
           有 {selection.omittedCount} 条关系数据格式异常，已跳过。
         </p>
       )}
-
     </section>
   );
 }

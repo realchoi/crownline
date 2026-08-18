@@ -20,29 +20,63 @@ const NON_MAINLINE_POLITY_BATCHES = {
     "polity-cn-eastern-wu"
   ],
   sixteenKingdoms: [
-    "polity-cn-former-liang", "polity-cn-cheng-han", "polity-cn-han-zhao",
-    "polity-cn-later-zhao", "polity-cn-former-yan", "polity-cn-former-qin",
-    "polity-cn-later-qin", "polity-cn-later-yan", "polity-cn-western-qin",
-    "polity-cn-later-liang-lu", "polity-cn-southern-liang-tufa",
-    "polity-cn-northern-liang", "polity-cn-southern-yan", "polity-cn-western-liang",
-    "polity-cn-hu-xia", "polity-cn-northern-yan"
+    "polity-cn-former-liang",
+    "polity-cn-cheng-han",
+    "polity-cn-han-zhao",
+    "polity-cn-later-zhao",
+    "polity-cn-former-yan",
+    "polity-cn-former-qin",
+    "polity-cn-later-qin",
+    "polity-cn-later-yan",
+    "polity-cn-western-qin",
+    "polity-cn-later-liang-lu",
+    "polity-cn-southern-liang-tufa",
+    "polity-cn-northern-liang",
+    "polity-cn-southern-yan",
+    "polity-cn-western-liang",
+    "polity-cn-hu-xia",
+    "polity-cn-northern-yan"
   ],
   northernSouthernDynasties: [
-    "polity-cn-northern-wei", "polity-cn-eastern-wei", "polity-cn-western-wei",
-    "polity-cn-northern-qi", "polity-cn-northern-zhou", "polity-cn-liu-song",
-    "polity-cn-southern-qi", "polity-cn-liang", "polity-cn-chen"
+    "polity-cn-northern-wei",
+    "polity-cn-eastern-wei",
+    "polity-cn-western-wei",
+    "polity-cn-northern-qi",
+    "polity-cn-northern-zhou",
+    "polity-cn-liu-song",
+    "polity-cn-southern-qi",
+    "polity-cn-liang",
+    "polity-cn-chen"
   ],
   suiTangFiveDynasties: [
-    "polity-cn-wu-zhou", "polity-cn-later-liang-zhu", "polity-cn-later-tang",
-    "polity-cn-later-jin", "polity-cn-later-han", "polity-cn-later-zhou",
-    "polity-cn-yang-wu", "polity-cn-southern-tang", "polity-cn-wuyue",
-    "polity-cn-min", "polity-cn-ma-chu", "polity-cn-former-shu",
-    "polity-cn-later-shu", "polity-cn-southern-han", "polity-cn-jingnan",
-    "polity-cn-northern-han", "polity-tibet-empire", "polity-balhae", "polity-nanzhao"
+    "polity-cn-wu-zhou",
+    "polity-cn-later-liang-zhu",
+    "polity-cn-later-tang",
+    "polity-cn-later-jin",
+    "polity-cn-later-han",
+    "polity-cn-later-zhou",
+    "polity-cn-yang-wu",
+    "polity-cn-southern-tang",
+    "polity-cn-wuyue",
+    "polity-cn-min",
+    "polity-cn-ma-chu",
+    "polity-cn-former-shu",
+    "polity-cn-later-shu",
+    "polity-cn-southern-han",
+    "polity-cn-jingnan",
+    "polity-cn-northern-han",
+    "polity-tibet-empire",
+    "polity-balhae",
+    "polity-nanzhao"
   ],
   laterPolities: [
-    "polity-cn-liao", "polity-dali", "polity-cn-western-xia", "polity-cn-jin",
-    "polity-mongol-empire", "polity-cn-later-jin-jurchen", "polity-cn-southern-ming"
+    "polity-cn-liao",
+    "polity-dali",
+    "polity-cn-western-xia",
+    "polity-cn-jin",
+    "polity-mongol-empire",
+    "polity-cn-later-jin-jurchen",
+    "polity-cn-southern-ming"
   ]
 } as const;
 
@@ -52,7 +86,10 @@ function expectPolityDetails(entityIds: readonly string[]) {
     expect(entity, entityId).toBeDefined();
     expect(entity?.description.length, entityId).toBeGreaterThanOrEqual(60);
     expect(entity?.sourceRefs.length, entityId).toBeGreaterThan(0);
-    expect(data.reigns.some(({ polityId }) => polityId === entityId), entityId).toBe(true);
+    expect(
+      data.reigns.some(({ polityId }) => polityId === entityId),
+      entityId
+    ).toBe(true);
   }
 }
 
@@ -64,7 +101,10 @@ function expectWorldPolityDetails(entityId: string, minimumReignCount: number) {
   expect(entity?.description.length, entityId).toBeGreaterThanOrEqual(60);
   expect(entity?.sourceRefs.length, entityId).toBeGreaterThan(0);
   expect(reigns.length, entityId).toBeGreaterThanOrEqual(minimumReignCount);
-  expect(reigns.every(({ sourceRefs }) => sourceRefs.length > 0), entityId).toBe(true);
+  expect(
+    reigns.every(({ sourceRefs }) => sourceRefs.length > 0),
+    entityId
+  ).toBe(true);
 }
 
 function rulerSnapshot(entityId: string, year: number) {
@@ -104,14 +144,17 @@ describe("生产历史数据", () => {
     expect(data.timelineSections).toHaveLength(7);
     expect(data.entities).toHaveLength(116);
     expect(data.timelineSections.flatMap((section) => section.entityIds)).toHaveLength(73);
-    expect(data.entities.map(({ id }) => id)).toEqual(expect.arrayContaining([
-      "polity-byzantine-empire",
-      "polity-abbasid-caliphate",
-      "polity-holy-roman-empire",
-      "polity-chola-empire"
-    ]));
-    expect(data.entities.find(({ id }) => id === "polity-byzantine-empire")?.historicalRegionIds)
-      .toEqual(["region-europe", "region-west-asia"]);
+    expect(data.entities.map(({ id }) => id)).toEqual(
+      expect.arrayContaining([
+        "polity-byzantine-empire",
+        "polity-abbasid-caliphate",
+        "polity-holy-roman-empire",
+        "polity-chola-empire"
+      ])
+    );
+    expect(
+      data.entities.find(({ id }) => id === "polity-byzantine-empire")?.historicalRegionIds
+    ).toEqual(["region-europe", "region-west-asia"]);
   });
 
   it("收录全球均衡样本政权并为每条政权接入任期", () => {
@@ -120,7 +163,10 @@ describe("生产历史数据", () => {
       expect.arrayContaining([...GLOBAL_SAMPLE_POLITY_IDS])
     );
     for (const entityId of GLOBAL_SAMPLE_POLITY_IDS) {
-      expect(data.reigns.some(({ polityId }) => polityId === entityId), entityId).toBe(true);
+      expect(
+        data.reigns.some(({ polityId }) => polityId === entityId),
+        entityId
+      ).toBe(true);
     }
   });
 
@@ -152,19 +198,21 @@ describe("生产历史数据", () => {
         polityId
       ).toBe(true);
     }
-    expect(mappedTopLevelRegionIds()).toEqual(new Set([
-      "region-east-asia",
-      "region-south-asia",
-      "region-southeast-asia",
-      "region-central-asia",
-      "region-west-asia",
-      "region-europe",
-      "region-north-africa",
-      "region-west-africa",
-      "region-americas",
-      "region-east-africa",
-      "region-southern-africa"
-    ]));
+    expect(mappedTopLevelRegionIds()).toEqual(
+      new Set([
+        "region-east-asia",
+        "region-south-asia",
+        "region-southeast-asia",
+        "region-central-asia",
+        "region-west-asia",
+        "region-europe",
+        "region-north-africa",
+        "region-west-africa",
+        "region-americas",
+        "region-east-africa",
+        "region-southern-africa"
+      ])
+    );
   });
 
   it("按年份切换中国政权的迁都点位", () => {
@@ -177,13 +225,17 @@ describe("生产历史数据", () => {
   });
 
   it("提供可自选的外部地区和明确覆盖状态", () => {
-    const regionStatuses = new Map(data.regions.map((region) => [region.id, region.coverage.status]));
-    expect([...regionStatuses]).toEqual(expect.arrayContaining([
-      ["region-south-asia", "sample"],
-      ["region-west-asia", "sample"],
-      ["region-europe", "sample"],
-      ["region-north-africa", "sample"]
-    ]));
+    const regionStatuses = new Map(
+      data.regions.map((region) => [region.id, region.coverage.status])
+    );
+    expect([...regionStatuses]).toEqual(
+      expect.arrayContaining([
+        ["region-south-asia", "sample"],
+        ["region-west-asia", "sample"],
+        ["region-europe", "sample"],
+        ["region-north-africa", "sample"]
+      ])
+    );
     expect(regionStatuses.get("region-southeast-asia")).toBe("sample");
     expect(regionStatuses.get("region-central-asia")).toBe("sample");
     expect(regionStatuses.get("region-west-africa")).toBe("sample");
@@ -220,11 +272,13 @@ describe("生产历史数据", () => {
     expect(data.events).toHaveLength(4);
     expect(data.relationships.every(({ sourceRefs }) => sourceRefs.length > 0)).toBe(true);
 
-    expect(data.relationships.map(({ id, participants, eventIds }) => ({
-      id,
-      participants: participants.map(({ entityId }) => entityId),
-      eventIds
-    }))).toEqual([
+    expect(
+      data.relationships.map(({ id, participants, eventIds }) => ({
+        id,
+        participants: participants.map(({ entityId }) => entityId),
+        eventIds
+      }))
+    ).toEqual([
       {
         id: "relationship-byzantine-seljuk-manzikert-war",
         participants: ["polity-byzantine-empire", "polity-seljuk-empire"],
@@ -262,10 +316,14 @@ describe("生产历史数据", () => {
       }
     ]);
 
-    expect(Object.fromEntries(data.relationships.map(({ id, periods }) => [
-      id,
-      periods.map(({ start, end }) => [start.year, end.year])
-    ]))).toMatchObject({
+    expect(
+      Object.fromEntries(
+        data.relationships.map(({ id, periods }) => [
+          id,
+          periods.map(({ start, end }) => [start.year, end.year])
+        ])
+      )
+    ).toMatchObject({
       "relationship-northern-song-jurchen-jin-alliance": [[1120, 1122]],
       "relationship-tang-balhae-tribute": [[713, 800]],
       "relationship-tang-abbasid-maritime-trade": [[830, 830]]
@@ -280,12 +338,13 @@ describe("生产历史数据", () => {
       .map(({ id }) => id);
 
     expect(mainlineIds).toHaveLength(16);
-    expect(mainlineIds.every((id) => data.reigns.some(({ polityId }) => polityId === id)))
-      .toBe(true);
+    expect(mainlineIds.every((id) => data.reigns.some(({ polityId }) => polityId === id))).toBe(
+      true
+    );
     expect(data.persons.length).toBeGreaterThan(0);
-    expect(
-      data.reignVacancies.some(({ polityId }) => polityId === "polity-cn-western-zhou")
-    ).toBe(true);
+    expect(data.reignVacancies.some(({ polityId }) => polityId === "polity-cn-western-zhou")).toBe(
+      true
+    );
   });
 
   it("在真实数据中覆盖单人、摄政、争议、空位和未校订状态", () => {
@@ -297,9 +356,7 @@ describe("生产历史数据", () => {
 
     expect(rulerSnapshot("polity-cn-xia", -2070).status).toBe("disputed");
     expect(rulerSnapshot("polity-cn-western-zhou", -840).status).toBe("vacant");
-    expect(rulerSnapshot("polity-cn-xia", -2069).status).toBe(
-      "unrecorded"
-    );
+    expect(rulerSnapshot("polity-cn-xia", -2069).status).toBe("unrecorded");
   });
 
   it("补全拜占庭帝国详情与统治者", () => {
@@ -307,192 +364,219 @@ describe("生产历史数据", () => {
 
     const year1000 = rulerSnapshot("polity-byzantine-empire", 1000);
     expect(year1000.status).toBe("known");
-    expect(year1000.entries.map(({ person }) => person.id)).toEqual(expect.arrayContaining([
-      "person-byzantine-basil-ii",
-      "person-byzantine-constantine-viii"
-    ]));
+    expect(year1000.entries.map(({ person }) => person.id)).toEqual(
+      expect.arrayContaining(["person-byzantine-basil-ii", "person-byzantine-constantine-viii"])
+    );
 
     expect(rulerSnapshot("polity-byzantine-empire", 1220).status).toBe("known");
-    expect(rulerSnapshot("polity-byzantine-empire", 1453).entries.map(({ person }) => person.id))
-      .toContain("person-byzantine-constantine-xi");
+    expect(
+      rulerSnapshot("polity-byzantine-empire", 1453).entries.map(({ person }) => person.id)
+    ).toContain("person-byzantine-constantine-xi");
   });
 
   it("补全阿拔斯哈里发详情与统治者", () => {
     expectWorldPolityDetails("polity-abbasid-caliphate", 37);
-    expect(rulerSnapshot("polity-abbasid-caliphate", 800).entries.map(({ person }) => person.id))
-      .toContain("person-abbasid-harun-al-rashid");
-    expect(rulerSnapshot("polity-abbasid-caliphate", 1258).entries.map(({ person }) => person.id))
-      .toContain("person-abbasid-al-mustasim");
+    expect(
+      rulerSnapshot("polity-abbasid-caliphate", 800).entries.map(({ person }) => person.id)
+    ).toContain("person-abbasid-harun-al-rashid");
+    expect(
+      rulerSnapshot("polity-abbasid-caliphate", 1258).entries.map(({ person }) => person.id)
+    ).toContain("person-abbasid-al-mustasim");
   });
 
   it("补全神圣罗马帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-holy-roman-empire", 45);
-    expect(rulerSnapshot("polity-holy-roman-empire", 1000).entries.map(({ person }) => person.id))
-      .toContain("person-hre-otto-iii");
-    expect(rulerSnapshot("polity-holy-roman-empire", 1260).entries.map(({ person }) => person.id))
-      .toEqual(expect.arrayContaining(["person-hre-richard-of-cornwall", "person-hre-alfonso-x"]));
-    expect(rulerSnapshot("polity-holy-roman-empire", 1320).entries.map(({ person }) => person.id))
-      .toEqual(expect.arrayContaining(["person-hre-louis-iv", "person-hre-frederick-the-fair"]));
-    expect(rulerSnapshot("polity-holy-roman-empire", 1326).entries
-      .find(({ person }) => person.id === "person-hre-frederick-the-fair")?.reign.role).toBe("co-ruler");
-    expect(rulerSnapshot("polity-holy-roman-empire", 1410).entries.map(({ person }) => person.id))
-      .toContain("person-hre-jobst-of-moravia");
-    expect(rulerSnapshot("polity-holy-roman-empire", 1700).entries.map(({ person }) => person.id))
-      .toContain("person-hre-leopold-i");
+    expect(
+      rulerSnapshot("polity-holy-roman-empire", 1000).entries.map(({ person }) => person.id)
+    ).toContain("person-hre-otto-iii");
+    expect(
+      rulerSnapshot("polity-holy-roman-empire", 1260).entries.map(({ person }) => person.id)
+    ).toEqual(expect.arrayContaining(["person-hre-richard-of-cornwall", "person-hre-alfonso-x"]));
+    expect(
+      rulerSnapshot("polity-holy-roman-empire", 1320).entries.map(({ person }) => person.id)
+    ).toEqual(expect.arrayContaining(["person-hre-louis-iv", "person-hre-frederick-the-fair"]));
+    expect(
+      rulerSnapshot("polity-holy-roman-empire", 1326).entries.find(
+        ({ person }) => person.id === "person-hre-frederick-the-fair"
+      )?.reign.role
+    ).toBe("co-ruler");
+    expect(
+      rulerSnapshot("polity-holy-roman-empire", 1410).entries.map(({ person }) => person.id)
+    ).toContain("person-hre-jobst-of-moravia");
+    expect(
+      rulerSnapshot("polity-holy-roman-empire", 1700).entries.map(({ person }) => person.id)
+    ).toContain("person-hre-leopold-i");
     expect(rulerSnapshot("polity-holy-roman-empire", 1741).status).toBe("vacant");
-    expect(rulerSnapshot("polity-holy-roman-empire", 1806).entries.map(({ person }) => person.id))
-      .toContain("person-hre-francis-ii");
+    expect(
+      rulerSnapshot("polity-holy-roman-empire", 1806).entries.map(({ person }) => person.id)
+    ).toContain("person-hre-francis-ii");
   });
 
   it("补全朱罗帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-chola-empire", 20);
-    expect(rulerSnapshot("polity-chola-empire", 1010).entries.map(({ person }) => person.id))
-      .toContain("person-chola-rajaraja-i");
-    expect(rulerSnapshot("polity-chola-empire", 1070).entries.map(({ person }) => person.id))
-      .toContain("person-chola-kulottunga-i");
-    expect(rulerSnapshot("polity-chola-empire", 1279).entries.map(({ person }) => person.id))
-      .toContain("person-chola-rajendra-iii");
+    expect(
+      rulerSnapshot("polity-chola-empire", 1010).entries.map(({ person }) => person.id)
+    ).toContain("person-chola-rajaraja-i");
+    expect(
+      rulerSnapshot("polity-chola-empire", 1070).entries.map(({ person }) => person.id)
+    ).toContain("person-chola-kulottunga-i");
+    expect(
+      rulerSnapshot("polity-chola-empire", 1279).entries.map(({ person }) => person.id)
+    ).toContain("person-chola-rajendra-iii");
   });
 
   it("补全高丽详情与统治者", () => {
     expectWorldPolityDetails("polity-goryeo", 11);
     expect(rulerSnapshot("polity-goryeo", 1000).status).toBe("known");
-    expect(rulerSnapshot("polity-goryeo", 1000).entries.map(({ person }) => person.id))
-      .toContain("person-goryeo-mokjong");
+    expect(rulerSnapshot("polity-goryeo", 1000).entries.map(({ person }) => person.id)).toContain(
+      "person-goryeo-mokjong"
+    );
   });
 
   it("补全德川幕府详情与统治者", () => {
     expectWorldPolityDetails("polity-tokugawa-shogunate", 15);
     expect(rulerSnapshot("polity-tokugawa-shogunate", 1700).status).toBe("known");
-    expect(rulerSnapshot("polity-tokugawa-shogunate", 1700).entries.map(({ person }) => person.id))
-      .toContain("person-tokugawa-tsunayoshi");
+    expect(
+      rulerSnapshot("polity-tokugawa-shogunate", 1700).entries.map(({ person }) => person.id)
+    ).toContain("person-tokugawa-tsunayoshi");
   });
 
   it("补全高棉帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-khmer-empire", 8);
     expect(rulerSnapshot("polity-khmer-empire", 1200).status).toBe("known");
-    expect(rulerSnapshot("polity-khmer-empire", 1200).entries.map(({ person }) => person.id))
-      .toContain("person-khmer-jayavarman-vii");
+    expect(
+      rulerSnapshot("polity-khmer-empire", 1200).entries.map(({ person }) => person.id)
+    ).toContain("person-khmer-jayavarman-vii");
   });
 
   it("补全满者伯夷详情与统治者", () => {
     expectWorldPolityDetails("polity-majapahit", 8);
     expect(rulerSnapshot("polity-majapahit", 1350).status).toBe("known");
-    expect(rulerSnapshot("polity-majapahit", 1350).entries.map(({ person }) => person.id))
-      .toContain("person-majapahit-hayam-wuruk");
+    expect(
+      rulerSnapshot("polity-majapahit", 1350).entries.map(({ person }) => person.id)
+    ).toContain("person-majapahit-hayam-wuruk");
   });
 
   it("补全贵霜帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-kushan-empire", 6);
     expect(rulerSnapshot("polity-kushan-empire", 150).status).toBe("disputed");
-    expect(rulerSnapshot("polity-kushan-empire", 150).entries.map(({ person }) => person.id))
-      .toContain("person-kushan-kanishka-i");
+    expect(
+      rulerSnapshot("polity-kushan-empire", 150).entries.map(({ person }) => person.id)
+    ).toContain("person-kushan-kanishka-i");
   });
 
   it("补全帖木儿帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-timurid-empire", 6);
     expect(rulerSnapshot("polity-timurid-empire", 1400).status).toBe("known");
-    expect(rulerSnapshot("polity-timurid-empire", 1400).entries.map(({ person }) => person.id))
-      .toContain("person-timurid-timur");
+    expect(
+      rulerSnapshot("polity-timurid-empire", 1400).entries.map(({ person }) => person.id)
+    ).toContain("person-timurid-timur");
   });
 
   it("补全孔雀帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-maurya-empire", 9);
     expect(rulerSnapshot("polity-maurya-empire", -250).status).toBe("disputed");
-    expect(rulerSnapshot("polity-maurya-empire", -250).entries.map(({ person }) => person.id))
-      .toContain("person-maurya-ashoka");
+    expect(
+      rulerSnapshot("polity-maurya-empire", -250).entries.map(({ person }) => person.id)
+    ).toContain("person-maurya-ashoka");
   });
 
   it("补全莫卧儿帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-mughal-empire", 14);
     expect(rulerSnapshot("polity-mughal-empire", 1605).status).toBe("known");
-    expect(rulerSnapshot("polity-mughal-empire", 1605).entries.map(({ person }) => person.id))
-      .toContain("person-mughal-akbar");
+    expect(
+      rulerSnapshot("polity-mughal-empire", 1605).entries.map(({ person }) => person.id)
+    ).toContain("person-mughal-akbar");
   });
 
   it("补全塞尔柱帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-seljuk-empire", 17);
     expect(rulerSnapshot("polity-seljuk-empire", 1072).status).toBe("known");
-    expect(rulerSnapshot("polity-seljuk-empire", 1072).entries.map(({ person }) => person.id))
-      .toEqual(expect.arrayContaining([
-        "person-seljuk-alp-arslan",
-        "person-seljuk-malik-shah-i"
-      ]));
+    expect(
+      rulerSnapshot("polity-seljuk-empire", 1072).entries.map(({ person }) => person.id)
+    ).toEqual(expect.arrayContaining(["person-seljuk-alp-arslan", "person-seljuk-malik-shah-i"]));
   });
 
   it("补全奥斯曼帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-ottoman-empire", 36);
     expect(rulerSnapshot("polity-ottoman-empire", 1453).status).toBe("known");
-    expect(rulerSnapshot("polity-ottoman-empire", 1453).entries.map(({ person }) => person.id))
-      .toContain("person-ottoman-mehmed-ii");
+    expect(
+      rulerSnapshot("polity-ottoman-empire", 1453).entries.map(({ person }) => person.id)
+    ).toContain("person-ottoman-mehmed-ii");
   });
 
   it("补全法兰克王国详情与统治者", () => {
     expectWorldPolityDetails("polity-frankish-kingdom", 31);
     expect(rulerSnapshot("polity-frankish-kingdom", 800).status).toBe("known");
-    expect(rulerSnapshot("polity-frankish-kingdom", 800).entries.map(({ person }) => person.id))
-      .toContain("person-frankish-charlemagne");
+    expect(
+      rulerSnapshot("polity-frankish-kingdom", 800).entries.map(({ person }) => person.id)
+    ).toContain("person-frankish-charlemagne");
   });
 
   it("补全英格兰王国详情与统治者", () => {
     expectWorldPolityDetails("polity-kingdom-of-england", 47);
     expect(rulerSnapshot("polity-kingdom-of-england", 1066).status).toBe("known");
-    expect(rulerSnapshot("polity-kingdom-of-england", 1066).entries.map(({ person }) => person.id))
-      .toEqual(expect.arrayContaining([
-        "person-england-harold-ii",
-        "person-england-william-i"
-      ]));
+    expect(
+      rulerSnapshot("polity-kingdom-of-england", 1066).entries.map(({ person }) => person.id)
+    ).toEqual(expect.arrayContaining(["person-england-harold-ii", "person-england-william-i"]));
   });
 
   it("补全法蒂玛王朝详情与统治者", () => {
     expectWorldPolityDetails("polity-fatimid-caliphate", 14);
     expect(rulerSnapshot("polity-fatimid-caliphate", 1000).status).toBe("known");
-    expect(rulerSnapshot("polity-fatimid-caliphate", 1000).entries.map(({ person }) => person.id))
-      .toContain("person-fatimid-al-hakim");
+    expect(
+      rulerSnapshot("polity-fatimid-caliphate", 1000).entries.map(({ person }) => person.id)
+    ).toContain("person-fatimid-al-hakim");
   });
 
   it("补全马里帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-mali-empire", 22);
     expect(rulerSnapshot("polity-mali-empire", 1350).status).toBe("known");
-    expect(rulerSnapshot("polity-mali-empire", 1350).entries.map(({ person }) => person.id))
-      .toContain("person-mali-suleyman");
+    expect(
+      rulerSnapshot("polity-mali-empire", 1350).entries.map(({ person }) => person.id)
+    ).toContain("person-mali-suleyman");
   });
 
   it("补全阿兹特克帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-aztec-empire", 8);
     expect(rulerSnapshot("polity-aztec-empire", 1500).status).toBe("known");
-    expect(rulerSnapshot("polity-aztec-empire", 1500).entries.map(({ person }) => person.id))
-      .toContain("person-aztec-ahuitzotl");
+    expect(
+      rulerSnapshot("polity-aztec-empire", 1500).entries.map(({ person }) => person.id)
+    ).toContain("person-aztec-ahuitzotl");
   });
 
   it("补全印加帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-inca-empire", 8);
     expect(rulerSnapshot("polity-inca-empire", 1500).status).toBe("known");
-    expect(rulerSnapshot("polity-inca-empire", 1500).entries.map(({ person }) => person.id))
-      .toContain("person-inca-huayna-capac");
+    expect(
+      rulerSnapshot("polity-inca-empire", 1500).entries.map(({ person }) => person.id)
+    ).toContain("person-inca-huayna-capac");
   });
 
   it("补全萨珊帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-sasanian-empire", 20);
     expect(rulerSnapshot("polity-sasanian-empire", 500).status).toBe("known");
-    expect(rulerSnapshot("polity-sasanian-empire", 500).entries.map(({ person }) => person.id))
-      .toContain("person-sasanian-kavad-i");
+    expect(
+      rulerSnapshot("polity-sasanian-empire", 500).entries.map(({ person }) => person.id)
+    ).toContain("person-sasanian-kavad-i");
     expect(activePlaces("polity-sasanian-empire", 500)).toEqual(["Ctesiphon"]);
   });
 
   it("补全遮娄其王朝详情与统治者", () => {
     expectWorldPolityDetails("polity-chalukya-dynasty", 8);
     expect(rulerSnapshot("polity-chalukya-dynasty", 630).status).toBe("known");
-    expect(rulerSnapshot("polity-chalukya-dynasty", 630).entries.map(({ person }) => person.id))
-      .toContain("person-chalukya-pulakesi-ii");
+    expect(
+      rulerSnapshot("polity-chalukya-dynasty", 630).entries.map(({ person }) => person.id)
+    ).toContain("person-chalukya-pulakesi-ii");
     expect(activePlaces("polity-chalukya-dynasty", 630)).toEqual(["Badami"]);
   });
 
   it("补全倭马亚哈里发国详情与统治者", () => {
     expectWorldPolityDetails("polity-umayyad-caliphate", 14);
     expect(rulerSnapshot("polity-umayyad-caliphate", 710).status).toBe("known");
-    expect(rulerSnapshot("polity-umayyad-caliphate", 710).entries.map(({ person }) => person.id))
-      .toContain("person-umayyad-al-walid-i");
+    expect(
+      rulerSnapshot("polity-umayyad-caliphate", 710).entries.map(({ person }) => person.id)
+    ).toContain("person-umayyad-al-walid-i");
     expect(activePlaces("polity-umayyad-caliphate", 710)).toEqual(["Damascus"]);
     expect(activePlaces("polity-umayyad-caliphate", 745)).toEqual(["Harran"]);
   });
@@ -500,104 +584,117 @@ describe("生产历史数据", () => {
   it("补全萨法维王朝详情与统治者", () => {
     expectWorldPolityDetails("polity-safavid-iran", 11);
     expect(rulerSnapshot("polity-safavid-iran", 1600).status).toBe("known");
-    expect(rulerSnapshot("polity-safavid-iran", 1600).entries.map(({ person }) => person.id))
-      .toContain("person-safavid-abbas-i");
+    expect(
+      rulerSnapshot("polity-safavid-iran", 1600).entries.map(({ person }) => person.id)
+    ).toContain("person-safavid-abbas-i");
     expect(activePlaces("polity-safavid-iran", 1600)).toEqual(["Isfahan"]);
   });
 
   it("补全笈多帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-gupta-empire", 11);
     expect(rulerSnapshot("polity-gupta-empire", 400).status).toBe("known");
-    expect(rulerSnapshot("polity-gupta-empire", 400).entries.map(({ person }) => person.id))
-      .toContain("person-gupta-chandragupta-ii");
+    expect(
+      rulerSnapshot("polity-gupta-empire", 400).entries.map(({ person }) => person.id)
+    ).toContain("person-gupta-chandragupta-ii");
     expect(activePlaces("polity-gupta-empire", 400)).toEqual(["Pataliputra"]);
   });
 
   it("补全德里苏丹国详情与统治者", () => {
     expectWorldPolityDetails("polity-delhi-sultanate", 33);
     expect(rulerSnapshot("polity-delhi-sultanate", 1300).status).toBe("known");
-    expect(rulerSnapshot("polity-delhi-sultanate", 1300).entries.map(({ person }) => person.id))
-      .toContain("person-delhi-sultanate-ala-ud-din-khalji");
+    expect(
+      rulerSnapshot("polity-delhi-sultanate", 1300).entries.map(({ person }) => person.id)
+    ).toContain("person-delhi-sultanate-ala-ud-din-khalji");
     expect(activePlaces("polity-delhi-sultanate", 1300)).toEqual(["Delhi"]);
   });
 
   it("补全蒲甘王朝详情与统治者", () => {
     expectWorldPolityDetails("polity-pagan-kingdom", 10);
     expect(rulerSnapshot("polity-pagan-kingdom", 1100).status).toBe("known");
-    expect(rulerSnapshot("polity-pagan-kingdom", 1100).entries.map(({ person }) => person.id))
-      .toContain("person-pagan-kyansittha");
+    expect(
+      rulerSnapshot("polity-pagan-kingdom", 1100).entries.map(({ person }) => person.id)
+    ).toContain("person-pagan-kyansittha");
     expect(activePlaces("polity-pagan-kingdom", 1100)).toEqual(["Pagan"]);
   });
 
   it("补全占婆王国详情与统治者", () => {
     expectWorldPolityDetails("polity-champa-kingdom", 9);
     expect(rulerSnapshot("polity-champa-kingdom", 1100).status).toBe("known");
-    expect(rulerSnapshot("polity-champa-kingdom", 1100).entries.map(({ person }) => person.id))
-      .toContain("person-champa-jaya-paramesvaravarman-i");
+    expect(
+      rulerSnapshot("polity-champa-kingdom", 1100).entries.map(({ person }) => person.id)
+    ).toContain("person-champa-jaya-paramesvaravarman-i");
     expect(activePlaces("polity-champa-kingdom", 1100)).toEqual(["Vijaya"]);
   });
 
   it("补全素可泰王国详情与统治者", () => {
     expectWorldPolityDetails("polity-sukhothai-kingdom", 8);
     expect(rulerSnapshot("polity-sukhothai-kingdom", 1300).status).toBe("known");
-    expect(rulerSnapshot("polity-sukhothai-kingdom", 1300).entries.map(({ person }) => person.id))
-      .toContain("person-sukhothai-loethai");
+    expect(
+      rulerSnapshot("polity-sukhothai-kingdom", 1300).entries.map(({ person }) => person.id)
+    ).toContain("person-sukhothai-loethai");
     expect(activePlaces("polity-sukhothai-kingdom", 1300)).toEqual(["Sukhothai"]);
   });
 
   it("补全阿瑜陀耶王国详情与统治者", () => {
     expectWorldPolityDetails("polity-ayutthaya-kingdom", 12);
     expect(rulerSnapshot("polity-ayutthaya-kingdom", 1600).status).toBe("known");
-    expect(rulerSnapshot("polity-ayutthaya-kingdom", 1600).entries.map(({ person }) => person.id))
-      .toContain("person-ayutthaya-naresuan");
+    expect(
+      rulerSnapshot("polity-ayutthaya-kingdom", 1600).entries.map(({ person }) => person.id)
+    ).toContain("person-ayutthaya-naresuan");
     expect(activePlaces("polity-ayutthaya-kingdom", 1600)).toEqual(["Ayutthaya"]);
   });
 
   it("补全第一保加利亚帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-first-bulgarian-empire", 10);
     expect(rulerSnapshot("polity-first-bulgarian-empire", 900).status).toBe("known");
-    expect(rulerSnapshot("polity-first-bulgarian-empire", 900).entries.map(({ person }) => person.id))
-      .toContain("person-first-bulgarian-simeon-i");
+    expect(
+      rulerSnapshot("polity-first-bulgarian-empire", 900).entries.map(({ person }) => person.id)
+    ).toContain("person-first-bulgarian-simeon-i");
     expect(activePlaces("polity-first-bulgarian-empire", 900)).toEqual(["Preslav"]);
   });
 
   it("补全基辅罗斯详情与统治者", () => {
     expectWorldPolityDetails("polity-kievan-rus", 12);
     expect(rulerSnapshot("polity-kievan-rus", 1050).status).toBe("known");
-    expect(rulerSnapshot("polity-kievan-rus", 1050).entries.map(({ person }) => person.id))
-      .toContain("person-kievan-rus-yaroslav-i");
+    expect(
+      rulerSnapshot("polity-kievan-rus", 1050).entries.map(({ person }) => person.id)
+    ).toContain("person-kievan-rus-yaroslav-i");
     expect(activePlaces("polity-kievan-rus", 1050)).toEqual(["Kiev"]);
   });
 
   it("补全卡斯蒂利亚王国详情与统治者", () => {
     expectWorldPolityDetails("polity-kingdom-of-castile", 10);
     expect(rulerSnapshot("polity-kingdom-of-castile", 1200).status).toBe("known");
-    expect(rulerSnapshot("polity-kingdom-of-castile", 1200).entries.map(({ person }) => person.id))
-      .toContain("person-castile-alfonso-viii");
+    expect(
+      rulerSnapshot("polity-kingdom-of-castile", 1200).entries.map(({ person }) => person.id)
+    ).toContain("person-castile-alfonso-viii");
     expect(activePlaces("polity-kingdom-of-castile", 1200)).toEqual(["Toledo"]);
   });
 
   it("补全莱昂王国详情与统治者", () => {
     expectWorldPolityDetails("polity-kingdom-of-leon", 10);
     expect(rulerSnapshot("polity-kingdom-of-leon", 1200).status).toBe("known");
-    expect(rulerSnapshot("polity-kingdom-of-leon", 1200).entries.map(({ person }) => person.id))
-      .toContain("person-leon-alfonso-ix");
+    expect(
+      rulerSnapshot("polity-kingdom-of-leon", 1200).entries.map(({ person }) => person.id)
+    ).toContain("person-leon-alfonso-ix");
     expect(activePlaces("polity-kingdom-of-leon", 1200)).toEqual(["León"]);
   });
 
   it("补全埃塞俄比亚帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-ethiopian-empire", 8);
     expect(rulerSnapshot("polity-ethiopian-empire", 1400).status).toBe("known");
-    expect(rulerSnapshot("polity-ethiopian-empire", 1400).entries.map(({ person }) => person.id))
-      .toContain("person-ethiopian-dawit-i");
+    expect(
+      rulerSnapshot("polity-ethiopian-empire", 1400).entries.map(({ person }) => person.id)
+    ).toContain("person-ethiopian-dawit-i");
     expect(activePlaces("polity-ethiopian-empire", 1700)).toEqual(["Gondar"]);
   });
 
   it("补全桑海帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-songhai-empire", 5);
     expect(rulerSnapshot("polity-songhai-empire", 1500).status).toBe("known");
-    expect(rulerSnapshot("polity-songhai-empire", 1500).entries.map(({ person }) => person.id))
-      .toContain("person-songhai-askia-muhammad");
+    expect(
+      rulerSnapshot("polity-songhai-empire", 1500).entries.map(({ person }) => person.id)
+    ).toContain("person-songhai-askia-muhammad");
     expect(activePlaces("polity-songhai-empire", 1500)).toEqual(["Gao"]);
   });
 
@@ -610,8 +707,9 @@ describe("生产历史数据", () => {
   it("补全玛雅城邦详情与代表性统治者", () => {
     expectWorldPolityDetails("polity-maya-city-states", 4);
     expect(rulerSnapshot("polity-maya-city-states", 680).status).toBe("known");
-    expect(rulerSnapshot("polity-maya-city-states", 680).entries.map(({ person }) => person.id))
-      .toEqual(expect.arrayContaining(["person-maya-pakal", "person-maya-yuknoom-great"]));
+    expect(
+      rulerSnapshot("polity-maya-city-states", 680).entries.map(({ person }) => person.id)
+    ).toEqual(expect.arrayContaining(["person-maya-pakal", "person-maya-yuknoom-great"]));
     expect(activePlaces("polity-maya-city-states", 680)).toEqual(["Tikal"]);
   });
 
@@ -619,24 +717,27 @@ describe("生产历史数据", () => {
     expectWorldPolityDetails("polity-toltec-state", 2);
     expect(rulerSnapshot("polity-toltec-state", 1000).status).toBe("vacant");
     expect(rulerSnapshot("polity-toltec-state", 940).status).toBe("disputed");
-    expect(rulerSnapshot("polity-toltec-state", 940).entries.map(({ person }) => person.id))
-      .toContain("person-toltec-quetzalcoatl");
+    expect(
+      rulerSnapshot("polity-toltec-state", 940).entries.map(({ person }) => person.id)
+    ).toContain("person-toltec-quetzalcoatl");
     expect(activePlaces("polity-toltec-state", 1000)).toEqual(["Tula"]);
   });
 
   it("补全阿克苏姆王国详情与统治者", () => {
     expectWorldPolityDetails("polity-aksumite-kingdom", 3);
     expect(rulerSnapshot("polity-aksumite-kingdom", 340).status).toBe("known");
-    expect(rulerSnapshot("polity-aksumite-kingdom", 340).entries.map(({ person }) => person.id))
-      .toContain("person-aksum-ezana");
+    expect(
+      rulerSnapshot("polity-aksumite-kingdom", 340).entries.map(({ person }) => person.id)
+    ).toContain("person-aksum-ezana");
     expect(activePlaces("polity-aksumite-kingdom", 340)).toEqual(["Axum"]);
   });
 
   it("补全穆塔帕帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-mutapa-empire", 4);
     expect(rulerSnapshot("polity-mutapa-empire", 1500).status).toBe("disputed");
-    expect(rulerSnapshot("polity-mutapa-empire", 1500).entries.map(({ person }) => person.id))
-      .toContain("person-mutapa-matope");
+    expect(
+      rulerSnapshot("polity-mutapa-empire", 1500).entries.map(({ person }) => person.id)
+    ).toContain("person-mutapa-matope");
     expect(activePlaces("polity-mutapa-empire", 1500)).toEqual(["Zvongombe"]);
   });
 
@@ -649,8 +750,9 @@ describe("生产历史数据", () => {
   it("补全卡涅姆-博尔努帝国详情与统治者", () => {
     expectWorldPolityDetails("polity-kanem-bornu-empire", 4);
     expect(rulerSnapshot("polity-kanem-bornu-empire", 1580).status).toBe("known");
-    expect(rulerSnapshot("polity-kanem-bornu-empire", 1580).entries.map(({ person }) => person.id))
-      .toContain("person-kanem-bornu-idris-alauma");
+    expect(
+      rulerSnapshot("polity-kanem-bornu-empire", 1580).entries.map(({ person }) => person.id)
+    ).toContain("person-kanem-bornu-idris-alauma");
     expect(activePlaces("polity-kanem-bornu-empire", 1580)).toEqual(["Ngazargamu"]);
   });
 
@@ -690,8 +792,7 @@ describe("生产历史数据", () => {
     expect(rulerSnapshot("polity-cn-liao", 1000).status).toBe("known");
     expect(rulerSnapshot("polity-cn-western-xia", 1100).status).toBe("known");
     expect(rulerSnapshot("polity-cn-jin", 1200).status).toBe("known");
-    expect(rulerSnapshot("polity-cn-southern-ming", 1646).entries.length)
-      .toBeGreaterThan(0);
+    expect(rulerSnapshot("polity-cn-southern-ming", 1646).entries.length).toBeGreaterThan(0);
   });
 
   it("为全部七十一个中国政权提供统治者详情", () => {
@@ -702,7 +803,8 @@ describe("生产历史数据", () => {
       .map(({ id }) => id);
 
     expect(chinesePolityIds).toHaveLength(71);
-    expect(chinesePolityIds.every((id) => data.reigns.some(({ polityId }) => polityId === id)))
-      .toBe(true);
+    expect(
+      chinesePolityIds.every((id) => data.reigns.some(({ polityId }) => polityId === id))
+    ).toBe(true);
   });
 });

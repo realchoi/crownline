@@ -40,15 +40,14 @@ describe("历史地图点位", () => {
 
   it("按闭区间端点切换拜占庭政治中心", () => {
     const polity = entity("polity-byzantine-empire");
-    const snapshots = [
-      snapshot("geo-byzantine-constantinople"),
-      snapshot("geo-byzantine-nicaea")
-    ];
+    const snapshots = [snapshot("geo-byzantine-constantinople"), snapshot("geo-byzantine-nicaea")];
 
-    expect(selectMapSnapshots([polity], snapshots, 1203).points.map(({ snapshot }) => snapshot.id))
-      .toEqual(["geo-byzantine-constantinople"]);
-    expect(selectMapSnapshots([polity], snapshots, 1204).points.map(({ snapshot }) => snapshot.id))
-      .toEqual(["geo-byzantine-nicaea"]);
+    expect(
+      selectMapSnapshots([polity], snapshots, 1203).points.map(({ snapshot }) => snapshot.id)
+    ).toEqual(["geo-byzantine-constantinople"]);
+    expect(
+      selectMapSnapshots([polity], snapshots, 1204).points.map(({ snapshot }) => snapshot.id)
+    ).toEqual(["geo-byzantine-nicaea"]);
   });
 
   it("不把唐的中断期误判为可见点位", () => {
@@ -73,8 +72,11 @@ describe("历史地图点位", () => {
       coordinates: { latitude: 34.6197, longitude: 112.454 }
     };
 
-    expect(selectMapSnapshots([polity], [luoyang, changan], 650).points
-      .map(({ snapshot }) => snapshot.placeName)).toEqual(["长安", "洛阳"]);
+    expect(
+      selectMapSnapshots([polity], [luoyang, changan], 650).points.map(
+        ({ snapshot }) => snapshot.placeName
+      )
+    ).toEqual(["长安", "洛阳"]);
   });
 
   it("单独列出当年缺少地理快照的政权", () => {
@@ -100,10 +102,7 @@ describe("历史地图点位", () => {
     expect(clusterMapPoints(forward, 5)).toMatchObject([
       {
         id: "map-cluster:geo-ming-beijing+geo-ming-nanjing",
-        points: [
-          { snapshot: { id: "geo-ming-beijing" } },
-          { snapshot: { id: "geo-ming-nanjing" } }
-        ]
+        points: [{ snapshot: { id: "geo-ming-beijing" } }, { snapshot: { id: "geo-ming-nanjing" } }]
       }
     ]);
   });

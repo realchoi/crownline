@@ -14,11 +14,13 @@ export function RegionScopeControl({ regions, scope, onChange }: RegionScopeCont
   });
   const selectedIds = scope.mode === "custom" ? scope.regionIds : [];
   const selectedRegions = selectableRegions.filter(({ id }) => selectedIds.includes(id));
-  const coverageText = scope.mode === "global"
-    ? "当前数据集中的全部已收录条目；不代表世界历史已完整覆盖。"
-    : scope.mode === "china"
-      ? regions.find(({ id }) => id === CHINA_REGION_ID)?.coverage.note ?? "采用中国历史浏览范围。"
-      : selectedRegions.map(({ coverage }) => coverage.note).join(" ");
+  const coverageText =
+    scope.mode === "global"
+      ? "当前数据集中的全部已收录条目；不代表世界历史已完整覆盖。"
+      : scope.mode === "china"
+        ? (regions.find(({ id }) => id === CHINA_REGION_ID)?.coverage.note ??
+          "采用中国历史浏览范围。")
+        : selectedRegions.map(({ coverage }) => coverage.note).join(" ");
 
   const chooseMode = (mode: RegionScope["mode"]) => {
     if (mode === "china") onChange({ mode: "china" });
@@ -27,11 +29,7 @@ export function RegionScopeControl({ regions, scope, onChange }: RegionScopeCont
       const defaultRegionId = selectableRegions[0]?.id;
       onChange({
         mode: "custom",
-        regionIds: selectedIds.length > 0
-          ? selectedIds
-          : defaultRegionId
-            ? [defaultRegionId]
-            : []
+        regionIds: selectedIds.length > 0 ? selectedIds : defaultRegionId ? [defaultRegionId] : []
       });
     }
   };
@@ -42,11 +40,13 @@ export function RegionScopeControl({ regions, scope, onChange }: RegionScopeCont
         <div>
           <span className="field-label">观测范围</span>
           <div className="scope-switch" role="group" aria-label="地区范围预设">
-            {([
-              ["china", "中国"],
-              ["custom", "自选地区"],
-              ["global", "全球已收录"]
-            ] as const).map(([mode, label]) => (
+            {(
+              [
+                ["china", "中国"],
+                ["custom", "自选地区"],
+                ["global", "全球已收录"]
+              ] as const
+            ).map(([mode, label]) => (
               <button
                 key={mode}
                 type="button"

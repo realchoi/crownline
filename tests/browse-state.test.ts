@@ -55,8 +55,7 @@ describe("浏览状态", () => {
   it("只为地图视图写入 view 参数", () => {
     const defaultState = readBrowseState("", bounds);
 
-    expect(writeBrowseState({ ...defaultState, viewMode: "map" }, bounds).get("view"))
-      .toBe("map");
+    expect(writeBrowseState({ ...defaultState, viewMode: "map" }, bounds).get("view")).toBe("map");
     expect(writeBrowseState(defaultState, bounds).has("view")).toBe(false);
   });
 
@@ -222,16 +221,14 @@ describe("浏览状态", () => {
 
   it("恢复并清洗详情深链接，忽略无效实体", () => {
     expect(
-      readBrowseState("?detail=polity-cn-ming", bounds, data.regions, data.entities)
-        .detailEntityId
+      readBrowseState("?detail=polity-cn-ming", bounds, data.regions, data.entities).detailEntityId
     ).toBe("polity-cn-ming");
     expect(
       readBrowseState("?detail=period-cn-spring-autumn", bounds, data.regions, data.entities)
         .detailEntityId
     ).toBe("period-cn-spring-autumn");
     expect(
-      readBrowseState("?detail=polity-missing", bounds, data.regions, data.entities)
-        .detailEntityId
+      readBrowseState("?detail=polity-missing", bounds, data.regions, data.entities).detailEntityId
     ).toBeNull();
   });
 

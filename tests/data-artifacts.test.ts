@@ -64,8 +64,11 @@ describe("运行时数据产物", () => {
     const geographySourceIds = geography.sources.map(({ id }) => id);
     expect(geographySourceIds).toContain("source-map-test");
     expect(geographySourceIds).not.toContain("source-map-unrelated");
-    expect(geography.geographicSnapshots.flatMap(({ sourceRefs }) => sourceRefs)
-      .every(({ sourceId }) => geographySourceIds.includes(sourceId))).toBe(true);
+    expect(
+      geography.geographicSnapshots
+        .flatMap(({ sourceRefs }) => sourceRefs)
+        .every(({ sourceId }) => geographySourceIds.includes(sourceId))
+    ).toBe(true);
   });
 
   it("详情只收集目标政权的任期及其人物和来源闭包", () => {
@@ -86,8 +89,7 @@ describe("运行时数据产物", () => {
     const wei = buildGeneratedArtifacts(data).details.get("polity-cn-cao-wei");
 
     expect(wei?.persons.length).toBeGreaterThan(0);
-    expect(wei?.reigns.every(({ polityId }) => polityId === "polity-cn-cao-wei"))
-      .toBe(true);
+    expect(wei?.reigns.every(({ polityId }) => polityId === "polity-cn-cao-wei")).toBe(true);
     expect(wei?.sources.length).toBeGreaterThan(0);
   });
 
@@ -95,14 +97,15 @@ describe("运行时数据产物", () => {
     const detail = buildGeneratedArtifacts(data).details.get("polity-byzantine-empire");
 
     expect(detail?.persons.length).toBeGreaterThanOrEqual(80);
-    expect(detail?.reigns.every(({ polityId }) => polityId === "polity-byzantine-empire"))
-      .toBe(true);
-    expect(new Set(detail?.persons.map(({ id }) => id)))
-      .toEqual(new Set(detail?.reigns.map(({ personId }) => personId)));
-    expect(detail?.sources.map(({ id }) => id)).toEqual(expect.arrayContaining([
-      "source-met-byzantium",
-      "source-wikipedia-byzantine-emperors"
-    ]));
+    expect(detail?.reigns.every(({ polityId }) => polityId === "polity-byzantine-empire")).toBe(
+      true
+    );
+    expect(new Set(detail?.persons.map(({ id }) => id))).toEqual(
+      new Set(detail?.reigns.map(({ personId }) => personId))
+    );
+    expect(detail?.sources.map(({ id }) => id)).toEqual(
+      expect.arrayContaining(["source-met-byzantium", "source-wikipedia-byzantine-emperors"])
+    );
   });
 
   it("为四个世界政权生成可独立加载的详情闭包", () => {
@@ -115,10 +118,13 @@ describe("运行时数据产物", () => {
       const detail = buildGeneratedArtifacts(data).details.get(entityId);
       expect(detail?.persons.length, entityId).toBeGreaterThan(0);
       expect(detail?.reigns.length, entityId).toBeGreaterThan(0);
-      expect(detail?.reigns.every(({ polityId }) => polityId === entityId), entityId)
-        .toBe(true);
-      expect(new Set(detail?.persons.map(({ id }) => id)), entityId)
-        .toEqual(new Set(detail?.reigns.map(({ personId }) => personId)));
+      expect(
+        detail?.reigns.every(({ polityId }) => polityId === entityId),
+        entityId
+      ).toBe(true);
+      expect(new Set(detail?.persons.map(({ id }) => id)), entityId).toEqual(
+        new Set(detail?.reigns.map(({ personId }) => personId))
+      );
       expect(detail?.sources.length, entityId).toBeGreaterThan(0);
     }
   });
@@ -131,10 +137,13 @@ describe("运行时数据产物", () => {
 
       expect(detail, entityId).toBeDefined();
       expect(detail!.reigns.length, entityId).toBeGreaterThan(0);
-      expect(detail!.reigns.every(({ polityId }) => polityId === entityId), entityId)
-        .toBe(true);
-      expect(new Set(detail!.persons.map(({ id }) => id)), entityId)
-        .toEqual(new Set(detail!.reigns.map(({ personId }) => personId)));
+      expect(
+        detail!.reigns.every(({ polityId }) => polityId === entityId),
+        entityId
+      ).toBe(true);
+      expect(new Set(detail!.persons.map(({ id }) => id)), entityId).toEqual(
+        new Set(detail!.reigns.map(({ personId }) => personId))
+      );
       expect(detail!.sources.length, entityId).toBeGreaterThan(0);
     }
   });
@@ -198,12 +207,14 @@ describe("运行时数据产物", () => {
       expect(detail?.sources.map(({ id }) => id)).toContain("source-worldhistory-manzikert");
     }
 
-    expect(details.get("polity-cn-ming")?.relationships.map(({ id }) => id))
-      .not.toContain(relationshipId);
-    expect(details.get("polity-cn-tang")?.relationships.map(({ id }) => id))
-      .toEqual(expect.arrayContaining([
+    expect(details.get("polity-cn-ming")?.relationships.map(({ id }) => id)).not.toContain(
+      relationshipId
+    );
+    expect(details.get("polity-cn-tang")?.relationships.map(({ id }) => id)).toEqual(
+      expect.arrayContaining([
         "relationship-tang-balhae-tribute",
         "relationship-tang-balhae-cultural-exchange"
-      ]));
+      ])
+    );
   });
 });

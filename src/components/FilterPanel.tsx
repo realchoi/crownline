@@ -93,11 +93,7 @@ export function FilterPanel({
         </div>
       )}
 
-      <RegionScopeControl
-        regions={regions}
-        scope={regionScope}
-        onChange={onRegionScopeChange}
-      />
+      <RegionScopeControl regions={regions} scope={regionScope} onChange={onRegionScopeChange} />
 
       <div className="controls-grid">
         {showYearControls && (

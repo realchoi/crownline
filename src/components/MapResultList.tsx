@@ -1,8 +1,5 @@
 import type { HistoricalEntity } from "../domain/types";
-import {
-  GEOGRAPHIC_ROLE_NAMES,
-  type MapPoint
-} from "../domain/mapSnapshots";
+import { GEOGRAPHIC_ROLE_NAMES, type MapPoint } from "../domain/mapSnapshots";
 import { ComparisonToggle } from "./ComparisonToggle";
 
 interface MapResultListProps {
@@ -76,7 +73,9 @@ export function MapResultList({
           <h3>尚未校订地理数据</h3>
           <p>这些政权在当前年份存在，但尚无可用点位；这不表示它们在地理上不存在。</p>
           <ul className="map-missing-list">
-            {missingEntities.map((entity) => <li key={entity.id}>{entity.names.primary}</li>)}
+            {missingEntities.map((entity) => (
+              <li key={entity.id}>{entity.names.primary}</li>
+            ))}
           </ul>
         </section>
       )}

@@ -54,9 +54,10 @@ export function readBrowseState(
 ): BrowseState {
   const params = new URLSearchParams(search);
   const rawYear = Number(params.get("year"));
-  const year = Number.isSafeInteger(rawYear) && rawYear !== 0
-    ? Math.min(bounds.max, Math.max(bounds.min, rawYear))
-    : bounds.max;
+  const year =
+    Number.isSafeInteger(rawYear) && rawYear !== 0
+      ? Math.min(bounds.max, Math.max(bounds.min, rawYear))
+      : bounds.max;
   const rawCategory = params.get("type") ?? "all";
   const mappedCategory = LEGACY_CATEGORY_MAP[rawCategory] ?? rawCategory;
   const mode: BrowseMode = params.get("mode") === "point" ? "point" : "overview";
@@ -67,11 +68,12 @@ export function readBrowseState(
   const customRegionIds = [...new Set(params.getAll("region"))]
     .filter((id) => validHistoricalRegionIds.has(id))
     .sort();
-  const regionScope: RegionScope = rawScope === "global"
-    ? { mode: "global" }
-    : rawScope === "custom" && customRegionIds.length > 0
-      ? { mode: "custom", regionIds: customRegionIds }
-      : { mode: "china" };
+  const regionScope: RegionScope =
+    rawScope === "global"
+      ? { mode: "global" }
+      : rawScope === "custom" && customRegionIds.length > 0
+        ? { mode: "custom", regionIds: customRegionIds }
+        : { mode: "china" };
   const polityIds = new Set(
     entities.filter(({ entityKind }) => entityKind === "polity").map(({ id }) => id)
   );
@@ -103,8 +105,9 @@ export function writeBrowseState(
   currentSearch = ""
 ): URLSearchParams {
   const params = new URLSearchParams(currentSearch);
-  ["view", "mode", "year", "q", "type", "scope", "region", "compare", "detail"]
-    .forEach((name) => params.delete(name));
+  ["view", "mode", "year", "q", "type", "scope", "region", "compare", "detail"].forEach((name) =>
+    params.delete(name)
+  );
 
   if (state.viewMode === "map") params.set("view", "map");
   if (state.mode === "point") params.set("mode", "point");

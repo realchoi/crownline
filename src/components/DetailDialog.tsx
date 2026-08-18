@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 
-import { calculatePeriodsDuration, formatHistoricalYear, formatPeriods } from "../domain/chronology";
+import {
+  calculatePeriodsDuration,
+  formatHistoricalYear,
+  formatPeriods
+} from "../domain/chronology";
 import { selectRulerSnapshot, type RulerSnapshot } from "../domain/rulerSnapshot";
 import type { ConfidenceLevel, CrownlineDetail, HistoricalEntity } from "../domain/types";
 import type { PolityForm, Region, ReignRole, SourceRef } from "../domain/types";
@@ -93,9 +97,10 @@ export function DetailDialog({
     return region ? [region.names.primary] : [];
   });
   const detail = detailState.status === "ready" ? detailState.detail : undefined;
-  const snapshot = detail && entity.entityKind === "polity" && currentYear !== undefined
-    ? selectRulerSnapshot(entity, detail, currentYear)
-    : undefined;
+  const snapshot =
+    detail && entity.entityKind === "polity" && currentYear !== undefined
+      ? selectRulerSnapshot(entity, detail, currentYear)
+      : undefined;
   const sourceGroups = detail ? collectSourceGroups(detail, entity, snapshot) : [];
 
   useEffect(() => {
@@ -142,9 +147,10 @@ export function DetailDialog({
     };
   }, [onClose]);
 
-  const rulerHeading = currentYear === undefined
-    ? undefined
-    : `${formatHistoricalYear({ year: currentYear, precision: "exact" })}年 · 在位统治者`;
+  const rulerHeading =
+    currentYear === undefined
+      ? undefined
+      : `${formatHistoricalYear({ year: currentYear, precision: "exact" })}年 · 在位统治者`;
 
   return (
     <dialog
@@ -179,141 +185,150 @@ export function DetailDialog({
         </div>
 
         <div className="dialog-body">
-        <p className="detail-summary">{entity.description}</p>
-        {entity.chronologyNote && (
-          <p className="chronology-note">采用口径：{entity.chronologyNote}</p>
-        )}
-        {entity.confidenceNote && <p className="confidence-note">{entity.confidenceNote}</p>}
-
-        <dl className="detail-grid">
-          {sectionTitle && (
-            <div className="detail-card">
-              <dt>阶段</dt>
-              <dd>{sectionTitle}</dd>
-            </div>
+          <p className="detail-summary">{entity.description}</p>
+          {entity.chronologyNote && (
+            <p className="chronology-note">采用口径：{entity.chronologyNote}</p>
           )}
-          <div className="detail-card">
-            <dt>历史地区</dt>
-            <dd>{regionNames.join("、") || "尚未标注"}</dd>
-          </div>
-          {entity.entityKind === "polity" && (
+          {entity.confidenceNote && <p className="confidence-note">{entity.confidenceNote}</p>}
+
+          <dl className="detail-grid">
+            {sectionTitle && (
+              <div className="detail-card">
+                <dt>阶段</dt>
+                <dd>{sectionTitle}</dd>
+              </div>
+            )}
             <div className="detail-card">
-              <dt>政权形态</dt>
-              <dd>{entity.polityForms.map((form) => POLITY_FORM_NAMES[form]).join("、")}</dd>
+              <dt>历史地区</dt>
+              <dd>{regionNames.join("、") || "尚未标注"}</dd>
             </div>
-          )}
-          <div className="detail-card">
-            <dt>持续时间</dt>
-            <dd>{duration > 1 ? `约 ${duration} 年` : "不足 1 年"}</dd>
-          </div>
-          <div className="detail-card">
-            <dt>资料可信度</dt>
-            <dd>{CONFIDENCE_NAMES[entity.confidence]}</dd>
-          </div>
-        </dl>
-
-        {entity.alternativeChronologies && entity.alternativeChronologies.length > 0 && (
-          <section className="detail-section" aria-labelledby="alternative-chronology-title">
-            <h3 id="alternative-chronology-title">其他年代口径</h3>
-            <ul className="alternative-list">
-              {entity.alternativeChronologies.map((chronology) => (
-                <li key={chronology.label}>
-                  <strong>{chronology.label}</strong>
-                  <span>{formatPeriods(chronology.existencePeriods)}</span>
-                  <p>{chronology.note}</p>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        <DetailLoadPanel state={detailState} onRetry={onRetry} />
-
-        {detail && entity.entityKind === "polity" && currentYear === undefined && (
-          <section className="detail-section ruler-overview" aria-labelledby="ruler-overview-title">
-            <h3 id="ruler-overview-title">统治者资料</h3>
-            <p>切换到时间点模式，可查看指定年份的在位统治者、摄政者和争位者。</p>
-          </section>
-        )}
-
-        {snapshot && (
-          <section className="detail-section ruler-panel" aria-labelledby="ruler-snapshot-title">
-            <div className="detail-section-heading">
-              <h3 id="ruler-snapshot-title">{rulerHeading}</h3>
-              {snapshot.status === "disputed" && (
-                <span className="ruler-status disputed">存在争议</span>
-              )}
+            {entity.entityKind === "polity" && (
+              <div className="detail-card">
+                <dt>政权形态</dt>
+                <dd>{entity.polityForms.map((form) => POLITY_FORM_NAMES[form]).join("、")}</dd>
+              </div>
+            )}
+            <div className="detail-card">
+              <dt>持续时间</dt>
+              <dd>{duration > 1 ? `约 ${duration} 年` : "不足 1 年"}</dd>
             </div>
+            <div className="detail-card">
+              <dt>资料可信度</dt>
+              <dd>{CONFIDENCE_NAMES[entity.confidence]}</dd>
+            </div>
+          </dl>
 
-            {(snapshot.status === "known" || snapshot.status === "disputed") && (
-              <div className="ruler-list">
-                {snapshot.entries.map(({ person, reign }) => (
-                  <article className="ruler-card" key={reign.id}>
-                    <div className="ruler-card-heading">
-                      <h4>{person.names.primary}</h4>
-                      <span className={`role-badge role-${reign.role}`}>
-                        {REIGN_ROLE_NAMES[reign.role]}
-                      </span>
-                    </div>
-                    {person.names.aliases.length > 0 && (
-                      <p className="ruler-aliases">又名：{person.names.aliases.join("、")}</p>
-                    )}
-                    <p className="ruler-period">{formatPeriods(reign.periods)}</p>
-                    {(reign.titles.length > 0 || reign.localTitles?.length) && (
-                      <p className="ruler-titles">
-                        称号：{[...reign.titles, ...(reign.localTitles ?? [])].join("、")}
-                      </p>
-                    )}
-                    <p>{person.description}</p>
-                    {reign.note && <p className="ruler-note">{reign.note}</p>}
-                    {reign.confidenceNote && reign.confidenceNote !== reign.note && (
-                      <p className="confidence-note">{reign.confidenceNote}</p>
-                    )}
-                  </article>
+          {entity.alternativeChronologies && entity.alternativeChronologies.length > 0 && (
+            <section className="detail-section" aria-labelledby="alternative-chronology-title">
+              <h3 id="alternative-chronology-title">其他年代口径</h3>
+              <ul className="alternative-list">
+                {entity.alternativeChronologies.map((chronology) => (
+                  <li key={chronology.label}>
+                    <strong>{chronology.label}</strong>
+                    <span>{formatPeriods(chronology.existencePeriods)}</span>
+                    <p>{chronology.note}</p>
+                  </li>
                 ))}
-              </div>
-            )}
+              </ul>
+            </section>
+          )}
 
-            {snapshot.status === "vacant" && snapshot.vacancy && (
-              <div className="ruler-empty explicit-vacancy">
-                <strong>已有资料记为空位期</strong>
-                <p>{snapshot.vacancy.note}</p>
-                {snapshot.vacancy.confidenceNote && <p>{snapshot.vacancy.confidenceNote}</p>}
-              </div>
-            )}
+          <DetailLoadPanel state={detailState} onRetry={onRetry} />
 
-            {snapshot.status === "unrecorded" && (
-              <div className="ruler-empty">
-                <strong>这一年的统治者资料尚未校订</strong>
-                <p>这表示当前数据集尚无可展示记录，不等于当时无人统治。</p>
-              </div>
-            )}
-          </section>
-        )}
+          {detail && entity.entityKind === "polity" && currentYear === undefined && (
+            <section
+              className="detail-section ruler-overview"
+              aria-labelledby="ruler-overview-title"
+            >
+              <h3 id="ruler-overview-title">统治者资料</h3>
+              <p>切换到时间点模式，可查看指定年份的在位统治者、摄政者和争位者。</p>
+            </section>
+          )}
 
-        {sourceGroups.length > 0 && (
-          <section className="detail-section source-section" aria-labelledby="detail-sources-title">
-            <h3 id="detail-sources-title">资料来源</h3>
-            <ol className="source-list">
-              {sourceGroups.map(({ source, refs }) => (
-                <li key={source.id}>
-                  {source.url ? (
-                    <a href={source.url} target="_blank" rel="noreferrer">
-                      {source.citation}
-                    </a>
-                  ) : (
-                    <span>{source.citation}</span>
-                  )}
-                  {refs.some((ref) => ref.locator || ref.note) && (
-                    <small>
-                      {refs.flatMap((ref) => [ref.locator, ref.note]).filter(Boolean).join("；")}
-                    </small>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </section>
-        )}
+          {snapshot && (
+            <section className="detail-section ruler-panel" aria-labelledby="ruler-snapshot-title">
+              <div className="detail-section-heading">
+                <h3 id="ruler-snapshot-title">{rulerHeading}</h3>
+                {snapshot.status === "disputed" && (
+                  <span className="ruler-status disputed">存在争议</span>
+                )}
+              </div>
+
+              {(snapshot.status === "known" || snapshot.status === "disputed") && (
+                <div className="ruler-list">
+                  {snapshot.entries.map(({ person, reign }) => (
+                    <article className="ruler-card" key={reign.id}>
+                      <div className="ruler-card-heading">
+                        <h4>{person.names.primary}</h4>
+                        <span className={`role-badge role-${reign.role}`}>
+                          {REIGN_ROLE_NAMES[reign.role]}
+                        </span>
+                      </div>
+                      {person.names.aliases.length > 0 && (
+                        <p className="ruler-aliases">又名：{person.names.aliases.join("、")}</p>
+                      )}
+                      <p className="ruler-period">{formatPeriods(reign.periods)}</p>
+                      {(reign.titles.length > 0 || reign.localTitles?.length) && (
+                        <p className="ruler-titles">
+                          称号：{[...reign.titles, ...(reign.localTitles ?? [])].join("、")}
+                        </p>
+                      )}
+                      <p>{person.description}</p>
+                      {reign.note && <p className="ruler-note">{reign.note}</p>}
+                      {reign.confidenceNote && reign.confidenceNote !== reign.note && (
+                        <p className="confidence-note">{reign.confidenceNote}</p>
+                      )}
+                    </article>
+                  ))}
+                </div>
+              )}
+
+              {snapshot.status === "vacant" && snapshot.vacancy && (
+                <div className="ruler-empty explicit-vacancy">
+                  <strong>已有资料记为空位期</strong>
+                  <p>{snapshot.vacancy.note}</p>
+                  {snapshot.vacancy.confidenceNote && <p>{snapshot.vacancy.confidenceNote}</p>}
+                </div>
+              )}
+
+              {snapshot.status === "unrecorded" && (
+                <div className="ruler-empty">
+                  <strong>这一年的统治者资料尚未校订</strong>
+                  <p>这表示当前数据集尚无可展示记录，不等于当时无人统治。</p>
+                </div>
+              )}
+            </section>
+          )}
+
+          {sourceGroups.length > 0 && (
+            <section
+              className="detail-section source-section"
+              aria-labelledby="detail-sources-title"
+            >
+              <h3 id="detail-sources-title">资料来源</h3>
+              <ol className="source-list">
+                {sourceGroups.map(({ source, refs }) => (
+                  <li key={source.id}>
+                    {source.url ? (
+                      <a href={source.url} target="_blank" rel="noreferrer">
+                        {source.citation}
+                      </a>
+                    ) : (
+                      <span>{source.citation}</span>
+                    )}
+                    {refs.some((ref) => ref.locator || ref.note) && (
+                      <small>
+                        {refs
+                          .flatMap((ref) => [ref.locator, ref.note])
+                          .filter(Boolean)
+                          .join("；")}
+                      </small>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
         </div>
       </div>
     </dialog>

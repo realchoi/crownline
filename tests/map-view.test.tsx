@@ -86,9 +86,11 @@ describe("历史地图组件", () => {
     expect(cluster).toHaveFocus();
 
     await user.click(cluster);
-    const reopenedBeijingButton = within(screen.getByRole("region", {
-      name: "聚合历史点位"
-    })).getByRole("button", { name: "明，北京，都城" });
+    const reopenedBeijingButton = within(
+      screen.getByRole("region", {
+        name: "聚合历史点位"
+      })
+    ).getByRole("button", { name: "明，北京，都城" });
     await user.click(reopenedBeijingButton);
     expect(onSelect).toHaveBeenCalledWith("polity-cn-ming", reopenedBeijingButton);
   });
@@ -148,7 +150,9 @@ describe("历史地图组件", () => {
     const view = render(<MapLoadPanel state="loading" onRetry={onRetry} />);
 
     expect(screen.getByRole("status")).toHaveTextContent("正在加载地理数据");
-    view.rerender(<MapLoadPanel state={{ error: "无法加载地理数据（HTTP 503）" }} onRetry={onRetry} />);
+    view.rerender(
+      <MapLoadPanel state={{ error: "无法加载地理数据（HTTP 503）" }} onRetry={onRetry} />
+    );
     expect(screen.getByRole("alert")).toHaveTextContent("无法加载地理数据（HTTP 503）");
     await user.click(screen.getByRole("button", { name: "重试" }));
     expect(onRetry).toHaveBeenCalledOnce();

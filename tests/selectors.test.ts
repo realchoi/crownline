@@ -36,30 +36,24 @@ function names(year: number): string[] {
 describe("时间点结果", () => {
   it("全球范围直接查询全部实体，不依赖中国时间轴分期", () => {
     const crossRegionData = makeCrossRegionData();
-    const results = selectBrowseResults(
-      crossRegionData,
-      {
-        query: "",
-        category: "all",
-        year: 1000,
-        regionScope: { mode: "global" }
-      }
-    );
+    const results = selectBrowseResults(crossRegionData, {
+      query: "",
+      category: "all",
+      year: 1000,
+      regionScope: { mode: "global" }
+    });
 
     expect(results.polities.map(({ entity }) => entity.names.primary)).toContain("南亚测试政权");
   });
 
   it("自选地区采用并集并展开父地区", () => {
     const crossRegionData = makeCrossRegionData();
-    const results = selectBrowseResults(
-      crossRegionData,
-      {
-        query: "",
-        category: "all",
-        year: 1000,
-        regionScope: { mode: "custom", regionIds: ["region-east-asia", "region-south-asia"] }
-      }
-    );
+    const results = selectBrowseResults(crossRegionData, {
+      query: "",
+      category: "all",
+      year: 1000,
+      regionScope: { mode: "custom", regionIds: ["region-east-asia", "region-south-asia"] }
+    });
 
     expect(results.polities.map(({ entity }) => entity.names.primary)).toEqual(
       expect.arrayContaining(["北宋", "南亚测试政权"])
@@ -68,15 +62,13 @@ describe("时间点结果", () => {
 
   it("区分未收录、覆盖有限和被筛选为空", () => {
     const crossRegionData = makeCrossRegionData();
-    const select = (year: number, query: string, regionId: string) => selectBrowseResults(
-      crossRegionData,
-      {
+    const select = (year: number, query: string, regionId: string) =>
+      selectBrowseResults(crossRegionData, {
         query,
         category: "all",
         year,
         regionScope: { mode: "custom", regionIds: [regionId] }
-      }
-    );
+      });
 
     expect(select(1000, "", "region-east-africa").polityEmptyReason).toBe("limited-coverage");
     expect(select(760, "", "region-south-asia").polityEmptyReason).toBe("limited-coverage");
@@ -84,15 +76,12 @@ describe("时间点结果", () => {
   });
 
   it("在 1500 年的美洲自选中返回已收录政权", () => {
-    const results = selectBrowseResults(
-      data,
-      {
-        query: "",
-        category: "all",
-        year: 1500,
-        regionScope: { mode: "custom", regionIds: ["region-americas"] }
-      }
-    );
+    const results = selectBrowseResults(data, {
+      query: "",
+      category: "all",
+      year: 1500,
+      regionScope: { mode: "custom", regionIds: ["region-americas"] }
+    });
 
     expect(results.polityEmptyReason).toBeNull();
     expect(results.polities.map(({ entity }) => entity.names.primary)).toEqual(

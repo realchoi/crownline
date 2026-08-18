@@ -22,9 +22,7 @@ const loadGeneratedGeography = async (): Promise<GeographyLoadResult> => ({
 const renderApp = (
   loadDetail: (entityId: string) => Promise<CrownlineDetail | null> = loadGeneratedDetail,
   loadGeography: CrownlineGeographyLoader = loadGeneratedGeography
-) => render(
-  <App data={artifacts.index} loadDetail={loadDetail} loadGeography={loadGeography} />
-);
+) => render(<App data={artifacts.index} loadDetail={loadDetail} loadGeography={loadGeography} />);
 
 async function findMapMarker(name: string): Promise<HTMLButtonElement> {
   const map = await screen.findByRole("region", {
@@ -42,7 +40,10 @@ function createDeferred<T>() {
   });
   return { promise, resolve, reject };
 }
-const showModalDescriptor = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, "showModal");
+const showModalDescriptor = Object.getOwnPropertyDescriptor(
+  HTMLDialogElement.prototype,
+  "showModal"
+);
 
 beforeEach(() => {
   window.history.replaceState(null, "", "/");
@@ -168,11 +169,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("没有时间交集时不把资料缺失解释为没有历史关系", () => {
-    window.history.replaceState(
-      null,
-      "",
-      "/?compare=polity-cn-qin&compare=polity-cn-ming"
-    );
+    window.history.replaceState(null, "", "/?compare=polity-cn-qin&compare=polity-cn-ming");
     renderApp();
 
     const panel = screen.getByRole("region", { name: "政权时间对比" });
@@ -200,8 +197,10 @@ describe("Crownline 时间轴", () => {
     expect(relationships).toHaveTextContent("塞尔柱帝国 · 交战方");
     expect(relationships).toHaveTextContent("高可信度");
     expect(relationships).toHaveTextContent("相关事件");
-    expect(within(relationships).getByRole("link", { name: /查看来源/ }))
-      .toHaveAttribute("target", "_blank");
+    expect(within(relationships).getByRole("link", { name: /查看来源/ })).toHaveAttribute(
+      "target",
+      "_blank"
+    );
   });
 
   it("为北宋与金展示宋金联盟及海上之盟", async () => {
@@ -220,11 +219,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("同一政权对按类型展示多条关系及其口径说明", async () => {
-    window.history.replaceState(
-      null,
-      "",
-      "/?compare=polity-cn-tang&compare=polity-balhae"
-    );
+    window.history.replaceState(null, "", "/?compare=polity-cn-tang&compare=polity-balhae");
     renderApp();
 
     const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
@@ -237,11 +232,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("没有匹配关系时只说明尚未校订", async () => {
-    window.history.replaceState(
-      null,
-      "",
-      "/?compare=polity-cn-qin&compare=polity-cn-ming"
-    );
+    window.history.replaceState(null, "", "/?compare=polity-cn-qin&compare=polity-cn-ming");
     renderApp();
 
     const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
@@ -268,16 +259,11 @@ describe("Crownline 时间轴", () => {
     const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
     expect(relationships).toHaveTextContent("曼齐克特");
     expect(relationships).toHaveTextContent("有 1 条关系数据格式异常，已跳过");
-    expect(screen.getByRole("region", { name: "政权时间对比" }))
-      .toHaveTextContent("罗曼努斯四世");
+    expect(screen.getByRole("region", { name: "政权时间对比" })).toHaveTextContent("罗曼努斯四世");
   });
 
   it("切换对比政权后忽略旧详情请求的迟到错误", async () => {
-    window.history.replaceState(
-      null,
-      "",
-      "/?compare=polity-cn-tang&compare=polity-cn-wu-zhou"
-    );
+    window.history.replaceState(null, "", "/?compare=polity-cn-tang&compare=polity-cn-wu-zhou");
     const tang = createDeferred<CrownlineDetail | null>();
     const wuZhou = createDeferred<CrownlineDetail | null>();
     const user = userEvent.setup();
@@ -381,7 +367,7 @@ describe("Crownline 时间轴", () => {
     });
     Object.defineProperty(HTMLDialogElement.prototype, "showModal", {
       configurable: true,
-      value: showModal,
+      value: showModal
     });
 
     renderApp();
@@ -421,10 +407,7 @@ describe("Crownline 时间轴", () => {
 
     await user.click(screen.getByRole("button", { name: "时间轴" }));
 
-    expect(screen.getByRole("button", { name: "时间点" })).toHaveAttribute(
-      "aria-pressed",
-      "true"
-    );
+    expect(screen.getByRole("button", { name: "时间点" })).toHaveAttribute("aria-pressed", "true");
     expect(screen.getByRole("region", { name: "1922 年时间点结果" })).toBeInTheDocument();
     expect(new URLSearchParams(window.location.search).has("view")).toBe(false);
   });
@@ -493,9 +476,13 @@ describe("Crownline 时间轴", () => {
     first.reject(new Error("已经失效的旧地理请求"));
     await waitFor(() => {
       expect(screen.queryByText("已经失效的旧地理请求")).not.toBeInTheDocument();
-      expect(within(screen.getByRole("region", {
-        name: "当前年份历史政权示意地图"
-      })).getByRole("button", { name: "北魏，洛阳，都城" })).toBeInTheDocument();
+      expect(
+        within(
+          screen.getByRole("region", {
+            name: "当前年份历史政权示意地图"
+          })
+        ).getByRole("button", { name: "北魏，洛阳，都城" })
+      ).toBeInTheDocument();
     });
     expect(attempts).toBe(2);
   });
@@ -504,8 +491,7 @@ describe("Crownline 时间轴", () => {
     window.history.replaceState(null, "", "/?view=map&year=-770&type=context");
     renderApp();
 
-    expect(await screen.findByText("历史分期不进入地图；请选择真实政权类别。"))
-      .toBeInTheDocument();
+    expect(await screen.findByText("历史分期不进入地图；请选择真实政权类别。")).toBeInTheDocument();
   });
 
   it("地图标记打开既有详情，结果列表可选择两个政权对比", async () => {
@@ -558,7 +544,10 @@ describe("Crownline 时间轴", () => {
     );
     renderApp();
 
-    expect(screen.getByRole("button", { name: "自选地区" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "自选地区" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
     expect(screen.getByRole("checkbox", { name: "东非" })).toBeChecked();
     expect(screen.getByRole("region", { name: "当时存在的政权" })).toHaveTextContent(
       "当前数据覆盖有限，不表示当时不存在政权"
@@ -611,8 +600,9 @@ describe("Crownline 时间轴", () => {
     );
     renderApp();
 
-    expect(screen.getAllByRole("img", { name: "统一时间刻度：前322—1922，中点801" }))
-      .toHaveLength(1);
+    expect(screen.getAllByRole("img", { name: "统一时间刻度：前322—1922，中点801" })).toHaveLength(
+      1
+    );
 
     const cholaBar = screen.getByRole("button", { name: /^朱罗帝国，/ });
     const holyRomanEmpireBar = screen.getByRole("button", { name: /^神圣罗马帝国，/ });
@@ -644,11 +634,7 @@ describe("Crownline 时间轴", () => {
   });
 
   it("美洲全览在补样后展示两个代表政权而不再显示未收录提示", () => {
-    window.history.replaceState(
-      null,
-      "",
-      "/?scope=custom&region=region-americas"
-    );
+    window.history.replaceState(null, "", "/?scope=custom&region=region-americas");
     renderApp();
 
     const timeline = screen.getByRole("region", { name: "多地区完整时间轴" });
@@ -747,12 +733,15 @@ describe("Crownline 时间轴", () => {
     await user.click(screen.getByRole("button", { name: /^明，/ }));
 
     const dialog = screen.getByRole("dialog", { name: "明" });
-    expect(within(dialog).getByRole("heading", { name: "1400年 · 在位统治者" }))
-      .toBeInTheDocument();
+    expect(
+      within(dialog).getByRole("heading", { name: "1400年 · 在位统治者" })
+    ).toBeInTheDocument();
     expect(within(dialog).getByRole("heading", { name: "建文帝" })).toBeInTheDocument();
     expect(within(dialog).getByText("1398—1402")).toBeInTheDocument();
-    expect(within(dialog).getByRole("link", { name: /中国历代帝王年表/ }))
-      .toHaveAttribute("target", "_blank");
+    expect(within(dialog).getByRole("link", { name: /中国历代帝王年表/ })).toHaveAttribute(
+      "target",
+      "_blank"
+    );
   });
 
   it("同年展示皇帝与两位摄政者且不误标争议", async () => {
@@ -789,8 +778,9 @@ describe("Crownline 时间轴", () => {
     const firstRender = renderApp();
 
     await user.click(screen.getByRole("button", { name: /^西周，/ }));
-    expect(within(screen.getByRole("dialog", { name: "西周" })).getByText("已有资料记为空位期"))
-      .toBeInTheDocument();
+    expect(
+      within(screen.getByRole("dialog", { name: "西周" })).getByText("已有资料记为空位期")
+    ).toBeInTheDocument();
 
     firstRender.unmount();
     window.history.replaceState(null, "", "/?mode=point&year=312");
@@ -813,8 +803,9 @@ describe("Crownline 时间轴", () => {
     await user.click(within(mingDialog).getByRole("button", { name: "关闭详情" }));
 
     await user.click(screen.getByRole("button", { name: /春秋.*历史分期/ }));
-    expect(within(screen.getByRole("dialog", { name: "春秋" })).queryByText(/在位统治者/))
-      .not.toBeInTheDocument();
+    expect(
+      within(screen.getByRole("dialog", { name: "春秋" })).queryByText(/在位统治者/)
+    ).not.toBeInTheDocument();
   });
 
   it("打开详情时立即显示基础信息并在数据到达后展示统治者", async () => {
@@ -870,12 +861,16 @@ describe("Crownline 时间轴", () => {
     renderApp(() => deferred.promise);
 
     await user.click(screen.getByRole("button", { name: /^明，/ }));
-    await user.click(within(screen.getByRole("dialog", { name: "明" })).getByRole("button", {
-      name: "关闭详情"
-    }));
+    await user.click(
+      within(screen.getByRole("dialog", { name: "明" })).getByRole("button", {
+        name: "关闭详情"
+      })
+    );
     deferred.resolve(artifacts.details.get("polity-cn-ming") ?? null);
 
-    await waitFor(() => expect(screen.queryByRole("dialog", { name: "明" })).not.toBeInTheDocument());
+    await waitFor(() =>
+      expect(screen.queryByRole("dialog", { name: "明" })).not.toBeInTheDocument()
+    );
   });
 
   it("从 URL 恢复详情深链接", async () => {
@@ -894,9 +889,11 @@ describe("Crownline 时间轴", () => {
     await user.click(screen.getByRole("button", { name: /明，1368—1644/ }));
     expect(new URLSearchParams(window.location.search).get("detail")).toBe("polity-cn-ming");
 
-    await user.click(within(screen.getByRole("dialog", { name: "明" })).getByRole("button", {
-      name: "关闭详情"
-    }));
+    await user.click(
+      within(screen.getByRole("dialog", { name: "明" })).getByRole("button", {
+        name: "关闭详情"
+      })
+    );
     expect(new URLSearchParams(window.location.search).has("detail")).toBe(false);
   });
 

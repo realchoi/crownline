@@ -3,12 +3,7 @@ import type { ErrorObject } from "ajv";
 
 import schema from "../data/crownline-data.schema.json";
 import { toOrdinal } from "./chronology";
-import type {
-  ConfidenceLevel,
-  CrownlineData,
-  HistoricalInterval,
-  SourceRef
-} from "./types";
+import type { ConfidenceLevel, CrownlineData, HistoricalInterval, SourceRef } from "./types";
 
 /** 单条可定位、可机器识别的数据契约问题。 */
 export interface ValidationIssue {
@@ -82,8 +77,10 @@ function periodsOverlap(
 ): boolean {
   return leftPeriods.some((left) => {
     return rightPeriods.some((right) => {
-      return toOrdinal(left.start.year) <= toOrdinal(right.end.year) &&
-        toOrdinal(left.end.year) >= toOrdinal(right.start.year);
+      return (
+        toOrdinal(left.start.year) <= toOrdinal(right.end.year) &&
+        toOrdinal(left.end.year) >= toOrdinal(right.start.year)
+      );
     });
   });
 }
@@ -94,8 +91,10 @@ function periodIsContained(
   containerPeriods: HistoricalInterval[]
 ): boolean {
   return containerPeriods.some((container) => {
-    return toOrdinal(period.start.year) >= toOrdinal(container.start.year) &&
-      toOrdinal(period.end.year) <= toOrdinal(container.end.year);
+    return (
+      toOrdinal(period.start.year) >= toOrdinal(container.start.year) &&
+      toOrdinal(period.end.year) <= toOrdinal(container.end.year)
+    );
   });
 }
 
@@ -226,7 +225,12 @@ export function validateCrownlineData(input: unknown): ValidationResult {
     entity.alternativeChronologies?.forEach((alternative, alternativeIndex) => {
       const alternativePath = `${path}/alternativeChronologies/${alternativeIndex}`;
       validatePeriods(alternative.existencePeriods, `${alternativePath}/existencePeriods`, issues);
-      validateSourceRefs(alternative.sourceRefs, `${alternativePath}/sourceRefs`, sourceIds, issues);
+      validateSourceRefs(
+        alternative.sourceRefs,
+        `${alternativePath}/sourceRefs`,
+        sourceIds,
+        issues
+      );
     });
 
     const regionReferenceGroups = [
@@ -253,7 +257,12 @@ export function validateCrownlineData(input: unknown): ValidationResult {
       });
     });
     validateSourceRefs(entity.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
-    validateConfidenceNote(entity.confidence, entity.confidenceNote, `${path}/confidenceNote`, issues);
+    validateConfidenceNote(
+      entity.confidence,
+      entity.confidenceNote,
+      `${path}/confidenceNote`,
+      issues
+    );
   });
 
   data.regions.forEach((region, regionIndex) => {
@@ -336,7 +345,12 @@ export function validateCrownlineData(input: unknown): ValidationResult {
     }
     validatePeriods(reign.periods, `${path}/periods`, issues);
     validateSourceRefs(reign.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
-    validateConfidenceNote(reign.confidence, reign.confidenceNote, `${path}/confidenceNote`, issues);
+    validateConfidenceNote(
+      reign.confidence,
+      reign.confidenceNote,
+      `${path}/confidenceNote`,
+      issues
+    );
   });
 
   data.reignVacancies.forEach((vacancy, vacancyIndex) => {
@@ -369,7 +383,8 @@ export function validateCrownlineData(input: unknown): ValidationResult {
           .filter(({ polityId }) => polityId === vacancy.polityId)
           .flatMap((reign) => reign.periods)
           .forEach((reignPeriod) => {
-            const overlaps = toOrdinal(period.start.year) <= toOrdinal(reignPeriod.end.year) &&
+            const overlaps =
+              toOrdinal(period.start.year) <= toOrdinal(reignPeriod.end.year) &&
               toOrdinal(period.end.year) >= toOrdinal(reignPeriod.start.year);
             if (overlaps) {
               issues.push({
@@ -380,11 +395,13 @@ export function validateCrownlineData(input: unknown): ValidationResult {
             }
           });
 
-        data.reignVacancies.slice(0, vacancyIndex)
+        data.reignVacancies
+          .slice(0, vacancyIndex)
           .filter(({ polityId }) => polityId === vacancy.polityId)
           .flatMap((record) => record.periods)
           .forEach((previousPeriod) => {
-            const overlaps = toOrdinal(period.start.year) <= toOrdinal(previousPeriod.end.year) &&
+            const overlaps =
+              toOrdinal(period.start.year) <= toOrdinal(previousPeriod.end.year) &&
               toOrdinal(period.end.year) >= toOrdinal(previousPeriod.start.year);
             if (overlaps) {
               issues.push({
@@ -481,7 +498,12 @@ export function validateCrownlineData(input: unknown): ValidationResult {
     });
     validatePeriods(event.periods, `${path}/periods`, issues);
     validateSourceRefs(event.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
-    validateConfidenceNote(event.confidence, event.confidenceNote, `${path}/confidenceNote`, issues);
+    validateConfidenceNote(
+      event.confidence,
+      event.confidenceNote,
+      `${path}/confidenceNote`,
+      issues
+    );
   });
 
   const geographicKeys = new Set<string>();

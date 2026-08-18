@@ -57,12 +57,13 @@ export function TimelineStage({
       {group.matches.map(({ entity }) => {
         const displayRange = formatPeriods(entity.existencePeriods, entity.displayRangeOverride);
         const comparisonSelected = comparisonEntityIds.includes(entity.id);
-        const regionNames = group.kind === "cross-region"
-          ? entity.historicalRegionIds.flatMap((regionId) => {
-              const region = regions.find(({ id }) => id === regionId);
-              return region ? [region.names.primary] : [];
-            })
-          : [];
+        const regionNames =
+          group.kind === "cross-region"
+            ? entity.historicalRegionIds.flatMap((regionId) => {
+                const region = regions.find(({ id }) => id === regionId);
+                return region ? [region.names.primary] : [];
+              })
+            : [];
         return (
           <div
             className={`timeline-row${comparisonSelected ? " is-comparison-selected" : ""}`}

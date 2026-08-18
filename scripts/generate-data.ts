@@ -39,7 +39,9 @@ async function replaceDirectory(staging: string, target: string): Promise<void> 
 }
 
 /** 聚合、全量校验并生成工具数据和浏览器运行时数据。 */
-export async function generateData(options: GenerateDataOptions = {}): Promise<GeneratedDataSummary> {
+export async function generateData(
+  options: GenerateDataOptions = {}
+): Promise<GeneratedDataSummary> {
   const sourceRoot = resolve(options.sourceRoot ?? join(process.cwd(), "src", "data", "source"));
   const toolOutputRoot = resolve(
     options.toolOutputRoot ?? join(process.cwd(), ".generated", "data")
@@ -63,9 +65,11 @@ export async function generateData(options: GenerateDataOptions = {}): Promise<G
     await writeJson(join(toolStaging, "crownline-data.json"), data);
     await writeJson(join(publicStaging, "index.json"), artifacts.index);
     await writeJson(join(publicStaging, "geography.json"), artifacts.geography);
-    await Promise.all(Array.from(artifacts.details, ([entityId, detail]) => {
-      return writeJson(join(publicStaging, "details", `${entityId}.json`), detail);
-    }));
+    await Promise.all(
+      Array.from(artifacts.details, ([entityId, detail]) => {
+        return writeJson(join(publicStaging, "details", `${entityId}.json`), detail);
+      })
+    );
     await replaceDirectory(toolStaging, toolOutputRoot);
     await replaceDirectory(publicStaging, publicOutputRoot);
   } catch (error) {
@@ -93,9 +97,9 @@ if (entryPath && import.meta.url === pathToFileURL(resolve(entryPath)).href) {
     .then((summary) => {
       console.log(
         `数据生成完成：${summary.sections} 个阶段，${summary.entities} 个实体，` +
-        `${summary.persons} 个人物，${summary.reigns} 条任期，` +
-        `${summary.geographicSnapshots} 条地理快照，${summary.details} 个详情包，` +
-        `${summary.sources} 个来源`
+          `${summary.persons} 个人物，${summary.reigns} 条任期，` +
+          `${summary.geographicSnapshots} 条地理快照，${summary.details} 个详情包，` +
+          `${summary.sources} 个来源`
       );
     })
     .catch((error) => {

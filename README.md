@@ -33,6 +33,8 @@ Crownline（王冠纪）是一个面向全球历史的交互式王朝图谱项�
 - TypeScript 7：应用代码、数据类型与命令行类型检查
 - JSON Schema 2020-12 + Ajv：运行时结构校验
 - Vitest + Testing Library：数据规则与界面回归测试
+- Playwright + axe-core：浏览器冒烟与无障碍扫描
+- ESLint + Prettier：静态检查与格式统一
 
 项目使用 TypeScript 7 的 `tsc` 命令行能力，不依赖 TypeScript 旧版的可编程编译器 API。
 
@@ -77,9 +79,14 @@ npm run dev
 常用质量命令：
 
 ```bash
+npm run check          # 统一质量门禁：lint、格式、类型、数据、字体、覆盖率、构建与浏览器冒烟
 npm run validate:data
 npm test
+npm run test:coverage
+npm run test:e2e
 npm run typecheck
+npm run lint
+npm run format:check
 npm run build
 npm run preview
 ```

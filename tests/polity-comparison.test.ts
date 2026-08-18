@@ -5,11 +5,7 @@ import {
   intersectHistoricalPeriods,
   selectRulersDuringPeriods
 } from "../src/domain/polityComparison";
-import type {
-  CrownlineDetail,
-  HistoricalEntity,
-  HistoricalInterval
-} from "../src/domain/types";
+import type { CrownlineDetail, HistoricalEntity, HistoricalInterval } from "../src/domain/types";
 
 const interval = (
   start: number,
@@ -55,20 +51,24 @@ describe("双政权时间对比", () => {
     );
 
     expect(result).toEqual([interval(-5, -1), interval(5, 5)]);
-    expect(buildPolityComparison(
-      polity("left", [interval(-10, -1), interval(5, 10)]),
-      polity("right", [interval(-5, 5)])
-    )).toMatchObject({
+    expect(
+      buildPolityComparison(
+        polity("left", [interval(-10, -1), interval(5, 10)]),
+        polity("right", [interval(-5, 5)])
+      )
+    ).toMatchObject({
       overlapPeriods: [interval(-5, -1), interval(5, 5)],
       overlapYears: 6
     });
   });
 
   it("边界年份相同时采用更保守的年代精度", () => {
-    expect(intersectHistoricalPeriods(
-      [interval(100, 200, "circa")],
-      [interval(100, 150, "exact", "decade")]
-    )).toEqual([interval(100, 150, "circa", "decade")]);
+    expect(
+      intersectHistoricalPeriods(
+        [interval(100, 200, "circa")],
+        [interval(100, 150, "exact", "decade")]
+      )
+    ).toEqual([interval(100, 150, "circa", "decade")]);
   });
 
   it("筛选并裁剪共同存续期内的统治者任期", () => {
@@ -142,7 +142,8 @@ describe("双政权时间对比", () => {
       sources: []
     } satisfies CrownlineDetail;
 
-    expect(() => selectRulersDuringPeriods(left, detail, [interval(5, 10)]))
-      .toThrow("详情与政权 left 不匹配");
+    expect(() => selectRulersDuringPeriods(left, detail, [interval(5, 10)])).toThrow(
+      "详情与政权 left 不匹配"
+    );
   });
 });

@@ -1,11 +1,5 @@
 import { isYearInPeriods, toOrdinal } from "./chronology";
-import type {
-  CrownlineDetail,
-  HistoricalEntity,
-  Person,
-  Reign,
-  ReignVacancy
-} from "./types";
+import type { CrownlineDetail, HistoricalEntity, Person, Reign, ReignVacancy } from "./types";
 
 export type RulerSnapshotStatus = "known" | "disputed" | "vacant" | "unrecorded";
 
@@ -48,18 +42,22 @@ export function selectRulerSnapshot(
       return { person, reign };
     })
     .sort((left, right) => {
-      return ROLE_ORDER[left.reign.role] - ROLE_ORDER[right.reign.role] ||
+      return (
+        ROLE_ORDER[left.reign.role] - ROLE_ORDER[right.reign.role] ||
         toOrdinal(left.reign.periods[0]!.start.year) -
           toOrdinal(right.reign.periods[0]!.start.year) ||
-        left.person.names.primary.localeCompare(right.person.names.primary, "zh-CN");
+        left.person.names.primary.localeCompare(right.person.names.primary, "zh-CN")
+      );
     });
 
   if (entries.length > 0) {
     // 争位或显式争议优先于“已有资料”状态；合法共治和摄政本身不等于争议。
     const disputed = entries.some(({ reign }) => {
-      return reign.role === "contender" ||
+      return (
+        reign.role === "contender" ||
         reign.chronologyStatus === "disputed" ||
-        reign.confidence === "disputed";
+        reign.confidence === "disputed"
+      );
     });
     return { polityId: polity.id, year, status: disputed ? "disputed" : "known", entries };
   }

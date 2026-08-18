@@ -1,8 +1,5 @@
 import type { FetchData } from "./loadCrownlineIndex";
-import {
-  asCrownlineGeography,
-  type GeographyLoadResult
-} from "./runtimeValidation";
+import { asCrownlineGeography, type GeographyLoadResult } from "./runtimeValidation";
 
 export type { GeographyLoadResult } from "./runtimeValidation";
 export type CrownlineGeographyLoader = () => Promise<GeographyLoadResult>;

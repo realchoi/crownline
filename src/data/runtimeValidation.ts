@@ -29,50 +29,89 @@ function hasNames(value: unknown): boolean {
 }
 
 function hasPeriods(value: unknown): boolean {
-  return Array.isArray(value) && value.every((period) => {
-    return isRecord(period) && isRecord(period.start) && isRecord(period.end) &&
-      typeof period.start.year === "number" && typeof period.end.year === "number";
-  });
+  return (
+    Array.isArray(value) &&
+    value.every((period) => {
+      return (
+        isRecord(period) &&
+        isRecord(period.start) &&
+        isRecord(period.end) &&
+        typeof period.start.year === "number" &&
+        typeof period.end.year === "number"
+      );
+    })
+  );
 }
 
 function hasValidGeographicPeriods(value: unknown): boolean {
-  return Array.isArray(value) && value.length > 0 && value.every((period) => {
-    if (!isRecord(period) || !isRecord(period.start) || !isRecord(period.end)) return false;
-    const start = period.start;
-    const end = period.end;
-    const startYear = start.year;
-    const endYear = end.year;
-    return Number.isInteger(startYear) && startYear !== 0 &&
-      Number.isInteger(endYear) && endYear !== 0 &&
-      (startYear as number) <= (endYear as number) &&
-      DATE_PRECISIONS.some((precision) => precision === start.precision) &&
-      DATE_PRECISIONS.some((precision) => precision === end.precision);
-  });
+  return (
+    Array.isArray(value) &&
+    value.length > 0 &&
+    value.every((period) => {
+      if (!isRecord(period) || !isRecord(period.start) || !isRecord(period.end)) return false;
+      const start = period.start;
+      const end = period.end;
+      const startYear = start.year;
+      const endYear = end.year;
+      return (
+        Number.isInteger(startYear) &&
+        startYear !== 0 &&
+        Number.isInteger(endYear) &&
+        endYear !== 0 &&
+        (startYear as number) <= (endYear as number) &&
+        DATE_PRECISIONS.some((precision) => precision === start.precision) &&
+        DATE_PRECISIONS.some((precision) => precision === end.precision)
+      );
+    })
+  );
 }
 
 function hasValidSourceRefs(value: unknown, sourceIds: Set<string>): boolean {
-  return Array.isArray(value) && value.length > 0 && value.every((ref) => {
-    return isRecord(ref) && typeof ref.sourceId === "string" && sourceIds.has(ref.sourceId) &&
-      (ref.locator === undefined || typeof ref.locator === "string") &&
-      (ref.note === undefined || typeof ref.note === "string");
-  });
+  return (
+    Array.isArray(value) &&
+    value.length > 0 &&
+    value.every((ref) => {
+      return (
+        isRecord(ref) &&
+        typeof ref.sourceId === "string" &&
+        sourceIds.has(ref.sourceId) &&
+        (ref.locator === undefined || typeof ref.locator === "string") &&
+        (ref.note === undefined || typeof ref.note === "string")
+      );
+    })
+  );
 }
 
-function isValidGeographicSnapshot(value: unknown, sourceIds: Set<string>): value is GeographicSnapshot {
+function isValidGeographicSnapshot(
+  value: unknown,
+  sourceIds: Set<string>
+): value is GeographicSnapshot {
   if (!isRecord(value) || !isRecord(value.coordinates)) return false;
   const { latitude, longitude } = value.coordinates;
-  return typeof value.id === "string" && value.id.length > 0 &&
-    typeof value.polityId === "string" && value.polityId.length > 0 &&
+  return (
+    typeof value.id === "string" &&
+    value.id.length > 0 &&
+    typeof value.polityId === "string" &&
+    value.polityId.length > 0 &&
     hasValidGeographicPeriods(value.periods) &&
-    typeof value.placeName === "string" && value.placeName.trim().length > 0 &&
+    typeof value.placeName === "string" &&
+    value.placeName.trim().length > 0 &&
     GEOGRAPHIC_ROLES.some((role) => role === value.role) &&
-    typeof latitude === "number" && Number.isFinite(latitude) && latitude >= -90 && latitude <= 90 &&
-    typeof longitude === "number" && Number.isFinite(longitude) && longitude >= -180 && longitude <= 180 &&
+    typeof latitude === "number" &&
+    Number.isFinite(latitude) &&
+    latitude >= -90 &&
+    latitude <= 90 &&
+    typeof longitude === "number" &&
+    Number.isFinite(longitude) &&
+    longitude >= -180 &&
+    longitude <= 180 &&
     POSITION_PRECISIONS.some((precision) => precision === value.positionPrecision) &&
-    typeof value.positionNote === "string" && value.positionNote.trim().length > 0 &&
+    typeof value.positionNote === "string" &&
+    value.positionNote.trim().length > 0 &&
     hasValidSourceRefs(value.sourceRefs, sourceIds) &&
     CONFIDENCE_LEVELS.some((confidence) => confidence === value.confidence) &&
-    (value.confidenceNote === undefined || typeof value.confidenceNote === "string");
+    (value.confidenceNote === undefined || typeof value.confidenceNote === "string")
+  );
 }
 
 function requireField(
@@ -123,7 +162,11 @@ function collectIds(records: Record<string, unknown>[], path: string, issues: Va
   const ids = new Set<string>();
   records.forEach((record, index) => {
     if (typeof record.id !== "string") {
-      issues.push({ code: "SCHEMA_ERROR", path: `${path}/${index}/id`, message: "id 必须是字符串" });
+      issues.push({
+        code: "SCHEMA_ERROR",
+        path: `${path}/${index}/id`,
+        message: "id 必须是字符串"
+      });
     } else {
       ids.add(record.id);
     }
@@ -156,7 +199,10 @@ function validateRefs(
 export function validateCrownlineIndex(input: unknown): ValidationResult {
   const issues: ValidationIssue[] = [];
   if (!isRecord(input)) {
-    return { valid: false, issues: [{ code: "SCHEMA_ERROR", path: "/", message: "索引必须是对象" }] };
+    return {
+      valid: false,
+      issues: [{ code: "SCHEMA_ERROR", path: "/", message: "索引必须是对象" }]
+    };
   }
   if (input.schemaVersion !== 4) {
     issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 4" });
@@ -176,10 +222,19 @@ export function validateCrownlineIndex(input: unknown): ValidationResult {
   requireField(entities, "/entities", "description", (value) => typeof value === "string", issues);
   requireField(regions, "/regions", "names", hasNames, issues);
   requireField(regions, "/regions", "coverage", isRecord, issues);
-  requireField(sections, "/timelineSections", "title", (value) => typeof value === "string", issues);
+  requireField(
+    sections,
+    "/timelineSections",
+    "title",
+    (value) => typeof value === "string",
+    issues
+  );
   requireField(sections, "/timelineSections", "range", isRecord, issues);
 
-  if (!Array.isArray(input.detailEntityIds) || input.detailEntityIds.some((id) => typeof id !== "string")) {
+  if (
+    !Array.isArray(input.detailEntityIds) ||
+    input.detailEntityIds.some((id) => typeof id !== "string")
+  ) {
     issues.push({
       code: "SCHEMA_ERROR",
       path: "/detailEntityIds",
@@ -219,7 +274,10 @@ export function validateCrownlineDetail(
 ): ValidationResult {
   const issues: ValidationIssue[] = [];
   if (!isRecord(input)) {
-    return { valid: false, issues: [{ code: "SCHEMA_ERROR", path: "/", message: "详情必须是对象" }] };
+    return {
+      valid: false,
+      issues: [{ code: "SCHEMA_ERROR", path: "/", message: "详情必须是对象" }]
+    };
   }
   if (input.schemaVersion !== 4) {
     issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 4" });
@@ -294,10 +352,12 @@ export function asCrownlineDetail(input: unknown, entityId: string): CrownlineDe
 export function asCrownlineGeography(input: unknown): GeographyLoadResult {
   const issues: ValidationIssue[] = [];
   if (!isRecord(input)) {
-    throw new Error(formatRuntimeIssues("地理数据校验失败", {
-      valid: false,
-      issues: [{ code: "SCHEMA_ERROR", path: "/", message: "地理数据必须是对象" }]
-    }));
+    throw new Error(
+      formatRuntimeIssues("地理数据校验失败", {
+        valid: false,
+        issues: [{ code: "SCHEMA_ERROR", path: "/", message: "地理数据必须是对象" }]
+      })
+    );
   }
   if (input.schemaVersion !== 4) {
     issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 4" });
@@ -312,9 +372,13 @@ export function asCrownlineGeography(input: unknown): GeographyLoadResult {
   const sources = requireRecordArray(input, "sources", issues);
   const sourceIds = new Set<string>();
   sources.forEach((source, index) => {
-    const valid = typeof source.id === "string" && source.id.length > 0 &&
-      typeof source.title === "string" && source.title.trim().length > 0 &&
-      typeof source.citation === "string" && source.citation.trim().length > 0 &&
+    const valid =
+      typeof source.id === "string" &&
+      source.id.length > 0 &&
+      typeof source.title === "string" &&
+      source.title.trim().length > 0 &&
+      typeof source.citation === "string" &&
+      source.citation.trim().length > 0 &&
       typeof source.sourceType === "string";
     if (!valid || (typeof source.id === "string" && sourceIds.has(source.id))) {
       issues.push({

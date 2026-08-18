@@ -1,11 +1,6 @@
 import { formatPeriods, isYearInPeriods } from "./chronology";
 import { entityMatchesRegionScope, type RegionScope } from "./regionScope";
-import type {
-  BrowseData,
-  DisplayCategory,
-  HistoricalEntity,
-  TimelineSection
-} from "./types";
+import type { BrowseData, DisplayCategory, HistoricalEntity, TimelineSection } from "./types";
 
 /** 页面类别筛选值；`all` 表示不限制展示类别。 */
 export type CategoryFilter = DisplayCategory | "all";
@@ -54,9 +49,7 @@ function searchableText(
 
 /** 统一搜索大小写、空白和常见中英文标点。 */
 function normalizeText(value: string): string {
-  return value
-    .toLowerCase()
-    .replace(/[\s·•（）()—–－_,，。；;：:、]/g, "");
+  return value.toLowerCase().replace(/[\s·•（）()—–－_,，。；;：:、]/g, "");
 }
 
 /**
@@ -91,10 +84,7 @@ export function filterEntities(
  * 组合搜索、类别和可选年份筛选，并将真实政权与历史分期明确分区。
  * 未提供年份时保持全览模式的原有结果。
  */
-export function selectBrowseResults(
-  data: BrowseData,
-  filters: EntityFilters
-): BrowseResults {
+export function selectBrowseResults(data: BrowseData, filters: EntityFilters): BrowseResults {
   const normalizedQuery = normalizeText(filters.query);
   const sectionByEntityId = new Map<string, TimelineSection>();
   data.timelineSections.forEach((section) => {
@@ -106,24 +96,30 @@ export function selectBrowseResults(
     return entityMatchesRegionScope(entity, data.regions, scope) ? [{ entity, section }] : [];
   });
   const selectedYear = filters.year;
-  const timeMatches = selectedYear === undefined
-    ? regionMatches
-    : regionMatches.filter(({ entity }) => isYearInPeriods(selectedYear, entity.existencePeriods));
+  const timeMatches =
+    selectedYear === undefined
+      ? regionMatches
+      : regionMatches.filter(({ entity }) =>
+          isYearInPeriods(selectedYear, entity.existencePeriods)
+        );
   const all = timeMatches.filter(({ entity, section }) => {
-    const categoryMatches = filters.category === "all" || entity.displayCategory === filters.category;
-    const queryMatches = !normalizedQuery || searchableText(data, entity, section).includes(normalizedQuery);
+    const categoryMatches =
+      filters.category === "all" || entity.displayCategory === filters.category;
+    const queryMatches =
+      !normalizedQuery || searchableText(data, entity, section).includes(normalizedQuery);
     return categoryMatches && queryMatches;
   });
   const polities = all.filter(({ entity }) => entity.entityKind === "polity");
   const regionPolities = regionMatches.filter(({ entity }) => entity.entityKind === "polity");
   const timePolities = timeMatches.filter(({ entity }) => entity.entityKind === "polity");
-  const polityEmptyReason = polities.length > 0
-    ? null
-    : regionPolities.length === 0
-      ? "unindexed"
-      : selectedYear !== undefined && timePolities.length === 0
-        ? "limited-coverage"
-        : "filtered-out";
+  const polityEmptyReason =
+    polities.length > 0
+      ? null
+      : regionPolities.length === 0
+        ? "unindexed"
+        : selectedYear !== undefined && timePolities.length === 0
+          ? "limited-coverage"
+          : "filtered-out";
 
   return {
     all,

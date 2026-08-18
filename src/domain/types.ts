@@ -37,13 +37,15 @@ export const EVENT_TYPES = [
   "other"
 ] as const;
 /** 来源的资料层级或载体类别。 */
-export const SOURCE_TYPES = ["primary", "secondary", "tertiary", "dataset", "institutional"] as const;
-/** 历史点位在对应时期承担的空间角色。 */
-export const GEOGRAPHIC_ROLES = [
-  "capital",
-  "political-center",
-  "representative-center"
+export const SOURCE_TYPES = [
+  "primary",
+  "secondary",
+  "tertiary",
+  "dataset",
+  "institutional"
 ] as const;
+/** 历史点位在对应时期承担的空间角色。 */
+export const GEOGRAPHIC_ROLES = ["capital", "political-center", "representative-center"] as const;
 /** 历史地点映射到现代坐标时的定位精度。 */
 export const POSITION_PRECISIONS = ["exact", "approximate", "regional"] as const;
 

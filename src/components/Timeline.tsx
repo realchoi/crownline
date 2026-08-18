@@ -29,28 +29,33 @@ export function Timeline({
   onSelect
 }: TimelineProps) {
   const groups = buildOverviewTimelineGroups(data, matches, regionScope);
-  const sharedRange = regionScope.mode !== "china" && groups.length > 0
-    ? {
-        startYear: fromOrdinal(Math.min(...groups.map(({ range }) => toOrdinal(range.startYear)))),
-        endYear: fromOrdinal(Math.max(...groups.map(({ range }) => toOrdinal(range.endYear))))
-      }
-    : null;
+  const sharedRange =
+    regionScope.mode !== "china" && groups.length > 0
+      ? {
+          startYear: fromOrdinal(
+            Math.min(...groups.map(({ range }) => toOrdinal(range.startYear)))
+          ),
+          endYear: fromOrdinal(Math.max(...groups.map(({ range }) => toOrdinal(range.endYear))))
+        }
+      : null;
   const sharedAxisLabels = sharedRange
     ? [
         sharedRange.startYear,
-        fromOrdinal(Math.round(
-          (toOrdinal(sharedRange.startYear) + toOrdinal(sharedRange.endYear)) / 2
-        )),
+        fromOrdinal(
+          Math.round((toOrdinal(sharedRange.startYear) + toOrdinal(sharedRange.endYear)) / 2)
+        ),
         sharedRange.endYear
       ].map((year) => formatHistoricalYear({ year, precision: "exact" }))
     : null;
   const timelineLabel = regionScope.mode === "china" ? "中国历代王朝时间轴" : "多地区完整时间轴";
-  const selectedRegionNames = regionScope.mode === "custom"
-    ? regions.filter(({ id }) => regionScope.regionIds.includes(id)).map(({ names }) => names.primary)
-    : [];
-  const scopeName = regionScope.mode === "global"
-    ? "全球已收录范围"
-    : selectedRegionNames.join("、");
+  const selectedRegionNames =
+    regionScope.mode === "custom"
+      ? regions
+          .filter(({ id }) => regionScope.regionIds.includes(id))
+          .map(({ names }) => names.primary)
+      : [];
+  const scopeName =
+    regionScope.mode === "global" ? "全球已收录范围" : selectedRegionNames.join("、");
 
   if (matches.length === 0) {
     return (
@@ -59,7 +64,11 @@ export function Timeline({
           {emptyReason === "unindexed" ? (
             <>{scopeName}尚未收录代表性政权；这不表示该地区在历史上没有政权。</>
           ) : (
-            <>没有找到匹配条目。<br />请尝试更短的关键词或切换类别。</>
+            <>
+              没有找到匹配条目。
+              <br />
+              请尝试更短的关键词或切换类别。
+            </>
           )}
         </div>
       </section>
@@ -76,7 +85,9 @@ export function Timeline({
         >
           <span className="shared-axis-caption">统一时间比例</span>
           <div className="axis-labels" aria-hidden="true">
-            {sharedAxisLabels.map((label) => <span key={label}>{label}</span>)}
+            {sharedAxisLabels.map((label) => (
+              <span key={label}>{label}</span>
+            ))}
           </div>
         </div>
       )}

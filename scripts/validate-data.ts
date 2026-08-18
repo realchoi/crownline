@@ -13,8 +13,8 @@ try {
   }
   console.log(
     `数据校验通过：${data.timelineSections.length} 个阶段，${data.entities.length} 个实体，` +
-    `${data.persons.length} 个人物，${data.reigns.length} 条任期，` +
-    `${data.geographicSnapshots.length} 条地理快照，${data.sources.length} 个来源`
+      `${data.persons.length} 个人物，${data.reigns.length} 条任期，` +
+      `${data.geographicSnapshots.length} 条地理快照，${data.sources.length} 个来源`
   );
 } catch (error) {
   console.error(error instanceof Error ? error.message : String(error));

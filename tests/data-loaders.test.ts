@@ -175,10 +175,14 @@ describe("运行时数据加载", () => {
 
   it("索引未声明的实体不发起请求", async () => {
     let requested = false;
-    const loadDetail = createCrownlineDetailLoader(index, async () => {
-      requested = true;
-      return jsonResponse({});
-    }, "./");
+    const loadDetail = createCrownlineDetailLoader(
+      index,
+      async () => {
+        requested = true;
+        return jsonResponse({});
+      },
+      "./"
+    );
 
     await expect(loadDetail("polity-not-indexed")).resolves.toBeNull();
     expect(requested).toBe(false);
@@ -195,16 +199,12 @@ describe("运行时数据加载", () => {
       geography,
       omittedCount: 0
     });
-    expect(urls).toEqual([
-      String(new URL("./data/generated/geography.json", document.baseURI))
-    ]);
+    expect(urls).toEqual([String(new URL("./data/generated/geography.json", document.baseURI))]);
   });
 
   it("用明确状态描述地理数据请求失败", async () => {
     const fetcher = async () => jsonResponse({ message: "unavailable" }, 503);
 
-    await expect(loadGeneratedGeography(fetcher)).rejects.toThrow(
-      "无法加载地理数据（HTTP 503）"
-    );
+    await expect(loadGeneratedGeography(fetcher)).rejects.toThrow("无法加载地理数据（HTTP 503）");
   });
 });

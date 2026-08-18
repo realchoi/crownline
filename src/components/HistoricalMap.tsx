@@ -1,11 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import worldLandUrl from "../assets/maps/world-land.svg";
-import {
-  GEOGRAPHIC_ROLE_NAMES,
-  type MapCluster,
-  type MapPoint
-} from "../domain/mapSnapshots";
+import { GEOGRAPHIC_ROLE_NAMES, type MapCluster, type MapPoint } from "../domain/mapSnapshots";
 
 interface HistoricalMapProps {
   clusters: MapCluster[];
@@ -116,7 +112,9 @@ export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
           <span>代表性中心</span>
         </li>
         <li>
-          <span className="map-legend-symbol map-legend-cluster" aria-hidden="true">2</span>
+          <span className="map-legend-symbol map-legend-cluster" aria-hidden="true">
+            2
+          </span>
           <span>数字表示邻近点位聚合</span>
         </li>
       </ul>

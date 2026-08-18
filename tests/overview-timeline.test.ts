@@ -18,11 +18,9 @@ function overviewMatches(regionScope: RegionScope): MatchedEntity[] {
 
 describe("多地区全览分组", () => {
   it("中国范围保持七个历史阶段的顺序和局部尺度", () => {
-    const groups = buildOverviewTimelineGroups(
-      data,
-      overviewMatches({ mode: "china" }),
-      { mode: "china" }
-    );
+    const groups = buildOverviewTimelineGroups(data, overviewMatches({ mode: "china" }), {
+      mode: "china"
+    });
 
     expect(groups.map(({ id }) => id)).toEqual(data.timelineSections.map(({ id }) => id));
     expect(groups.map(({ range }) => range)).toEqual(
@@ -32,11 +30,9 @@ describe("多地区全览分组", () => {
   });
 
   it("全球范围把跨地区实体单独分组且各显示一次", () => {
-    const groups = buildOverviewTimelineGroups(
-      data,
-      overviewMatches({ mode: "global" }),
-      { mode: "global" }
-    );
+    const groups = buildOverviewTimelineGroups(data, overviewMatches({ mode: "global" }), {
+      mode: "global"
+    });
     const crossRegion = groups[0]!;
     const groupedIds = groups.flatMap(({ matches }) => matches.map(({ entity }) => entity.id));
 
@@ -46,13 +42,7 @@ describe("多地区全览分组", () => {
       kind: "cross-region"
     });
     expect(crossRegion.matches.map(({ entity }) => entity.names.primary)).toEqual(
-      expect.arrayContaining([
-        "贵霜帝国",
-        "拜占庭帝国",
-        "阿拔斯哈里发",
-        "帖木儿帝国",
-        "奥斯曼帝国"
-      ])
+      expect.arrayContaining(["贵霜帝国", "拜占庭帝国", "阿拔斯哈里发", "帖木儿帝国", "奥斯曼帝国"])
     );
     expect(groupedIds.filter((id) => id === "polity-byzantine-empire")).toHaveLength(1);
     expect(groupedIds.filter((id) => id === "polity-abbasid-caliphate")).toHaveLength(1);
@@ -73,7 +63,13 @@ describe("多地区全览分组", () => {
       kind: "region"
     });
     expect(groups[0]!.matches.map(({ entity }) => entity.names.primary)).toEqual(
-      expect.arrayContaining(["法兰克王国", "英格兰王国", "拜占庭帝国", "神圣罗马帝国", "奥斯曼帝国"])
+      expect.arrayContaining([
+        "法兰克王国",
+        "英格兰王国",
+        "拜占庭帝国",
+        "神圣罗马帝国",
+        "奥斯曼帝国"
+      ])
     );
   });
 
@@ -87,14 +83,16 @@ describe("多地区全览分组", () => {
     expect(groups[0]!.matches.map(({ entity }) => entity.names.primary)).toEqual(
       expect.arrayContaining(["拜占庭帝国", "奥斯曼帝国"])
     );
-    expect(groups.find(({ regionId }) => regionId === "region-europe")?.matches
-      .map(({ entity }) => entity.names.primary)).toEqual(
-        expect.arrayContaining(["法兰克王国", "英格兰王国", "神圣罗马帝国"])
-      );
-    expect(groups.find(({ regionId }) => regionId === "region-west-asia")?.matches
-      .map(({ entity }) => entity.names.primary)).toEqual(
-        expect.arrayContaining(["阿拔斯哈里发", "塞尔柱帝国", "帖木儿帝国"])
-      );
+    expect(
+      groups
+        .find(({ regionId }) => regionId === "region-europe")
+        ?.matches.map(({ entity }) => entity.names.primary)
+    ).toEqual(expect.arrayContaining(["法兰克王国", "英格兰王国", "神圣罗马帝国"]));
+    expect(
+      groups
+        .find(({ regionId }) => regionId === "region-west-asia")
+        ?.matches.map(({ entity }) => entity.names.primary)
+    ).toEqual(expect.arrayContaining(["阿拔斯哈里发", "塞尔柱帝国", "帖木儿帝国"]));
 
     const groupedIds = groups.flatMap(({ matches }) => matches.map(({ entity }) => entity.id));
     expect(groupedIds.filter((id) => id === "polity-byzantine-empire")).toHaveLength(1);
@@ -108,7 +106,13 @@ describe("多地区全览分组", () => {
 
     expect(europe!.range).toEqual({ startYear: 330, endYear: 1922 });
     expect(europe!.matches.map(({ entity }) => entity.names.primary)).toEqual(
-      expect.arrayContaining(["法兰克王国", "英格兰王国", "拜占庭帝国", "神圣罗马帝国", "奥斯曼帝国"])
+      expect.arrayContaining([
+        "法兰克王国",
+        "英格兰王国",
+        "拜占庭帝国",
+        "神圣罗马帝国",
+        "奥斯曼帝国"
+      ])
     );
   });
 
@@ -135,10 +139,12 @@ describe("多地区全览分组", () => {
       ...structuredClone(template),
       id: "polity-single-year-test",
       names: { primary: "单年政权", aliases: [] },
-      existencePeriods: [{
-        start: { year: 1000, precision: "exact" },
-        end: { year: 1000, precision: "exact" }
-      }]
+      existencePeriods: [
+        {
+          start: { year: 1000, precision: "exact" },
+          end: { year: 1000, precision: "exact" }
+        }
+      ]
     };
     const groups = buildOverviewTimelineGroups(
       data,
@@ -151,10 +157,8 @@ describe("多地区全览分组", () => {
       displayRange: "1000",
       range: { startYear: 1000, endYear: 1001 }
     });
-    expect(buildOverviewTimelineGroups(
-      data,
-      [],
-      { mode: "custom", regionIds: ["region-south-asia"] }
-    )).toEqual([]);
+    expect(
+      buildOverviewTimelineGroups(data, [], { mode: "custom", regionIds: ["region-south-asia"] })
+    ).toEqual([]);
   });
 });

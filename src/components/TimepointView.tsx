@@ -53,7 +53,9 @@ function TimepointCard({
           <span className={`type-badge detail-${entity.displayCategory}`}>
             {DISPLAY_CATEGORY_NAMES[entity.displayCategory]}
           </span>
-          <span className="timepoint-card-section">{section?.title ?? regionNames.join(" · ")}</span>
+          <span className="timepoint-card-section">
+            {section?.title ?? regionNames.join(" · ")}
+          </span>
         </span>
         <strong className="timepoint-card-name">{entity.names.primary}</strong>
         <span className="timepoint-card-periods">{periods}</span>
@@ -90,14 +92,16 @@ export function TimepointView({
   onSelect
 }: TimepointViewProps) {
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
-  const scopeRegions = regionScope.mode === "custom"
-    ? regions.filter(({ id }) => regionScope.regionIds.includes(id))
-    : [];
-  const scopeName = regionScope.mode === "china"
-    ? "中国历史范围"
-    : regionScope.mode === "global"
-      ? "全球已收录范围"
-      : scopeRegions.map(({ names }) => names.primary).join("、");
+  const scopeRegions =
+    regionScope.mode === "custom"
+      ? regions.filter(({ id }) => regionScope.regionIds.includes(id))
+      : [];
+  const scopeName =
+    regionScope.mode === "china"
+      ? "中国历史范围"
+      : regionScope.mode === "global"
+        ? "全球已收录范围"
+        : scopeRegions.map(({ names }) => names.primary).join("、");
   const allMatches = [...polities, ...historicalPeriods];
   const hasApproximateChronology = allMatches.some(({ entity }) => {
     return entity.existencePeriods.some((period) => {
@@ -114,10 +118,7 @@ export function TimepointView({
   });
 
   return (
-    <section
-      className="timepoint-view"
-      aria-label={`${formattedYear} 年时间点结果`}
-    >
+    <section className="timepoint-view" aria-label={`${formattedYear} 年时间点结果`}>
       <header className="timepoint-heading">
         <p className="timepoint-kicker">历史切片</p>
         <h2>{formattedYear}年 · 当时存在</h2>
@@ -126,7 +127,9 @@ export function TimepointView({
 
       {(hasApproximateChronology || hasDisputedChronology || isBoundaryYear) && (
         <aside className="timepoint-notices" aria-label="年代提示">
-          {hasApproximateChronology && <p>部分条目的起止年份采用约略年代，筛选按页面所示区间计算。</p>}
+          {hasApproximateChronology && (
+            <p>部分条目的起止年份采用约略年代，筛选按页面所示区间计算。</p>
+          )}
           {hasDisputedChronology && <p>部分条目的年代口径存在争议，请打开条目查看说明。</p>}
           {isBoundaryYear && <p>当前年份是部分条目的起止边界；按整年存在规则计入结果。</p>}
         </aside>
@@ -156,10 +159,17 @@ export function TimepointView({
               <>{scopeName}尚未收录代表性政权；这不表示该地区在历史上没有政权。</>
             )}
             {polityEmptyReason === "limited-coverage" && (
-              <>{formattedYear}年在{scopeName}暂无已收录政权；当前数据覆盖有限，不表示当时不存在政权。</>
+              <>
+                {formattedYear}年在{scopeName}
+                暂无已收录政权；当前数据覆盖有限，不表示当时不存在政权。
+              </>
             )}
             {polityEmptyReason === "filtered-out" && (
-              <>{formattedYear}年没有匹配当前搜索与类别的政权。<br />可尝试清除筛选或选择其他年份。</>
+              <>
+                {formattedYear}年没有匹配当前搜索与类别的政权。
+                <br />
+                可尝试清除筛选或选择其他年份。
+              </>
             )}
           </div>
         )}

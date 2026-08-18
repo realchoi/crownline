@@ -3,9 +3,7 @@ import type { HistoricalEntity, Region } from "./types";
 export const CHINA_REGION_ID = "region-china";
 
 export type RegionScope =
-  | { mode: "china" }
-  | { mode: "custom"; regionIds: string[] }
-  | { mode: "global" };
+  { mode: "china" } | { mode: "custom"; regionIds: string[] } | { mode: "global" };
 
 /** 将选择的历史地区扩展为包含全部后代的稳定 ID 集合。 */
 export function expandHistoricalRegionIds(regions: Region[], selectedIds: string[]): Set<string> {

@@ -114,9 +114,8 @@ function PolityColumn({
     return region ? [region.names.primary] : [];
   });
   const entries = detail ? selectRulersDuringPeriods(entity, detail, overlapPeriods) : [];
-  const snapshot = detail && currentYear
-    ? selectRulerSnapshot(entity, detail, currentYear)
-    : undefined;
+  const snapshot =
+    detail && currentYear ? selectRulerSnapshot(entity, detail, currentYear) : undefined;
 
   return (
     <article className="comparison-column">
@@ -126,9 +125,18 @@ function PolityColumn({
         <span>{formatPeriods(entity.existencePeriods, entity.displayRangeOverride)}</span>
       </header>
       <dl>
-        <div><dt>政权形态</dt><dd>{entity.polityForms.map((form) => POLITY_FORM_NAMES[form]).join("、")}</dd></div>
-        <div><dt>历史地区</dt><dd>{regionNames.join("、") || "尚未标注"}</dd></div>
-        <div><dt>年代口径</dt><dd>{entity.chronologyStatus === "disputed" ? "存在争议" : "当前采用"}</dd></div>
+        <div>
+          <dt>政权形态</dt>
+          <dd>{entity.polityForms.map((form) => POLITY_FORM_NAMES[form]).join("、")}</dd>
+        </div>
+        <div>
+          <dt>历史地区</dt>
+          <dd>{regionNames.join("、") || "尚未标注"}</dd>
+        </div>
+        <div>
+          <dt>年代口径</dt>
+          <dd>{entity.chronologyStatus === "disputed" ? "存在争议" : "当前采用"}</dd>
+        </div>
       </dl>
       {snapshot && currentYear && (
         <div className="comparison-current-ruler">
@@ -178,35 +186,35 @@ export function ComparisonPanel({
       }
     };
     setDetailState({ status: "loading" });
-    void Promise.all([loadComparisonDetail(left), loadComparisonDetail(right)]).then(([
-      leftDetail,
-      rightDetail
-    ]) => {
-      if (active) {
-        setDetailState({
-          status: "ready",
-          entityIds: [left.id, right.id],
-          details: [leftDetail, rightDetail]
-        });
-      }
-    }).catch((error: unknown) => {
-      if (active) {
-        setDetailState({
-          status: "error",
-          message: error instanceof Error ? error.message : String(error)
-        });
-      }
-    });
-    return () => { active = false; };
+    void Promise.all([loadComparisonDetail(left), loadComparisonDetail(right)])
+      .then(([leftDetail, rightDetail]) => {
+        if (active) {
+          setDetailState({
+            status: "ready",
+            entityIds: [left.id, right.id],
+            details: [leftDetail, rightDetail]
+          });
+        }
+      })
+      .catch((error: unknown) => {
+        if (active) {
+          setDetailState({
+            status: "error",
+            message: error instanceof Error ? error.message : String(error)
+          });
+        }
+      });
+    return () => {
+      active = false;
+    };
   }, [entities, entityKey, loadDetail, retrySequence]);
 
-  const readyDetails = detailState.status === "ready" &&
-    detailState.entityIds.join("|") === entityKey
-    ? detailState.details
-    : undefined;
-  const currentYearOverlaps = comparison && currentYear
-    ? isYearInPeriods(currentYear, comparison.overlapPeriods)
-    : false;
+  const readyDetails =
+    detailState.status === "ready" && detailState.entityIds.join("|") === entityKey
+      ? detailState.details
+      : undefined;
+  const currentYearOverlaps =
+    comparison && currentYear ? isYearInPeriods(currentYear, comparison.overlapPeriods) : false;
   const comparisonYear = currentYearOverlaps ? currentYear : undefined;
 
   return (
@@ -216,7 +224,9 @@ export function ComparisonPanel({
           <p className="comparison-kicker">阶段 4 · 时间与历史关系</p>
           <h2 id="comparison-title">政权时间对比</h2>
         </div>
-        <button className="comparison-clear" type="button" onClick={onClear}>清空对比</button>
+        <button className="comparison-clear" type="button" onClick={onClear}>
+          清空对比
+        </button>
       </div>
 
       <div className="comparison-slots" role="group" aria-label="已选对比政权">
@@ -253,7 +263,10 @@ export function ComparisonPanel({
                 <strong>{formatPeriods(comparison.overlapPeriods)}</strong>
                 <span>共同存续 {comparison.overlapYears} 年</span>
                 {currentYearOverlaps && currentYear && (
-                  <em>{formatHistoricalYear({ year: currentYear, precision: "exact" })}年位于共同存续期</em>
+                  <em>
+                    {formatHistoricalYear({ year: currentYear, precision: "exact" })}
+                    年位于共同存续期
+                  </em>
                 )}
               </>
             ) : (
@@ -291,7 +304,9 @@ export function ComparisonPanel({
           )}
 
           {!readyDetails && detailState.status === "loading" && (
-            <p className="comparison-load-state" role="status">正在加载双方统治者详情…</p>
+            <p className="comparison-load-state" role="status">
+              正在加载双方统治者详情…
+            </p>
           )}
           {detailState.status === "error" && (
             <div className="comparison-load-state is-error" role="alert">

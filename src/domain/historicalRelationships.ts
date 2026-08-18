@@ -32,7 +32,15 @@ export const CONFIDENCE_LABELS = {
 const TYPE_ORDER = Object.keys(RELATIONSHIP_TYPE_LABELS) as RelationshipType[];
 const DATE_PRECISIONS = new Set(["exact", "circa", "decade", "century", "unknown"]);
 const CONFIDENCE_LEVELS = new Set(["high", "medium", "low", "disputed"]);
-const EVENT_TYPES = new Set(["foundation", "dissolution", "succession", "battle", "treaty", "diplomatic", "other"]);
+const EVENT_TYPES = new Set([
+  "foundation",
+  "dissolution",
+  "succession",
+  "battle",
+  "treaty",
+  "diplomatic",
+  "other"
+]);
 
 export interface ResolvedRelationshipSource {
   ref: SourceRef;
@@ -65,13 +73,22 @@ function isNonEmptyString(value: unknown): value is string {
 }
 
 function hasUniqueStrings(value: unknown, minimum = 0): value is string[] {
-  return Array.isArray(value) && value.length >= minimum &&
-    value.every(isNonEmptyString) && new Set(value).size === value.length;
+  return (
+    Array.isArray(value) &&
+    value.length >= minimum &&
+    value.every(isNonEmptyString) &&
+    new Set(value).size === value.length
+  );
 }
 
 function parseDate(value: unknown): HistoricalDate | null {
-  if (!isRecord(value) || !Number.isSafeInteger(value.year) || value.year === 0 ||
-      !DATE_PRECISIONS.has(String(value.precision))) return null;
+  if (
+    !isRecord(value) ||
+    !Number.isSafeInteger(value.year) ||
+    value.year === 0 ||
+    !DATE_PRECISIONS.has(String(value.precision))
+  )
+    return null;
   return value as unknown as HistoricalDate;
 }
 
@@ -92,9 +109,13 @@ function parseSourceRefs(value: unknown): SourceRef[] | null {
   if (!Array.isArray(value) || value.length === 0) return null;
   const refs: SourceRef[] = [];
   for (const candidate of value) {
-    if (!isRecord(candidate) || !isNonEmptyString(candidate.sourceId) ||
-        (candidate.locator !== undefined && !isNonEmptyString(candidate.locator)) ||
-        (candidate.note !== undefined && !isNonEmptyString(candidate.note))) return null;
+    if (
+      !isRecord(candidate) ||
+      !isNonEmptyString(candidate.sourceId) ||
+      (candidate.locator !== undefined && !isNonEmptyString(candidate.locator)) ||
+      (candidate.note !== undefined && !isNonEmptyString(candidate.note))
+    )
+      return null;
     refs.push(candidate as unknown as SourceRef);
   }
   return refs;
@@ -103,8 +124,11 @@ function parseSourceRefs(value: unknown): SourceRef[] | null {
 function parseConfidence(record: Record<string, unknown>): ConfidenceLevel | null {
   if (!CONFIDENCE_LEVELS.has(String(record.confidence))) return null;
   const confidence = record.confidence as ConfidenceLevel;
-  if ((confidence === "low" || confidence === "disputed") &&
-      !isNonEmptyString(record.confidenceNote)) return null;
+  if (
+    (confidence === "low" || confidence === "disputed") &&
+    !isNonEmptyString(record.confidenceNote)
+  )
+    return null;
   if (record.confidenceNote !== undefined && !isNonEmptyString(record.confidenceNote)) return null;
   return confidence;
 }
@@ -114,8 +138,13 @@ function parseParticipants(value: unknown): RelationshipParticipant[] | null {
   const participants: RelationshipParticipant[] = [];
   const entityIds = new Set<string>();
   for (const candidate of value) {
-    if (!isRecord(candidate) || !isNonEmptyString(candidate.entityId) ||
-        !isNonEmptyString(candidate.role) || entityIds.has(candidate.entityId)) return null;
+    if (
+      !isRecord(candidate) ||
+      !isNonEmptyString(candidate.entityId) ||
+      !isNonEmptyString(candidate.role) ||
+      entityIds.has(candidate.entityId)
+    )
+      return null;
     entityIds.add(candidate.entityId);
     participants.push(candidate as unknown as RelationshipParticipant);
   }
@@ -123,10 +152,16 @@ function parseParticipants(value: unknown): RelationshipParticipant[] | null {
 }
 
 function parseEvent(value: unknown, sourceById: Map<string, Source>): HistoricalEvent | null {
-  if (!isRecord(value) || !isNonEmptyString(value.id) ||
-      !EVENT_TYPES.has(String(value.type)) || !isNonEmptyString(value.title) ||
-      !isNonEmptyString(value.summary) || !parsePeriods(value.periods) ||
-      !hasUniqueStrings(value.participantEntityIds, 1) || !hasUniqueStrings(value.regionIds)) {
+  if (
+    !isRecord(value) ||
+    !isNonEmptyString(value.id) ||
+    !EVENT_TYPES.has(String(value.type)) ||
+    !isNonEmptyString(value.title) ||
+    !isNonEmptyString(value.summary) ||
+    !parsePeriods(value.periods) ||
+    !hasUniqueStrings(value.participantEntityIds, 1) ||
+    !hasUniqueStrings(value.regionIds)
+  ) {
     return null;
   }
   const refs = parseSourceRefs(value.sourceRefs);
@@ -164,11 +199,17 @@ function parseRelationship(
   sourceById: Map<string, Source>,
   eventGroups: Map<string, unknown[]>
 ): ResolvedHistoricalRelationship | null {
-  if (!isRecord(value) || !isNonEmptyString(value.id) ||
-      !Object.hasOwn(RELATIONSHIP_TYPE_LABELS, String(value.type)) ||
-      !isNonEmptyString(value.summary) || !parsePeriods(value.periods) ||
-      !parseParticipants(value.participants) || !hasUniqueStrings(value.eventIds) ||
-      !parseConfidence(value)) return null;
+  if (
+    !isRecord(value) ||
+    !isNonEmptyString(value.id) ||
+    !Object.hasOwn(RELATIONSHIP_TYPE_LABELS, String(value.type)) ||
+    !isNonEmptyString(value.summary) ||
+    !parsePeriods(value.periods) ||
+    !parseParticipants(value.participants) ||
+    !hasUniqueStrings(value.eventIds) ||
+    !parseConfidence(value)
+  )
+    return null;
 
   const refs = parseSourceRefs(value.sourceRefs);
   if (!refs) return null;
@@ -181,7 +222,10 @@ function parseRelationship(
   const events: HistoricalEvent[] = [];
   for (const eventId of value.eventIds) {
     const candidates = eventGroups.get(eventId);
-    if (!candidates || new Set(candidates.map((candidate) => JSON.stringify(candidate))).size !== 1) {
+    if (
+      !candidates ||
+      new Set(candidates.map((candidate) => JSON.stringify(candidate))).size !== 1
+    ) {
       return null;
     }
     const event = parseEvent(candidates[0], sourceById);
@@ -201,9 +245,7 @@ export function selectHistoricalRelationships(
   const sourceById = new Map(
     details.flatMap(({ sources }) => sources).map((source) => [source.id, source])
   );
-  const { groups: eventGroups } = groupById(
-    details.flatMap(({ events }) => events) as unknown[]
-  );
+  const { groups: eventGroups } = groupById(details.flatMap(({ events }) => events) as unknown[]);
   const relationshipCandidates = groupById(
     details.flatMap(({ relationships }) => relationships) as unknown[]
   );
@@ -234,9 +276,11 @@ export function selectHistoricalRelationships(
         .sort((left, right) => {
           const leftPeriod = left.relationship.periods[0]!;
           const rightPeriod = right.relationship.periods[0]!;
-          return leftPeriod.start.year - rightPeriod.start.year ||
+          return (
+            leftPeriod.start.year - rightPeriod.start.year ||
             leftPeriod.end.year - rightPeriod.end.year ||
-            left.relationship.id.localeCompare(right.relationship.id, "en");
+            left.relationship.id.localeCompare(right.relationship.id, "en")
+          );
         });
       return relationships.length > 0
         ? [{ type, label: RELATIONSHIP_TYPE_LABELS[type], relationships }]

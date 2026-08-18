@@ -87,14 +87,18 @@ describe("结构化历史关系选择", () => {
     expect(result.groups[0]).toMatchObject({
       type: "war",
       label: "战争",
-      relationships: [{
-        relationship: { id: "relationship-a-b-war" },
-        events: [{ id: "event-a-b-battle" }],
-        sources: [{
-          ref: { sourceId: "source-a-b", locator: "第1章" },
-          source: { id: "source-a-b" }
-        }]
-      }]
+      relationships: [
+        {
+          relationship: { id: "relationship-a-b-war" },
+          events: [{ id: "event-a-b-battle" }],
+          sources: [
+            {
+              ref: { sourceId: "source-a-b", locator: "第1章" },
+              source: { id: "source-a-b" }
+            }
+          ]
+        }
+      ]
     });
   });
 
@@ -125,10 +129,13 @@ describe("结构化历史关系选择", () => {
 
   it.each([
     ["未知类型（包括对象原型键）", { ...war, type: "toString" }],
-    ["重复参与方", {
-      ...war,
-      participants: [...war.participants, { entityId: "polity-a", role: "重复方" }]
-    }],
+    [
+      "重复参与方",
+      {
+        ...war,
+        participants: [...war.participants, { entityId: "polity-a", role: "重复方" }]
+      }
+    ],
     ["反向区间", { ...war, periods: [period(200, 100)] }],
     ["公元零年", { ...war, periods: [period(0, 1)] }],
     ["空摘要", { ...war, summary: "  " }],
@@ -142,8 +149,11 @@ describe("结构化历史关系选择", () => {
       detail("polity-a", [war, invalidWithUniqueId])
     ]);
 
-    expect(result.groups.flatMap(({ relationships }) => relationships)
-      .map(({ relationship }) => relationship.id)).toEqual(["relationship-a-b-war"]);
+    expect(
+      result.groups
+        .flatMap(({ relationships }) => relationships)
+        .map(({ relationship }) => relationship.id)
+    ).toEqual(["relationship-a-b-war"]);
     expect(result.omittedCount).toBe(1);
   });
 
@@ -153,8 +163,11 @@ describe("结构化历史关系选择", () => {
       detail("polity-a", [war, invalid], [battle, { id: "event-bad" }])
     ]);
 
-    expect(result.groups.flatMap(({ relationships }) => relationships)
-      .map(({ relationship }) => relationship.id)).toEqual(["relationship-a-b-war"]);
+    expect(
+      result.groups
+        .flatMap(({ relationships }) => relationships)
+        .map(({ relationship }) => relationship.id)
+    ).toEqual(["relationship-a-b-war"]);
     expect(result.omittedCount).toBe(1);
   });
 

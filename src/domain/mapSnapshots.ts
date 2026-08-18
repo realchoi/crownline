@@ -47,10 +47,12 @@ export function projectCoordinates({
 }
 
 function compareMapPoints(left: MapPoint, right: MapPoint): number {
-  return left.xPercent - right.xPercent ||
+  return (
+    left.xPercent - right.xPercent ||
     left.yPercent - right.yPercent ||
     left.entity.id.localeCompare(right.entity.id) ||
-    left.snapshot.id.localeCompare(right.snapshot.id);
+    left.snapshot.id.localeCompare(right.snapshot.id)
+  );
 }
 
 /** 按投影距离生成与输入顺序无关的稳定聚合组。 */
@@ -63,10 +65,10 @@ export function clusterMapPoints(
 
   sortedPoints.forEach((point) => {
     const group = groups.find(({ anchor }) => {
-      return Math.hypot(
-        point.xPercent - anchor.xPercent,
-        point.yPercent - anchor.yPercent
-      ) <= thresholdPercent;
+      return (
+        Math.hypot(point.xPercent - anchor.xPercent, point.yPercent - anchor.yPercent) <=
+        thresholdPercent
+      );
     });
     if (group) group.points.push(point);
     else groups.push({ anchor: point, points: [point] });

@@ -1,0 +1,12 @@
+dist
+coverage
+.generated
+public/data/generated
+playwright-report
+test-results
+.venv-fonts
+package-lock.json
+docs/
+ROADMAP.md
+src/data/source/
+src/data/crownline-data.schema.json

@@ -26,11 +26,13 @@ async function readJson(path: string): Promise<unknown> {
 
 async function listJsonFiles(root: string): Promise<string[]> {
   const entries = await readdir(root, { withFileTypes: true });
-  const nested = await Promise.all(entries.map(async (entry) => {
-    const path = join(root, entry.name);
-    if (entry.isDirectory()) return listJsonFiles(path);
-    return entry.isFile() && entry.name.endsWith(".json") ? [path] : [];
-  }));
+  const nested = await Promise.all(
+    entries.map(async (entry) => {
+      const path = join(root, entry.name);
+      if (entry.isDirectory()) return listJsonFiles(path);
+      return entry.isFile() && entry.name.endsWith(".json") ? [path] : [];
+    })
+  );
   return nested.flat().sort((left, right) => {
     const leftPath = relative(root, left).split(sep).join("/");
     const rightPath = relative(root, right).split(sep).join("/");
@@ -40,11 +42,13 @@ async function listJsonFiles(root: string): Promise<string[]> {
 
 async function readArrayFiles<T>(root: string, label: string): Promise<T[]> {
   const files = await listJsonFiles(root);
-  const arrays = await Promise.all(files.map(async (path) => {
-    const value = await readJson(path);
-    if (!Array.isArray(value)) throw new Error(`${label} 文件必须是数组：${path}`);
-    return value as T[];
-  }));
+  const arrays = await Promise.all(
+    files.map(async (path) => {
+      const value = await readJson(path);
+      if (!Array.isArray(value)) throw new Error(`${label} 文件必须是数组：${path}`);
+      return value as T[];
+    })
+  );
   return arrays.flat();
 }
 
@@ -76,14 +80,18 @@ export async function loadSourceData(
   if (!isRecord(core)) throw new Error("core.json 必须是对象");
 
   const fragmentPaths = await listJsonFiles(join(sourceRoot, "entities"));
-  const fragments = await Promise.all(fragmentPaths.map(async (path) => {
-    return parseEntityFragment(await readJson(path), path);
-  }));
+  const fragments = await Promise.all(
+    fragmentPaths.map(async (path) => {
+      return parseEntityFragment(await readJson(path), path);
+    })
+  );
   const firstPathByOrder = new Map<number, string>();
   fragments.forEach((fragment, index) => {
     const previous = firstPathByOrder.get(fragment.order);
     if (previous) {
-      throw new Error(`实体分片 order ${fragment.order} 重复：${previous} 与 ${fragmentPaths[index]}`);
+      throw new Error(
+        `实体分片 order ${fragment.order} 重复：${previous} 与 ${fragmentPaths[index]}`
+      );
     }
     firstPathByOrder.set(fragment.order, fragmentPaths[index]!);
   });

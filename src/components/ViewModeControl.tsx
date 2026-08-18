@@ -18,11 +18,7 @@ export function ViewModeControl({ value, onChange }: ViewModeControlProps) {
         >
           时间轴
         </button>
-        <button
-          type="button"
-          aria-pressed={value === "map"}
-          onClick={() => onChange("map")}
-        >
+        <button type="button" aria-pressed={value === "map"} onClick={() => onChange("map")}>
           地图
         </button>
       </div>

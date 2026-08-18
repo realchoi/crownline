@@ -85,9 +85,7 @@ function makeValidData(): CrownlineData {
   };
 }
 
-function makeGeographicSnapshot(
-  overrides: Partial<GeographicSnapshot> = {}
-): GeographicSnapshot {
+function makeGeographicSnapshot(overrides: Partial<GeographicSnapshot> = {}): GeographicSnapshot {
   return {
     id: "geo-polity-test-capital",
     polityId: "polity-cn-test",
@@ -174,11 +172,7 @@ describe("JSON Schema 结构校验", () => {
 });
 
 describe("跨记录语义校验", () => {
-  const invalidGeographicSnapshots: Array<[
-    string,
-    Partial<GeographicSnapshot>,
-    string
-  ]> = [
+  const invalidGeographicSnapshots: Array<[string, Partial<GeographicSnapshot>, string]> = [
     ["悬空政权", { polityId: "polity-missing" }, "DANGLING_ENTITY_REF"],
     ["悬空来源", { sourceRefs: [{ sourceId: "source-missing" }] }, "DANGLING_SOURCE_REF"],
     ["倒置区间", { periods: [period(8, 7)] }, "INVALID_INTERVAL"],
@@ -196,11 +190,13 @@ describe("跨记录语义校验", () => {
 
   it("拒绝地理快照引用历史分期", () => {
     const data = makeValidData();
-    data.entities.push(makeEntity({
-      id: "period-test",
-      entityKind: "historical-period",
-      polityForms: []
-    }));
+    data.entities.push(
+      makeEntity({
+        id: "period-test",
+        entityKind: "historical-period",
+        polityForms: []
+      })
+    );
     data.geographicSnapshots.push(makeGeographicSnapshot({ polityId: "period-test" }));
 
     expect(issueCodes(data)).toContain("INVALID_GEOGRAPHIC_POLITY");
@@ -208,15 +204,19 @@ describe("跨记录语义校验", () => {
 
   it("拒绝重叠、相邻和内容重复的地理快照", () => {
     const overlapping = makeValidData();
-    overlapping.geographicSnapshots.push(makeGeographicSnapshot({
-      periods: [period(1, 5), period(5, 10)]
-    }));
+    overlapping.geographicSnapshots.push(
+      makeGeographicSnapshot({
+        periods: [period(1, 5), period(5, 10)]
+      })
+    );
     expect(issueCodes(overlapping)).toContain("OVERLAPPING_INTERVALS");
 
     const adjacent = makeValidData();
-    adjacent.geographicSnapshots.push(makeGeographicSnapshot({
-      periods: [period(1, 5), period(6, 10)]
-    }));
+    adjacent.geographicSnapshots.push(
+      makeGeographicSnapshot({
+        periods: [period(1, 5), period(6, 10)]
+      })
+    );
     expect(issueCodes(adjacent)).toContain("ADJACENT_INTERVALS");
 
     const duplicate = makeValidDataWithGeography();
@@ -357,14 +357,18 @@ describe("跨记录语义校验", () => {
 
   it("拒绝与任一参与政权存续期完全错位的关系", () => {
     const data = makeValidData();
-    data.entities.push(makeEntity({
-      id: "polity-cn-later-test",
-      names: { primary: "后期测试政权", aliases: [] },
-      existencePeriods: [{
-        start: { year: 20, precision: "exact" },
-        end: { year: 30, precision: "exact" }
-      }]
-    }));
+    data.entities.push(
+      makeEntity({
+        id: "polity-cn-later-test",
+        names: { primary: "后期测试政权", aliases: [] },
+        existencePeriods: [
+          {
+            start: { year: 20, precision: "exact" },
+            end: { year: 30, precision: "exact" }
+          }
+        ]
+      })
+    );
     data.relationships.push({
       id: "relationship-outside-participant",
       type: "alliance",
@@ -372,10 +376,12 @@ describe("跨记录语义校验", () => {
         { entityId: "polity-cn-test", role: "盟约方" },
         { entityId: "polity-cn-later-test", role: "盟约方" }
       ],
-      periods: [{
-        start: { year: 2, precision: "exact" },
-        end: { year: 4, precision: "exact" }
-      }],
+      periods: [
+        {
+          start: { year: 2, precision: "exact" },
+          end: { year: 4, precision: "exact" }
+        }
+      ],
       summary: "测试时间错位关系。",
       eventIds: [],
       sourceRefs: [{ sourceId: "source-test" }],
@@ -387,22 +393,28 @@ describe("跨记录语义校验", () => {
 
   it("拒绝与任一参与政权存续期完全错位的事件", () => {
     const data = makeValidData();
-    data.entities.push(makeEntity({
-      id: "polity-cn-later-test",
-      names: { primary: "后期测试政权", aliases: [] },
-      existencePeriods: [{
-        start: { year: 20, precision: "exact" },
-        end: { year: 30, precision: "exact" }
-      }]
-    }));
+    data.entities.push(
+      makeEntity({
+        id: "polity-cn-later-test",
+        names: { primary: "后期测试政权", aliases: [] },
+        existencePeriods: [
+          {
+            start: { year: 20, precision: "exact" },
+            end: { year: 30, precision: "exact" }
+          }
+        ]
+      })
+    );
     data.events.push({
       id: "event-outside-participant",
       type: "treaty",
       title: "测试错位事件",
-      periods: [{
-        start: { year: 2, precision: "exact" },
-        end: { year: 4, precision: "exact" }
-      }],
+      periods: [
+        {
+          start: { year: 2, precision: "exact" },
+          end: { year: 4, precision: "exact" }
+        }
+      ],
       participantEntityIds: ["polity-cn-test", "polity-cn-later-test"],
       regionIds: ["region-east-asia"],
       summary: "测试事件时间完全早于其中一个参与政权。",
@@ -438,11 +450,13 @@ describe("跨记录语义校验", () => {
     });
 
     const reignOnHistoricalPeriod = makeValidData();
-    reignOnHistoricalPeriod.entities.push(makeEntity({
-      id: "period-test",
-      entityKind: "historical-period",
-      polityForms: []
-    }));
+    reignOnHistoricalPeriod.entities.push(
+      makeEntity({
+        id: "period-test",
+        entityKind: "historical-period",
+        polityForms: []
+      })
+    );
     reignOnHistoricalPeriod.persons.push(makePerson());
     reignOnHistoricalPeriod.reigns.push({ ...makeReign(), polityId: "period-test" });
     expect(issueCodes(reignOnHistoricalPeriod)).toContain("INVALID_REIGN_POLITY");
