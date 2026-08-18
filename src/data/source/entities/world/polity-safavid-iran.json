@@ -1,0 +1,649 @@
+{
+  "order": 960,
+  "entities": [
+    {
+      "id": "polity-safavid-iran",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "萨法维王朝",
+        "aliases": [
+          "萨法维帝国",
+          "萨非王朝",
+          "Safavid dynasty",
+          "Safavid Empire",
+          "Safavid Iran"
+        ],
+        "local": "صفویان"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1501,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1736,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-west-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "萨法维王朝由萨法维教团出身的伊斯玛仪一世于1501年攻占大不里士后建立，自称伊朗沙阿，并将十二伊玛目派什叶派立为国家宗教，是阿拉伯征服以来第一个统合伊朗高原大部分地区的本土王朝。王朝以奇兹尔巴什部众为军政支柱，长期与西面的奥斯曼帝国、东面的乌兹别克人作战；都城先后从大不里士迁至加兹温（1555年）、再迁至伊斯法罕（1598年），阿巴斯一世时期达到鼎盛。1722年阿富汗人攻陷伊斯法罕后王朝名存实亡，1736年纳迪尔废黜阿巴斯三世自立，萨法维政权终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "页面采用通行的1501—1736口径：以1501年伊斯玛仪一世在大不里士称沙为始，以1736年纳迪尔废黜阿巴斯三世、自立为阿夫沙尔沙阿为终。1722年伊斯法罕陷落、苏丹·侯赛因退位后，萨法维君主沦为阿富汗人与纳迪尔扶持的傀儡，部分资料因此将王朝终结记为1722年；本条目按通行口径记至1736年，不收录1736年之后名义上的萨法维复辟人物（如苏莱曼二世、伊斯玛仪三世）。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-safavid-ismail-i",
+      "names": {
+        "primary": "伊斯玛仪一世",
+        "aliases": [
+          "Ismail I",
+          "Shah Ismail I",
+          "Isma'il I"
+        ]
+      },
+      "description": "伊斯玛仪一世，萨法维王朝主要君主序列中的统治人物。1501年攻占大不里士后称沙，建立王朝并宣布什叶派为国教，1514年在查尔迪兰败于奥斯曼帝国。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-tahmasp-i",
+      "names": {
+        "primary": "塔赫玛斯普一世",
+        "aliases": [
+          "Tahmasp I",
+          "Shah Tahmasp"
+        ]
+      },
+      "description": "塔赫玛斯普一世，萨法维王朝主要君主序列中的统治人物。在位期间屡与奥斯曼帝国交战，1555年将都城从大不里士迁至加兹温，并与奥斯曼缔结《阿马西亚和约》。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-ismail-ii",
+      "names": {
+        "primary": "伊斯玛仪二世",
+        "aliases": [
+          "Ismail II",
+          "Isma'il II"
+        ]
+      },
+      "description": "伊斯玛仪二世，萨法维王朝主要君主序列中的统治人物。在奇兹尔巴什支持下于继位竞争中胜出，即位后大肆诛杀王族成员，在位仅一年余即去世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-mohammad-khodabanda",
+      "names": {
+        "primary": "穆罕默德·胡达班达",
+        "aliases": [
+          "Mohammad Khodabanda",
+          "Muhammad Khudabanda",
+          "Mohammed Khodabanda"
+        ]
+      },
+      "description": "穆罕默德·胡达班达，萨法维王朝主要君主序列中的统治人物。在位期间朝政受制于奇兹尔巴什权贵，对奥斯曼与乌兹别克接连失利，后被其子阿巴斯一世取代并囚禁。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-abbas-i",
+      "names": {
+        "primary": "阿巴斯一世",
+        "aliases": [
+          "Abbas I",
+          "Abbas the Great",
+          "阿巴斯大帝"
+        ]
+      },
+      "description": "阿巴斯一世，萨法维王朝主要君主序列中的统治人物。1598年迁都伊斯法罕，改革军政制度，收复对奥斯曼与乌兹别克失去的大片领土，其统治时期被视为萨法维王朝的鼎盛期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-safi-i",
+      "names": {
+        "primary": "萨非",
+        "aliases": [
+          "Safi",
+          "Safi I"
+        ]
+      },
+      "description": "萨非，萨法维王朝主要君主序列中的统治人物。在位期间与奥斯曼缔结《祖哈卜条约》，但巴格达与坎大哈相继失守。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-abbas-ii",
+      "names": {
+        "primary": "阿巴斯二世",
+        "aliases": [
+          "Abbas II"
+        ]
+      },
+      "description": "阿巴斯二世，萨法维王朝主要君主序列中的统治人物。1649年一度收复坎大哈，并与俄罗斯发生里海沿岸冲突。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-suleiman-i",
+      "names": {
+        "primary": "苏莱曼一世",
+        "aliases": [
+          "Suleiman I",
+          "Safi II",
+          "萨非二世"
+        ]
+      },
+      "description": "苏莱曼一世，萨法维王朝主要君主序列中的统治人物。1666年以萨非二世之名首次加冕，1668年再度加冕并改称苏莱曼，朝政多倚重宰相与宫廷势力。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-sultan-husayn",
+      "names": {
+        "primary": "苏丹·侯赛因",
+        "aliases": [
+          "Sultan Husayn",
+          "Soltan Hoseyn",
+          "Shah Sultan Husayn"
+        ]
+      },
+      "description": "苏丹·侯赛因，萨法维王朝主要君主序列中的统治人物。在位末年各地叛乱四起，1722年阿富汗人马哈茂德围攻伊斯法罕，侯赛因献城退位，萨法维中央政权随之瓦解。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-tahmasp-ii",
+      "names": {
+        "primary": "塔赫玛斯普二世",
+        "aliases": [
+          "Tahmasp II"
+        ]
+      },
+      "description": "塔赫玛斯普二世，萨法维王朝主要君主序列中的统治人物。伊斯法罕陷落后在加兹温被拥立，借纳迪尔之力驱逐阿富汗人，实权逐渐落入纳迪尔手中，1732年被废。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-safavid-abbas-iii",
+      "names": {
+        "primary": "阿巴斯三世",
+        "aliases": [
+          "Abbas III"
+        ]
+      },
+      "description": "阿巴斯三世，萨法维王朝主要君主序列中的统治人物。幼年即被纳迪尔立为傀儡沙阿，1736年纳迪尔自立后将其废黜，萨法维王朝正式终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-safavid-ismail-i",
+      "personId": "person-safavid-ismail-i",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1501,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1524,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-tahmasp-i",
+      "personId": "person-safavid-tahmasp-i",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1524,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1576,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-ismail-ii",
+      "personId": "person-safavid-ismail-ii",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1576,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1577,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "伊斯玛仪二世1576年8月继位，1577年11月去世；按整年闭区间记作1576—1577，穆罕默德·胡达班达于1578年初继位，两任期首尾相接、互不重叠。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-mohammad-khodabanda",
+      "personId": "person-safavid-mohammad-khodabanda",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1578,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1587,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-abbas-i",
+      "personId": "person-safavid-abbas-i",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1587,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1629,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-safi-i",
+      "personId": "person-safavid-safi-i",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1629,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1642,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-abbas-ii",
+      "personId": "person-safavid-abbas-ii",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1642,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1666,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-suleiman-i",
+      "personId": "person-safavid-suleiman-i",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1666,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1694,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "苏莱曼一世1666年11月以萨非二世之名首次加冕，1668年3月再度加冕并改称苏莱曼；按整年闭区间模型，本条目以1666—1694单段记录其连续在位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-sultan-husayn",
+      "personId": "person-safavid-sultan-husayn",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1694,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1722,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1722年10月伊斯法罕陷落，苏丹·侯赛因向阿富汗人马哈茂德交出王位；按通行口径本条目将其在位记至1722年，此后萨法维名义王统由塔赫玛斯普二世延续。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-tahmasp-ii",
+      "personId": "person-safavid-tahmasp-ii",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1722,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1732,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "塔赫玛斯普二世1722年在加兹温被拥立为名义沙阿，1729年收复伊斯法罕后实权由纳迪尔掌握，1732年被纳迪尔废黜。此任期与阿富汗人在伊斯法罕的实际占领并行，按通行王统口径记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-safavid-abbas-iii",
+      "personId": "person-safavid-abbas-iii",
+      "polityId": "polity-safavid-iran",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1732,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1736,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "阿巴斯三世为纳迪尔所立的傀儡沙阿，1736年纳迪尔在穆甘草原自立为沙，将其废黜，萨法维王朝正式终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-safavid-history"
+        },
+        {
+          "sourceId": "source-safavid-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

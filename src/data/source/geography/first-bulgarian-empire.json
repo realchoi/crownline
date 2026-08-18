@@ -1,0 +1,68 @@
+[
+  {
+    "id": "geo-first-bulgarian-pliska",
+    "polityId": "polity-first-bulgarian-empire",
+    "periods": [
+      {
+        "start": {
+          "year": 681,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 893,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Pliska",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 43.3833,
+      "longitude": 27.1333
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用考古遗址附近现代地点坐标，仅表示第一保加利亚早期都城普利斯卡的大致位置，不表示政权疆域。893年西美昂一世迁都普雷斯拉夫。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-first-bulgarian-history"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-first-bulgarian-preslav",
+    "polityId": "polity-first-bulgarian-empire",
+    "periods": [
+      {
+        "start": {
+          "year": 893,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1018,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Preslav",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 43.1472,
+      "longitude": 26.8142
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用考古遗址附近现代地点坐标，仅表示893年后都城普雷斯拉夫的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-first-bulgarian-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

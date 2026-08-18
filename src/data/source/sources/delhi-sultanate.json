@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-delhi-sultanate-britannica",
+    "title": "Delhi sultanate",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Delhi sultanate'；用于校订德里苏丹国的存续区间、五个王朝分期、帖木儿入侵与1526年终结等历史叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Delhi-sultanate",
+    "accessedAt": "2026-08-14"
+  },
+  {
+    "id": "source-delhi-sultanate-ruler-list",
+    "title": "List of sultans of Delhi",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of sultans of Delhi；用于交叉核对德里苏丹国主要苏丹序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_sultans_of_Delhi",
+    "accessedAt": "2026-08-14"
+  }
+]

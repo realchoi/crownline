@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-great-zimbabwe-history",
+    "title": "Great Zimbabwe",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Great Zimbabwe'；用于校订1220—1450年前后津巴布韦文化国家、石构城市与区域贸易网络的考古—史学叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Great-Zimbabwe",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-great-zimbabwe-rulers",
+    "title": "Kingdom of Zimbabwe",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Kingdom of Zimbabwe；用于说明该时期缺乏可核查书面统治者名录、主要依赖考古推断的史料状况。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Kingdom_of_Zimbabwe",
+    "accessedAt": "2026-08-18"
+  }
+]

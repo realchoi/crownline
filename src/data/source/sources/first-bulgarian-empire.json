@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-first-bulgarian-history",
+    "title": "First Bulgarian Empire",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Bulgaria' § First Bulgarian Empire；用于校订第一保加利亚帝国681年建国、克鲁姆与西美昂扩张及1018年并入拜占庭口径。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Bulgaria",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-first-bulgarian-rulers",
+    "title": "List of Bulgarian monarchs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Bulgarian monarchs § First Bulgarian Empire；用于交叉核对第一保加利亚主要君主序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Bulgarian_monarchs",
+    "accessedAt": "2026-08-18"
+  }
+]

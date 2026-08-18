@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-teotihuacan-city",
+    "polityId": "polity-teotihuacan-state",
+    "periods": [
+      {
+        "start": {
+          "year": 150,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 550,
+          "precision": "circa"
+        }
+      }
+    ],
+    "placeName": "Teotihuacan",
+    "role": "political-center",
+    "coordinates": {
+      "latitude": 19.6925,
+      "longitude": -98.8438
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用特奥蒂瓦坎考古遗址中心点；仅表示该时期城市国家核心的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-teotihuacan-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

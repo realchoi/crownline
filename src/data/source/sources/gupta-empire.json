@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-gupta-history",
+    "title": "Gupta dynasty",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Gupta dynasty'；用于校订笈多王朝的存续区间、华氏城政治中心、嚈哒入侵与衰落过程等历史叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/topic/Gupta-dynasty",
+    "accessedAt": "2026-08-14"
+  },
+  {
+    "id": "source-gupta-rulers",
+    "title": "List of Gupta emperors",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Gupta emperors；用于交叉核对笈多主要君主序列及通行约年在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Gupta_emperors",
+    "accessedAt": "2026-08-14"
+  }
+]

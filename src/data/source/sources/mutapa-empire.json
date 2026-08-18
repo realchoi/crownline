@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-mutapa-history",
+    "title": "Mutapa",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Mutapa'；用于校订穆塔帕帝国1430年前后建立、黄金贸易与16世纪葡萄牙接触等叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Mutapa",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-mutapa-rulers",
+    "title": "List of rulers of Mutapa",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of rulers of Mutapa；用于交叉核对 Mwene Mutapa 主要序列及16世纪后葡萄牙文献支持的在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_rulers_of_Mutapa",
+    "accessedAt": "2026-08-18"
+  }
+]

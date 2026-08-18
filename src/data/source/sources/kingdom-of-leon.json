@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-leon-history",
+    "title": "León",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'León' § Kingdom of León；用于校订莱昂王国910年独立、阿斯图里亚斯遗产及1230年与卡斯蒂利亚合并口径。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Leon-kingdom-Europe",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-leon-rulers",
+    "title": "List of Leonese monarchs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Leonese monarchs；用于交叉核对莱昂主要君主序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Leonese_monarchs",
+    "accessedAt": "2026-08-18"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-castile-history",
+    "title": "Castile",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Castile' § Kingdom of Castile；用于校订卡斯蒂利亚王国1037年独立、收复失地运动及1230年与莱昂合并口径。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Castile",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-castile-rulers",
+    "title": "List of Castilian monarchs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Castilian monarchs；用于交叉核对卡斯蒂利亚主要君主序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Castilian_monarchs",
+    "accessedAt": "2026-08-18"
+  }
+]

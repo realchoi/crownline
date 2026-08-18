@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-maya-history",
+    "title": "Maya",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Maya'；用于校订古典期玛雅城邦网络、铭文纪年与9世纪前后衰落等叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/topic/Maya",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-maya-rulers",
+    "title": "List of Maya rulers",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Maya rulers 及各城邦君主条目；用于交叉核对帕伦克、蒂卡尔、卡拉克穆尔与科潘代表性 ajaw 的在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Maya_rulers",
+    "accessedAt": "2026-08-18"
+  }
+]

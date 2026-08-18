@@ -1,0 +1,1624 @@
+{
+  "order": 980,
+  "entities": [
+    {
+      "id": "polity-delhi-sultanate",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "kingdom"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "德里苏丹国",
+        "aliases": [
+          "德里苏丹王朝",
+          "Delhi Sultanate",
+          "Delhi sultanate",
+          "Sultanate of Delhi"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1206,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1526,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-south-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "德里苏丹国由古尔王朝将领库特布·乌德·丁·艾巴克于1206年在北印度建立，以德里为政治中心，先后经历奴隶（马穆鲁克）、卡尔吉、图格鲁克、赛义德与洛迪五个王朝。卡尔吉与图格鲁克时期其势力远及德干与南印度；1398年帖木儿攻陷德里后国势骤衰，赛义德与洛迪时期降为北印度的地方性强权。1526年巴布尔在第一次帕尼帕特战役中击杀末代苏丹易卜拉欣·洛迪，苏丹国终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本条目按通行口径涵盖1206—1526年先后统治德里的五个王朝（奴隶/马穆鲁克、卡尔吉、图格鲁克、赛义德、洛迪），不含1540—1555年苏尔王朝一度重建苏丹国的中断期。统治者在位年份以 Wikipedia 'List of sultans of Delhi' 的纪年为底本，并与 Britannica 的王朝分期交叉核对。1296年的鲁肯·乌德·丁·易卜拉欣与1395—1398年的努斯拉特沙属名义君主或争位者，仍单列并在任期注记中说明与主线序列的重叠。马哈茂德沙二世1413年死后至基兹尔汗1414年入主德里之间，帖木儿所置的多莱特汗·洛迪摄政期年代口径分歧较大，本条目暂不录入，相应年份显示为资料尚未校订。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-delhi-sultanate-qutb-ud-din-aibak",
+      "names": {
+        "primary": "库特布·乌德·丁·艾巴克",
+        "aliases": [
+          "Qutb ud-Din Aibak",
+          "Qutb-ud-din Aibak",
+          "Qutbuddin Aibak"
+        ]
+      },
+      "description": "库特布·乌德·丁·艾巴克，德里苏丹国主要君主序列中的统治人物。古尔王朝将领出身，1206年自立为苏丹，开创奴隶（马穆鲁克）王朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-aram-shah",
+      "names": {
+        "primary": "阿拉姆沙",
+        "aliases": [
+          "Aram Shah"
+        ]
+      },
+      "description": "阿拉姆沙，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-iltutmish",
+      "names": {
+        "primary": "沙姆斯·乌德·丁·伊勒杜迷失",
+        "aliases": [
+          "Shams ud-Din Iltutmish",
+          "Iltutmish",
+          "Altamash"
+        ]
+      },
+      "description": "伊勒杜迷失，德里苏丹国主要君主序列中的统治人物。在位期间定都德里，巩固了苏丹国在北印度的统治。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-rukn-ud-din-firuz",
+      "names": {
+        "primary": "鲁肯·乌德·丁·菲鲁兹",
+        "aliases": [
+          "Rukn ud-Din Firuz",
+          "Ruknuddin Firoz"
+        ]
+      },
+      "description": "鲁肯·乌德·丁·菲鲁兹，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-razia",
+      "names": {
+        "primary": "拉齐娅",
+        "aliases": [
+          "Razia Sultana",
+          "Jalalat ud-Din Razia",
+          "拉齐娅苏丹"
+        ]
+      },
+      "description": "拉齐娅，德里苏丹国主要君主序列中的统治人物。苏丹国历史上唯一的女性苏丹。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-muiz-ud-din-bahram",
+      "names": {
+        "primary": "穆伊兹·乌德·丁·巴赫拉姆",
+        "aliases": [
+          "Muiz ud-Din Bahram"
+        ]
+      },
+      "description": "穆伊兹·乌德·丁·巴赫拉姆，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-ala-ud-din-masud",
+      "names": {
+        "primary": "阿拉·乌德·丁·马苏德",
+        "aliases": [
+          "Ala ud-Din Masud"
+        ]
+      },
+      "description": "阿拉·乌德·丁·马苏德，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-nasir-ud-din-mahmud",
+      "names": {
+        "primary": "纳西尔·乌德·丁·马哈茂德",
+        "aliases": [
+          "Nasir ud-Din Mahmud",
+          "Nasiruddin Mahmud"
+        ]
+      },
+      "description": "纳西尔·乌德·丁·马哈茂德，德里苏丹国主要君主序列中的统治人物。在位期间朝政多由贵族巴尔班主持。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-ghiyas-ud-din-balban",
+      "names": {
+        "primary": "吉亚斯·乌德·丁·巴尔班",
+        "aliases": [
+          "Ghiyas ud-Din Balban",
+          "Balban",
+          "Ghiyath al-Din Balban"
+        ]
+      },
+      "description": "吉亚斯·乌德·丁·巴尔班，德里苏丹国主要君主序列中的统治人物。在位期间重建苏丹权威，抵御蒙古对西北边境的压力。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-muiz-ud-din-qaiqabad",
+      "names": {
+        "primary": "穆伊兹·乌德·丁·凯卡巴德",
+        "aliases": [
+          "Muiz ud-Din Qaiqabad",
+          "Muizuddin Qaiqabad"
+        ]
+      },
+      "description": "穆伊兹·乌德·丁·凯卡巴德，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-shams-ud-din-kayumars",
+      "names": {
+        "primary": "沙姆斯·乌德·丁·凯尤马尔斯",
+        "aliases": [
+          "Shams ud-Din Kayumars",
+          "Kayumars"
+        ]
+      },
+      "description": "沙姆斯·乌德·丁·凯尤马尔斯，德里苏丹国主要君主序列中的统治人物。奴隶王朝末主，1290年被卡尔吉家族的贾拉尔·乌德·丁取代。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-jalal-ud-din-khalji",
+      "names": {
+        "primary": "贾拉尔·乌德·丁·卡尔吉",
+        "aliases": [
+          "Jalal ud-Din Khalji",
+          "Jalaluddin Firuz Khalji",
+          "Jalal-ud-din Khilji"
+        ]
+      },
+      "description": "贾拉尔·乌德·丁·卡尔吉，德里苏丹国主要君主序列中的统治人物。1290年建立卡尔吉王朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-rukn-ud-din-ibrahim",
+      "names": {
+        "primary": "鲁肯·乌德·丁·易卜拉欣",
+        "aliases": [
+          "Rukn ud-Din Ibrahim"
+        ]
+      },
+      "description": "鲁肯·乌德·丁·易卜拉欣，德里苏丹国主要君主序列中的统治人物。贾拉尔·乌德·丁遇刺后在木尔坦被拥立争位，同年败于阿拉·乌德·丁·卡尔吉，部分苏丹名录不列其名。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-ala-ud-din-khalji",
+      "names": {
+        "primary": "阿拉·乌德·丁·卡尔吉",
+        "aliases": [
+          "Ala ud-Din Khalji",
+          "Alauddin Khalji",
+          "Alauddin Khilji"
+        ]
+      },
+      "description": "阿拉·乌德·丁·卡尔吉，德里苏丹国主要君主序列中的统治人物。在位期间征服古吉拉特与拉贾斯坦诸要塞，使南印度诸王国称臣，并击退察合台蒙古的多次入侵，苏丹国臻于鼎盛。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-shihab-ud-din-umar",
+      "names": {
+        "primary": "希哈布·乌德·丁·奥马尔",
+        "aliases": [
+          "Shihab ud-Din Omar",
+          "Shihabuddin Umar"
+        ]
+      },
+      "description": "希哈布·乌德·丁·奥马尔，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-qutb-ud-din-mubarak-shah",
+      "names": {
+        "primary": "库特布·乌德·丁·穆巴拉克沙",
+        "aliases": [
+          "Qutb ud-Din Mubarak Shah",
+          "Qutbuddin Mubarak"
+        ]
+      },
+      "description": "库特布·乌德·丁·穆巴拉克沙，德里苏丹国主要君主序列中的统治人物。卡尔吉王朝末代有实权的苏丹。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-nasir-ud-din-khusrau",
+      "names": {
+        "primary": "纳西尔·乌德·丁·库斯劳",
+        "aliases": [
+          "Nasir ud-Din Khusrau",
+          "Khusrau Khan"
+        ]
+      },
+      "description": "纳西尔·乌德·丁·库斯劳，德里苏丹国主要君主序列中的统治人物。1320年推翻卡尔吉末主后短暂在位，未建立王朝，同年被吉亚斯·乌德·丁·图格鲁克击败。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-ghiyas-ud-din-tughlaq-i",
+      "names": {
+        "primary": "吉亚斯·乌德·丁·图格鲁克一世",
+        "aliases": [
+          "Ghiyas ud-Din Tughlaq I",
+          "Ghiyath al-Din Tughluq"
+        ]
+      },
+      "description": "吉亚斯·乌德·丁·图格鲁克一世，德里苏丹国主要君主序列中的统治人物。1320年建立图格鲁克王朝。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-muhammad-bin-tughlaq",
+      "names": {
+        "primary": "穆罕默德·本·图格鲁克",
+        "aliases": [
+          "Muhammad bin Tughlaq",
+          "Muhammad ibn Tughluq",
+          "Muhammad Shah Tughlaq"
+        ]
+      },
+      "description": "穆罕默德·本·图格鲁克，德里苏丹国主要君主序列中的统治人物。在位期间曾以德干的道拉塔巴德为第二都城经营南方，但帝国在其统治后期开始解体，德干于1347年脱离德里另立巴赫曼尼苏丹国。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-firuz-shah-tughlaq",
+      "names": {
+        "primary": "菲鲁兹沙·图格鲁克",
+        "aliases": [
+          "Firuz Shah Tughlaq",
+          "Firoz Shah Tughlaq"
+        ]
+      },
+      "description": "菲鲁兹沙·图格鲁克，德里苏丹国主要君主序列中的统治人物。在位期间致力于内政营建，未再试图收复德干。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-ghiyas-ud-din-tughlaq-ii",
+      "names": {
+        "primary": "吉亚斯·乌德·丁·图格鲁克二世",
+        "aliases": [
+          "Ghiyas ud-Din Tughlaq II"
+        ]
+      },
+      "description": "吉亚斯·乌德·丁·图格鲁克二世，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-abu-bakr-shah",
+      "names": {
+        "primary": "阿布·巴克尔沙",
+        "aliases": [
+          "Abu Bakr Shah"
+        ]
+      },
+      "description": "阿布·巴克尔沙，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-nasir-ud-din-muhammad-shah-iii",
+      "names": {
+        "primary": "纳西尔·乌德·丁·穆罕默德沙三世",
+        "aliases": [
+          "Nasir ud-Din Muhammad Shah III",
+          "Nasiruddin Muhammad Shah"
+        ]
+      },
+      "description": "纳西尔·乌德·丁·穆罕默德沙三世，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-ala-ud-din-sikandar-shah",
+      "names": {
+        "primary": "阿拉·乌德·丁·西坎达尔沙",
+        "aliases": [
+          "Ala ud-Din Sikandar Shah",
+          "Sikandar Shah I"
+        ]
+      },
+      "description": "阿拉·乌德·丁·西坎达尔沙，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-nasir-ud-din-mahmud-shah-ii",
+      "names": {
+        "primary": "纳西尔·乌德·丁·马哈茂德沙二世",
+        "aliases": [
+          "Nasir ud-Din Mahmud Shah II",
+          "Nasiruddin Mahmud Shah"
+        ]
+      },
+      "description": "纳西尔·乌德·丁·马哈茂德沙二世，德里苏丹国主要君主序列中的统治人物。1398年帖木儿攻陷德里，苏丹国在其在位期间遭受重创。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-nasir-ud-din-nusrat-shah",
+      "names": {
+        "primary": "纳西尔·乌德·丁·努斯拉特沙",
+        "aliases": [
+          "Nasir ud-Din Nusrat Shah",
+          "Nusrat Shah"
+        ]
+      },
+      "description": "纳西尔·乌德·丁·努斯拉特沙，德里苏丹国主要君主序列中的统治人物。1395年起在德里故地东部自立争位，1398年帖木儿入侵后退出。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-khizr-khan",
+      "names": {
+        "primary": "基兹尔汗",
+        "aliases": [
+          "Khizr Khan"
+        ]
+      },
+      "description": "基兹尔汗，德里苏丹国主要君主序列中的统治人物。1414年入主德里，建立赛义德王朝，仍以帖木儿后裔的名义统治。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-mubarak-shah-sayyid",
+      "names": {
+        "primary": "穆伊兹·乌德·丁·穆巴拉克沙",
+        "aliases": [
+          "Muiz ud-Din Mubarak Shah",
+          "Mubarak Shah"
+        ]
+      },
+      "description": "穆伊兹·乌德·丁·穆巴拉克沙，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-muhammad-shah-iv",
+      "names": {
+        "primary": "穆罕默德沙四世",
+        "aliases": [
+          "Muhammad Shah IV",
+          "Muhammad Shah (Sayyid)"
+        ]
+      },
+      "description": "穆罕默德沙四世，德里苏丹国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-ala-ud-din-alam-shah",
+      "names": {
+        "primary": "阿拉·乌德·丁·阿拉姆沙",
+        "aliases": [
+          "Ala ud-Din Alam Shah",
+          "Alam Shah"
+        ]
+      },
+      "description": "阿拉·乌德·丁·阿拉姆沙，德里苏丹国主要君主序列中的统治人物。1451年让位于洛迪家族的巴鲁尔，赛义德王朝终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-bahlul-lodi",
+      "names": {
+        "primary": "巴鲁尔·洛迪",
+        "aliases": [
+          "Bahlul Lodi",
+          "Bahlul Khan Lodi"
+        ]
+      },
+      "description": "巴鲁尔·洛迪，德里苏丹国主要君主序列中的统治人物。1451年建立阿富汗人洛迪王朝，苏丹国势力部分恢复。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-sikandar-lodi",
+      "names": {
+        "primary": "西坎达尔·洛迪",
+        "aliases": [
+          "Sikandar Lodi",
+          "Sikandar Khan Lodi"
+        ]
+      },
+      "description": "西坎达尔·洛迪，德里苏丹国主要君主序列中的统治人物。在位期间兴建阿格拉城并移驻于此，王朝国势较盛。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    },
+    {
+      "id": "person-delhi-sultanate-ibrahim-lodi",
+      "names": {
+        "primary": "易卜拉欣·洛迪",
+        "aliases": [
+          "Ibrahim Lodi",
+          "Ibrahim Khan Lodi"
+        ]
+      },
+      "description": "易卜拉欣·洛迪，德里苏丹国主要君主序列中的统治人物。1526年在第一次帕尼帕特战役中败于莫卧儿领袖巴布尔并阵亡，德里苏丹国终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-delhi-sultanate-qutb-ud-din-aibak",
+      "personId": "person-delhi-sultanate-qutb-ud-din-aibak",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1206,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1210,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-aram-shah",
+      "personId": "person-delhi-sultanate-aram-shah",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1210,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1211,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-iltutmish",
+      "personId": "person-delhi-sultanate-iltutmish",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1211,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1236,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-rukn-ud-din-firuz",
+      "personId": "person-delhi-sultanate-rukn-ud-din-firuz",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1236,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1236,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-razia",
+      "personId": "person-delhi-sultanate-razia",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1236,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1240,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-muiz-ud-din-bahram",
+      "personId": "person-delhi-sultanate-muiz-ud-din-bahram",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1240,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1242,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-ala-ud-din-masud",
+      "personId": "person-delhi-sultanate-ala-ud-din-masud",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1242,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1246,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-nasir-ud-din-mahmud",
+      "personId": "person-delhi-sultanate-nasir-ud-din-mahmud",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1246,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1266,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-ghiyas-ud-din-balban",
+      "personId": "person-delhi-sultanate-ghiyas-ud-din-balban",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1266,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1287,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-muiz-ud-din-qaiqabad",
+      "personId": "person-delhi-sultanate-muiz-ud-din-qaiqabad",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1287,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1290,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-shams-ud-din-kayumars",
+      "personId": "person-delhi-sultanate-shams-ud-din-kayumars",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1290,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1290,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-jalal-ud-din-khalji",
+      "personId": "person-delhi-sultanate-jalal-ud-din-khalji",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1290,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1296,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-rukn-ud-din-ibrahim",
+      "personId": "person-delhi-sultanate-rukn-ud-din-ibrahim",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1296,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1296,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "贾拉尔·乌德·丁·卡尔吉1296年遇刺后，其子易卜拉欣在木尔坦被拥立争位，同年败于已在德里自立的阿拉·乌德·丁·卡尔吉，故与主线苏丹序列在1296年重叠。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-ala-ud-din-khalji",
+      "personId": "person-delhi-sultanate-ala-ud-din-khalji",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1296,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1316,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-shihab-ud-din-umar",
+      "personId": "person-delhi-sultanate-shihab-ud-din-umar",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1316,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1316,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-qutb-ud-din-mubarak-shah",
+      "personId": "person-delhi-sultanate-qutb-ud-din-mubarak-shah",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1316,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1320,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-nasir-ud-din-khusrau",
+      "personId": "person-delhi-sultanate-nasir-ud-din-khusrau",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1320,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1320,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-ghiyas-ud-din-tughlaq-i",
+      "personId": "person-delhi-sultanate-ghiyas-ud-din-tughlaq-i",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1320,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1325,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-muhammad-bin-tughlaq",
+      "personId": "person-delhi-sultanate-muhammad-bin-tughlaq",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1325,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1351,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-firuz-shah-tughlaq",
+      "personId": "person-delhi-sultanate-firuz-shah-tughlaq",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1351,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1388,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-ghiyas-ud-din-tughlaq-ii",
+      "personId": "person-delhi-sultanate-ghiyas-ud-din-tughlaq-ii",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1388,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1389,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-abu-bakr-shah",
+      "personId": "person-delhi-sultanate-abu-bakr-shah",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1389,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1390,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-nasir-ud-din-muhammad-shah-iii",
+      "personId": "person-delhi-sultanate-nasir-ud-din-muhammad-shah-iii",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1390,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1394,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-ala-ud-din-sikandar-shah",
+      "personId": "person-delhi-sultanate-ala-ud-din-sikandar-shah",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1394,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1394,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-nasir-ud-din-mahmud-shah-ii",
+      "personId": "person-delhi-sultanate-nasir-ud-din-mahmud-shah-ii",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1394,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1413,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1398年帖木儿攻陷并洗劫德里；马哈茂德沙二世1395年后实际仅控制德里故地一隅，与努斯拉特沙争位并存，至1413年死后图格鲁克王朝苏丹序列中断。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-nasir-ud-din-nusrat-shah",
+      "personId": "person-delhi-sultanate-nasir-ud-din-nusrat-shah",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1395,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1398,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "努斯拉特沙1395年起在德里故地东部自立，与在德里的马哈茂德沙二世分治争位，1398年帖木儿入侵后退出，故与主线苏丹序列重叠。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-khizr-khan",
+      "personId": "person-delhi-sultanate-khizr-khan",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1414,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1421,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-mubarak-shah-sayyid",
+      "personId": "person-delhi-sultanate-mubarak-shah-sayyid",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1421,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1434,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-muhammad-shah-iv",
+      "personId": "person-delhi-sultanate-muhammad-shah-iv",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1434,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1445,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-ala-ud-din-alam-shah",
+      "personId": "person-delhi-sultanate-ala-ud-din-alam-shah",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1445,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1451,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-bahlul-lodi",
+      "personId": "person-delhi-sultanate-bahlul-lodi",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1451,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1489,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-sikandar-lodi",
+      "personId": "person-delhi-sultanate-sikandar-lodi",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1489,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1517,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-delhi-sultanate-ibrahim-lodi",
+      "personId": "person-delhi-sultanate-ibrahim-lodi",
+      "polityId": "polity-delhi-sultanate",
+      "titles": [
+        "苏丹"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1517,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1526,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1526年第一次帕尼帕特战役中败于巴布尔并阵亡，洛迪王朝与德里苏丹国终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-delhi-sultanate-britannica"
+        },
+        {
+          "sourceId": "source-delhi-sultanate-ruler-list"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

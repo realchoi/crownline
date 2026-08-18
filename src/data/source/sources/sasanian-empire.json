@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-sasanian-history",
+    "title": "Sasanian dynasty",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Sasanian dynasty'；用于校订萨珊帝国224—651年的存续区间、与罗马/拜占庭及阿拉伯的冲突，以及王朝终结。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/topic/Sasanian-dynasty",
+    "accessedAt": "2026-08-14"
+  },
+  {
+    "id": "source-sasanian-rulers",
+    "title": "List of shahanshahs of the Sasanian Empire",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of shahanshahs of the Sasanian Empire；用于交叉核对萨珊主要沙阿序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_shahanshahs_of_the_Sasanian_Empire",
+    "accessedAt": "2026-08-14"
+  }
+]

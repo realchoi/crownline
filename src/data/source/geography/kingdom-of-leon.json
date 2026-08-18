@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-leon-capital",
+    "polityId": "polity-kingdom-of-leon",
+    "periods": [
+      {
+        "start": {
+          "year": 910,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1230,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "León",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 42.5987,
+      "longitude": -5.5671
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代莱昂坐标，仅表示莱昂王国都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-leon-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

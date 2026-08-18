@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-champa-vijaya",
+    "polityId": "polity-champa-kingdom",
+    "periods": [
+      {
+        "start": {
+          "year": 1000,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 1471,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Vijaya",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 13.782,
+      "longitude": 109.219
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用现代归仁（Quy Nhon）附近考古遗址坐标，对应占婆后期都城毗阇耶（Vijaya）大致位置，不表示政权疆域。占婆早期政治中心在林邑/阿摩罗补罗等地，本条目以1000年后毗阇耶为浏览定位点。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-champa-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,330 @@
+{
+  "order": 998,
+  "entities": [
+    {
+      "id": "polity-maya-city-states",
+      "entityKind": "polity",
+      "polityForms": [
+        "state",
+        "other"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "玛雅城邦（古典期）",
+        "aliases": [
+          "Maya city-states",
+          "Classic Maya polities",
+          "Maya civilization (Classic period)"
+        ],
+        "local": "Maya Ajawil"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 250,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 900,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-americas"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "玛雅城邦（古典期）指约250—900年中美洲尤卡坦半岛、危地马拉佩滕与相邻低地地区并存的多个独立或结盟政治中心，如蒂卡尔、帕伦克、卡拉克穆尔与科潘等。各城由称为 ajaw 的统治者主持，通过联姻、战争与贡赋网络竞争区域霸权；7—8世纪帕伦克的帕卡尔与蒂卡尔的贾萨·钱·卡维等君主时期是古典玛雅政治与铭文记录的高峰。9世纪前后多座核心城市出现衰落与弃城，古典期政治格局逐步瓦解，本条目止于约900年这一常见史学分期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片以“古典期玛雅城邦网络”为浏览口径，不将各城邦拆为独立政权条目，也不把前古典或后古典玛雅政治体并入。下列统治者为来自不同城邦的代表性 ajaw，其任期可并行存在，反映城邦并立而非单一王统。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-maya-pakal",
+      "names": {
+        "primary": "帕卡尔大帝",
+        "aliases": [
+          "K'inich Janaab' Pakal",
+          "Pacal the Great",
+          "Pakal I"
+        ]
+      },
+      "description": "帕卡尔大帝，帕伦克城邦主要 ajaw 序列中的统治人物。615—683年在位，推动帕伦克成为古典玛雅重要政治与文化中心。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maya-yuknoom-great",
+      "names": {
+        "primary": "尤克诺姆大帝",
+        "aliases": [
+          "Yuknoom Ch'een II",
+          "Yuknoom the Great"
+        ]
+      },
+      "description": "尤克诺姆大帝，卡拉克穆尔城邦主要 ajaw 序列中的统治人物。636—686年在位，与蒂卡尔长期争霸。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maya-jasaw-chan-kawiil",
+      "names": {
+        "primary": "贾萨·钱·卡维一世",
+        "aliases": [
+          "Jasaw Chan K'awiil I",
+          "Ah Cacao",
+          "Ruler A of Tikal"
+        ]
+      },
+      "description": "贾萨·钱·卡维一世，蒂卡尔城邦主要 ajaw 序列中的统治人物。682—734年在位，击败卡拉克穆尔并重建蒂卡尔区域霸权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maya-k-ahk",
+      "names": {
+        "primary": "K'ahk'·提·乌伊·查克·查克",
+        "aliases": [
+          "K'ahk' Tiliw Chan Yopaat",
+          "Cauac Sky"
+        ]
+      },
+      "description": "K'ahk'·提·乌伊·查克·查克，科潘城邦主要 ajaw 序列中的统治人物。578—628年在位，科潘早期扩张的重要君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-maya-waxaklajuun-ubaah-kawiil",
+      "names": {
+        "primary": "瓦沙克卢洪·乌巴·卡维",
+        "aliases": [
+          "Waxaklajuun Ubaah K'awiil",
+          "18 Rabbit",
+          "Copan Ruler 13"
+        ]
+      },
+      "description": "瓦沙克卢洪·乌巴·卡维，科潘城邦主要 ajaw 序列中的统治人物。695—738年在位，科潘古典时期的代表君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-maya-k-ahk",
+      "personId": "person-maya-k-ahk",
+      "polityId": "polity-maya-city-states",
+      "titles": [
+        "科潘 ajaw"
+      ],
+      "localTitles": [
+        "Ajaw"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 578,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 628,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "科潘铭文年表；该 ajaw 代表科潘城邦，而非全体玛雅政治体。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maya-pakal",
+      "personId": "person-maya-pakal",
+      "polityId": "polity-maya-city-states",
+      "titles": [
+        "帕伦克 ajaw"
+      ],
+      "localTitles": [
+        "Ajaw"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 615,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 683,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "帕伦克铭文年表；615年即位的长纪历换算为常见口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-maya-yuknoom-great",
+      "personId": "person-maya-yuknoom-great",
+      "polityId": "polity-maya-city-states",
+      "titles": [
+        "卡拉克穆尔 ajaw"
+      ],
+      "localTitles": [
+        "Ajaw"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 636,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 686,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "卡拉克穆尔铭文年表；与帕卡尔、贾萨·卡维等任期并行，反映城邦并立。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-maya-jasaw-chan-kawiil",
+      "personId": "person-maya-jasaw-chan-kawiil",
+      "polityId": "polity-maya-city-states",
+      "titles": [
+        "蒂卡尔 ajaw"
+      ],
+      "localTitles": [
+        "Ajaw"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 682,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 734,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "蒂卡尔铭文年表；682年即位的长纪历换算为常见口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-maya-waxaklajuun-ubaah-kawiil",
+      "personId": "person-maya-waxaklajuun-ubaah-kawiil",
+      "polityId": "polity-maya-city-states",
+      "titles": [
+        "科潘 ajaw"
+      ],
+      "localTitles": [
+        "Ajaw"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 695,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 738,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "科潘铭文年表；738年被基里瓜拉统治者斩首，标志科潘政治衰落的重要节点。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-maya-history"
+        },
+        {
+          "sourceId": "source-maya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

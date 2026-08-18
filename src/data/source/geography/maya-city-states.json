@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-maya-tikal",
+    "polityId": "polity-maya-city-states",
+    "periods": [
+      {
+        "start": {
+          "year": 250,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 900,
+          "precision": "circa"
+        }
+      }
+    ],
+    "placeName": "Tikal",
+    "role": "representative-center",
+    "coordinates": {
+      "latitude": 17.222,
+      "longitude": -89.6237
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用蒂卡尔考古遗址中心点；作为古典期玛雅城邦网络的代表性中心之一，仅表示浏览定位，不表示单一政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-maya-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

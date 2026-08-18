@@ -1,0 +1,1134 @@
+{
+  "order": 935,
+  "entities": [
+    {
+      "id": "polity-sasanian-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "萨珊帝国",
+        "aliases": [
+          "Sasanian Empire",
+          "Sasanian Persia",
+          "萨珊波斯"
+        ],
+        "local": "ساسانیان"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 224,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 651,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-west-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "萨珊帝国是224年阿尔达希尔一世推翻帕提亚后在伊朗高原建立的波斯帝国，以泰西封（Ctesiphon）为冬都政治中心，统合伊朗、美索不达米亚及西亚广大疆域达四个世纪。帝国与罗马及后来的拜占庭长期争霸，沙普尔一世曾俘罗马皇帝瓦勒里安，霍斯劳二世时期亦与拜占庭爆发大规模战争并一度占领叙利亚与埃及。651年耶兹德格尔三世在阿拉伯征服中败亡，萨珊王朝终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "页面采用通行的224—651年萨珊王朝口径：以224年阿尔达希尔一世推翻帕提亚为始，以651年耶兹德格尔三世败亡、帝国解体为终。年表收录主要沙阿序列，不含457—459年霍尔米兹德三世、484—488年巴拉什等次要君主；卡瓦德一世被废期间（496—498年）由贾姆阿斯普（Djamasp）摄政，未单独列入君主序列。628—632年霍斯劳二世被推翻后的内战诸王亦未收录；651年之后在塔巴斯、伊斯法罕等地延续的地方性萨珊支系未计入本条目。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-sasanian-ardashir-i",
+      "names": {
+        "primary": "阿尔达希尔一世",
+        "aliases": [
+          "Ardashir I",
+          "Ardashir the Unifier"
+        ]
+      },
+      "description": "阿尔达希尔一世，萨珊帝国主要君主序列中的统治人物。224年在霍尔木兹甘击败帕提亚末王，建立萨珊王朝并自称「伊朗诸王之王」。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-shapur-i",
+      "names": {
+        "primary": "沙普尔一世",
+        "aliases": [
+          "Shapur I"
+        ]
+      },
+      "description": "沙普尔一世，萨珊帝国主要君主序列中的统治人物。240年起与父共治，多次击败罗马军队并于260年俘获皇帝瓦勒里安，帝国疆域与声望达于鼎盛。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-hormizd-i",
+      "names": {
+        "primary": "霍尔米兹德一世",
+        "aliases": [
+          "Hormizd I",
+          "Ohrmazd I"
+        ]
+      },
+      "description": "霍尔米兹德一世，萨珊帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-bahram-i",
+      "names": {
+        "primary": "巴赫拉姆一世",
+        "aliases": [
+          "Bahram I",
+          "Varahran I"
+        ]
+      },
+      "description": "巴赫拉姆一世，萨珊帝国主要君主序列中的统治人物。在位期间受琐罗亚斯德教祭司卡提尔影响，迫害摩尼教并处决摩尼。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-bahram-ii",
+      "names": {
+        "primary": "巴赫拉姆二世",
+        "aliases": [
+          "Bahram II",
+          "Varahran II"
+        ]
+      },
+      "description": "巴赫拉姆二世，萨珊帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-narseh",
+      "names": {
+        "primary": "纳尔塞",
+        "aliases": [
+          "Narseh",
+          "Narses"
+        ]
+      },
+      "description": "纳尔塞，萨珊帝国主要君主序列中的统治人物。298年在萨塔拉战役中败于罗马，被迫签订屈辱和约。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-hormizd-ii",
+      "names": {
+        "primary": "霍尔米兹德二世",
+        "aliases": [
+          "Hormizd II",
+          "Ohrmazd II"
+        ]
+      },
+      "description": "霍尔米兹德二世，萨珊帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-shapur-ii",
+      "names": {
+        "primary": "沙普尔二世",
+        "aliases": [
+          "Shapur II"
+        ]
+      },
+      "description": "沙普尔二世，萨珊帝国主要君主序列中的统治人物。幼年被拥立，在位七十年间多次对罗马作战并扩张帝国势力。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-ardashir-ii",
+      "names": {
+        "primary": "阿尔达希尔二世",
+        "aliases": [
+          "Ardashir II"
+        ]
+      },
+      "description": "阿尔达希尔二世，萨珊帝国主要君主序列中的统治人物。由兄长沙普尔二世任命摄政，后因试图削弱贵族权力而被废黜。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-shapur-iii",
+      "names": {
+        "primary": "沙普尔三世",
+        "aliases": [
+          "Shapur III"
+        ]
+      },
+      "description": "沙普尔三世，萨珊帝国主要君主序列中的统治人物。387年与罗马皇帝狄奥多西一世缔和，亚美尼亚被萨珊与罗马瓜分。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-bahram-iv",
+      "names": {
+        "primary": "巴赫拉姆四世",
+        "aliases": [
+          "Bahram IV",
+          "Varahran IV"
+        ]
+      },
+      "description": "巴赫拉姆四世，萨珊帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-yazdegerd-i",
+      "names": {
+        "primary": "耶兹德格尔一世",
+        "aliases": [
+          "Yazdegerd I",
+          "Yazdgird I"
+        ]
+      },
+      "description": "耶兹德格尔一世，萨珊帝国主要君主序列中的统治人物。与东罗马保持和平关系，并承认伊朗教会的独立地位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-bahram-v",
+      "names": {
+        "primary": "巴赫拉姆五世",
+        "aliases": [
+          "Bahram V",
+          "Bahram Gur",
+          "Varahran V",
+          "猎手巴赫拉姆"
+        ]
+      },
+      "description": "巴赫拉姆五世，萨珊帝国主要君主序列中的统治人物。在拉赫姆王朝支持下即位，421年与拜占庭作战并吞并亚美尼亚。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-yazdegerd-ii",
+      "names": {
+        "primary": "耶兹德格尔二世",
+        "aliases": [
+          "Yazdegerd II",
+          "Yazdgird II"
+        ]
+      },
+      "description": "耶兹德格尔二世，萨珊帝国主要君主序列中的统治人物。440年与拜占庭开战，并加强对亚美尼亚的压迫。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-peroz-i",
+      "names": {
+        "primary": "佩罗兹一世",
+        "aliases": [
+          "Peroz I",
+          "Firuz I"
+        ]
+      },
+      "description": "佩罗兹一世，萨珊帝国主要君主序列中的统治人物。多次征讨嚈哒（Hephthalites）失败，484年在战斗中阵亡。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-kavad-i",
+      "names": {
+        "primary": "卡瓦德一世",
+        "aliases": [
+          "Kavad I",
+          "Kawad I"
+        ]
+      },
+      "description": "卡瓦德一世，萨珊帝国主要君主序列中的统治人物。曾借助玛兹达克运动削弱贵族，被废后借嚈哒之力复位并进行行政改革。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-khosrow-i",
+      "names": {
+        "primary": "霍斯劳一世",
+        "aliases": [
+          "Khosrow I",
+          "Khosrow Anushirvan",
+          "Anushirvan",
+          "安努西尔万"
+        ]
+      },
+      "description": "霍斯劳一世，萨珊帝国主要君主序列中的统治人物。推行行政与军事改革，与拜占庭多次交战，其统治时期被视为萨珊帝国的黄金时代。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-hormizd-iv",
+      "names": {
+        "primary": "霍尔米兹德四世",
+        "aliases": [
+          "Hormizd IV",
+          "Ohrmazd IV"
+        ]
+      },
+      "description": "霍尔米兹德四世，萨珊帝国主要君主序列中的统治人物。继续与拜占庭作战，因罢免名将巴赫拉姆·楚宾而引发动乱，最终被推翻。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-khosrow-ii",
+      "names": {
+        "primary": "霍斯劳二世",
+        "aliases": [
+          "Khosrow II",
+          "Khosrow Parviz",
+          "Parviz",
+          "帕尔维兹"
+        ]
+      },
+      "description": "霍斯劳二世，萨珊帝国主要君主序列中的统治人物。602年起大举入侵拜占庭并占领叙利亚、巴勒斯坦与埃及，627年遭希拉克略反击后败亡被弑。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sasanian-yazdegerd-iii",
+      "names": {
+        "primary": "耶兹德格尔三世",
+        "aliases": [
+          "Yazdegerd III",
+          "Yazdgird III"
+        ]
+      },
+      "description": "耶兹德格尔三世，萨珊帝国主要君主序列中的统治人物。632年被拥立为末代沙阿，在卡迪西亚与尼哈温等战役中败于阿拉伯军队，651年帝国终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-sasanian-ardashir-i",
+      "personId": "person-sasanian-ardashir-i",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 224,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 242,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-shapur-i",
+      "personId": "person-sasanian-shapur-i",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 240,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 270,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "240年起与父阿尔达希尔一世共治，242年后独掌大权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-hormizd-i",
+      "personId": "person-sasanian-hormizd-i",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 270,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 271,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-bahram-i",
+      "personId": "person-sasanian-bahram-i",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 271,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 274,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-bahram-ii",
+      "personId": "person-sasanian-bahram-ii",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 274,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 293,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-narseh",
+      "personId": "person-sasanian-narseh",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 293,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 303,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-hormizd-ii",
+      "personId": "person-sasanian-hormizd-ii",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 303,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 309,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-shapur-ii",
+      "personId": "person-sasanian-shapur-ii",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 309,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 379,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-ardashir-ii",
+      "personId": "person-sasanian-ardashir-ii",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 379,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 383,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-shapur-iii",
+      "personId": "person-sasanian-shapur-iii",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 383,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 388,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-bahram-iv",
+      "personId": "person-sasanian-bahram-iv",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 388,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 399,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-yazdegerd-i",
+      "personId": "person-sasanian-yazdegerd-i",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 399,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 420,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-bahram-v",
+      "personId": "person-sasanian-bahram-v",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 420,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 438,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-yazdegerd-ii",
+      "personId": "person-sasanian-yazdegerd-ii",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 438,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 457,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-peroz-i",
+      "personId": "person-sasanian-peroz-i",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 459,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 484,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "457—459年霍尔米兹德三世在位，本条目未单独收录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-kavad-i",
+      "personId": "person-sasanian-kavad-i",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 488,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 496,
+            "precision": "exact"
+          }
+        },
+        {
+          "start": {
+            "year": 498,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 531,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "484—488年其叔巴拉什在位；496—498年被废期间由贾姆阿斯普（Djamasp）摄政。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-khosrow-i",
+      "personId": "person-sasanian-khosrow-i",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 531,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 579,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-hormizd-iv",
+      "personId": "person-sasanian-hormizd-iv",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 579,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 590,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-khosrow-ii",
+      "personId": "person-sasanian-khosrow-ii",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 590,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 628,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "590—591年曾被巴赫拉姆六世·楚宾短暂篡位，借拜占庭援助复位后长期执政；按当前整年闭区间模型合并记作590—628。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sasanian-yazdegerd-iii",
+      "personId": "person-sasanian-yazdegerd-iii",
+      "polityId": "polity-sasanian-empire",
+      "titles": [
+        "沙阿"
+      ],
+      "localTitles": [
+        "Shahanshah"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 632,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 651,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "628—632年霍斯劳二世被推翻后的内战诸王未计入本条目。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sasanian-history"
+        },
+        {
+          "sourceId": "source-sasanian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-teotihuacan-history",
+    "title": "Teotihuacán",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Teotihuacán'；用于校订特奥蒂瓦坎约150—550年城市国家存续、城市布局与550年前后衰落等考古—史学叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Teotihuacan",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-teotihuacan-rulers",
+    "title": "Teotihuacan",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Teotihuacan；用于说明该时期缺乏可核查本土文字统治者名录的史料状况。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Teotihuacan",
+    "accessedAt": "2026-08-18"
+  }
+]

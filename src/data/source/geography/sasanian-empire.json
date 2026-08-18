@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-sasanian-ctesiphon",
+    "polityId": "polity-sasanian-empire",
+    "periods": [
+      {
+        "start": {
+          "year": 224,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 651,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Ctesiphon",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 33.0936,
+      "longitude": 44.5806
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用考古遗址附近现代地点坐标，仅表示萨珊王朝主要政治中心的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-sasanian-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

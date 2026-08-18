@@ -1,0 +1,101 @@
+[
+  {
+    "id": "geo-safavid-tabriz",
+    "polityId": "polity-safavid-iran",
+    "periods": [
+      {
+        "start": {
+          "year": 1501,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1555,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Tabriz",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 38.08,
+      "longitude": 46.2919
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-safavid-history"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-safavid-qazvin",
+    "polityId": "polity-safavid-iran",
+    "periods": [
+      {
+        "start": {
+          "year": 1555,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1598,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Qazvin",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 36.2797,
+      "longitude": 50.0049
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-safavid-history"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-safavid-isfahan",
+    "polityId": "polity-safavid-iran",
+    "periods": [
+      {
+        "start": {
+          "year": 1598,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1736,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Isfahan",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 32.6546,
+      "longitude": 51.668
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-safavid-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

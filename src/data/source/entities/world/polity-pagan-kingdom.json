@@ -1,0 +1,580 @@
+{
+  "order": 981,
+  "entities": [
+    {
+      "id": "polity-pagan-kingdom",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "kingdom"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "蒲甘王朝",
+        "aliases": [
+          "Pagan Kingdom",
+          "Pagan dynasty",
+          "蒲甘王国"
+        ],
+        "local": "ပုဂံ"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1044,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1287,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-southeast-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "蒲甘王朝以缅甸中北部伊洛瓦底江中游的蒲甘为都城，1044年阿奴律陀统一缅甸并大力推行上座部佛教，王都兴建大量佛塔与佛寺，形成闻名于世的万塔之城；1287年末王拿罗梯诃波在蒙古入侵后弃城南逃，王朝实质终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "页面采用1044年阿奴律陀即位作为蒲甘王朝通行的起始年，1044年以前的蒲甘地方首领不在本条目范围内；1287年则以末王拿罗梯诃波弃城南逃、蒙古入侵后王朝实质瓦解作为结束节点。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-pagan-anawrahta",
+      "names": {
+        "primary": "阿奴律陀",
+        "aliases": [
+          "Anawrahta"
+        ]
+      },
+      "description": "阿奴律陀，蒲甘王朝主要君主序列中的统治人物。1044年即位后统一缅甸各地，引入上座部佛教并推动大规模造塔，被视为蒲甘王朝的奠基者与最强君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-pagan-saw-lu",
+      "names": {
+        "primary": "苏卢",
+        "aliases": [
+          "Saw Lu"
+        ]
+      },
+      "description": "苏卢，蒲甘王朝主要君主序列中的统治人物。他是阿奴律陀之子，在位期间继续维护蒲甘对缅甸中北部的控制。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-pagan-kyansittha",
+      "names": {
+        "primary": "江喜陀",
+        "aliases": [
+          "Kyanzittha",
+          "Kyansittha"
+        ]
+      },
+      "description": "江喜陀，蒲甘王朝主要君主序列中的统治人物。他巩固并扩展蒲甘势力，继续推动佛教建筑与对外联系，其治下蒲甘仍保持强盛。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-pagan-alaungsithu",
+      "names": {
+        "primary": "阿隆悉都",
+        "aliases": [
+          "Alaungsithu",
+          "Sithu I"
+        ]
+      },
+      "description": "阿隆悉都，蒲甘王朝主要君主序列中的统治人物。他在位时间较长，继续推进造塔与水利建设，蒲甘作为佛教中心的影响进一步扩大。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-pagan-narathu",
+      "names": {
+        "primary": "拿罗胡",
+        "aliases": [
+          "Narathu"
+        ]
+      },
+      "description": "拿罗胡，蒲甘王朝主要君主序列中的统治人物。他以篡位上台，在位短暂且以暴虐著称，终被刺杀。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-pagan-naratheinkha",
+      "names": {
+        "primary": "拿罗定迦",
+        "aliases": [
+          "Naratheinkha"
+        ]
+      },
+      "description": "拿罗定迦，蒲甘王朝主要君主序列中的统治人物。他是阿隆悉都之子，仅在位约一年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-pagan-narapati-sithu",
+      "names": {
+        "primary": "拿罗帕蒂·悉都",
+        "aliases": [
+          "Narapati Sithu",
+          "Sithu II"
+        ]
+      },
+      "description": "拿罗帕蒂·悉都，蒲甘王朝主要君主序列中的统治人物。他在位期间蒲甘仍维持相当国力，并与南宋等外部政权保持往来。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-pagan-htilominlo",
+      "names": {
+        "primary": "梯莱明劳",
+        "aliases": [
+          "Htilominlo"
+        ]
+      },
+      "description": "梯莱明劳，蒲甘王朝主要君主序列中的统治人物。其名意为受三界庇护，在位期间继续兴建佛塔，蒲甘佛教文化仍盛。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-pagan-kyaswa",
+      "names": {
+        "primary": "迦叟",
+        "aliases": [
+          "Kyaswa"
+        ]
+      },
+      "description": "迦叟，蒲甘王朝主要君主序列中的统治人物。他在位期间国家已显衰落迹象，对外抵御压力增大。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-pagan-narathihapate",
+      "names": {
+        "primary": "拿罗梯诃波",
+        "aliases": [
+          "Narathihapate"
+        ]
+      },
+      "description": "拿罗梯诃波，蒲甘王朝主要君主序列中的末代统治人物。1287年面对元朝入侵，他弃城南逃，蒲甘王朝由此实质终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-pagan-anawrahta",
+      "personId": "person-pagan-anawrahta",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1044,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1077,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-pagan-saw-lu",
+      "personId": "person-pagan-saw-lu",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1077,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1084,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-pagan-kyansittha",
+      "personId": "person-pagan-kyansittha",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1084,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1113,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-pagan-alaungsithu",
+      "personId": "person-pagan-alaungsithu",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1113,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1167,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-pagan-narathu",
+      "personId": "person-pagan-narathu",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1167,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1170,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-pagan-naratheinkha",
+      "personId": "person-pagan-naratheinkha",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1170,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1171,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-pagan-narapati-sithu",
+      "personId": "person-pagan-narapati-sithu",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1171,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1211,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-pagan-htilominlo",
+      "personId": "person-pagan-htilominlo",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1211,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1235,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-pagan-kyaswa",
+      "personId": "person-pagan-kyaswa",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1235,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1250,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-pagan-narathihapate",
+      "personId": "person-pagan-narathihapate",
+      "polityId": "polity-pagan-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Min"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1250,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1287,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-pagan-history"
+        },
+        {
+          "sourceId": "source-pagan-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

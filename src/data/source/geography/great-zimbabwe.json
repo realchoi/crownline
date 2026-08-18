@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-great-zimbabwe-site",
+    "polityId": "polity-great-zimbabwe",
+    "periods": [
+      {
+        "start": {
+          "year": 1220,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 1450,
+          "precision": "circa"
+        }
+      }
+    ],
+    "placeName": "Great Zimbabwe",
+    "role": "political-center",
+    "coordinates": {
+      "latitude": -20.2675,
+      "longitude": 30.9333
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用大津巴布韦考古遗址中心点；仅表示该时期主要政治—贸易中心的大致位置，不表示王国疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-great-zimbabwe-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

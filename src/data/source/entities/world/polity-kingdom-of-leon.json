@@ -1,0 +1,76 @@
+{
+  "order": 994,
+  "entities": [
+    {
+      "id": "polity-kingdom-of-leon",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom",
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "莱昂王国",
+        "aliases": [
+          "Kingdom of León",
+          "León"
+        ],
+        "local": "Regnum Legionense"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 910,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1230,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-europe"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "莱昂王国是910年从阿斯图里亚斯王国分立出来的伊比利亚西北基督教政权，核心领土涵盖今莱昂、加利西亚东部与卡斯蒂利亚西部。该王国承续阿方索三世对收复失地运动的遗产，经奥多尼奥二世、拉米罗二世与阿方索五世等君主巩固并扩张，长期与卡斯蒂利亚、加利西亚发生联合与冲突；阿方索九世在位期间议会制度有所发展，1230年其与卡斯蒂利亚的最终合并标志莱昂作为独立王国的终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-leon-history"
+        },
+        {
+          "sourceId": "source-leon-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "910年从阿斯图里亚斯分立为独立王国，为阿斯图里亚斯遗产的延续；与卡斯蒂利亚、加利西亚长期联合或冲突；1230年阿方索九世去世后并入卡斯蒂利亚王冠。"
+    }
+  ],
+  "persons": [
+    { "id": "person-leon-garcia-i", "names": { "primary": "加西亚一世", "aliases": ["García I", "Garcia I"] }, "description": "加西亚一世，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] },
+    { "id": "person-leon-ordono-ii", "names": { "primary": "奥多尼奥二世", "aliases": ["Ordoño II", "Ordono II"] }, "description": "奥多尼奥二世，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] },
+    { "id": "person-leon-ramiro-ii", "names": { "primary": "拉米罗二世", "aliases": ["Ramiro II"] }, "description": "拉米罗二世，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] },
+    { "id": "person-leon-alfonso-v", "names": { "primary": "阿方索五世", "aliases": ["Alfonso V"] }, "description": "阿方索五世，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] },
+    { "id": "person-leon-bermudo-iii", "names": { "primary": "贝尔穆多三世", "aliases": ["Bermudo III"] }, "description": "贝尔穆多三世，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] },
+    { "id": "person-leon-alfonso-vi", "names": { "primary": "阿方索六世", "aliases": ["Alfonso VI", "Alfonso VI of León and Castile"] }, "description": "阿方索六世，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] },
+    { "id": "person-leon-urraca", "names": { "primary": "乌拉卡", "aliases": ["Urraca", "Urraca of León"] }, "description": "乌拉卡，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] },
+    { "id": "person-leon-alfonso-vii", "names": { "primary": "阿方索七世", "aliases": ["Alfonso VII", "Alfonso VII of León and Castile"] }, "description": "阿方索七世，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] },
+    { "id": "person-leon-ferdinand-ii", "names": { "primary": "斐迪南二世", "aliases": ["Ferdinand II", "Ferdinand II of León"] }, "description": "斐迪南二世，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] },
+    { "id": "person-leon-alfonso-ix", "names": { "primary": "阿方索九世", "aliases": ["Alfonso IX", "Alfonso IX of León"] }, "description": "阿方索九世，莱昂王国主要君主序列中的统治人物。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }] }
+  ],
+  "reigns": [
+    { "id": "reign-leon-garcia-i", "personId": "person-leon-garcia-i", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 910, "precision": "exact" }, "end": { "year": 914, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "910年从阿斯图里亚斯分立，加西亚一世为莱昂首任国王。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" },
+    { "id": "reign-leon-ordono-ii", "personId": "person-leon-ordono-ii", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 914, "precision": "exact" }, "end": { "year": 924, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" },
+    { "id": "reign-leon-ramiro-ii", "personId": "person-leon-ramiro-ii", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 931, "precision": "exact" }, "end": { "year": 951, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" },
+    { "id": "reign-leon-alfonso-v", "personId": "person-leon-alfonso-v", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 999, "precision": "exact" }, "end": { "year": 1028, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" },
+    { "id": "reign-leon-bermudo-iii", "personId": "person-leon-bermudo-iii", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 1028, "precision": "exact" }, "end": { "year": 1037, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1037年战死，莱昂王位由斐迪南一世（卡斯蒂利亚）继承。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" },
+    { "id": "reign-leon-alfonso-vi", "personId": "person-leon-alfonso-vi", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 1072, "precision": "exact" }, "end": { "year": 1109, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1072年兼领卡斯蒂利亚后，此处仅保留其作为莱昂国王的任期；1065—1072年莱昂与卡斯蒂利亚分治阶段不单列。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" },
+    { "id": "reign-leon-urraca", "personId": "person-leon-urraca", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 1109, "precision": "exact" }, "end": { "year": 1126, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" },
+    { "id": "reign-leon-alfonso-vii", "personId": "person-leon-alfonso-vii", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 1126, "precision": "exact" }, "end": { "year": 1157, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1135年再度统一莱昂与卡斯蒂利亚；1157年驾崩后两国再次分立。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" },
+    { "id": "reign-leon-ferdinand-ii", "personId": "person-leon-ferdinand-ii", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 1157, "precision": "exact" }, "end": { "year": 1188, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" },
+    { "id": "reign-leon-alfonso-ix", "personId": "person-leon-alfonso-ix", "polityId": "polity-kingdom-of-leon", "titles": ["国王"], "role": "ruler", "periods": [{ "start": { "year": 1188, "precision": "exact" }, "end": { "year": 1230, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "末代独立莱昂国王；1230年去世后莱昂并入卡斯蒂利亚王冠。", "sourceRefs": [{ "sourceId": "source-leon-history" }, { "sourceId": "source-leon-rulers" }], "confidence": "medium" }
+  ],
+  "reignVacancies": []
+}

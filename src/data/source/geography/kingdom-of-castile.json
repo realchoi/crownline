@@ -1,0 +1,68 @@
+[
+  {
+    "id": "geo-castile-burgos",
+    "polityId": "polity-kingdom-of-castile",
+    "periods": [
+      {
+        "start": {
+          "year": 1037,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1087,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Burgos",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 42.3439,
+      "longitude": -3.6969
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代布尔戈斯坐标，仅表示卡斯蒂利亚早期都城的大致位置，不表示政权疆域。1087年后阿方索六世定都托莱多。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-castile-history"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-castile-toledo",
+    "polityId": "polity-kingdom-of-castile",
+    "periods": [
+      {
+        "start": {
+          "year": 1087,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1230,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Toledo",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 39.8628,
+      "longitude": -4.0273
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代托莱多坐标，仅表示1087年后卡斯蒂利亚都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-castile-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-songhai-history",
+    "title": "Songhai empire",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Songhai empire'；用于校订松尼·阿里扩张、阿斯基亚·穆罕默德改革与1591年摩洛哥入侵等叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Songhai-empire",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-songhai-rulers",
+    "title": "List of rulers of the Songhai Empire",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of rulers of the Songhai Empire；用于交叉核对松尼与阿斯基亚王朝主要序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_rulers_of_the_Songhai_Empire",
+    "accessedAt": "2026-08-18"
+  }
+]

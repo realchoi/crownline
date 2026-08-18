@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-champa-history",
+    "title": "Champa",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Champa'；用于校订占婆王国在越南中部沿海的存续、印度教文化特征及1471年毗阇耶陷落。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Champa",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-champa-rulers",
+    "title": "List of rulers of Champa",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of rulers of Champa；用于交叉核对占婆主要君主序列及通行在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_rulers_of_Champa",
+    "accessedAt": "2026-08-18"
+  }
+]

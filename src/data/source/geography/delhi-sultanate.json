@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-delhi-sultanate-delhi",
+    "polityId": "polity-delhi-sultanate",
+    "periods": [
+      {
+        "start": {
+          "year": 1206,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1526,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Delhi",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 28.6139,
+      "longitude": 77.209
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期政治中心的大致位置，不表示政权疆域。洛迪王朝西坎达尔时期曾移驻阿格拉，此处仍以德里为主要浏览定位点。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-delhi-sultanate-britannica"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

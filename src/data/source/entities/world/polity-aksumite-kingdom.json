@@ -1,0 +1,275 @@
+{
+  "order": 1000,
+  "entities": [
+    {
+      "id": "polity-aksumite-kingdom",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom",
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "阿克苏姆王国",
+        "aliases": [
+          "Kingdom of Aksum",
+          "Aksumite Empire",
+          "Axumite Kingdom"
+        ],
+        "local": "መንግሥተ አኵስም"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 100,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 940,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-east-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "阿克苏姆王国是1—10世纪控制埃塞俄比亚高原北部与红海贸易通道的非洲之角政权，以阿克苏姆城为政治与宗教中心。其通过控制曼德海峡—红海商路连接罗马/拜占庭世界、阿拉伯半岛与印度，发行自有货币并留下大量吉兹语与希腊语铭文。埃扎纳时期国教转向基督教，成为埃塞俄比亚正教传统的重要源头；7世纪后随着伊斯兰势力扩张与贸易路线转移，阿克苏姆逐步衰落，本条目止于约940年这一常见史学口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aksum-history"
+        },
+        {
+          "sourceId": "source-aksum-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用约100—940年阿克苏姆王国口径，不把1270年后所罗门王朝埃塞俄比亚单独并入。早期若干君主在位年主要依赖铭文与后出王表交叉核对，3—6世纪部分交接年只见约略写法。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-aksum-gadarat",
+      "names": {
+        "primary": "加达拉斯",
+        "aliases": [
+          "GDRT",
+          "Gadarat"
+        ]
+      },
+      "description": "加达拉斯，阿克苏姆早期铭文中的统治人物，通常被视为3世纪阿克苏姆扩张与红海贸易参与的重要君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aksum-history"
+        },
+        {
+          "sourceId": "source-aksum-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aksum-ezana",
+      "names": {
+        "primary": "埃扎纳",
+        "aliases": [
+          "Ezana",
+          "Aezanas",
+          "Abreha"
+        ]
+      },
+      "description": "埃扎纳，阿克苏姆主要君主序列中的统治人物。其铭文显示国家转向基督教，是阿克苏姆政治与宗教史上的关键节点。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aksum-history"
+        },
+        {
+          "sourceId": "source-aksum-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aksum-kaleb",
+      "names": {
+        "primary": "卡勒布",
+        "aliases": [
+          "Kaleb",
+          "Ella Atsbeha",
+          "Caleb"
+        ]
+      },
+      "description": "卡勒布，阿克苏姆主要君主序列中的统治人物。6世纪初曾远征也门，是阿克苏姆对外军事影响力的高峰之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aksum-history"
+        },
+        {
+          "sourceId": "source-aksum-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-aksum-armah",
+      "names": {
+        "primary": "阿尔马",
+        "aliases": [
+          "Armah",
+          "Ella Gabaz"
+        ]
+      },
+      "description": "阿尔马，阿克苏姆主要君主序列中的统治人物。7世纪初在位，通常被视为阿克苏姆晚期仍见铭文记录的重要君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aksum-history"
+        },
+        {
+          "sourceId": "source-aksum-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-aksum-gadarat",
+      "personId": "person-aksum-gadarat",
+      "polityId": "polity-aksumite-kingdom",
+      "titles": [
+        "阿克苏姆国王"
+      ],
+      "localTitles": [
+        "Negus"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 200,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 230,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "GDRT 铭文年代通常落在3世纪；此处按代表性年表保守记为约200—230年，100—200年间的早期君主未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aksum-history"
+        },
+        {
+          "sourceId": "source-aksum-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "早期阿克苏姆年代主要依赖铭文推断，不应视为精确纪年。"
+    },
+    {
+      "id": "reign-aksum-ezana",
+      "personId": "person-aksum-ezana",
+      "polityId": "polity-aksumite-kingdom",
+      "titles": [
+        "阿克苏姆国王"
+      ],
+      "localTitles": [
+        "Negus"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 320,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 360,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aksum-history"
+        },
+        {
+          "sourceId": "source-aksum-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-aksum-kaleb",
+      "personId": "person-aksum-kaleb",
+      "polityId": "polity-aksumite-kingdom",
+      "titles": [
+        "阿克苏姆国王"
+      ],
+      "localTitles": [
+        "Negus"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 514,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 544,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "360—514年间的若干君主未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aksum-history"
+        },
+        {
+          "sourceId": "source-aksum-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-aksum-armah",
+      "personId": "person-aksum-armah",
+      "polityId": "polity-aksumite-kingdom",
+      "titles": [
+        "阿克苏姆国王"
+      ],
+      "localTitles": [
+        "Negus"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 614,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 631,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "544—614年间的若干君主未逐一列入；631年后至约940年阿克苏姆衰落阶段亦未单列。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-aksum-history"
+        },
+        {
+          "sourceId": "source-aksum-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

@@ -1,0 +1,423 @@
+{
+  "order": 983,
+  "entities": [
+    {
+      "id": "polity-sukhothai-kingdom",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom",
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "素可泰王国",
+        "aliases": [
+          "Sukhothai Kingdom",
+          "Sukhothai dynasty"
+        ],
+        "local": "สุโขทัย"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1238,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1438,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-southeast-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "素可泰王国是十三世纪在暹罗中部兴起的泰族政权，通常被视为泰国历史上第一个独立王国。1238年室因陀罗提脱离高棉宗主权建立素可泰；兰甘亨时期势力扩张、创制泰文字并与元朝保持往来。十四世纪后国力衰退，1438年在末代君主摩诃达摩罗阇三世时期并入阿瑜陀耶。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-history"
+        },
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "1238年室因陀罗提独立建国；1438年在波隆罗阇二世时期素可泰并入阿瑜陀耶。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-sukhothai-si-inthrathit",
+      "names": {
+        "primary": "室因陀罗提",
+        "aliases": [
+          "Si Inthrathit",
+          "Pho Khun Bang Klang Hao",
+          "Sri Indraditya"
+        ]
+      },
+      "description": "室因陀罗提，素可泰王国主要君主序列中的统治人物，1238年独立建国的开国君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sukhothai-ban-mueang",
+      "names": {
+        "primary": "班孟",
+        "aliases": [
+          "Ban Mueang",
+          "Pho Khun Ban Mueang"
+        ]
+      },
+      "description": "班孟，素可泰王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sukhothai-ramkhamhaeng",
+      "names": {
+        "primary": "兰甘亨",
+        "aliases": [
+          "Ramkhamhaeng",
+          "Ram Khamhaeng",
+          "Pho Khun Ram Khamhaeng"
+        ]
+      },
+      "description": "兰甘亨，素可泰王国主要君主序列中的统治人物，以扩张版图、创制泰文字及与元朝往来著称。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sukhothai-loethai",
+      "names": {
+        "primary": "勒泰",
+        "aliases": [
+          "Loethai",
+          "Pho Khun Loethai"
+        ]
+      },
+      "description": "勒泰，素可泰王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sukhothai-lithai",
+      "names": {
+        "primary": "利泰",
+        "aliases": [
+          "Lithai",
+          "Pho Khun Lithai"
+        ]
+      },
+      "description": "利泰，素可泰王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sukhothai-maha-thammaracha-i",
+      "names": {
+        "primary": "摩诃达摩罗阇一世",
+        "aliases": [
+          "Maha Thammaracha I",
+          "Maha Thammaracha"
+        ]
+      },
+      "description": "摩诃达摩罗阇一世，素可泰王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sukhothai-maha-thammaracha-ii",
+      "names": {
+        "primary": "摩诃达摩罗阇二世",
+        "aliases": [
+          "Maha Thammaracha II"
+        ]
+      },
+      "description": "摩诃达摩罗阇二世，素可泰王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-sukhothai-maha-thammaracha-iii",
+      "names": {
+        "primary": "摩诃达摩罗阇三世",
+        "aliases": [
+          "Maha Thammaracha III"
+        ]
+      },
+      "description": "摩诃达摩罗阇三世，素可泰王国末代君主，1438年素可泰并入阿瑜陀耶。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-sukhothai-si-inthrathit",
+      "personId": "person-sukhothai-si-inthrathit",
+      "polityId": "polity-sukhothai-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Pho Khun"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1238,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1270,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sukhothai-ban-mueang",
+      "personId": "person-sukhothai-ban-mueang",
+      "polityId": "polity-sukhothai-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Pho Khun"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1270,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1279,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sukhothai-ramkhamhaeng",
+      "personId": "person-sukhothai-ramkhamhaeng",
+      "polityId": "polity-sukhothai-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Pho Khun"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1279,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1298,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sukhothai-loethai",
+      "personId": "person-sukhothai-loethai",
+      "polityId": "polity-sukhothai-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Pho Khun"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1298,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1346,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sukhothai-lithai",
+      "personId": "person-sukhothai-lithai",
+      "polityId": "polity-sukhothai-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "localTitles": [
+        "Pho Khun"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1346,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1368,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sukhothai-maha-thammaracha-i",
+      "personId": "person-sukhothai-maha-thammaracha-i",
+      "polityId": "polity-sukhothai-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1368,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1399,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sukhothai-maha-thammaracha-ii",
+      "personId": "person-sukhothai-maha-thammaracha-ii",
+      "polityId": "polity-sukhothai-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1399,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1419,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-sukhothai-maha-thammaracha-iii",
+      "personId": "person-sukhothai-maha-thammaracha-iii",
+      "polityId": "polity-sukhothai-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1419,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1438,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-sukhothai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

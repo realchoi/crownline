@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-gupta-pataliputra",
+    "polityId": "polity-gupta-empire",
+    "periods": [
+      {
+        "start": {
+          "year": 320,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 550,
+          "precision": "circa"
+        }
+      }
+    ],
+    "placeName": "Pataliputra",
+    "role": "representative-center",
+    "coordinates": {
+      "latitude": 25.5941,
+      "longitude": 85.1376
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标；笈多宫廷中心位置依通行说法对应现代巴特那一带，仅表示该时期代表性中心的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-gupta-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-kievan-rus-history",
+    "title": "Kievan Rus",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Kievan Rus'；用于校订基辅罗斯882年奥列格定都基辅、雅罗斯拉夫时代及1240年蒙古入侵终结。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Kievan-Rus",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-kievan-rus-rulers",
+    "title": "List of rulers of Kievan Rus",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of rulers of Kievan Rus；用于交叉核对基辅大公主要序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_rulers_of_Kievan_Rus%27",
+    "accessedAt": "2026-08-18"
+  }
+]

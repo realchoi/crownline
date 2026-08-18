@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-pagan-bagan",
+    "polityId": "polity-pagan-kingdom",
+    "periods": [
+      {
+        "start": {
+          "year": 1044,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1287,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Pagan",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 21.1717,
+      "longitude": 94.8585
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代蒲甘（Bagan）一带坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-pagan-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

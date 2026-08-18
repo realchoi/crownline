@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-sukhothai-history",
+    "title": "Sukhothai kingdom",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Sukhothai kingdom'；用于校订素可泰王国1238年建国、兰甘亨扩张及1438年并入阿瑜陀耶的通行口径。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Sukhothai-kingdom",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-sukhothai-rulers",
+    "title": "List of Thai monarchs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Thai monarchs § Sukhothai Kingdom；用于交叉核对素可泰主要君主序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Thai_monarchs",
+    "accessedAt": "2026-08-18"
+  }
+]

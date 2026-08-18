@@ -1,0 +1,68 @@
+[
+  {
+    "id": "geo-umayyad-damascus",
+    "polityId": "polity-umayyad-caliphate",
+    "periods": [
+      {
+        "start": {
+          "year": 661,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 744,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Damascus",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 33.5138,
+      "longitude": 36.2765
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期都城的大致位置，不表示政权疆域。744年末马尔万二世将驻跸中心北迁哈兰，但王朝仍以叙利亚为权力根基。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-umayyad-history"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-umayyad-harran",
+    "polityId": "polity-umayyad-caliphate",
+    "periods": [
+      {
+        "start": {
+          "year": 744,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 750,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Harran",
+    "role": "political-center",
+    "coordinates": {
+      "latitude": 36.8631,
+      "longitude": 39.0319
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示744年后倭马亚末期的政治中心大致位置，不表示固定首都或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-umayyad-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

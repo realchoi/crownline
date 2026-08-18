@@ -1,0 +1,625 @@
+{
+  "order": 995,
+  "entities": [
+    {
+      "id": "polity-ethiopian-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "埃塞俄比亚帝国",
+        "aliases": [
+          "Ethiopian Empire",
+          "Solomonic dynasty",
+          "所罗门王朝埃塞俄比亚",
+          "Abyssinia"
+        ],
+        "local": "የኢትዮጵያ መንግሥት"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1270,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1769,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-east-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "埃塞俄比亚帝国通常指1270年叶库诺·阿姆拉克推翻扎格维王朝后、以所罗门王朝名义统治埃塞俄比亚高原的中世纪—近代政权。阿姆达·塞翁一世与札拉·雅各布时期帝国通过军事扩张与教会体系巩固对高原诸地的控制；16世纪与阿达勒苏丹国及奥斯曼支持的穆斯林势力长期交战，勒布纳·登格尔与加尔纳德沃斯时期尤为激烈。17世纪法西利德斯定都贡德尔后形成相对稳定的宫廷政治，直至18世纪中叶诸省权贵割据的“王子时代”前夕，本条目止于1769年前后。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用所罗门王朝1270—约1769年口径，止于“王子时代”全面展开前；不把1974年君主制废除后的现代埃塞俄比亚纳入。早期若干君主在位年只见约略写法，1434年前部分交接年存在一年左右的常见浮动。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-ethiopian-yekuno-amlak",
+      "names": {
+        "primary": "叶库诺·阿姆拉克",
+        "aliases": [
+          "Yekuno Amlak",
+          "Yekuno Amlak I"
+        ]
+      },
+      "description": "叶库诺·阿姆拉克，所罗门王朝主要皇帝序列中的统治人物。1270年前后推翻扎格维王朝，重建以所罗门血统为正统的埃塞俄比亚皇权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ethiopian-amda-seyon-i",
+      "names": {
+        "primary": "阿姆达·塞翁一世",
+        "aliases": [
+          "Amda Seyon I",
+          "Amde Tsiyon"
+        ]
+      },
+      "description": "阿姆达·塞翁一世，所罗门王朝主要皇帝序列中的统治人物。通过对外征伐与教会整合扩张帝国势力，被视为中世纪埃塞俄比亚最强盛的君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ethiopian-dawit-i",
+      "names": {
+        "primary": "达维特一世",
+        "aliases": [
+          "Dawit I",
+          "David I of Ethiopia"
+        ]
+      },
+      "description": "达维特一世，所罗门王朝主要皇帝序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ethiopian-zara-yaqob",
+      "names": {
+        "primary": "札拉·雅各布",
+        "aliases": [
+          "Zara Yaqob",
+          "Zara Ya'iqob"
+        ]
+      },
+      "description": "札拉·雅各布，所罗门王朝主要皇帝序列中的统治人物。以宗教改革与中央集权著称，是15世纪埃塞俄比亚政治与教会史上的关键人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ethiopian-lebna-dengel",
+      "names": {
+        "primary": "勒布纳·登格尔",
+        "aliases": [
+          "Lebna Dengel",
+          "Dawit II",
+          "Wanag Seged"
+        ]
+      },
+      "description": "勒布纳·登格尔，所罗门王朝主要皇帝序列中的统治人物。在位期间与阿达勒苏丹国及葡萄牙势力发生多次冲突。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ethiopian-galawdewos",
+      "names": {
+        "primary": "加尔纳德沃斯",
+        "aliases": [
+          "Gelawdewos",
+          "Claudius",
+          "Galawdewos"
+        ]
+      },
+      "description": "加尔纳德沃斯，所罗门王朝主要皇帝序列中的统治人物。在对抗阿达勒与奥斯曼支持的穆斯林势力中重建部分帝国权威。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ethiopian-susenyos-i",
+      "names": {
+        "primary": "苏斯尼约斯一世",
+        "aliases": [
+          "Susenyos I",
+          "Sisinius"
+        ]
+      },
+      "description": "苏斯尼约斯一世，所罗门王朝主要皇帝序列中的统治人物。1620年代短暂改宗天主教，后恢复埃塞俄比亚正教，引发长期宗教与政治震荡。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ethiopian-fasilides",
+      "names": {
+        "primary": "法西利德斯",
+        "aliases": [
+          "Fasilides",
+          "Basilide",
+          "Alam-Sagad"
+        ]
+      },
+      "description": "法西利德斯，所罗门王朝主要皇帝序列中的统治人物。1636年定都贡德尔，开启贡德尔时期相对稳定的宫廷政治。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ethiopian-iyasu-i",
+      "names": {
+        "primary": "伊亚苏一世",
+        "aliases": [
+          "Iyasu I",
+          "Iyasu the Great",
+          "Adyam Sagad"
+        ]
+      },
+      "description": "伊亚苏一世，所罗门王朝主要皇帝序列中的统治人物。贡德尔时期的重要君主，以军事胜利与宫廷文化著称。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ethiopian-iyasu-ii",
+      "names": {
+        "primary": "伊亚苏二世",
+        "aliases": [
+          "Iyasu II",
+          "Alem Sagad"
+        ]
+      },
+      "description": "伊亚苏二世，所罗门王朝主要皇帝序列中的统治人物。18世纪贡德尔宫廷政治的代表君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-ethiopian-yekuno-amlak",
+      "personId": "person-ethiopian-yekuno-amlak",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1270,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1285,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ethiopian-amda-seyon-i",
+      "personId": "person-ethiopian-amda-seyon-i",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1314,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1344,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1285—1314年间的叶格贝乌·塞翁、温德姆·阿拉德等君主未逐一列入；1314年阿姆达·塞翁即位前存在常见一年左右的年表浮动。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ethiopian-dawit-i",
+      "personId": "person-ethiopian-dawit-i",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1382,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1413,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ethiopian-zara-yaqob",
+      "personId": "person-ethiopian-zara-yaqob",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1434,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1468,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ethiopian-lebna-dengel",
+      "personId": "person-ethiopian-lebna-dengel",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1508,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1540,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1468—1508年间的拜达·马里亚姆、埃斯肯德尔、阿姆达·塞翁二世与纳奥德等君主未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ethiopian-galawdewos",
+      "personId": "person-ethiopian-galawdewos",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1540,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1559,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ethiopian-susenyos-i",
+      "personId": "person-ethiopian-susenyos-i",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1607,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1632,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1559—1607年间的米纳斯、萨尔萨·登格尔、雅各布与苏斯尼约斯之间的若干君主未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ethiopian-fasilides",
+      "personId": "person-ethiopian-fasilides",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1632,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1667,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ethiopian-iyasu-i",
+      "personId": "person-ethiopian-iyasu-i",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1682,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1706,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1667—1682年间的约翰内斯一世、伊亚苏一世（1682年前）等君主未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ethiopian-iyasu-ii",
+      "personId": "person-ethiopian-iyasu-ii",
+      "polityId": "polity-ethiopian-empire",
+      "titles": [
+        "埃塞俄比亚皇帝"
+      ],
+      "localTitles": [
+        "Negus Nagast"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1730,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1755,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1706—1730年间的特沃德罗斯一世、贝扎布、伊亚苏一世（第二次）等君主未逐一列入；1755年后至1769年前仍有若干短 reign 未单列。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": [
+    {
+      "id": "vacancy-ethiopian-1413-1434-gap",
+      "polityId": "polity-ethiopian-empire",
+      "periods": [
+        {
+          "start": {
+            "year": 1414,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1433,
+            "precision": "exact"
+          }
+        }
+      ],
+      "note": "1414—1433年间的特沃德罗斯一世、叶沙克一世等君主在位年表分散且存在一年左右的常见浮动；此处保守记作资料未完整校订的过渡段，而非断言确定空位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ethiopian-empire-history"
+        },
+        {
+          "sourceId": "source-ethiopian-empire-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "这是基于代表性年表未完整收录的保守处理，不是对1414—1433年存在确定政权空位的断言。"
+    }
+  ]
+}

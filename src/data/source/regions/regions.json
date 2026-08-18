@@ -52,9 +52,9 @@
     "regionKind": "historical-region",
     "coverage": {
       "status": "sample",
-      "note": "南亚目前收录朱罗帝国、孔雀帝国、莫卧儿帝国，并通过跨区域的贵霜帝国补入北印度样本，仍为有限代表条目。"
+      "note": "南亚目前收录朱罗帝国、孔雀帝国、笈多帝国、遮娄其王朝、莫卧儿帝国与德里苏丹国，并通过跨区域的贵霜帝国补入北印度样本，仍为有限代表条目。"
     },
-    "description": "南亚宽粒度历史地区；当前收录朱罗帝国、孔雀帝国、莫卧儿帝国，并通过跨区域的贵霜帝国补入样本，不代表精确疆域或现代主权范围。",
+    "description": "南亚宽粒度历史地区；当前收录朱罗帝国、孔雀帝国、笈多帝国、遮娄其王朝、莫卧儿帝国与德里苏丹国，并通过跨区域的贵霜帝国补入样本，不代表精确疆域或现代主权范围。",
     "sourceRefs": [
       {
         "sourceId": "source-crownline-coverage"
@@ -72,9 +72,9 @@
     "regionKind": "historical-region",
     "coverage": {
       "status": "sample",
-      "note": "东南亚目前收录高棉帝国与满者伯夷两个代表性政权，仍不足以覆盖大陆与群岛东南亚的完整历史。"
+      "note": "东南亚目前收录蒲甘王朝、占婆王国、高棉帝国、素可泰王国、阿瑜陀耶王国与满者伯夷六个代表性政权，仍不足以覆盖大陆与群岛东南亚的完整历史。"
     },
-    "description": "东南亚宽粒度历史地区；当前收录高棉帝国与满者伯夷样本，不代表精确疆域或现代主权范围。",
+    "description": "东南亚宽粒度历史地区；当前收录蒲甘王朝、占婆王国、高棉帝国、素可泰王国、阿瑜陀耶王国与满者伯夷样本，不代表精确疆域或现代主权范围。",
     "sourceRefs": [
       {
         "sourceId": "source-crownline-coverage"
@@ -113,9 +113,9 @@
     "regionKind": "historical-region",
     "coverage": {
       "status": "sample",
-      "note": "西亚目前收录拜占庭帝国、阿拔斯哈里发、帖木儿帝国、塞尔柱帝国与奥斯曼帝国，仍为有限样本。"
+      "note": "西亚目前收录拜占庭帝国、萨珊帝国、倭马亚与阿拔斯哈里发、帖木儿帝国、塞尔柱帝国、萨法维王朝与奥斯曼帝国，仍为有限样本。"
     },
-    "description": "西亚宽粒度历史地区；当前收录拜占庭帝国、阿拔斯哈里发、帖木儿帝国、塞尔柱帝国与奥斯曼帝国样本，不代表精确疆域或现代主权范围。",
+    "description": "西亚宽粒度历史地区；当前收录拜占庭帝国、萨珊帝国、倭马亚与阿拔斯哈里发、帖木儿帝国、塞尔柱帝国、萨法维王朝与奥斯曼帝国样本，不代表精确疆域或现代主权范围。",
     "sourceRefs": [
       {
         "sourceId": "source-crownline-coverage"
@@ -133,9 +133,9 @@
     "regionKind": "historical-region",
     "coverage": {
       "status": "sample",
-      "note": "欧洲目前收录法兰克王国、英格兰王国、拜占庭帝国、神圣罗马帝国，并补入奥斯曼帝国这一跨区域样本，仍不足以代表欧洲通史。"
+      "note": "欧洲目前收录法兰克王国、英格兰王国、第一保加利亚帝国、基辅罗斯、卡斯蒂利亚王国、莱昂王国、拜占庭帝国、神圣罗马帝国，并补入奥斯曼帝国这一跨区域样本，仍不足以代表欧洲通史。"
     },
-    "description": "欧洲宽粒度历史地区；当前收录法兰克王国、英格兰王国、拜占庭帝国、神圣罗马帝国，并补入奥斯曼帝国这一跨区域样本。跨地区政权在全览分组中只显示一次。",
+    "description": "欧洲宽粒度历史地区；当前收录法兰克王国、英格兰王国、第一保加利亚帝国、基辅罗斯、卡斯蒂利亚王国、莱昂王国、拜占庭帝国、神圣罗马帝国，并补入奥斯曼帝国这一跨区域样本。跨地区政权在全览分组中只显示一次。",
     "sourceRefs": [
       {
         "sourceId": "source-crownline-coverage"
@@ -153,9 +153,9 @@
     "regionKind": "historical-region",
     "coverage": {
       "status": "sample",
-      "note": "北非目前收录法蒂玛王朝，并通过跨地区的阿拔斯哈里发补入早期伊斯兰政权样本，仍为有限代表条目。"
+      "note": "北非目前收录法蒂玛王朝，并通过跨地区的倭马亚与阿拔斯哈里发补入早期伊斯兰政权样本，仍为有限代表条目。"
     },
-    "description": "北非宽粒度历史地区；当前收录法蒂玛王朝，并通过跨地区的阿拔斯哈里发补入样本，不代表精确疆域或现代主权范围。",
+    "description": "北非宽粒度历史地区；当前收录法蒂玛王朝，并通过跨地区的倭马亚与阿拔斯哈里发补入样本，不代表精确疆域或现代主权范围。",
     "sourceRefs": [
       {
         "sourceId": "source-crownline-coverage"
@@ -173,9 +173,9 @@
     "regionKind": "historical-region",
     "coverage": {
       "status": "sample",
-      "note": "西非目前收录马里帝国这一代表性政权，仍不足以覆盖西非沿海、萨赫勒与森林地带的完整历史。"
+      "note": "西非目前收录马里帝国、桑海帝国与卡涅姆-博尔努帝国三个代表性政权，仍不足以覆盖西非沿海、萨赫勒与森林地带的完整历史。"
     },
-    "description": "西非宽粒度历史地区；当前收录马里帝国样本，不代表精确疆域或现代主权范围。",
+    "description": "西非宽粒度历史地区；当前收录马里帝国、桑海帝国与卡涅姆-博尔努帝国样本，不代表精确疆域或现代主权范围。",
     "sourceRefs": [
       {
         "sourceId": "source-crownline-coverage"
@@ -193,9 +193,50 @@
     "regionKind": "historical-region",
     "coverage": {
       "status": "sample",
-      "note": "美洲目前收录阿兹特克帝国与印加帝国两个晚期代表性政权，覆盖仍然有限，不足以代表前哥伦布时期各区域与各时期的完整政治谱系。"
+      "note": "美洲目前收录阿兹特克帝国、印加帝国、玛雅城邦（古典期）、托尔特克与特奥蒂瓦坎五个代表性政权，覆盖仍然有限，不足以代表前哥伦布时期各区域与各时期的完整政治谱系。"
     },
-    "description": "美洲宽粒度历史地区；当前仅收录阿兹特克帝国与印加帝国样本，覆盖有限不表示当时或其他区域不存在政权，也不代表精确疆域或现代主权范围。",
+    "description": "美洲宽粒度历史地区；当前收录阿兹特克帝国、印加帝国、玛雅城邦（古典期）、托尔特克与特奥蒂瓦坎样本，覆盖有限不表示当时或其他区域不存在政权，也不代表精确疆域或现代主权范围。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-crownline-coverage"
+      }
+    ]
+  },
+  {
+    "id": "region-east-africa",
+    "names": {
+      "primary": "东非",
+      "aliases": [
+        "East Africa",
+        "Horn of Africa"
+      ]
+    },
+    "regionKind": "historical-region",
+    "coverage": {
+      "status": "sample",
+      "note": "东非目前收录阿克苏姆王国与埃塞俄比亚帝国（所罗门王朝）两个代表性政权，仍不足以覆盖非洲之角、大湖区与东非沿海的完整历史。"
+    },
+    "description": "东非宽粒度历史地区；当前收录阿克苏姆王国与埃塞俄比亚帝国（所罗门王朝）样本，不代表精确疆域或现代主权范围。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-crownline-coverage"
+      }
+    ]
+  },
+  {
+    "id": "region-southern-africa",
+    "names": {
+      "primary": "南部非洲",
+      "aliases": [
+        "Southern Africa"
+      ]
+    },
+    "regionKind": "historical-region",
+    "coverage": {
+      "status": "sample",
+      "note": "南部非洲目前收录大津巴布韦王国与穆塔帕帝国两个代表性政权，仍不足以覆盖赞比西—林波波河流域及更广区域的完整历史。"
+    },
+    "description": "南部非洲宽粒度历史地区；当前收录大津巴布韦王国与穆塔帕帝国样本，不代表精确疆域或现代主权范围。",
     "sourceRefs": [
       {
         "sourceId": "source-crownline-coverage"

@@ -78,8 +78,8 @@ describe("时间点结果", () => {
       }
     );
 
-    expect(select(1000, "", "region-americas").polityEmptyReason).toBe("limited-coverage");
-    expect(select(1300, "", "region-south-asia").polityEmptyReason).toBe("limited-coverage");
+    expect(select(1000, "", "region-east-africa").polityEmptyReason).toBe("limited-coverage");
+    expect(select(760, "", "region-south-asia").polityEmptyReason).toBe("limited-coverage");
     expect(select(1000, "不存在", "region-south-asia").polityEmptyReason).toBe("filtered-out");
   });
 

@@ -1,0 +1,766 @@
+{
+  "order": 950,
+  "entities": [
+    {
+      "id": "polity-umayyad-caliphate",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "倭马亚哈里发国",
+        "aliases": [
+          "倭马亚王朝",
+          "伍麦叶王朝",
+          "白衣大食",
+          "Umayyad Caliphate",
+          "Umayyad dynasty"
+        ],
+        "local": "ٱلْخِلَافَة ٱلْأُمَوِيَّة"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 661,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 750,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-west-asia",
+        "region-north-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "661年穆阿维叶一世在第一次伊斯兰内战后出任哈里发，以大马士革为都城，确立倭马亚家族的世袭哈里发统治。倭马亚军队先后征服马格里布、河中地区、信德与伊比利亚半岛大部，疆域在瓦利德一世时期达到极盛；阿卜杜勒·马利克推行行政与货币的阿拉伯化改革，巩固了中央集权。744年起第三次内战与阿拔斯革命接连爆发，750年马尔万二世在扎布河战败，王朝被阿拔斯家族取代。本条目只收录661—750年以叙利亚为核心的大马士革哈里发国，不含750年后倭马亚后裔在伊比利亚建立的科尔多瓦政权。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "存续区间按通行的大马士革时期口径计算：起于661年穆阿维叶一世就任哈里发，止于750年阿拔斯革命推翻马尔万二世。744年末马尔万二世将驻跸中心北迁哈兰，但王朝仍以叙利亚为权力根基。750年后阿卜杜拉赫曼一世逃至伊比利亚建立科尔多瓦埃米尔国（后改称哈里发），属后倭马亚政权，不在本条目区间内。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-umayyad-muawiya-i",
+      "names": {
+        "primary": "穆阿维叶一世",
+        "aliases": [
+          "Mu'awiya I",
+          "Muawiya I",
+          "Mu'awiya ibn Abi Sufyan"
+        ]
+      },
+      "description": "穆阿维叶一世，倭马亚哈里发国主要君主序列中的统治人物。原任叙利亚总督，661年就任哈里发，迁都大马士革并确立世袭继承。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-yazid-i",
+      "names": {
+        "primary": "耶齐德一世",
+        "aliases": [
+          "Yazid I",
+          "Yazid ibn Mu'awiya"
+        ]
+      },
+      "description": "耶齐德一世，倭马亚哈里发国主要君主序列中的统治人物。在位期间发生卡尔巴拉事件，第二次内战随之爆发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-muawiya-ii",
+      "names": {
+        "primary": "穆阿维叶二世",
+        "aliases": [
+          "Mu'awiya II",
+          "Muawiya II"
+        ]
+      },
+      "description": "穆阿维叶二世，倭马亚哈里发国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-marwan-i",
+      "names": {
+        "primary": "马尔万一世",
+        "aliases": [
+          "Marwan I",
+          "Marwan ibn al-Hakam"
+        ]
+      },
+      "description": "马尔万一世，倭马亚哈里发国主要君主序列中的统治人物。684年在第二次内战中被拥立，开创倭马亚王朝的马尔万支系。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-abd-al-malik",
+      "names": {
+        "primary": "阿卜杜勒·马利克",
+        "aliases": [
+          "Abd al-Malik",
+          "Abd al-Malik ibn Marwan"
+        ]
+      },
+      "description": "阿卜杜勒·马利克，倭马亚哈里发国主要君主序列中的统治人物。692年结束第二次内战、重新统一哈里发国，并推行行政语言与货币的阿拉伯化改革。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-al-walid-i",
+      "names": {
+        "primary": "瓦利德一世",
+        "aliases": [
+          "al-Walid I",
+          "al-Walid ibn Abd al-Malik"
+        ]
+      },
+      "description": "瓦利德一世，倭马亚哈里发国主要君主序列中的统治人物。在位期间征服河中、信德与伊比利亚大部，哈里发国疆域达到极盛。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-sulayman",
+      "names": {
+        "primary": "苏莱曼",
+        "aliases": [
+          "Sulayman",
+          "Sulayman ibn Abd al-Malik"
+        ]
+      },
+      "description": "苏莱曼，倭马亚哈里发国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-umar-ii",
+      "names": {
+        "primary": "欧麦尔二世",
+        "aliases": [
+          "Umar II",
+          "Umar ibn Abd al-Aziz"
+        ]
+      },
+      "description": "欧麦尔二世，倭马亚哈里发国主要君主序列中的统治人物。以财政与税制改革著称，在后世伊斯兰传统中被视为公正的哈里发。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-yazid-ii",
+      "names": {
+        "primary": "耶齐德二世",
+        "aliases": [
+          "Yazid II",
+          "Yazid ibn Abd al-Malik"
+        ]
+      },
+      "description": "耶齐德二世，倭马亚哈里发国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-hisham",
+      "names": {
+        "primary": "希沙姆",
+        "aliases": [
+          "Hisham",
+          "Hisham ibn Abd al-Malik"
+        ]
+      },
+      "description": "希沙姆，倭马亚哈里发国主要君主序列中的统治人物。在位近二十年，哈里发国对外扩张在其任内基本停止。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-al-walid-ii",
+      "names": {
+        "primary": "瓦利德二世",
+        "aliases": [
+          "al-Walid II",
+          "al-Walid ibn Yazid"
+        ]
+      },
+      "description": "瓦利德二世，倭马亚哈里发国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-yazid-iii",
+      "names": {
+        "primary": "耶齐德三世",
+        "aliases": [
+          "Yazid III",
+          "Yazid ibn al-Walid"
+        ]
+      },
+      "description": "耶齐德三世，倭马亚哈里发国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-ibrahim",
+      "names": {
+        "primary": "易卜拉欣",
+        "aliases": [
+          "Ibrahim",
+          "Ibrahim ibn al-Walid"
+        ]
+      },
+      "description": "易卜拉欣，倭马亚哈里发国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    },
+    {
+      "id": "person-umayyad-marwan-ii",
+      "names": {
+        "primary": "马尔万二世",
+        "aliases": [
+          "Marwan II",
+          "Marwan ibn Muhammad"
+        ]
+      },
+      "description": "马尔万二世，倭马亚哈里发国主要君主序列中的统治人物。末代哈里发，750年在扎布河之战败于阿拔斯军，随后被杀，王朝终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-umayyad-muawiya-i",
+      "personId": "person-umayyad-muawiya-i",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 661,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 680,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-yazid-i",
+      "personId": "person-umayyad-yazid-i",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 680,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 683,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-muawiya-ii",
+      "personId": "person-umayyad-muawiya-ii",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 683,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 684,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "穆阿维叶二世在位仅数月即去世，苏富扬支系告终；此间伊本·祖拜尔在麦加自立为哈里发并获多省承认，形成争位局面。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-marwan-i",
+      "personId": "person-umayyad-marwan-i",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 684,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 685,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "马尔万一世在贾比亚部族会议上被拥立，其统治初期与伊本·祖拜尔政权并存，直至692年第二次内战才告结束。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-abd-al-malik",
+      "personId": "person-umayyad-abd-al-malik",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 685,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 705,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-al-walid-i",
+      "personId": "person-umayyad-al-walid-i",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 705,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 715,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-sulayman",
+      "personId": "person-umayyad-sulayman",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 715,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 717,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-umar-ii",
+      "personId": "person-umayyad-umar-ii",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 717,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 720,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-yazid-ii",
+      "personId": "person-umayyad-yazid-ii",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 720,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 724,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-hisham",
+      "personId": "person-umayyad-hisham",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 724,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 743,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-al-walid-ii",
+      "personId": "person-umayyad-al-walid-ii",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 743,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 744,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-yazid-iii",
+      "personId": "person-umayyad-yazid-iii",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 744,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 744,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "744年第三次内战期间，耶齐德三世起兵推翻瓦利德二世后继位，在位约六个月即去世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-ibrahim",
+      "personId": "person-umayyad-ibrahim",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 744,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 744,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "易卜拉欣按耶齐德三世遗命继位，在位仅约两个月，即被迫让位于率军入主大马士革的马尔万二世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-umayyad-marwan-ii",
+      "personId": "person-umayyad-marwan-ii",
+      "polityId": "polity-umayyad-caliphate",
+      "titles": [
+        "哈里发"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 744,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 750,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "马尔万二世744年末进入大马士革后继位，并将驻跸中心北迁哈兰；750年扎布河之战败于阿拔斯军，随后在逃往埃及途中被杀，倭马亚王朝终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-umayyad-history"
+        },
+        {
+          "sourceId": "source-umayyad-caliphs"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

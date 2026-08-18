@@ -1,0 +1,310 @@
+{
+  "order": 1003,
+  "entities": [
+    {
+      "id": "polity-kanem-bornu-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "卡涅姆-博尔努帝国",
+        "aliases": [
+          "Kanem-Bornu Empire",
+          "Bornu Empire",
+          "Sayfawa dynasty"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 700,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1893,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-west-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "卡涅姆-博尔努帝国是乍得湖盆地长期存续的萨赫勒政权，由赛法瓦王朝统治。早期政治中心在卡涅姆，13—14世纪在杜纳马·迪巴勒米等君主推动下扩张；1380年代左右因内乱与外部压力将首都迁至博尔努地区的恩加扎尔加穆。16—17世纪在伊德里斯·阿拉乌马统治下推行伊斯兰改革并强化军事组织，成为跨撒哈拉贸易与学术网络的重要节点。19世纪在苏丹马赫迪运动与英—法殖民压力下面临危机，1893年拉巴赫·祖拜尔攻占恩加扎尔加穆后，赛法瓦主线通常即告终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用约700—1893年卡涅姆-博尔努帝国口径，涵盖赛法瓦王朝自卡涅姆至博尔努的连续传统。700—1200年早期世系资料稀疏，本条目只收录有较明确史学口径的代表性 Mai；1380年迁都博尔努前后存在常见约年浮动。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-kanem-bornu-dunama-dibbalemi",
+      "names": {
+        "primary": "杜纳马·迪巴勒米",
+        "aliases": [
+          "Dunama Dibbalemi",
+          "Dunama II"
+        ]
+      },
+      "description": "杜纳马·迪巴勒米，卡涅姆-博尔努赛法瓦王朝主要 Mai 序列中的统治人物。13世纪扩张卡涅姆势力并扩大对乍得湖盆地的影响。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kanem-bornu-umari",
+      "names": {
+        "primary": "乌马里",
+        "aliases": [
+          "Umari",
+          "Umar ibn Idris"
+        ]
+      },
+      "description": "乌马里，卡涅姆-博尔努赛法瓦王朝主要 Mai 序列中的统治人物。14世纪中后期在位，与迁都博尔努前后的动荡期相关。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kanem-bornu-ali-gazi",
+      "names": {
+        "primary": "阿里·加齐",
+        "aliases": [
+          "Ali Gazi",
+          "Ali ibn Dunama"
+        ]
+      },
+      "description": "阿里·加齐，卡涅姆-博尔努赛法瓦王朝主要 Mai 序列中的统治人物。16世纪初巩固博尔努政权并推动伊斯兰化。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kanem-bornu-idris-alauma",
+      "names": {
+        "primary": "伊德里斯·阿拉乌马",
+        "aliases": [
+          "Idris Alauma",
+          "Idris Alooma",
+          "Idris ibn Ali"
+        ]
+      },
+      "description": "伊德里斯·阿拉乌马，卡涅姆-博尔努赛法瓦王朝最著名的 Mai 之一。推行伊斯兰法律、改革军队并扩大博尔努在萨赫勒的影响力。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kanem-bornu-ali-dunama",
+      "names": {
+        "primary": "阿里·杜纳马",
+        "aliases": [
+          "Ali ibn Dunama",
+          "Ali V of Bornu"
+        ]
+      },
+      "description": "阿里·杜纳马，卡涅姆-博尔努赛法瓦王朝晚期主要 Mai 序列中的统治人物。19世纪上半叶在位，面临富拉尼圣战与区域权力重组。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-kanem-bornu-dunama-dibbalemi",
+      "personId": "person-kanem-bornu-dunama-dibbalemi",
+      "polityId": "polity-kanem-bornu-empire",
+      "titles": [
+        "卡涅姆-博尔努 Mai"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1221,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1259,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "700—1221年间的早期 Mai 未逐一列入；1221—1259年为杜纳马·迪巴勒米的常见约年在位区间。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kanem-bornu-umari",
+      "personId": "person-kanem-bornu-umari",
+      "polityId": "polity-kanem-bornu-empire",
+      "titles": [
+        "卡涅姆-博尔努 Mai"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1372,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1380,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kanem-bornu-ali-gazi",
+      "personId": "person-kanem-bornu-ali-gazi",
+      "polityId": "polity-kanem-bornu-empire",
+      "titles": [
+        "卡涅姆-博尔努 Mai"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1503,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1538,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1380—1503年间的若干 Mai 未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kanem-bornu-idris-alauma",
+      "personId": "person-kanem-bornu-idris-alauma",
+      "polityId": "polity-kanem-bornu-empire",
+      "titles": [
+        "卡涅姆-博尔努 Mai"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1571,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1603,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kanem-bornu-ali-dunama",
+      "personId": "person-kanem-bornu-ali-dunama",
+      "polityId": "polity-kanem-bornu-empire",
+      "titles": [
+        "卡涅姆-博尔努 Mai"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1835,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1853,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "1603—1835年间的若干 Mai 未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kanem-bornu-history"
+        },
+        {
+          "sourceId": "source-kanem-bornu-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-aksum-axum",
+    "polityId": "polity-aksumite-kingdom",
+    "periods": [
+      {
+        "start": {
+          "year": 100,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 940,
+          "precision": "circa"
+        }
+      }
+    ],
+    "placeName": "Axum",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 14.1211,
+      "longitude": 38.7234
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代阿克苏姆；仅表示该时期政治与宗教中心的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-aksum-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

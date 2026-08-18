@@ -1,0 +1,672 @@
+{
+  "order": 992,
+  "entities": [
+    {
+      "id": "polity-kievan-rus",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "state"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "基辅罗斯",
+        "aliases": [
+          "Kievan Rus",
+          "Kyivan Rus",
+          "基辅大公国"
+        ],
+        "local": "Ки́ївська Русь"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 882,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1240,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-europe"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "基辅罗斯是9世纪由瓦良格—罗斯人在东欧斯拉夫土地上建立的政治联合体，奥列格约882年定都基辅后形成统一罗斯中心。988年弗拉基米尔一世受洗并推行东正教，雅罗斯拉夫一世时期编纂法典、与拜占庭及西欧通婚，国势达于鼎盛。11世纪后诸王公分据封邑、基辅大公权威渐衰，1240年拔都汗攻陷基辅，罗斯政治中心东移，本条目止于蒙古攻陷。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用留里克家族基辅大公主线，起自882年奥列格定都基辅，止于1240年拔都汗攻陷基辅。年表收录主要大公序列，不含弗拉基米尔-苏兹达尔与加利奇-沃里尼亚作为独立政体。972—980年雅罗波尔克、1015—1019年斯维亚托波尔克等过渡性大公及1132—1236年间多位大公未逐一列入；1054年后诸弟轮流或并立据基辅的情况较多，部分年份存在争议。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-kievan-rus-oleg",
+      "names": {
+        "primary": "奥列格",
+        "aliases": [
+          "Oleg",
+          "Oleg of Novgorod",
+          "Helgi"
+        ]
+      },
+      "description": "奥列格，基辅罗斯主要大公序列中的统治人物。约882年自诺夫哥罗德南征并定都基辅，被视为基辅罗斯统一中心的奠基者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-igor",
+      "names": {
+        "primary": "伊戈尔",
+        "aliases": [
+          "Igor of Kiev",
+          "Igor Rurikovich"
+        ]
+      },
+      "description": "伊戈尔，基辅罗斯主要大公序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-olga",
+      "names": {
+        "primary": "奥尔加",
+        "aliases": [
+          "Olga of Kiev",
+          "Saint Olga",
+          "Helga"
+        ]
+      },
+      "description": "奥尔加，基辅罗斯主要大公序列中的摄政者。伊戈尔死后为其幼子斯维亚托斯拉夫摄政，后受洗并成为东正教圣人。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-sviatoslav",
+      "names": {
+        "primary": "斯维亚托斯拉夫",
+        "aliases": [
+          "Sviatoslav I",
+          "Sviatoslav the Brave"
+        ]
+      },
+      "description": "斯维亚托斯拉夫，基辅罗斯主要大公序列中的统治人物。在位期间远征拜占庭、保加利亚与佩切涅格人，拓展罗斯军事影响力。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-vladimir-i",
+      "names": {
+        "primary": "弗拉基米尔一世",
+        "aliases": [
+          "Vladimir I",
+          "Vladimir the Great",
+          "Saint Vladimir"
+        ]
+      },
+      "description": "弗拉基米尔一世，基辅罗斯主要大公序列中的统治人物。988年受洗并确立东正教为国教，奠定罗斯基督教文明基础。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-yaroslav-i",
+      "names": {
+        "primary": "雅罗斯拉夫一世",
+        "aliases": [
+          "Yaroslav I",
+          "Yaroslav the Wise"
+        ]
+      },
+      "description": "雅罗斯拉夫一世，基辅罗斯主要大公序列中的统治人物。编纂《罗斯真理》、建设基辅圣索菲亚大教堂，被视为罗斯政治与文化鼎盛时期的代表。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-iziaslav-i",
+      "names": {
+        "primary": "伊贾斯拉夫一世",
+        "aliases": [
+          "Iziaslav I",
+          "Iziaslav Yaroslavich"
+        ]
+      },
+      "description": "伊贾斯拉夫一世，基辅罗斯主要大公序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-vsevolod-i",
+      "names": {
+        "primary": "弗谢沃洛德一世",
+        "aliases": [
+          "Vsevolod I",
+          "Vsevolod Yaroslavich"
+        ]
+      },
+      "description": "弗谢沃洛德一世，基辅罗斯主要大公序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-vladimir-ii-monomakh",
+      "names": {
+        "primary": "弗拉基米尔二世（莫诺马赫）",
+        "aliases": [
+          "Vladimir II Monomakh",
+          "Vladimir Monomakh"
+        ]
+      },
+      "description": "弗拉基米尔二世（莫诺马赫），基辅罗斯主要大公序列中的统治人物。以《莫诺马赫训诫》闻名，试图在诸王公分裂中重建基辅权威。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-mstislav-i",
+      "names": {
+        "primary": "姆斯季斯拉夫一世",
+        "aliases": [
+          "Mstislav I",
+          "Mstislav the Great"
+        ]
+      },
+      "description": "姆斯季斯拉夫一世，基辅罗斯主要大公序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-yaroslav-ii",
+      "names": {
+        "primary": "雅罗斯拉夫二世",
+        "aliases": [
+          "Yaroslav II",
+          "Yaroslav Vsevolodovich"
+        ]
+      },
+      "description": "雅罗斯拉夫二世，基辅罗斯主要大公序列中的统治人物。蒙古入侵前夕的最后几位基辅大公之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-kievan-rus-michael",
+      "names": {
+        "primary": "米哈伊尔",
+        "aliases": [
+          "Michael of Chernigov",
+          "Michael Vsevolodovich"
+        ]
+      },
+      "description": "米哈伊尔，基辅罗斯主要大公序列中的末代大公之一。1240年基辅陷落于蒙古军队，标志着本条目政治主线终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-kievan-rus-oleg",
+      "personId": "person-kievan-rus-oleg",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 882,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 912,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "882年为定都基辅、开启本条目主线的通行起点；部分文献将留里克或更早年份作为罗斯政权发端，此处从奥列格据基辅起算。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-igor",
+      "personId": "person-kievan-rus-igor",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 912,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 945,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "945年交接年归入奥尔加摄政期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-olga",
+      "personId": "person-kievan-rus-olga",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "regent",
+      "periods": [
+        {
+          "start": {
+            "year": 945,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 964,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "为幼子斯维亚托斯拉夫摄政；964年交接年归入斯维亚托斯拉夫亲政。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-sviatoslav",
+      "personId": "person-kievan-rus-sviatoslav",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 964,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 972,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "972年后诸弟争位，972—980年雅罗波尔克据基辅的过渡阶段未另列君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-vladimir-i",
+      "personId": "person-kievan-rus-vladimir-i",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 980,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1015,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "988年受洗并确立东正教；1015年交接年后至1019年斯维亚托波尔克据基辅的内战阶段未另列君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-yaroslav-i",
+      "personId": "person-kievan-rus-yaroslav-i",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1019,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1054,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1019年击败斯维亚托波尔克后正式据基辅；部分文献将其诺夫哥罗德共治期（约1010年起）另计，此处以基辅大公主线为准。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-iziaslav-i",
+      "personId": "person-kievan-rus-iziaslav-i",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1054,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1073,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1054年雅罗斯拉夫死后依弟轮流原则即位；1068—1069年遭弗谢斯拉夫短暂取代，但按当前整年闭区间模型与校验规则，这一短暂中断在概览任期中合并记作1054—1073的连续单段；1073年被弟弗谢沃洛德与斯维亚托斯拉夫废黜。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-vsevolod-i",
+      "personId": "person-kievan-rus-vsevolod-i",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1078,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1093,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1078年在其兄伊贾斯拉夫死后据基辅；1093—1113年斯维亚托波尔克二世等据基辅阶段未另列君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-vladimir-ii-monomakh",
+      "personId": "person-kievan-rus-vladimir-ii-monomakh",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1113,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1125,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1125年交接年归入姆斯季斯拉夫一世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-mstislav-i",
+      "personId": "person-kievan-rus-mstislav-i",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1125,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1132,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1132年后基辅大公位在诸支间频繁轮换，1132—1236年间多位大公未逐一列入本序列。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-yaroslav-ii",
+      "personId": "person-kievan-rus-yaroslav-ii",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1236,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1238,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "蒙古入侵前夕据基辅；1238年交接年归入米哈伊尔。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kievan-rus-michael",
+      "personId": "person-kievan-rus-michael",
+      "polityId": "polity-kievan-rus",
+      "titles": [
+        "大公"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1238,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1240,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1240年拔都汗攻陷基辅，本条目政治主线终结；1240年交接年仍归入末任大公以闭合政体存续区间。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-kievan-rus-history"
+        },
+        {
+          "sourceId": "source-kievan-rus-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

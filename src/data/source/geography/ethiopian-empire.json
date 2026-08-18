@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-ethiopian-gondar",
+    "polityId": "polity-ethiopian-empire",
+    "periods": [
+      {
+        "start": {
+          "year": 1632,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1769,
+          "precision": "circa"
+        }
+      }
+    ],
+    "placeName": "Gondar",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 12.6086,
+      "longitude": 37.4757
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代贡德尔；1632年法西利德斯定都后成为所罗门王朝后期主要宫廷中心，仅表示该时期政治中心的大致位置，不表示政权疆域。1270—1632年帝国中心曾多次迁移，本条目不另列移动宫廷点位。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-ethiopian-empire-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

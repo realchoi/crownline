@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-safavid-history",
+    "title": "Safavids",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Iranica: ‘Safavids’；用于校订萨法维王朝的兴起与终结口径、什叶派国教地位、与奥斯曼及乌兹别克的战争，以及大不里士—加兹温—伊斯法罕的都城变迁。",
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/safavids",
+    "accessedAt": "2026-08-14"
+  },
+  {
+    "id": "source-safavid-rulers",
+    "title": "List of Safavid monarchs",
+    "sourceType": "secondary",
+    "citation": "Wikipedia: ‘List of Safavid monarchs’；用于交叉核对萨法维君主序列及各自在位年份，自伊斯玛仪一世至阿巴斯三世。",
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/List_of_Safavid_monarchs",
+    "accessedAt": "2026-08-14"
+  }
+]

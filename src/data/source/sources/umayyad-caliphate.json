@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-umayyad-history",
+    "title": "Umayyad dynasty",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Umayyad dynasty'；用于校订661—750年大马士革倭马亚哈里发国的存续区间、扩张阶段与阿拔斯革命终结。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/topic/Umayyad-dynasty",
+    "accessedAt": "2026-08-14"
+  },
+  {
+    "id": "source-umayyad-caliphs",
+    "title": "List of Umayyad caliphs",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Umayyad caliphs；用于交叉核对倭马亚哈里发主要哈里发序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Umayyad_caliphs",
+    "accessedAt": "2026-08-14"
+  }
+]

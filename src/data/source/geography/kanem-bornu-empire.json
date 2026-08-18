@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-kanem-bornu-ngazargamu",
+    "polityId": "polity-kanem-bornu-empire",
+    "periods": [
+      {
+        "start": {
+          "year": 1380,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 1893,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Ngazargamu",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 12.6847,
+      "longitude": 14.2039
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用恩加扎尔加穆（Ngazargamu）现代近似位置；1380年代迁都博尔努后长期为首都，仅表示该时期政治中心，不表示帝国疆域。700—1380年卡涅姆阶段的首都未另列。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-kanem-bornu-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

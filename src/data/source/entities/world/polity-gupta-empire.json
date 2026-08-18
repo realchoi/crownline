@@ -1,0 +1,647 @@
+{
+  "order": 970,
+  "entities": [
+    {
+      "id": "polity-gupta-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "笈多帝国",
+        "aliases": [
+          "笈多王朝",
+          "Gupta Empire",
+          "Gupta dynasty"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 320,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 550,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-south-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "笈多帝国是四至六世纪统治北印度大部分地区的印度古典王朝，以华氏城（Pataliputra）为宫廷中心。旃陀罗笈多一世借助与栗呫毗（Licchavi）的联姻扩张势力，被视为帝国的实际奠基者；沙摩陀罗笈多通过一系列征伐将帝国扩展到北印度广大区域，旃陀罗笈多二世灭西萨特拉普后帝国臻于鼎盛，并成为印度古典文化的繁荣时期。五世纪中叶以后，帝国在嚈哒（Huna）入侵与内部纷争中逐渐衰落，至六世纪中叶瓦解。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "笈多王朝年代整体为约年口径：旃陀罗笈多一世的即位年有319年与320年两种通行说法，本条目采用约320年；塞建陀笈多以后诸君主的年代在史料间分歧较大，本条目一律按通行约年收录，各在位年份不应视为精确纪年。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-gupta-chandragupta-i",
+      "names": {
+        "primary": "旃陀罗笈多一世",
+        "aliases": [
+          "Chandragupta I",
+          "Chandra Gupta I"
+        ]
+      },
+      "description": "旃陀罗笈多一世，笈多帝国主要君主序列中的统治人物。他通过与栗呫毗公主鸠摩罗提毗的联姻扩张势力，并采用「摩诃罗阇提罗阇」（众王之王）称号，被视为笈多帝国的实际奠基者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-samudragupta",
+      "names": {
+        "primary": "沙摩陀罗笈多",
+        "aliases": [
+          "Samudragupta",
+          "Samudra Gupta"
+        ]
+      },
+      "description": "沙摩陀罗笈多，笈多帝国主要君主序列中的统治人物。他通过大规模征伐吞并北印度诸国，并使东南沿海诸王称臣纳贡，被后世视为笈多最伟大的征服者之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-chandragupta-ii",
+      "names": {
+        "primary": "旃陀罗笈多二世",
+        "aliases": [
+          "Chandragupta II",
+          "Chandra Gupta II",
+          "Vikramaditya",
+          "超日王"
+        ]
+      },
+      "description": "旃陀罗笈多二世，笈多帝国主要君主序列中的统治人物。他灭西萨特拉普（西郡守）政权，将帝国势力延伸至印度西部，其统治时期以文化繁荣著称，号「超日王」（Vikramaditya）。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-kumaragupta-i",
+      "names": {
+        "primary": "鸠摩罗笈多一世",
+        "aliases": [
+          "Kumaragupta I",
+          "Kumara Gupta I"
+        ]
+      },
+      "description": "鸠摩罗笈多一世，笈多帝国主要君主序列中的统治人物。他大体维持了继承自父辈的版图，在位晚期帝国可能已受到普舍耶密多罗或嚈哒势力的冲击。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-skandagupta",
+      "names": {
+        "primary": "塞建陀笈多",
+        "aliases": [
+          "Skandagupta",
+          "Skanda Gupta"
+        ]
+      },
+      "description": "塞建陀笈多，笈多帝国主要君主序列中的统治人物。他击退了嚈哒（Huna）的入侵，一度重振笈多王朝的声势，通常被视为笈多最后一位伟大君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-purugupta",
+      "names": {
+        "primary": "补罗笈多",
+        "aliases": [
+          "Purugupta",
+          "Puru Gupta"
+        ]
+      },
+      "description": "补罗笈多，笈多帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-kumaragupta-ii",
+      "names": {
+        "primary": "鸠摩罗笈多二世",
+        "aliases": [
+          "Kumaragupta II",
+          "Kumara Gupta II",
+          "Kramaditya"
+        ]
+      },
+      "description": "鸠摩罗笈多二世，笈多帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-budhagupta",
+      "names": {
+        "primary": "佛陀笈多",
+        "aliases": [
+          "Budhagupta",
+          "Buddha Gupta"
+        ]
+      },
+      "description": "佛陀笈多，笈多帝国主要君主序列中的统治人物。他与曲女城（Kannauj）统治者关系密切，共同抵御阿尔匈嚈哒（Alchon Huns）对北印度平原的侵袭。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-narasimhagupta",
+      "names": {
+        "primary": "那罗僧诃笈多",
+        "aliases": [
+          "Narasimhagupta",
+          "Narasimha Gupta",
+          "Baladitya"
+        ]
+      },
+      "description": "那罗僧诃笈多，笈多帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-kumaragupta-iii",
+      "names": {
+        "primary": "鸠摩罗笈多三世",
+        "aliases": [
+          "Kumaragupta III",
+          "Kumara Gupta III"
+        ]
+      },
+      "description": "鸠摩罗笈多三世，笈多帝国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-gupta-vishnugupta",
+      "names": {
+        "primary": "毗湿奴笈多",
+        "aliases": [
+          "Vishnugupta",
+          "Vishnu Gupta",
+          "Candraditya"
+        ]
+      },
+      "description": "毗湿奴笈多，笈多帝国主要君主序列中的统治人物。他通常被视为笈多主系的末代君主，此后帝国版图萎缩解体。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-gupta-chandragupta-i",
+      "personId": "person-gupta-chandragupta-i",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 320,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 335,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "旃陀罗笈多一世的即位年有319年与320年两种通行说法，本条目采用约320年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-samudragupta",
+      "personId": "person-gupta-samudragupta",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 335,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 375,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-chandragupta-ii",
+      "personId": "person-gupta-chandragupta-ii",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 375,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 415,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-kumaragupta-i",
+      "personId": "person-gupta-kumaragupta-i",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 415,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 455,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-skandagupta",
+      "personId": "person-gupta-skandagupta",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 455,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 467,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-purugupta",
+      "personId": "person-gupta-purugupta",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 467,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 473,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "塞建陀笈多之后的继承关系在史料中记载不一，本条目按通行序列收录，各年份均为约年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-kumaragupta-ii",
+      "personId": "person-gupta-kumaragupta-ii",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 473,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 476,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-budhagupta",
+      "personId": "person-gupta-budhagupta",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 476,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 495,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-narasimhagupta",
+      "personId": "person-gupta-narasimhagupta",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 495,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 530,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-kumaragupta-iii",
+      "personId": "person-gupta-kumaragupta-iii",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 530,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 540,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-gupta-vishnugupta",
+      "personId": "person-gupta-vishnugupta",
+      "polityId": "polity-gupta-empire",
+      "titles": [
+        "摩诃罗阇"
+      ],
+      "localTitles": [
+        "Maharajadhiraja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 540,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 550,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "毗湿奴笈多一般被视为笈多主系末代君主；此后摩揭陀一带的后笈多诸王（Later Guptas）与主系的关系尚存争议，未计入本条目。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-gupta-history"
+        },
+        {
+          "sourceId": "source-gupta-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-sukhothai-capital",
+    "polityId": "polity-sukhothai-kingdom",
+    "periods": [
+      {
+        "start": {
+          "year": 1238,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1438,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Sukhothai",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 17.0077,
+      "longitude": 99.8236
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代素可泰历史城区坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-sukhothai-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

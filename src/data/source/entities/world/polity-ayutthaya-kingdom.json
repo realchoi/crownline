@@ -1,0 +1,575 @@
+{
+  "order": 984,
+  "entities": [
+    {
+      "id": "polity-ayutthaya-kingdom",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom",
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "阿瑜陀耶王国",
+        "aliases": [
+          "Ayutthaya Kingdom",
+          "Kingdom of Ayutthaya",
+          "大城王朝"
+        ],
+        "local": "อยุธยา"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1351,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1767,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-southeast-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "阿瑜陀耶王国是以昭披耶河中游大城为中心的中部泰国政权。1351年乌通建都后逐步向东扩张，1431年攻陷吴哥；十六至十七世纪与葡萄牙等欧洲国家展开贸易，纳瑞宣、那莱等君主时期国势盛极一时，此后与缅甸长期战争，1767年终为缅军攻陷王都而灭亡。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-history"
+        },
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "页面采用1351年乌通建都阿瑜陀耶至1767年缅甸攻陷王都的通行口径；吞武里与拉达那哥欣（曼谷）王朝不在本实体范围内。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-ayutthaya-ramathibodi-i",
+      "names": {
+        "primary": "拉玛铁菩提一世",
+        "aliases": [
+          "Ramathibodi I",
+          "U Thong"
+        ]
+      },
+      "description": "拉玛铁菩提一世，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-borommaracha-i",
+      "names": {
+        "primary": "博罗玛拉查一世",
+        "aliases": [
+          "Borommaracha I"
+        ]
+      },
+      "description": "博罗玛拉查一世，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-intharacha",
+      "names": {
+        "primary": "因陀罗阇",
+        "aliases": [
+          "Intharacha"
+        ]
+      },
+      "description": "因陀罗阇，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-borommaracha-ii",
+      "names": {
+        "primary": "博罗玛拉查二世",
+        "aliases": [
+          "Borommaracha II"
+        ]
+      },
+      "description": "博罗玛拉查二世，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-trailokanat",
+      "names": {
+        "primary": "特莱洛卡纳",
+        "aliases": [
+          "Trailokanat",
+          "Trailok"
+        ]
+      },
+      "description": "特莱洛卡纳，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-naresuan",
+      "names": {
+        "primary": "纳瑞宣",
+        "aliases": [
+          "Naresuan"
+        ]
+      },
+      "description": "纳瑞宣，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-ekathotsarot",
+      "names": {
+        "primary": "艾卡托沙罗",
+        "aliases": [
+          "Ekathotsarot"
+        ]
+      },
+      "description": "艾卡托沙罗，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-prasat-thong",
+      "names": {
+        "primary": "帕赛通",
+        "aliases": [
+          "Prasat Thong"
+        ]
+      },
+      "description": "帕赛通，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-narai",
+      "names": {
+        "primary": "那莱",
+        "aliases": [
+          "Narai"
+        ]
+      },
+      "description": "那莱，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-phetracha",
+      "names": {
+        "primary": "佩差",
+        "aliases": [
+          "Phetracha"
+        ]
+      },
+      "description": "佩差，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-borommakot",
+      "names": {
+        "primary": "博隆玛固",
+        "aliases": [
+          "Borommakot"
+        ]
+      },
+      "description": "博隆玛固，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-ayutthaya-ekkathat",
+      "names": {
+        "primary": "艾卡塔",
+        "aliases": [
+          "Ekkathat"
+        ]
+      },
+      "description": "艾卡塔，阿瑜陀耶王国主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-ayutthaya-ramathibodi-i",
+      "personId": "person-ayutthaya-ramathibodi-i",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1351,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1369,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-borommaracha-i",
+      "personId": "person-ayutthaya-borommaracha-i",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1370,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1388,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-intharacha",
+      "personId": "person-ayutthaya-intharacha",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1409,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1424,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-borommaracha-ii",
+      "personId": "person-ayutthaya-borommaracha-ii",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1424,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1448,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-trailokanat",
+      "personId": "person-ayutthaya-trailokanat",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1448,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1488,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-naresuan",
+      "personId": "person-ayutthaya-naresuan",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1590,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1605,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-ekathotsarot",
+      "personId": "person-ayutthaya-ekathotsarot",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1605,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1620,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-prasat-thong",
+      "personId": "person-ayutthaya-prasat-thong",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1630,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1655,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-narai",
+      "personId": "person-ayutthaya-narai",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1656,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1688,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-phetracha",
+      "personId": "person-ayutthaya-phetracha",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1688,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1703,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-borommakot",
+      "personId": "person-ayutthaya-borommakot",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1733,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1758,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-ekkathat",
+      "personId": "person-ayutthaya-ekkathat",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1758,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1767,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-ayutthaya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

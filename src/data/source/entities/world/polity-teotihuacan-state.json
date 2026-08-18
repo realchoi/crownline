@@ -1,0 +1,83 @@
+{
+  "order": 1002,
+  "entities": [
+    {
+      "id": "polity-teotihuacan-state",
+      "entityKind": "polity",
+      "polityForms": [
+        "state",
+        "other"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "特奥蒂瓦坎",
+        "aliases": [
+          "Teotihuacan",
+          "Teotihuacán",
+          "City of Teotihuacan"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 150,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 550,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-americas"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "特奥蒂瓦坎是1—6世纪中美洲墨西哥高原上的大型城市国家，以太阳金字塔、月亮金字塔与“死者大道”闻名。考古证据显示其具有高度规划的城市布局、跨区域贸易网络与对玛雅、萨波特克等文明的深远影响，但缺乏可读的本土文字王表。约550年前后城市核心遭焚毁或废弃，政治中心瓦解，本条目采用约150—550年这一常见考古—史学口径，作为托尔特克与阿兹特克之前中部墨西哥的代表性样本。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-teotihuacan-history"
+        },
+        {
+          "sourceId": "source-teotihuacan-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "存续区间主要依据考古地层推断，精确起讫年仍属约年口径。",
+      "chronologyNote": "本分片采用约150—550年特奥蒂瓦坎城邦口径，不把更晚的图拉托尔特克或阿兹特克前身政权并入。由于缺乏可核查的统治者名录，本条目不虚构连续王名序列。"
+    }
+  ],
+  "persons": [],
+  "reigns": [],
+  "reignVacancies": [
+    {
+      "id": "vacancy-teotihuacan-named-succession-gap",
+      "polityId": "polity-teotihuacan-state",
+      "periods": [
+        {
+          "start": {
+            "year": 150,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 550,
+            "precision": "circa"
+          }
+        }
+      ],
+      "note": "特奥蒂瓦坎在约150—550年存在高度集中的城市政治体，但缺乏可核查的本土文字统治者名录；考古上虽见精英墓葬与可能的统治者符号，此处仍保守记作资料缺载，而非断言确定空位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-teotihuacan-history"
+        },
+        {
+          "sourceId": "source-teotihuacan-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "这是基于考古推断政权存在、但无法恢复具名统治者序列的保守处理。"
+    }
+  ]
+}

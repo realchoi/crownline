@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-kanem-bornu-history",
+    "title": "Kanem-Bornu",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Kanem-Bornu'；用于校订赛法瓦王朝、杜纳马·迪巴勒米扩张、1380年代迁都博尔努与伊德里斯·阿拉乌马改革等叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Kanem-Bornu",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-kanem-bornu-rulers",
+    "title": "List of rulers of Kanem-Bornu",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of rulers of Kanem-Bornu；用于交叉核对赛法瓦 Mai 主要序列及通行约年在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_rulers_of_Kanem-Bornu",
+    "accessedAt": "2026-08-18"
+  }
+]

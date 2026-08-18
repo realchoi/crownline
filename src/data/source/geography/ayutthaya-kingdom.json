@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-ayutthaya-capital",
+    "polityId": "polity-ayutthaya-kingdom",
+    "periods": [
+      {
+        "start": {
+          "year": 1351,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1767,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Ayutthaya",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 14.3532,
+      "longitude": 100.5689
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代大城（Ayutthaya）历史城区坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-ayutthaya-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

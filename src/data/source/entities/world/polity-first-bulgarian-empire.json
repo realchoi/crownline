@@ -1,0 +1,600 @@
+{
+  "order": 991,
+  "entities": [
+    {
+      "id": "polity-first-bulgarian-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "第一保加利亚帝国",
+        "aliases": [
+          "First Bulgarian Empire",
+          "First Bulgarian Tsardom",
+          "保加利亚第一帝国"
+        ],
+        "local": "Първо българско царство"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 681,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1018,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-europe"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "第一保加利亚帝国由681年阿斯帕鲁赫率保加尔人在多瑙河下游建立，初称可汗国，后逐步向南扩张至巴尔干半岛。克鲁姆汗重创拜占庭并制定《克鲁姆法典》，鲍里斯一世于864年前后接受基督教并改称沙皇，确立斯拉夫语礼拜与西里尔文化传统。西蒙一世时期国势达于鼎盛，自称「保加利亚人与罗马人皇帝」。10世纪末萨穆埃尔与拜占庭皇帝巴希尔二世长期争战，1014年克雷西昂之战后帝国瓦解，1018年被拜占庭吞并。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用681—1018年第一保加利亚帝国／沙皇国口径：以681年阿斯帕鲁赫在多瑙河下游建立保加利亚汗国为始，以1018年拜占庭皇帝巴希尔二世征服保加利亚、并入帝国为终。不含1185年起复立的第二保加利亚帝国。年表仅收录十位主要君主代表节点；721—803年与977—997年间的诸多君主未逐一列入。早期统治者称「可汗」，鲍里斯一世接受基督教后改称「沙皇」。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-first-bulgarian-asparuh",
+      "names": {
+        "primary": "阿斯帕鲁赫",
+        "aliases": [
+          "Asparuh",
+          "Asparoukh",
+          "Isperih"
+        ]
+      },
+      "description": "阿斯帕鲁赫，第一保加利亚帝国主要君主序列中的统治人物。681年在多瑙河下游建立保加利亚汗国，为帝国奠基者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-first-bulgarian-tervel",
+      "names": {
+        "primary": "特尔韦尔",
+        "aliases": [
+          "Tervel",
+          "Tervel Khan"
+        ]
+      },
+      "description": "特尔韦尔，第一保加利亚帝国主要君主序列中的统治人物。705年曾援立查士丁尼二世复位，718年于君士坦丁堡城外击退阿拉伯围攻。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-first-bulgarian-krum",
+      "names": {
+        "primary": "克鲁姆",
+        "aliases": [
+          "Krum",
+          "Khan Krum"
+        ]
+      },
+      "description": "克鲁姆，第一保加利亚帝国主要君主序列中的统治人物。811年在瓦西利采拉战役中击杀拜占庭皇帝尼基弗鲁斯一世，并制定著名的《克鲁姆法典》。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-first-bulgarian-omurtag",
+      "names": {
+        "primary": "奥穆尔塔格",
+        "aliases": [
+          "Omurtag",
+          "Khan Omurtag"
+        ]
+      },
+      "description": "奥穆尔塔格，第一保加利亚帝国主要君主序列中的统治人物。在位期间与拜占庭缔和并大兴土木，普列斯拉夫成为重要政治中心。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-first-bulgarian-boris-i",
+      "names": {
+        "primary": "鲍里斯一世",
+        "aliases": [
+          "Boris I",
+          "Boris-Michael",
+          "Knyaz Boris"
+        ]
+      },
+      "description": "鲍里斯一世，第一保加利亚帝国主要君主序列中的统治人物。864年前后接受基督教，推动斯拉夫化改革，并引入拜占庭式教会组织。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-first-bulgarian-vladimir",
+      "names": {
+        "primary": "弗拉基米尔",
+        "aliases": [
+          "Vladimir",
+          "Vladimir-Rasate"
+        ]
+      },
+      "description": "弗拉基米尔，第一保加利亚帝国主要君主序列中的统治人物。鲍里斯一世之子，曾试图恢复旧教，后被废黜。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-first-bulgarian-simeon-i",
+      "names": {
+        "primary": "西蒙一世",
+        "aliases": [
+          "Simeon I",
+          "Simeon the Great",
+          "Tsar Simeon"
+        ]
+      },
+      "description": "西蒙一世，第一保加利亚帝国主要君主序列中的统治人物。893年即位后扩张至鼎盛，自称「保加利亚人与罗马人皇帝」，普列斯拉夫成为斯拉夫文化与学术中心。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-first-bulgarian-peter-i",
+      "names": {
+        "primary": "彼得一世",
+        "aliases": [
+          "Peter I",
+          "Tsar Peter I"
+        ]
+      },
+      "description": "彼得一世，第一保加利亚帝国主要君主序列中的统治人物。西蒙一世之子，在位期间帝国渐趋衰落，927年与拜占庭缔和。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-first-bulgarian-boris-ii",
+      "names": {
+        "primary": "鲍里斯二世",
+        "aliases": [
+          "Boris II",
+          "Tsar Boris II"
+        ]
+      },
+      "description": "鲍里斯二世，第一保加利亚帝国主要君主序列中的统治人物。969年拜占庭皇帝约翰一世入侵，972年被俘，保加利亚中央政权瓦解。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-first-bulgarian-samuel",
+      "names": {
+        "primary": "萨穆埃尔",
+        "aliases": [
+          "Samuel",
+          "Samuel of Bulgaria",
+          "Tsar Samuel"
+        ]
+      },
+      "description": "萨穆埃尔，第一保加利亚帝国主要君主序列中的统治人物。997年起重建保加利亚政权，与拜占庭皇帝巴希尔二世长期争战，1014年克雷西昂之战惨败后帝国迅速瓦解。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-first-bulgarian-asparuh",
+      "personId": "person-first-bulgarian-asparuh",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "可汗"
+      ],
+      "localTitles": [
+        "Khan"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 681,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 701,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "681年在多瑙河下游建立保加利亚汗国，为帝国始年。701年交接年归入特尔韦尔。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-first-bulgarian-tervel",
+      "personId": "person-first-bulgarian-tervel",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "可汗"
+      ],
+      "localTitles": [
+        "Khan"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 700,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 721,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "700—701年与阿斯帕鲁赫存在短暂并立或共治阶段；按代表节点口径自700年起记入主序列。721年后至803年前间的君主未逐一收录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-first-bulgarian-krum",
+      "personId": "person-first-bulgarian-krum",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "可汗"
+      ],
+      "localTitles": [
+        "Khan"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 803,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 814,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "811年击杀拜占庭皇帝尼基弗鲁斯一世；814年交接年归入奥穆尔塔格。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-first-bulgarian-omurtag",
+      "personId": "person-first-bulgarian-omurtag",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "可汗"
+      ],
+      "localTitles": [
+        "Khan"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 814,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 831,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-first-bulgarian-boris-i",
+      "personId": "person-first-bulgarian-boris-i",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "沙皇"
+      ],
+      "localTitles": [
+        "Tsar"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 852,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 889,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "864年前后接受基督教，称号由可汗转为沙皇（此前亦曾使用「大公」）；889年交接年归入弗拉基米尔。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-first-bulgarian-vladimir",
+      "personId": "person-first-bulgarian-vladimir",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "沙皇"
+      ],
+      "localTitles": [
+        "Tsar"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 889,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 893,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "893年交接年归入西蒙一世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-first-bulgarian-simeon-i",
+      "personId": "person-first-bulgarian-simeon-i",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "沙皇"
+      ],
+      "localTitles": [
+        "Tsar"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 893,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 927,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "893年即位，帝国达于鼎盛；927年交接年归入彼得一世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-first-bulgarian-peter-i",
+      "personId": "person-first-bulgarian-peter-i",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "沙皇"
+      ],
+      "localTitles": [
+        "Tsar"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 927,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 969,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "969年交接年归入鲍里斯二世。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-first-bulgarian-boris-ii",
+      "personId": "person-first-bulgarian-boris-ii",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "沙皇"
+      ],
+      "localTitles": [
+        "Tsar"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 969,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 977,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "972年被拜占庭俘掳，保加利亚中央政权瓦解；977年后至997年前间的诸王未逐一收录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-first-bulgarian-samuel",
+      "personId": "person-first-bulgarian-samuel",
+      "polityId": "polity-first-bulgarian-empire",
+      "titles": [
+        "沙皇"
+      ],
+      "localTitles": [
+        "Tsar"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 997,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1014,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "997年起重建保加利亚政权，与拜占庭皇帝巴希尔二世长期争战；1014年克雷西昂之战惨败，1018年帝国最终被拜占庭吞并。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-first-bulgarian-history"
+        },
+        {
+          "sourceId": "source-first-bulgarian-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

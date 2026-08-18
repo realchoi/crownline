@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-toltec-history",
+    "title": "Toltec",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Toltec'；用于校订图拉中心、羽蛇神崇拜与9—12世纪中美洲政治—文化影响等叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/topic/Toltec",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-toltec-rulers",
+    "title": "List of rulers of the Toltec civilization",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of rulers of the Toltec civilization；用于交叉核对常见纳瓦特尔编年史中的托尔特克统治者序列及约年在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_rulers_of_the_Toltec_civilization",
+    "accessedAt": "2026-08-18"
+  }
+]

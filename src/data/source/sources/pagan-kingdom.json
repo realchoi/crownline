@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-pagan-history",
+    "title": "Pagan",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Pagan'；用于校订蒲甘王朝的兴起、阿奴律陀统一缅甸、与宋/高棉关系及1287年终结口径。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Pagan-kingdom",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-pagan-rulers",
+    "title": "List of monarchs of Myanmar",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of monarchs of Myanmar § Pagan dynasty；用于交叉核对蒲甘主要君主序列及在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Myanmar",
+    "accessedAt": "2026-08-18"
+  }
+]

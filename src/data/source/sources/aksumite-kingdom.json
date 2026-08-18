@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-aksum-history",
+    "title": "Aksum",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Aksum'；用于校订阿克苏姆王国存续区间、红海贸易、埃扎纳改宗与7世纪后衰落等叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Aksum-ancient-kingdom-Africa",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-aksum-rulers",
+    "title": "List of kings of Aksum",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of kings of Aksum；用于交叉核对阿克苏姆主要君主序列及通行约年在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_kings_of_Aksum",
+    "accessedAt": "2026-08-18"
+  }
+]

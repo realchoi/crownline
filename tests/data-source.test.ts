@@ -103,8 +103,8 @@ describe("源数据分片", () => {
     const summary = await generateData({ sourceRoot, toolOutputRoot, publicOutputRoot });
 
     expect(summary).toMatchObject({
-      entities: 93,
-      details: 93,
+      entities: 116,
+      details: 116,
       geographicSnapshots: data.geographicSnapshots.length
     });
     expect(summary.persons).toBe(data.persons.length);

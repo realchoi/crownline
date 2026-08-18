@@ -18,7 +18,30 @@ export const WORLD_MAP_POLITY_IDS = [
   "polity-fatimid-caliphate",
   "polity-mali-empire",
   "polity-aztec-empire",
-  "polity-inca-empire"
+  "polity-inca-empire",
+  "polity-sasanian-empire",
+  "polity-chalukya-dynasty",
+  "polity-umayyad-caliphate",
+  "polity-safavid-iran",
+  "polity-gupta-empire",
+  "polity-delhi-sultanate",
+  "polity-pagan-kingdom",
+  "polity-champa-kingdom",
+  "polity-sukhothai-kingdom",
+  "polity-ayutthaya-kingdom",
+  "polity-first-bulgarian-empire",
+  "polity-kievan-rus",
+  "polity-kingdom-of-castile",
+  "polity-kingdom-of-leon",
+  "polity-ethiopian-empire",
+  "polity-songhai-empire",
+  "polity-great-zimbabwe",
+  "polity-maya-city-states",
+  "polity-toltec-state",
+  "polity-aksumite-kingdom",
+  "polity-mutapa-empire",
+  "polity-teotihuacan-state",
+  "polity-kanem-bornu-empire"
 ] as const;
 
 export const CHINA_MAP_POLITY_IDS = [

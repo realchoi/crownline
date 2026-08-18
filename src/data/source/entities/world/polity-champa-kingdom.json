@@ -1,0 +1,447 @@
+{
+  "order": 982,
+  "entities": [
+    {
+      "id": "polity-champa-kingdom",
+      "entityKind": "polity",
+      "polityForms": [
+        "kingdom",
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "占婆王国",
+        "aliases": [
+          "Champa",
+          "Kingdom of Champa",
+          "林邑"
+        ],
+        "local": "Campa"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 192,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1471,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-southeast-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "占婆王国是活跃于越南中部沿海的印度化海洋政权，以林邑、阿摩罗补罗与毗阇耶等为政治中心。王国长期奉印度教与大乘佛教，与美山、波那加等砖塔群共同构成独特文化遗产，并与高棉帝国及交趾、大越长期交战；1471年毗阇耶陷落于黎圣宗后，占婆作为独立王国的主体阶段通常视为结束。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-history"
+        },
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "占婆历史悠久，先后经历林邑、阿摩罗补罗、毗阇耶等多处政治中心与众多王朝更替。本条目采用通行口径，以约192年林邑建国至1471年毗阇耶陷落为占婆王国主体阶段；1471年后虽仍有残余小邦存续至1832年方被越南最终吞并，但该延续不在本条目中单列。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-champa-bhadravarman-i",
+      "names": {
+        "primary": "跋陀罗跋摩一世",
+        "aliases": [
+          "Bhadravarman I"
+        ]
+      },
+      "description": "跋陀罗跋摩一世，占婆王国通行君主年表中的统治人物。四世纪在位，以美山地区印度教建筑与铭文著称，通常被视为占婆早期有明确史料支撑的重要君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-champa-simhavarman-ii",
+      "names": {
+        "primary": "辛哈跋摩二世",
+        "aliases": [
+          "Simhavarman II"
+        ]
+      },
+      "description": "辛哈跋摩二世，占婆王国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-champa-jaya-indravarman-i",
+      "names": {
+        "primary": "阇耶因陀罗跋摩一世",
+        "aliases": [
+          "Jaya Indravarman I"
+        ]
+      },
+      "description": "阇耶因陀罗跋摩一世，占婆王国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-champa-harivarman-iv",
+      "names": {
+        "primary": "哈里跋摩四世",
+        "aliases": [
+          "Harivarman IV"
+        ]
+      },
+      "description": "哈里跋摩四世，占婆王国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-champa-jaya-paramesvaravarman-i",
+      "names": {
+        "primary": "阇耶波罗摩湿伐罗跋摩一世",
+        "aliases": [
+          "Jaya Paramesvaravarman I"
+        ]
+      },
+      "description": "阇耶波罗摩湿伐罗跋摩一世，占婆王国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-champa-jaya-harivarman-i",
+      "names": {
+        "primary": "阇耶哈里跋摩一世",
+        "aliases": [
+          "Jaya Harivarman I"
+        ]
+      },
+      "description": "阇耶哈里跋摩一世，占婆王国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-champa-indravarman-vi",
+      "names": {
+        "primary": "因陀罗跋摩六世",
+        "aliases": [
+          "Indravarman VI"
+        ]
+      },
+      "description": "因陀罗跋摩六世，占婆王国通行君主年表中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-champa-che-bong-nga",
+      "names": {
+        "primary": "制蓬峨",
+        "aliases": [
+          "Che Bong Nga",
+          "Po Binasuor"
+        ]
+      },
+      "description": "制蓬峨，占婆王国通行君主年表中的统治人物。十四世纪后期曾多次率军袭击越南北方，是占婆晚期最具军事影响力的君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-champa-jaya-simhavarman-vi",
+      "names": {
+        "primary": "阇耶辛哈跋摩六世",
+        "aliases": [
+          "Jaya Simhavarman VI"
+        ]
+      },
+      "description": "阇耶辛哈跋摩六世，占婆王国通行君主年表中的统治人物。1471年毗阇耶陷落时在位，通常被视为占婆独立王国末代君主之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-champa-bhadravarman-i",
+      "personId": "person-champa-bhadravarman-i",
+      "polityId": "polity-champa-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 380,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 413,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "四世纪早期君主，在位年份按通行约年收录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-champa-simhavarman-ii",
+      "personId": "person-champa-simhavarman-ii",
+      "polityId": "polity-champa-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 875,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 900,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-champa-jaya-indravarman-i",
+      "personId": "person-champa-jaya-indravarman-i",
+      "polityId": "polity-champa-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 986,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1007,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-champa-harivarman-iv",
+      "personId": "person-champa-harivarman-iv",
+      "polityId": "polity-champa-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1074,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1080,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-champa-jaya-paramesvaravarman-i",
+      "personId": "person-champa-jaya-paramesvaravarman-i",
+      "polityId": "polity-champa-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1080,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1107,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-champa-jaya-harivarman-i",
+      "personId": "person-champa-jaya-harivarman-i",
+      "polityId": "polity-champa-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1147,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1167,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-champa-indravarman-vi",
+      "personId": "person-champa-indravarman-vi",
+      "polityId": "polity-champa-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1294,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1318,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-champa-che-bong-nga",
+      "personId": "person-champa-che-bong-nga",
+      "polityId": "polity-champa-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1360,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1390,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-champa-jaya-simhavarman-vi",
+      "personId": "person-champa-jaya-simhavarman-vi",
+      "polityId": "polity-champa-kingdom",
+      "titles": [
+        "国王"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1446,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1471,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "末代君主之一，1471年毗阇耶陷落于大越黎圣宗。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-champa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

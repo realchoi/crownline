@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-chalukya-badami",
+    "polityId": "polity-chalukya-dynasty",
+    "periods": [
+      {
+        "start": {
+          "year": 543,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 753,
+          "precision": "circa"
+        }
+      }
+    ],
+    "placeName": "Badami",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 15.915,
+      "longitude": 75.676
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标（古称 Vatapi）；仅表示该时期都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-chalukya-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

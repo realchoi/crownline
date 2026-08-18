@@ -102,7 +102,7 @@ function mappedTopLevelRegionIds(): Set<string> {
 describe("生产历史数据", () => {
   it("保留中国七个阶段和七十三个时间轴实体，并扩展全球总实体数量", () => {
     expect(data.timelineSections).toHaveLength(7);
-    expect(data.entities).toHaveLength(93);
+    expect(data.entities).toHaveLength(116);
     expect(data.timelineSections.flatMap((section) => section.entityIds)).toHaveLength(73);
     expect(data.entities.map(({ id }) => id)).toEqual(expect.arrayContaining([
       "polity-byzantine-empire",
@@ -115,7 +115,7 @@ describe("生产历史数据", () => {
   });
 
   it("收录全球均衡样本政权并为每条政权接入任期", () => {
-    expect(data.entities).toHaveLength(93);
+    expect(data.entities).toHaveLength(116);
     expect(data.entities.map(({ id }) => id)).toEqual(
       expect.arrayContaining([...GLOBAL_SAMPLE_POLITY_IDS])
     );
@@ -124,12 +124,12 @@ describe("生产历史数据", () => {
     }
   });
 
-  it("为二十个世界样本政权提供三十七条可追溯地理快照", () => {
+  it("为四十三个世界样本政权提供六十五条可追溯地理快照", () => {
     const worldSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return WORLD_MAP_POLITY_IDS.some((id) => id === polityId);
     });
 
-    expect(worldSnapshots).toHaveLength(37);
+    expect(worldSnapshots).toHaveLength(65);
     expect(worldSnapshots.every(({ sourceRefs }) => sourceRefs.length > 0)).toBe(true);
     for (const polityId of WORLD_MAP_POLITY_IDS) {
       expect(
@@ -139,13 +139,13 @@ describe("生产历史数据", () => {
     }
   });
 
-  it("为十五个中国代表政权提供二十二条地理快照并覆盖九个顶层地区", () => {
+  it("为十五个中国代表政权提供二十二条地理快照并覆盖十一个顶层地区", () => {
     const chinaSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return CHINA_MAP_POLITY_IDS.some((id) => id === polityId);
     });
 
     expect(chinaSnapshots).toHaveLength(22);
-    expect(data.geographicSnapshots).toHaveLength(59);
+    expect(data.geographicSnapshots).toHaveLength(87);
     for (const polityId of CHINA_MAP_POLITY_IDS) {
       expect(
         chinaSnapshots.some((snapshot) => snapshot.polityId === polityId),
@@ -161,7 +161,9 @@ describe("生产历史数据", () => {
       "region-europe",
       "region-north-africa",
       "region-west-africa",
-      "region-americas"
+      "region-americas",
+      "region-east-africa",
+      "region-southern-africa"
     ]));
   });
 
@@ -186,6 +188,8 @@ describe("生产历史数据", () => {
     expect(regionStatuses.get("region-central-asia")).toBe("sample");
     expect(regionStatuses.get("region-west-africa")).toBe("sample");
     expect(regionStatuses.get("region-americas")).toBe("sample");
+    expect(regionStatuses.get("region-east-africa")).toBe("sample");
+    expect(regionStatuses.get("region-southern-africa")).toBe("sample");
   });
 
   it("用多段区间表达唐和西秦的中断", () => {
@@ -205,7 +209,7 @@ describe("生产历史数据", () => {
 
   it("通过结构和跨记录校验", () => {
     expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
-    expect(data.entities).toHaveLength(93);
+    expect(data.entities).toHaveLength(116);
   });
 
   it("首批结构化关系覆盖七种类型并保持事件与来源闭合", () => {
@@ -466,6 +470,188 @@ describe("生产历史数据", () => {
     expect(rulerSnapshot("polity-inca-empire", 1500).status).toBe("known");
     expect(rulerSnapshot("polity-inca-empire", 1500).entries.map(({ person }) => person.id))
       .toContain("person-inca-huayna-capac");
+  });
+
+  it("补全萨珊帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-sasanian-empire", 20);
+    expect(rulerSnapshot("polity-sasanian-empire", 500).status).toBe("known");
+    expect(rulerSnapshot("polity-sasanian-empire", 500).entries.map(({ person }) => person.id))
+      .toContain("person-sasanian-kavad-i");
+    expect(activePlaces("polity-sasanian-empire", 500)).toEqual(["Ctesiphon"]);
+  });
+
+  it("补全遮娄其王朝详情与统治者", () => {
+    expectWorldPolityDetails("polity-chalukya-dynasty", 8);
+    expect(rulerSnapshot("polity-chalukya-dynasty", 630).status).toBe("known");
+    expect(rulerSnapshot("polity-chalukya-dynasty", 630).entries.map(({ person }) => person.id))
+      .toContain("person-chalukya-pulakesi-ii");
+    expect(activePlaces("polity-chalukya-dynasty", 630)).toEqual(["Badami"]);
+  });
+
+  it("补全倭马亚哈里发国详情与统治者", () => {
+    expectWorldPolityDetails("polity-umayyad-caliphate", 14);
+    expect(rulerSnapshot("polity-umayyad-caliphate", 710).status).toBe("known");
+    expect(rulerSnapshot("polity-umayyad-caliphate", 710).entries.map(({ person }) => person.id))
+      .toContain("person-umayyad-al-walid-i");
+    expect(activePlaces("polity-umayyad-caliphate", 710)).toEqual(["Damascus"]);
+    expect(activePlaces("polity-umayyad-caliphate", 745)).toEqual(["Harran"]);
+  });
+
+  it("补全萨法维王朝详情与统治者", () => {
+    expectWorldPolityDetails("polity-safavid-iran", 11);
+    expect(rulerSnapshot("polity-safavid-iran", 1600).status).toBe("known");
+    expect(rulerSnapshot("polity-safavid-iran", 1600).entries.map(({ person }) => person.id))
+      .toContain("person-safavid-abbas-i");
+    expect(activePlaces("polity-safavid-iran", 1600)).toEqual(["Isfahan"]);
+  });
+
+  it("补全笈多帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-gupta-empire", 11);
+    expect(rulerSnapshot("polity-gupta-empire", 400).status).toBe("known");
+    expect(rulerSnapshot("polity-gupta-empire", 400).entries.map(({ person }) => person.id))
+      .toContain("person-gupta-chandragupta-ii");
+    expect(activePlaces("polity-gupta-empire", 400)).toEqual(["Pataliputra"]);
+  });
+
+  it("补全德里苏丹国详情与统治者", () => {
+    expectWorldPolityDetails("polity-delhi-sultanate", 33);
+    expect(rulerSnapshot("polity-delhi-sultanate", 1300).status).toBe("known");
+    expect(rulerSnapshot("polity-delhi-sultanate", 1300).entries.map(({ person }) => person.id))
+      .toContain("person-delhi-sultanate-ala-ud-din-khalji");
+    expect(activePlaces("polity-delhi-sultanate", 1300)).toEqual(["Delhi"]);
+  });
+
+  it("补全蒲甘王朝详情与统治者", () => {
+    expectWorldPolityDetails("polity-pagan-kingdom", 10);
+    expect(rulerSnapshot("polity-pagan-kingdom", 1100).status).toBe("known");
+    expect(rulerSnapshot("polity-pagan-kingdom", 1100).entries.map(({ person }) => person.id))
+      .toContain("person-pagan-kyansittha");
+    expect(activePlaces("polity-pagan-kingdom", 1100)).toEqual(["Pagan"]);
+  });
+
+  it("补全占婆王国详情与统治者", () => {
+    expectWorldPolityDetails("polity-champa-kingdom", 9);
+    expect(rulerSnapshot("polity-champa-kingdom", 1100).status).toBe("known");
+    expect(rulerSnapshot("polity-champa-kingdom", 1100).entries.map(({ person }) => person.id))
+      .toContain("person-champa-jaya-paramesvaravarman-i");
+    expect(activePlaces("polity-champa-kingdom", 1100)).toEqual(["Vijaya"]);
+  });
+
+  it("补全素可泰王国详情与统治者", () => {
+    expectWorldPolityDetails("polity-sukhothai-kingdom", 8);
+    expect(rulerSnapshot("polity-sukhothai-kingdom", 1300).status).toBe("known");
+    expect(rulerSnapshot("polity-sukhothai-kingdom", 1300).entries.map(({ person }) => person.id))
+      .toContain("person-sukhothai-loethai");
+    expect(activePlaces("polity-sukhothai-kingdom", 1300)).toEqual(["Sukhothai"]);
+  });
+
+  it("补全阿瑜陀耶王国详情与统治者", () => {
+    expectWorldPolityDetails("polity-ayutthaya-kingdom", 12);
+    expect(rulerSnapshot("polity-ayutthaya-kingdom", 1600).status).toBe("known");
+    expect(rulerSnapshot("polity-ayutthaya-kingdom", 1600).entries.map(({ person }) => person.id))
+      .toContain("person-ayutthaya-naresuan");
+    expect(activePlaces("polity-ayutthaya-kingdom", 1600)).toEqual(["Ayutthaya"]);
+  });
+
+  it("补全第一保加利亚帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-first-bulgarian-empire", 10);
+    expect(rulerSnapshot("polity-first-bulgarian-empire", 900).status).toBe("known");
+    expect(rulerSnapshot("polity-first-bulgarian-empire", 900).entries.map(({ person }) => person.id))
+      .toContain("person-first-bulgarian-simeon-i");
+    expect(activePlaces("polity-first-bulgarian-empire", 900)).toEqual(["Preslav"]);
+  });
+
+  it("补全基辅罗斯详情与统治者", () => {
+    expectWorldPolityDetails("polity-kievan-rus", 12);
+    expect(rulerSnapshot("polity-kievan-rus", 1050).status).toBe("known");
+    expect(rulerSnapshot("polity-kievan-rus", 1050).entries.map(({ person }) => person.id))
+      .toContain("person-kievan-rus-yaroslav-i");
+    expect(activePlaces("polity-kievan-rus", 1050)).toEqual(["Kiev"]);
+  });
+
+  it("补全卡斯蒂利亚王国详情与统治者", () => {
+    expectWorldPolityDetails("polity-kingdom-of-castile", 10);
+    expect(rulerSnapshot("polity-kingdom-of-castile", 1200).status).toBe("known");
+    expect(rulerSnapshot("polity-kingdom-of-castile", 1200).entries.map(({ person }) => person.id))
+      .toContain("person-castile-alfonso-viii");
+    expect(activePlaces("polity-kingdom-of-castile", 1200)).toEqual(["Toledo"]);
+  });
+
+  it("补全莱昂王国详情与统治者", () => {
+    expectWorldPolityDetails("polity-kingdom-of-leon", 10);
+    expect(rulerSnapshot("polity-kingdom-of-leon", 1200).status).toBe("known");
+    expect(rulerSnapshot("polity-kingdom-of-leon", 1200).entries.map(({ person }) => person.id))
+      .toContain("person-leon-alfonso-ix");
+    expect(activePlaces("polity-kingdom-of-leon", 1200)).toEqual(["León"]);
+  });
+
+  it("补全埃塞俄比亚帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-ethiopian-empire", 8);
+    expect(rulerSnapshot("polity-ethiopian-empire", 1400).status).toBe("known");
+    expect(rulerSnapshot("polity-ethiopian-empire", 1400).entries.map(({ person }) => person.id))
+      .toContain("person-ethiopian-dawit-i");
+    expect(activePlaces("polity-ethiopian-empire", 1700)).toEqual(["Gondar"]);
+  });
+
+  it("补全桑海帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-songhai-empire", 5);
+    expect(rulerSnapshot("polity-songhai-empire", 1500).status).toBe("known");
+    expect(rulerSnapshot("polity-songhai-empire", 1500).entries.map(({ person }) => person.id))
+      .toContain("person-songhai-askia-muhammad");
+    expect(activePlaces("polity-songhai-empire", 1500)).toEqual(["Gao"]);
+  });
+
+  it("补全大津巴布韦王国详情与资料缺载说明", () => {
+    expectWorldPolityDetails("polity-great-zimbabwe", 0);
+    expect(rulerSnapshot("polity-great-zimbabwe", 1300).status).toBe("vacant");
+    expect(activePlaces("polity-great-zimbabwe", 1300)).toEqual(["Great Zimbabwe"]);
+  });
+
+  it("补全玛雅城邦详情与代表性统治者", () => {
+    expectWorldPolityDetails("polity-maya-city-states", 4);
+    expect(rulerSnapshot("polity-maya-city-states", 680).status).toBe("known");
+    expect(rulerSnapshot("polity-maya-city-states", 680).entries.map(({ person }) => person.id))
+      .toEqual(expect.arrayContaining(["person-maya-pakal", "person-maya-yuknoom-great"]));
+    expect(activePlaces("polity-maya-city-states", 680)).toEqual(["Tikal"]);
+  });
+
+  it("补全托尔特克详情与统治者", () => {
+    expectWorldPolityDetails("polity-toltec-state", 2);
+    expect(rulerSnapshot("polity-toltec-state", 1000).status).toBe("vacant");
+    expect(rulerSnapshot("polity-toltec-state", 940).status).toBe("disputed");
+    expect(rulerSnapshot("polity-toltec-state", 940).entries.map(({ person }) => person.id))
+      .toContain("person-toltec-quetzalcoatl");
+    expect(activePlaces("polity-toltec-state", 1000)).toEqual(["Tula"]);
+  });
+
+  it("补全阿克苏姆王国详情与统治者", () => {
+    expectWorldPolityDetails("polity-aksumite-kingdom", 3);
+    expect(rulerSnapshot("polity-aksumite-kingdom", 340).status).toBe("known");
+    expect(rulerSnapshot("polity-aksumite-kingdom", 340).entries.map(({ person }) => person.id))
+      .toContain("person-aksum-ezana");
+    expect(activePlaces("polity-aksumite-kingdom", 340)).toEqual(["Axum"]);
+  });
+
+  it("补全穆塔帕帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-mutapa-empire", 4);
+    expect(rulerSnapshot("polity-mutapa-empire", 1500).status).toBe("disputed");
+    expect(rulerSnapshot("polity-mutapa-empire", 1500).entries.map(({ person }) => person.id))
+      .toContain("person-mutapa-matope");
+    expect(activePlaces("polity-mutapa-empire", 1500)).toEqual(["Zvongombe"]);
+  });
+
+  it("补全特奥蒂瓦坎详情与资料缺载说明", () => {
+    expectWorldPolityDetails("polity-teotihuacan-state", 0);
+    expect(rulerSnapshot("polity-teotihuacan-state", 400).status).toBe("vacant");
+    expect(activePlaces("polity-teotihuacan-state", 400)).toEqual(["Teotihuacan"]);
+  });
+
+  it("补全卡涅姆-博尔努帝国详情与统治者", () => {
+    expectWorldPolityDetails("polity-kanem-bornu-empire", 4);
+    expect(rulerSnapshot("polity-kanem-bornu-empire", 1580).status).toBe("known");
+    expect(rulerSnapshot("polity-kanem-bornu-empire", 1580).entries.map(({ person }) => person.id))
+      .toContain("person-kanem-bornu-idris-alauma");
+    expect(activePlaces("polity-kanem-bornu-empire", 1580)).toEqual(["Ngazargamu"]);
   });
 
   it("补全汉与三国四个非主线政权的详情", () => {

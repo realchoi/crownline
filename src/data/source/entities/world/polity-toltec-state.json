@@ -1,0 +1,251 @@
+{
+  "order": 999,
+  "entities": [
+    {
+      "id": "polity-toltec-state",
+      "entityKind": "polity",
+      "polityForms": [
+        "state",
+        "dynasty"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "托尔特克",
+        "aliases": [
+          "Toltec state",
+          "Toltec civilization",
+          "Tollan-Xicocotitlan"
+        ],
+        "local": "Tōltēcatl"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 900,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1150,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-americas"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "托尔特克通常指9—12世纪以墨西哥中部图拉（Tula）为中心、影响中美洲后续文明的政治—文化体。传说与考古证据将其与羽蛇神（Quetzalcoatl）崇拜、武士集团与区域贸易网络联系在一起；Ce Acatl Topiltzin Quetzalcoatl 等人物在后出编年史中占据核心位置，但其历史性与年代仍有争议。12世纪前后图拉遭焚毁或废弃，托尔特克作为统一政治中心的说法逐步让位于分散的地方政权，本条目止于约1150年这一常见史学口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-toltec-history"
+        },
+        {
+          "sourceId": "source-toltec-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "托尔特克年代与统治者序列主要依赖后出纳瓦特尔编年史与考古推断，精确年表仍属约年口径。",
+      "chronologyNote": "本分片采用900—约1150年托尔特克国家口径，不把更早的特奥蒂瓦坎或更晚的阿兹特克前身政权并入。统治者年表主要依常见纳瓦特尔编年史整理，早期人物的历史真实性仍存争议。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-toltec-quetzalcoatl",
+      "names": {
+        "primary": "Ce Acatl Topiltzin Quetzalcoatl",
+        "aliases": [
+          "Topiltzin Quetzalcoatl",
+          "Quetzalcoatl of Tollan",
+          "羽蛇神托尔特克"
+        ]
+      },
+      "description": "Ce Acatl Topiltzin Quetzalcoatl，托尔特克编年史中最著名的统治人物。在后出史料中被描述为图拉的改革者与羽蛇神崇拜者，其历史性与年代仍有争议。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-toltec-history"
+        },
+        {
+          "sourceId": "source-toltec-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-toltec-matlatcihuatl",
+      "names": {
+        "primary": "Matlac Cihuatl",
+        "aliases": [
+          "Matlatzincatl",
+          "Matlac Cihuatl of Tollan"
+        ]
+      },
+      "description": "Matlac Cihuatl，托尔特克编年史主要统治者序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-toltec-history"
+        },
+        {
+          "sourceId": "source-toltec-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-toltec-huemac",
+      "names": {
+        "primary": "Huemac",
+        "aliases": [
+          "Huemac of Tollan",
+          "Hue Mac"
+        ]
+      },
+      "description": "Huemac，托尔特克编年史中末代主要统治者之一。通常与图拉衰落、内乱与外来压力联系在一起。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-toltec-history"
+        },
+        {
+          "sourceId": "source-toltec-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-toltec-quetzalcoatl",
+      "personId": "person-toltec-quetzalcoatl",
+      "polityId": "polity-toltec-state",
+      "titles": [
+        "托尔特克统治者"
+      ],
+      "localTitles": [
+        "Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 923,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 947,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "年代主要依常见纳瓦特尔编年史；Topiltzin Quetzalcoatl 的历史真实性与具体年表在学界仍有分歧。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-toltec-history"
+        },
+        {
+          "sourceId": "source-toltec-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "该人物与年代主要依赖后出编年史，不应视为精确纪年。"
+    },
+    {
+      "id": "reign-toltec-matlatcihuatl",
+      "personId": "person-toltec-matlatcihuatl",
+      "polityId": "polity-toltec-state",
+      "titles": [
+        "托尔特克统治者"
+      ],
+      "localTitles": [
+        "Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 947,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 983,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-toltec-history"
+        },
+        {
+          "sourceId": "source-toltec-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "该段年表主要依赖后出编年史。"
+    },
+    {
+      "id": "reign-toltec-huemac",
+      "personId": "person-toltec-huemac",
+      "polityId": "polity-toltec-state",
+      "titles": [
+        "托尔特克统治者"
+      ],
+      "localTitles": [
+        "Tlatoani"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1122,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1150,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "983—1122年间的多位托尔特克统治者未逐一列入；Huemac 通常被视为图拉衰落时期的末代主要统治者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-toltec-history"
+        },
+        {
+          "sourceId": "source-toltec-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "该段年表主要依赖后出编年史与考古推断。"
+    }
+  ],
+  "reignVacancies": [
+    {
+      "id": "vacancy-toltec-mid-11th-century-gap",
+      "polityId": "polity-toltec-state",
+      "periods": [
+        {
+          "start": {
+            "year": 984,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1121,
+            "precision": "circa"
+          }
+        }
+      ],
+      "note": "983—1122年间编年史虽列有多位托尔特克统治者，但年代高度依赖后出史料且彼此分歧；此处保守记作未完整校订的过渡段，而非断言确定空位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-toltec-history"
+        },
+        {
+          "sourceId": "source-toltec-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "这是基于编年史分歧与资料稀疏的保守处理，不是对984—1121年存在确定政权空位的断言。"
+    }
+  ]
+}

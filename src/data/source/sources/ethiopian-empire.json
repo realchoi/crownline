@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-ethiopian-empire-history",
+    "title": "Ethiopia: The Zagwe and Solomonic dynasties",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: 'Ethiopia' 与 'Solomonic dynasty' 条目；用于校订1270年所罗门王朝建立、阿姆达·塞翁与札拉·雅各布扩张及16—17世纪宗教战争等叙述。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/place/Ethiopia",
+    "accessedAt": "2026-08-18"
+  },
+  {
+    "id": "source-ethiopian-empire-rulers",
+    "title": "List of emperors of Ethiopia",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of emperors of Ethiopia；用于交叉核对所罗门王朝主要皇帝序列及通行在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_emperors_of_Ethiopia",
+    "accessedAt": "2026-08-18"
+  }
+]

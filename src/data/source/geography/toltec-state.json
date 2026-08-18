@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-toltec-tula",
+    "polityId": "polity-toltec-state",
+    "periods": [
+      {
+        "start": {
+          "year": 900,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 1150,
+          "precision": "circa"
+        }
+      }
+    ],
+    "placeName": "Tula",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 20.0637,
+      "longitude": -99.3414
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用图拉（Tula de Allende）考古遗址中心点；托尔特克传说中的都城 Tollan，仅表示该时期政治中心的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-toltec-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

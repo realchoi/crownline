@@ -1,0 +1,36 @@
+[
+  {
+    "id": "geo-mutapa-zvongombe",
+    "polityId": "polity-mutapa-empire",
+    "periods": [
+      {
+        "start": {
+          "year": 1430,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 1760,
+          "precision": "circa"
+        }
+      }
+    ],
+    "placeName": "Zvongombe",
+    "role": "political-center",
+    "coordinates": {
+      "latitude": -16.5,
+      "longitude": 31.2
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用穆塔帕早期政治中心 Zvongombe 的现代近似位置；帝国后期首都曾多次迁移，此处仅表示代表性政治中心，不表示疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-mutapa-history"
+      }
+    ],
+    "confidence": "low",
+    "confidenceNote": "穆塔帕首都位置随时期迁移，该点位只作浏览定位。"
+  }
+]

@@ -1,0 +1,412 @@
+{
+  "order": 996,
+  "entities": [
+    {
+      "id": "polity-songhai-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "empire"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "桑海帝国",
+        "aliases": [
+          "Songhai Empire",
+          "Songhay Empire",
+          "Empire of Songhai"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1464,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1591,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-west-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "桑海帝国是15—16世纪控制尼日尔河中游与萨赫勒贸易通道的西非政权，核心城市为加奥。松尼·阿里通过军事征服自马里帝国手中夺取加奥并扩张版图；1493年阿斯基亚·穆罕默德通过政变建立阿斯基亚王朝，推行伊斯兰改革并强化中央官僚体系，使帝国成为跨撒哈拉贸易与学术中心。1591年摩洛哥军队在汤迪比战役中击败桑海，帝国作为统一政治体迅速瓦解。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用1464—1591年桑海帝国全盛期口径：1464年通常对应松尼·阿里开始大规模扩张，1591年为摩洛哥入侵后的政治终结。松尼·阿里之前加奥已有松尼王朝地方政权，但不纳入本“帝国”条目；阿斯基亚王朝诸君在位年主要依塔奇丁·法蒂玛等阿拉伯编年史与后出整理交叉核对。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-songhai-sonni-ali",
+      "names": {
+        "primary": "松尼·阿里",
+        "aliases": [
+          "Sonni Ali",
+          "Sunni Ali",
+          "Sunni Ali Ber"
+        ]
+      },
+      "description": "松尼·阿里，桑海帝国松尼王朝主要君主序列中的统治人物。通过征服加奥、廷巴克图与杰内等地建立帝国基础。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-songhai-sonni-baru",
+      "names": {
+        "primary": "松尼·巴鲁",
+        "aliases": [
+          "Sonni Baru",
+          "Sunni Baru"
+        ]
+      },
+      "description": "松尼·巴鲁，桑海帝国松尼王朝末代君主，1493年被阿斯基亚·穆罕默德推翻。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-songhai-askia-muhammad",
+      "names": {
+        "primary": "阿斯基亚·穆罕默德",
+        "aliases": [
+          "Askia Muhammad",
+          "Askia the Great",
+          "Muhammad Ture"
+        ]
+      },
+      "description": "阿斯基亚·穆罕默德，桑海帝国阿斯基亚王朝奠基者与主要君主。推行伊斯兰改革、官僚体系与学术赞助，使帝国达于鼎盛。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-songhai-askia-musa",
+      "names": {
+        "primary": "阿斯基亚·穆萨",
+        "aliases": [
+          "Askia Musa",
+          "Musa I"
+        ]
+      },
+      "description": "阿斯基亚·穆萨，桑海帝国阿斯基亚王朝主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-songhai-askia-ishaq-i",
+      "names": {
+        "primary": "阿斯基亚·伊沙克一世",
+        "aliases": [
+          "Askia Ishaq I",
+          "Ishaq I"
+        ]
+      },
+      "description": "阿斯基亚·伊沙克一世，桑海帝国阿斯基亚王朝主要君主序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-songhai-askia-dawud",
+      "names": {
+        "primary": "阿斯基亚·达乌德",
+        "aliases": [
+          "Askia Dawud",
+          "Dawud"
+        ]
+      },
+      "description": "阿斯基亚·达乌德，桑海帝国阿斯基亚王朝主要君主序列中的统治人物。长期在位但帝国后期已出现地方离心。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-songhai-askia-ishaq-iii",
+      "names": {
+        "primary": "阿斯基亚·伊沙克三世",
+        "aliases": [
+          "Askia Ishaq III",
+          "Ishaq III"
+        ]
+      },
+      "description": "阿斯基亚·伊沙克三世，桑海帝国末代阿斯基亚君主，1591年摩洛哥入侵后帝国瓦解。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-songhai-sonni-ali",
+      "personId": "person-songhai-sonni-ali",
+      "polityId": "polity-songhai-empire",
+      "titles": [
+        "桑海帝国松尼"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1464,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1492,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "松尼·阿里的起年通常与1464—1465年扩张加奥联系，终年1492年；部分王表写作1493年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-songhai-sonni-baru",
+      "personId": "person-songhai-sonni-baru",
+      "polityId": "polity-songhai-empire",
+      "titles": [
+        "桑海帝国松尼"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1492,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1493,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-songhai-askia-muhammad",
+      "personId": "person-songhai-askia-muhammad",
+      "polityId": "polity-songhai-empire",
+      "titles": [
+        "桑海帝国阿斯基亚"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1493,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1528,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-songhai-askia-musa",
+      "personId": "person-songhai-askia-musa",
+      "polityId": "polity-songhai-empire",
+      "titles": [
+        "桑海帝国阿斯基亚"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1528,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1531,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-songhai-askia-ishaq-i",
+      "personId": "person-songhai-askia-ishaq-i",
+      "polityId": "polity-songhai-empire",
+      "titles": [
+        "桑海帝国阿斯基亚"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1537,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1539,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1531—1537年间的阿斯基亚·穆罕默德·本坎与阿斯基亚·伊沙克二世等君主未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-songhai-askia-dawud",
+      "personId": "person-songhai-askia-dawud",
+      "polityId": "polity-songhai-empire",
+      "titles": [
+        "桑海帝国阿斯基亚"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1549,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1582,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1539—1549年间的阿斯基亚·伊沙克二世未单列。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-songhai-askia-ishaq-iii",
+      "personId": "person-songhai-askia-ishaq-iii",
+      "polityId": "polity-songhai-empire",
+      "titles": [
+        "桑海帝国阿斯基亚"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1588,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1591,
+            "precision": "exact"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1582—1588年间的阿斯基亚·哈吉与阿斯基亚·穆罕默德·巴尼未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-songhai-history"
+        },
+        {
+          "sourceId": "source-songhai-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

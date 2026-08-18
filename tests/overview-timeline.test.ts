@@ -121,9 +121,12 @@ describe("多地区全览分组", () => {
       id: "overview-region-region-west-africa",
       title: "西非",
       kind: "region",
-      range: { startYear: 1235, endYear: 1610 }
+      range: { startYear: 700, endYear: 1893 }
     });
-    expect(groups[0]!.matches.map(({ entity }) => entity.names.primary)).toEqual(["马里帝国"]);
+    expect(groups[0]!.matches.map(({ entity }) => entity.names.primary)).toEqual(
+      expect.arrayContaining(["马里帝国", "桑海帝国", "卡涅姆-博尔努帝国"])
+    );
+    expect(groups[0]!.matches).toHaveLength(3);
   });
 
   it("单年实体扩展为安全绘制跨度且不产生空组", () => {

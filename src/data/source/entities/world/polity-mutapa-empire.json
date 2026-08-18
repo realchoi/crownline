@@ -1,0 +1,313 @@
+{
+  "order": 1001,
+  "entities": [
+    {
+      "id": "polity-mutapa-empire",
+      "entityKind": "polity",
+      "polityForms": [
+        "empire",
+        "kingdom"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "穆塔帕帝国",
+        "aliases": [
+          "Mutapa Empire",
+          "Kingdom of Mutapa",
+          "Mwene Mutapa",
+          "Monomotapa"
+        ]
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 1430,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1760,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": [
+        "region-southern-africa"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "穆塔帕帝国通常指15—18世纪由绍纳语系统治者在津巴布韦高原以东建立的政权，传说由尼亚齐姆巴·穆托塔自大津巴布韦向东扩张而建立。帝国通过控制黄金、象牙与印度洋贸易网络维持权力，16世纪葡萄牙人沿赞比西河进入后，与“Mwene Mutapa”（穆塔帕）发生多次接触、冲突与传教活动。18世纪前后帝国在地方割据与罗兹维兰等竞争者压力下逐步瓦解，本条目止于约1760年这一常见史学口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本分片采用约1430—1760年穆塔帕帝国口径，作为大津巴布韦之后南部非洲的代表性后继政权。早期世系部分依赖口传与后出整理，16世纪后则较多交叉参照葡萄牙编年史；若干君主在位年仍只见约略写法。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-mutapa-nyatsimba-mutota",
+      "names": {
+        "primary": "尼亚齐姆巴·穆托塔",
+        "aliases": [
+          "Nyatsimba Mutota",
+          "Mutota"
+        ]
+      },
+      "description": "尼亚齐姆巴·穆托塔，穆塔帕帝国传说与史学中的奠基者，通常被视为自津巴布韦高原向东扩张并建立新政治中心的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mutapa-matope",
+      "names": {
+        "primary": "马托佩",
+        "aliases": [
+          "Matope",
+          "Mambo Matope"
+        ]
+      },
+      "description": "马托佩，穆塔帕帝国主要 Mwene Mutapa 序列中的统治人物，通常被视为15世纪末—16世纪初扩张帝国的君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mutapa-chikuyo-chivere",
+      "names": {
+        "primary": "奇库约·奇维雷",
+        "aliases": [
+          "Chikuyo Chivere",
+          "Chivere"
+        ]
+      },
+      "description": "奇库约·奇维雷，穆塔帕帝国主要 Mwene Mutapa 序列中的统治人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mutapa-mavura-i",
+      "names": {
+        "primary": "马武拉一世",
+        "aliases": [
+          "Mavura I",
+          "Mavura Mhande Felipe"
+        ]
+      },
+      "description": "马武拉一世，穆塔帕帝国主要 Mwene Mutapa 序列中的统治人物。1629年受葡萄牙支持即位，是16—17世纪葡萄牙—穆塔帕关系史中的关键人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-mutapa-siti-kazuru",
+      "names": {
+        "primary": "西蒂·卡祖鲁",
+        "aliases": [
+          "Siti Kazuru",
+          "Kazuru"
+        ]
+      },
+      "description": "西蒂·卡祖鲁，穆塔帕帝国晚期主要 Mwene Mutapa 序列中的统治人物之一。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-mutapa-nyatsimba-mutota",
+      "personId": "person-mutapa-nyatsimba-mutota",
+      "polityId": "polity-mutapa-empire",
+      "titles": [
+        "Mwene Mutapa"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1430,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1450,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "奠基年代主要依赖口传与后出整理，常见写法为约1430年前后。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "早期穆塔帕年代不应视为精确纪年。"
+    },
+    {
+      "id": "reign-mutapa-matope",
+      "personId": "person-mutapa-matope",
+      "polityId": "polity-mutapa-empire",
+      "titles": [
+        "Mwene Mutapa"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1480,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1520,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mutapa-chikuyo-chivere",
+      "personId": "person-mutapa-chikuyo-chivere",
+      "polityId": "polity-mutapa-empire",
+      "titles": [
+        "Mwene Mutapa"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1535,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1560,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "1520—1535年间的若干君主未逐一列入。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mutapa-mavura-i",
+      "personId": "person-mutapa-mavura-i",
+      "polityId": "polity-mutapa-empire",
+      "titles": [
+        "Mwene Mutapa"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1629,
+            "precision": "exact"
+          },
+          "end": {
+            "year": 1652,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "1560—1629年间的若干君主未逐一列入；1629年即位的年份有葡萄牙文献支持。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-mutapa-siti-kazuru",
+      "personId": "person-mutapa-siti-kazuru",
+      "polityId": "polity-mutapa-empire",
+      "titles": [
+        "Mwene Mutapa"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 1740,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 1760,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "note": "1652—1740年间的若干君主未逐一列入；1740—1760年为帝国晚期的代表性约年口径。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mutapa-history"
+        },
+        {
+          "sourceId": "source-mutapa-rulers"
+        }
+      ],
+      "confidence": "low",
+      "confidenceNote": "晚期穆塔帕年表资料稀疏，不应视为精确纪年。"
+    }
+  ],
+  "reignVacancies": []
+}

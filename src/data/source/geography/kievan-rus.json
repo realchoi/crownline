@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-kievan-rus-kiev",
+    "polityId": "polity-kievan-rus",
+    "periods": [
+      {
+        "start": {
+          "year": 882,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1240,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Kiev",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 50.4501,
+      "longitude": 30.5234
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代基辅坐标，仅表示基辅大公国政治中心的大致位置，不表示罗斯诸公国完整疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-kievan-rus-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

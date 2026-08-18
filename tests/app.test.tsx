@@ -554,12 +554,12 @@ describe("Crownline 时间轴", () => {
     window.history.replaceState(
       null,
       "",
-      "/?mode=point&year=1000&scope=custom&region=region-americas"
+      "/?mode=point&year=1000&scope=custom&region=region-east-africa"
     );
     renderApp();
 
     expect(screen.getByRole("button", { name: "自选地区" })).toHaveAttribute("aria-pressed", "true");
-    expect(screen.getByRole("checkbox", { name: "美洲" })).toBeChecked();
+    expect(screen.getByRole("checkbox", { name: "东非" })).toBeChecked();
     expect(screen.getByRole("region", { name: "当时存在的政权" })).toHaveTextContent(
       "当前数据覆盖有限，不表示当时不存在政权"
     );
@@ -584,7 +584,7 @@ describe("Crownline 时间轴", () => {
     window.history.replaceState(null, "", "/?scope=global");
     renderApp();
 
-    expect(screen.getByRole("status")).toHaveTextContent("显示 93 / 93 个条目");
+    expect(screen.getByRole("status")).toHaveTextContent("显示 116 / 116 个条目");
     expect(screen.getByRole("heading", { name: "跨地区政权" })).toBeInTheDocument();
     expect(screen.getAllByText("拜占庭帝国")).toHaveLength(1);
     expect(screen.getAllByText("阿拔斯哈里发")).toHaveLength(1);

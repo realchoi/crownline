@@ -1,0 +1,35 @@
+[
+  {
+    "id": "geo-songhai-gao",
+    "polityId": "polity-songhai-empire",
+    "periods": [
+      {
+        "start": {
+          "year": 1464,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 1591,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "Gao",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 16.2719,
+      "longitude": -0.0447
+    },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代加奥；桑海帝国后期政治中心，仅表示该时期都城的大致位置，不表示帝国疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-geonames"
+      },
+      {
+        "sourceId": "source-songhai-history"
+      }
+    ],
+    "confidence": "medium"
+  }
+]

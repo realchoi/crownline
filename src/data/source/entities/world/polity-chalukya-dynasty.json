@@ -1,0 +1,483 @@
+{
+  "order": 945,
+  "entities": [
+    {
+      "id": "polity-chalukya-dynasty",
+      "entityKind": "polity",
+      "polityForms": [
+        "dynasty",
+        "kingdom"
+      ],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "遮娄其王朝",
+        "aliases": [
+          "Chalukya dynasty",
+          "Western Chalukyas",
+          "Badami Chalukyas",
+          "西遮娄其"
+        ],
+        "local": "ಚಾಲುಕ್ಯ"
+      },
+      "existencePeriods": [
+        {
+          "start": {
+            "year": 543,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 753,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "historicalRegionIds": [
+        "region-south-asia"
+      ],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "遮娄其王朝（西遮娄其/巴达米遮娄其）是六至八世纪统治德干半岛西部与南部的印度王国，以巴达米（Vatapi）为都城。补罗稽舍二世曾与北印度的旃陀罗设赏伽（戒日王）交锋并于纳尔马达河一带取胜，其统治时期亦以艾荷莱（Aihole）、巴达米等地石窟寺闻名；753年末代君主羯梨跋摩二世为拉什特拉库塔所灭，王朝终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "本条目专指巴达米/西遮娄其（Badami/Western Chalukyas），不包括十世纪后复兴的卡利扬遮娄其（Kalyani Chalukyas）或东遮娄其（Eastern Chalukyas）。各君主在位年份均为约年口径；补罗稽舍二世于642年前后去世后的642—655年间存在王位空位或争位期，本条目未单独列出该段空缺君主。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-chalukya-pulakesi-i",
+      "names": {
+        "primary": "补罗稽舍一世",
+        "aliases": [
+          "Pulakesi I",
+          "Pulakeshin I"
+        ]
+      },
+      "description": "补罗稽舍一世，西遮娄其王朝主要君主序列中的统治人物。他约于543年在巴达米（Vatapi）建立遮娄其政权，被视为西遮娄其王朝的奠基者。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-chalukya-kirtivarman-i",
+      "names": {
+        "primary": "羯梨跋摩一世",
+        "aliases": [
+          "Kirtivarman I"
+        ]
+      },
+      "description": "羯梨跋摩一世，西遮娄其王朝主要君主序列中的统治人物。他继承补罗稽舍一世的基业，继续巩固并扩张遮娄其在德干地区的势力。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-chalukya-mangalesha",
+      "names": {
+        "primary": "曼伽罗舍",
+        "aliases": [
+          "Mangalesha",
+          "Mangalesa"
+        ]
+      },
+      "description": "曼伽罗舍，西遮娄其王朝主要君主序列中的统治人物。他原为羯梨跋摩一世之弟，后亲政并在位期间继续推进遮娄其的领土扩张。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-chalukya-pulakesi-ii",
+      "names": {
+        "primary": "补罗稽舍二世",
+        "aliases": [
+          "Pulakesi II",
+          "Pulakeshin II"
+        ]
+      },
+      "description": "补罗稽舍二世，西遮娄其王朝主要君主序列中的统治人物。他是遮娄其最伟大的君主之一，曾北征击败北印度旃陀罗设赏伽（戒日王），并将势力扩展至德干广大区域；其治下艾荷莱、巴达米等地的石窟寺亦颇具盛名。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-chalukya-vikramaditya-i",
+      "names": {
+        "primary": "超日王一世",
+        "aliases": [
+          "Vikramaditya I",
+          "Vikramaditya I Chalukya"
+        ]
+      },
+      "description": "超日王一世，西遮娄其王朝主要君主序列中的统治人物。他在642—655年间的王位空位或争位期后恢复遮娄其统治，并重新整合王朝势力。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-chalukya-vijayaditya",
+      "names": {
+        "primary": "维阇耶阿提毗",
+        "aliases": [
+          "Vijayaditya",
+          "Vijayaditya I"
+        ]
+      },
+      "description": "维阇耶阿提毗，西遮娄其王朝主要君主序列中的统治人物。他在位时间较长，大体维持了遮娄其在德干地区的版图与影响力。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-chalukya-vikramaditya-ii",
+      "names": {
+        "primary": "超日王二世",
+        "aliases": [
+          "Vikramaditya II",
+          "Vikramaditya II Chalukya"
+        ]
+      },
+      "description": "超日王二世，西遮娄其王朝主要君主序列中的统治人物。他曾南征并洗劫朱罗都城甘吉布勒姆（Kanchi），是遮娄其晚期的重要军事君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ]
+    },
+    {
+      "id": "person-chalukya-kirtivarman-ii",
+      "names": {
+        "primary": "羯梨跋摩二世",
+        "aliases": [
+          "Kirtivarman II"
+        ]
+      },
+      "description": "羯梨跋摩二世，西遮娄其王朝主要君主序列中的统治人物。他通常被视为西遮娄其末代君主，约于753年被拉什特拉库塔击败，王朝随之终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-chalukya-pulakesi-i",
+      "personId": "person-chalukya-pulakesi-i",
+      "polityId": "polity-chalukya-dynasty",
+      "titles": [
+        "罗阇"
+      ],
+      "localTitles": [
+        "Maharaja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 543,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 566,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chalukya-kirtivarman-i",
+      "personId": "person-chalukya-kirtivarman-i",
+      "polityId": "polity-chalukya-dynasty",
+      "titles": [
+        "罗阇"
+      ],
+      "localTitles": [
+        "Maharaja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 566,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 597,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chalukya-mangalesha",
+      "personId": "person-chalukya-mangalesha",
+      "polityId": "polity-chalukya-dynasty",
+      "titles": [
+        "罗阇"
+      ],
+      "localTitles": [
+        "Maharaja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 597,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 610,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chalukya-pulakesi-ii",
+      "personId": "person-chalukya-pulakesi-ii",
+      "polityId": "polity-chalukya-dynasty",
+      "titles": [
+        "罗阇"
+      ],
+      "localTitles": [
+        "Maharaja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 610,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 642,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "补罗稽舍二世约于642年去世后，642—655年间存在王位空位或争位期，本条目未单独列出该段空缺君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chalukya-vikramaditya-i",
+      "personId": "person-chalukya-vikramaditya-i",
+      "polityId": "polity-chalukya-dynasty",
+      "titles": [
+        "罗阇"
+      ],
+      "localTitles": [
+        "Maharaja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 655,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 680,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "超日王一世约于655年即位，接续642—655年间的王位空位或争位期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chalukya-vijayaditya",
+      "personId": "person-chalukya-vijayaditya",
+      "polityId": "polity-chalukya-dynasty",
+      "titles": [
+        "罗阇"
+      ],
+      "localTitles": [
+        "Maharaja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 696,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 733,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chalukya-vikramaditya-ii",
+      "personId": "person-chalukya-vikramaditya-ii",
+      "polityId": "polity-chalukya-dynasty",
+      "titles": [
+        "罗阇"
+      ],
+      "localTitles": [
+        "Maharaja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 733,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 746,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-chalukya-kirtivarman-ii",
+      "personId": "person-chalukya-kirtivarman-ii",
+      "polityId": "polity-chalukya-dynasty",
+      "titles": [
+        "罗阇"
+      ],
+      "localTitles": [
+        "Maharaja"
+      ],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": {
+            "year": 746,
+            "precision": "circa"
+          },
+          "end": {
+            "year": 753,
+            "precision": "circa"
+          }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "羯梨跋摩二世一般被视为西遮娄其末代君主；约于753年被拉什特拉库塔击败，王朝终结。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-chalukya-history"
+        },
+        {
+          "sourceId": "source-chalukya-rulers"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}
