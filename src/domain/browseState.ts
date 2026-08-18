@@ -18,6 +18,7 @@ export interface BrowseState {
   category: CategoryFilter;
   regionScope: RegionScope;
   compareEntityIds: string[];
+  detailEntityId: string | null;
 }
 
 const VALID_CATEGORIES = new Set<CategoryFilter>([
@@ -77,6 +78,9 @@ export function readBrowseState(
   const compareEntityIds = [...new Set(params.getAll("compare"))]
     .filter((id) => polityIds.has(id))
     .slice(0, 2);
+  const entityIds = new Set(entities.map(({ id }) => id));
+  const rawDetail = params.get("detail");
+  const detailEntityId = rawDetail && entityIds.has(rawDetail) ? rawDetail : null;
 
   return {
     viewMode: params.get("view") === "map" ? "map" : "timeline",
@@ -87,7 +91,8 @@ export function readBrowseState(
       ? (mappedCategory as CategoryFilter)
       : "all",
     regionScope,
-    compareEntityIds
+    compareEntityIds,
+    detailEntityId
   };
 }
 
@@ -98,7 +103,7 @@ export function writeBrowseState(
   currentSearch = ""
 ): URLSearchParams {
   const params = new URLSearchParams(currentSearch);
-  ["view", "mode", "year", "q", "type", "scope", "region", "compare"]
+  ["view", "mode", "year", "q", "type", "scope", "region", "compare", "detail"]
     .forEach((name) => params.delete(name));
 
   if (state.viewMode === "map") params.set("view", "map");
@@ -116,5 +121,6 @@ export function writeBrowseState(
   [...new Set(state.compareEntityIds)].slice(0, 2).forEach((entityId) => {
     params.append("compare", entityId);
   });
+  if (state.detailEntityId) params.set("detail", state.detailEntityId);
   return params;
 }

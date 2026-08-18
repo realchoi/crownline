@@ -45,12 +45,13 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
   const [browseState, setBrowseState] = useState<BrowseState>(() => {
     return readBrowseState(window.location.search, yearBounds, data.regions, data.entities);
   });
-  const [selectedEntityId, setSelectedEntityId] = useState<string | null>(null);
   const [detailState, setDetailState] = useState<DetailLoadState>({ status: "missing" });
   const [geographyState, setGeographyState] = useState<GeographyState>({ status: "idle" });
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
   const requestSequenceRef = useRef(0);
   const geographyRequestSequenceRef = useRef(0);
+  const detailHistoryRef = useRef(browseState.detailEntityId);
+  const skipUrlSyncRef = useRef(false);
   const mainRef = useRef<HTMLElement>(null);
   const controlsPanelRef = useRef<HTMLElement>(null);
   const results = useMemo(() => {
@@ -87,8 +88,8 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
     );
   }, [browseState.year, geographyState, mapBrowseResults.polities]);
   // 即使筛选状态变化，也要允许已打开的详情继续读取完整实体记录。
-  const selectedMatch = selectedEntityId
-    ? allMatches.find(({ entity }) => entity.id === selectedEntityId)
+  const selectedMatch = browseState.detailEntityId
+    ? allMatches.find(({ entity }) => entity.id === browseState.detailEntityId)
     : undefined;
   const overviewGroups = useMemo(() => {
     return buildOverviewTimelineGroups(data, results.all, browseState.regionScope);
@@ -136,9 +137,36 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
   }, [loadGeography]);
 
   useEffect(() => {
+    const onPopstate = () => {
+      skipUrlSyncRef.current = true;
+      setBrowseState(readBrowseState(
+        window.location.search,
+        yearBounds,
+        data.regions,
+        data.entities
+      ));
+    };
+    window.addEventListener("popstate", onPopstate);
+    return () => window.removeEventListener("popstate", onPopstate);
+  }, [data.entities, data.regions, yearBounds]);
+
+  useEffect(() => {
+    if (skipUrlSyncRef.current) {
+      skipUrlSyncRef.current = false;
+      detailHistoryRef.current = browseState.detailEntityId;
+      return;
+    }
+
     const params = writeBrowseState(browseState, yearBounds, window.location.search);
     const next = `${window.location.pathname}${params.toString() ? `?${params}` : ""}${window.location.hash}`;
-    window.history.replaceState(null, "", next);
+    const detailChanged = detailHistoryRef.current !== browseState.detailEntityId;
+    detailHistoryRef.current = browseState.detailEntityId;
+
+    if (detailChanged) {
+      window.history.pushState(null, "", next);
+    } else {
+      window.history.replaceState(null, "", next);
+    }
   }, [browseState, yearBounds]);
 
   useEffect(() => {
@@ -176,10 +204,10 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
 
   useEffect(() => {
     // 等待原生 dialog 卸载后再恢复焦点，避免浏览器默认焦点处理覆盖结果。
-    if (selectedEntityId || !lastTriggerRef.current) return;
+    if (browseState.detailEntityId || !lastTriggerRef.current) return;
     const animationFrame = requestAnimationFrame(() => lastTriggerRef.current?.focus());
     return () => cancelAnimationFrame(animationFrame);
-  }, [selectedEntityId]);
+  }, [browseState.detailEntityId]);
 
   const startDetailLoad = useCallback((entityId: string) => {
     const requestSequence = ++requestSequenceRef.current;
@@ -200,17 +228,25 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
     });
   }, [data.detailEntityIds, loadDetail]);
 
+  useEffect(() => {
+    if (!browseState.detailEntityId) {
+      requestSequenceRef.current += 1;
+      setDetailState({ status: "missing" });
+      return;
+    }
+    startDetailLoad(browseState.detailEntityId);
+  }, [browseState.detailEntityId, startDetailLoad]);
+
   /** 记录触发元素、打开对应实体详情并启动按需加载。 */
   const openDetail = (entityId: string, trigger: HTMLButtonElement) => {
     lastTriggerRef.current = trigger;
-    setSelectedEntityId(entityId);
-    startDetailLoad(entityId);
+    setBrowseState((current) => ({ ...current, detailEntityId: entityId }));
   };
 
   /** 关闭详情；焦点恢复由上方 effect 在卸载完成后处理。 */
   const closeDetail = useCallback(() => {
     requestSequenceRef.current += 1;
-    setSelectedEntityId(null);
+    setBrowseState((current) => ({ ...current, detailEntityId: null }));
   }, []);
 
   return (

@@ -23,7 +23,8 @@ describe("浏览状态", () => {
       query: "秦",
       category: "contemporary",
       regionScope: { mode: "china" },
-      compareEntityIds: []
+      compareEntityIds: [],
+      detailEntityId: null
     });
   });
 
@@ -35,7 +36,8 @@ describe("浏览状态", () => {
       query: "",
       category: "all",
       regionScope: { mode: "china" },
-      compareEntityIds: []
+      compareEntityIds: [],
+      detailEntityId: null
     });
     expect(readBrowseState("?mode=point&year=-9999", bounds).year).toBe(-2070);
     expect(readBrowseState("?mode=point&year=9999", bounds).year).toBe(1922);
@@ -67,7 +69,8 @@ describe("浏览状态", () => {
         query: "  秦  ",
         category: "mainline",
         regionScope: { mode: "china" },
-        compareEntityIds: []
+        compareEntityIds: [],
+        detailEntityId: null
       },
       bounds,
       "?ref=shared"
@@ -85,7 +88,8 @@ describe("浏览状态", () => {
         query: "",
         category: "all",
         regionScope: { mode: "china" },
-        compareEntityIds: []
+        compareEntityIds: [],
+        detailEntityId: null
       },
       bounds
     );
@@ -116,7 +120,8 @@ describe("浏览状态", () => {
         query: "",
         category: "all",
         regionScope: { mode: "custom", regionIds: ["region-south-asia", "region-europe"] },
-        compareEntityIds: []
+        compareEntityIds: [],
+        detailEntityId: null
       },
       bounds
     );
@@ -132,7 +137,8 @@ describe("浏览状态", () => {
         query: "",
         category: "all",
         regionScope: { mode: "global" },
-        compareEntityIds: []
+        compareEntityIds: [],
+        detailEntityId: null
       },
       bounds
     );
@@ -151,7 +157,8 @@ describe("浏览状态", () => {
         query: "",
         category: "all",
         regionScope: { mode: "global" },
-        compareEntityIds: []
+        compareEntityIds: [],
+        detailEntityId: null
       },
       bounds
     );
@@ -204,11 +211,38 @@ describe("浏览状态", () => {
         query: "",
         category: "all",
         regionScope: { mode: "china" },
-        compareEntityIds: ["polity-cn-ming", "polity-cn-tang"]
+        compareEntityIds: ["polity-cn-ming", "polity-cn-tang"],
+        detailEntityId: null
       },
       bounds
     );
 
     expect(params.toString()).toBe("compare=polity-cn-ming&compare=polity-cn-tang");
+  });
+
+  it("恢复并清洗详情深链接，忽略无效实体", () => {
+    expect(
+      readBrowseState("?detail=polity-cn-ming", bounds, data.regions, data.entities)
+        .detailEntityId
+    ).toBe("polity-cn-ming");
+    expect(
+      readBrowseState("?detail=period-cn-spring-autumn", bounds, data.regions, data.entities)
+        .detailEntityId
+    ).toBe("period-cn-spring-autumn");
+    expect(
+      readBrowseState("?detail=polity-missing", bounds, data.regions, data.entities)
+        .detailEntityId
+    ).toBeNull();
+  });
+
+  it("只在打开详情时写入 detail 参数", () => {
+    const defaultState = readBrowseState("", bounds, data.regions, data.entities);
+    expect(writeBrowseState(defaultState, bounds).has("detail")).toBe(false);
+
+    const withDetail = writeBrowseState(
+      { ...defaultState, detailEntityId: "polity-cn-tang" },
+      bounds
+    );
+    expect(withDetail.get("detail")).toBe("polity-cn-tang");
   });
 });

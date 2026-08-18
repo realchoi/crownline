@@ -877,4 +877,44 @@ describe("Crownline 时间轴", () => {
 
     await waitFor(() => expect(screen.queryByRole("dialog", { name: "明" })).not.toBeInTheDocument());
   });
+
+  it("从 URL 恢复详情深链接", async () => {
+    window.history.replaceState(null, "", "/?mode=point&year=1400&detail=polity-cn-ming");
+    renderApp();
+
+    const dialog = screen.getByRole("dialog", { name: "明" });
+    expect(within(dialog).getByText("1368—1644")).toBeInTheDocument();
+    expect(await within(dialog).findByRole("heading", { name: "建文帝" })).toBeInTheDocument();
+  });
+
+  it("打开和关闭详情时同步 detail 参数", async () => {
+    const user = userEvent.setup();
+    renderApp();
+
+    await user.click(screen.getByRole("button", { name: /明，1368—1644/ }));
+    expect(new URLSearchParams(window.location.search).get("detail")).toBe("polity-cn-ming");
+
+    await user.click(within(screen.getByRole("dialog", { name: "明" })).getByRole("button", {
+      name: "关闭详情"
+    }));
+    expect(new URLSearchParams(window.location.search).has("detail")).toBe(false);
+  });
+
+  it("浏览器后退和前进导航详情开关", async () => {
+    const user = userEvent.setup();
+    renderApp();
+
+    await user.click(screen.getByRole("button", { name: /明，1368—1644/ }));
+    expect(screen.getByRole("dialog", { name: "明" })).toBeInTheDocument();
+
+    window.history.back();
+    await waitFor(() => {
+      expect(screen.queryByRole("dialog", { name: "明" })).not.toBeInTheDocument();
+    });
+
+    window.history.forward();
+    await waitFor(() => {
+      expect(screen.getByRole("dialog", { name: "明" })).toBeInTheDocument();
+    });
+  });
 });
