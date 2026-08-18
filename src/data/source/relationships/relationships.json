@@ -128,5 +128,207 @@
     "sourceRefs": [{ "sourceId": "source-history-korea-balhae-culture" }],
     "confidence": "medium",
     "confidenceNote": "文化交流描述选择性吸收与再创造，不表示双方文化同一，也不据此推导政治从属。"
+  },
+  {
+    "id": "relationship-northern-song-liao-chanyuan-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      { "entityId": "polity-cn-northern-song", "role": "缔约方" },
+      { "entityId": "polity-cn-liao", "role": "缔约方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1004, "precision": "exact" },
+        "end": { "year": 1005, "precision": "exact" }
+      }
+    ],
+    "summary": "1004至1005年，宋辽在澶州议和：双方约为兄弟之国，宋向辽输送岁币并划定边界；此后约百余年大体维持和平，是宋辽关系中的关键节点。",
+    "eventIds": ["event-chanyuan-treaty"],
+    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-song-western-xia-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-northern-song", "role": "交战方" },
+      { "entityId": "polity-cn-western-xia", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1040, "precision": "exact" },
+        "end": { "year": 1044, "precision": "exact" }
+      }
+    ],
+    "summary": "1040至1044年，北宋与西夏因元昊称帝及边境冲突爆发战争；1044年和约后双方恢复册封、岁赐与互市框架，但此后仍时有摩擦。",
+    "eventIds": ["event-song-xia-tiansheng-treaty"],
+    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-liao-jin-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-liao", "role": "交战方" },
+      { "entityId": "polity-cn-jin", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1115, "precision": "exact" },
+        "end": { "year": 1125, "precision": "exact" }
+      }
+    ],
+    "summary": "1115年女真建金后，金与辽爆发全面战争；1125年辽天祚帝被俘，辽朝在本项目口径下终结。",
+    "eventIds": ["event-liao-fall-to-jin"],
+    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-jin-northern-song-jingkang-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-jin", "role": "进攻方" },
+      { "entityId": "polity-cn-northern-song", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1126, "precision": "exact" },
+        "end": { "year": 1127, "precision": "exact" }
+      }
+    ],
+    "summary": "1126至1127年，金军两度南下，最终攻破北宋都城开封并俘徽、钦二帝；北宋灭亡，赵构南渡建立南宋。",
+    "eventIds": ["event-jingkang-incident"],
+    "sourceRefs": [{ "sourceId": "source-cambridge-song-jin-alliance" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-southern-song-jin-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-southern-song", "role": "交战方" },
+      { "entityId": "polity-cn-jin", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1127, "precision": "exact" },
+        "end": { "year": 1234, "precision": "exact" }
+      }
+    ],
+    "summary": "1127年靖康之变后，南宋与金长期对峙并反复交战；1208年嘉定和议后双方关系相对缓和，但军事冲突与外交博弈持续至1234年金亡。",
+    "eventIds": [],
+    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "confidence": "medium",
+    "confidenceNote": "本记录概括南宋与金的长期军事对峙，不将每一次和战节点单独拆分为多条关系。"
+  },
+  {
+    "id": "relationship-mongol-jin-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-mongol-empire", "role": "进攻方" },
+      { "entityId": "polity-cn-jin", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1211, "precision": "exact" },
+        "end": { "year": 1234, "precision": "exact" }
+      }
+    ],
+    "summary": "1211年蒙古大举攻金，经数十年战争于1234年与南宋联军攻陷蔡州，金朝灭亡。",
+    "eventIds": ["event-mongol-conquest-of-jin"],
+    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-mongol-western-xia-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-mongol-empire", "role": "进攻方" },
+      { "entityId": "polity-cn-western-xia", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1205, "precision": "exact" },
+        "end": { "year": 1227, "precision": "exact" }
+      }
+    ],
+    "summary": "1205至1227年，蒙古多次征伐西夏；1227年西夏末帝投降，西夏作为独立政权终结。",
+    "eventIds": ["event-mongol-conquest-of-xixia"],
+    "sourceRefs": [{ "sourceId": "source-cn-chronology-table" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-mongol-abbasid-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-mongol-empire", "role": "进攻方" },
+      { "entityId": "polity-abbasid-caliphate", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1258, "precision": "exact" },
+        "end": { "year": 1258, "precision": "exact" }
+      }
+    ],
+    "summary": "1258年，旭烈兀率领的蒙古军攻陷巴格达，末代哈里发被杀；阿拔斯哈里发国作为独立政权终结，是蒙古西征影响西亚政治格局的关键节点。",
+    "eventIds": ["event-sack-of-baghdad"],
+    "sourceRefs": [{ "sourceId": "source-met-abbasid" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-ottoman-byzantine-constantinople-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-ottoman-empire", "role": "进攻方" },
+      { "entityId": "polity-byzantine-empire", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1453, "precision": "exact" },
+        "end": { "year": 1453, "precision": "exact" }
+      }
+    ],
+    "summary": "1453年，奥斯曼苏丹穆罕默德二世率军攻破君士坦丁堡，末帝君士坦丁十一世战死；拜占庭帝国终结，奥斯曼由此控制该城并进一步向巴尔干扩张。",
+    "eventIds": ["event-fall-of-constantinople"],
+    "sourceRefs": [{ "sourceId": "source-met-byzantium" }, { "sourceId": "source-ottoman-history" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-ottoman-holy-roman-vienna-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-ottoman-empire", "role": "进攻方" },
+      { "entityId": "polity-holy-roman-empire", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1683, "precision": "exact" },
+        "end": { "year": 1683, "precision": "exact" }
+      }
+    ],
+    "summary": "1683年，奥斯曼军围攻维也纳，神圣罗马帝国与波兰联军最终解围；此战常被视为奥斯曼向中欧扩张的转折点。",
+    "eventIds": ["event-battle-of-vienna"],
+    "sourceRefs": [{ "sourceId": "source-ottoman-history" }, { "sourceId": "source-dhm-hre" }],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-delhi-sultanate-mughal-succession-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-delhi-sultanate", "role": "交战方" },
+      { "entityId": "polity-mughal-empire", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1526, "precision": "exact" },
+        "end": { "year": 1526, "precision": "exact" }
+      }
+    ],
+    "summary": "1526年，巴布尔率莫卧儿军队在第一次帕尼帕特战役中击败德里苏丹国末代苏丹；此战标志莫卧儿在北印度建立统治，德里苏丹国终结。",
+    "eventIds": ["event-first-battle-of-panipat"],
+    "sourceRefs": [
+      { "sourceId": "source-delhi-sultanate-britannica" },
+      { "sourceId": "source-mughal-history" }
+    ],
+    "confidence": "high"
   }
 ]

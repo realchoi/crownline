@@ -1836,6 +1836,29 @@ body:has(dialog[open]) {
   line-height: 1.2;
 }
 
+.entity-local-name,
+.comparison-local-name,
+.comparison-slot-local-name,
+.map-point-local-name {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88em;
+  line-height: 1.35;
+}
+
+.dialog-title + .entity-local-name {
+  margin-bottom: 8px;
+}
+
+.comparison-slot-local-name {
+  grid-column: 2 / -1;
+}
+
+.map-cluster-panel li button .map-point-local-name {
+  grid-column: 1 / -1;
+  font-size: 0.82rem;
+}
+
 .dialog-years {
   margin-bottom: 16px;
   color: var(--muted);

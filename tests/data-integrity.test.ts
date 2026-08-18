@@ -185,13 +185,13 @@ describe("生产历史数据", () => {
     }
   });
 
-  it("为十五个中国代表政权提供二十二条地理快照并覆盖十一个顶层地区", () => {
+  it("为二十六个中国代表政权提供三十六条地理快照并覆盖十一个顶层地区", () => {
     const chinaSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return CHINA_MAP_POLITY_IDS.some((id) => id === polityId);
     });
 
-    expect(chinaSnapshots).toHaveLength(22);
-    expect(data.geographicSnapshots).toHaveLength(87);
+    expect(chinaSnapshots).toHaveLength(35);
+    expect(data.geographicSnapshots).toHaveLength(100);
     for (const polityId of CHINA_MAP_POLITY_IDS) {
       expect(
         chinaSnapshots.some((snapshot) => snapshot.polityId === polityId),
@@ -222,6 +222,9 @@ describe("生产历史数据", () => {
     expect(activePlaces("polity-cn-ming", 1500)).toEqual(["北京"]);
     expect(activePlaces("polity-cn-qing", 1640)).toEqual(["盛京"]);
     expect(activePlaces("polity-cn-qing", 1700)).toEqual(["北京"]);
+    expect(activePlaces("polity-cn-jin", 1120)).toEqual(["会宁府"]);
+    expect(activePlaces("polity-cn-jin", 1200)).toEqual(["中都"]);
+    expect(activePlaces("polity-cn-jin", 1220)).toEqual(["汴京"]);
   });
 
   it("提供可自选的外部地区和明确覆盖状态", () => {
@@ -264,57 +267,44 @@ describe("生产历史数据", () => {
     expect(data.entities).toHaveLength(116);
   });
 
-  it("首批结构化关系覆盖七种类型并保持事件与来源闭合", () => {
+  it("结构化关系覆盖七种类型并保持事件与来源闭合", () => {
     expect(new Set(data.relationships.map(({ type }) => type))).toEqual(
       new Set(RELATIONSHIP_TYPES)
     );
-    expect(data.relationships).toHaveLength(7);
-    expect(data.events).toHaveLength(4);
+    expect(data.relationships).toHaveLength(18);
+    expect(data.events).toHaveLength(14);
     expect(data.relationships.every(({ sourceRefs }) => sourceRefs.length > 0)).toBe(true);
 
+    const relationshipById = new Map(
+      data.relationships.map((relationship) => [relationship.id, relationship])
+    );
     expect(
-      data.relationships.map(({ id, participants, eventIds }) => ({
-        id,
-        participants: participants.map(({ entityId }) => entityId),
-        eventIds
-      }))
-    ).toEqual([
+      relationshipById.get("relationship-northern-song-liao-chanyuan-diplomacy")
+    ).toMatchObject({
+      type: "diplomacy",
+      participants: [{ entityId: "polity-cn-northern-song" }, { entityId: "polity-cn-liao" }],
+      eventIds: ["event-chanyuan-treaty"]
+    });
+    expect(relationshipById.get("relationship-liao-jin-war")).toMatchObject({
+      type: "war",
+      eventIds: ["event-liao-fall-to-jin"]
+    });
+    expect(relationshipById.get("relationship-mongol-abbasid-war")).toMatchObject({
+      type: "war",
+      eventIds: ["event-sack-of-baghdad"]
+    });
+    expect(relationshipById.get("relationship-ottoman-byzantine-constantinople-war")).toMatchObject(
       {
-        id: "relationship-byzantine-seljuk-manzikert-war",
-        participants: ["polity-byzantine-empire", "polity-seljuk-empire"],
-        eventIds: ["event-battle-of-manzikert"]
-      },
-      {
-        id: "relationship-northern-song-jurchen-jin-alliance",
-        participants: ["polity-cn-northern-song", "polity-cn-jin"],
-        eventIds: ["event-alliance-conducted-at-sea"]
-      },
-      {
-        id: "relationship-tang-tibet-changqing-diplomacy",
-        participants: ["polity-cn-tang", "polity-tibet-empire"],
-        eventIds: ["event-tang-tibet-changqing-treaty"]
-      },
-      {
-        id: "relationship-tang-balhae-tribute",
-        participants: ["polity-cn-tang", "polity-balhae"],
-        eventIds: []
-      },
-      {
-        id: "relationship-yuan-goryeo-vassalage",
-        participants: ["polity-cn-yuan", "polity-goryeo"],
-        eventIds: []
-      },
-      {
-        id: "relationship-tang-abbasid-maritime-trade",
-        participants: ["polity-cn-tang", "polity-abbasid-caliphate"],
-        eventIds: ["event-belitung-shipwreck"]
-      },
-      {
-        id: "relationship-tang-balhae-cultural-exchange",
-        participants: ["polity-cn-tang", "polity-balhae"],
-        eventIds: []
+        type: "war",
+        eventIds: ["event-fall-of-constantinople"]
       }
-    ]);
+    );
+    expect(
+      relationshipById.get("relationship-delhi-sultanate-mughal-succession-war")
+    ).toMatchObject({
+      type: "war",
+      eventIds: ["event-first-battle-of-panipat"]
+    });
 
     expect(
       Object.fromEntries(
@@ -326,7 +316,9 @@ describe("生产历史数据", () => {
     ).toMatchObject({
       "relationship-northern-song-jurchen-jin-alliance": [[1120, 1122]],
       "relationship-tang-balhae-tribute": [[713, 800]],
-      "relationship-tang-abbasid-maritime-trade": [[830, 830]]
+      "relationship-tang-abbasid-maritime-trade": [[830, 830]],
+      "relationship-northern-song-liao-chanyuan-diplomacy": [[1004, 1005]],
+      "relationship-liao-jin-war": [[1115, 1125]]
     });
   });
 

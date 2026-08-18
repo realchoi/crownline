@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
 import worldLandUrl from "../assets/maps/world-land.svg";
+import { formatEntityNameWithLocal } from "../domain/entityNames";
 import { GEOGRAPHIC_ROLE_NAMES, type MapCluster, type MapPoint } from "../domain/mapSnapshots";
+import { EntityLocalName } from "./EntityLocalName";
 
 interface HistoricalMapProps {
   clusters: MapCluster[];
@@ -9,7 +11,7 @@ interface HistoricalMapProps {
 }
 
 function pointLabel({ entity, snapshot }: MapPoint): string {
-  return `${entity.names.primary}，${snapshot.placeName}，${GEOGRAPHIC_ROLE_NAMES[snapshot.role]}`;
+  return `${formatEntityNameWithLocal(entity.names)}，${snapshot.placeName}，${GEOGRAPHIC_ROLE_NAMES[snapshot.role]}`;
 }
 
 /** 呈现离线世界轮廓、单点标记与可展开的密集点位聚合。 */
@@ -86,6 +88,10 @@ export function HistoricalMap({ clusters, onSelect }: HistoricalMapProps) {
                           onClick={(event) => onSelect(point.entity.id, event.currentTarget)}
                         >
                           <strong>{point.entity.names.primary}</strong>
+                          <EntityLocalName
+                            names={point.entity.names}
+                            className="map-point-local-name"
+                          />
                           <span>{point.snapshot.placeName}</span>
                           <small>{GEOGRAPHIC_ROLE_NAMES[point.snapshot.role]}</small>
                         </button>

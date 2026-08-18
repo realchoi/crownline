@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
 import { formatHistoricalYear, formatPeriods, isYearInPeriods } from "../domain/chronology";
+import { formatEntityNameWithLocal } from "../domain/entityNames";
 import {
   buildPolityComparison,
   selectRulersDuringPeriods,
@@ -16,6 +17,7 @@ import type {
   ReignRole
 } from "../domain/types";
 import { HistoricalRelationships } from "./HistoricalRelationships";
+import { EntityLocalName } from "./EntityLocalName";
 
 const POLITY_FORM_NAMES: Record<PolityForm, string> = {
   dynasty: "王朝",
@@ -122,6 +124,7 @@ function PolityColumn({
       <header>
         <p>对比政权</p>
         <h3>{entity.names.primary}</h3>
+        <EntityLocalName names={entity.names} className="comparison-local-name" />
         <span>{formatPeriods(entity.existencePeriods, entity.displayRangeOverride)}</span>
       </header>
       <dl>
@@ -236,9 +239,10 @@ export function ComparisonPanel({
             <div className="comparison-slot is-filled" key={entity.id}>
               <span>{index === 0 ? "A" : "B"}</span>
               <strong>{entity.names.primary}</strong>
+              <EntityLocalName names={entity.names} className="comparison-slot-local-name" />
               <button
                 type="button"
-                aria-label={`从对比中移除${entity.names.primary}`}
+                aria-label={`从对比中移除${formatEntityNameWithLocal(entity.names)}`}
                 onClick={() => onRemove(entity.id)}
               >
                 移除

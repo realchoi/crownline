@@ -10,6 +10,7 @@ import type { ConfidenceLevel, CrownlineDetail, HistoricalEntity } from "../doma
 import type { PolityForm, Region, ReignRole, SourceRef } from "../domain/types";
 import { DISPLAY_CATEGORY_NAMES } from "./FilterPanel";
 import { DetailLoadPanel, type DetailLoadState } from "./DetailLoadPanel";
+import { EntityLocalName } from "./EntityLocalName";
 
 const POLITY_FORM_NAMES: Record<PolityForm, string> = {
   dynasty: "王朝",
@@ -171,6 +172,7 @@ export function DetailDialog({
             <h2 className="dialog-title" id="detail-name">
               {entity.names.primary}
             </h2>
+            <EntityLocalName names={entity.names} />
             <p className="dialog-years">
               {formatPeriods(entity.existencePeriods, entity.displayRangeOverride)}
             </p>

@@ -80,12 +80,12 @@ describe("历史地图点位", () => {
   });
 
   it("单独列出当年缺少地理快照的政权", () => {
-    const sui = entity("polity-cn-sui");
-    const result = selectMapSnapshots([sui], data.geographicSnapshots, 600);
+    const chen = entity("polity-cn-chen");
+    const result = selectMapSnapshots([chen], data.geographicSnapshots, 580);
 
     expect(result.points).toEqual([]);
     expect(result.clusters).toEqual([]);
-    expect(result.missingEntities).toEqual([sui]);
+    expect(result.missingEntities).toEqual([chen]);
   });
 
   it("不受输入顺序影响地稳定聚合北京与南京测试点", () => {
