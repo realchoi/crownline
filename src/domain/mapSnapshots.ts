@@ -1,18 +1,10 @@
 import { isYearInPeriods } from "./chronology";
-import type {
-  GeographicCoordinates,
-  GeographicRole,
-  GeographicSnapshot,
-  HistoricalEntity
-} from "./types";
+import { GEOGRAPHIC_ROLE_NAMES } from "./displayLabels";
+import type { GeographicCoordinates, GeographicSnapshot, HistoricalEntity } from "./types";
 
 export const MAP_CLUSTER_DISTANCE_PERCENT = 4;
 
-export const GEOGRAPHIC_ROLE_NAMES: Record<GeographicRole, string> = {
-  capital: "都城",
-  "political-center": "政治中心",
-  "representative-center": "代表性中心"
-};
+export { GEOGRAPHIC_ROLE_NAMES } from "./displayLabels";
 
 export interface ProjectedCoordinates {
   xPercent: number;

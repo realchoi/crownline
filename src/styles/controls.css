@@ -1,0 +1,446 @@
+main {
+  padding-bottom: 60px;
+}
+
+.view-mode-control {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 12px;
+  padding: 10px 12px 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
+}
+
+.view-mode-control .field-label {
+  margin-bottom: 10px;
+}
+
+.controls-panel {
+  position: sticky;
+  top: 10px;
+  z-index: 20;
+  margin-bottom: 24px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface-strong) 92%, transparent);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.browse-mode-row {
+  align-self: end;
+}
+
+.mode-switch {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(84px, 1fr));
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-soft);
+}
+
+.mode-switch button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 18px;
+  font-weight: 750;
+}
+
+.mode-switch button[aria-pressed="true"] {
+  background: var(--surface-strong);
+  color: var(--accent);
+  box-shadow: 0 4px 14px rgba(72, 45, 29, 0.11);
+}
+
+.year-panel {
+  min-width: 0;
+}
+
+.year-current {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  min-height: 25px;
+}
+
+.year-current .field-label {
+  margin: 0;
+  font-size: 0.72rem;
+}
+
+.year-current output {
+  color: var(--accent);
+  font-size: 1.08rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.year-slider-row {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 38px;
+  gap: 8px;
+  align-items: start;
+}
+
+.year-step-button {
+  display: grid;
+  place-items: center;
+  min-height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--accent);
+  font-size: 1.12rem;
+  font-weight: 750;
+}
+
+.year-step-button:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.year-step-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.year-slider-wrap {
+  min-width: 0;
+}
+
+.year-slider {
+  width: 100%;
+  height: 20px;
+  margin: 0 0 1px;
+  accent-color: var(--accent);
+}
+
+.year-range {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.year-range span:nth-child(2) {
+  text-align: center;
+}
+
+/* 两种浏览模式共享稳定的首行：浏览方式在左，观测范围在右。 */
+.controls-point,
+.controls-overview {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.42fr) minmax(0, 1.58fr);
+  gap: 12px 22px;
+  align-items: end;
+  padding: 14px 16px;
+}
+
+.controls-point .region-scope-control,
+.controls-overview .region-scope-control {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.controls-map .region-scope-control {
+  grid-column: 1 / -1;
+}
+
+.controls-point .text-input,
+.controls-point .select-input,
+.controls-point .button {
+  min-height: 42px;
+}
+
+.controls-point .controls-grid .field-label {
+  margin-bottom: 4px;
+}
+
+.controls-point .controls-grid,
+.controls-overview .controls-grid,
+.controls-overview .legend {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.controls-overview .legend {
+  margin-top: 0;
+}
+
+.region-scope-control {
+  min-width: 0;
+  border-radius: var(--radius-md);
+}
+
+.region-scope-heading {
+  display: grid;
+  grid-template-columns: auto minmax(260px, 1fr);
+  gap: 18px;
+  align-items: end;
+}
+
+.scope-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+
+.scope-switch button {
+  min-height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.scope-switch button[aria-pressed="true"] {
+  background: var(--surface-strong);
+  color: var(--period);
+  box-shadow: 0 3px 12px rgba(72, 45, 29, 0.1);
+}
+
+.region-coverage-note {
+  margin: 0 0 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.region-options {
+  margin: 12px 0 0;
+  padding: 12px 0 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.region-options legend {
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.region-option-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.region-option-list label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  padding: 5px 10px;
+  font-size: 0.78rem;
+}
+
+.region-option-list label:has(input:checked) {
+  border-color: color-mix(in srgb, var(--period) 60%, var(--border));
+  background: color-mix(in srgb, var(--period) 10%, var(--surface-strong));
+}
+
+.region-option-list input {
+  accent-color: var(--period);
+}
+
+.region-option-list small {
+  color: var(--muted);
+  font-size: 0.66rem;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.7fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.controls-point .controls-grid {
+  grid-template-columns:
+    minmax(350px, 1.35fr)
+    minmax(210px, 1fr)
+    minmax(180px, 0.65fr)
+    auto;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.text-input,
+.select-input {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-strong);
+  color: var(--text);
+  padding: 10px 12px;
+  outline: none;
+}
+
+.text-input:focus,
+.select-input:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+.button {
+  min-height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--text);
+  padding: 10px 16px;
+  font-weight: 700;
+}
+
+.button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-mark {
+  width: 26px;
+  height: 10px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.legend-mainline {
+  color: var(--accent);
+}
+.legend-contemporary {
+  color: var(--parallel);
+}
+.legend-context {
+  color: var(--period);
+}
+.legend-regional {
+  color: var(--regional);
+}
+.legend-context .legend-mark {
+  background: transparent;
+  border: 2px dashed currentColor;
+}
+
+.scope-note {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  margin-bottom: 34px;
+  padding: 20px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--accent-soft);
+}
+
+.scope-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.scope-note p {
+  margin: 0;
+}
+
+.results-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.comparison-toggle {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  border: 1px solid color-mix(in srgb, var(--period) 48%, var(--border));
+  border-radius: 999px;
+  background: transparent;
+  color: var(--period);
+  padding: 2px 8px;
+  font-size: 0.64rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.comparison-toggle:hover:not(:disabled) {
+  border-color: var(--period);
+  background: color-mix(in srgb, var(--period) 9%, transparent);
+}
+
+.comparison-toggle.is-selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--surface-strong);
+}
+
+.comparison-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}

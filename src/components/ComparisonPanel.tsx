@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
 import { formatHistoricalYear, formatPeriods, isYearInPeriods } from "../domain/chronology";
+import { COMPARISON_POLITY_FORM_NAMES, COMPARISON_REIGN_ROLE_NAMES } from "../domain/displayLabels";
 import { formatEntityNameWithLocal } from "../domain/entityNames";
 import {
   buildPolityComparison,
@@ -9,31 +10,9 @@ import {
   type ComparisonRulerEntry
 } from "../domain/polityComparison";
 import { selectRulerSnapshot, type RulerSnapshot } from "../domain/rulerSnapshot";
-import type {
-  CrownlineDetail,
-  HistoricalEntity,
-  PolityForm,
-  Region,
-  ReignRole
-} from "../domain/types";
+import type { CrownlineDetail, HistoricalEntity, Region } from "../domain/types";
 import { HistoricalRelationships } from "./HistoricalRelationships";
 import { EntityLocalName } from "./EntityLocalName";
-
-const POLITY_FORM_NAMES: Record<PolityForm, string> = {
-  dynasty: "王朝",
-  empire: "帝国",
-  kingdom: "王国",
-  khanate: "汗国",
-  state: "国家",
-  other: "其他"
-};
-
-const REIGN_ROLE_NAMES: Record<ReignRole, string> = {
-  ruler: "统治者",
-  "co-ruler": "共治者",
-  regent: "摄政者",
-  contender: "争位者"
-};
 
 type ComparisonDetailState =
   | { status: "idle" | "loading" }
@@ -80,7 +59,7 @@ function ComparisonRulerList({
             <li className={currentReignIds.has(reign.id) ? "is-current" : ""} key={reign.id}>
               <span>
                 <strong>{person.names.primary}</strong>
-                <small>{REIGN_ROLE_NAMES[reign.role]}</small>
+                <small>{COMPARISON_REIGN_ROLE_NAMES[reign.role]}</small>
               </span>
               <span>
                 {formatPeriods(periods)}
@@ -130,7 +109,7 @@ function PolityColumn({
       <dl>
         <div>
           <dt>政权形态</dt>
-          <dd>{entity.polityForms.map((form) => POLITY_FORM_NAMES[form]).join("、")}</dd>
+          <dd>{entity.polityForms.map((form) => COMPARISON_POLITY_FORM_NAMES[form]).join("、")}</dd>
         </div>
         <div>
           <dt>历史地区</dt>

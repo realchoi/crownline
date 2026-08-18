@@ -5,35 +5,16 @@ import {
   formatHistoricalYear,
   formatPeriods
 } from "../domain/chronology";
-import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
+import {
+  DETAIL_CONFIDENCE_NAMES,
+  DETAIL_POLITY_FORM_NAMES,
+  DETAIL_REIGN_ROLE_NAMES,
+  DISPLAY_CATEGORY_NAMES
+} from "../domain/displayLabels";
 import { selectRulerSnapshot, type RulerSnapshot } from "../domain/rulerSnapshot";
-import type { ConfidenceLevel, CrownlineDetail, HistoricalEntity } from "../domain/types";
-import type { PolityForm, Region, ReignRole, SourceRef } from "../domain/types";
+import type { CrownlineDetail, HistoricalEntity, Region, SourceRef } from "../domain/types";
 import { DetailLoadPanel, type DetailLoadState } from "./DetailLoadPanel";
 import { EntityLocalName } from "./EntityLocalName";
-
-const POLITY_FORM_NAMES: Record<PolityForm, string> = {
-  dynasty: "王朝",
-  empire: "帝国",
-  kingdom: "王国",
-  khanate: "汗国",
-  state: "政权",
-  other: "其他"
-};
-
-const REIGN_ROLE_NAMES: Record<ReignRole, string> = {
-  ruler: "在位者",
-  "co-ruler": "共治者",
-  regent: "摄政者",
-  contender: "争位者"
-};
-
-const CONFIDENCE_NAMES: Record<ConfidenceLevel, string> = {
-  high: "较高",
-  medium: "中等",
-  low: "较低",
-  disputed: "存在争议"
-};
 
 interface DetailDialogProps {
   entity: HistoricalEntity;
@@ -207,7 +188,9 @@ export function DetailDialog({
             {entity.entityKind === "polity" && (
               <div className="detail-card">
                 <dt>政权形态</dt>
-                <dd>{entity.polityForms.map((form) => POLITY_FORM_NAMES[form]).join("、")}</dd>
+                <dd>
+                  {entity.polityForms.map((form) => DETAIL_POLITY_FORM_NAMES[form]).join("、")}
+                </dd>
               </div>
             )}
             <div className="detail-card">
@@ -216,7 +199,7 @@ export function DetailDialog({
             </div>
             <div className="detail-card">
               <dt>资料可信度</dt>
-              <dd>{CONFIDENCE_NAMES[entity.confidence]}</dd>
+              <dd>{DETAIL_CONFIDENCE_NAMES[entity.confidence]}</dd>
             </div>
           </dl>
 
@@ -263,7 +246,7 @@ export function DetailDialog({
                       <div className="ruler-card-heading">
                         <h4>{person.names.primary}</h4>
                         <span className={`role-badge role-${reign.role}`}>
-                          {REIGN_ROLE_NAMES[reign.role]}
+                          {DETAIL_REIGN_ROLE_NAMES[reign.role]}
                         </span>
                       </div>
                       {person.names.aliases.length > 0 && (

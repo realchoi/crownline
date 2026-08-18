@@ -1,0 +1,122 @@
+.hero {
+  padding: 72px 0 32px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: currentColor;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+/* 全站标题排版的唯一规则：拉丁字符走 Source Serif 4、中文走 Noto Serif SC；
+   关闭合成加粗与合成斜体，光学尺寸随字号自动匹配，避免各处标题各自声明逐渐漂移 */
+h1,
+.year-current output,
+.stage-title,
+.timepoint-heading h2,
+.timepoint-section-heading h3,
+.timepoint-card-name,
+.dialog-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+}
+
+h1 {
+  max-width: 880px;
+  margin-bottom: 18px;
+  font-size: clamp(2.4rem, 6vw, 5.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.site-title-brand,
+.site-title-sub {
+  display: block;
+}
+
+.site-title-brand {
+  font-size: clamp(1.95rem, 7.6vw, 5.4rem);
+  white-space: nowrap;
+}
+
+/* 拉丁字形比中文宋体窄，-0.035em 的中文紧排幅度会让英文显得瘦高拥挤，
+   单独放宽一档 */
+.brand-latin {
+  letter-spacing: -0.01em;
+}
+
+.brand-zh {
+  font-size: 0.88em;
+  letter-spacing: 0.04em;
+}
+
+.brand-dot {
+  margin: 0 0.14em;
+}
+
+.site-title-sub {
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: clamp(1.1rem, 2.8vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.hero-copy {
+  max-width: 790px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-wrap: pretty;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stat-card {
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 750;
+  line-height: 1.2;
+}

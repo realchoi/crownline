@@ -1,33 +1,23 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 
 import { DetailDialog } from "../components/DetailDialog";
 import { ComparisonPanel } from "../components/ComparisonPanel";
-import type { DetailLoadState } from "../components/DetailLoadPanel";
 import { FilterPanel } from "../components/FilterPanel";
-import { HistoricalMap } from "../components/HistoricalMap";
-import { MapLoadPanel } from "../components/MapLoadPanel";
-import { MapResultList } from "../components/MapResultList";
-import { Timeline } from "../components/Timeline";
-import { TimepointView } from "../components/TimepointView";
 import { ViewModeControl } from "../components/ViewModeControl";
-import {
-  getHistoricalYearBounds,
-  readBrowseState,
-  writeBrowseState,
-  type BrowseState
-} from "../domain/browseState";
+import { getHistoricalYearBounds } from "../domain/browseState";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
 import { selectMapSnapshots } from "../domain/mapSnapshots";
 import { selectBrowseResults } from "../domain/selectors";
 import type { CrownlineIndex, TimelineSection } from "../domain/types";
 import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
-import type { CrownlineGeographyLoader, GeographyLoadResult } from "../data/loadCrownlineGeography";
-
-type GeographyState =
-  | { status: "idle" }
-  | { status: "loading" }
-  | { status: "ready"; result: GeographyLoadResult }
-  | { status: "error"; message: string };
+import type { CrownlineGeographyLoader } from "../data/loadCrownlineGeography";
+import { AppFooter } from "./AppFooter";
+import { AppHeader } from "./AppHeader";
+import { BrowseContent } from "./BrowseContent";
+import { BrowseResultsSummary } from "./BrowseResultsSummary";
+import { useBrowseUrlState } from "./useBrowseUrlState";
+import { useEntityDetail } from "./useEntityDetail";
+import { useGeographyData } from "./useGeographyData";
 
 /** 应用根组件接收的已校验数据。 */
 interface AppProps {
@@ -39,16 +29,21 @@ interface AppProps {
 /** 组合筛选状态、时间轴、详情弹窗和 URL 同步的应用根组件。 */
 export function App({ data, loadDetail, loadGeography }: AppProps) {
   const yearBounds = useMemo(() => getHistoricalYearBounds(data), [data]);
-  const [browseState, setBrowseState] = useState<BrowseState>(() => {
-    return readBrowseState(window.location.search, yearBounds, data.regions, data.entities);
+  const { browseState, setBrowseState } = useBrowseUrlState({
+    yearBounds,
+    regions: data.regions,
+    entities: data.entities
   });
-  const [detailState, setDetailState] = useState<DetailLoadState>({ status: "missing" });
-  const [geographyState, setGeographyState] = useState<GeographyState>({ status: "idle" });
+  const { detailState, retry: retryDetail } = useEntityDetail(
+    browseState.detailEntityId,
+    data.detailEntityIds,
+    loadDetail
+  );
+  const { geographyState, retry: retryGeography } = useGeographyData(
+    browseState.viewMode,
+    loadGeography
+  );
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
-  const requestSequenceRef = useRef(0);
-  const geographyRequestSequenceRef = useRef(0);
-  const detailHistoryRef = useRef(browseState.detailEntityId);
-  const skipUrlSyncRef = useRef(false);
   const mainRef = useRef<HTMLElement>(null);
   const controlsPanelRef = useRef<HTMLElement>(null);
   const results = useMemo(() => {
@@ -105,76 +100,21 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
     });
   }, [browseState.compareEntityIds, data.entities]);
 
-  const toggleComparison = useCallback((entityId: string) => {
-    setBrowseState((current) => {
-      if (current.compareEntityIds.includes(entityId)) {
-        return {
-          ...current,
-          compareEntityIds: current.compareEntityIds.filter((id) => id !== entityId)
-        };
-      }
-      if (current.compareEntityIds.length >= 2) return current;
-      return { ...current, compareEntityIds: [...current.compareEntityIds, entityId] };
-    });
-  }, []);
-
-  const startGeographyLoad = useCallback(() => {
-    const requestSequence = ++geographyRequestSequenceRef.current;
-    setGeographyState({ status: "loading" });
-    void loadGeography()
-      .then((result) => {
-        if (requestSequence !== geographyRequestSequenceRef.current) return;
-        setGeographyState({ status: "ready", result });
-      })
-      .catch((error: unknown) => {
-        if (requestSequence !== geographyRequestSequenceRef.current) return;
-        setGeographyState({
-          status: "error",
-          message: error instanceof Error ? error.message : String(error)
-        });
+  const toggleComparison = useCallback(
+    (entityId: string) => {
+      setBrowseState((current) => {
+        if (current.compareEntityIds.includes(entityId)) {
+          return {
+            ...current,
+            compareEntityIds: current.compareEntityIds.filter((id) => id !== entityId)
+          };
+        }
+        if (current.compareEntityIds.length >= 2) return current;
+        return { ...current, compareEntityIds: [...current.compareEntityIds, entityId] };
       });
-  }, [loadGeography]);
-
-  useEffect(() => {
-    const onPopstate = () => {
-      skipUrlSyncRef.current = true;
-      setBrowseState(
-        readBrowseState(window.location.search, yearBounds, data.regions, data.entities)
-      );
-    };
-    window.addEventListener("popstate", onPopstate);
-    return () => window.removeEventListener("popstate", onPopstate);
-  }, [data.entities, data.regions, yearBounds]);
-
-  useEffect(() => {
-    if (skipUrlSyncRef.current) {
-      skipUrlSyncRef.current = false;
-      detailHistoryRef.current = browseState.detailEntityId;
-      return;
-    }
-
-    const params = writeBrowseState(browseState, yearBounds, window.location.search);
-    const next = `${window.location.pathname}${params.toString() ? `?${params}` : ""}${window.location.hash}`;
-    const detailChanged = detailHistoryRef.current !== browseState.detailEntityId;
-    detailHistoryRef.current = browseState.detailEntityId;
-
-    if (detailChanged) {
-      window.history.pushState(null, "", next);
-    } else {
-      window.history.replaceState(null, "", next);
-    }
-  }, [browseState, yearBounds]);
-
-  useEffect(() => {
-    if (browseState.viewMode === "map" && geographyState.status === "idle") {
-      startGeographyLoad();
-      return;
-    }
-    if (browseState.viewMode === "timeline" && geographyState.status === "loading") {
-      geographyRequestSequenceRef.current += 1;
-      setGeographyState({ status: "idle" });
-    }
-  }, [browseState.viewMode, geographyState.status, startGeographyLoad]);
+    },
+    [setBrowseState]
+  );
 
   useEffect(() => {
     const main = mainRef.current;
@@ -205,39 +145,6 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
     return () => cancelAnimationFrame(animationFrame);
   }, [browseState.detailEntityId]);
 
-  const startDetailLoad = useCallback(
-    (entityId: string) => {
-      const requestSequence = ++requestSequenceRef.current;
-      if (!data.detailEntityIds.includes(entityId)) {
-        setDetailState({ status: "missing" });
-        return;
-      }
-      setDetailState({ status: "loading" });
-      void loadDetail(entityId)
-        .then((detail) => {
-          if (requestSequence !== requestSequenceRef.current) return;
-          setDetailState(detail ? { status: "ready", detail } : { status: "missing" });
-        })
-        .catch((error: unknown) => {
-          if (requestSequence !== requestSequenceRef.current) return;
-          setDetailState({
-            status: "error",
-            message: error instanceof Error ? error.message : String(error)
-          });
-        });
-    },
-    [data.detailEntityIds, loadDetail]
-  );
-
-  useEffect(() => {
-    if (!browseState.detailEntityId) {
-      requestSequenceRef.current += 1;
-      setDetailState({ status: "missing" });
-      return;
-    }
-    startDetailLoad(browseState.detailEntityId);
-  }, [browseState.detailEntityId, startDetailLoad]);
-
   /** 记录触发元素、打开对应实体详情并启动按需加载。 */
   const openDetail = (entityId: string, trigger: HTMLButtonElement) => {
     lastTriggerRef.current = trigger;
@@ -246,43 +153,18 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
 
   /** 关闭详情；焦点恢复由上方 effect 在卸载完成后处理。 */
   const closeDetail = useCallback(() => {
-    requestSequenceRef.current += 1;
     setBrowseState((current) => ({ ...current, detailEntityId: null }));
-  }, []);
+  }, [setBrowseState]);
 
   return (
     <>
       <a className="skip-link" href="#main-content">
         跳到主要内容
       </a>
-      <header className="hero site-shell">
-        <p className="eyebrow">交互式王朝图谱</p>
-        <h1 aria-label="Crownline · 王冠纪">
-          <span className="site-title-brand">
-            <span className="brand-latin">Crownline</span>
-            <span className="brand-dot">·</span>
-            <span className="brand-zh">王冠纪</span>
-          </span>
-          <span className="site-title-sub">世界王朝与帝国时间轴</span>
-        </h1>
-        <p className="hero-copy">
-          沿时间线探索世界王朝、帝国与文明的兴衰。中国范围按历史阶段浏览；自选地区与全球已收录采用统一时间比例，便于比较不同政权的先后与存续长度。外部地区仍属样本数据，不代表全球历史已完整收录。
-        </p>
-        <div className="stat-grid" aria-label="时间轴概览">
-          <div className="stat-card">
-            <span className="stat-label">覆盖时段</span>
-            <strong className="stat-value">约前2070—1922</strong>
-          </div>
-          <div className="stat-card">
-            <span className="stat-label">收录条目</span>
-            <strong className="stat-value">{data.entities.length} 个</strong>
-          </div>
-          <div className="stat-card">
-            <span className="stat-label">历史阶段</span>
-            <strong className="stat-value">{data.timelineSections.length} 个</strong>
-          </div>
-        </div>
-      </header>
+      <AppHeader
+        entityCount={data.entities.length}
+        timelineSectionCount={data.timelineSections.length}
+      />
 
       <main
         ref={mainRef}
@@ -329,38 +211,18 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           </p>
         </aside>
 
-        <div className="results-line" role="status" aria-atomic="true">
-          {browseState.viewMode === "map" ? (
-            <>
-              <span>
-                {browseState.category === "context"
-                  ? "历史分期不进入地图；请选择真实政权类别。"
-                  : mapBrowseResults.polities.length === 0
-                    ? "没有当年匹配的政权。"
-                    : mapSelection && mapSelection.points.length === 0
-                      ? "当年有匹配政权，但这些政权尚未校订地理数据。"
-                      : mapSelection
-                        ? `显示 ${mapBrowseResults.polities.length} 个政权、${mapSelection.points.length} 个地图点位，${mapSelection.missingEntities.length} 个政权尚未校订地理数据。`
-                        : "正在准备地图结果。"}
-              </span>
-              <span>点位仅作历史浏览定位，不表示疆域</span>
-            </>
-          ) : browseState.mode === "overview" ? (
-            <>
-              <span>
-                {browseState.regionScope.mode === "china"
-                  ? `显示 ${results.all.length} / ${overviewTotal} 个条目，涉及 ${overviewGroups.length} 个历史阶段`
-                  : `显示 ${results.all.length} / ${overviewTotal} 个条目，分为 ${overviewGroups.length} 个时间轴组`}
-              </span>
-              <span>点击任意时间条查看说明</span>
-            </>
-          ) : (
-            <>
-              <span>{`显示 ${results.polities.length} 个政权，另有 ${results.historicalPeriods.length} 条历史背景`}</span>
-              <span>点击任意条目查看说明</span>
-            </>
-          )}
-        </div>
+        <BrowseResultsSummary
+          browseState={browseState}
+          resultCount={results.all.length}
+          overviewTotal={overviewTotal}
+          overviewGroupCount={overviewGroups.length}
+          mapPolityCount={
+            browseState.viewMode === "map"
+              ? mapBrowseResults.polities.length
+              : results.polities.length
+          }
+          mapSelection={mapSelection}
+        />
 
         {comparisonEntities.length > 0 && (
           <ComparisonPanel
@@ -377,81 +239,18 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           />
         )}
 
-        {browseState.viewMode === "map" ? (
-          geographyState.status === "ready" && mapSelection ? (
-            <section className="historical-map-shell" aria-label="历史地图浏览结果">
-              {geographyState.result.omittedCount > 0 && (
-                <p className="map-data-warning" role="status">
-                  有 {geographyState.result.omittedCount} 条地理记录格式异常，已跳过。
-                </p>
-              )}
-              <HistoricalMap clusters={mapSelection.clusters} onSelect={openDetail} />
-              <MapResultList
-                points={mapSelection.points}
-                missingEntities={mapSelection.missingEntities}
-                comparisonEntityIds={browseState.compareEntityIds}
-                onSelect={openDetail}
-                onToggleComparison={toggleComparison}
-              />
-            </section>
-          ) : (
-            <MapLoadPanel
-              state={
-                geographyState.status === "error" ? { error: geographyState.message } : "loading"
-              }
-              onRetry={startGeographyLoad}
-            />
-          )
-        ) : browseState.mode === "overview" ? (
-          <Timeline
-            data={data}
-            matches={results.all}
-            regions={data.regions}
-            regionScope={browseState.regionScope}
-            emptyReason={results.polityEmptyReason}
-            comparisonEntityIds={browseState.compareEntityIds}
-            onToggleComparison={toggleComparison}
-            onSelect={openDetail}
-          />
-        ) : (
-          <TimepointView
-            year={browseState.year}
-            polities={results.polities}
-            historicalPeriods={results.historicalPeriods}
-            regions={data.regions}
-            regionScope={browseState.regionScope}
-            polityEmptyReason={results.polityEmptyReason}
-            comparisonEntityIds={browseState.compareEntityIds}
-            onToggleComparison={toggleComparison}
-            onSelect={openDetail}
-          />
-        )}
+        <BrowseContent
+          data={data}
+          browseState={browseState}
+          results={results}
+          geographyState={geographyState}
+          mapSelection={mapSelection}
+          onRetryGeography={retryGeography}
+          onSelect={openDetail}
+          onToggleComparison={toggleComparison}
+        />
 
-        <footer className="footer-note">
-          <p>
-            <strong>纪年说明：</strong>
-            夏、商早期年代使用常见估年；清朝可从 1636 年改国号或 1644
-            年入关起算；南明等政权的终止年份亦有不同口径。页面中的说明用于通史浏览，不替代专业断代研究。
-          </p>
-          <p>
-            <strong>资料参考：</strong>
-            <a
-              href="https://scopsr.gov.cn/zlzx/lsgk/201811/t20181120_326615.html"
-              target="_blank"
-              rel="noreferrer"
-            >
-              《中国历史纪年简表》
-            </a>
-            、
-            <a href="https://www.chnmuseum.cn/" target="_blank" rel="noreferrer">
-              中国国家博物馆
-            </a>
-            的中国古代史分期，以及通行历史年表。
-          </p>
-          <p>
-            <strong>Crownline · 王冠纪</strong>——沿时间线探索世界王朝、帝国与文明的兴衰。
-          </p>
-        </footer>
+        <AppFooter />
       </main>
 
       {selectedMatch && (
@@ -463,7 +262,7 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           {...(browseState.viewMode === "map" || browseState.mode === "point"
             ? { currentYear: browseState.year }
             : {})}
-          onRetry={() => startDetailLoad(selectedMatch.entity.id)}
+          onRetry={retryDetail}
           onClose={closeDetail}
         />
       )}

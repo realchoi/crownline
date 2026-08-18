@@ -1,0 +1,11 @@
+.footer-note {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.footer-note strong {
+  color: var(--text);
+}

@@ -11,23 +11,13 @@ import type {
   Source,
   SourceRef
 } from "./types";
+import {
+  RELATIONSHIP_CONFIDENCE_LABELS as CONFIDENCE_LABELS,
+  RELATIONSHIP_TYPE_LABELS
+} from "./displayLabels";
 
-export const RELATIONSHIP_TYPE_LABELS = {
-  war: "战争",
-  alliance: "联盟",
-  diplomacy: "外交",
-  tribute: "朝贡",
-  vassalage: "臣属",
-  trade: "贸易",
-  "cultural-exchange": "文化交流"
-} satisfies Record<RelationshipType, string>;
-
-export const CONFIDENCE_LABELS = {
-  high: "高可信度",
-  medium: "中等可信度",
-  low: "低可信度",
-  disputed: "存在争议"
-} satisfies Record<ConfidenceLevel, string>;
+export { RELATIONSHIP_TYPE_LABELS } from "./displayLabels";
+export { RELATIONSHIP_CONFIDENCE_LABELS as CONFIDENCE_LABELS } from "./displayLabels";
 
 const TYPE_ORDER = Object.keys(RELATIONSHIP_TYPE_LABELS) as RelationshipType[];
 const DATE_PRECISIONS = new Set(["exact", "circa", "decade", "century", "unknown"]);

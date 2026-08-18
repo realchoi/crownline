@@ -1,10 +1,19 @@
 import type { ValidationIssue, ValidationResult } from "../domain/dataValidation";
 import { isValidLanguageTag } from "../domain/entityNames";
 import {
+  CHRONOLOGY_STATUSES,
   CONFIDENCE_LEVELS,
+  CROWNLINE_SCHEMA_VERSION,
   DATE_PRECISIONS,
+  DISPLAY_CATEGORIES,
+  ENTITY_KINDS,
   GEOGRAPHIC_ROLES,
   POSITION_PRECISIONS,
+  POLITY_FORMS,
+  REGION_COVERAGE_STATUSES,
+  REGION_KINDS,
+  REIGN_ROLES,
+  SOURCE_TYPES,
   type CrownlineDetail,
   type CrownlineGeography,
   type CrownlineIndex,
@@ -25,8 +34,28 @@ function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
 }
 
+function isNonEmptyString(value: unknown): value is string {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
+function isOptionalString(value: unknown): boolean {
+  return value === undefined || typeof value === "string";
+}
+
+function isEnumValue<const Values extends readonly string[]>(
+  value: unknown,
+  values: Values
+): value is Values[number] {
+  return typeof value === "string" && values.some((candidate) => candidate === value);
+}
+
 function hasNames(value: unknown): boolean {
-  if (!isRecord(value) || typeof value.primary !== "string" || !isStringArray(value.aliases)) {
+  if (
+    !isRecord(value) ||
+    !isNonEmptyString(value.primary) ||
+    !Array.isArray(value.aliases) ||
+    !value.aliases.every(isNonEmptyString)
+  ) {
     return false;
   }
   const hasLocal = typeof value.local === "string" && value.local.trim().length > 0;
@@ -36,57 +65,97 @@ function hasNames(value: unknown): boolean {
     : hasLocal && hasLanguageTag;
 }
 
-function hasPeriods(value: unknown): boolean {
+function hasPeriods(value: unknown, requireNonEmpty = false): boolean {
   return (
     Array.isArray(value) &&
+    (!requireNonEmpty || value.length > 0) &&
     value.every((period) => {
       return (
         isRecord(period) &&
         isRecord(period.start) &&
         isRecord(period.end) &&
-        typeof period.start.year === "number" &&
-        typeof period.end.year === "number"
+        Number.isInteger(period.start.year) &&
+        period.start.year !== 0 &&
+        isEnumValue(period.start.precision, DATE_PRECISIONS) &&
+        Number.isInteger(period.end.year) &&
+        period.end.year !== 0 &&
+        isEnumValue(period.end.precision, DATE_PRECISIONS) &&
+        (period.start.year as number) <= (period.end.year as number)
       );
     })
   );
 }
 
-function hasValidGeographicPeriods(value: unknown): boolean {
+function hasSourceRefs(value: unknown, sourceIds?: Set<string>, requireNonEmpty = true): boolean {
   return (
     Array.isArray(value) &&
-    value.length > 0 &&
-    value.every((period) => {
-      if (!isRecord(period) || !isRecord(period.start) || !isRecord(period.end)) return false;
-      const start = period.start;
-      const end = period.end;
-      const startYear = start.year;
-      const endYear = end.year;
-      return (
-        Number.isInteger(startYear) &&
-        startYear !== 0 &&
-        Number.isInteger(endYear) &&
-        endYear !== 0 &&
-        (startYear as number) <= (endYear as number) &&
-        DATE_PRECISIONS.some((precision) => precision === start.precision) &&
-        DATE_PRECISIONS.some((precision) => precision === end.precision)
-      );
-    })
-  );
-}
-
-function hasValidSourceRefs(value: unknown, sourceIds: Set<string>): boolean {
-  return (
-    Array.isArray(value) &&
-    value.length > 0 &&
+    (!requireNonEmpty || value.length > 0) &&
     value.every((ref) => {
       return (
         isRecord(ref) &&
-        typeof ref.sourceId === "string" &&
-        sourceIds.has(ref.sourceId) &&
+        isNonEmptyString(ref.sourceId) &&
+        (!sourceIds || sourceIds.has(ref.sourceId)) &&
         (ref.locator === undefined || typeof ref.locator === "string") &&
         (ref.note === undefined || typeof ref.note === "string")
       );
     })
+  );
+}
+
+function hasChronologyPolicy(value: unknown): boolean {
+  return (
+    isRecord(value) &&
+    value.calendar === "historical-year" &&
+    value.hasYearZero === false &&
+    value.intervalBoundary === "inclusive" &&
+    value.yearSelection === "exists-at-any-time-during-year"
+  );
+}
+
+function hasTimelineRange(value: unknown): boolean {
+  return (
+    isRecord(value) &&
+    Number.isInteger(value.startYear) &&
+    value.startYear !== 0 &&
+    Number.isInteger(value.endYear) &&
+    value.endYear !== 0 &&
+    (value.startYear as number) <= (value.endYear as number)
+  );
+}
+
+function hasCoverage(value: unknown): boolean {
+  return (
+    isRecord(value) &&
+    isEnumValue(value.status, REGION_COVERAGE_STATUSES) &&
+    isNonEmptyString(value.note)
+  );
+}
+
+function hasAlternativeChronologies(value: unknown): boolean {
+  return (
+    value === undefined ||
+    (Array.isArray(value) &&
+      value.every(
+        (alternative) =>
+          isRecord(alternative) &&
+          isNonEmptyString(alternative.label) &&
+          hasPeriods(alternative.existencePeriods, true) &&
+          isNonEmptyString(alternative.note) &&
+          hasSourceRefs(alternative.sourceRefs)
+      ))
+  );
+}
+
+function isValidSource(value: Record<string, unknown>): boolean {
+  return (
+    isNonEmptyString(value.id) &&
+    isNonEmptyString(value.title) &&
+    isEnumValue(value.sourceType, SOURCE_TYPES) &&
+    isNonEmptyString(value.citation) &&
+    (value.authors === undefined || isStringArray(value.authors)) &&
+    isOptionalString(value.publisher) &&
+    isOptionalString(value.url) &&
+    isOptionalString(value.accessedAt)
   );
 }
 
@@ -101,7 +170,7 @@ function isValidGeographicSnapshot(
     value.id.length > 0 &&
     typeof value.polityId === "string" &&
     value.polityId.length > 0 &&
-    hasValidGeographicPeriods(value.periods) &&
+    hasPeriods(value.periods, true) &&
     typeof value.placeName === "string" &&
     value.placeName.trim().length > 0 &&
     GEOGRAPHIC_ROLES.some((role) => role === value.role) &&
@@ -116,7 +185,7 @@ function isValidGeographicSnapshot(
     POSITION_PRECISIONS.some((precision) => precision === value.positionPrecision) &&
     typeof value.positionNote === "string" &&
     value.positionNote.trim().length > 0 &&
-    hasValidSourceRefs(value.sourceRefs, sourceIds) &&
+    hasSourceRefs(value.sourceRefs, sourceIds) &&
     CONFIDENCE_LEVELS.some((confidence) => confidence === value.confidence) &&
     (value.confidenceNote === undefined || typeof value.confidenceNote === "string")
   );
@@ -212,24 +281,98 @@ export function validateCrownlineIndex(input: unknown): ValidationResult {
       issues: [{ code: "SCHEMA_ERROR", path: "/", message: "索引必须是对象" }]
     };
   }
-  if (input.schemaVersion !== 4) {
-    issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 4" });
+  if (input.schemaVersion !== CROWNLINE_SCHEMA_VERSION) {
+    issues.push({
+      code: "SCHEMA_ERROR",
+      path: "/schemaVersion",
+      message: `只支持数据版本 ${CROWNLINE_SCHEMA_VERSION}`
+    });
   }
-  if (!isRecord(input.chronologyPolicy)) {
-    issues.push({ code: "SCHEMA_ERROR", path: "/chronologyPolicy", message: "缺少纪年规则" });
+  if (!hasChronologyPolicy(input.chronologyPolicy)) {
+    issues.push({
+      code: "SCHEMA_ERROR",
+      path: "/chronologyPolicy",
+      message: "纪年规则缺失或格式错误"
+    });
   }
   const sections = requireRecordArray(input, "timelineSections", issues);
   const entities = requireRecordArray(input, "entities", issues);
   const regions = requireRecordArray(input, "regions", issues);
   const entityIds = collectIds(entities, "/entities", issues);
   collectIds(regions, "/regions", issues);
+  requireField(entities, "/entities", "id", isNonEmptyString, issues);
+  requireField(
+    entities,
+    "/entities",
+    "entityKind",
+    (value) => isEnumValue(value, ENTITY_KINDS),
+    issues
+  );
   requireField(entities, "/entities", "names", hasNames, issues);
-  requireField(entities, "/entities", "existencePeriods", hasPeriods, issues);
-  requireField(entities, "/entities", "polityForms", Array.isArray, issues);
+  requireField(
+    entities,
+    "/entities",
+    "existencePeriods",
+    (value) => hasPeriods(value, true),
+    issues
+  );
+  requireField(
+    entities,
+    "/entities",
+    "polityForms",
+    (value) => Array.isArray(value) && value.every((form) => isEnumValue(form, POLITY_FORMS)),
+    issues
+  );
+  requireField(entities, "/entities", "chronologyNote", isOptionalString, issues);
+  requireField(
+    entities,
+    "/entities",
+    "alternativeChronologies",
+    hasAlternativeChronologies,
+    issues
+  );
+  requireField(entities, "/entities", "displayRangeOverride", isOptionalString, issues);
+  requireField(
+    entities,
+    "/entities",
+    "displayCategory",
+    (value) => isEnumValue(value, DISPLAY_CATEGORIES),
+    issues
+  );
+  requireField(entities, "/entities", "confidenceNote", isOptionalString, issues);
+  requireField(
+    entities,
+    "/entities",
+    "chronologyStatus",
+    (value) => isEnumValue(value, CHRONOLOGY_STATUSES),
+    issues
+  );
   requireField(entities, "/entities", "historicalRegionIds", isStringArray, issues);
+  requireField(entities, "/entities", "culturalSphereIds", isStringArray, issues);
+  requireField(entities, "/entities", "modernAreaIds", isStringArray, issues);
   requireField(entities, "/entities", "description", (value) => typeof value === "string", issues);
+  requireField(entities, "/entities", "sourceRefs", (value) => hasSourceRefs(value), issues);
+  requireField(
+    entities,
+    "/entities",
+    "confidence",
+    (value) => isEnumValue(value, CONFIDENCE_LEVELS),
+    issues
+  );
+  requireField(regions, "/regions", "id", isNonEmptyString, issues);
   requireField(regions, "/regions", "names", hasNames, issues);
-  requireField(regions, "/regions", "coverage", isRecord, issues);
+  requireField(
+    regions,
+    "/regions",
+    "regionKind",
+    (value) => isEnumValue(value, REGION_KINDS),
+    issues
+  );
+  requireField(regions, "/regions", "coverage", hasCoverage, issues);
+  requireField(regions, "/regions", "parentRegionId", isOptionalString, issues);
+  requireField(regions, "/regions", "description", (value) => typeof value === "string", issues);
+  requireField(regions, "/regions", "sourceRefs", (value) => hasSourceRefs(value), issues);
+  requireField(sections, "/timelineSections", "id", isNonEmptyString, issues);
   requireField(
     sections,
     "/timelineSections",
@@ -237,7 +380,9 @@ export function validateCrownlineIndex(input: unknown): ValidationResult {
     (value) => typeof value === "string",
     issues
   );
-  requireField(sections, "/timelineSections", "range", isRecord, issues);
+  requireField(sections, "/timelineSections", "displayRange", isNonEmptyString, issues);
+  requireField(sections, "/timelineSections", "range", hasTimelineRange, issues);
+  requireField(sections, "/timelineSections", "entityIds", isStringArray, issues);
 
   if (
     !Array.isArray(input.detailEntityIds) ||
@@ -287,8 +432,12 @@ export function validateCrownlineDetail(
       issues: [{ code: "SCHEMA_ERROR", path: "/", message: "详情必须是对象" }]
     };
   }
-  if (input.schemaVersion !== 4) {
-    issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 4" });
+  if (input.schemaVersion !== CROWNLINE_SCHEMA_VERSION) {
+    issues.push({
+      code: "SCHEMA_ERROR",
+      path: "/schemaVersion",
+      message: `只支持数据版本 ${CROWNLINE_SCHEMA_VERSION}`
+    });
   }
   if (input.entityId !== expectedEntityId) {
     issues.push({
@@ -308,10 +457,59 @@ export function validateCrownlineDetail(
   const sourceIds = collectIds(sources, "/sources", issues);
   requireField(persons, "/persons", "names", hasNames, issues);
   requireField(persons, "/persons", "description", (value) => typeof value === "string", issues);
-  requireField(reigns, "/reigns", "periods", hasPeriods, issues);
+  requireField(persons, "/persons", "sourceRefs", (value) => hasSourceRefs(value), issues);
+  collectIds(reigns, "/reigns", issues);
+  requireField(reigns, "/reigns", "personId", isNonEmptyString, issues);
+  requireField(reigns, "/reigns", "polityId", isNonEmptyString, issues);
+  requireField(reigns, "/reigns", "periods", (value) => hasPeriods(value, true), issues);
   requireField(reigns, "/reigns", "titles", isStringArray, issues);
-  requireField(vacancies, "/reignVacancies", "periods", hasPeriods, issues);
-  requireField(sources, "/sources", "citation", (value) => typeof value === "string", issues);
+  requireField(
+    reigns,
+    "/reigns",
+    "localTitles",
+    (value) => value === undefined || isStringArray(value),
+    issues
+  );
+  requireField(reigns, "/reigns", "role", (value) => isEnumValue(value, REIGN_ROLES), issues);
+  requireField(
+    reigns,
+    "/reigns",
+    "chronologyStatus",
+    (value) => isEnumValue(value, CHRONOLOGY_STATUSES),
+    issues
+  );
+  requireField(reigns, "/reigns", "note", isOptionalString, issues);
+  requireField(reigns, "/reigns", "sourceRefs", (value) => hasSourceRefs(value), issues);
+  requireField(
+    reigns,
+    "/reigns",
+    "confidence",
+    (value) => isEnumValue(value, CONFIDENCE_LEVELS),
+    issues
+  );
+  requireField(reigns, "/reigns", "confidenceNote", isOptionalString, issues);
+  collectIds(vacancies, "/reignVacancies", issues);
+  requireField(vacancies, "/reignVacancies", "polityId", isNonEmptyString, issues);
+  requireField(vacancies, "/reignVacancies", "periods", (value) => hasPeriods(value, true), issues);
+  requireField(vacancies, "/reignVacancies", "note", isNonEmptyString, issues);
+  requireField(vacancies, "/reignVacancies", "sourceRefs", (value) => hasSourceRefs(value), issues);
+  requireField(
+    vacancies,
+    "/reignVacancies",
+    "confidence",
+    (value) => isEnumValue(value, CONFIDENCE_LEVELS),
+    issues
+  );
+  requireField(vacancies, "/reignVacancies", "confidenceNote", isOptionalString, issues);
+  sources.forEach((source, index) => {
+    if (!isValidSource(source)) {
+      issues.push({
+        code: "SCHEMA_ERROR",
+        path: `/sources/${index}`,
+        message: "来源缺少详情界面所需字段"
+      });
+    }
+  });
 
   reigns.forEach((reign, index) => {
     if (typeof reign.personId !== "string" || !personIds.has(reign.personId)) {
@@ -367,8 +565,12 @@ export function asCrownlineGeography(input: unknown): GeographyLoadResult {
       })
     );
   }
-  if (input.schemaVersion !== 4) {
-    issues.push({ code: "SCHEMA_ERROR", path: "/schemaVersion", message: "只支持数据版本 4" });
+  if (input.schemaVersion !== CROWNLINE_SCHEMA_VERSION) {
+    issues.push({
+      code: "SCHEMA_ERROR",
+      path: "/schemaVersion",
+      message: `只支持数据版本 ${CROWNLINE_SCHEMA_VERSION}`
+    });
   }
   if (!Array.isArray(input.geographicSnapshots)) {
     issues.push({
@@ -380,15 +582,7 @@ export function asCrownlineGeography(input: unknown): GeographyLoadResult {
   const sources = requireRecordArray(input, "sources", issues);
   const sourceIds = new Set<string>();
   sources.forEach((source, index) => {
-    const valid =
-      typeof source.id === "string" &&
-      source.id.length > 0 &&
-      typeof source.title === "string" &&
-      source.title.trim().length > 0 &&
-      typeof source.citation === "string" &&
-      source.citation.trim().length > 0 &&
-      typeof source.sourceType === "string";
-    if (!valid || (typeof source.id === "string" && sourceIds.has(source.id))) {
+    if (!isValidSource(source) || (typeof source.id === "string" && sourceIds.has(source.id))) {
       issues.push({
         code: "SCHEMA_ERROR",
         path: `/sources/${index}`,
@@ -408,7 +602,7 @@ export function asCrownlineGeography(input: unknown): GeographyLoadResult {
   });
   return {
     geography: {
-      schemaVersion: 4,
+      schemaVersion: CROWNLINE_SCHEMA_VERSION,
       geographicSnapshots: validSnapshots,
       sources: sources as unknown as Source[]
     },

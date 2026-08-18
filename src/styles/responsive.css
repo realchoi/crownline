@@ -1,0 +1,248 @@
+@media (max-width: 980px) {
+  .controls-point .controls-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 0.55fr) auto;
+  }
+
+  .controls-point .year-panel {
+    grid-column: 1 / -1;
+  }
+  .historical-map-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --label-column: 112px;
+  }
+  .hero {
+    padding-top: 48px;
+  }
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .controls-panel {
+    position: static;
+  }
+  .view-mode-control {
+    align-items: center;
+  }
+  .controls-point,
+  .controls-overview {
+    display: block;
+    padding: 18px;
+  }
+  .controls-point .region-scope-control,
+  .controls-overview .region-scope-control {
+    margin-top: 14px;
+  }
+  .controls-point .controls-grid,
+  .controls-overview .controls-grid {
+    grid-template-columns: 1fr;
+    margin-top: 14px;
+  }
+  .controls-overview .legend {
+    margin-top: 16px;
+  }
+  .region-scope-heading {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .scope-switch {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .scope-switch button {
+    padding-inline: 8px;
+  }
+  .button {
+    width: 100%;
+  }
+  .timeline-stage {
+    padding: 18px 14px;
+  }
+  .timeline-shared-axis {
+    gap: 9px;
+    padding-inline: 14px;
+  }
+  .stage-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .axis-row,
+  .timeline-row {
+    gap: 9px;
+  }
+  .row-name {
+    font-size: 0.84rem;
+  }
+  .row-years {
+    font-size: 0.68rem;
+  }
+  .row-regions {
+    font-size: 0.61rem;
+  }
+  .results-line {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .comparison-panel {
+    background: var(--surface);
+  }
+  .comparison-panel::before {
+    display: none;
+  }
+  .comparison-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .historical-relationships-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .relationship-group {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .relationship-card {
+    padding: 14px;
+  }
+  .timepoint-grid,
+  .context-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .detail-grid,
+  .ruler-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .map-result-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  :root {
+    --label-column: 90px;
+  }
+  .site-shell {
+    width: min(100% - 20px, 1120px);
+  }
+  .scope-note {
+    grid-template-columns: 1fr;
+  }
+  .axis-labels {
+    font-size: 0.64rem;
+  }
+  .shared-axis-caption {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+  }
+  .row-name {
+    font-size: 0.78rem;
+  }
+  .row-years {
+    font-size: 0.63rem;
+  }
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .ruler-list {
+    grid-template-columns: 1fr;
+  }
+  .mode-switch button,
+  .year-step-button {
+    min-height: 44px;
+  }
+  .year-slider-row {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    gap: 6px;
+  }
+  .year-range {
+    grid-template-columns: auto auto;
+  }
+  .year-range span:nth-child(2) {
+    display: none;
+  }
+  .year-range span:last-child {
+    text-align: right;
+  }
+  .timepoint-grid,
+  .context-grid {
+    grid-template-columns: 1fr;
+  }
+  .timepoint-card {
+    min-height: 142px;
+  }
+  .comparison-panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .comparison-slots,
+  .comparison-columns {
+    grid-template-columns: 1fr;
+  }
+  .comparison-slot {
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+  }
+  .comparison-summary {
+    margin-block: 18px;
+  }
+  .relationship-group {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+  .relationship-group h4 {
+    padding-block: 2px;
+  }
+  .relationship-events li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .historical-map {
+    padding: 8px;
+  }
+  .map-results {
+    padding: 16px;
+  }
+  .map-result-detail {
+    padding-right: 62px;
+  }
+  .map-result-item > .comparison-toggle {
+    top: 4px;
+    right: 4px;
+    min-width: 52px;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .controls-panel,
+  .scope-note,
+  dialog,
+  .skip-link {
+    display: none !important;
+  }
+  .site-shell {
+    width: 100%;
+  }
+  .timeline-stage {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+}

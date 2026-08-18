@@ -66,6 +66,14 @@ Crownline（王冠纪）是一个面向全球历史的交互式王朝图谱项�
 └── LICENSE
 ```
 
+## 维护边界（P2）
+
+`src/app/App.tsx` 只组合页面级数据选择、控件、结果区和 dialog；URL 历史、详情请求与地图请求分别由 `useBrowseUrlState`、`useEntityDetail` 和 `useGeographyData` 管理。页面级静态区块或结果分派放在 `src/app/`，可复用交互组件放在 `src/components/`，纯计算、类型和中文领域标签放在 `src/domain/`，网络与运行时数据收窄放在 `src/data/`。新增功能应按这一依赖方向放置，避免把请求生命周期或领域规则重新塞回 `App.tsx`。
+
+全局 class 体系继续由 `src/styles/styles.css` 统一引入；实际规则按 `base`、`hero`、`controls`、`comparison`、`timeline`、`footer`、`detail`、`map` 和 `responsive` 分层，导入顺序就是层叠顺序。应用集成测试位于 `tests/app/`，按浏览、详情、对比和地图拆分，并通过 `tests/helpers/renderApp.tsx` 共享生成数据、loader、deferred promise 及 URL/dialog 清理；hook 的请求和历史边界使用同目录下的专门测试。
+
+数据保护分为四层：JSON Schema 约束机器结构，TypeScript 描述消费端静态形状，构建期语义校验检查跨记录规则，浏览器运行时窄校验保护当前 UI 会立即读取的索引和详情字段。关系、事件和单条地理快照仍在领域边界逐条隔离。完整职责与新增字段同步清单见 [数据契约说明](docs/data-contract.md)。
+
 ## 本地开发
 
 需要 Node.js 20.19+ 或 22.12+。
@@ -117,7 +125,7 @@ npm run generate:data
 npm test
 ```
 
-校验分两层：JSON Schema 负责必填字段、枚举、格式与基本结构；TypeScript 语义校验负责重复 ID、无效或相邻区间、悬空引用、分类矛盾、任期与空位边界、争议口径缺少说明等跨记录规则。
+校验采用四层职责：JSON Schema 负责必填字段、枚举、格式与基本结构；TypeScript 类型保护代码内消费；构建期语义校验负责重复 ID、无效或相邻区间、悬空引用、分类矛盾、任期与空位边界、争议口径缺少说明等跨记录规则；浏览器运行时窄校验阻止错配或损坏产物进入当前 UI。
 
 公元前年份使用负整数，公元后使用正整数，不存在公元 0 年；区间两端均包含。西秦、唐等中断条目使用多个 `existencePeriods`，而不是把中断期误算为连续存续。
 

@@ -1,4 +1,5 @@
 /** 数据契约允许使用的年代精度。 */
+export const CROWNLINE_SCHEMA_VERSION = 4 as const;
 export const DATE_PRECISIONS = ["exact", "circa", "decade", "century", "unknown"] as const;
 /** 区分真实政治实体与仅用于展示的历史分期。 */
 export const ENTITY_KINDS = ["polity", "historical-period"] as const;
@@ -263,7 +264,7 @@ export interface ChronologyPolicy {
 
 /** Crownline 数据契约 v4 的根对象。 */
 export interface CrownlineData {
-  schemaVersion: 4;
+  schemaVersion: typeof CROWNLINE_SCHEMA_VERSION;
   chronologyPolicy: ChronologyPolicy;
   timelineSections: TimelineSection[];
   entities: HistoricalEntity[];
@@ -279,7 +280,7 @@ export interface CrownlineData {
 
 /** 首屏浏览所需的轻量数据；人物、任期和来源在详情打开时加载。 */
 export interface CrownlineIndex {
-  schemaVersion: 4;
+  schemaVersion: typeof CROWNLINE_SCHEMA_VERSION;
   chronologyPolicy: ChronologyPolicy;
   timelineSections: TimelineSection[];
   entities: HistoricalEntity[];
@@ -289,7 +290,7 @@ export interface CrownlineIndex {
 
 /** 一个实体可独立加载的引用闭包。 */
 export interface CrownlineDetail {
-  schemaVersion: 4;
+  schemaVersion: typeof CROWNLINE_SCHEMA_VERSION;
   entityId: string;
   persons: Person[];
   reigns: Reign[];
@@ -301,7 +302,7 @@ export interface CrownlineDetail {
 
 /** 地图首次打开时按需加载的地理快照及其来源闭包。 */
 export interface CrownlineGeography {
-  schemaVersion: 4;
+  schemaVersion: typeof CROWNLINE_SCHEMA_VERSION;
   geographicSnapshots: GeographicSnapshot[];
   sources: Source[];
 }

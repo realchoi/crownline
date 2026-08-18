@@ -1,0 +1,167 @@
+/* 拉丁正文保留 wdth 与 wght 轴，中文正文保留 wght 轴；按范围声明后，
+   650/750 等中间字重才能精确实例化，而不会塌陷到 400 或 700。 */
+@font-face {
+  font-family: "Crownline Latin Sans";
+  src: url("../assets/fonts/noto-sans-latin-page-var.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62.5% 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Crownline Sans SC";
+  src: url("../assets/fonts/noto-sans-sc-page-400-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* 可变字体（wght 200–900 + opsz 8–60），配合 font-optical-sizing: auto
+   在大字号下自动切换 Display 光学尺寸，衬线更舒展 */
+@font-face {
+  font-family: "Crownline Latin Serif";
+  src: url("../assets/fonts/source-serif-4-latin-var.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Crownline Song SC";
+  src: url("../assets/fonts/noto-serif-sc-display-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+  --page: #f5f0e8;
+  --surface: rgba(255, 252, 246, 0.92);
+  --surface-strong: #fffdf8;
+  --surface-soft: #eee5d8;
+  --text: #261d19;
+  --muted: #74645b;
+  --border: #d8cbbd;
+  --accent: #8b2f2f;
+  --accent-hover: #6f2020;
+  --accent-soft: #f2d9d4;
+  --parallel: #9a6a24;
+  --period: #496a69;
+  --regional: #6b5b8b;
+  --shadow: 0 18px 50px rgba(72, 45, 29, 0.09);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --label-column: 166px;
+  --font-body:
+    "Crownline Latin Sans", "Crownline Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+    system-ui, sans-serif;
+  --font-display:
+    "Crownline Latin Serif", "Crownline Song SC", "Songti SC", "STSong", "SimSun", serif;
+  font-family: var(--font-body);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #181310;
+    --surface: rgba(35, 28, 24, 0.94);
+    --surface-strong: #2a211c;
+    --surface-soft: #30261f;
+    --text: #f4ece3;
+    --muted: #c1b2a6;
+    --border: #4a3c33;
+    --accent: #d9766f;
+    --accent-hover: #e58c85;
+    --accent-soft: #4a2b29;
+    --parallel: #d8a755;
+    --period: #77aaa7;
+    --regional: #a895c8;
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(
+      circle at 12% 0%,
+      color-mix(in srgb, var(--accent) 10%, transparent),
+      transparent 30rem
+    ),
+    var(--page);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--text);
+  color: var(--page);
+  transform: translateY(-180%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.data-error,
+.data-loading {
+  margin-top: 72px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  padding: 28px;
+}
+
+.data-loading {
+  color: var(--muted);
+}
+
+.data-loading p {
+  margin: 0;
+}
+
+.site-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
