@@ -63,31 +63,14 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
     });
     return data.entities.map((entity) => ({ entity, section: sectionByEntityId.get(entity.id) }));
   }, [data]);
-  const mapBrowseResults = useMemo(() => {
-    const filters = {
-      query: browseState.query,
-      category: browseState.category,
-      regionScope: browseState.regionScope
-    };
-    return browseState.mode === "point"
-      ? selectBrowseResults(data, { ...filters, year: browseState.year })
-      : selectBrowseResults(data, filters);
-  }, [
-    browseState.category,
-    browseState.mode,
-    browseState.query,
-    browseState.regionScope,
-    browseState.year,
-    data
-  ]);
   const mapSelection = useMemo(() => {
     if (geographyState.status !== "ready") return null;
     return selectMapSnapshots(
-      mapBrowseResults.polities.map(({ entity }) => entity),
+      results.polities.map(({ entity }) => entity),
       geographyState.result.geography.geographicSnapshots,
       browseState.mode === "point" ? browseState.year : undefined
     );
-  }, [browseState.mode, browseState.year, geographyState, mapBrowseResults.polities]);
+  }, [browseState.mode, browseState.year, geographyState, results.polities]);
   // 即使筛选状态变化，也要允许已打开的详情继续读取完整实体记录。
   const selectedMatch = browseState.detailEntityId
     ? allMatches.find(({ entity }) => entity.id === browseState.detailEntityId)
@@ -231,11 +214,7 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           resultCount={results.all.length}
           overviewTotal={overviewTotal}
           overviewGroupCount={overviewGroups.length}
-          mapPolityCount={
-            browseState.viewMode === "map"
-              ? mapBrowseResults.polities.length
-              : results.polities.length
-          }
+          mapPolityCount={results.polities.length}
           mapSelection={mapSelection}
         />
 

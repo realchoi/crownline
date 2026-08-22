@@ -12,6 +12,42 @@ export interface GeneratedArtifacts {
   details: Map<string, CrownlineDetail>;
 }
 
+function groupByKey<T>(values: readonly T[], key: (value: T) => string): Map<string, T[]> {
+  const groups = new Map<string, T[]>();
+  values.forEach((value) => {
+    const id = key(value);
+    const group = groups.get(id) ?? [];
+    group.push(value);
+    groups.set(id, group);
+  });
+  return groups;
+}
+
+function groupByKeys<T>(values: readonly T[], keys: (value: T) => readonly string[]) {
+  const groups = new Map<string, T[]>();
+  values.forEach((value) => {
+    keys(value).forEach((id) => {
+      const group = groups.get(id) ?? [];
+      group.push(value);
+      groups.set(id, group);
+    });
+  });
+  return groups;
+}
+
+function selectInSourceOrder<T extends { id: string }>(
+  ids: ReadonlySet<string>,
+  valuesById: ReadonlyMap<string, T>,
+  orderById: ReadonlyMap<string, number>
+): T[] {
+  return Array.from(ids)
+    .flatMap((id) => {
+      const value = valuesById.get(id);
+      return value ? [value] : [];
+    })
+    .sort((left, right) => (orderById.get(left.id) ?? 0) - (orderById.get(right.id) ?? 0));
+}
+
 /** 从通过全量校验的数据派生首屏索引和独立实体详情包。 */
 export function buildGeneratedArtifacts(data: CrownlineData): GeneratedArtifacts {
   const index: CrownlineIndex = {
@@ -22,6 +58,20 @@ export function buildGeneratedArtifacts(data: CrownlineData): GeneratedArtifacts
     regions: data.regions,
     detailEntityIds: data.entities.map(({ id }) => id)
   };
+  const sourceById = new Map(data.sources.map((source) => [source.id, source]));
+  const sourceOrderById = new Map(data.sources.map(({ id }, index) => [id, index]));
+  const personById = new Map(data.persons.map((person) => [person.id, person]));
+  const personOrderById = new Map(data.persons.map(({ id }, index) => [id, index]));
+  const eventById = new Map(data.events.map((event) => [event.id, event]));
+  const eventOrderById = new Map(data.events.map(({ id }, index) => [id, index]));
+  const reignsByPolityId = groupByKey(data.reigns, ({ polityId }) => polityId);
+  const vacanciesByPolityId = groupByKey(data.reignVacancies, ({ polityId }) => polityId);
+  const relationshipsByEntityId = groupByKeys(data.relationships, ({ participants }) => {
+    return participants.map(({ entityId }) => entityId);
+  });
+  const eventsByEntityId = groupByKeys(data.events, ({ participantEntityIds }) => {
+    return participantEntityIds;
+  });
   const geographySourceIds = new Set(
     data.geographicSnapshots.flatMap(({ sourceRefs }) => {
       return sourceRefs.map(({ sourceId }) => sourceId);
@@ -30,22 +80,22 @@ export function buildGeneratedArtifacts(data: CrownlineData): GeneratedArtifacts
   const geography: CrownlineGeography = {
     schemaVersion: data.schemaVersion,
     geographicSnapshots: data.geographicSnapshots,
-    sources: data.sources.filter(({ id }) => geographySourceIds.has(id))
+    sources: selectInSourceOrder(geographySourceIds, sourceById, sourceOrderById)
   };
   const details = new Map<string, CrownlineDetail>();
 
   data.entities.forEach((entity) => {
-    const reigns = data.reigns.filter(({ polityId }) => polityId === entity.id);
-    const reignVacancies = data.reignVacancies.filter(({ polityId }) => polityId === entity.id);
+    const reigns = reignsByPolityId.get(entity.id) ?? [];
+    const reignVacancies = vacanciesByPolityId.get(entity.id) ?? [];
     const personIds = new Set(reigns.map(({ personId }) => personId));
-    const persons = data.persons.filter(({ id }) => personIds.has(id));
-    const relationships = data.relationships.filter(({ participants }) => {
-      return participants.some(({ entityId }) => entityId === entity.id);
-    });
+    const persons = selectInSourceOrder(personIds, personById, personOrderById);
+    const relationships = relationshipsByEntityId.get(entity.id) ?? [];
     const relationshipEventIds = new Set(relationships.flatMap(({ eventIds }) => eventIds));
-    const events = data.events.filter(({ id, participantEntityIds }) => {
-      return relationshipEventIds.has(id) || participantEntityIds.includes(entity.id);
-    });
+    const eventIds = new Set([
+      ...relationshipEventIds,
+      ...(eventsByEntityId.get(entity.id) ?? []).map(({ id }) => id)
+    ]);
+    const events = selectInSourceOrder(eventIds, eventById, eventOrderById);
 
     const sourceIds = new Set<string>();
     const collectSourceRefs = (refs: SourceRef[]) => {
@@ -67,7 +117,7 @@ export function buildGeneratedArtifacts(data: CrownlineData): GeneratedArtifacts
       reignVacancies,
       relationships,
       events,
-      sources: data.sources.filter(({ id }) => sourceIds.has(id))
+      sources: selectInSourceOrder(sourceIds, sourceById, sourceOrderById)
     });
   });
 

@@ -4,6 +4,7 @@ import { basename, dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
+import { buildDataCoverageReport } from "../src/data/coverageReport";
 import { validateCrownlineData } from "../src/domain/dataValidation";
 import { loadSourceData } from "./data-source";
 import { withGenerateDataLock } from "./generate-data-lock";
@@ -81,10 +82,12 @@ export async function generateData(
     }
 
     const artifacts = buildGeneratedArtifacts(data);
+    const coverageReport = buildDataCoverageReport(data);
     const toolStaging = await createStagingDirectory(toolOutputRoot);
     const publicStaging = await createStagingDirectory(publicOutputRoot);
     try {
       await writeJson(join(toolStaging, "crownline-data.json"), data);
+      await writeJson(join(toolStaging, "coverage-report.json"), coverageReport);
       await writeJson(join(publicStaging, "index.json"), artifacts.index);
       await writeJson(join(publicStaging, "geography.json"), artifacts.geography);
       await Promise.all(

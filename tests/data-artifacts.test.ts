@@ -83,6 +83,10 @@ describe("运行时数据产物", () => {
     expect(tang?.sources.map(({ id }) => id)).toEqual(
       expect.arrayContaining(["source-cn-chronology-table"])
     );
+    const tangPersonIds = new Set(tang?.reigns.map(({ personId }) => personId));
+    expect(tang?.persons).toEqual(data.persons.filter(({ id }) => tangPersonIds.has(id)));
+    const tangSourceIds = new Set(tang?.sources.map(({ id }) => id));
+    expect(tang?.sources).toEqual(data.sources.filter(({ id }) => tangSourceIds.has(id)));
   });
 
   it("为新增非主线政权生成可独立加载的详情闭包", () => {
@@ -91,6 +95,46 @@ describe("运行时数据产物", () => {
     expect(wei?.persons.length).toBeGreaterThan(0);
     expect(wei?.reigns.every(({ polityId }) => polityId === "polity-cn-cao-wei")).toBe(true);
     expect(wei?.sources.length).toBeGreaterThan(0);
+  });
+
+  it("预索引生成对全部实体保持原有详情闭包和源数组顺序", () => {
+    const { details } = buildGeneratedArtifacts(data);
+
+    data.entities.forEach((entity) => {
+      const reigns = data.reigns.filter(({ polityId }) => polityId === entity.id);
+      const reignVacancies = data.reignVacancies.filter(({ polityId }) => polityId === entity.id);
+      const personIds = new Set(reigns.map(({ personId }) => personId));
+      const persons = data.persons.filter(({ id }) => personIds.has(id));
+      const relationships = data.relationships.filter(({ participants }) => {
+        return participants.some(({ entityId }) => entityId === entity.id);
+      });
+      const relationshipEventIds = new Set(relationships.flatMap(({ eventIds }) => eventIds));
+      const events = data.events.filter(({ id, participantEntityIds }) => {
+        return relationshipEventIds.has(id) || participantEntityIds.includes(entity.id);
+      });
+      const sourceIds = new Set(
+        [
+          ...entity.sourceRefs,
+          ...(entity.alternativeChronologies?.flatMap(({ sourceRefs }) => sourceRefs) ?? []),
+          ...persons.flatMap(({ sourceRefs }) => sourceRefs),
+          ...reigns.flatMap(({ sourceRefs }) => sourceRefs),
+          ...reignVacancies.flatMap(({ sourceRefs }) => sourceRefs),
+          ...relationships.flatMap(({ sourceRefs }) => sourceRefs),
+          ...events.flatMap(({ sourceRefs }) => sourceRefs)
+        ].map(({ sourceId }) => sourceId)
+      );
+
+      expect(details.get(entity.id), entity.id).toEqual({
+        schemaVersion: data.schemaVersion,
+        entityId: entity.id,
+        persons,
+        reigns,
+        reignVacancies,
+        relationships,
+        events,
+        sources: data.sources.filter(({ id }) => sourceIds.has(id))
+      });
+    });
   });
 
   it("为拜占庭帝国生成独立详情闭包", () => {
