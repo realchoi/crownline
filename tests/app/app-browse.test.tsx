@@ -9,7 +9,7 @@ describe("Crownline 浏览", () => {
   it("初始展示全球已收录的全部实体", () => {
     renderApp();
 
-    expect(screen.getByRole("status")).toHaveTextContent("显示 116 / 116 个条目");
+    expect(screen.getByRole("status")).toHaveTextContent("显示 133 / 133 个条目");
     expect(screen.getByRole("heading", { name: "Crownline · 王冠纪" })).toBeInTheDocument();
     expect(screen.getByLabelText("地区范围")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
@@ -25,7 +25,7 @@ describe("Crownline 浏览", () => {
     const search = screen.getByRole("searchbox", { name: "搜索名称、别名、年份或说明" });
 
     await user.type(search, "殷商");
-    expect(screen.getByRole("status")).toHaveTextContent("显示 1 / 116 个条目");
+    expect(screen.getByRole("status")).toHaveTextContent("显示 1 / 133 个条目");
 
     await user.clear(search);
     await user.type(search, "不存在的政权");
@@ -40,10 +40,10 @@ describe("Crownline 浏览", () => {
     const select = screen.getByRole("combobox", { name: "显示类别" });
 
     await user.selectOptions(select, "context");
-    expect(screen.getByRole("status")).toHaveTextContent("显示 2 / 116 个条目");
+    expect(screen.getByRole("status")).toHaveTextContent("显示 2 / 133 个条目");
 
     await user.click(screen.getByRole("button", { name: "清除筛选" }));
-    expect(screen.getByRole("status")).toHaveTextContent("显示 116 / 116 个条目");
+    expect(screen.getByRole("status")).toHaveTextContent("显示 133 / 133 个条目");
     expect(select).toHaveValue("all");
   });
 
@@ -54,7 +54,7 @@ describe("Crownline 浏览", () => {
 
     expect(screen.getByRole("searchbox")).toHaveValue("时期");
     expect(screen.getByRole("combobox")).toHaveValue("context");
-    expect(screen.getByRole("status")).toHaveTextContent("显示 2 / 116 个条目");
+    expect(screen.getByRole("status")).toHaveTextContent("显示 2 / 133 个条目");
 
     await user.selectOptions(screen.getByRole("combobox"), "all");
     expect(new URLSearchParams(window.location.search).has("type")).toBe(false);
@@ -116,7 +116,7 @@ describe("Crownline 浏览", () => {
     window.history.replaceState(
       null,
       "",
-      "/?mode=point&year=1000&scope=custom&region=region-east-africa"
+      "/?mode=point&year=970&scope=custom&region=region-east-africa"
     );
     renderApp();
 
@@ -149,7 +149,7 @@ describe("Crownline 浏览", () => {
     window.history.replaceState(null, "", "/?scope=global");
     renderApp();
 
-    expect(screen.getByRole("status")).toHaveTextContent("显示 116 / 116 个条目");
+    expect(screen.getByRole("status")).toHaveTextContent("显示 133 / 133 个条目");
     expect(screen.getByRole("heading", { name: "跨地区政权" })).toBeInTheDocument();
     expect(screen.getAllByText("拜占庭帝国")).toHaveLength(1);
     expect(screen.getAllByText("阿拔斯哈里发")).toHaveLength(1);

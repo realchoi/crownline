@@ -1,0 +1,177 @@
+{
+  "order": 1005,
+  "entities": [
+    {
+      "id": "polity-qara-khitai",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "empire", "khanate"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "西辽（喀喇契丹）",
+        "aliases": ["西辽", "喀喇契丹", "哈剌契丹", "Qara Khitai", "Kara Khitai", "Western Liao"],
+        "local": "大遼",
+        "localLanguageTag": "zh-Hant"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 1124, "precision": "exact" },
+          "end": { "year": 1218, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "chronologyNote": "耶律大石1124年自立为王是本条起点；汉文年号与现代年换算使部分交接年份存在一年前后差异。1211年屈出律夺取实权，耶律直鲁古此后仍短暂保有名义地位；本条把屈出律统治延续至1218年蒙古军处死他为止。",
+      "historicalRegionIds": ["region-central-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "辽朝宗室耶律大石在女真金朝攻灭辽的过程中率部西迁，于中亚建立的契丹政权。穆斯林史料称其为喀喇契丹，汉文史学称西辽；统治者兼用契丹—内亚的菊儿汗称号和中国式年号、庙号。它以七河与河中为核心，通过保留当地诸侯和征收贡赋维持较松散的宗主体系，并一度使花剌子模称臣。1211年乃蛮王子屈出律夺权，1218年蒙古军追杀屈出律后政权终结。",
+      "sourceRefs": [
+        { "sourceId": "source-qara-khitai-history", "locator": "History" },
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Sovereigns of Qara Khitai" }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "政权总体脉络明确，但摄政者交接年、耶律直鲁古在1211年后的名义地位和屈出律时期是否仍应称为西辽存在不同编年口径。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-qara-khitai-yelu-dashi",
+      "names": { "primary": "耶律大石", "aliases": ["Yelü Dashi", "Yeh-lü Ta-shih", "西辽德宗"] },
+      "description": "辽朝宗室和西辽创建者，1124年率契丹部众西迁自立，随后征服七河与河中地区。",
+      "sourceRefs": [
+        { "sourceId": "source-qara-khitai-history", "locator": "History" },
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Sovereigns of Qara Khitai" }
+      ]
+    },
+    {
+      "id": "person-qara-khitai-xiao-tabuyan",
+      "names": { "primary": "萧塔不烟", "aliases": ["Xiao Tabuyan", "感天皇后"] },
+      "description": "耶律大石皇后，在其子成年前摄政；汉文史料以感天皇后记载，穆斯林史料则强调她掌握完整统治权。",
+      "sourceRefs": [
+        { "sourceId": "source-qara-khitai-history", "locator": "History" },
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Xiao Tabuyan" }
+      ]
+    },
+    {
+      "id": "person-qara-khitai-yelu-yilie",
+      "names": { "primary": "耶律夷列", "aliases": ["Yelü Yilie", "西辽仁宗"] },
+      "description": "耶律大石之子，萧塔不烟摄政结束后亲政的西辽君主。",
+      "sourceRefs": [{ "sourceId": "source-qara-khitai-rulers", "locator": "§ Sovereigns of Qara Khitai" }]
+    },
+    {
+      "id": "person-qara-khitai-yelu-pusuwan",
+      "names": { "primary": "耶律普速完", "aliases": ["Yelü Pusuwan", "承天太后"] },
+      "description": "耶律夷列之妹，在其侄年幼期间以承天太后身份摄政并掌握西辽政权。",
+      "sourceRefs": [{ "sourceId": "source-qara-khitai-rulers", "locator": "§ Yelü Pusuwan" }]
+    },
+    {
+      "id": "person-qara-khitai-yelu-zhilugu",
+      "names": { "primary": "耶律直鲁古", "aliases": ["Yelü Zhilugu", "西辽末主"] },
+      "description": "耶律夷列之子，西辽耶律氏最后一位掌握实权的君主；1211年被屈出律夺权。",
+      "sourceRefs": [
+        { "sourceId": "source-qara-khitai-history", "locator": "History" },
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Yelü Zhilugu" }
+      ]
+    },
+    {
+      "id": "person-qara-khitai-kuchlug",
+      "names": { "primary": "屈出律", "aliases": ["Kuchlug", "Küčlüg", "Kuchluk"] },
+      "description": "逃入西辽的乃蛮王子，迎娶耶律直鲁古之女后于1211年夺取实权，1218年被蒙古军追杀处死。",
+      "sourceRefs": [
+        { "sourceId": "source-qara-khitai-history", "locator": "History" },
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Kuchlug's usurpation" }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-qara-khitai-yelu-dashi",
+      "personId": "person-qara-khitai-yelu-dashi",
+      "polityId": "polity-qara-khitai",
+      "titles": ["皇帝", "菊儿汗"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1124, "precision": "exact" }, "end": { "year": 1144, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "Iranica记作1124—1143，西辽年号换算表常记至1144；此处保留约年端点。",
+      "sourceRefs": [
+        { "sourceId": "source-qara-khitai-history", "locator": "History" },
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Sovereigns of Qara Khitai" }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "终年存在1143与1144两种常见换算。"
+    },
+    {
+      "id": "reign-qara-khitai-xiao-tabuyan",
+      "personId": "person-qara-khitai-xiao-tabuyan",
+      "polityId": "polity-qara-khitai",
+      "titles": ["感天皇后", "摄政者"],
+      "role": "regent",
+      "periods": [{ "start": { "year": 1144, "precision": "circa" }, "end": { "year": 1150, "precision": "exact" } }],
+      "chronologyStatus": "disputed",
+      "note": "部分叙述从1143年开始计算其摄政；此处与耶律大石约年终点并列呈现交接争议。",
+      "sourceRefs": [
+        { "sourceId": "source-qara-khitai-history", "locator": "History" },
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Xiao Tabuyan" }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "起年存在1143与1144两种常见换算。"
+    },
+    {
+      "id": "reign-qara-khitai-yelu-yilie",
+      "personId": "person-qara-khitai-yelu-yilie",
+      "polityId": "polity-qara-khitai",
+      "titles": ["皇帝", "菊儿汗"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1150, "precision": "exact" }, "end": { "year": 1164, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "常见叙述在1163或1164年之间换算其终年。",
+      "sourceRefs": [{ "sourceId": "source-qara-khitai-rulers", "locator": "§ Sovereigns of Qara Khitai" }],
+      "confidence": "disputed",
+      "confidenceNote": "终年存在1163与1164两种常见换算。"
+    },
+    {
+      "id": "reign-qara-khitai-yelu-pusuwan",
+      "personId": "person-qara-khitai-yelu-pusuwan",
+      "polityId": "polity-qara-khitai",
+      "titles": ["承天太后", "摄政者"],
+      "role": "regent",
+      "periods": [{ "start": { "year": 1164, "precision": "circa" }, "end": { "year": 1178, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "不同换算表常记作1163/1164—1177/1178。",
+      "sourceRefs": [{ "sourceId": "source-qara-khitai-rulers", "locator": "§ Yelü Pusuwan" }],
+      "confidence": "disputed",
+      "confidenceNote": "起讫年均可能相差一年。"
+    },
+    {
+      "id": "reign-qara-khitai-yelu-zhilugu",
+      "personId": "person-qara-khitai-yelu-zhilugu",
+      "polityId": "polity-qara-khitai",
+      "titles": ["皇帝", "菊儿汗"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1178, "precision": "circa" }, "end": { "year": 1211, "precision": "exact" } }],
+      "chronologyStatus": "disputed",
+      "note": "部分年表从1177年起算；1211年被屈出律夺取实权后仍短暂保有名义地位，但不再作为在位统治者展示。",
+      "sourceRefs": [
+        { "sourceId": "source-qara-khitai-history", "locator": "History" },
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Yelü Zhilugu" }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "起年可能作1177；1211年后的名义地位不等同于实权统治。"
+    },
+    {
+      "id": "reign-qara-khitai-kuchlug",
+      "personId": "person-qara-khitai-kuchlug",
+      "polityId": "polity-qara-khitai",
+      "titles": ["乃蛮统治者"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1211, "precision": "exact" }, "end": { "year": 1218, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "屈出律夺权后的统治是否继续归入西辽存在分类差异；本数据集为解释政权终结过程而保留此段。",
+      "sourceRefs": [
+        { "sourceId": "source-qara-khitai-history", "locator": "History" },
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Kuchlug's usurpation" }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

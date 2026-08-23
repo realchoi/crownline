@@ -1,0 +1,51 @@
+{
+  "order": 1015,
+  "entities": [
+    {
+      "id": "polity-vijayanagara-empire",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "empire", "kingdom"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "毗奢耶那伽罗帝国",
+        "aliases": ["维贾亚纳加尔帝国", "毗奢耶那伽罗王朝", "Vijayanagara Empire", "Vijayanagar Empire", "Karnata Empire"]
+      },
+      "existencePeriods": [{ "start": { "year": 1336, "precision": "exact" }, "end": { "year": 1646, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "本条以1336年桑伽马兄弟建国为起点。1565年塔利科塔战役和首都毗奢耶那伽罗被毁使帝国严重衰落，但阿拉维杜王系继续在佩努贡达、昌德拉吉里与韦洛尔维持统治，故延续至1646年斯里兰加三世失去稳定政权。代表序列不逐一列入全部短期君主。",
+      "historicalRegionIds": ["region-south-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "14世纪在南印度德干高原南部建立的多语言帝国，以通加巴德拉河畔的毗奢耶那伽罗城为早期都城。桑伽马、萨卢瓦、图鲁瓦和阿拉维杜诸王系统合卡纳达、泰卢固和泰米尔地区，并与德干苏丹国长期竞争。克里希那德瓦拉亚时期国力和宫廷文化达到高峰。1565年塔利科塔战败后首都遭洗劫，王室南迁并持续统治至17世纪中叶。",
+      "sourceRefs": [{ "sourceId": "source-vijayanagara-history", "locator": "History and dynasties" }, { "sourceId": "source-vijayanagara-rulers", "locator": "§ List of rulers" }],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    { "id": "person-vijayanagara-harihara-i", "names": { "primary": "诃里诃罗一世", "aliases": ["Harihara I", "Hakka"] }, "description": "桑伽马王系创建者之一，与兄弟布卡一世于1336年前后建立毗奢耶那伽罗国家。", "sourceRefs": [{ "sourceId": "source-vijayanagara-history", "locator": "Dynasties and rulers" }, { "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }] },
+    { "id": "person-vijayanagara-bukka-i", "names": { "primary": "布卡一世", "aliases": ["Bukka Raya I", "Bukka I"] }, "description": "诃里诃罗一世之弟和继任者，扩展帝国在南印度的控制。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }] },
+    { "id": "person-vijayanagara-harihara-ii", "names": { "primary": "诃里诃罗二世", "aliases": ["Harihara II"] }, "description": "桑伽马王系君主，在位期间帝国向德干和南印度多方向扩张。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }] },
+    { "id": "person-vijayanagara-deva-raya-i", "names": { "primary": "德瓦拉亚一世", "aliases": ["Deva Raya I"] }, "description": "15世纪初桑伽马王系君主，继续与巴赫曼尼苏丹国争夺德干边境。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }] },
+    { "id": "person-vijayanagara-deva-raya-ii", "names": { "primary": "德瓦拉亚二世", "aliases": ["Deva Raya II"] }, "description": "桑伽马王系后期重要君主，以军事改革和多语言宫廷赞助著称。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }] },
+    { "id": "person-vijayanagara-krishnadevaraya", "names": { "primary": "克里希那德瓦拉亚", "aliases": ["Krishnadevaraya", "Krishna Deva Raya"] }, "description": "图鲁瓦王系代表君主，其时期通常被视为帝国政治、军事与文学艺术的高峰。", "sourceRefs": [{ "sourceId": "source-vijayanagara-history", "locator": "Krishna Deva Raya" }, { "sourceId": "source-vijayanagara-rulers", "locator": "Tuluva dynasty" }] },
+    { "id": "person-vijayanagara-achyuta", "names": { "primary": "阿丘塔·德瓦拉亚", "aliases": ["Achyuta Deva Raya"] }, "description": "克里希那德瓦拉亚之弟和继任者，延续图鲁瓦王系统治。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Tuluva dynasty" }] },
+    { "id": "person-vijayanagara-sadasiva", "names": { "primary": "萨达希瓦·拉亚", "aliases": ["Sadasiva Raya"] }, "description": "图鲁瓦王系名义君主，其在位大部分时期实权由阿利亚·拉玛·拉亚掌握。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Tuluva dynasty" }] },
+    { "id": "person-vijayanagara-rama-raya", "names": { "primary": "阿利亚·拉玛·拉亚", "aliases": ["Aliya Rama Raya", "Rama Raya"] }, "description": "萨达希瓦时期的实际执政者，利用德干苏丹国竞争维持霸权，1565年在塔利科塔战役中被杀。", "sourceRefs": [{ "sourceId": "source-vijayanagara-history", "locator": "Battle of Talikota" }, { "sourceId": "source-vijayanagara-rulers", "locator": "Aravidu dynasty" }] },
+    { "id": "person-vijayanagara-tirumala", "names": { "primary": "蒂鲁马拉·德瓦拉亚", "aliases": ["Tirumala Deva Raya"] }, "description": "塔利科塔战役后组织王室南迁并建立阿拉维杜王系统治。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Aravidu dynasty" }] },
+    { "id": "person-vijayanagara-sriranga-iii", "names": { "primary": "斯里兰加三世", "aliases": ["Sriranga III"] }, "description": "阿拉维杜王系末期君主，1646年前后失去稳定领土和宫廷中心。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Aravidu dynasty" }] }
+  ],
+  "reigns": [
+    { "id": "reign-vijayanagara-harihara-i", "personId": "person-vijayanagara-harihara-i", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗君主"], "role": "ruler", "periods": [{ "start": { "year": 1336, "precision": "exact" }, "end": { "year": 1356, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-vijayanagara-history", "locator": "Dynasties and rulers" }, { "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }], "confidence": "medium" },
+    { "id": "reign-vijayanagara-bukka-i", "personId": "person-vijayanagara-bukka-i", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗君主"], "role": "ruler", "periods": [{ "start": { "year": 1356, "precision": "exact" }, "end": { "year": 1377, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }], "confidence": "medium" },
+    { "id": "reign-vijayanagara-harihara-ii", "personId": "person-vijayanagara-harihara-ii", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗君主"], "role": "ruler", "periods": [{ "start": { "year": 1377, "precision": "exact" }, "end": { "year": 1404, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }], "confidence": "medium" },
+    { "id": "reign-vijayanagara-deva-raya-i", "personId": "person-vijayanagara-deva-raya-i", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗君主"], "role": "ruler", "periods": [{ "start": { "year": 1406, "precision": "exact" }, "end": { "year": 1422, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1404—1406年的短期交接君主未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }], "confidence": "medium" },
+    { "id": "reign-vijayanagara-deva-raya-ii", "personId": "person-vijayanagara-deva-raya-ii", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗君主"], "role": "ruler", "periods": [{ "start": { "year": 1424, "precision": "exact" }, "end": { "year": 1446, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1422—1424年的短期君主未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Sangama dynasty" }], "confidence": "medium" },
+    { "id": "reign-vijayanagara-krishnadevaraya", "personId": "person-vijayanagara-krishnadevaraya", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗皇帝"], "role": "ruler", "periods": [{ "start": { "year": 1509, "precision": "exact" }, "end": { "year": 1529, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1446—1509年间桑伽马末期、萨卢瓦王系与图鲁瓦早期多位君主未逐一列入。", "sourceRefs": [{ "sourceId": "source-vijayanagara-history", "locator": "Krishna Deva Raya" }, { "sourceId": "source-vijayanagara-rulers", "locator": "Tuluva dynasty" }], "confidence": "high" },
+    { "id": "reign-vijayanagara-achyuta", "personId": "person-vijayanagara-achyuta", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗皇帝"], "role": "ruler", "periods": [{ "start": { "year": 1529, "precision": "exact" }, "end": { "year": 1542, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Tuluva dynasty" }], "confidence": "high" },
+    { "id": "reign-vijayanagara-sadasiva", "personId": "person-vijayanagara-sadasiva", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗皇帝"], "role": "ruler", "periods": [{ "start": { "year": 1542, "precision": "exact" }, "end": { "year": 1570, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "大部分时期为名义君主，实际权力由阿利亚·拉玛·拉亚等掌握。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Tuluva dynasty" }], "confidence": "medium" },
+    { "id": "reign-vijayanagara-rama-raya", "personId": "person-vijayanagara-rama-raya", "polityId": "polity-vijayanagara-empire", "titles": ["实际执政者"], "role": "regent", "periods": [{ "start": { "year": 1542, "precision": "exact" }, "end": { "year": 1565, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-vijayanagara-history", "locator": "Battle of Talikota" }, { "sourceId": "source-vijayanagara-rulers", "locator": "Aravidu dynasty" }], "confidence": "high" },
+    { "id": "reign-vijayanagara-tirumala", "personId": "person-vijayanagara-tirumala", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗皇帝"], "role": "ruler", "periods": [{ "start": { "year": 1565, "precision": "exact" }, "end": { "year": 1572, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1565年后先实际执政，1567年前后正式加冕；本条从塔利科塔战后接掌政权起算。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Aravidu dynasty" }], "confidence": "medium" },
+    { "id": "reign-vijayanagara-sriranga-iii", "personId": "person-vijayanagara-sriranga-iii", "polityId": "polity-vijayanagara-empire", "titles": ["毗奢耶那伽罗皇帝"], "role": "ruler", "periods": [{ "start": { "year": 1642, "precision": "exact" }, "end": { "year": 1646, "precision": "exact" } }], "chronologyStatus": "disputed", "note": "1572—1642年的多位阿拉维杜君主未逐一列入；斯里兰加三世的名义活动可能延续至更晚，本条以1646年失去稳定统治为终点。", "sourceRefs": [{ "sourceId": "source-vijayanagara-rulers", "locator": "Aravidu dynasty" }], "confidence": "medium" }
+  ],
+  "reignVacancies": []
+}

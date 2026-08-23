@@ -1,0 +1,22 @@
+[
+  {
+    "id": "geo-unified-silla-gyeongju",
+    "polityId": "polity-unified-silla",
+    "periods": [
+      {
+        "start": { "year": 668, "precision": "exact" },
+        "end": { "year": 935, "precision": "exact" }
+      }
+    ],
+    "placeName": "Gyeongju",
+    "role": "capital",
+    "coordinates": { "latitude": 35.8562, "longitude": 129.2247 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代庆州，仅表示统一新罗王都金城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-unified-silla-history", "locator": "Unified Silla" }
+    ],
+    "confidence": "high"
+  }
+]

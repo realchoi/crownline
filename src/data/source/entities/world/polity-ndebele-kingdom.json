@@ -1,0 +1,89 @@
+{
+  "order": 1010,
+  "entities": [
+    {
+      "id": "polity-ndebele-kingdom",
+      "entityKind": "polity",
+      "polityForms": ["kingdom", "state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "北恩德贝莱王国",
+        "aliases": ["恩德贝莱王国", "马塔贝莱王国", "Ndebele Kingdom", "Northern Ndebele Kingdom", "Matabele Kingdom", "Mthwakazi"],
+        "local": "uMthwakazi",
+        "localLanguageTag": "nd-Latn"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 1821, "precision": "circa" },
+          "end": { "year": 1893, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "chronologyNote": "1821年起点指姆济利卡齐脱离沙卡权威并带领追随者形成独立政治共同体；其部众经德兰士瓦和博茨瓦纳迁徙，约1840年才在今津巴布韦西南稳定建立马塔贝莱兰王国。1868年姆济利卡齐死后爆发继承冲突，洛本古拉至1870年才稳固王位；没有把1869年资料空档推断为明确空位。1893年英属南非公司在第一次马塔贝莱战争中击败王国，为本条终点。",
+      "historicalRegionIds": ["region-southern-africa"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "姆济利卡齐率领库马洛集团脱离祖鲁权威后建立的迁徙型国家，部众在南部非洲高地吸收索托—茨瓦纳与绍纳等人群，最终定居今津巴布韦西南部。王国以年龄军团、王室聚落和向国王集中的贡赋军事体系组织多族群社会，首都布拉瓦约成为洛本古拉时期政治中心。19世纪后期矿产特许权和殖民扩张加剧，1893年英属南非公司军队击败恩德贝莱军，独立王国解体。",
+      "sourceRefs": [
+        { "sourceId": "source-ndebele-history", "locator": "The Ndebele under Mzilikazi; King Mzilikazi" },
+        { "sourceId": "source-ndebele-rulers", "locator": "Mthwakazi under Lobengula" }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-ndebele-mzilikazi",
+      "names": { "primary": "姆济利卡齐", "aliases": ["Mzilikazi", "Mzilikazi kaMashobane", "Moselekatse"] },
+      "description": "库马洛集团首领和北恩德贝莱王国创建者，1821年前后脱离祖鲁权威，率部迁徙并最终在马塔贝莱兰建国。",
+      "sourceRefs": [
+        { "sourceId": "source-ndebele-history", "locator": "King Mzilikazi" },
+        { "sourceId": "source-ndebele-rulers", "locator": "Mthwakazi" }
+      ]
+    },
+    {
+      "id": "person-ndebele-lobengula",
+      "names": { "primary": "洛本古拉", "aliases": ["Lobengula", "Lobengula Khumalo"] },
+      "description": "姆济利卡齐之子，在继承内战后于1870年稳固王位，是北恩德贝莱独立王国末代国王。",
+      "sourceRefs": [
+        { "sourceId": "source-ndebele-history", "locator": "King Mzilikazi" },
+        { "sourceId": "source-ndebele-rulers", "locator": "Mthwakazi under Lobengula" }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-ndebele-mzilikazi",
+      "personId": "person-ndebele-mzilikazi",
+      "polityId": "polity-ndebele-kingdom",
+      "titles": ["北恩德贝莱国王"],
+      "localTitles": ["Inkosi"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1821, "precision": "circa" }, "end": { "year": 1868, "precision": "exact" } }],
+      "chronologyStatus": "disputed",
+      "note": "国家形成可从1821年脱离祖鲁权威或约1840年定居马塔贝莱兰计算；本条采用前者并披露迁徙阶段。",
+      "sourceRefs": [
+        { "sourceId": "source-ndebele-history", "locator": "The Ndebele under Mzilikazi; King Mzilikazi" },
+        { "sourceId": "source-ndebele-rulers", "locator": "Mthwakazi" }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ndebele-lobengula",
+      "personId": "person-ndebele-lobengula",
+      "polityId": "polity-ndebele-kingdom",
+      "titles": ["北恩德贝莱国王"],
+      "localTitles": ["Inkosi"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1870, "precision": "exact" }, "end": { "year": 1893, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "姆济利卡齐1868年去世后经历继承冲突，洛本古拉至1870年才稳固王位；1893年王国军事失败后逃离布拉瓦约。",
+      "sourceRefs": [
+        { "sourceId": "source-ndebele-history", "locator": "King Mzilikazi" },
+        { "sourceId": "source-ndebele-rulers", "locator": "Mthwakazi under Lobengula" }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

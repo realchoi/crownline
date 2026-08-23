@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-maratha-history",
+    "title": "Maratha Empire",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art 南亚藏品说明与印度历史资料；用于校订17世纪中叶至1818年的马拉塔国家、希瓦吉建国、佩什瓦实权化和第三次英马战争终结。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/art/collection/search/747584",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-maratha-rulers",
+    "title": "List of Maratha rulers",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of Maratha rulers 与 Maratha Empire；用于交叉核对恰特拉帕蒂、塔拉拜摄政、沙胡及主要佩什瓦的通行任期。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_Maratha_rulers",
+    "accessedAt": "2026-08-22"
+  }
+]

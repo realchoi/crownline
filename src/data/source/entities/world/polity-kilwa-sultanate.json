@@ -1,0 +1,136 @@
+{
+  "order": 1008,
+  "entities": [
+    {
+      "id": "polity-kilwa-sultanate",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "state", "other"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "基尔瓦苏丹国",
+        "aliases": ["基尔瓦王国", "Kilwa Sultanate", "Sultanate of Kilwa", "Kilwa Kisiwani Sultanate"]
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 1000, "precision": "circa" },
+          "end": { "year": 1505, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "chronologyNote": "UNESCO资料确认基尔瓦约11—15世纪为独立苏丹国；传统《基尔瓦编年史》把设国追溯至957年，但考古与钱币研究不支持把传奇王表的所有年份视为精确纪年。本条采用约1000年起点，1505年葡萄牙占领为独立中世纪苏丹国终点，只列有考古、钱币或多源支撑的代表统治者。",
+      "historicalRegionIds": ["region-east-africa"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "以今坦桑尼亚近海基尔瓦基西瓦尼岛为中心的斯瓦希里海岸苏丹国。它连接非洲内陆黄金、象牙等资源与阿拉伯半岛、印度和更远的印度洋市场，并通过索法拉等南方港口参与津巴布韦高原黄金贸易。11—15世纪的财富支撑了大清真寺、宫殿、石屋和本地钱币铸造，14世纪达到高峰。1505年葡萄牙军占领基尔瓦并修筑堡垒，原有独立贸易霸权由此终结。",
+      "sourceRefs": [
+        { "sourceId": "source-kilwa-history", "locator": "Executive Summary" },
+        { "sourceId": "source-kilwa-chronology", "locator": "AD 800–1500 chronology" },
+        { "sourceId": "source-kilwa-rulers", "locator": "§ Rulers" }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "城市与贸易网络的考古分期较清楚，但早期苏丹谱系和绝对年代大量依赖16世纪整理的编年史。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-kilwa-ali-ibn-al-hassan",
+      "names": { "primary": "阿里·伊本·哈桑", "aliases": ["Ali ibn al-Hassan", "Ali bin al-Hasan"] },
+      "description": "《基尔瓦编年史》中的开创者；传统称来自设拉子，但现代研究更谨慎地把他视为后世王朝起源叙事和晚11世纪钱币中的早期统治者。",
+      "sourceRefs": [
+        { "sourceId": "source-kilwa-chronology", "locator": "Coin chronology" },
+        { "sourceId": "source-kilwa-rulers", "locator": "§ Shirazi era" }
+      ]
+    },
+    {
+      "id": "person-kilwa-sulaiman-ibn-al-hassan",
+      "names": {
+        "primary": "苏莱曼·伊本·哈桑",
+        "aliases": ["Sulaiman ibn al-Hassan ibn Dawud", "Suleiman Hassan"]
+      },
+      "description": "编年史中的基尔瓦代表苏丹，被归于12世纪后期的海岸扩张和石构城市发展阶段。",
+      "sourceRefs": [{ "sourceId": "source-kilwa-rulers", "locator": "§ Shirazi era" }]
+    },
+    {
+      "id": "person-kilwa-al-hassan-ibn-talut",
+      "names": { "primary": "哈桑·伊本·塔鲁特", "aliases": ["Al-Hassan ibn Talut", "Hasan ibn Talut"] },
+      "description": "传统王表中13世纪末马赫达利王系的建立者，其时期处在基尔瓦贸易与城市财富快速增长阶段。",
+      "sourceRefs": [{ "sourceId": "source-kilwa-rulers", "locator": "§ Mahdali era" }]
+    },
+    {
+      "id": "person-kilwa-al-hasan-ibn-sulaiman",
+      "names": {
+        "primary": "哈桑·伊本·苏莱曼",
+        "aliases": ["Al-Hasan ibn Sulaiman", "Abu al-Mawahib", "Father of Gifts"]
+      },
+      "description": "14世纪基尔瓦最有史料锚点的苏丹之一，钱币、建筑和伊本·白图泰1331年的访问共同见证其统治与城市繁荣。",
+      "sourceRefs": [
+        { "sourceId": "source-kilwa-history", "locator": "Executive Summary" },
+        { "sourceId": "source-kilwa-chronology", "locator": "Al-Hasan ibn Sulaiman" },
+        { "sourceId": "source-kilwa-rulers", "locator": "§ Mahdali era" }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-kilwa-ali-ibn-al-hassan",
+      "personId": "person-kilwa-ali-ibn-al-hassan",
+      "polityId": "polity-kilwa-sultanate",
+      "titles": ["基尔瓦苏丹"],
+      "localTitles": ["Sultan"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1070, "precision": "circa" }, "end": { "year": 1100, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "传统编年史把阿里置于957年，现代考古和钱币研究倾向把可见统治活动放在更晚时期；此处仅作晚11世纪代表约年。",
+      "sourceRefs": [
+        { "sourceId": "source-kilwa-chronology", "locator": "Coin chronology" },
+        { "sourceId": "source-kilwa-rulers", "locator": "§ Shirazi era" }
+      ],
+      "confidence": "low",
+      "confidenceNote": "人物可能具有历史核心，但传统身世和绝对在位年不可视为确证。"
+    },
+    {
+      "id": "reign-kilwa-sulaiman-ibn-al-hassan",
+      "personId": "person-kilwa-sulaiman-ibn-al-hassan",
+      "polityId": "polity-kilwa-sultanate",
+      "titles": ["基尔瓦苏丹"],
+      "localTitles": ["Sultan"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1170, "precision": "circa" }, "end": { "year": 1188, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [{ "sourceId": "source-kilwa-rulers", "locator": "§ Shirazi era" }],
+      "confidence": "low",
+      "confidenceNote": "任期主要由编年史在位年数回推。"
+    },
+    {
+      "id": "reign-kilwa-al-hassan-ibn-talut",
+      "personId": "person-kilwa-al-hassan-ibn-talut",
+      "polityId": "polity-kilwa-sultanate",
+      "titles": ["基尔瓦苏丹"],
+      "localTitles": ["Sultan"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1277, "precision": "circa" }, "end": { "year": 1294, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [{ "sourceId": "source-kilwa-rulers", "locator": "§ Mahdali era" }],
+      "confidence": "low",
+      "confidenceNote": "王系与任期主要依赖后出的编年史。"
+    },
+    {
+      "id": "reign-kilwa-al-hasan-ibn-sulaiman",
+      "personId": "person-kilwa-al-hasan-ibn-sulaiman",
+      "polityId": "polity-kilwa-sultanate",
+      "titles": ["基尔瓦苏丹"],
+      "localTitles": ["Sultan", "Abu al-Mawahib"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1310, "precision": "circa" }, "end": { "year": 1333, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "伊本·白图泰1331年访问和钱币为其统治提供锚点，但新考古编年可能把即位时间置于约1320年。",
+      "sourceRefs": [
+        { "sourceId": "source-kilwa-history", "locator": "Executive Summary" },
+        { "sourceId": "source-kilwa-chronology", "locator": "Al-Hasan ibn Sulaiman" },
+        { "sourceId": "source-kilwa-rulers", "locator": "§ Mahdali era" }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

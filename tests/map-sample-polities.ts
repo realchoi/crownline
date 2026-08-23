@@ -41,7 +41,24 @@ export const WORLD_MAP_POLITY_IDS = [
   "polity-aksumite-kingdom",
   "polity-mutapa-empire",
   "polity-teotihuacan-state",
-  "polity-kanem-bornu-empire"
+  "polity-kanem-bornu-empire",
+  "polity-samanid-empire",
+  "polity-qara-khitai",
+  "polity-khwarazmian-empire",
+  "polity-kingdom-of-kush",
+  "polity-kilwa-sultanate",
+  "polity-zulu-kingdom",
+  "polity-ndebele-kingdom",
+  "polity-unified-silla",
+  "polity-joseon-dynasty",
+  "polity-ashikaga-shogunate",
+  "polity-ryukyu-kingdom",
+  "polity-vijayanagara-empire",
+  "polity-maratha-empire",
+  "polity-chimu-empire",
+  "polity-purepecha-empire",
+  "polity-numidia",
+  "polity-almohad-caliphate"
 ] as const;
 
 export const CHINA_MAP_POLITY_IDS = [

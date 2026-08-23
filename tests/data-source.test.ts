@@ -100,8 +100,8 @@ describe("源数据分片", () => {
     const summary = await generateData({ sourceRoot, toolOutputRoot, publicOutputRoot });
 
     expect(summary).toMatchObject({
-      entities: 116,
-      details: 116,
+      entities: 133,
+      details: 133,
       geographicSnapshots: data.geographicSnapshots.length
     });
     expect(summary.persons).toBe(data.persons.length);
@@ -110,9 +110,9 @@ describe("源数据分片", () => {
     expect(await readJson(join(toolOutputRoot, "coverage-report.json"))).toMatchObject({
       reportVersion: 1,
       dataSchemaVersion: 4,
-      totals: { entities: 116, polities: 114 },
+      totals: { entities: 133, polities: 131 },
       topLevelRegions: expect.arrayContaining([
-        expect.objectContaining({ regionId: "region-central-asia", directPolityCount: 2 })
+        expect.objectContaining({ regionId: "region-central-asia", directPolityCount: 5 })
       ])
     });
     expect(await readJson(join(publicOutputRoot, "index.json"))).toMatchObject({

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "geo-khwarazmian-gurganj",
+    "polityId": "polity-khwarazmian-empire",
+    "periods": [
+      {
+        "start": { "year": 1097, "precision": "exact" },
+        "end": { "year": 1212, "precision": "exact" }
+      }
+    ],
+    "placeName": "Gurganj",
+    "role": "capital",
+    "coordinates": { "latitude": 42.3272, "longitude": 59.1544 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应库尼亚乌尔根奇的现代地点坐标，仅表示花剌子模王朝核心都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-khwarazmian-overview", "locator": "Capital" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "geo-khwarazmian-samarkand",
+    "polityId": "polity-khwarazmian-empire",
+    "periods": [
+      {
+        "start": { "year": 1212, "precision": "exact" },
+        "end": { "year": 1220, "precision": "exact" }
+      }
+    ],
+    "placeName": "Samarkand",
+    "role": "capital",
+    "coordinates": { "latitude": 39.6542, "longitude": 66.9597 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示阿拉丁·穆罕默德二世后期政治中心的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-khwarazmian-overview", "locator": "Capital" }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-khwarazmian-tabriz",
+    "polityId": "polity-khwarazmian-empire",
+    "periods": [
+      {
+        "start": { "year": 1225, "precision": "exact" },
+        "end": { "year": 1231, "precision": "exact" }
+      }
+    ],
+    "placeName": "Tabriz",
+    "role": "political-center",
+    "coordinates": { "latitude": 38.08, "longitude": 46.2919 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示札兰丁后期流动政权在伊朗西部的主要政治中心，不暗示其恢复了原帝国疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-khwarazmian-overview", "locator": "Capital" }
+    ],
+    "confidence": "medium"
+  }
+]

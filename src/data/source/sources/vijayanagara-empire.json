@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-vijayanagara-history",
+    "title": "History of Vijayanagara",
+    "sourceType": "institutional",
+    "citation": "Vijayanagara District, Government of Karnataka: ‘History of Vijayanagara’，并参考 The Metropolitan Museum of Art 南亚时间线；用于校订1336年建国、1565年塔利科塔战役后的迁都与1646年末期王系统治。",
+    "publisher": "Government of Karnataka; The Metropolitan Museum of Art",
+    "url": "https://vijayanagara.nic.in/en/about-district/",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-vijayanagara-rulers",
+    "title": "List of Vijayanagara rulers",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Vijayanagara Empire § List of rulers；用于交叉核对桑伽马、萨卢瓦、图鲁瓦与阿拉维杜诸王系代表君主及通行在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Vijayanagara_Empire#List_of_rulers",
+    "accessedAt": "2026-08-22"
+  }
+]

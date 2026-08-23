@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-zulu-history",
+    "title": "Zulu",
+    "sourceType": "institutional",
+    "citation": "South African History Online: ‘Zulu’ 与 ‘Shaka Zulu’；用于校订1816年国家形成、沙卡的政治军事整合、继承冲突与1879年英祖战争后独立王国终结。",
+    "publisher": "South African History Online",
+    "url": "https://sahistory.org.za/article/zulu",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-zulu-rulers",
+    "title": "Zulu Family History",
+    "sourceType": "institutional",
+    "citation": "South African History Online: ‘Zulu Family History’；用于交叉核对沙卡、丁冈、姆潘德与塞奇瓦约的独立王国在位序列及年份。",
+    "publisher": "South African History Online",
+    "url": "https://sahistory.org.za/article/zulu-family-history",
+    "accessedAt": "2026-08-22"
+  }
+]

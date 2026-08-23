@@ -1,0 +1,44 @@
+{
+  "order": 1020,
+  "entities": [
+    {
+      "id": "polity-almohad-caliphate",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "empire", "state"],
+      "displayCategory": "contemporary",
+      "names": { "primary": "穆瓦希德哈里发国", "aliases": ["穆瓦希德王朝", "阿尔摩哈德王朝", "Almohad Caliphate", "Almohad dynasty"], "local": "الخلافة الموحدية", "localLanguageTag": "ar" },
+      "existencePeriods": [{ "start": { "year": 1130, "precision": "exact" }, "end": { "year": 1269, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "本条以1130年伊本·图马尔特死后阿卜杜勒·穆明接掌穆瓦希德运动和政权为起点；1147年占领马拉喀什后取代穆拉比特王朝并扩展至全马格里布和安达卢斯。1212年纳瓦斯·德·托洛萨战败后迅速分裂，1269年末代哈里发在马拉喀什被马林王朝推翻。",
+      "historicalRegionIds": ["region-north-africa", "region-europe"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "源自摩洛哥阿特拉斯山区马斯穆达柏柏尔人的宗教改革与征服政权。阿卜杜勒·穆明把伊本·图马尔特的运动建设为世袭哈里发国，征服摩洛哥、阿尔及利亚、伊夫里基叶和安达卢斯大部，以马拉喀什和塞维利亚为主要宫廷中心。雅库布·曼苏尔时期达到高峰，建筑、哲学和跨海政治文化繁荣。13世纪初战败及地方王朝兴起后领土瓦解，1269年终结。",
+      "sourceRefs": [{ "sourceId": "source-almohad-history", "locator": "Almohad dynasty, 1147–1269" }, { "sourceId": "source-almohad-rulers", "locator": "§ List of Almohad rulers" }],
+      "confidence": "high"
+    }
+  ],
+  "persons": [
+    { "id": "person-almohad-abd-al-mumin", "names": { "primary": "阿卜杜勒·穆明", "aliases": ["Abd al-Mu'min", "Abd al-Mumin"] }, "description": "穆瓦希德国家创建者，在伊本·图马尔特死后统一追随者并征服马拉喀什和马格里布大部。", "sourceRefs": [{ "sourceId": "source-almohad-history", "locator": "Almohad dynasty" }, { "sourceId": "source-almohad-rulers", "locator": "List of rulers" }] },
+    { "id": "person-almohad-yusuf-i", "names": { "primary": "阿布·雅库布·优素福一世", "aliases": ["Abu Yaqub Yusuf I", "Yusuf I"] }, "description": "阿卜杜勒·穆明之子，继续统治马格里布与安达卢斯并赞助学术。", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }] },
+    { "id": "person-almohad-yaqub-al-mansur", "names": { "primary": "雅库布·曼苏尔", "aliases": ["Yaqub al-Mansur", "Abu Yusuf Yaqub al-Mansur"] }, "description": "穆瓦希德代表哈里发，1184—1199年统治，王朝军事与建筑赞助达到高峰。", "sourceRefs": [{ "sourceId": "source-almohad-history", "locator": "Almohad dynasty" }, { "sourceId": "source-almohad-rulers", "locator": "List of rulers" }] },
+    { "id": "person-almohad-muhammad-al-nasir", "names": { "primary": "穆罕默德·纳赛尔", "aliases": ["Muhammad al-Nasir"] }, "description": "穆瓦希德哈里发，在位后期于1212年纳瓦斯·德·托洛萨战役遭遇决定性失败。", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }] },
+    { "id": "person-almohad-yusuf-ii", "names": { "primary": "优素福二世·穆斯坦绥尔", "aliases": ["Yusuf II al-Mustansir", "Abu Yaqub Yusuf II"] }, "description": "纳赛尔之子，王朝在其时期仍维持名义统一，但地方离心加剧。", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }] },
+    { "id": "person-almohad-idris-i", "names": { "primary": "伊德里斯一世·马蒙", "aliases": ["Idris I al-Ma'mun", "Abu al-Ala Idris I"] }, "description": "穆瓦希德后期哈里发，在内战和伊比利亚、马格里布领土收缩中统治。", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }] },
+    { "id": "person-almohad-abd-al-wahid-ii", "names": { "primary": "阿卜杜勒·瓦希德二世", "aliases": ["Abd al-Wahid II al-Rashid"] }, "description": "穆瓦希德后期哈里发，尝试恢复马拉喀什中央权威。", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }] },
+    { "id": "person-almohad-umar-al-murtada", "names": { "primary": "欧麦尔·穆尔塔达", "aliases": ["Umar al-Murtada", "Abu Hafs Umar al-Murtada"] }, "description": "王朝末期长期在位的哈里发，实际统治范围已主要收缩至摩洛哥部分地区。", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }] },
+    { "id": "person-almohad-idris-ii", "names": { "primary": "伊德里斯二世·瓦西格", "aliases": ["Idris II al-Wathiq", "Abu Dabbus"] }, "description": "穆瓦希德末代哈里发，1269年马拉喀什陷落后王朝终结。", "sourceRefs": [{ "sourceId": "source-almohad-history", "locator": "Almohad dynasty" }, { "sourceId": "source-almohad-rulers", "locator": "List of rulers" }] }
+  ],
+  "reigns": [
+    { "id": "reign-almohad-abd-al-mumin", "personId": "person-almohad-abd-al-mumin", "polityId": "polity-almohad-caliphate", "titles": ["穆瓦希德哈里发"], "localTitles": ["Caliph"], "role": "ruler", "periods": [{ "start": { "year": 1130, "precision": "exact" }, "end": { "year": 1163, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-almohad-history", "locator": "Almohad dynasty" }, { "sourceId": "source-almohad-rulers", "locator": "List of rulers" }], "confidence": "high" },
+    { "id": "reign-almohad-yusuf-i", "personId": "person-almohad-yusuf-i", "polityId": "polity-almohad-caliphate", "titles": ["穆瓦希德哈里发"], "localTitles": ["Caliph"], "role": "ruler", "periods": [{ "start": { "year": 1163, "precision": "exact" }, "end": { "year": 1184, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }], "confidence": "high" },
+    { "id": "reign-almohad-yaqub-al-mansur", "personId": "person-almohad-yaqub-al-mansur", "polityId": "polity-almohad-caliphate", "titles": ["穆瓦希德哈里发"], "localTitles": ["Caliph"], "role": "ruler", "periods": [{ "start": { "year": 1184, "precision": "exact" }, "end": { "year": 1199, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-almohad-history", "locator": "Almohad dynasty" }, { "sourceId": "source-almohad-rulers", "locator": "List of rulers" }], "confidence": "high" },
+    { "id": "reign-almohad-muhammad-al-nasir", "personId": "person-almohad-muhammad-al-nasir", "polityId": "polity-almohad-caliphate", "titles": ["穆瓦希德哈里发"], "localTitles": ["Caliph"], "role": "ruler", "periods": [{ "start": { "year": 1199, "precision": "exact" }, "end": { "year": 1213, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }], "confidence": "high" },
+    { "id": "reign-almohad-yusuf-ii", "personId": "person-almohad-yusuf-ii", "polityId": "polity-almohad-caliphate", "titles": ["穆瓦希德哈里发"], "localTitles": ["Caliph"], "role": "ruler", "periods": [{ "start": { "year": 1213, "precision": "exact" }, "end": { "year": 1224, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }], "confidence": "high" },
+    { "id": "reign-almohad-idris-i", "personId": "person-almohad-idris-i", "polityId": "polity-almohad-caliphate", "titles": ["穆瓦希德哈里发"], "localTitles": ["Caliph"], "role": "ruler", "periods": [{ "start": { "year": 1229, "precision": "exact" }, "end": { "year": 1232, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1224—1229年的多位短期与并立哈里发未在代表序列中逐一列入。", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }], "confidence": "high" },
+    { "id": "reign-almohad-abd-al-wahid-ii", "personId": "person-almohad-abd-al-wahid-ii", "polityId": "polity-almohad-caliphate", "titles": ["穆瓦希德哈里发"], "localTitles": ["Caliph"], "role": "ruler", "periods": [{ "start": { "year": 1232, "precision": "exact" }, "end": { "year": 1242, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }], "confidence": "high" },
+    { "id": "reign-almohad-umar-al-murtada", "personId": "person-almohad-umar-al-murtada", "polityId": "polity-almohad-caliphate", "titles": ["穆瓦希德哈里发"], "localTitles": ["Caliph"], "role": "ruler", "periods": [{ "start": { "year": 1248, "precision": "exact" }, "end": { "year": 1266, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1242—1248年的阿里·赛义德未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-almohad-rulers", "locator": "List of rulers" }], "confidence": "high" },
+    { "id": "reign-almohad-idris-ii", "personId": "person-almohad-idris-ii", "polityId": "polity-almohad-caliphate", "titles": ["穆瓦希德哈里发"], "localTitles": ["Caliph"], "role": "ruler", "periods": [{ "start": { "year": 1266, "precision": "exact" }, "end": { "year": 1269, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-almohad-history", "locator": "Almohad dynasty" }, { "sourceId": "source-almohad-rulers", "locator": "List of rulers" }], "confidence": "high" }
+  ],
+  "reignVacancies": []
+}

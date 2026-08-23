@@ -1,0 +1,35 @@
+{
+  "order": 1017,
+  "entities": [
+    {
+      "id": "polity-chimu-empire",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "empire", "kingdom"],
+      "displayCategory": "contemporary",
+      "names": { "primary": "奇穆帝国", "aliases": ["奇穆王国", "奇莫尔王国", "Chimu Empire", "Chimú Empire", "Kingdom of Chimor", "Chimor"] },
+      "existencePeriods": [{ "start": { "year": 1000, "precision": "circa" }, "end": { "year": 1470, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "chronologyNote": "大都会艺术博物馆以约1000—1470年概括奇穆帝国及昌昌中心。本土文字王表没有保存，已知塔卡伊纳莫王系主要来自17世纪殖民时期编年；前三位已知君主的绝对年代均属回推。本条只列四位有名称的代表统治者，不为中间七位无名君主补造身份。",
+      "historicalRegionIds": ["region-americas"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "约11—15世纪统治秘鲁北部海岸的安第斯国家，以莫切河谷巨型土城昌昌为都。奇穆王权通过灌溉、分级行政、贡赋和宫廷工匠组织控制多个沿海河谷，金银工艺、纺织和海洋图像传统高度发展。14世纪后帝国向南北扩张，约1470年末代独立统治者明昌卡曼被图帕克·印加·尤潘基击败并带往库斯科，奇穆成为印加属地。",
+      "sourceRefs": [{ "sourceId": "source-chimu-history", "locator": "Chan Chan and Chimu Empire" }, { "sourceId": "source-chimu-rulers", "locator": "Taycanamo dynasty" }],
+      "confidence": "disputed",
+      "confidenceNote": "帝国阶段与1470年前后印加征服较明确，但早期王系和绝对王年主要依赖后出殖民编年。"
+    }
+  ],
+  "persons": [
+    { "id": "person-chimu-tacaynamo", "names": { "primary": "塔卡伊纳莫", "aliases": ["Tacaynamo", "Taycanamo"] }, "description": "殖民时期奇穆编年中的王系创建者，被描述为从海上来到莫切河谷并建立昌昌。", "sourceRefs": [{ "sourceId": "source-chimu-rulers", "locator": "Taycanamo dynasty" }] },
+    { "id": "person-chimu-guacri-caur", "names": { "primary": "瓜克里·考尔", "aliases": ["Guacri Caur", "Wakri Kaur", "Guacricaur"] }, "description": "塔卡伊纳莫之子，后出编年称其扩展对莫切河谷的控制。", "sourceRefs": [{ "sourceId": "source-chimu-rulers", "locator": "Taycanamo dynasty" }] },
+    { "id": "person-chimu-nancempinco", "names": { "primary": "尼安森平科", "aliases": ["Nancempinco", "Ñancempinco", "Naucempinco"] }, "description": "奇穆早期扩张君主，后出编年将多个相邻海岸河谷的征服归于其时期。", "sourceRefs": [{ "sourceId": "source-chimu-rulers", "locator": "Taycanamo dynasty" }] },
+    { "id": "person-chimu-minchancaman", "names": { "primary": "明昌卡曼", "aliases": ["Minchancaman", "Minchançaman", "Minchan Caman"] }, "description": "奇穆末代独立君主，在帝国扩张高峰与印加交战，约1470年被俘至库斯科。", "sourceRefs": [{ "sourceId": "source-chimu-history", "locator": "Chan Chan" }, { "sourceId": "source-chimu-rulers", "locator": "Taycanamo dynasty" }] }
+  ],
+  "reigns": [
+    { "id": "reign-chimu-tacaynamo", "personId": "person-chimu-tacaynamo", "polityId": "polity-chimu-empire", "titles": ["奇穆君主"], "localTitles": ["Chimor Capac"], "role": "ruler", "periods": [{ "start": { "year": 1275, "precision": "circa" }, "end": { "year": 1310, "precision": "circa" } }], "chronologyStatus": "disputed", "note": "传统可写约1305年或约1275—1310年；人物和王年主要来自1604年前后的殖民编年。", "sourceRefs": [{ "sourceId": "source-chimu-rulers", "locator": "Taycanamo dynasty" }], "confidence": "low", "confidenceNote": "绝对年代和海上来历均不可视为同时代证据。" },
+    { "id": "reign-chimu-guacri-caur", "personId": "person-chimu-guacri-caur", "polityId": "polity-chimu-empire", "titles": ["奇穆君主"], "localTitles": ["Chimor Capac"], "role": "ruler", "periods": [{ "start": { "year": 1310, "precision": "circa" }, "end": { "year": 1345, "precision": "circa" } }], "chronologyStatus": "disputed", "sourceRefs": [{ "sourceId": "source-chimu-rulers", "locator": "Taycanamo dynasty" }], "confidence": "low", "confidenceNote": "任期由后出王表回推。" },
+    { "id": "reign-chimu-nancempinco", "personId": "person-chimu-nancempinco", "polityId": "polity-chimu-empire", "titles": ["奇穆君主"], "localTitles": ["Chimor Capac"], "role": "ruler", "periods": [{ "start": { "year": 1345, "precision": "circa" }, "end": { "year": 1380, "precision": "circa" } }], "chronologyStatus": "disputed", "sourceRefs": [{ "sourceId": "source-chimu-rulers", "locator": "Taycanamo dynasty" }], "confidence": "low", "confidenceNote": "任期由后出王表回推。" },
+    { "id": "reign-chimu-minchancaman", "personId": "person-chimu-minchancaman", "polityId": "polity-chimu-empire", "titles": ["奇穆君主"], "localTitles": ["Chimor Capac"], "role": "ruler", "periods": [{ "start": { "year": 1450, "precision": "circa" }, "end": { "year": 1470, "precision": "circa" } }], "chronologyStatus": "disputed", "note": "1380—1450年间七位无名君主不予虚构；约1470年被印加俘获为较强史料锚点。", "sourceRefs": [{ "sourceId": "source-chimu-history", "locator": "Chan Chan" }, { "sourceId": "source-chimu-rulers", "locator": "Taycanamo dynasty" }], "confidence": "medium" }
+  ],
+  "reignVacancies": []
+}

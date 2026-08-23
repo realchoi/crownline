@@ -1,0 +1,38 @@
+{
+  "order": 1019,
+  "entities": [
+    {
+      "id": "polity-numidia",
+      "entityKind": "polity",
+      "polityForms": ["kingdom", "state"],
+      "displayCategory": "contemporary",
+      "names": { "primary": "努米底亚王国", "aliases": ["努米底亚", "Kingdom of Numidia", "Numidia", "Numidian Kingdom"] },
+      "existencePeriods": [{ "start": { "year": -202, "precision": "circa" }, "end": { "year": -46, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "本条以第二次布匿战争结束前后马西尼萨统一马西利人与马赛西利人为起点，常见年份作前203或前202年；止于前46年朱巴一世在塔普苏斯战役后败亡、凯撒将东努米底亚并入罗马。期间王国多次分割和受罗马干预，但以努米底亚王权连续体处理。",
+      "historicalRegionIds": ["region-north-africa"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "古代马格里布东部的柏柏尔王国，核心位于今阿尔及利亚并延伸至突尼斯和利比亚部分地区。马西尼萨在第二次布匿战争中转而支持罗马并统一努米底亚，以锡尔塔为中心发展农业、城市和王权。其后继者密西普萨维持繁荣，朱古达争位引发与罗马的长期战争。高达、希恩普萨尔二世和朱巴一世时期王国成为罗马内战与属国体系的一部分，前46年被并吞。",
+      "sourceRefs": [{ "sourceId": "source-numidia-history", "locator": "Masinissa to Juba I" }, { "sourceId": "source-numidia-rulers", "locator": "Unified Numidia" }],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    { "id": "person-numidia-masinissa", "names": { "primary": "马西尼萨", "aliases": ["Masinissa", "Massinissa"] }, "description": "统一努米底亚的首位国王，在第二次布匿战争末期与罗马结盟并以锡尔塔为中心建立王国。", "sourceRefs": [{ "sourceId": "source-numidia-history", "locator": "Masinissa" }, { "sourceId": "source-numidia-rulers", "locator": "Unified Numidia" }] },
+    { "id": "person-numidia-micipsa", "names": { "primary": "密西普萨", "aliases": ["Micipsa"] }, "description": "马西尼萨之子，兄弟相继去世后成为努米底亚主要统治者，并安排三人共同继承。", "sourceRefs": [{ "sourceId": "source-numidia-history", "locator": "Micipsa" }, { "sourceId": "source-numidia-rulers", "locator": "Unified Numidia" }] },
+    { "id": "person-numidia-jugurtha", "names": { "primary": "朱古达", "aliases": ["Jugurtha"] }, "description": "马西尼萨之孙和密西普萨养子，在争夺全部王国后与罗马进行朱古达战争。", "sourceRefs": [{ "sourceId": "source-numidia-history", "locator": "Jugurtha" }, { "sourceId": "source-numidia-rulers", "locator": "Unified Numidia" }] },
+    { "id": "person-numidia-gauda", "names": { "primary": "高达", "aliases": ["Gauda of Numidia"] }, "description": "朱古达的异母弟，战争结束后在罗马支持下取得缩小后的努米底亚王位。", "sourceRefs": [{ "sourceId": "source-numidia-rulers", "locator": "Eastern Numidia" }] },
+    { "id": "person-numidia-hiempsal-ii", "names": { "primary": "希恩普萨尔二世", "aliases": ["Hiempsal II"] }, "description": "高达之子，在罗马共和国晚期政治中维持东努米底亚王权。", "sourceRefs": [{ "sourceId": "source-numidia-rulers", "locator": "Eastern Numidia" }] },
+    { "id": "person-numidia-juba-i", "names": { "primary": "朱巴一世", "aliases": ["Juba I"] }, "description": "努米底亚末期国王，在罗马内战中支持庞培派，前46年塔普苏斯战败后身亡。", "sourceRefs": [{ "sourceId": "source-numidia-history", "locator": "Juba I" }, { "sourceId": "source-numidia-rulers", "locator": "Eastern Numidia" }] }
+  ],
+  "reigns": [
+    { "id": "reign-numidia-masinissa", "personId": "person-numidia-masinissa", "polityId": "polity-numidia", "titles": ["努米底亚国王"], "role": "ruler", "periods": [{ "start": { "year": -202, "precision": "circa" }, "end": { "year": -148, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "统一常见起点作前203或前202年，此处采用约前202年。", "sourceRefs": [{ "sourceId": "source-numidia-history", "locator": "Masinissa" }, { "sourceId": "source-numidia-rulers", "locator": "Unified Numidia" }], "confidence": "high" },
+    { "id": "reign-numidia-micipsa", "personId": "person-numidia-micipsa", "polityId": "polity-numidia", "titles": ["努米底亚国王"], "role": "ruler", "periods": [{ "start": { "year": -148, "precision": "exact" }, "end": { "year": -118, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "马西尼萨死后最初与两兄弟分掌职责，兄弟去世后成为主要国王。", "sourceRefs": [{ "sourceId": "source-numidia-history", "locator": "Micipsa" }, { "sourceId": "source-numidia-rulers", "locator": "Unified Numidia" }], "confidence": "high" },
+    { "id": "reign-numidia-jugurtha", "personId": "person-numidia-jugurtha", "polityId": "polity-numidia", "titles": ["努米底亚国王"], "role": "ruler", "periods": [{ "start": { "year": -118, "precision": "exact" }, "end": { "year": -105, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "前118年最初与阿德赫巴尔、希恩普萨尔一世共同继承，后争夺全境；前105年被俘，前104年在罗马处死。", "sourceRefs": [{ "sourceId": "source-numidia-history", "locator": "Jugurtha" }, { "sourceId": "source-numidia-rulers", "locator": "Unified Numidia" }], "confidence": "high" },
+    { "id": "reign-numidia-gauda", "personId": "person-numidia-gauda", "polityId": "polity-numidia", "titles": ["努米底亚国王"], "role": "ruler", "periods": [{ "start": { "year": -105, "precision": "exact" }, "end": { "year": -88, "precision": "circa" } }], "chronologyStatus": "disputed", "sourceRefs": [{ "sourceId": "source-numidia-rulers", "locator": "Eastern Numidia" }], "confidence": "medium" },
+    { "id": "reign-numidia-hiempsal-ii", "personId": "person-numidia-hiempsal-ii", "polityId": "polity-numidia", "titles": ["努米底亚国王"], "role": "ruler", "periods": [{ "start": { "year": -88, "precision": "circa" }, "end": { "year": -60, "precision": "circa" } }], "chronologyStatus": "disputed", "sourceRefs": [{ "sourceId": "source-numidia-rulers", "locator": "Eastern Numidia" }], "confidence": "medium" },
+    { "id": "reign-numidia-juba-i", "personId": "person-numidia-juba-i", "polityId": "polity-numidia", "titles": ["努米底亚国王"], "role": "ruler", "periods": [{ "start": { "year": -60, "precision": "circa" }, "end": { "year": -46, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-numidia-history", "locator": "Juba I" }, { "sourceId": "source-numidia-rulers", "locator": "Eastern Numidia" }], "confidence": "high" }
+  ],
+  "reignVacancies": []
+}

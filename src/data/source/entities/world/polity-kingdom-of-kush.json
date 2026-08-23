@@ -1,0 +1,213 @@
+{
+  "order": 1007,
+  "entities": [
+    {
+      "id": "polity-kingdom-of-kush",
+      "entityKind": "polity",
+      "polityForms": ["kingdom", "empire", "state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "库施王国",
+        "aliases": ["努比亚库施王国", "纳帕塔—麦罗埃王国", "Kingdom of Kush", "Kushite Kingdom", "Meroitic Kingdom"]
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": -760, "precision": "circa" },
+          "end": { "year": 350, "precision": "circa" }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "chronologyNote": "本条采用大都会艺术博物馆约前760—公元350年的纳帕塔—麦罗埃库施连续口径。前3世纪前后王室墓地与政治重心逐步转向麦罗埃，不拆成两个政权。大量君主只见墓葬、铭文或片段材料，页面仅列有较强史料锚点的代表统治者，不能据空档推断无人统治。",
+      "historicalRegionIds": ["region-east-africa", "region-north-africa"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "以尼罗河中游努比亚为核心的古代非洲王国，早期政治与宗教中心在纳帕塔，后逐步转向麦罗埃。前8世纪库施君主向北扩张并建立埃及第二十五王朝，失去埃及后仍在努比亚延续数百年。麦罗埃时期凭借尼罗河、红海与内陆商路连接地中海和撒哈拉以南非洲，发展铁器、金工、陶器和独立的麦罗埃文字传统。公元4世纪前后，气候、内部变化及阿克苏姆等外部力量共同推动其解体。",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "Sudan, 1–500 A.D.; The Land of Nubia" },
+        { "sourceId": "source-kush-rulers", "locator": "Napatan and Meroitic monarchs" }
+      ],
+      "confidence": "disputed",
+      "confidenceNote": "总体阶段和若干与埃及、罗马同步的君主年代较稳固，但大量麦罗埃王表仍依赖墓葬序列和假设性排序。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-kush-kashta",
+      "names": { "primary": "卡施塔", "aliases": ["Kashta"] },
+      "description": "纳帕塔时期的库施国王，其势力进入上埃及，为后继者皮安希建立埃及第二十五王朝奠定基础。",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "The Land of Nubia" },
+        { "sourceId": "source-kush-rulers", "locator": "Napatan Period" }
+      ]
+    },
+    {
+      "id": "person-kush-piye",
+      "names": { "primary": "皮安希", "aliases": ["Piye", "Piankhy", "Pianchi"] },
+      "description": "库施国王和埃及第二十五王朝奠基者，以胜利碑记载向北征服并接受埃及多位地方统治者臣服。",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "The Land of Nubia" },
+        { "sourceId": "source-kush-rulers", "locator": "Napatan Period" }
+      ]
+    },
+    {
+      "id": "person-kush-taharqa",
+      "names": { "primary": "塔哈尔卡", "aliases": ["Taharqa", "Taharqo", "Tirhakah"] },
+      "description": "兼任库施国王与埃及法老的重要君主，在位期间与亚述扩张长期冲突并大规模营建。",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "The Land of Nubia" },
+        { "sourceId": "source-kush-rulers", "locator": "Napatan Period" }
+      ]
+    },
+    {
+      "id": "person-kush-aspelta",
+      "names": { "primary": "阿斯佩尔塔", "aliases": ["Aspelta"] },
+      "description": "失去埃及之后的纳帕塔时期库施国王，留下较丰富的选王与宗教铭文材料。",
+      "sourceRefs": [{ "sourceId": "source-kush-rulers", "locator": "Napatan Period" }]
+    },
+    {
+      "id": "person-kush-arakamani-i",
+      "names": { "primary": "阿拉卡马尼一世", "aliases": ["Arakamani I", "Ergamenes I"] },
+      "description": "麦罗埃时期早期代表君主；约前3世纪王室墓地和政治重心进一步转向麦罗埃。",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "Sudan, 1–500 A.D." },
+        { "sourceId": "source-kush-rulers", "locator": "Meroitic Period" }
+      ]
+    },
+    {
+      "id": "person-kush-amanirenas",
+      "names": { "primary": "阿曼尼雷纳斯", "aliases": ["Amanirenas", "Amanirena"] },
+      "description": "麦罗埃时期的坎达克和统治者，以前1世纪末对罗马埃及的战争及其后的和约著称。",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "The Land of Nubia" },
+        { "sourceId": "source-kush-rulers", "locator": "Meroitic Period" }
+      ]
+    },
+    {
+      "id": "person-kush-natakamani",
+      "names": { "primary": "纳塔卡马尼", "aliases": ["Natakamani"] },
+      "description": "公元1世纪初麦罗埃代表君主，常与坎达克阿曼尼托雷共同出现在神庙和王权图像中。",
+      "sourceRefs": [{ "sourceId": "source-kush-rulers", "locator": "Meroitic Period" }]
+    },
+    {
+      "id": "person-kush-amanitore",
+      "names": { "primary": "阿曼尼托雷", "aliases": ["Amanitore"] },
+      "description": "公元1世纪初的麦罗埃坎达克，与纳塔卡马尼共同参与统治和大型建筑活动。",
+      "sourceRefs": [{ "sourceId": "source-kush-rulers", "locator": "Meroitic Period" }]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-kush-kashta",
+      "personId": "person-kush-kashta",
+      "polityId": "polity-kingdom-of-kush",
+      "titles": ["库施国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": -760, "precision": "circa" }, "end": { "year": -747, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "The Land of Nubia" },
+        { "sourceId": "source-kush-rulers", "locator": "Napatan Period" }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kush-piye",
+      "personId": "person-kush-piye",
+      "polityId": "polity-kingdom-of-kush",
+      "titles": ["库施国王", "埃及法老"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": -743, "precision": "circa" }, "end": { "year": -712, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "不同王表常把起讫年置于前744—前714或前743—前712之间；此处采用大都会资料中的代表性约年。",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "Egypt in the Third Intermediate Period" },
+        { "sourceId": "source-kush-rulers", "locator": "Napatan Period" }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kush-taharqa",
+      "personId": "person-kush-taharqa",
+      "polityId": "polity-kingdom-of-kush",
+      "titles": ["库施国王", "埃及法老"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": -690, "precision": "exact" }, "end": { "year": -664, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "The Land of Nubia" },
+        { "sourceId": "source-kush-rulers", "locator": "Napatan Period" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-kush-aspelta",
+      "personId": "person-kush-aspelta",
+      "polityId": "polity-kingdom-of-kush",
+      "titles": ["库施国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": -593, "precision": "circa" }, "end": { "year": -568, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [{ "sourceId": "source-kush-rulers", "locator": "Napatan Period" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kush-arakamani-i",
+      "personId": "person-kush-arakamani-i",
+      "polityId": "polity-kingdom-of-kush",
+      "titles": ["库施国王"],
+      "localTitles": ["Qore"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": -270, "precision": "circa" }, "end": { "year": -260, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "麦罗埃时期早期编年主要依赖墓葬与后世叙述，不应视为精确纪年。",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "Sudan, 1–500 A.D." },
+        { "sourceId": "source-kush-rulers", "locator": "Meroitic Period" }
+      ],
+      "confidence": "low",
+      "confidenceNote": "具体在位约年仍属重建。"
+    },
+    {
+      "id": "reign-kush-amanirenas",
+      "personId": "person-kush-amanirenas",
+      "polityId": "polity-kingdom-of-kush",
+      "titles": ["库施统治者", "坎达克"],
+      "localTitles": ["Kandake"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": -40, "precision": "circa" }, "end": { "year": -10, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "sourceRefs": [
+        { "sourceId": "source-kush-history", "locator": "The Land of Nubia" },
+        { "sourceId": "source-kush-rulers", "locator": "Meroitic Period" }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kush-natakamani",
+      "personId": "person-kush-natakamani",
+      "polityId": "polity-kingdom-of-kush",
+      "titles": ["库施国王"],
+      "localTitles": ["Qore"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1, "precision": "circa" }, "end": { "year": 20, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "与阿曼尼托雷共同出现于王权图像；具体共同统治结构和绝对年代仍有争议。",
+      "sourceRefs": [{ "sourceId": "source-kush-rulers", "locator": "Meroitic Period" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-kush-amanitore",
+      "personId": "person-kush-amanitore",
+      "polityId": "polity-kingdom-of-kush",
+      "titles": ["坎达克"],
+      "localTitles": ["Kandake"],
+      "role": "co-ruler",
+      "periods": [{ "start": { "year": 1, "precision": "circa" }, "end": { "year": 20, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "与纳塔卡马尼持续共同出现于神庙和王权图像，但两者法定身份与任期端点仍有争议。",
+      "sourceRefs": [{ "sourceId": "source-kush-rulers", "locator": "Meroitic Period" }],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

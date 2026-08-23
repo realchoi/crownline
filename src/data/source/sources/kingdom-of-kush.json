@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-kush-history",
+    "title": "Sudan, 1-500 A.D.",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: ‘Sudan, 1–500 A.D.’ 与 ‘The Land of Nubia’；用于校订库施王国约前760—350年的存续口径、纳帕塔—麦罗埃中心转移、对埃及与罗马的关系及阿克苏姆兴起后的终结。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/toah/ht/05/afs.html",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-kush-rulers",
+    "title": "List of monarchs of Kush",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of monarchs of Kush；用于交叉核对纳帕塔与麦罗埃时期代表君主、称号及通行约年，并披露大量交接年仍属假设性编年的限制。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Kush",
+    "accessedAt": "2026-08-22"
+  }
+]

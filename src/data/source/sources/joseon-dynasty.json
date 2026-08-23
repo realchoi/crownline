@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-joseon-history",
+    "title": "Joseon foundation and Korean art timeline",
+    "sourceType": "institutional",
+    "citation": "National Museum of Korea: Yi Seonggye collection highlights，与 The Metropolitan Museum of Art 韩国艺术时间线；用于校订1392年李成桂建国、汉城政治中心和1897年转为大韩帝国的阶段口径。",
+    "publisher": "National Museum of Korea; The Metropolitan Museum of Art",
+    "url": "https://www.museum.go.kr/ENG/contents/E0401000000.do?relicRecommendId=519684&schM=view",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-joseon-rulers",
+    "title": "List of monarchs of Korea: Joseon",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of monarchs of Korea § Joseon；用于交叉核对朝鲜王朝代表国王、废君和通行在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Korea#Joseon",
+    "accessedAt": "2026-08-22"
+  }
+]

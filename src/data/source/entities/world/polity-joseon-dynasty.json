@@ -1,0 +1,67 @@
+{
+  "order": 1012,
+  "entities": [
+    {
+      "id": "polity-joseon-dynasty",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "kingdom", "state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "朝鲜王朝",
+        "aliases": ["李氏朝鲜", "朝鲜国", "Joseon", "Joseon dynasty", "Kingdom of Joseon"],
+        "local": "조선",
+        "localLanguageTag": "ko"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 1392, "precision": "exact" },
+          "end": { "year": 1897, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "本条从1392年李成桂即位起算，止于1897年高宗改国号为大韩帝国并称帝；日本吞并发生于1910年，但1897—1910年的大韩帝国作为不同政治称号和国家阶段不并入本条。代表性统治序列未逐一列入全部27位国王，空档表示当前详情的策展取舍。",
+      "historicalRegionIds": ["region-east-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "1392年李成桂取代高丽建立的朝鲜半岛王朝，以汉城为长期政治中心。王朝以儒家经典、科举、两班官僚和宗法礼制重组国家秩序，世宗时期创制训民正音，并发展天文、印刷和农业制度。16—17世纪先后遭遇日本入侵与后金、清朝战争，随后维持较长恢复期；19世纪内外危机加深，高宗于1897年建立大韩帝国，朝鲜王朝阶段由此结束。",
+      "sourceRefs": [
+        { "sourceId": "source-joseon-history", "locator": "Yi Seonggye and Korean art timeline" },
+        { "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "persons": [
+    { "id": "person-joseon-taejo", "names": { "primary": "朝鲜太祖", "aliases": ["Taejo of Joseon", "Yi Seong-gye"] }, "description": "朝鲜王朝开国国王李成桂，1392年取代高丽建立新王朝。", "sourceRefs": [{ "sourceId": "source-joseon-history", "locator": "Yi Seonggye" }, { "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-taejong", "names": { "primary": "朝鲜太宗", "aliases": ["Taejong of Joseon", "Yi Bang-won"] }, "description": "朝鲜王朝第三位国王，强化王权并整顿早期国家制度。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-sejong", "names": { "primary": "朝鲜世宗", "aliases": ["Sejong the Great", "Sejong of Joseon"] }, "description": "朝鲜王朝第四位国王，以训民正音、学术机构和科技文化建设著称。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-sejo", "names": { "primary": "朝鲜世祖", "aliases": ["Sejo of Joseon"] }, "description": "通过政变取得王位的朝鲜国王，进一步集中行政和军事权力。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-seongjong", "names": { "primary": "朝鲜成宗", "aliases": ["Seongjong of Joseon"] }, "description": "朝鲜前期国王，其时期完成《经国大典》等制度整理。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-yeonsangun", "names": { "primary": "燕山君", "aliases": ["Yeonsangun", "Prince Yeonsan"] }, "description": "朝鲜王朝第十位统治者，1506年被政变废黜，死后未获庙号。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-jungjong", "names": { "primary": "朝鲜中宗", "aliases": ["Jungjong of Joseon"] }, "description": "中宗反正后即位的朝鲜国王，其统治伴随士林政治与改革争论。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-seonjo", "names": { "primary": "朝鲜宣祖", "aliases": ["Seonjo of Joseon"] }, "description": "朝鲜国王，在位期间经历1592—1598年的日本侵朝战争。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-gwanghaegun", "names": { "primary": "光海君", "aliases": ["Gwanghaegun", "Prince Gwanghae"] }, "description": "宣祖之子，在明、后金之间采取务实外交，1623年被政变废黜且未获庙号。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-injo", "names": { "primary": "朝鲜仁祖", "aliases": ["Injo of Joseon"] }, "description": "仁祖反正后即位的朝鲜国王，在位期间经历后金与清朝入侵。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-sukjong", "names": { "primary": "朝鲜肃宗", "aliases": ["Sukjong of Joseon"] }, "description": "朝鲜后期国王，其统治以党争格局和多次政治换局著称。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-yeongjo", "names": { "primary": "朝鲜英祖", "aliases": ["Yeongjo of Joseon"] }, "description": "朝鲜在位最久的国王，推行缓和党争的荡平政策和多项制度整顿。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-jeongjo", "names": { "primary": "朝鲜正祖", "aliases": ["Jeongjo of Joseon"] }, "description": "英祖之孙，以奎章阁、华城建设和王权改革著称。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] },
+    { "id": "person-joseon-gojong", "names": { "primary": "朝鲜高宗", "aliases": ["Gojong of Korea", "Gojong of Joseon"] }, "description": "朝鲜王朝末期国王，1863年即位，1897年宣布建立大韩帝国并称帝。", "sourceRefs": [{ "sourceId": "source-joseon-history", "locator": "Korean art timeline" }, { "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }] }
+  ],
+  "reigns": [
+    { "id": "reign-joseon-taejo", "personId": "person-joseon-taejo", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1392, "precision": "exact" }, "end": { "year": 1398, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-joseon-history", "locator": "Yi Seonggye" }, { "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-taejong", "personId": "person-joseon-taejong", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1400, "precision": "exact" }, "end": { "year": 1418, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1398—1400年的定宗未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-sejong", "personId": "person-joseon-sejong", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1418, "precision": "exact" }, "end": { "year": 1450, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-sejo", "personId": "person-joseon-sejo", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1455, "precision": "exact" }, "end": { "year": 1468, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1450—1455年的文宗与端宗未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-seongjong", "personId": "person-joseon-seongjong", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1469, "precision": "exact" }, "end": { "year": 1494, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1468—1469年的睿宗未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-yeonsangun", "personId": "person-joseon-yeonsangun", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜统治者", "废君"], "localTitles": ["Gun"], "role": "ruler", "periods": [{ "start": { "year": 1494, "precision": "exact" }, "end": { "year": 1506, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-jungjong", "personId": "person-joseon-jungjong", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1506, "precision": "exact" }, "end": { "year": 1544, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-seonjo", "personId": "person-joseon-seonjo", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1567, "precision": "exact" }, "end": { "year": 1608, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1544—1567年的仁宗与明宗未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-gwanghaegun", "personId": "person-joseon-gwanghaegun", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜统治者", "废君"], "localTitles": ["Gun"], "role": "ruler", "periods": [{ "start": { "year": 1608, "precision": "exact" }, "end": { "year": 1623, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-injo", "personId": "person-joseon-injo", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1623, "precision": "exact" }, "end": { "year": 1649, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-sukjong", "personId": "person-joseon-sukjong", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1674, "precision": "exact" }, "end": { "year": 1720, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1649—1674年的孝宗与显宗未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-yeongjo", "personId": "person-joseon-yeongjo", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1724, "precision": "exact" }, "end": { "year": 1776, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1720—1724年的景宗未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-jeongjo", "personId": "person-joseon-jeongjo", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1776, "precision": "exact" }, "end": { "year": 1800, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" },
+    { "id": "reign-joseon-gojong", "personId": "person-joseon-gojong", "polityId": "polity-joseon-dynasty", "titles": ["朝鲜国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1863, "precision": "exact" }, "end": { "year": 1897, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1800—1863年的纯祖、宪宗与哲宗未在代表序列中单列；高宗1897年后以大韩帝国皇帝身份继续统治，不并入本条任期。", "sourceRefs": [{ "sourceId": "source-joseon-history", "locator": "Korean art timeline" }, { "sourceId": "source-joseon-rulers", "locator": "§ Joseon" }], "confidence": "high" }
+  ],
+  "reignVacancies": []
+}

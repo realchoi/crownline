@@ -138,7 +138,15 @@ describe("Crownline 地图", () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(await findMapMarker("明，南京，都城"));
+    const map = await screen.findByRole("region", { name: "当前年份历史政权示意地图" });
+    let mingMarker: HTMLElement | null = null;
+    for (const trigger of within(map).getAllByRole("button", { name: /此处有 \d+ 个历史点位/ })) {
+      await user.click(trigger);
+      mingMarker = within(map).queryByRole("button", { name: "明，南京，都城" });
+      if (mingMarker) break;
+    }
+    expect(mingMarker).not.toBeNull();
+    await user.click(mingMarker!);
     const dialog = screen.getByRole("dialog", { name: "明" });
     expect(dialog).toHaveTextContent("1368—1644");
     await user.click(within(dialog).getByRole("button", { name: "关闭详情" }));

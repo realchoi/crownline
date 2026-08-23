@@ -1,0 +1,36 @@
+{
+  "order": 1018,
+  "entities": [
+    {
+      "id": "polity-purepecha-empire",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "empire", "kingdom"],
+      "displayCategory": "contemporary",
+      "names": { "primary": "普雷佩查帝国", "aliases": ["塔拉斯卡王国", "米却肯王国", "Purépecha Empire", "Purepecha Empire", "Tarascan state", "Tarascan Empire"] },
+      "existencePeriods": [{ "start": { "year": 1325, "precision": "circa" }, "end": { "year": 1530, "precision": "exact" } }],
+      "chronologyStatus": "disputed",
+      "chronologyNote": "INAH以约1325年塔里亚库里在帕茨夸罗湖区巩固统治为国家形成锚点，15世纪中叶权力中心转向钦聪灿。1522年末代卡松西接受西班牙宗主关系后本地王权一度保留，至1530年唐阿舒安二世被努尼奥·德·古斯曼处死为本条终点。早期三中心共治与绝对王年主要来自《米却肯关系》等殖民时期记录。",
+      "historicalRegionIds": ["region-americas"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "14—16世纪统治今墨西哥米却肯及邻近地区的西部中美洲国家。塔里亚库里在帕茨夸罗湖区通过战争与联盟建立王权，后形成帕茨夸罗、伊瓦齐奥和钦聪灿三中心结构，最终由钦聪灿的卡松西取得主导。帝国以金属加工、贡赋和军事组织著称，多次抵御墨西卡扩张。西班牙征服中末代统治者先选择臣服，1530年被殖民官员处死后原有独立王权终结。",
+      "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Tzintzuntzan genealogy and expansion" }, { "sourceId": "source-purepecha-rulers", "locator": "Rulers" }],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    { "id": "person-purepecha-tariacuri", "names": { "primary": "塔里亚库里", "aliases": ["Tariacuri", "Tariácuri"] }, "description": "普雷佩查国家形成叙事中的核心统治者，在帕茨夸罗整合权力并安排三个继承中心。", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Tariacuri" }, { "sourceId": "source-purepecha-rulers", "locator": "Rulers" }] },
+    { "id": "person-purepecha-tangaxoan-i", "names": { "primary": "唐阿舒安一世", "aliases": ["Tangaxoan I", "Tangánxoan I"] }, "description": "塔里亚库里之侄和钦聪灿支系统治者，INAH资料记其重建钦聪灿并延续三中心统治。", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Tzintzuntzan genealogy" }] },
+    { "id": "person-purepecha-tzitzipandacuare", "names": { "primary": "齐齐潘达夸雷", "aliases": ["Tzitzipandacuare", "Tzitzispandácuare"] }, "description": "15世纪中后期钦聪灿卡松西，推动王国向托卢卡、科利马和热地扩张。", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Tzitzispandacuare" }, { "sourceId": "source-purepecha-rulers", "locator": "Rulers" }] },
+    { "id": "person-purepecha-zuangua", "names": { "primary": "苏安瓜", "aliases": ["Zuangua", "Zuangua of Tzintzuntzan"] }, "description": "普雷佩查帝国晚期统治者，巩固东部边界并在西班牙人抵达前夕去世。", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Zuangua" }, { "sourceId": "source-purepecha-rulers", "locator": "Rulers" }] },
+    { "id": "person-purepecha-tangaxoan-ii", "names": { "primary": "唐阿舒安二世", "aliases": ["Tangaxoan II", "Tzinzincha Tangaxoan II"] }, "description": "末代独立卡松西，接受西班牙宗主后继续统治，1530年被殖民官员处死。", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Tangaxoan II" }, { "sourceId": "source-purepecha-rulers", "locator": "Rulers" }] }
+  ],
+  "reigns": [
+    { "id": "reign-purepecha-tariacuri", "personId": "person-purepecha-tariacuri", "polityId": "polity-purepecha-empire", "titles": ["普雷佩查统治者"], "localTitles": ["Cazonci"], "role": "ruler", "periods": [{ "start": { "year": 1325, "precision": "circa" }, "end": { "year": 1350, "precision": "circa" } }], "chronologyStatus": "disputed", "note": "约1325年为INAH的国家整合与钦聪灿创建锚点，具体终年属后世重建。", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Tariacuri" }, { "sourceId": "source-purepecha-rulers", "locator": "Rulers" }], "confidence": "low", "confidenceNote": "早期人物事迹混合口传、宗教叙事与殖民记录。" },
+    { "id": "reign-purepecha-tangaxoan-i", "personId": "person-purepecha-tangaxoan-i", "polityId": "polity-purepecha-empire", "titles": ["钦聪灿统治者"], "localTitles": ["Cazonci"], "role": "co-ruler", "periods": [{ "start": { "year": 1350, "precision": "circa" }, "end": { "year": 1454, "precision": "circa" } }], "chronologyStatus": "disputed", "note": "与伊瓦齐奥、帕茨夸罗支系共同处于三中心格局；起年为策展约值。", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Tzintzuntzan genealogy" }], "confidence": "low", "confidenceNote": "起年与长任期主要依赖后出谱系和策展约值。" },
+    { "id": "reign-purepecha-tzitzipandacuare", "personId": "person-purepecha-tzitzipandacuare", "polityId": "polity-purepecha-empire", "titles": ["普雷佩查卡松西"], "localTitles": ["Cazonci"], "role": "ruler", "periods": [{ "start": { "year": 1454, "precision": "exact" }, "end": { "year": 1479, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Tzitzispandacuare" }, { "sourceId": "source-purepecha-rulers", "locator": "Rulers" }], "confidence": "medium" },
+    { "id": "reign-purepecha-zuangua", "personId": "person-purepecha-zuangua", "polityId": "polity-purepecha-empire", "titles": ["普雷佩查卡松西"], "localTitles": ["Cazonci"], "role": "ruler", "periods": [{ "start": { "year": 1479, "precision": "exact" }, "end": { "year": 1520, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Zuangua" }, { "sourceId": "source-purepecha-rulers", "locator": "Rulers" }], "confidence": "medium" },
+    { "id": "reign-purepecha-tangaxoan-ii", "personId": "person-purepecha-tangaxoan-ii", "polityId": "polity-purepecha-empire", "titles": ["普雷佩查卡松西"], "localTitles": ["Cazonci"], "role": "ruler", "periods": [{ "start": { "year": 1520, "precision": "exact" }, "end": { "year": 1530, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1522年后在西班牙宗主关系下保留本地统治至1530年被处死。", "sourceRefs": [{ "sourceId": "source-purepecha-history", "locator": "Tangaxoan II" }, { "sourceId": "source-purepecha-rulers", "locator": "Rulers" }], "confidence": "medium" }
+  ],
+  "reignVacancies": []
+}

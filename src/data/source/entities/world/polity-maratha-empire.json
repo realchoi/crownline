@@ -1,0 +1,49 @@
+{
+  "order": 1016,
+  "entities": [
+    {
+      "id": "polity-maratha-empire",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "empire", "state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "马拉塔帝国",
+        "aliases": ["马拉塔联盟", "Maratha Empire", "Maratha Confederacy", "Maratha state"],
+        "local": "मराठा साम्राज्य",
+        "localLanguageTag": "mr-Deva"
+      },
+      "existencePeriods": [{ "start": { "year": 1674, "precision": "exact" }, "end": { "year": 1818, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "本条以希瓦吉1674年正式加冕为恰特拉帕蒂起点，以1818年第三次英马战争后佩什瓦巴吉·拉奥二世投降为终点。18世纪国家逐渐由萨塔拉恰特拉帕蒂名义王权、浦那佩什瓦政府和辛迪亚、霍尔卡、盖克瓦德、蓬斯莱等诸家构成联盟；页面并列显示恰特拉帕蒂与掌握实权的代表佩什瓦，不把两者误作互相排斥的单线王位。",
+      "historicalRegionIds": ["region-south-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "源自西德干马拉塔军事和地方精英网络的早期近代国家。希瓦吉通过山地堡垒、机动作战和行政整顿摆脱比贾布尔与莫卧儿控制，1674年正式加冕。奥朗则布战争后沙胡与佩什瓦体系推动马拉塔势力扩展至印度中北部，18世纪形成多中心联盟。1761年第三次帕尼帕特战役造成重创，但联盟随后恢复部分力量；三次英马战争后，1818年佩什瓦政权被英国东印度公司废除。",
+      "sourceRefs": [{ "sourceId": "source-maratha-history", "locator": "Maratha Empire" }, { "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis and Peshwas" }],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    { "id": "person-maratha-shivaji", "names": { "primary": "希瓦吉", "aliases": ["Shivaji", "Shivaji Maharaj"] }, "description": "马拉塔国家创建者，1674年在赖加德正式加冕为恰特拉帕蒂。", "sourceRefs": [{ "sourceId": "source-maratha-history", "locator": "Maratha Empire" }, { "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis" }] },
+    { "id": "person-maratha-sambhaji", "names": { "primary": "桑巴吉", "aliases": ["Sambhaji", "Sambhaji Maharaj"] }, "description": "希瓦吉长子和继承者，继续与莫卧儿帝国作战，1689年被俘处死。", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis" }] },
+    { "id": "person-maratha-rajaram", "names": { "primary": "拉贾拉姆", "aliases": ["Rajaram I", "Rajaram Bhonsle"] }, "description": "希瓦吉次子，在桑巴吉死后继续组织对莫卧儿军的抵抗。", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis" }] },
+    { "id": "person-maratha-tarabai", "names": { "primary": "塔拉拜", "aliases": ["Tarabai", "Tarabai Bhosale"] }, "description": "拉贾拉姆王后，在其幼子名义下摄政并领导马拉塔对莫卧儿的战争。", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis" }] },
+    { "id": "person-maratha-shahu", "names": { "primary": "沙胡一世", "aliases": ["Shahu I", "Chhatrapati Shahu"] }, "description": "桑巴吉之子，获释后取得萨塔拉王位，并把越来越多行政军事权交给佩什瓦。", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis of Satara" }] },
+    { "id": "person-maratha-balaji-vishwanath", "names": { "primary": "巴拉吉·维什瓦纳特", "aliases": ["Balaji Vishwanath"] }, "description": "沙胡时期的重要佩什瓦，奠定佩什瓦职位世袭化和浦那政府扩张的基础。", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Peshwas" }] },
+    { "id": "person-maratha-baji-rao-i", "names": { "primary": "巴吉·拉奥一世", "aliases": ["Baji Rao I", "Bajirao I"] }, "description": "巴拉吉·维什瓦纳特之子和代表性佩什瓦，推动马拉塔势力快速进入中北印度。", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Peshwas" }] },
+    { "id": "person-maratha-madhav-rao-i", "names": { "primary": "马达夫·拉奥一世", "aliases": ["Madhav Rao I", "Madhavrao I"] }, "description": "第三次帕尼帕特战役后恢复佩什瓦政府财政与军事能力的重要执政者。", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Peshwas" }] },
+    { "id": "person-maratha-baji-rao-ii", "names": { "primary": "巴吉·拉奥二世", "aliases": ["Baji Rao II", "Bajirao II"] }, "description": "末代佩什瓦，第三次英马战争失败后于1818年投降，浦那政府被废。", "sourceRefs": [{ "sourceId": "source-maratha-history", "locator": "Maratha Empire" }, { "sourceId": "source-maratha-rulers", "locator": "Peshwas" }] }
+  ],
+  "reigns": [
+    { "id": "reign-maratha-shivaji", "personId": "person-maratha-shivaji", "polityId": "polity-maratha-empire", "titles": ["恰特拉帕蒂"], "localTitles": ["Chhatrapati"], "role": "ruler", "periods": [{ "start": { "year": 1674, "precision": "exact" }, "end": { "year": 1680, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-maratha-history", "locator": "Maratha Empire" }, { "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis" }], "confidence": "high" },
+    { "id": "reign-maratha-sambhaji", "personId": "person-maratha-sambhaji", "polityId": "polity-maratha-empire", "titles": ["恰特拉帕蒂"], "localTitles": ["Chhatrapati"], "role": "ruler", "periods": [{ "start": { "year": 1681, "precision": "exact" }, "end": { "year": 1689, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis" }], "confidence": "high" },
+    { "id": "reign-maratha-rajaram", "personId": "person-maratha-rajaram", "polityId": "polity-maratha-empire", "titles": ["恰特拉帕蒂"], "localTitles": ["Chhatrapati"], "role": "ruler", "periods": [{ "start": { "year": 1689, "precision": "exact" }, "end": { "year": 1700, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis" }], "confidence": "high" },
+    { "id": "reign-maratha-tarabai", "personId": "person-maratha-tarabai", "polityId": "polity-maratha-empire", "titles": ["摄政王后"], "role": "regent", "periods": [{ "start": { "year": 1700, "precision": "exact" }, "end": { "year": 1707, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis" }], "confidence": "high" },
+    { "id": "reign-maratha-shahu", "personId": "person-maratha-shahu", "polityId": "polity-maratha-empire", "titles": ["恰特拉帕蒂"], "localTitles": ["Chhatrapati"], "role": "ruler", "periods": [{ "start": { "year": 1708, "precision": "exact" }, "end": { "year": 1749, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "与科尔哈普尔支系并立；本条以萨塔拉主线表达联盟名义王权。", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Chhatrapatis of Satara" }], "confidence": "high" },
+    { "id": "reign-maratha-balaji-vishwanath", "personId": "person-maratha-balaji-vishwanath", "polityId": "polity-maratha-empire", "titles": ["佩什瓦"], "localTitles": ["Peshwa"], "role": "regent", "periods": [{ "start": { "year": 1713, "precision": "exact" }, "end": { "year": 1720, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Peshwas" }], "confidence": "high" },
+    { "id": "reign-maratha-baji-rao-i", "personId": "person-maratha-baji-rao-i", "polityId": "polity-maratha-empire", "titles": ["佩什瓦"], "localTitles": ["Peshwa"], "role": "regent", "periods": [{ "start": { "year": 1720, "precision": "exact" }, "end": { "year": 1740, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Peshwas" }], "confidence": "high" },
+    { "id": "reign-maratha-madhav-rao-i", "personId": "person-maratha-madhav-rao-i", "polityId": "polity-maratha-empire", "titles": ["佩什瓦"], "localTitles": ["Peshwa"], "role": "regent", "periods": [{ "start": { "year": 1761, "precision": "exact" }, "end": { "year": 1772, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1740—1761年的佩什瓦与1749年后的名义恰特拉帕蒂未在代表序列中逐一列入。", "sourceRefs": [{ "sourceId": "source-maratha-rulers", "locator": "Peshwas" }], "confidence": "high" },
+    { "id": "reign-maratha-baji-rao-ii", "personId": "person-maratha-baji-rao-ii", "polityId": "polity-maratha-empire", "titles": ["佩什瓦"], "localTitles": ["Peshwa"], "role": "regent", "periods": [{ "start": { "year": 1796, "precision": "exact" }, "end": { "year": 1818, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1772—1796年的多位佩什瓦未在代表序列中逐一列入。", "sourceRefs": [{ "sourceId": "source-maratha-history", "locator": "Maratha Empire" }, { "sourceId": "source-maratha-rulers", "locator": "Peshwas" }], "confidence": "high" }
+  ],
+  "reignVacancies": []
+}

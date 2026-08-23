@@ -1,0 +1,136 @@
+{
+  "order": 1009,
+  "entities": [
+    {
+      "id": "polity-zulu-kingdom",
+      "entityKind": "polity",
+      "polityForms": ["kingdom", "state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "祖鲁王国",
+        "aliases": ["祖鲁兰王国", "Zulu Kingdom", "Kingdom of Zululand", "Zulu Empire"],
+        "local": "KwaZulu",
+        "localLanguageTag": "zu-Latn"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 1816, "precision": "exact" },
+          "end": { "year": 1879, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "本条以沙卡1816年即位和国家整合为起点，以1879年英祖战争后英国拆分独立王国为终点。塞奇瓦约1883年曾获准返回部分祖鲁兰，后续祖鲁王室亦继续存在，但不等同于1816—1879年的独立集中式王国。",
+      "historicalRegionIds": ["region-southern-africa"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "19世纪初在今南非夸祖鲁—纳塔尔形成的集中式王国。沙卡以年龄军团、王室聚落和军事征服整合多个酋邦，使祖鲁国家成为南部非洲政治变动的重要力量；其后丁冈、姆潘德与塞奇瓦约在移民者、布尔共和国和英国殖民扩张压力下维持王权。1879年英祖战争中祖鲁军虽在伊散德尔瓦纳取胜，最终仍在乌伦迪战败，英国随后拆分王国，独立集中政权由此终结。",
+      "sourceRefs": [
+        { "sourceId": "source-zulu-history", "locator": "Zulu; Shaka Zulu" },
+        { "sourceId": "source-zulu-rulers", "locator": "Zulu Kings" }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-zulu-shaka",
+      "names": { "primary": "沙卡", "aliases": ["Shaka", "Shaka kaSenzangakhona", "Shaka Zulu"] },
+      "description": "祖鲁王国奠基君主，以政治军事整合和年龄军团体系把多个酋邦组织为集中式王国。",
+      "sourceRefs": [
+        { "sourceId": "source-zulu-history", "locator": "Shaka Zulu" },
+        { "sourceId": "source-zulu-rulers", "locator": "Zulu Kings" }
+      ]
+    },
+    {
+      "id": "person-zulu-dingane",
+      "names": { "primary": "丁冈", "aliases": ["Dingane", "Dingane kaSenzangakhona"] },
+      "description": "沙卡异母弟，参与刺杀沙卡后继位；其统治面对沃特雷克移民和周边政权的持续冲突。",
+      "sourceRefs": [
+        { "sourceId": "source-zulu-history", "locator": "Zulu" },
+        { "sourceId": "source-zulu-rulers", "locator": "Zulu Kings" }
+      ]
+    },
+    {
+      "id": "person-zulu-mpande",
+      "names": { "primary": "姆潘德", "aliases": ["Mpande", "Mpande kaSenzangakhona"] },
+      "description": "沙卡与丁冈的异母弟，1840年击败丁冈后继位，是独立祖鲁王国在位最久的国王。",
+      "sourceRefs": [
+        { "sourceId": "source-zulu-history", "locator": "Zulu" },
+        { "sourceId": "source-zulu-rulers", "locator": "Zulu Kings" }
+      ]
+    },
+    {
+      "id": "person-zulu-cetshwayo",
+      "names": { "primary": "塞奇瓦约", "aliases": ["Cetshwayo", "Cetshwayo kaMpande"] },
+      "description": "姆潘德之子和独立祖鲁王国末代国王，在1879年英祖战争期间领导祖鲁国家。",
+      "sourceRefs": [
+        { "sourceId": "source-zulu-history", "locator": "Zulu" },
+        { "sourceId": "source-zulu-rulers", "locator": "Zulu Kings" }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-zulu-shaka",
+      "personId": "person-zulu-shaka",
+      "polityId": "polity-zulu-kingdom",
+      "titles": ["祖鲁国王"],
+      "localTitles": ["Inkosi"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1816, "precision": "exact" }, "end": { "year": 1828, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-zulu-history", "locator": "Shaka Zulu" },
+        { "sourceId": "source-zulu-rulers", "locator": "Zulu Kings" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-zulu-dingane",
+      "personId": "person-zulu-dingane",
+      "polityId": "polity-zulu-kingdom",
+      "titles": ["祖鲁国王"],
+      "localTitles": ["Inkosi"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1828, "precision": "exact" }, "end": { "year": 1840, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-zulu-history", "locator": "Zulu" },
+        { "sourceId": "source-zulu-rulers", "locator": "Zulu Kings" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-zulu-mpande",
+      "personId": "person-zulu-mpande",
+      "polityId": "polity-zulu-kingdom",
+      "titles": ["祖鲁国王"],
+      "localTitles": ["Inkosi"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1840, "precision": "exact" }, "end": { "year": 1872, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-zulu-history", "locator": "Zulu" },
+        { "sourceId": "source-zulu-rulers", "locator": "Zulu Kings" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-zulu-cetshwayo",
+      "personId": "person-zulu-cetshwayo",
+      "polityId": "polity-zulu-kingdom",
+      "titles": ["祖鲁国王"],
+      "localTitles": ["Inkosi"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1872, "precision": "exact" }, "end": { "year": 1879, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "1883年返回部分祖鲁兰不在本条独立王国任期内。",
+      "sourceRefs": [
+        { "sourceId": "source-zulu-history", "locator": "Zulu; Anglo-Zulu War" },
+        { "sourceId": "source-zulu-rulers", "locator": "Zulu Kings" }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "geo-joseon-gaegyeong",
+    "polityId": "polity-joseon-dynasty",
+    "periods": [
+      {
+        "start": { "year": 1392, "precision": "exact" },
+        "end": { "year": 1394, "precision": "exact" }
+      }
+    ],
+    "placeName": "Gaegyeong",
+    "role": "capital",
+    "coordinates": { "latitude": 37.9708, "longitude": 126.5544 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代开城，仅表示朝鲜建国初期沿用高丽旧都的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-joseon-history", "locator": "Yi Seonggye" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "geo-joseon-hanseong",
+    "polityId": "polity-joseon-dynasty",
+    "periods": [
+      {
+        "start": { "year": 1394, "precision": "exact" },
+        "end": { "year": 1897, "precision": "exact" }
+      }
+    ],
+    "placeName": "Hanseong",
+    "role": "capital",
+    "coordinates": { "latitude": 37.5665, "longitude": 126.978 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代首尔，仅表示朝鲜王朝长期都城汉城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-joseon-history", "locator": "Korean art timeline" }
+    ],
+    "confidence": "high"
+  }
+]

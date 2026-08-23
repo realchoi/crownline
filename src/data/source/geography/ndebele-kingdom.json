@@ -1,0 +1,22 @@
+[
+  {
+    "id": "geo-ndebele-bulawayo",
+    "polityId": "polity-ndebele-kingdom",
+    "periods": [
+      {
+        "start": { "year": 1840, "precision": "circa" },
+        "end": { "year": 1893, "precision": "exact" }
+      }
+    ],
+    "placeName": "Bulawayo",
+    "role": "representative-center",
+    "coordinates": { "latitude": -20.15, "longitude": 28.58 },
+    "positionPrecision": "regional",
+    "positionNote": "坐标采用 GeoNames 对应现代布拉瓦约；姆济利卡齐和洛本古拉时期王室聚落位置曾变化，该点仅表示马塔贝莱兰时期代表性政治中心，不表示政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-ndebele-history", "locator": "King Mzilikazi" }
+    ],
+    "confidence": "medium"
+  }
+]

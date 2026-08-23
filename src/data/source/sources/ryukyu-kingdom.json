@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-ryukyu-history",
+    "title": "About the Ryukyu Kingdom",
+    "sourceType": "institutional",
+    "citation": "Shurijo Castle Park: ‘About the Ryukyu Kingdom’，并参考 UNESCO 琉球王国城迹申遗文件；用于校订1429年尚巴志统一、首里城中心、1609年萨摩入侵后的双重臣属和1879年废藩置县终结。",
+    "publisher": "Okinawa Commemorative National Government Park; UNESCO World Heritage Centre",
+    "url": "https://oki-park.jp/shurijo/about/186",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-ryukyu-rulers",
+    "title": "Kings of Ryukyu",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: King of Ryukyu § First and Second Sho dynasties；用于交叉核对统一后代表国王、两尚氏王统与通行在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Ryukyu_Islands",
+    "accessedAt": "2026-08-22"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "geo-ryukyu-shuri",
+    "polityId": "polity-ryukyu-kingdom",
+    "periods": [
+      {
+        "start": { "year": 1429, "precision": "exact" },
+        "end": { "year": 1879, "precision": "exact" }
+      }
+    ],
+    "placeName": "Shuri",
+    "role": "capital",
+    "coordinates": { "latitude": 26.217, "longitude": 127.7195 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应首里城的现代地点坐标，仅表示琉球王国政治、外交与文化中心，不表示群岛控制范围。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-ryukyu-history", "locator": "Shurijo Castle" }
+    ],
+    "confidence": "high"
+  }
+]

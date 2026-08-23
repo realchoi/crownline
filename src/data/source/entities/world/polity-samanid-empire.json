@@ -1,0 +1,346 @@
+{
+  "order": 1004,
+  "entities": [
+    {
+      "id": "polity-samanid-empire",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "empire"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "萨曼帝国",
+        "aliases": ["萨曼王朝", "萨曼尼王朝", "Samanid Empire", "Samanid dynasty"],
+        "local": "سامانیان",
+        "localLanguageTag": "fa-Arab"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 819, "precision": "exact" },
+          "end": { "year": 999, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "819年起点指萨曼家族四兄弟分别受任治理撒马尔罕、费尔干纳、赭时与赫拉特；892年伊斯玛仪统一河中后才形成单一君主主线。1000—1005年的伊斯玛仪·蒙塔西尔复国行动未形成稳定恢复，本条止于999年布哈拉失守。",
+      "historicalRegionIds": ["region-central-asia", "region-west-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "兴起于河中与呼罗珊的波斯化逊尼王朝。萨曼家族自819年起以阿拔斯王朝属臣身份分治中亚诸城，至伊斯玛仪一世在892年统一河中并以布哈拉为中心，随后控制呼罗珊，成为东部伊斯兰世界的重要政治与文化力量。其宫廷推动新波斯语文学与行政文化发展；十世纪末在突厥军政集团、伽色尼势力和喀喇汗王朝夹击下衰落，999年布哈拉陷落后主体政权终结。",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-samanid-nuh-ibn-asad",
+      "names": { "primary": "努赫·伊本·阿萨德", "aliases": ["Nuh ibn Asad"] },
+      "description": "阿萨德之子，819年起治理撒马尔罕，是萨曼家族早期四个地区性统治支系之一。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }]
+    },
+    {
+      "id": "person-samanid-ahmad-ibn-asad",
+      "names": { "primary": "艾哈迈德·伊本·阿萨德", "aliases": ["Ahmad ibn Asad"] },
+      "description": "阿萨德之子，早期受任治理费尔干纳，后成为萨曼家族河中支系的重要统治者。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }]
+    },
+    {
+      "id": "person-samanid-yahya-ibn-asad",
+      "names": { "primary": "叶海亚·伊本·阿萨德", "aliases": ["Yahya ibn Asad"] },
+      "description": "阿萨德之子，819年起治理赭时，是萨曼家族早期地区性统治者之一。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }]
+    },
+    {
+      "id": "person-samanid-ilyas-ibn-asad",
+      "names": { "primary": "伊利亚斯·伊本·阿萨德", "aliases": ["Ilyas ibn Asad"] },
+      "description": "阿萨德之子，819年起治理赫拉特，是萨曼家族早期地区性统治者之一。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }]
+    },
+    {
+      "id": "person-samanid-nasr-i",
+      "names": { "primary": "纳斯尔一世", "aliases": ["Nasr I", "Nasr ibn Ahmad"] },
+      "description": "艾哈迈德之子，以撒马尔罕为中心统治河中，并由其弟伊斯玛仪治理布哈拉。",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ]
+    },
+    {
+      "id": "person-samanid-ismail-i",
+      "names": {
+        "primary": "伊斯玛仪一世",
+        "aliases": ["Ismail I", "Ismail Samani", "Isma'il ibn Ahmad"]
+      },
+      "description": "萨曼王朝统一时期的奠基君主，892年取得河中主导权并以布哈拉为政治中心，随后控制呼罗珊。",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ]
+    },
+    {
+      "id": "person-samanid-ahmad-ibn-ismail",
+      "names": { "primary": "艾哈迈德·伊本·伊斯玛仪", "aliases": ["Ahmad ibn Ismail"] },
+      "description": "伊斯玛仪一世之子，继承萨曼埃米尔之位并延续对河中与呼罗珊的统治。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }]
+    },
+    {
+      "id": "person-samanid-nasr-ii",
+      "names": { "primary": "纳斯尔二世", "aliases": ["Nasr II", "Nasr ibn Ahmad"] },
+      "description": "幼年继位并长期统治的萨曼埃米尔，其时期布哈拉宫廷和萨曼文化达到重要发展阶段。",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ]
+    },
+    {
+      "id": "person-samanid-nuh-i",
+      "names": { "primary": "努赫一世", "aliases": ["Nuh I", "Nuh ibn Nasr"] },
+      "description": "纳斯尔二世之子，在宫廷与军政集团矛盾加剧的时期继任萨曼埃米尔。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }]
+    },
+    {
+      "id": "person-samanid-abd-al-malik-i",
+      "names": {
+        "primary": "阿卜杜勒·马利克一世",
+        "aliases": ["Abd al-Malik I", "Abd al-Malik ibn Nuh"]
+      },
+      "description": "努赫一世之子，统治时期萨曼宫廷日益受到突厥军事将领影响。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }]
+    },
+    {
+      "id": "person-samanid-mansur-i",
+      "names": {
+        "primary": "曼苏尔一世",
+        "aliases": ["Mansur I", "Abu Salih Mansur ibn Nuh"]
+      },
+      "description": "努赫一世之子，961年继位；其统治常被视为萨曼帝国结构尚能维持的最后阶段之一。",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ]
+    },
+    {
+      "id": "person-samanid-nuh-ii",
+      "names": { "primary": "努赫二世", "aliases": ["Nuh II", "Nuh ibn Mansur"] },
+      "description": "曼苏尔一世之子，少年继位；其统治后期萨曼权力在军阀与外部政权压力下显著收缩。",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ]
+    },
+    {
+      "id": "person-samanid-mansur-ii",
+      "names": {
+        "primary": "曼苏尔二世",
+        "aliases": ["Mansur II", "Abu al-Harith Mansur ibn Nuh"]
+      },
+      "description": "努赫二世之子，在萨曼政权终局的军政竞争中短暂统治，999年被废黜。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }]
+    },
+    {
+      "id": "person-samanid-abd-al-malik-ii",
+      "names": {
+        "primary": "阿卜杜勒·马利克二世",
+        "aliases": ["Abd al-Malik II", "Abd al-Malik ibn Nuh"]
+      },
+      "description": "萨曼王朝主体政权的末代埃米尔，999年在布哈拉被喀喇汗王朝废黜。",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-samanid-nuh-ibn-asad",
+      "personId": "person-samanid-nuh-ibn-asad",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼地区统治者"],
+      "localTitles": ["Amir"],
+      "role": "co-ruler",
+      "periods": [{ "start": { "year": 819, "precision": "exact" }, "end": { "year": 841, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "治理撒马尔罕；终年在不同年表中作841或842年。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-samanid-ahmad-ibn-asad",
+      "personId": "person-samanid-ahmad-ibn-asad",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼地区统治者"],
+      "localTitles": ["Amir"],
+      "role": "co-ruler",
+      "periods": [{ "start": { "year": 819, "precision": "exact" }, "end": { "year": 864, "precision": "circa" } }],
+      "chronologyStatus": "disputed",
+      "note": "早期治理费尔干纳，后掌握撒马尔罕；终年在不同年表中作864或865年。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-samanid-yahya-ibn-asad",
+      "personId": "person-samanid-yahya-ibn-asad",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼地区统治者"],
+      "localTitles": ["Amir"],
+      "role": "co-ruler",
+      "periods": [{ "start": { "year": 819, "precision": "exact" }, "end": { "year": 855, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "治理赭时，并在早期萨曼家族分治体系内活动。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-samanid-ilyas-ibn-asad",
+      "personId": "person-samanid-ilyas-ibn-asad",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼地区统治者"],
+      "localTitles": ["Amir"],
+      "role": "co-ruler",
+      "periods": [{ "start": { "year": 819, "precision": "exact" }, "end": { "year": 856, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "治理赫拉特，并在早期萨曼家族分治体系内活动。",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-samanid-nasr-i",
+      "personId": "person-samanid-nasr-i",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 864, "precision": "exact" }, "end": { "year": 892, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-samanid-ismail-i",
+      "personId": "person-samanid-ismail-i",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 892, "precision": "exact" }, "end": { "year": 907, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-samanid-ahmad-ibn-ismail",
+      "personId": "person-samanid-ahmad-ibn-ismail",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 907, "precision": "exact" }, "end": { "year": 914, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-samanid-nasr-ii",
+      "personId": "person-samanid-nasr-ii",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 914, "precision": "exact" }, "end": { "year": 943, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-samanid-nuh-i",
+      "personId": "person-samanid-nuh-i",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 943, "precision": "exact" }, "end": { "year": 954, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-samanid-abd-al-malik-i",
+      "personId": "person-samanid-abd-al-malik-i",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 954, "precision": "exact" }, "end": { "year": 961, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-samanid-mansur-i",
+      "personId": "person-samanid-mansur-i",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 961, "precision": "exact" }, "end": { "year": 976, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-samanid-nuh-ii",
+      "personId": "person-samanid-nuh-ii",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 976, "precision": "exact" }, "end": { "year": 997, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-samanid-mansur-ii",
+      "personId": "person-samanid-mansur-ii",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 997, "precision": "exact" }, "end": { "year": 999, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-samanid-abd-al-malik-ii",
+      "personId": "person-samanid-abd-al-malik-ii",
+      "polityId": "polity-samanid-empire",
+      "titles": ["萨曼埃米尔"],
+      "localTitles": ["Amir"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 999, "precision": "exact" }, "end": { "year": 999, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [
+        { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" },
+        { "sourceId": "source-samanid-rulers", "locator": "§ Samanid rulers" }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

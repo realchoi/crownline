@@ -1,0 +1,3 @@
+[
+  { "id": "geo-numidia-cirta", "polityId": "polity-numidia", "periods": [{ "start": { "year": -202, "precision": "circa" }, "end": { "year": -46, "precision": "exact" } }], "placeName": "Cirta", "role": "capital", "coordinates": { "latitude": 36.365, "longitude": 6.6147 }, "positionPrecision": "approximate", "positionNote": "坐标采用 GeoNames 对应现代君士坦丁，仅表示努米底亚主要王都锡尔塔的大致位置，不表示政权疆域或历次分割。", "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-numidia-history", "locator": "Numides" }], "confidence": "high" }
+]

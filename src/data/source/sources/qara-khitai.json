@@ -1,0 +1,21 @@
+[
+  {
+    "id": "source-qara-khitai-history",
+    "title": "Qara Khitay",
+    "sourceType": "institutional",
+    "citation": "István Vásáry, Encyclopaedia Iranica: ‘QARA KHITAY’；用于校订耶律大石西迁、喀喇契丹在中亚的统治结构、与花剌子模的关系及1211年前后被乃蛮屈出律夺权的口径。",
+    "authors": ["István Vásáry"],
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/qara-ketay/",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-qara-khitai-rulers",
+    "title": "Sovereigns of Qara Khitai",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Qara Khitai § Sovereigns of Qara Khitai；用于交叉核对耶律氏君主、两位摄政皇后、屈出律及存在一年差异的通行在位区间。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Qara_Khitai#Sovereigns_of_Qara_Khitai",
+    "accessedAt": "2026-08-22"
+  }
+]

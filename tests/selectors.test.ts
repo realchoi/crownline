@@ -70,7 +70,7 @@ describe("时间点结果", () => {
         regionScope: { mode: "custom", regionIds: [regionId] }
       });
 
-    expect(select(1000, "", "region-east-africa").polityEmptyReason).toBe("limited-coverage");
+    expect(select(970, "", "region-east-africa").polityEmptyReason).toBe("limited-coverage");
     expect(select(760, "", "region-south-asia").polityEmptyReason).toBe("limited-coverage");
     expect(select(1000, "不存在", "region-south-asia").polityEmptyReason).toBe("filtered-out");
   });

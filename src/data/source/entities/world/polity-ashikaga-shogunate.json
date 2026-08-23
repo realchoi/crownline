@@ -1,0 +1,63 @@
+{
+  "order": 1013,
+  "entities": [
+    {
+      "id": "polity-ashikaga-shogunate",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "足利幕府",
+        "aliases": ["室町幕府", "Ashikaga shogunate", "Muromachi shogunate", "Muromachi bakufu"],
+        "local": "足利幕府",
+        "localLanguageTag": "ja"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 1336, "precision": "exact" },
+          "end": { "year": 1573, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "1336年足利尊氏控制京都并建立军政府，1338年正式受任征夷大将军；本条采用1336年政权起点。1392年南北朝合一后进入狭义室町时期。1573年织田信长逐出足利义昭为幕府终点，不采用义昭1588年形式退位作为政权终点。",
+      "historicalRegionIds": ["region-east-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "镰仓幕府灭亡后由足利氏在京都建立的武家政权。足利尊氏拥立北朝并与后醍醐天皇的南朝并立，第三代将军足利义满于1392年促成南北朝合一。幕府依赖守护大名维持地方秩序，中央控制始终有限；应仁之乱后京都遭破坏，大名割据发展为战国时代。1573年织田信长逐出末代将军足利义昭，幕府政权结束。",
+      "sourceRefs": [
+        { "sourceId": "source-ashikaga-history", "locator": "Muromachi Period; Japan chronology" },
+        { "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "persons": [
+    { "id": "person-ashikaga-takauji", "names": { "primary": "足利尊氏", "aliases": ["Ashikaga Takauji"] }, "description": "足利幕府创建者，1336年控制京都，1338年受任征夷大将军。", "sourceRefs": [{ "sourceId": "source-ashikaga-history", "locator": "Japan chronology" }, { "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshiakira", "names": { "primary": "足利义诠", "aliases": ["Ashikaga Yoshiakira"] }, "description": "足利幕府第二代将军，延续北朝与南朝对峙时期的幕府统治。", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshimitsu", "names": { "primary": "足利义满", "aliases": ["Ashikaga Yoshimitsu"] }, "description": "足利幕府第三代将军，1392年促成南北朝合一并强化京都幕府的政治与文化影响。", "sourceRefs": [{ "sourceId": "source-ashikaga-history", "locator": "Muromachi Period" }, { "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshimochi", "names": { "primary": "足利义持", "aliases": ["Ashikaga Yoshimochi"] }, "description": "足利幕府第四代将军，义满之子，在将军职与隐居政治之间延续影响。", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshinori", "names": { "primary": "足利义教", "aliases": ["Ashikaga Yoshinori"] }, "description": "足利幕府第六代将军，试图强化将军权力，1441年在嘉吉之乱中遇刺。", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshimasa", "names": { "primary": "足利义政", "aliases": ["Ashikaga Yoshimasa"] }, "description": "足利幕府第八代将军，应仁之乱发生于其统治时期，同时也是东山文化的重要赞助者。", "sourceRefs": [{ "sourceId": "source-ashikaga-history", "locator": "Muromachi Period" }, { "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshihisa", "names": { "primary": "足利义尚", "aliases": ["Ashikaga Yoshihisa"] }, "description": "足利幕府第九代将军，在应仁之乱后幕府权威持续衰退的环境中执政。", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshitane", "names": { "primary": "足利义稙", "aliases": ["Ashikaga Yoshitane"] }, "description": "两度出任征夷大将军的足利氏统治者，其复职反映战国初期大名对将军废立的影响。", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshizumi", "names": { "primary": "足利义澄", "aliases": ["Ashikaga Yoshizumi"] }, "description": "足利幕府第十一代将军，在管领和有力大名支持下取代足利义稙。", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshiharu", "names": { "primary": "足利义晴", "aliases": ["Ashikaga Yoshiharu"] }, "description": "足利幕府第十二代将军，在地方大名竞争和京都政局动荡中多次离京。", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshiteru", "names": { "primary": "足利义辉", "aliases": ["Ashikaga Yoshiteru"] }, "description": "足利幕府第十三代将军，尝试恢复将军调停权，1565年在政变中遇害。", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] },
+    { "id": "person-ashikaga-yoshiaki", "names": { "primary": "足利义昭", "aliases": ["Ashikaga Yoshiaki"] }, "description": "足利幕府末代将军，受织田信长扶立后与其决裂，1573年被逐出京都。", "sourceRefs": [{ "sourceId": "source-ashikaga-history", "locator": "Muromachi Period" }, { "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }] }
+  ],
+  "reigns": [
+    { "id": "reign-ashikaga-takauji", "personId": "person-ashikaga-takauji", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1338, "precision": "exact" }, "end": { "year": 1358, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "幕府政权从1336年起算，尊氏于1338年正式受任将军。", "sourceRefs": [{ "sourceId": "source-ashikaga-history", "locator": "Japan chronology" }, { "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshiakira", "personId": "person-ashikaga-yoshiakira", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1359, "precision": "exact" }, "end": { "year": 1367, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshimitsu", "personId": "person-ashikaga-yoshimitsu", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1369, "precision": "exact" }, "end": { "year": 1395, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1395年退任将军后仍以太政大臣、出家者身份保持实际影响至1408年，本条只记录法定将军任期。", "sourceRefs": [{ "sourceId": "source-ashikaga-history", "locator": "Muromachi Period" }, { "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshimochi", "personId": "person-ashikaga-yoshimochi", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1395, "precision": "exact" }, "end": { "year": 1423, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshinori", "personId": "person-ashikaga-yoshinori", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1429, "precision": "exact" }, "end": { "year": 1441, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1423—1425年的足利义量及1425—1429年的将军职位空档不在代表序列中另作历史判断。", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshimasa", "personId": "person-ashikaga-yoshimasa", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1449, "precision": "exact" }, "end": { "year": 1474, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1442—1443年的足利义胜及其后交接空档未在代表序列中单列；义政退任后仍保持文化和政治影响。", "sourceRefs": [{ "sourceId": "source-ashikaga-history", "locator": "Muromachi Period" }, { "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshihisa", "personId": "person-ashikaga-yoshihisa", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1474, "precision": "exact" }, "end": { "year": 1489, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshitane", "personId": "person-ashikaga-yoshitane", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1490, "precision": "exact" }, "end": { "year": 1493, "precision": "exact" } }, { "start": { "year": 1508, "precision": "exact" }, "end": { "year": 1522, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshizumi", "personId": "person-ashikaga-yoshizumi", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1495, "precision": "exact" }, "end": { "year": 1508, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshiharu", "personId": "person-ashikaga-yoshiharu", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1522, "precision": "exact" }, "end": { "year": 1547, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshiteru", "personId": "person-ashikaga-yoshiteru", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1547, "precision": "exact" }, "end": { "year": 1565, "precision": "exact" } }], "chronologyStatus": "accepted", "sourceRefs": [{ "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" },
+    { "id": "reign-ashikaga-yoshiaki", "personId": "person-ashikaga-yoshiaki", "polityId": "polity-ashikaga-shogunate", "titles": ["征夷大将军"], "role": "ruler", "periods": [{ "start": { "year": 1568, "precision": "exact" }, "end": { "year": 1573, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1568年短暂任职的足利义荣未在代表序列中单列；义昭1573年被逐出京都后幕府政权终结。", "sourceRefs": [{ "sourceId": "source-ashikaga-history", "locator": "Muromachi Period" }, { "sourceId": "source-ashikaga-rulers", "locator": "§ Ashikaga shogunate" }], "confidence": "high" }
+  ],
+  "reignVacancies": []
+}

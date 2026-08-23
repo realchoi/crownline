@@ -1,0 +1,42 @@
+[
+  {
+    "id": "geo-samanid-samarkand",
+    "polityId": "polity-samanid-empire",
+    "periods": [
+      {
+        "start": { "year": 819, "precision": "exact" },
+        "end": { "year": 892, "precision": "exact" }
+      }
+    ],
+    "placeName": "Samarkand",
+    "role": "political-center",
+    "coordinates": { "latitude": 39.6542, "longitude": 66.9597 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，用于标示早期萨曼家族在河中的主要政治中心，不表示统一首都或政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "geo-samanid-bukhara",
+    "polityId": "polity-samanid-empire",
+    "periods": [
+      {
+        "start": { "year": 892, "precision": "exact" },
+        "end": { "year": 999, "precision": "exact" }
+      }
+    ],
+    "placeName": "Bukhara",
+    "role": "capital",
+    "coordinates": { "latitude": 39.7747, "longitude": 64.4286 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示统一时期萨曼都城的大致位置，不表示政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-samanid-history", "locator": "The Samanids (819–1005)" }
+    ],
+    "confidence": "high"
+  }
+]

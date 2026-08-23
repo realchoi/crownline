@@ -142,7 +142,7 @@ function mappedTopLevelRegionIds(): Set<string> {
 describe("生产历史数据", () => {
   it("保留中国七个阶段和七十三个时间轴实体，并扩展全球总实体数量", () => {
     expect(data.timelineSections).toHaveLength(7);
-    expect(data.entities).toHaveLength(116);
+    expect(data.entities).toHaveLength(133);
     expect(data.timelineSections.flatMap((section) => section.entityIds)).toHaveLength(73);
     expect(data.entities.map(({ id }) => id)).toEqual(
       expect.arrayContaining([
@@ -158,7 +158,7 @@ describe("生产历史数据", () => {
   });
 
   it("收录全球均衡样本政权并为每条政权接入任期", () => {
-    expect(data.entities).toHaveLength(116);
+    expect(data.entities).toHaveLength(133);
     expect(data.entities.map(({ id }) => id)).toEqual(
       expect.arrayContaining([...GLOBAL_SAMPLE_POLITY_IDS])
     );
@@ -173,7 +173,7 @@ describe("生产历史数据", () => {
   it("有本地名称的实体均携带有效语言标签", () => {
     const localizedEntities = data.entities.filter(({ names }) => names.local !== undefined);
 
-    expect(localizedEntities).toHaveLength(38);
+    expect(localizedEntities).toHaveLength(49);
     for (const entity of localizedEntities) {
       expect(entity.names.localLanguageTag, entity.id).toBeTruthy();
       expect(
@@ -183,12 +183,12 @@ describe("生产历史数据", () => {
     }
   });
 
-  it("为四十三个世界样本政权提供六十五条可追溯地理快照", () => {
+  it("为六十个世界样本政权提供九十一条可追溯地理快照", () => {
     const worldSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return WORLD_MAP_POLITY_IDS.some((id) => id === polityId);
     });
 
-    expect(worldSnapshots).toHaveLength(65);
+    expect(worldSnapshots).toHaveLength(91);
     expect(worldSnapshots.every(({ sourceRefs }) => sourceRefs.length > 0)).toBe(true);
     for (const polityId of WORLD_MAP_POLITY_IDS) {
       expect(
@@ -204,7 +204,7 @@ describe("生产历史数据", () => {
     });
 
     expect(chinaSnapshots).toHaveLength(35);
-    expect(data.geographicSnapshots).toHaveLength(100);
+    expect(data.geographicSnapshots).toHaveLength(126);
     for (const polityId of CHINA_MAP_POLITY_IDS) {
       expect(
         chinaSnapshots.some((snapshot) => snapshot.polityId === polityId),
@@ -277,7 +277,7 @@ describe("生产历史数据", () => {
 
   it("通过结构和跨记录校验", () => {
     expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
-    expect(data.entities).toHaveLength(116);
+    expect(data.entities).toHaveLength(133);
   });
 
   it("结构化关系覆盖七种类型并保持事件与来源闭合", () => {
@@ -286,7 +286,7 @@ describe("生产历史数据", () => {
     );
     expect(data.relationships).toHaveLength(18);
     expect(data.events).toHaveLength(14);
-    expect(data.sources).toHaveLength(131);
+    expect(data.sources).toHaveLength(166);
     expect(
       data.relationships.every(({ sourceRefs }) => {
         return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));
@@ -812,6 +812,184 @@ describe("生产历史数据", () => {
     expect(rulerSnapshot("polity-cn-western-xia", 1100).status).toBe("known");
     expect(rulerSnapshot("polity-cn-jin", 1200).status).toBe("known");
     expect(rulerSnapshot("polity-cn-southern-ming", 1646).entries.length).toBeGreaterThan(0);
+  });
+
+  it("扩展萨曼、西辽与花剌子模三个中亚政权的详情和分期点位", () => {
+    expectPolityDetails([
+      "polity-samanid-empire",
+      "polity-qara-khitai",
+      "polity-khwarazmian-empire"
+    ]);
+
+    expect(
+      rulerSnapshot("polity-samanid-empire", 820).entries.map(({ person }) => person.id)
+    ).toEqual(
+      expect.arrayContaining([
+        "person-samanid-nuh-ibn-asad",
+        "person-samanid-ahmad-ibn-asad",
+        "person-samanid-yahya-ibn-asad",
+        "person-samanid-ilyas-ibn-asad"
+      ])
+    );
+    expect(
+      rulerSnapshot("polity-samanid-empire", 900).entries.map(({ person }) => person.id)
+    ).toEqual(["person-samanid-ismail-i"]);
+    expect(activePlaces("polity-samanid-empire", 850)).toEqual(["Samarkand"]);
+    expect(activePlaces("polity-samanid-empire", 900)).toEqual(["Bukhara"]);
+
+    expect(
+      rulerSnapshot("polity-qara-khitai", 1145).entries.map(({ person }) => person.id)
+    ).toEqual(["person-qara-khitai-xiao-tabuyan"]);
+    expect(
+      rulerSnapshot("polity-qara-khitai", 1215).entries.map(({ person }) => person.id)
+    ).toEqual(["person-qara-khitai-kuchlug"]);
+    expect(activePlaces("polity-qara-khitai", 1130)).toEqual([]);
+    expect(activePlaces("polity-qara-khitai", 1150)).toEqual(["Balasagun"]);
+
+    expect(
+      rulerSnapshot("polity-khwarazmian-empire", 1180).entries.map(({ person }) => person.id)
+    ).toEqual(["person-khwarazmian-tekish", "person-khwarazmian-sultan-shah"]);
+    expect(activePlaces("polity-khwarazmian-empire", 1200)).toEqual(["Gurganj"]);
+    expect(activePlaces("polity-khwarazmian-empire", 1215)).toEqual(["Samarkand"]);
+    expect(activePlaces("polity-khwarazmian-empire", 1223)).toEqual([]);
+    expect(activePlaces("polity-khwarazmian-empire", 1226)).toEqual(["Tabriz"]);
+  });
+
+  it("扩展库施、基尔瓦、祖鲁与北恩德贝莱的详情和分期点位", () => {
+    expectWorldPolityDetails("polity-kingdom-of-kush", 8);
+    expectWorldPolityDetails("polity-kilwa-sultanate", 4);
+    expectWorldPolityDetails("polity-zulu-kingdom", 4);
+    expectWorldPolityDetails("polity-ndebele-kingdom", 2);
+
+    expect(
+      rulerSnapshot("polity-kingdom-of-kush", -690).entries.map(({ person }) => person.id)
+    ).toEqual(["person-kush-taharqa"]);
+    expect(
+      rulerSnapshot("polity-kingdom-of-kush", 10).entries.map(({ person }) => person.id)
+    ).toEqual(["person-kush-natakamani", "person-kush-amanitore"]);
+    expect(activePlaces("polity-kingdom-of-kush", -500)).toEqual(["Napata"]);
+    expect(activePlaces("polity-kingdom-of-kush", -100)).toEqual(["Meroe"]);
+
+    expect(
+      rulerSnapshot("polity-kilwa-sultanate", 1320).entries.map(({ person }) => person.id)
+    ).toEqual(["person-kilwa-al-hasan-ibn-sulaiman"]);
+    expect(activePlaces("polity-kilwa-sultanate", 1320)).toEqual(["Kilwa Kisiwani"]);
+
+    expect(
+      rulerSnapshot("polity-zulu-kingdom", 1830).entries.map(({ person }) => person.id)
+    ).toEqual(["person-zulu-dingane"]);
+    expect(activePlaces("polity-zulu-kingdom", 1830)).toEqual(["Ulundi"]);
+
+    expect(
+      rulerSnapshot("polity-ndebele-kingdom", 1850).entries.map(({ person }) => person.id)
+    ).toEqual(["person-ndebele-mzilikazi"]);
+    expect(rulerSnapshot("polity-ndebele-kingdom", 1869).status).toBe("unrecorded");
+    expect(
+      rulerSnapshot("polity-ndebele-kingdom", 1875).entries.map(({ person }) => person.id)
+    ).toEqual(["person-ndebele-lobengula"]);
+    expect(activePlaces("polity-ndebele-kingdom", 1830)).toEqual([]);
+    expect(activePlaces("polity-ndebele-kingdom", 1850)).toEqual(["Bulawayo"]);
+  });
+
+  it("扩展统一新罗、朝鲜王朝、足利幕府与琉球王国的详情和点位", () => {
+    expectWorldPolityDetails("polity-unified-silla", 10);
+    expectWorldPolityDetails("polity-joseon-dynasty", 14);
+    expectWorldPolityDetails("polity-ashikaga-shogunate", 12);
+    expectWorldPolityDetails("polity-ryukyu-kingdom", 8);
+
+    expect(
+      rulerSnapshot("polity-unified-silla", 670).entries.map(({ person }) => person.id)
+    ).toEqual(["person-unified-silla-munmu"]);
+    expect(
+      rulerSnapshot("polity-unified-silla", 930).entries.map(({ person }) => person.id)
+    ).toEqual(["person-unified-silla-gyeongsun"]);
+    expect(activePlaces("polity-unified-silla", 800)).toEqual(["Gyeongju"]);
+
+    expect(
+      rulerSnapshot("polity-joseon-dynasty", 1420).entries.map(({ person }) => person.id)
+    ).toEqual(["person-joseon-sejong"]);
+    expect(
+      rulerSnapshot("polity-joseon-dynasty", 1592).entries.map(({ person }) => person.id)
+    ).toEqual(["person-joseon-seonjo"]);
+    expect(activePlaces("polity-joseon-dynasty", 1393)).toEqual(["Gaegyeong"]);
+    expect(activePlaces("polity-joseon-dynasty", 1500)).toEqual(["Hanseong"]);
+
+    expect(
+      rulerSnapshot("polity-ashikaga-shogunate", 1400).entries.map(({ person }) => person.id)
+    ).toEqual(["person-ashikaga-yoshimochi"]);
+    expect(
+      rulerSnapshot("polity-ashikaga-shogunate", 1500).entries.map(({ person }) => person.id)
+    ).toEqual(["person-ashikaga-yoshizumi"]);
+    expect(activePlaces("polity-ashikaga-shogunate", 1500)).toEqual(["Kyoto"]);
+
+    expect(
+      rulerSnapshot("polity-ryukyu-kingdom", 1500).entries.map(({ person }) => person.id)
+    ).toEqual(["person-ryukyu-sho-shin"]);
+    expect(
+      rulerSnapshot("polity-ryukyu-kingdom", 1610).entries.map(({ person }) => person.id)
+    ).toEqual(["person-ryukyu-sho-nei"]);
+    expect(activePlaces("polity-ryukyu-kingdom", 1700)).toEqual(["Shuri"]);
+  });
+
+  it("扩展南亚、美洲与北非时间纵深政权的详情和分期点位", () => {
+    expectWorldPolityDetails("polity-vijayanagara-empire", 11);
+    expectWorldPolityDetails("polity-maratha-empire", 9);
+    expectWorldPolityDetails("polity-chimu-empire", 4);
+    expectWorldPolityDetails("polity-purepecha-empire", 5);
+    expectWorldPolityDetails("polity-numidia", 6);
+    expectWorldPolityDetails("polity-almohad-caliphate", 9);
+
+    expect(
+      rulerSnapshot("polity-vijayanagara-empire", 1515).entries.map(({ person }) => person.id)
+    ).toEqual(["person-vijayanagara-krishnadevaraya"]);
+    expect(
+      rulerSnapshot("polity-vijayanagara-empire", 1550).entries.map(({ person }) => person.id)
+    ).toEqual(["person-vijayanagara-sadasiva", "person-vijayanagara-rama-raya"]);
+    expect(activePlaces("polity-vijayanagara-empire", 1500)).toEqual(["Vijayanagara (Hampi)"]);
+    expect(activePlaces("polity-vijayanagara-empire", 1600)).toEqual(["Penukonda"]);
+
+    expect(
+      rulerSnapshot("polity-maratha-empire", 1675).entries.map(({ person }) => person.id)
+    ).toEqual(["person-maratha-shivaji"]);
+    expect(
+      rulerSnapshot("polity-maratha-empire", 1725).entries.map(({ person }) => person.id)
+    ).toEqual(["person-maratha-shahu", "person-maratha-baji-rao-i"]);
+    expect(activePlaces("polity-maratha-empire", 1680)).toEqual(["Raigad"]);
+    expect(activePlaces("polity-maratha-empire", 1750)).toEqual(["Pune"]);
+
+    expect(
+      rulerSnapshot("polity-chimu-empire", 1360).entries.map(({ person }) => person.id)
+    ).toEqual(["person-chimu-nancempinco"]);
+    expect(
+      rulerSnapshot("polity-chimu-empire", 1460).entries.map(({ person }) => person.id)
+    ).toEqual(["person-chimu-minchancaman"]);
+    expect(activePlaces("polity-chimu-empire", 1400)).toEqual(["Chan Chan"]);
+
+    expect(
+      rulerSnapshot("polity-purepecha-empire", 1460).entries.map(({ person }) => person.id)
+    ).toEqual(["person-purepecha-tzitzipandacuare"]);
+    expect(
+      rulerSnapshot("polity-purepecha-empire", 1525).entries.map(({ person }) => person.id)
+    ).toEqual(["person-purepecha-tangaxoan-ii"]);
+    expect(activePlaces("polity-purepecha-empire", 1400)).toEqual(["Patzcuaro"]);
+    expect(activePlaces("polity-purepecha-empire", 1500)).toEqual(["Tzintzuntzan"]);
+
+    expect(rulerSnapshot("polity-numidia", -200).entries.map(({ person }) => person.id)).toEqual([
+      "person-numidia-masinissa"
+    ]);
+    expect(rulerSnapshot("polity-numidia", -100).entries.map(({ person }) => person.id)).toEqual([
+      "person-numidia-gauda"
+    ]);
+    expect(activePlaces("polity-numidia", -100)).toEqual(["Cirta"]);
+
+    expect(
+      rulerSnapshot("polity-almohad-caliphate", 1185).entries.map(({ person }) => person.id)
+    ).toEqual(["person-almohad-yaqub-al-mansur"]);
+    expect(
+      rulerSnapshot("polity-almohad-caliphate", 1250).entries.map(({ person }) => person.id)
+    ).toEqual(["person-almohad-umar-al-murtada"]);
+    expect(activePlaces("polity-almohad-caliphate", 1140)).toEqual(["Tinmel"]);
+    expect(activePlaces("polity-almohad-caliphate", 1200)).toEqual(["Marrakesh"]);
   });
 
   it("为全部七十一个中国政权提供统治者详情", () => {

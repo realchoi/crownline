@@ -1,0 +1,22 @@
+[
+  {
+    "id": "geo-qara-khitai-balasagun",
+    "polityId": "polity-qara-khitai",
+    "periods": [
+      {
+        "start": { "year": 1134, "precision": "circa" },
+        "end": { "year": 1218, "precision": "exact" }
+      }
+    ],
+    "placeName": "Balasagun",
+    "role": "representative-center",
+    "coordinates": { "latitude": 42.746, "longitude": 75.25 },
+    "positionPrecision": "regional",
+    "positionNote": "坐标采用 GeoNames 对应布拉纳遗址附近的现代示意位置；巴拉沙衮是喀喇契丹核心政治中心，但点位不表示整个时期的固定宫廷或政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-qara-khitai-history", "locator": "History" }
+    ],
+    "confidence": "medium"
+  }
+]

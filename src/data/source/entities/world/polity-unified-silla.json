@@ -1,0 +1,244 @@
+{
+  "order": 1011,
+  "entities": [
+    {
+      "id": "polity-unified-silla",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "kingdom"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "统一新罗",
+        "aliases": ["后期新罗", "Unified Silla", "Later Silla", "Silla Kingdom"],
+        "local": "신라",
+        "localLanguageTag": "ko"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 668, "precision": "exact" },
+          "end": { "year": 935, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "本条采用艺术史与韩国通史常见的668—935年“统一新罗”阶段标签。新罗在668年与唐联合灭高句丽，至676年才逐出唐军并控制朝鲜半岛大部；渤海仍在北部并立，因此“统一”不表示整个半岛和东北亚只存在一个政权。文武王661年已即位，其任期在本条中从668年阶段起点开始显示。",
+      "historicalRegionIds": ["region-east-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "新罗在联合唐朝灭百济、高句丽后形成的后期阶段，以金城（今庆州）为政治与文化中心。676年前后新罗控制半岛大部，与北方渤海并立；王室通过骨品贵族、中央官制和地方行政维系统治，佛教寺院、石窟、金属工艺与对外交流高度发展。8世纪后期起王位争夺和地方豪族势力上升，9世纪末进入后三国格局；935年敬顺王向高丽投降，王国终结。",
+      "sourceRefs": [
+        { "sourceId": "source-unified-silla-history", "locator": "Unified Silla Dynasty, 668–935" },
+        { "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-unified-silla-munmu",
+      "names": { "primary": "新罗文武王", "aliases": ["King Munmu", "Munmu of Silla"] },
+      "description": "新罗第30代君主，在位期间完成对百济和高句丽的征服，并应对唐朝在半岛建立羁縻统治的企图。",
+      "sourceRefs": [
+        { "sourceId": "source-unified-silla-history", "locator": "Unified Silla" },
+        { "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }
+      ]
+    },
+    {
+      "id": "person-unified-silla-sinmun",
+      "names": { "primary": "新罗神文王", "aliases": ["King Sinmun", "Sinmun of Silla"] },
+      "description": "文武王之子，在统一战争后整顿王权、贵族与地方制度，并设立国学。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }]
+    },
+    {
+      "id": "person-unified-silla-seongdeok",
+      "names": { "primary": "新罗圣德王", "aliases": ["King Seongdeok", "Seongdeok of Silla"] },
+      "description": "8世纪前半长期在位的新罗君主，其时期常被视为统一新罗政治相对稳定阶段。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }]
+    },
+    {
+      "id": "person-unified-silla-gyeongdeok",
+      "names": { "primary": "新罗景德王", "aliases": ["King Gyeongdeok", "Gyeongdeok of Silla"] },
+      "description": "8世纪中期新罗君主，其时期完成佛国寺、石窟庵等重要佛教工程的营建与重修。",
+      "sourceRefs": [
+        { "sourceId": "source-unified-silla-history", "locator": "Unified Silla" },
+        { "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }
+      ]
+    },
+    {
+      "id": "person-unified-silla-hyegong",
+      "names": { "primary": "新罗惠恭王", "aliases": ["King Hyegong", "Hyegong of Silla"] },
+      "description": "幼年即位的新罗君主，其末年贵族叛乱加剧，780年被杀后王位继承格局发生变化。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }]
+    },
+    {
+      "id": "person-unified-silla-wonseong",
+      "names": { "primary": "新罗元圣王", "aliases": ["King Wonseong", "Wonseong of Silla"] },
+      "description": "统一新罗中后期君主，在王位争夺后建立新的金氏支系统治。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }]
+    },
+    {
+      "id": "person-unified-silla-heondeok",
+      "names": { "primary": "新罗宪德王", "aliases": ["King Heondeok", "Heondeok of Silla"] },
+      "description": "9世纪初新罗君主，其时期地方叛乱和贵族政治冲突持续。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }]
+    },
+    {
+      "id": "person-unified-silla-heungdeok",
+      "names": { "primary": "新罗兴德王", "aliases": ["King Heungdeok", "Heungdeok of Silla"] },
+      "description": "9世纪前半新罗君主，张保皋海上势力在其时期获得朝廷承认。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }]
+    },
+    {
+      "id": "person-unified-silla-jinseong",
+      "names": { "primary": "新罗真圣女王", "aliases": ["Queen Jinseong", "Jinseong of Silla"] },
+      "description": "新罗第三位女王，在位时期地方豪族与农民叛乱扩展，中央控制显著削弱。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }]
+    },
+    {
+      "id": "person-unified-silla-gyeongsun",
+      "names": { "primary": "新罗敬顺王", "aliases": ["King Gyeongsun", "Gyeongsun of Silla"] },
+      "description": "统一新罗末代君主，927年即位，935年向高丽太祖王建归降。",
+      "sourceRefs": [
+        { "sourceId": "source-unified-silla-history", "locator": "Unified Silla Dynasty, 668–935" },
+        { "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-unified-silla-munmu",
+      "personId": "person-unified-silla-munmu",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗国王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 668, "precision": "exact" }, "end": { "year": 681, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "文武王自661年已在位；本条从统一新罗阶段起点668年开始截取显示。",
+      "sourceRefs": [
+        { "sourceId": "source-unified-silla-history", "locator": "Unified Silla" },
+        { "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-unified-silla-sinmun",
+      "personId": "person-unified-silla-sinmun",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗国王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 681, "precision": "exact" }, "end": { "year": 692, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-unified-silla-seongdeok",
+      "personId": "person-unified-silla-seongdeok",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗国王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 702, "precision": "exact" }, "end": { "year": 737, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "692—702年的孝昭王未在代表序列中单列。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-unified-silla-gyeongdeok",
+      "personId": "person-unified-silla-gyeongdeok",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗国王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 742, "precision": "exact" }, "end": { "year": 765, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "737—742年的孝成王未在代表序列中单列。",
+      "sourceRefs": [
+        { "sourceId": "source-unified-silla-history", "locator": "Unified Silla" },
+        { "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-unified-silla-hyegong",
+      "personId": "person-unified-silla-hyegong",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗国王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 765, "precision": "exact" }, "end": { "year": 780, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-unified-silla-wonseong",
+      "personId": "person-unified-silla-wonseong",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗国王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 785, "precision": "exact" }, "end": { "year": 798, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "780—785年的宣德王未在代表序列中单列。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-unified-silla-heondeok",
+      "personId": "person-unified-silla-heondeok",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗国王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 809, "precision": "exact" }, "end": { "year": 826, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "798—809年的昭圣王与哀庄王未在代表序列中单列。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-unified-silla-heungdeok",
+      "personId": "person-unified-silla-heungdeok",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗国王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 826, "precision": "exact" }, "end": { "year": 836, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-unified-silla-jinseong",
+      "personId": "person-unified-silla-jinseong",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗女王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 887, "precision": "exact" }, "end": { "year": 897, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "836—887年的多位君主未在代表序列中逐一列入。",
+      "sourceRefs": [{ "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-unified-silla-gyeongsun",
+      "personId": "person-unified-silla-gyeongsun",
+      "polityId": "polity-unified-silla",
+      "titles": ["新罗国王"],
+      "localTitles": ["Wang"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 927, "precision": "exact" }, "end": { "year": 935, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "897—927年的孝恭王、神德王、景明王与景哀王未在代表序列中逐一列入。",
+      "sourceRefs": [
+        { "sourceId": "source-unified-silla-history", "locator": "Unified Silla Dynasty, 668–935" },
+        { "sourceId": "source-unified-silla-rulers", "locator": "§ Silla" }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

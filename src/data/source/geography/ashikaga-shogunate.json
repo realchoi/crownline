@@ -1,0 +1,22 @@
+[
+  {
+    "id": "geo-ashikaga-kyoto",
+    "polityId": "polity-ashikaga-shogunate",
+    "periods": [
+      {
+        "start": { "year": 1336, "precision": "exact" },
+        "end": { "year": 1573, "precision": "exact" }
+      }
+    ],
+    "placeName": "Kyoto",
+    "role": "political-center",
+    "coordinates": { "latitude": 35.0116, "longitude": 135.7681 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应现代京都，仅表示足利将军府与室町政治文化中心的大致位置；应仁之乱后幕府控制范围显著收缩，点位不表示疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-ashikaga-history", "locator": "Muromachi Period" }
+    ],
+    "confidence": "high"
+  }
+]

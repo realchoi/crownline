@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-numidia-history",
+    "title": "Numides",
+    "sourceType": "institutional",
+    "citation": "Encyclopédie Larousse: ‘Numides’，并参考 Cambridge History of Africa 的北非柏柏尔王国章节；用于校订马西尼萨约前203/202年统一、密西普萨继承、朱古达战争与前46年朱巴一世败亡。",
+    "publisher": "Larousse; Cambridge University Press",
+    "url": "https://www.larousse.fr/encyclopedie/divers/Numides/135767",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-numidia-rulers",
+    "title": "List of kings of Numidia",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of kings of Numidia；用于交叉核对马西尼萨、密西普萨、朱古达、高达、希恩普萨尔二世与朱巴一世的通行王年。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_kings_of_Numidia",
+    "accessedAt": "2026-08-22"
+  }
+]

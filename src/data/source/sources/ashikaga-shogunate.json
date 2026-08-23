@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-ashikaga-history",
+    "title": "Muromachi Period (1392-1573)",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: ‘Muromachi Period (1392–1573)’ 与 Japan chronology；用于校订足利氏1336年在京都建立军政府、1392年南北朝统一、应仁之乱后衰落及1573年终结。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/essays/muromachi-period-1392-1573",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-ashikaga-rulers",
+    "title": "List of shoguns: Ashikaga shogunate",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of shoguns § Ashikaga shogunate；用于交叉核对代表性足利将军、足利义稙复职及通行任职年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_shoguns#Ashikaga_shogunate_(1336%E2%80%931573)",
+    "accessedAt": "2026-08-22"
+  }
+]

@@ -1,0 +1,177 @@
+{
+  "order": 1006,
+  "entities": [
+    {
+      "id": "polity-khwarazmian-empire",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "empire"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "花剌子模帝国",
+        "aliases": ["花剌子模沙王朝", "安努什特勤王朝", "Khwarazmian Empire", "Khwarezmian Empire", "Anushteginid dynasty"],
+        "local": "خوارزمشاهیان",
+        "localLanguageTag": "fa-Arab"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 1097, "precision": "exact" },
+          "end": { "year": 1231, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "安努什特勤约1077年获名义花剌子模沙任命，但Iranica把其子库特布丁·穆罕默德1097年继任视为稳定世袭王系的开始，本条据此采用1097年起点。帝国在1219—1221年蒙古征服中瓦解，但末代沙阿札兰丁仍在印度、伊朗与高加索活动至1231年。",
+      "historicalRegionIds": ["region-central-asia", "region-west-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "由塞尔柱王朝突厥军奴安努什特勤后裔建立的波斯化逊尼王朝。早期花剌子模沙先后承认大塞尔柱和喀喇契丹宗主权，十二世纪后半在伊尔·阿尔斯兰、塔乞失及阿拉丁·穆罕默德二世时期迅速扩张，控制河中、呼罗珊和伊朗大部，一度成为东部伊斯兰世界最强政权。1219年成吉思汗发动征服，核心城市相继陷落；札兰丁在西方继续抵抗，至1231年身亡后王朝政权终结。",
+      "sourceRefs": [
+        { "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" },
+        { "sourceId": "source-khwarazmian-overview", "locator": "Overview and capitals" }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-khwarazmian-muhammad-i",
+      "names": {
+        "primary": "库特布丁·穆罕默德一世",
+        "aliases": ["Qutb al-Din Muhammad I", "Muhammad I of Khwarazm"]
+      },
+      "description": "安努什特勤之子，1097年获任花剌子模沙，开启延续至1231年的世袭王系。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }]
+    },
+    {
+      "id": "person-khwarazmian-atsiz",
+      "names": { "primary": "阿即思", "aliases": ["Atsiz", "Ala al-Din Atsiz"] },
+      "description": "库特布丁·穆罕默德之子，在位期间多次反抗塞尔柱苏丹桑贾尔，并扩展花剌子模在咸海周边的力量。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }]
+    },
+    {
+      "id": "person-khwarazmian-il-arslan",
+      "names": { "primary": "伊尔·阿尔斯兰", "aliases": ["Il-Arslan", "Il Arslan"] },
+      "description": "阿即思之子，在塞尔柱势力衰退后扩大花剌子模对河中与呼罗珊事务的介入。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }]
+    },
+    {
+      "id": "person-khwarazmian-tekish",
+      "names": { "primary": "塔乞失", "aliases": ["Tekish", "Ala al-Din Tekish"] },
+      "description": "伊尔·阿尔斯兰长子，借喀喇契丹支持取得王位后逐渐摆脱其控制，并把花剌子模势力扩展到伊朗。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }]
+    },
+    {
+      "id": "person-khwarazmian-sultan-shah",
+      "names": { "primary": "苏丹沙阿", "aliases": ["Sultan Shah", "Jalal al-Din Sultan Shah"] },
+      "description": "伊尔·阿尔斯兰幼子，与兄长塔乞失长期争位并在呼罗珊建立势力，是花剌子模王位的重要竞争者。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }]
+    },
+    {
+      "id": "person-khwarazmian-muhammad-ii",
+      "names": {
+        "primary": "阿拉丁·穆罕默德二世",
+        "aliases": ["Muhammad II of Khwarazm", "Ala al-Din Muhammad II"]
+      },
+      "description": "塔乞失之子，在位时征服河中和伊朗大部，使花剌子模帝国达到最大扩张，也在其末期遭遇蒙古入侵。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }]
+    },
+    {
+      "id": "person-khwarazmian-jalal-al-din",
+      "names": {
+        "primary": "札兰丁·明布尔努",
+        "aliases": ["Jalal al-Din Mangburni", "Jalal al-Din Mingburnu", "Jalal al-Din Khwarazmshah"]
+      },
+      "description": "阿拉丁·穆罕默德二世之子和末代花剌子模沙，在蒙古征服后转战印度、伊朗与高加索，1231年身亡。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-khwarazmian-muhammad-i",
+      "personId": "person-khwarazmian-muhammad-i",
+      "polityId": "polity-khwarazmian-empire",
+      "titles": ["花剌子模沙"],
+      "localTitles": ["Khwarazmshah"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1097, "precision": "exact" }, "end": { "year": 1127, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-khwarazmian-atsiz",
+      "personId": "person-khwarazmian-atsiz",
+      "polityId": "polity-khwarazmian-empire",
+      "titles": ["花剌子模沙"],
+      "localTitles": ["Khwarazmshah"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1127, "precision": "exact" }, "end": { "year": 1156, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-khwarazmian-il-arslan",
+      "personId": "person-khwarazmian-il-arslan",
+      "polityId": "polity-khwarazmian-empire",
+      "titles": ["花剌子模沙"],
+      "localTitles": ["Khwarazmshah"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1156, "precision": "exact" }, "end": { "year": 1172, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-khwarazmian-tekish",
+      "personId": "person-khwarazmian-tekish",
+      "polityId": "polity-khwarazmian-empire",
+      "titles": ["花剌子模沙"],
+      "localTitles": ["Khwarazmshah"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1172, "precision": "exact" }, "end": { "year": 1200, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "1172年继位后长期与弟弟苏丹沙阿争夺王权；本条把塔乞失作为古尔干赤主线君主。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-khwarazmian-sultan-shah",
+      "personId": "person-khwarazmian-sultan-shah",
+      "polityId": "polity-khwarazmian-empire",
+      "titles": ["花剌子模沙争位者"],
+      "localTitles": ["Khwarazmshah"],
+      "role": "contender",
+      "periods": [{ "start": { "year": 1172, "precision": "exact" }, "end": { "year": 1193, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "在母亲和喀喇契丹支持下争位，后以呼罗珊部分地区为基础继续挑战塔乞失。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-khwarazmian-muhammad-ii",
+      "personId": "person-khwarazmian-muhammad-ii",
+      "polityId": "polity-khwarazmian-empire",
+      "titles": ["花剌子模沙"],
+      "localTitles": ["Khwarazmshah"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1200, "precision": "exact" }, "end": { "year": 1220, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-khwarazmian-jalal-al-din",
+      "personId": "person-khwarazmian-jalal-al-din",
+      "polityId": "polity-khwarazmian-empire",
+      "titles": ["花剌子模沙"],
+      "localTitles": ["Khwarazmshah"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1220, "precision": "exact" }, "end": { "year": 1231, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "1221—1224年流亡印度，之后在伊朗西部与高加索重建流动政权；此段不表示对原帝国全境的持续控制。",
+      "sourceRefs": [{ "sourceId": "source-khwarazmian-history", "locator": "The Line of Anuštigin" }],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

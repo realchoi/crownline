@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-purepecha-history",
+    "title": "Tzintzuntzan: last capital of the Tarascan state",
+    "sourceType": "institutional",
+    "citation": "Instituto Nacional de Antropología e Historia: ‘Tzintzuntzan’ 与西墨西哥文化区资料；用于校订约1325年塔里亚库里整合、三中心结构、钦聪灿崛起、代表卡松西序列及1530年殖民征服。",
+    "publisher": "Instituto Nacional de Antropología e Historia",
+    "url": "https://lugares.inah.gob.mx/en/node/5548",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-purepecha-rulers",
+    "title": "Purépecha rulers",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Purépecha Empire；用于交叉核对塔里亚库里、唐阿舒安一世、齐齐潘达夸雷、苏安瓜和唐阿舒安二世的通行约年。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Pur%C3%A9pecha_Empire",
+    "accessedAt": "2026-08-22"
+  }
+]

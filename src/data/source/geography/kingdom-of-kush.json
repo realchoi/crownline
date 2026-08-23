@@ -1,0 +1,42 @@
+[
+  {
+    "id": "geo-kush-napata",
+    "polityId": "polity-kingdom-of-kush",
+    "periods": [
+      {
+        "start": { "year": -760, "precision": "circa" },
+        "end": { "year": -250, "precision": "circa" }
+      }
+    ],
+    "placeName": "Napata",
+    "role": "political-center",
+    "coordinates": { "latitude": 18.5362, "longitude": 31.8389 },
+    "positionPrecision": "regional",
+    "positionNote": "坐标采用 GeoNames 对应杰贝尔巴尔卡勒—纳帕塔遗址区的现代示意位置，仅表示早期库施王权与阿蒙宗教中心，不表示政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-kush-history", "locator": "The Land of Nubia" }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-kush-meroe",
+    "polityId": "polity-kingdom-of-kush",
+    "periods": [
+      {
+        "start": { "year": -250, "precision": "circa" },
+        "end": { "year": 350, "precision": "circa" }
+      }
+    ],
+    "placeName": "Meroe",
+    "role": "capital",
+    "coordinates": { "latitude": 16.9378, "longitude": 33.7483 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应麦罗埃遗址的现代地点坐标，仅表示麦罗埃时期主要王权与贸易中心，不表示政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-kush-history", "locator": "Sudan, 1–500 A.D." }
+    ],
+    "confidence": "high"
+  }
+]

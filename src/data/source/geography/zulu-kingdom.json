@@ -1,0 +1,22 @@
+[
+  {
+    "id": "geo-zulu-ulundi",
+    "polityId": "polity-zulu-kingdom",
+    "periods": [
+      {
+        "start": { "year": 1816, "precision": "exact" },
+        "end": { "year": 1879, "precision": "exact" }
+      }
+    ],
+    "placeName": "Ulundi",
+    "role": "representative-center",
+    "coordinates": { "latitude": -28.3352, "longitude": 31.4162 },
+    "positionPrecision": "regional",
+    "positionNote": "坐标采用 GeoNames 对应现代乌伦迪；祖鲁王室聚落在沙卡、丁冈与姆潘德时期多次迁移，因此该点只作为王国浏览定位和塞奇瓦约末期中心，不表示全时期固定首都或疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-zulu-history", "locator": "Zulu; Anglo-Zulu War" }
+    ],
+    "confidence": "medium"
+  }
+]

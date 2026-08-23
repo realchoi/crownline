@@ -1,0 +1,3 @@
+[
+  { "id": "geo-chimu-chan-chan", "polityId": "polity-chimu-empire", "periods": [{ "start": { "year": 1000, "precision": "circa" }, "end": { "year": 1470, "precision": "circa" } }], "placeName": "Chan Chan", "role": "capital", "coordinates": { "latitude": -8.106, "longitude": -79.074 }, "positionPrecision": "approximate", "positionNote": "坐标采用 GeoNames 对应昌昌遗址，仅表示奇穆王权和宫廷工匠中心，不表示沿海帝国疆域。", "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-chimu-history", "locator": "Chan Chan" }], "confidence": "high" }
+]

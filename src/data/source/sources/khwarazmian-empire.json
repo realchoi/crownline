@@ -1,0 +1,21 @@
+[
+  {
+    "id": "source-khwarazmian-history",
+    "title": "Khwarazmshahs: the line of Anushtigin",
+    "sourceType": "institutional",
+    "citation": "C. Edmund Bosworth, Encyclopaedia Iranica: ‘KHWARAZMSHAHS iii. The Line of Anushtigin’；用于校订1097—1231年的世袭王系、主要花剌子模沙阿在位年份、与塞尔柱和喀喇契丹的臣属关系及蒙古征服后的终结。",
+    "authors": ["C. Edmund Bosworth"],
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/khwarazmshah/iii-the-line-of-anustigin/",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-khwarazmian-overview",
+    "title": "Khwarazmian Empire",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Khwarazmian Empire；用于交叉核对波斯语名称、古尔干赤—撒马尔罕—大不里士政治中心序列及通行英文别名。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Khwarazmian_Empire",
+    "accessedAt": "2026-08-22"
+  }
+]

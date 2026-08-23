@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-ndebele-history",
+    "title": "The Ndebele under Mzilikazi",
+    "sourceType": "institutional",
+    "citation": "South African History Online: ‘Political changes from 1750 to 1835’ 与 ‘King Mzilikazi’；用于校订姆济利卡齐1821年脱离祖鲁权威、北迁建国、1868年去世和1870年洛本古拉继位。",
+    "publisher": "South African History Online",
+    "url": "https://sahistory.org.za/article/political-changes-1750-1835",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-ndebele-rulers",
+    "title": "Mthwakazi and its kings",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Mthwakazi 与 Lobengula；用于交叉核对北恩德贝莱王国本地名称、姆济利卡齐—洛本古拉序列、1868—1870年继承内战及1893年政权被英属南非公司击败的终点。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Mthwakazi",
+    "accessedAt": "2026-08-22"
+  }
+]

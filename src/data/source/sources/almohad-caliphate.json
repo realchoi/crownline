@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-almohad-history",
+    "title": "Western North Africa, 1000-1400 A.D.",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: ‘Western North Africa (The Maghrib), 1000–1400 A.D.’；用于校订穆瓦希德1130年运动政权、1147年占领马拉喀什、马格里布与安达卢斯统一及1269年终结。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/toah/ht/07/afw.html",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-almohad-rulers",
+    "title": "List of Almohad rulers",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Almohad Caliphate § List of Almohad rulers；用于交叉核对阿卜杜勒·穆明、优素福一世、雅库布·曼苏尔及后期代表哈里发任期。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Almohad_Caliphate#List_of_Almohad_rulers",
+    "accessedAt": "2026-08-22"
+  }
+]

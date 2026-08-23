@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-unified-silla-history",
+    "title": "A Timeline of Korean History and Art",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art: ‘The Arts of Korea: A Resource for Educators’ 与 ‘Silla: Korea's Golden Kingdom’；用于校订统一新罗668—935年的阶段口径、676年完成半岛大部统一、庆州中心及佛教文化发展。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://resources.metmuseum.org/resources/metpublications/pdf/The_Arts_of_Korea_A_Resource_for_Educators.pdf",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-unified-silla-rulers",
+    "title": "List of monarchs of Korea: Silla",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: List of monarchs of Korea § Silla；用于交叉核对统一新罗阶段代表君主及通行在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Korea#Silla",
+    "accessedAt": "2026-08-22"
+  }
+]

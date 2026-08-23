@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-samanid-history",
+    "title": "Iranian history: the Samanids",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Iranica: ‘Iran ii. Iranian History (2), Islamic period, page 2’；用于校订萨曼王朝819年起源、河中与呼罗珊扩张、布哈拉政治中心及999年主体政权终结的口径。",
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/iran-ii2-islamic-period-page-2/",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-samanid-rulers",
+    "title": "Samanid Empire: rulers",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Samanid Empire § Samanid rulers；用于交叉核对早期四支地区统治者、892年后统一君主序列及通行在位年份。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Samanid_Empire#Samanid_rulers",
+    "accessedAt": "2026-08-22"
+  }
+]

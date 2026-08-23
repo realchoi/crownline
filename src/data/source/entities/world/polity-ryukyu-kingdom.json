@@ -1,0 +1,55 @@
+{
+  "order": 1014,
+  "entities": [
+    {
+      "id": "polity-ryukyu-kingdom",
+      "entityKind": "polity",
+      "polityForms": ["dynasty", "kingdom", "state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "琉球王国",
+        "aliases": ["琉球国", "Ryukyu Kingdom", "Kingdom of Ryukyu", "Lūchū Kingdom"],
+        "local": "琉球國",
+        "localLanguageTag": "ryu-Hani"
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 1429, "precision": "exact" },
+          "end": { "year": 1879, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "chronologyNote": "本条以尚巴志1429年完成三山统一为王国起点，以日本明治政府1879年废琉球藩、设冲绳县为终点。1609年萨摩藩入侵后，琉球继续保留王室、行政与对清朝的朝贡关系，同时成为萨摩和德川幕府的属国；这种双重关系不视为政权中断。",
+      "historicalRegionIds": ["region-east-asia"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "尚巴志统一冲绳本岛三山后建立的海域王国，以首里城为政治、外交和文化中心。琉球通过册封、朝贡与海上贸易连接中国、日本、朝鲜和东南亚，形成独特的语言、宗教、宫廷礼仪与工艺传统。1469年发生王统更替，第二尚氏继续沿用尚姓。1609年萨摩藩入侵后王国在中日之间维持双重臣属和贸易中介地位，1879年日本政府废王国并设置冲绳县。",
+      "sourceRefs": [
+        { "sourceId": "source-ryukyu-history", "locator": "About the Ryukyu Kingdom; UNESCO nomination" },
+        { "sourceId": "source-ryukyu-rulers", "locator": "First and Second Sho dynasties" }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "persons": [
+    { "id": "person-ryukyu-sho-hashi", "names": { "primary": "尚巴志", "aliases": ["Shō Hashi", "Sho Hashi"] }, "description": "第一尚氏代表国王，先后控制北山、南山并于1429年完成冲绳本岛三山统一。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "1429 unification" }, { "sourceId": "source-ryukyu-rulers", "locator": "First Sho dynasty" }] },
+    { "id": "person-ryukyu-sho-taikyu", "names": { "primary": "尚泰久", "aliases": ["Shō Taikyū", "Sho Taikyu"] }, "description": "第一尚氏中期国王，其时期琉球海上贸易和佛教寺院建设继续发展。", "sourceRefs": [{ "sourceId": "source-ryukyu-rulers", "locator": "First Sho dynasty" }] },
+    { "id": "person-ryukyu-sho-en", "names": { "primary": "尚圆", "aliases": ["Shō En", "Sho En", "Kanamaru"] }, "description": "第二尚氏王统创建者，原名金丸，1469年政变后于1470年即位并沿用尚姓。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "Second Sho dynasty" }, { "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }] },
+    { "id": "person-ryukyu-sho-shin", "names": { "primary": "尚真", "aliases": ["Shō Shin", "Sho Shin"] }, "description": "第二尚氏早期国王，在位期间加强中央集权、首里宫廷和王国礼制。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "Second Sho dynasty" }, { "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }] },
+    { "id": "person-ryukyu-sho-nei", "names": { "primary": "尚宁", "aliases": ["Shō Nei", "Sho Nei"] }, "description": "第二尚氏国王，在位期间1609年萨摩藩入侵，王国此后进入对萨摩与中国的双重臣属格局。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "1609 invasion" }, { "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }] },
+    { "id": "person-ryukyu-sho-shitsu", "names": { "primary": "尚质", "aliases": ["Shō Shitsu", "Sho Shitsu"] }, "description": "17世纪中期琉球国王，在萨摩控制和对清朝朝贡并存的体制下维持王国行政。", "sourceRefs": [{ "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }] },
+    { "id": "person-ryukyu-sho-kei", "names": { "primary": "尚敬", "aliases": ["Shō Kei", "Sho Kei"] }, "description": "18世纪长期在位的琉球国王，其时期王国教育、史书和礼制整理继续发展。", "sourceRefs": [{ "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }] },
+    { "id": "person-ryukyu-sho-tai", "names": { "primary": "尚泰", "aliases": ["Shō Tai", "Sho Tai"] }, "description": "琉球王国末代国王，1872年被改封琉球藩王，1879年日本政府废藩设县后离开首里城。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "1879 abolition" }, { "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }] }
+  ],
+  "reigns": [
+    { "id": "reign-ryukyu-sho-hashi", "personId": "person-ryukyu-sho-hashi", "polityId": "polity-ryukyu-kingdom", "titles": ["琉球国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1429, "precision": "exact" }, "end": { "year": 1439, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "尚巴志自1422年已任中山王；本条从1429年三山统一后的琉球王国阶段开始显示。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "1429 unification" }, { "sourceId": "source-ryukyu-rulers", "locator": "First Sho dynasty" }], "confidence": "high" },
+    { "id": "reign-ryukyu-sho-taikyu", "personId": "person-ryukyu-sho-taikyu", "polityId": "polity-ryukyu-kingdom", "titles": ["琉球国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1454, "precision": "exact" }, "end": { "year": 1460, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1439—1454年的尚忠、尚思达和尚金福未在代表序列中逐一列入。", "sourceRefs": [{ "sourceId": "source-ryukyu-rulers", "locator": "First Sho dynasty" }], "confidence": "high" },
+    { "id": "reign-ryukyu-sho-en", "personId": "person-ryukyu-sho-en", "polityId": "polity-ryukyu-kingdom", "titles": ["琉球国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1470, "precision": "exact" }, "end": { "year": 1476, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1461—1469年的尚德及1469年王统更替不视为王国中断。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "Second Sho dynasty" }, { "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }], "confidence": "high" },
+    { "id": "reign-ryukyu-sho-shin", "personId": "person-ryukyu-sho-shin", "polityId": "polity-ryukyu-kingdom", "titles": ["琉球国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1477, "precision": "exact" }, "end": { "year": 1526, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1477年短暂在位的尚宣威未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "Second Sho dynasty" }, { "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }], "confidence": "high" },
+    { "id": "reign-ryukyu-sho-nei", "personId": "person-ryukyu-sho-nei", "polityId": "polity-ryukyu-kingdom", "titles": ["琉球国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1587, "precision": "exact" }, "end": { "year": 1620, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1526—1587年的尚清、尚元和尚永未在代表序列中单列；1609年萨摩入侵后王号和王国行政仍延续。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "1609 invasion" }, { "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }], "confidence": "high" },
+    { "id": "reign-ryukyu-sho-shitsu", "personId": "person-ryukyu-sho-shitsu", "polityId": "polity-ryukyu-kingdom", "titles": ["琉球国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1648, "precision": "exact" }, "end": { "year": 1668, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1621—1648年的尚丰和尚贤未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }], "confidence": "high" },
+    { "id": "reign-ryukyu-sho-kei", "personId": "person-ryukyu-sho-kei", "polityId": "polity-ryukyu-kingdom", "titles": ["琉球国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1713, "precision": "exact" }, "end": { "year": 1752, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1669—1713年的尚贞和尚益未在代表序列中单列。", "sourceRefs": [{ "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }], "confidence": "high" },
+    { "id": "reign-ryukyu-sho-tai", "personId": "person-ryukyu-sho-tai", "polityId": "polity-ryukyu-kingdom", "titles": ["琉球国王"], "localTitles": ["Wang"], "role": "ruler", "periods": [{ "start": { "year": 1848, "precision": "exact" }, "end": { "year": 1879, "precision": "exact" } }], "chronologyStatus": "accepted", "note": "1752—1848年的多位国王未在代表序列中逐一列入；1872年改封琉球藩王后仍保留至1879年被废。", "sourceRefs": [{ "sourceId": "source-ryukyu-history", "locator": "1879 abolition" }, { "sourceId": "source-ryukyu-rulers", "locator": "Second Sho dynasty" }], "confidence": "high" }
+  ],
+  "reignVacancies": []
+}

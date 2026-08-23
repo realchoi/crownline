@@ -1,0 +1,29 @@
+[
+  {
+    "id": "source-kilwa-history",
+    "title": "Kilwa Kisiwani and Songo Mnara",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre: Kilwa Kisiwani and Songo Mnara executive summary；用于校订基尔瓦约11—15世纪的独立苏丹国、印度洋贸易网络、钱币与石构城市，以及1505年葡萄牙占领的终结口径。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/document/7787",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-kilwa-chronology",
+    "title": "The Chronology of Kilwa Kisiwani, AD 800-1500",
+    "sourceType": "secondary",
+    "citation": "Jeffrey Fleisher et al.: ‘The Chronology of Kilwa Kisiwani, AD 800–1500’；用于以考古分期、钱币与伊本·白图泰记载约束基尔瓦早期编年和哈桑·伊本·苏莱曼时期。",
+    "authors": ["Jeffrey Fleisher"],
+    "url": "https://www.researchgate.net/publication/359570441_The_Chronology_of_Kilwa_Kisiwani_AD_800-1500",
+    "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-kilwa-rulers",
+    "title": "Kilwa Sultanate: rulers",
+    "sourceType": "tertiary",
+    "citation": "Wikipedia contributors: Kilwa Sultanate § Rulers；用于交叉核对《基尔瓦编年史》所列代表苏丹及通行约年；不把该表视为无争议的完整编年。",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://en.wikipedia.org/wiki/Kilwa_Sultanate#Rulers",
+    "accessedAt": "2026-08-22"
+  }
+]

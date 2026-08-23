@@ -1,0 +1,22 @@
+[
+  {
+    "id": "geo-kilwa-kisiwani",
+    "polityId": "polity-kilwa-sultanate",
+    "periods": [
+      {
+        "start": { "year": 1000, "precision": "circa" },
+        "end": { "year": 1505, "precision": "exact" }
+      }
+    ],
+    "placeName": "Kilwa Kisiwani",
+    "role": "capital",
+    "coordinates": { "latitude": -8.9578, "longitude": 39.5228 },
+    "positionPrecision": "approximate",
+    "positionNote": "坐标采用 GeoNames 对应基尔瓦基西瓦尼岛的现代地点坐标，仅表示苏丹国港口与宫廷中心，不表示其贸易影响范围或疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-geonames" },
+      { "sourceId": "source-kilwa-history", "locator": "Executive Summary" }
+    ],
+    "confidence": "high"
+  }
+]
