@@ -50,7 +50,9 @@ def main() -> int:
     data = json.loads((ROOT / ".generated/data/crownline-data.json").read_text(encoding="utf-8"))
     # 生成和检查共用同一套字符收集规则，避免新增标题字段时只更新一侧。
     sans_chars, song_chars, latin_chars = collect_font_charsets(ROOT, data)
-    latin_body_chars = {char for char in sans_chars if ord(char) < 0x0250}
+    # Latin Extended characters used by scholarly transliteration (for example ʿ/ḥ)
+    # belong in the Latin body subset rather than falling through to the CJK font.
+    latin_body_chars = {char for char in sans_chars if ord(char) < 0x0300}
 
     with tempfile.TemporaryDirectory() as tmp:
         tmpdir = Path(tmp)

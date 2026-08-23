@@ -198,13 +198,13 @@ describe("生产历史数据", () => {
     }
   });
 
-  it("为二十六个中国代表政权提供三十六条地理快照并覆盖十一个顶层地区", () => {
+  it("为四十四个中国代表政权提供五十五条地理快照并覆盖十一个顶层地区", () => {
     const chinaSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return CHINA_MAP_POLITY_IDS.some((id) => id === polityId);
     });
 
-    expect(chinaSnapshots).toHaveLength(35);
-    expect(data.geographicSnapshots).toHaveLength(126);
+    expect(chinaSnapshots).toHaveLength(55);
+    expect(data.geographicSnapshots).toHaveLength(146);
     for (const polityId of CHINA_MAP_POLITY_IDS) {
       expect(
         chinaSnapshots.some((snapshot) => snapshot.polityId === polityId),
@@ -238,6 +238,114 @@ describe("生产历史数据", () => {
     expect(activePlaces("polity-cn-jin", 1120)).toEqual(["会宁府"]);
     expect(activePlaces("polity-cn-jin", 1200)).toEqual(["中都"]);
     expect(activePlaces("polity-cn-jin", 1220)).toEqual(["汴京"]);
+  });
+
+  it("固定本批次中国地理政权和稳定快照 ID", () => {
+    const expectedPolityIds = [
+      "polity-cn-eastern-zhou",
+      "polity-cn-xin",
+      "polity-cn-former-liang",
+      "polity-cn-cheng-han",
+      "polity-cn-han-zhao",
+      "polity-cn-former-qin",
+      "polity-cn-eastern-wei",
+      "polity-cn-western-wei",
+      "polity-cn-liu-song",
+      "polity-cn-southern-qi",
+      "polity-cn-liang",
+      "polity-cn-chen",
+      "polity-cn-wu-zhou",
+      "polity-cn-later-liang-zhu",
+      "polity-cn-later-tang",
+      "polity-cn-wuyue",
+      "polity-cn-southern-tang",
+      "polity-cn-later-jin-jurchen"
+    ];
+    const expectedSnapshotIds = [
+      "geo-eastern-zhou-luoyi",
+      "geo-xin-changan",
+      "geo-former-liang-guzang",
+      "geo-cheng-han-chengdu",
+      "geo-han-zhao-pingyang",
+      "geo-han-zhao-changan",
+      "geo-former-qin-changan",
+      "geo-eastern-wei-ye",
+      "geo-western-wei-changan",
+      "geo-liu-song-jiankang",
+      "geo-southern-qi-jiankang",
+      "geo-liang-jiankang",
+      "geo-chen-jiankang",
+      "geo-wu-zhou-luoyang",
+      "geo-later-liang-kaifeng",
+      "geo-later-tang-luoyang",
+      "geo-wuyue-qiantang",
+      "geo-southern-tang-jinling",
+      "geo-later-jin-jurchen-hetuala",
+      "geo-later-jin-jurchen-shengjing"
+    ];
+    expect(data.geographicSnapshots.map(({ id }) => id)).toEqual(
+      expect.arrayContaining(expectedSnapshotIds)
+    );
+    expect(
+      new Set(
+        data.geographicSnapshots
+          .filter(({ polityId }) => expectedPolityIds.includes(polityId))
+          .map(({ polityId }) => polityId)
+      )
+    ).toEqual(new Set(expectedPolityIds));
+    for (const polityId of expectedPolityIds) {
+      const polity = data.entities.find(({ id }) => id === polityId);
+      expect(polity?.historicalRegionIds).toContain("region-china");
+      expect(
+        data.geographicSnapshots.some(
+          ({ polityId: snapshotPolityId }) => snapshotPolityId === polityId
+        ),
+        polityId
+      ).toBe(true);
+    }
+  });
+
+  it("按分期切换本批次迁都点位且不跨越政权存在期", () => {
+    expect(activePlaces("polity-cn-han-zhao", 318)).toEqual(["平阳"]);
+    expect(activePlaces("polity-cn-han-zhao", 319)).toEqual(["长安"]);
+    expect(activePlaces("polity-cn-later-jin-jurchen", 1621)).toEqual(["赫图阿拉"]);
+    expect(activePlaces("polity-cn-later-jin-jurchen", 1625)).toEqual(["盛京"]);
+    const targetIds = new Set([
+      "geo-eastern-zhou-luoyi",
+      "geo-xin-changan",
+      "geo-former-liang-guzang",
+      "geo-cheng-han-chengdu",
+      "geo-han-zhao-pingyang",
+      "geo-han-zhao-changan",
+      "geo-former-qin-changan",
+      "geo-eastern-wei-ye",
+      "geo-western-wei-changan",
+      "geo-liu-song-jiankang",
+      "geo-southern-qi-jiankang",
+      "geo-liang-jiankang",
+      "geo-chen-jiankang",
+      "geo-wu-zhou-luoyang",
+      "geo-later-liang-kaifeng",
+      "geo-later-tang-luoyang",
+      "geo-wuyue-qiantang",
+      "geo-southern-tang-jinling",
+      "geo-later-jin-jurchen-hetuala",
+      "geo-later-jin-jurchen-shengjing"
+    ]);
+    for (const snapshot of data.geographicSnapshots.filter(({ id }) => targetIds.has(id))) {
+      const polity = data.entities.find(({ id }) => id === snapshot.polityId);
+      expect(polity, snapshot.id).toBeDefined();
+      expect(
+        snapshot.periods.every((period) =>
+          polity!.existencePeriods.some((existence) => {
+            return (
+              period.start.year >= existence.start.year && period.end.year <= existence.end.year
+            );
+          })
+        ),
+        snapshot.id
+      ).toBe(true);
+    }
   });
 
   it("提供可自选的外部地区和明确覆盖状态", () => {
@@ -284,9 +392,9 @@ describe("生产历史数据", () => {
     expect(new Set(data.relationships.map(({ type }) => type))).toEqual(
       new Set(RELATIONSHIP_TYPES)
     );
-    expect(data.relationships).toHaveLength(18);
-    expect(data.events).toHaveLength(14);
-    expect(data.sources).toHaveLength(166);
+    expect(data.relationships).toHaveLength(28);
+    expect(data.events).toHaveLength(18);
+    expect(data.sources).toHaveLength(186);
     expect(
       data.relationships.every(({ sourceRefs }) => {
         return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));
@@ -347,6 +455,64 @@ describe("生产历史数据", () => {
       "relationship-northern-song-liao-chanyuan-diplomacy": [[1004, 1005]],
       "relationship-liao-jin-war": [[1115, 1125]]
     });
+  });
+
+  it("固定本批次关系、事件和关系类型配额", () => {
+    const relationshipIds = [
+      "relationship-yuan-sukhothai-tribute",
+      "relationship-yuan-sukhothai-cultural-exchange",
+      "relationship-northern-song-champa-diplomacy",
+      "relationship-mughal-safavid-diplomacy",
+      "relationship-samanid-abbasid-vassalage",
+      "relationship-mali-almohad-transsaharan-trade",
+      "relationship-abbasid-kilwa-indian-ocean-trade",
+      "relationship-great-zimbabwe-kilwa-gold-trade",
+      "relationship-aztec-purepecha-war",
+      "relationship-aztec-purepecha-border-trade"
+    ];
+    const eventIds = [
+      "event-northern-song-champa-envoy",
+      "event-yuan-sukhothai-embassy",
+      "event-humayun-safavid-aid",
+      "event-aztec-purepecha-battle"
+    ];
+    expect(data.relationships.map(({ id }) => id)).toEqual(expect.arrayContaining(relationshipIds));
+    expect(data.events.map(({ id }) => id)).toEqual(expect.arrayContaining(eventIds));
+    const added = data.relationships.filter(({ id }) => relationshipIds.includes(id));
+    expect(
+      Object.fromEntries(
+        RELATIONSHIP_TYPES.map((type) => [type, added.filter((item) => item.type === type).length])
+      )
+    ).toEqual({
+      war: 1,
+      alliance: 0,
+      diplomacy: 2,
+      tribute: 1,
+      vassalage: 1,
+      trade: 4,
+      "cultural-exchange": 1
+    });
+    expect(
+      added.every(({ sourceRefs }) => sourceRefs.some(({ locator }) => Boolean(locator?.trim())))
+    ).toBe(true);
+    expect(added.flatMap(({ eventIds: ids }) => ids)).toEqual(expect.arrayContaining(eventIds));
+  });
+
+  it("固定两个统治者缺口的正式审查状态而不制造任期", async () => {
+    const { loadCoverageReviewData } = await import("../scripts/coverage-review");
+    const review = await loadCoverageReviewData(undefined, data);
+    expect(review.entries.filter(({ dimension }) => dimension === "rulerDetails")).toEqual([
+      expect.objectContaining({
+        entityId: "polity-great-zimbabwe",
+        status: "reviewed-unavailable"
+      }),
+      expect.objectContaining({
+        entityId: "polity-teotihuacan-state",
+        status: "reviewed-unavailable"
+      })
+    ]);
+    expect(data.reigns.some(({ polityId }) => polityId === "polity-great-zimbabwe")).toBe(false);
+    expect(data.reigns.some(({ polityId }) => polityId === "polity-teotihuacan-state")).toBe(false);
   });
 
   it("为全部十六个中国主线政权提供经过校订的任期数据", () => {

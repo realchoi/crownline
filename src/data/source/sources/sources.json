@@ -734,5 +734,197 @@
     "publisher": "GeoNames",
     "url": "https://www.geonames.org/",
     "accessedAt": "2026-08-12"
+  },
+  {
+    "id": "source-accws-ancient-capitals",
+    "title": "The Ancient Capital Cities",
+    "sourceType": "institutional",
+    "citation": "Academy of Contemporary China and World Studies: ‘The Ancient Capital Cities’；用于校订洛阳作为东周、武周和后唐等政权都城，以及开封作为后梁、后晋等五代政权都城的口径。",
+    "publisher": "Academy of Contemporary China and World Studies",
+    "url": "https://www.china.org.cn/m/english/china_key_words/2025-06/12/content_117923485.html",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-cambridge-six-dynasties-capitals",
+    "title": "The Cambridge History of China: The Six Dynasties",
+    "sourceType": "secondary",
+    "citation": "Albert E. Dien and Keith N. Knapp, eds., The Cambridge History of China: The Six Dynasties, Cambridge University Press；导论页说明建康（今南京）先后作为吴、东晋、宋、齐、梁、陈六朝都城。",
+    "authors": [
+      "Albert E. Dien",
+      "Keith N. Knapp"
+    ],
+    "publisher": "Cambridge University Press",
+    "url": "https://assets.cambridge.org/97811070/20771/excerpt/9781107020771_excerpt.pdf",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-unesco-ancient-capital-sites",
+    "title": "Schematic diagram of the chronological framework for the comparative analysis of Beijing Central Axis",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre: ‘Schematic diagram of the chronological framework for the comparative analysis of Beijing Central Axis’；用于交叉校订邺城、建康及洛阳等古代都城遗址与历史时期的对应关系。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/document/204904",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-mdpi-wuyue-qiantang",
+    "title": "The Hangzhou Region and the Spread of East Asian Buddhism",
+    "sourceType": "secondary",
+    "citation": "‘The Hangzhou Region and the Spread of East Asian Buddhism’, Religions 15(2), 2024；用于校订吴越以钱塘—杭州为政治中心的口径。",
+    "publisher": "MDPI",
+    "url": "https://www.mdpi.com/2077-1444/15/2/201",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-brill-manchu-capitals",
+    "title": "The Manchu Capital Cities before the Conquest of China",
+    "sourceType": "secondary",
+    "citation": "Piero Corradini: ‘The Manchu Capital Cities before the Conquest of China’, Ming Qing Yanjiu 13 (2005), pp. 67–80；用于校订后金由赫图阿拉向辽阳、盛京迁都及盛京1625年起的时间口径。",
+    "authors": [
+      "Piero Corradini"
+    ],
+    "publisher": "Brill",
+    "url": "https://brill.com/previewpdf/journals/mqyj/13/1/article-p67_67.xml",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-met-great-zimbabwe-rulers",
+    "title": "Great Zimbabwe (11th–15th Century)",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art: ‘Great Zimbabwe (11th–15th Century)’；用于正式审查大津巴布韦的统治精英和王权象征考古证据，并确认现有资料不足以恢复具名、带任期的统治者序列。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/essays/great-zimbabwe-11th-15th-century",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-annualreviews-teotihuacan-rulers",
+    "title": "State and Society at Teotihuacan, Mexico",
+    "sourceType": "secondary",
+    "citation": "‘State and Society at Teotihuacan, Mexico’, Annual Review of Anthropology 26, 1997, pp. 129–161；用于正式审查特奥蒂瓦坎存在强力统治者或统治集团的考古推断，但缺少可核查的具名、连续统治序列。",
+    "publisher": "Annual Reviews",
+    "url": "https://www.annualreviews.org/content/journals/10.1146/annurev.anthro.26.1.129",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-cambridge-song-champa",
+    "title": "Characteristics of overseas Chinese residents and the background behind the formation of their settlements in the Song period",
+    "sourceType": "secondary",
+    "citation": "‘Characteristics of overseas Chinese residents and the background behind the formation of their settlements in the Song period’, International Journal of Asian Studies；第563—566行记录1050年占婆向宋廷进贡并提交双语外交文书。",
+    "publisher": "Cambridge University Press",
+    "url": "https://www.cambridge.org/core/journals/international-journal-of-asian-studies/article/characteristics-of-overseas-chinese-residents-and-the-background-behind-the-formation-of-their-settlements-in-the-song-period/5A0AE6245F3CFB56D8E7FBC9F737B2A6",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-thai-mfa-yuan-sukhothai",
+    "title": "Relations with Neighbouring Countries: The Sukhothai Period",
+    "sourceType": "institutional",
+    "citation": "Ministry of Foreign Affairs of the Kingdom of Thailand: ‘Relations with Neighbouring Countries’；Sukhothai段落记录1282年中国使者、1294和1300年兰甘亨入华，以及中国工匠与宋卡洛陶器技术交流。",
+    "publisher": "Ministry of Foreign Affairs of the Kingdom of Thailand",
+    "url": "https://www.mfa.go.th/en/page/relations-with-neighbouring-countries",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-promboon-sino-siamese-tribute",
+    "title": "Sino-Siamese Tributary Relations, 1282–1853",
+    "sourceType": "secondary",
+    "citation": "Suebsaeng Promboon, Sino-Siamese Tributary Relations, 1282–1853, University of Wisconsin–Madison, 1971；目录与第124页起章节用于校订素可泰与元的使节、朝贡和贸易特许关系。",
+    "authors": [
+      "Suebsaeng Promboon"
+    ],
+    "publisher": "University of Wisconsin–Madison",
+    "url": "https://books.google.com/books/about/Sino-Siamese_Tributary_Relations_1282_18.html?id=rsbQAAAAMAAJ",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-iranica-central-asia-samanid",
+    "title": "Central Asia iv. In the Islamic Period up to the Mongols",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Iranica: ‘Central Asia iv. In the Islamic Period up to the Mongols’；用于校订萨曼家族获阿拔斯承认、宣称效忠但在河中和呼罗珊实行高度自治的关系边界。",
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/central-asia-iv/",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-iranica-esmail-samani",
+    "title": "Esmāʿīl, b. Ahmad b. Asad Sāmānī",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Iranica: ‘Esmāʿīl, b. Ahmad b. Asad Sāmānī’；用于校订892年阿拔斯哈里发正式承认伊斯玛仪为河中及呼罗珊等地总督的节点。",
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/esmail-b-ahmad-b-asad-samani-abu-ebrahim/",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-openstax-transsaharan-trade",
+    "title": "The Roots of African Trade",
+    "sourceType": "secondary",
+    "citation": "OpenStax, World History Volume 2: ‘The Roots of African Trade’；用于校订马里帝国控制金矿与廷巴克图等节点，并通过跨撒哈拉商路连接北非市场的口径。",
+    "publisher": "Rice University",
+    "url": "https://openstax.org/books/world-history-volume-2/pages/3-1-the-roots-of-african-trade",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-cambridge-transsaharan-trade",
+    "title": "On Trans-Saharan Trails: Islamic Law, Trade Networks, and Cross-Cultural Exchange in Western Africa",
+    "sourceType": "secondary",
+    "citation": "‘On Trans-Saharan Trails: Islamic Law, Trade Networks, and Cross-Cultural Exchange in Western Africa’, Cambridge University Press；用于交叉支持中世纪马格里布—西非黄金与盐贸易网络，不把商路写成双边条约。",
+    "publisher": "Cambridge University Press",
+    "url": "https://assets.cambridge.org/97805218/87243/excerpt/9780521887243_excerpt.pdf",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-unesco-kilwa-trade",
+    "title": "Ruins of Kilwa Kisiwani and Ruins of Songo Mnara",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre: ‘Ruins of Kilwa Kisiwani and Ruins of Songo Mnara’；用于校订13—16世纪基尔瓦商人经营黄金、阿拉伯和波斯陶器、中国瓷器等印度洋贸易。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/144",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-kilwa-western-indian-ocean",
+    "title": "The Role of Kilwa in the Trade of the Western Indian Ocean",
+    "sourceType": "secondary",
+    "citation": "‘The Role of Kilwa in the Trade of the Western Indian Ocean’；相关章节讨论阿拔斯时期波斯商人在东非海岸的商业活动及基尔瓦在斯瓦希里网络中的位置。",
+    "url": "https://www.researchgate.net/publication/320772112_The_Role_of_Kilwa_in_the_Trade_of_the_Western_Indian_Ocean",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-iranica-homayun-safavid",
+    "title": "Homāyun Pādešāh",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Iranica: ‘Homāyun Pādešāh’；第38—41行记录1544年胡马雍赴伊朗、获沙阿塔赫玛斯普援助并于1545年收复坎大哈。",
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/homayun-padesah/",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-met-aztec-tarascan",
+    "title": "Mexico, 1400–1600 A.D.",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: ‘Mexico, 1400–1600 A.D.’；约1478年条目记录阿兹特克与塔拉斯卡（普雷佩查）帝国交战及边境堡垒。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://82nd-and-fifth.metmuseum.org/toah/ht/08/canm.html",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-cambridge-aztec-tarascan-frontier",
+    "title": "Aztec Studies",
+    "sourceType": "secondary",
+    "citation": "‘Aztec Studies’, Ancient Mesoamerica；综述阿兹特克与塔拉斯卡帝国的设防西部边界、军事冲突和跨边境货物流动。",
+    "publisher": "Cambridge University Press",
+    "url": "https://www.cambridge.org/core/journals/ancient-mesoamerica/article/aztec-studies/694725A6E1B943E0C2B737A1982689B5",
+    "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-steinhardt-imperial-capitals",
+    "title": "Chinese Imperial City Planning",
+    "sourceType": "secondary",
+    "citation": "Nancy Shatzman Steinhardt, Chinese Imperial City Planning, University of Hawaiʻi Press, 1990；相关章节以文本和考古证据校订东魏邺城与西魏长安等帝国都城。",
+    "authors": [
+      "Nancy Shatzman Steinhardt"
+    ],
+    "publisher": "University of Hawaiʻi Press",
+    "url": "https://doi.org/10.1515/9780824841478",
+    "accessedAt": "2026-08-23"
   }
 ]

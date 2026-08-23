@@ -50,6 +50,34 @@ describe("历史地图点位", () => {
     ).toEqual(["geo-byzantine-nicaea"]);
   });
 
+  it("按年份选择本批次的中国迁都快照", () => {
+    const hanZhao = entity("polity-cn-han-zhao");
+    const hanZhaoSnapshots = data.geographicSnapshots.filter(
+      ({ polityId }) => polityId === "polity-cn-han-zhao"
+    );
+    expect(
+      selectMapSnapshots([hanZhao], hanZhaoSnapshots, 318).points.map(({ snapshot }) => snapshot.id)
+    ).toEqual(["geo-han-zhao-pingyang"]);
+    expect(
+      selectMapSnapshots([hanZhao], hanZhaoSnapshots, 319).points.map(({ snapshot }) => snapshot.id)
+    ).toEqual(["geo-han-zhao-changan"]);
+
+    const laterJin = entity("polity-cn-later-jin-jurchen");
+    const laterJinSnapshots = data.geographicSnapshots.filter(
+      ({ polityId }) => polityId === "polity-cn-later-jin-jurchen"
+    );
+    expect(
+      selectMapSnapshots([laterJin], laterJinSnapshots, 1621).points.map(
+        ({ snapshot }) => snapshot.placeName
+      )
+    ).toEqual(["赫图阿拉"]);
+    expect(
+      selectMapSnapshots([laterJin], laterJinSnapshots, 1625).points.map(
+        ({ snapshot }) => snapshot.placeName
+      )
+    ).toEqual(["盛京"]);
+  });
+
   it("不把唐的中断期误判为可见点位", () => {
     const polity = entity("polity-cn-tang");
     const snapshots = [snapshot("geo-tang-changan")];
@@ -90,13 +118,26 @@ describe("历史地图点位", () => {
     expect(result.missingEntities).toEqual([]);
   });
 
+  it("全览模式保留本批次迁都政权的多个时期点位", () => {
+    const laterJin = entity("polity-cn-later-jin-jurchen");
+    const result = selectMapSnapshots(
+      [laterJin],
+      data.geographicSnapshots.filter(({ polityId }) => polityId === laterJin.id)
+    );
+    expect(result.points.map(({ snapshot }) => snapshot.id)).toEqual([
+      "geo-later-jin-jurchen-shengjing",
+      "geo-later-jin-jurchen-hetuala"
+    ]);
+    expect(result.missingEntities).toEqual([]);
+  });
+
   it("单独列出当年缺少地理快照的政权", () => {
-    const chen = entity("polity-cn-chen");
-    const result = selectMapSnapshots([chen], data.geographicSnapshots, 580);
+    const northernZhou = entity("polity-cn-northern-zhou");
+    const result = selectMapSnapshots([northernZhou], data.geographicSnapshots, 580);
 
     expect(result.points).toEqual([]);
     expect(result.clusters).toEqual([]);
-    expect(result.missingEntities).toEqual([chen]);
+    expect(result.missingEntities).toEqual([northernZhou]);
   });
 
   it("不受输入顺序影响地稳定聚合北京与南京测试点", () => {

@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 
+import { loadSourceData } from "../scripts/data-source";
+import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import { selectHistoricalRelationships } from "../src/domain/historicalRelationships";
 import type {
   CrownlineDetail,
@@ -47,6 +49,9 @@ const war: Relationship = {
   sourceRefs: [{ sourceId: source.id, locator: "第1章" }],
   confidence: "high"
 };
+
+const productionData = await loadSourceData();
+const productionDetails = buildGeneratedArtifacts(productionData).details;
 
 function detail(
   entityId: string,
@@ -180,5 +185,54 @@ describe("结构化历史关系选择", () => {
 
     expect(result.groups).toEqual([]);
     expect(result.omittedCount).toBe(1);
+  });
+
+  it("合并本批次双方详情时只显示一次并保留关系类型、事件和定位", () => {
+    const yuan = productionDetails.get("polity-cn-yuan");
+    const sukhothai = productionDetails.get("polity-sukhothai-kingdom");
+    if (!yuan || !sukhothai) throw new Error("缺少元或素可泰详情");
+
+    const result = selectHistoricalRelationships("polity-cn-yuan", "polity-sukhothai-kingdom", [
+      yuan,
+      sukhothai
+    ]);
+    expect(result.omittedCount).toBe(0);
+    expect(result.groups.map(({ type }) => type)).toEqual(["tribute", "cultural-exchange"]);
+    expect(result.groups.flatMap(({ relationships }) => relationships)).toHaveLength(2);
+    const tribute = result.groups.find(({ type }) => type === "tribute")?.relationships[0];
+    expect(tribute).toMatchObject({
+      relationship: {
+        id: "relationship-yuan-sukhothai-tribute",
+        participants: [
+          { entityId: "polity-cn-yuan", role: "受使与册封方" },
+          { entityId: "polity-sukhothai-kingdom", role: "遣使与入贡方" }
+        ],
+        periods: [{ start: { year: 1292 }, end: { year: 1323 } }]
+      },
+      events: [{ id: "event-yuan-sukhothai-embassy" }]
+    });
+    expect(tribute?.sources).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          ref: {
+            sourceId: "source-promboon-sino-siamese-tribute",
+            locator: "Sukhothais Relations with the Yuan, p. 124 ff."
+          }
+        })
+      ])
+    );
+  });
+
+  it("对没有已校订关系的政权对返回空结果而不做历史否定", () => {
+    const greatZimbabwe = productionDetails.get("polity-great-zimbabwe");
+    const teotihuacan = productionDetails.get("polity-teotihuacan-state");
+    if (!greatZimbabwe || !teotihuacan) throw new Error("缺少缺口政权详情");
+
+    expect(
+      selectHistoricalRelationships("polity-great-zimbabwe", "polity-teotihuacan-state", [
+        greatZimbabwe,
+        teotihuacan
+      ])
+    ).toEqual({ groups: [], omittedCount: 0 });
   });
 });

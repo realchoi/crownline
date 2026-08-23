@@ -98,10 +98,10 @@ describe("数据覆盖报告 v2", () => {
         historicalPeriods: 2,
         persons: 1335,
         reigns: 1374,
-        relationships: 18,
-        events: 14,
-        geographicSnapshots: 126,
-        sources: 166
+        relationships: 28,
+        events: 18,
+        geographicSnapshots: 146,
+        sources: 186
       },
       polityCoverage: {
         rulerDetails: {
@@ -126,13 +126,13 @@ describe("数据覆盖报告 v2", () => {
         },
         geography: {
           total: 131,
-          available: 86,
           reviewedUnavailable: 0,
           notApplicable: 0,
-          pendingReview: 45,
+          available: 104,
+          pendingReview: 27,
           applicableTotal: 131,
-          availablePercentage: 65.65,
-          reviewedPercentage: 65.65
+          availablePercentage: 79.39,
+          reviewedPercentage: 79.39
         }
       }
     });
@@ -141,37 +141,37 @@ describe("数据覆盖报告 v2", () => {
       "polity-teotihuacan-state"
     ]);
     expect(report.reviewableGaps.localNames.pendingReview).toHaveLength(82);
-    expect(report.reviewableGaps.geography.pendingReview).toHaveLength(45);
+    expect(report.reviewableGaps.geography.pendingReview).toHaveLength(27);
     expect(report.reviewableGaps.localNames.pendingReview).toEqual(
       [...report.reviewableGaps.localNames.pendingReview].sort((left, right) =>
         left.localeCompare(right, "en")
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 166,
-      byType: { primary: 2, secondary: 20, tertiary: 66, dataset: 2, institutional: 76 },
-      withUrl: 165,
+      total: 186,
+      byType: { primary: 2, secondary: 31, tertiary: 66, dataset: 2, institutional: 85 },
+      withUrl: 185,
       withoutUrl: 1,
-      withAccessedAt: 165,
+      withAccessedAt: 185,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toEqual({
       relationships: {
+        records: 28,
+        recordsWithSourceRefs: 28,
+        recordsWithLocatedSourceRefs: 28,
+        recordsWithoutLocatedSourceRefs: 0
+      },
+      events: {
         records: 18,
         recordsWithSourceRefs: 18,
         recordsWithLocatedSourceRefs: 18,
         recordsWithoutLocatedSourceRefs: 0
       },
-      events: {
-        records: 14,
-        recordsWithSourceRefs: 14,
-        recordsWithLocatedSourceRefs: 14,
-        recordsWithoutLocatedSourceRefs: 0
-      },
       geographicSnapshots: {
-        records: 126,
-        recordsWithSourceRefs: 126,
-        recordsWithLocatedSourceRefs: 26,
+        records: 146,
+        recordsWithSourceRefs: 146,
+        recordsWithLocatedSourceRefs: 46,
         recordsWithoutLocatedSourceRefs: 100
       }
     });
@@ -290,7 +290,7 @@ describe("关系分布和来源质量", () => {
 
     expect(Object.keys(summary.byType)).toEqual([...RELATIONSHIP_TYPES]);
     expect(Object.keys(summary.byConfidence)).toEqual([...CONFIDENCE_LEVELS]);
-    expect(summary.records).toBe(18);
+    expect(summary.records).toBe(28);
     expect(summary.participantPolities).toBeLessThanOrEqual(summary.totalPolities);
     expect(summary.regionsWithRecords.length + summary.regionsWithoutRecords.length).toBe(11);
     expect(summary.regionsWithRecords).not.toEqual([]);
@@ -298,6 +298,43 @@ describe("关系分布和来源质量", () => {
       expect.arrayContaining(["region-east-asia", "region-west-asia", "region-north-africa"])
     );
     expect(report).not.toHaveProperty("polityGaps.relationships");
+  });
+
+  it("记录本批次关系的地区、类型和来源定位改善", () => {
+    const report = buildDataCoverageReport(data, coverageReview);
+    expect(report.relationshipSummary.byType).toEqual({
+      war: 12,
+      alliance: 1,
+      diplomacy: 4,
+      tribute: 2,
+      vassalage: 2,
+      trade: 5,
+      "cultural-exchange": 2
+    });
+    expect(report.relationshipSummary.regionsWithRecords).toEqual([
+      "region-east-asia",
+      "region-south-asia",
+      "region-southeast-asia",
+      "region-central-asia",
+      "region-west-asia",
+      "region-europe",
+      "region-north-africa",
+      "region-west-africa",
+      "region-americas",
+      "region-east-africa",
+      "region-southern-africa"
+    ]);
+    expect(report.polityCoverage.geography).toMatchObject({
+      total: 131,
+      available: 104,
+      pendingReview: 27,
+      availablePercentage: 79.39
+    });
+    expect(report.sourceReferenceQuality).toMatchObject({
+      relationships: { records: 28, recordsWithLocatedSourceRefs: 28 },
+      events: { records: 18, recordsWithLocatedSourceRefs: 18 },
+      geographicSnapshots: { records: 146, recordsWithLocatedSourceRefs: 46 }
+    });
   });
 
   it("重复参与同一关系的政权只计一次", () => {

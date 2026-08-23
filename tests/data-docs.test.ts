@@ -19,16 +19,16 @@ describe("当前数据文档摘要", () => {
       historicalPeriods: 2,
       persons: 1335,
       reigns: 1374,
-      geographicSnapshots: 126,
-      sources: 166
+      geographicSnapshots: 146,
+      sources: 186
     });
   });
 
   it.each([
     ["entities", "133 个实体", "999 个实体"],
     ["persons", "1335 位人物", "999 位人物"],
-    ["geographicSnapshots", "126 条地理快照", "999 条地理快照"],
-    ["sources", "166 项来源", "999 项来源"]
+    ["geographicSnapshots", "146 条地理快照", "999 条地理快照"],
+    ["sources", "186 项来源", "999 项来源"]
   ])("摘要中的%s错误时失败并指出文件和字段", (field, expected, actual) => {
     const contents = renderCurrentDataStatsBlock(data).replace(expected, actual);
     const issues = checkDataDocument("README.md", contents, data);

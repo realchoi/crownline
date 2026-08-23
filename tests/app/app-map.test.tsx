@@ -52,19 +52,29 @@ describe("Crownline 地图", () => {
   });
 
   it("首次进入地图时按需加载地理数据并显示当年点位", async () => {
-    window.history.replaceState(null, "", "/?view=map&year=500");
+    window.history.replaceState(null, "", "/?view=map&year=450");
     let attempts = 0;
     renderApp(loadGeneratedDetail, async () => {
       attempts += 1;
       return loadGeneratedGeography();
     });
 
-    expect(await findMapMarker("北魏，洛阳，都城")).toBeInTheDocument();
+    expect(await findMapMarker("北魏，平城，都城")).toBeInTheDocument();
     expect(attempts).toBe(1);
   });
 
+  it("在迁都边界年份显示正确的新增中国点位", async () => {
+    window.history.replaceState(null, "", "/?view=map&year=319&q=汉赵");
+    renderApp();
+
+    expect(await findMapMarker("汉赵（前赵），长安，都城")).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "地图结果列表" })).not.toHaveTextContent(
+      "汉赵（前赵），平阳"
+    );
+  });
+
   it("地图成功加载后切换视图复用缓存", async () => {
-    window.history.replaceState(null, "", "/?view=map&year=500");
+    window.history.replaceState(null, "", "/?view=map&year=450");
     const user = setupUser();
     let attempts = 0;
     renderApp(loadGeneratedDetail, async () => {
@@ -72,16 +82,16 @@ describe("Crownline 地图", () => {
       return loadGeneratedGeography();
     });
 
-    expect(await findMapMarker("北魏，洛阳，都城")).toBeInTheDocument();
+    expect(await findMapMarker("北魏，平城，都城")).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "时间轴" }));
     await user.click(screen.getByRole("button", { name: "地图" }));
 
-    expect(await findMapMarker("北魏，洛阳，都城")).toBeInTheDocument();
+    expect(await findMapMarker("北魏，平城，都城")).toBeInTheDocument();
     expect(attempts).toBe(1);
   });
 
   it("地理数据加载失败后可以重试", async () => {
-    window.history.replaceState(null, "", "/?view=map&year=500");
+    window.history.replaceState(null, "", "/?view=map&year=450");
     const user = setupUser();
     let attempts = 0;
     renderApp(loadGeneratedDetail, async () => {
@@ -93,12 +103,12 @@ describe("Crownline 地图", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent("无法加载地理数据（HTTP 503）");
     await user.click(screen.getByRole("button", { name: "重试" }));
 
-    expect(await findMapMarker("北魏，洛阳，都城")).toBeInTheDocument();
+    expect(await findMapMarker("北魏，平城，都城")).toBeInTheDocument();
     expect(attempts).toBe(2);
   });
 
   it("离开后重新进入地图时忽略旧请求的迟到错误", async () => {
-    window.history.replaceState(null, "", "/?view=map&year=500");
+    window.history.replaceState(null, "", "/?view=map&year=450");
     const user = setupUser();
     const first = createDeferred<GeographyLoadResult>();
     let attempts = 0;
@@ -110,7 +120,7 @@ describe("Crownline 地图", () => {
     expect(await screen.findByText("正在加载地理数据…")).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "时间轴" }));
     await user.click(screen.getByRole("button", { name: "地图" }));
-    expect(await findMapMarker("北魏，洛阳，都城")).toBeInTheDocument();
+    expect(await findMapMarker("北魏，平城，都城")).toBeInTheDocument();
 
     first.reject(new Error("已经失效的旧地理请求"));
     await waitFor(() => {
@@ -120,7 +130,7 @@ describe("Crownline 地图", () => {
           screen.getByRole("region", {
             name: "当前年份历史政权示意地图"
           })
-        ).getByRole("button", { name: "北魏，洛阳，都城" })
+        ).getByRole("button", { name: "北魏，平城，都城" })
       ).toBeInTheDocument();
     });
     expect(attempts).toBe(2);
@@ -162,13 +172,13 @@ describe("Crownline 地图", () => {
   });
 
   it("跳过异常地理记录时保留有效点位并显示警告", async () => {
-    window.history.replaceState(null, "", "/?view=map&year=500");
+    window.history.replaceState(null, "", "/?view=map&year=450");
     renderApp(loadGeneratedDetail, async () => ({
       geography: artifacts.geography,
       omittedCount: 1
     }));
 
-    expect(await findMapMarker("北魏，洛阳，都城")).toBeInTheDocument();
+    expect(await findMapMarker("北魏，平城，都城")).toBeInTheDocument();
     expect(screen.getByText("有 1 条地理记录格式异常，已跳过。")).toBeInTheDocument();
   });
 });

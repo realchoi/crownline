@@ -261,4 +261,59 @@ describe("运行时数据产物", () => {
       ])
     );
   });
+
+  it("把本批次关系、事件和来源闭包分发到双方", () => {
+    const { details, geography } = buildGeneratedArtifacts(data);
+    const cases = [
+      {
+        relationshipId: "relationship-yuan-sukhothai-tribute",
+        eventId: "event-yuan-sukhothai-embassy",
+        sourceId: "source-promboon-sino-siamese-tribute",
+        entityIds: ["polity-cn-yuan", "polity-sukhothai-kingdom"]
+      },
+      {
+        relationshipId: "relationship-great-zimbabwe-kilwa-gold-trade",
+        eventId: undefined,
+        sourceId: "source-unesco-kilwa-trade",
+        entityIds: ["polity-great-zimbabwe", "polity-kilwa-sultanate"]
+      },
+      {
+        relationshipId: "relationship-aztec-purepecha-war",
+        eventId: "event-aztec-purepecha-battle",
+        sourceId: "source-met-aztec-tarascan",
+        entityIds: ["polity-aztec-empire", "polity-purepecha-empire"]
+      }
+    ] as const;
+
+    for (const testCase of cases) {
+      for (const entityId of testCase.entityIds) {
+        const detail = details.get(entityId);
+        expect(
+          detail?.relationships.map(({ id }) => id),
+          entityId
+        ).toContain(testCase.relationshipId);
+        if (testCase.eventId) {
+          expect(
+            detail?.events.map(({ id }) => id),
+            entityId
+          ).toContain(testCase.eventId);
+        }
+        expect(
+          detail?.sources.map(({ id }) => id),
+          entityId
+        ).toContain(testCase.sourceId);
+      }
+    }
+
+    expect(geography.sources.map(({ id }) => id)).toEqual(
+      expect.arrayContaining([
+        "source-accws-ancient-capitals",
+        "source-cambridge-six-dynasties-capitals",
+        "source-brill-manchu-capitals"
+      ])
+    );
+    expect(details.get("polity-cn-ming")?.sources.map(({ id }) => id)).not.toContain(
+      "source-cambridge-six-dynasties-capitals"
+    );
+  });
 });

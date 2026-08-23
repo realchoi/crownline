@@ -256,5 +256,79 @@
       { "sourceId": "source-panipat-district-first-battle", "locator": "First Battle of Panipat (1526)" }
     ],
     "confidence": "high"
+  },
+  {
+    "id": "event-northern-song-champa-envoy",
+    "type": "diplomatic",
+    "title": "占婆向北宋提交双语外交文书",
+    "periods": [
+      {
+        "start": { "year": 1050, "precision": "exact" },
+        "end": { "year": 1050, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-cn-northern-song", "polity-champa-kingdom"],
+    "regionIds": ["region-east-asia", "region-southeast-asia"],
+    "summary": "1050年，占婆统治者向宋廷提交贡物以及用占语和汉语书写的两份外交文书；事件为北宋—占婆外交关系提供明确时间锚点。",
+    "sourceRefs": [
+      { "sourceId": "source-cambridge-song-champa", "locator": "§ Characteristics of overseas Chinese residents: Champa in 1050" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-yuan-sukhothai-embassy",
+    "type": "diplomatic",
+    "title": "元与素可泰使节和工艺交流",
+    "periods": [
+      {
+        "start": { "year": 1292, "precision": "exact" },
+        "end": { "year": 1300, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-cn-yuan", "polity-sukhothai-kingdom"],
+    "regionIds": ["region-east-asia", "region-southeast-asia"],
+    "summary": "1292年至1300年前后，素可泰向元廷派遣使节，兰甘亨往来中国并带回工匠和陶器技术；事件同时连接朝贡外交与可见的工艺传播。",
+    "sourceRefs": [
+      { "sourceId": "source-thai-mfa-yuan-sukhothai", "locator": "The Sukhothai Period: 1282, 1294 and 1300; Sangkhalok pottery" },
+      { "sourceId": "source-promboon-sino-siamese-tribute", "locator": "Sukhothais Relations with the Yuan, p. 124 ff." }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-humayun-safavid-aid",
+    "type": "diplomatic",
+    "title": "胡马雍赴萨法维宫廷求援",
+    "periods": [
+      {
+        "start": { "year": 1544, "precision": "exact" },
+        "end": { "year": 1545, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-mughal-empire", "polity-safavid-iran"],
+    "regionIds": ["region-south-asia", "region-west-asia"],
+    "summary": "1544年，失去印度核心领地的胡马雍赴伊朗会见沙阿塔赫玛斯普并获得军队；1545年在萨法维援助下收复坎大哈，随后该城成为两国长期争议焦点。",
+    "sourceRefs": [
+      { "sourceId": "source-iranica-homayun-safavid", "locator": "§ Homāyun in Iran, 1544–1545" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-aztec-purepecha-battle",
+    "type": "battle",
+    "title": "阿兹特克—普雷佩查边境战役",
+    "periods": [
+      {
+        "start": { "year": 1478, "precision": "circa" },
+        "end": { "year": 1478, "precision": "circa" }
+      }
+    ],
+    "participantEntityIds": ["polity-aztec-empire", "polity-purepecha-empire"],
+    "regionIds": ["region-americas"],
+    "summary": "约1478年，阿兹特克与普雷佩查帝国在西墨西哥交战；普雷佩查军队造成阿兹特克军重大伤亡，之后双方边境由堡垒和缓冲地带守卫。",
+    "sourceRefs": [
+      { "sourceId": "source-met-aztec-tarascan", "locator": "ca. 1478: The expanding Tarascan and Aztec empires confront each other in battle" },
+      { "sourceId": "source-cambridge-aztec-tarascan-frontier", "locator": "The Aztec empire and the fortified western border with the Tarascan empire" }
+    ],
+    "confidence": "high"
   }
 ]

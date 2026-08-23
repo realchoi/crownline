@@ -4,13 +4,13 @@
       "entityId": "polity-great-zimbabwe",
       "dimension": "rulerDetails",
       "status": "reviewed-unavailable",
-      "note": "已检查当前收录资料；现阶段无法可靠重建可展示的统治序列。"
+      "note": "2026-08-23正式审查：Metropolitan Museum与UNESCO资料确认大津巴布韦存在受统治精英控制的城市、王权象征和长距离贸易，但现有考古与后世传统不能可靠对应出具名统治者及任期序列；继续保留资料缺口，不将其写成无人统治。依据 source-met-great-zimbabwe-rulers、source-great-zimbabwe-history。"
     },
     {
       "entityId": "polity-teotihuacan-state",
       "dimension": "rulerDetails",
       "status": "reviewed-unavailable",
-      "note": "已检查当前收录资料；现阶段无法可靠重建可展示的统治序列。"
+      "note": "2026-08-23正式审查：考古研究支持特奥蒂瓦坎存在强力统治者或统治集团，但现存文字和图像材料不能安全恢复具名、连续且带任期的统治者序列；后世王表或考古标签不录入人物，继续保留资料缺口，不写成无人统治。依据 source-annualreviews-teotihuacan-rulers、source-teotihuacan-history。"
     }
   ]
 }

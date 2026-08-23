@@ -165,6 +165,26 @@ describe("Crownline 政权对比", () => {
     expect(relationships).toHaveTextContent("北宋 · 盟约方");
   });
 
+  it("展示新增元—素可泰的朝贡、文化交流、事件和来源定位", async () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?compare=polity-cn-yuan&compare=polity-sukhothai-kingdom"
+    );
+    renderApp();
+
+    const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
+    expect(relationships).toHaveTextContent("朝贡");
+    expect(relationships).toHaveTextContent("文化交流");
+    expect(relationships).toHaveTextContent("元与素可泰使节和工艺交流");
+    expect(relationships).toHaveTextContent("受使与册封方");
+    expect(relationships).toHaveTextContent("遣使与入贡方");
+    expect(relationships).toHaveTextContent("来源 · 2 项");
+    expect(
+      within(relationships).getAllByRole("link", { name: /查看来源/ }).length
+    ).toBeGreaterThanOrEqual(2);
+  });
+
   it("同一政权对按类型展示多条关系及其口径说明", async () => {
     window.history.replaceState(null, "", "/?compare=polity-cn-tang&compare=polity-balhae");
     renderApp();

@@ -368,5 +368,219 @@
       { "sourceId": "source-panipat-district-first-battle", "locator": "First Battle of Panipat (1526)" }
     ],
     "confidence": "high"
+  },
+  {
+    "id": "relationship-yuan-sukhothai-tribute",
+    "type": "tribute",
+    "participants": [
+      { "entityId": "polity-cn-yuan", "role": "受使与册封方" },
+      { "entityId": "polity-sukhothai-kingdom", "role": "遣使与入贡方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1292, "precision": "exact" },
+        "end": { "year": 1323, "precision": "exact" }
+      }
+    ],
+    "summary": "素可泰在兰甘亨时期向元廷派遣使节并参与朝贡—贸易安排；元廷的承认与回赐为外交关系的一部分，但本记录不把素可泰写成元的直接行政单位。",
+    "eventIds": ["event-yuan-sukhothai-embassy"],
+    "sourceRefs": [
+      { "sourceId": "source-promboon-sino-siamese-tribute", "locator": "Sukhothais Relations with the Yuan, p. 124 ff." },
+      { "sourceId": "source-thai-mfa-yuan-sukhothai", "locator": "The Sukhothai Period: 1282, 1294 and 1300" }
+    ],
+    "confidence": "high",
+    "confidenceNote": "朝贡在此表示使节、礼物、承认与贸易特许构成的外交框架，不自动等同于领土臣属或元廷直接统治。"
+  },
+  {
+    "id": "relationship-yuan-sukhothai-cultural-exchange",
+    "type": "cultural-exchange",
+    "participants": [
+      { "entityId": "polity-cn-yuan", "role": "工艺传播与回赐方" },
+      { "entityId": "polity-sukhothai-kingdom", "role": "吸收与地方化方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1294, "precision": "exact" },
+        "end": { "year": 1300, "precision": "exact" }
+      }
+    ],
+    "summary": "元—素可泰使节往来伴随中国工匠进入素可泰以及宋卡洛陶器技术的发展；该记录表达工艺和知识传播，不把陶器风格相似误写成政治控制。",
+    "eventIds": ["event-yuan-sukhothai-embassy"],
+    "sourceRefs": [
+      { "sourceId": "source-thai-mfa-yuan-sukhothai", "locator": "The Sukhothai Period: 1294 and 1300; Sangkhalok pottery" },
+      { "sourceId": "source-promboon-sino-siamese-tribute", "locator": "Sukhothais Relations with the Yuan, p. 124 ff." }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "资料支持工匠、器物与技术的交流，但不能据此推断双方存在统一的官方文化政策。"
+  },
+  {
+    "id": "relationship-northern-song-champa-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      { "entityId": "polity-cn-northern-song", "role": "受使与册封方" },
+      { "entityId": "polity-champa-kingdom", "role": "遣使与进贡方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1050, "precision": "exact" },
+        "end": { "year": 1050, "precision": "exact" }
+      }
+    ],
+    "summary": "1050年占婆统治者向宋廷提交象牙、犀角等贡物以及以占语和汉语书写的外交文书，显示双方存在可定位的使节与礼仪外交往来。",
+    "eventIds": ["event-northern-song-champa-envoy"],
+    "sourceRefs": [
+      { "sourceId": "source-cambridge-song-champa", "locator": "§ Characteristics of overseas Chinese residents: Champa in 1050" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-mughal-safavid-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      { "entityId": "polity-mughal-empire", "role": "流亡皇帝与求援方" },
+      { "entityId": "polity-safavid-iran", "role": "接纳与军事援助方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1544, "precision": "exact" },
+        "end": { "year": 1545, "precision": "exact" }
+      }
+    ],
+    "summary": "胡马雍在1544年赴萨法维伊朗寻求援助，塔赫玛斯普接纳并提供军队；1545年坎大哈收复后双方围绕该城的归属留下长期争议。",
+    "eventIds": ["event-humayun-safavid-aid"],
+    "sourceRefs": [
+      { "sourceId": "source-iranica-homayun-safavid", "locator": "§ Homāyun in Iran, 1544–1545" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-samanid-abbasid-vassalage",
+    "type": "vassalage",
+    "participants": [
+      { "entityId": "polity-abbasid-caliphate", "role": "授予合法性与任命方" },
+      { "entityId": "polity-samanid-empire", "role": "获任命但保持高度自治的地方王朝" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 892, "precision": "exact" },
+        "end": { "year": 999, "precision": "exact" }
+      }
+    ],
+    "summary": "892年阿拔斯哈里发正式承认伊斯玛仪为河中及呼罗珊等地总督；萨曼统治者在形式上承认哈里发权威，但在河中和呼罗珊实行高度自治。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-iranica-esmail-samani", "locator": "Esmāʿīl b. Ahmad: official recognition by the caliph in 892" },
+      { "sourceId": "source-iranica-central-asia-samanid", "locator": "Central Asia iv: allegiance to the caliphate and virtually independent rule" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "本条的臣属类型只表达哈里发任命、合法性与名义效忠关系；萨曼政权并非阿拔斯的普通省份，实际财政与军政自治边界必须保留。"
+  },
+  {
+    "id": "relationship-mali-almohad-transsaharan-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-mali-empire", "role": "黄金产地与萨赫勒贸易节点控制方" },
+      { "entityId": "polity-almohad-caliphate", "role": "马格里布与北非商路一端的政权" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1235, "precision": "circa" },
+        "end": { "year": 1269, "precision": "exact" }
+      }
+    ],
+    "summary": "十三世纪中叶，马里控制的西非金矿和廷巴克图等节点通过跨撒哈拉商路与北非市场相连；本条以穆瓦希德时期仍在运行的商路表达跨区域贸易网络，而非双边贸易条约。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-openstax-transsaharan-trade", "locator": "The Roots of African Trade: Mali, Bure goldfields and trans-Saharan routes" },
+      { "sourceId": "source-cambridge-transsaharan-trade", "locator": "On Trans-Saharan Trails: medieval western African trade networks" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "现有资料支持商路与商品网络的交汇，不足以证明马里与穆瓦希德中央政府直接缔结贸易条约。"
+  },
+  {
+    "id": "relationship-abbasid-kilwa-indian-ocean-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-abbasid-caliphate", "role": "阿拔斯时期波斯湾与阿拉伯商贸网络一端" },
+      { "entityId": "polity-kilwa-sultanate", "role": "东非斯瓦希里海岸贸易节点" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1000, "precision": "circa" },
+        "end": { "year": 1258, "precision": "exact" }
+      }
+    ],
+    "summary": "阿拔斯时期的波斯湾、阿拉伯商人和港口网络与基尔瓦所在的斯瓦希里海岸相连，推动黄金、象牙、陶器和其他商品在印度洋流通。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-kilwa-western-indian-ocean", "locator": "The Abbasid dynasty and Persian traders; Kilwa in the Swahili commercial network" },
+      { "sourceId": "source-unesco-kilwa-trade", "locator": "13th–16th century Indian Ocean trade through Kilwa" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "这里表达阿拔斯时期的跨海商贸网络，不证明阿拔斯中央政府与基尔瓦苏丹国签订或直接经营双边贸易。"
+  },
+  {
+    "id": "relationship-great-zimbabwe-kilwa-gold-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-great-zimbabwe", "role": "内陆黄金与象牙贸易中心" },
+      { "entityId": "polity-kilwa-sultanate", "role": "斯瓦希里海岸再分配港口" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1220, "precision": "circa" },
+        "end": { "year": 1450, "precision": "circa" }
+      }
+    ],
+    "summary": "大津巴布韦内陆生产与聚集的黄金、象牙经索法拉等海岸节点进入印度洋贸易，基尔瓦是重要的再分配港口；考古出土的基尔瓦钱币和外来物共同支持这一网络联系。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-great-zimbabwe-history", "locator": "Archaeological excavations: gold and Arab coins from Kilwa" },
+      { "sourceId": "source-unesco-kilwa-trade", "locator": "Kilwa merchants and the Indian Ocean trade in gold" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "考古和贸易史料支持商品网络联系，但不能据此断言大津巴布韦与基尔瓦之间存在双边条约或直接行政控制。"
+  },
+  {
+    "id": "relationship-aztec-purepecha-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-aztec-empire", "role": "进攻方与扩张方" },
+      { "entityId": "polity-purepecha-empire", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1478, "precision": "circa" },
+        "end": { "year": 1478, "precision": "circa" }
+      }
+    ],
+    "summary": "约1478年，扩张中的阿兹特克与普雷佩查（塔拉斯卡）帝国在西墨西哥交战；普雷佩查军队重创阿兹特克军，双方随后形成由堡垒守卫的边境地带。",
+    "eventIds": ["event-aztec-purepecha-battle"],
+    "sourceRefs": [
+      { "sourceId": "source-met-aztec-tarascan", "locator": "ca. 1478: The expanding Tarascan and Aztec empires confront each other in battle" },
+      { "sourceId": "source-cambridge-aztec-tarascan-frontier", "locator": "The Aztec empire and the fortified western border with the Tarascan empire" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-aztec-purepecha-border-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-aztec-empire", "role": "东侧边境政权" },
+      { "entityId": "polity-purepecha-empire", "role": "西侧边境政权" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1450, "precision": "circa" },
+        "end": { "year": 1519, "precision": "exact" }
+      }
+    ],
+    "summary": "阿兹特克—普雷佩查边境并非完全封闭，考古研究记录了黑曜石等商品跨越政治边界流动；本条只表达边境交换，不将其扩写为双方中央政府的贸易协定。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-cambridge-aztec-tarascan-frontier", "locator": "Goods moved across political borders within Mesoamerica; the Aztec/Tarascan frontier was not impermeable to trade" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "证据支持边境交换与商业流动，但不能确认每次交易由双方中央政权直接组织。"
   }
 ]
