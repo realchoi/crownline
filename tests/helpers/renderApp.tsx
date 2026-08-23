@@ -6,6 +6,7 @@ import { App } from "../../src/app/App";
 import { buildGeneratedArtifacts } from "../../src/data/artifacts";
 import type { CrownlineDetail } from "../../src/domain/types";
 import type { CrownlineGeographyLoader } from "../../src/data/loadCrownlineGeography";
+import type { CrownlineBoundariesLoader } from "../../src/data/loadCrownlineBoundaries";
 import "../../src/styles/styles.css";
 
 export const sourceData = await loadSourceData();
@@ -39,12 +40,23 @@ export const loadGeneratedGeography = async () => ({
   omittedCount: 0
 });
 
+export const loadGeneratedBoundaries = async () => ({
+  boundaries: artifacts.boundaries,
+  omittedCount: 0
+});
+
 export function renderApp(
   loadDetail: (entityId: string) => Promise<CrownlineDetail | null> = loadGeneratedDetail,
-  loadGeography: CrownlineGeographyLoader = loadGeneratedGeography
+  loadGeography: CrownlineGeographyLoader = loadGeneratedGeography,
+  loadBoundaries: CrownlineBoundariesLoader = loadGeneratedBoundaries
 ) {
   return render(
-    <App data={artifacts.index} loadDetail={loadDetail} loadGeography={loadGeography} />
+    <App
+      data={artifacts.index}
+      loadDetail={loadDetail}
+      loadGeography={loadGeography}
+      loadBoundaries={loadBoundaries}
+    />
   );
 }
 

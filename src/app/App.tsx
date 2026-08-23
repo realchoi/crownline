@@ -5,12 +5,14 @@ import { ComparisonPanel } from "../components/ComparisonPanel";
 import { FilterPanel } from "../components/FilterPanel";
 import { ViewModeControl } from "../components/ViewModeControl";
 import { getHistoricalYearBounds } from "../domain/browseState";
+import { selectBoundarySnapshots, type BoundarySelection } from "../domain/boundarySnapshots";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
 import { selectMapSnapshots } from "../domain/mapSnapshots";
 import { selectBrowseResults } from "../domain/selectors";
 import type { CrownlineIndex, TimelineSection } from "../domain/types";
 import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
 import type { CrownlineGeographyLoader } from "../data/loadCrownlineGeography";
+import type { CrownlineBoundariesLoader } from "../data/loadCrownlineBoundaries";
 import { AppFooter } from "./AppFooter";
 import { AppHeader } from "./AppHeader";
 import { BrowseContent } from "./BrowseContent";
@@ -18,16 +20,18 @@ import { BrowseResultsSummary } from "./BrowseResultsSummary";
 import { useBrowseUrlState } from "./useBrowseUrlState";
 import { useEntityDetail } from "./useEntityDetail";
 import { useGeographyData } from "./useGeographyData";
+import { useBoundaryData } from "./useBoundaryData";
 
 /** 应用根组件接收的已校验数据。 */
 interface AppProps {
   data: CrownlineIndex;
   loadDetail: CrownlineDetailLoader;
   loadGeography: CrownlineGeographyLoader;
+  loadBoundaries: CrownlineBoundariesLoader;
 }
 
 /** 组合筛选状态、时间轴、详情弹窗和 URL 同步的应用根组件。 */
-export function App({ data, loadDetail, loadGeography }: AppProps) {
+export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProps) {
   const yearBounds = useMemo(() => getHistoricalYearBounds(data), [data]);
   const { browseState, setBrowseState } = useBrowseUrlState({
     yearBounds,
@@ -42,6 +46,11 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
   const { geographyState, retry: retryGeography } = useGeographyData(
     browseState.viewMode,
     loadGeography
+  );
+  const { boundaryState, retry: retryBoundaries } = useBoundaryData(
+    browseState.viewMode,
+    browseState.mapLayer,
+    loadBoundaries
   );
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
   const mainRef = useRef<HTMLElement>(null);
@@ -71,6 +80,14 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
       browseState.mode === "point" ? browseState.year : undefined
     );
   }, [browseState.mode, browseState.year, geographyState, results.polities]);
+  const boundarySelection = useMemo<BoundarySelection | null>(() => {
+    if (boundaryState.status !== "ready") return null;
+    return selectBoundarySnapshots(
+      results.polities.map(({ entity }) => entity),
+      boundaryState.result.boundaries.boundarySnapshots,
+      browseState.mode === "point" ? browseState.year : undefined
+    );
+  }, [boundaryState, browseState.mode, browseState.year, results.polities]);
   // 即使筛选状态变化，也要允许已打开的详情继续读取完整实体记录。
   const selectedMatch = browseState.detailEntityId
     ? allMatches.find(({ entity }) => entity.id === browseState.detailEntityId)
@@ -138,7 +155,7 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
   }, [browseState.detailEntityId]);
 
   /** 记录触发元素、打开对应实体详情并启动按需加载。 */
-  const openDetail = (entityId: string, trigger: HTMLButtonElement) => {
+  const openDetail = (entityId: string, trigger: HTMLButtonElement | null) => {
     lastTriggerRef.current = trigger;
     setBrowseState((current) => ({ ...current, detailEntityId: entityId }));
   };
@@ -171,6 +188,7 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           panelRef={controlsPanelRef}
           showModeSwitch={browseState.viewMode === "timeline"}
           showYearControls={browseState.viewMode === "map" || browseState.mode === "point"}
+          mapLayer={browseState.mapLayer}
           mode={browseState.mode}
           year={browseState.year}
           yearBounds={yearBounds}
@@ -186,6 +204,7 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
               mode: current.viewMode === "map" ? "point" : current.mode
             }))
           }
+          onMapLayerChange={(mapLayer) => setBrowseState((current) => ({ ...current, mapLayer }))}
           onQueryChange={(query) => setBrowseState((current) => ({ ...current, query }))}
           onCategoryChange={(category) => {
             setBrowseState((current) => ({ ...current, category }));
@@ -216,6 +235,7 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           overviewGroupCount={overviewGroups.length}
           mapPolityCount={results.polities.length}
           mapSelection={mapSelection}
+          boundarySelection={boundarySelection}
         />
 
         {comparisonEntities.length > 0 && (
@@ -237,7 +257,10 @@ export function App({ data, loadDetail, loadGeography }: AppProps) {
           results={results}
           geographyState={geographyState}
           mapSelection={mapSelection}
+          boundarySelection={boundarySelection}
+          boundaryState={boundaryState}
           onRetryGeography={retryGeography}
+          onRetryBoundaries={retryBoundaries}
           onSelect={openDetail}
           onToggleComparison={toggleComparison}
         />

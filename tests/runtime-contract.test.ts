@@ -7,6 +7,7 @@ import { loadSourceData } from "../scripts/data-source";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import {
   asCrownlineGeography,
+  asCrownlineBoundaries,
   validateCrownlineDetail,
   validateCrownlineIndex
 } from "../src/data/runtimeValidation";
@@ -25,6 +26,10 @@ describe("生成产物与浏览器运行时契约一致性", () => {
     });
     expect(asCrownlineGeography(artifacts.geography)).toEqual({
       geography: artifacts.geography,
+      omittedCount: 0
+    });
+    expect(asCrownlineBoundaries(artifacts.boundaries)).toEqual({
+      boundaries: artifacts.boundaries,
       omittedCount: 0
     });
   });
@@ -72,6 +77,7 @@ describe("生成产物与浏览器运行时契约一致性", () => {
     expect(schema.properties.schemaVersion.const).toBe(CROWNLINE_SCHEMA_VERSION);
     expect(artifacts.index.schemaVersion).toBe(CROWNLINE_SCHEMA_VERSION);
     expect(artifacts.geography.schemaVersion).toBe(CROWNLINE_SCHEMA_VERSION);
+    expect(artifacts.boundaries.schemaVersion).toBe(CROWNLINE_SCHEMA_VERSION);
     artifacts.details.forEach((detail) => {
       expect(detail.schemaVersion).toBe(CROWNLINE_SCHEMA_VERSION);
     });
@@ -79,5 +85,24 @@ describe("生成产物与浏览器运行时契约一致性", () => {
     const futureVersion = structuredClone(artifacts.index) as unknown as Record<string, unknown>;
     futureVersion.schemaVersion = CROWNLINE_SCHEMA_VERSION + 1;
     expect(validateCrownlineIndex(futureVersion).valid).toBe(false);
+  });
+
+  it("v4 疆域根对象被 v5 运行时拒绝，单条坏记录只被隔离", () => {
+    const brokenVersion = structuredClone(artifacts.boundaries) as unknown as Record<
+      string,
+      unknown
+    >;
+    brokenVersion.schemaVersion = 4;
+    expect(() => asCrownlineBoundaries(brokenVersion)).toThrow("疆域数据校验失败");
+
+    const withBadRecord = structuredClone(artifacts.boundaries) as unknown as {
+      boundarySnapshots: unknown[];
+    };
+    withBadRecord.boundarySnapshots.push({ broken: true });
+    const result = asCrownlineBoundaries(withBadRecord);
+    expect(result.boundaries.boundarySnapshots).toHaveLength(
+      artifacts.boundaries.boundarySnapshots.length
+    );
+    expect(result.omittedCount).toBe(1);
   });
 });

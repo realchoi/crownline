@@ -1,5 +1,5 @@
 /** 数据契约允许使用的年代精度。 */
-export const CROWNLINE_SCHEMA_VERSION = 4 as const;
+export const CROWNLINE_SCHEMA_VERSION = 5 as const;
 export const DATE_PRECISIONS = ["exact", "circa", "decade", "century", "unknown"] as const;
 /** 区分真实政治实体与仅用于展示的历史分期。 */
 export const ENTITY_KINDS = ["polity", "historical-period"] as const;
@@ -49,6 +49,8 @@ export const SOURCE_TYPES = [
 export const GEOGRAPHIC_ROLES = ["capital", "political-center", "representative-center"] as const;
 /** 历史地点映射到现代坐标时的定位精度。 */
 export const POSITION_PRECISIONS = ["exact", "approximate", "regional"] as const;
+/** 疆域快照只表达可浏览的历史空间示意，不提供 exact。 */
+export const BOUNDARY_PRECISIONS = ["schematic", "approximate", "reconstructed"] as const;
 
 export type DatePrecision = (typeof DATE_PRECISIONS)[number];
 export type EntityKind = (typeof ENTITY_KINDS)[number];
@@ -64,6 +66,7 @@ export type EventType = (typeof EVENT_TYPES)[number];
 export type SourceType = (typeof SOURCE_TYPES)[number];
 export type GeographicRole = (typeof GEOGRAPHIC_ROLES)[number];
 export type PositionPrecision = (typeof POSITION_PRECISIONS)[number];
+export type BoundaryPrecision = (typeof BOUNDARY_PRECISIONS)[number];
 
 /**
  * 不含公元 0 年的历史日期。
@@ -242,6 +245,37 @@ export interface GeographicSnapshot {
   confidenceNote?: string;
 }
 
+/** GeoJSON RFC 7946 语义下的多块疆域；坐标顺序固定为 [longitude, latitude]。 */
+export interface GeoJsonMultiPolygon {
+  type: "MultiPolygon";
+  coordinates: number[][][][];
+}
+
+/** 疆域数据的来源、许可和可复现处理登记。 */
+export interface BoundaryProvenance {
+  datasetTitle: string;
+  attribution: string;
+  licenseName: string;
+  licenseUrl: string;
+  sourceUrl: string;
+  derivedFrom?: string;
+  processingNote: string;
+}
+
+/** 一条具有明确适用时间的简化历史疆域示意。 */
+export interface GeographicBoundarySnapshot {
+  id: string;
+  polityId: string;
+  periods: HistoricalInterval[];
+  geometry: GeoJsonMultiPolygon;
+  boundaryPrecision: BoundaryPrecision;
+  boundaryNote: string;
+  sourceRefs: SourceRef[];
+  provenance: BoundaryProvenance;
+  confidence: ConfidenceLevel;
+  confidenceNote?: string;
+}
+
 /** 集中管理的可追溯资料来源。 */
 export interface Source {
   id: string;
@@ -262,7 +296,7 @@ export interface ChronologyPolicy {
   yearSelection: "exists-at-any-time-during-year";
 }
 
-/** Crownline 数据契约 v4 的根对象。 */
+/** Crownline 数据契约 v5 的根对象。 */
 export interface CrownlineData {
   schemaVersion: typeof CROWNLINE_SCHEMA_VERSION;
   chronologyPolicy: ChronologyPolicy;
@@ -275,6 +309,7 @@ export interface CrownlineData {
   relationships: Relationship[];
   events: HistoricalEvent[];
   geographicSnapshots: GeographicSnapshot[];
+  boundarySnapshots: GeographicBoundarySnapshot[];
   sources: Source[];
 }
 
@@ -304,6 +339,13 @@ export interface CrownlineDetail {
 export interface CrownlineGeography {
   schemaVersion: typeof CROWNLINE_SCHEMA_VERSION;
   geographicSnapshots: GeographicSnapshot[];
+  sources: Source[];
+}
+
+/** 地图疆域图层按需加载的独立数据包。 */
+export interface CrownlineBoundaries {
+  schemaVersion: typeof CROWNLINE_SCHEMA_VERSION;
+  boundarySnapshots: GeographicBoundarySnapshot[];
   sources: Source[];
 }
 

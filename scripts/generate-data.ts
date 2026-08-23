@@ -22,6 +22,7 @@ export interface GeneratedDataSummary {
   persons: number;
   reigns: number;
   geographicSnapshots: number;
+  boundarySnapshots: number;
   details: number;
   sources: number;
 }
@@ -92,6 +93,7 @@ export async function generateData(
       await writeJson(join(toolStaging, "coverage-report.json"), coverageReport);
       await writeJson(join(publicStaging, "index.json"), artifacts.index);
       await writeJson(join(publicStaging, "geography.json"), artifacts.geography);
+      await writeJson(join(publicStaging, "boundaries.json"), artifacts.boundaries);
       await Promise.all(
         Array.from(artifacts.details, ([entityId, detail]) => {
           return writeJson(join(publicStaging, "details", `${entityId}.json`), detail);
@@ -113,6 +115,7 @@ export async function generateData(
       persons: data.persons.length,
       reigns: data.reigns.length,
       geographicSnapshots: data.geographicSnapshots.length,
+      boundarySnapshots: data.boundarySnapshots.length,
       details: artifacts.details.size,
       sources: data.sources.length
     };
@@ -126,7 +129,8 @@ if (entryPath && import.meta.url === pathToFileURL(resolve(entryPath)).href) {
       console.log(
         `数据生成完成：${summary.sections} 个阶段，${summary.entities} 个实体，` +
           `${summary.persons} 个人物，${summary.reigns} 条任期，` +
-          `${summary.geographicSnapshots} 条地理快照，${summary.details} 个详情包，` +
+          `${summary.geographicSnapshots} 条地理快照，${summary.boundarySnapshots} 条疆域快照，` +
+          `${summary.details} 个详情包，` +
           `${summary.sources} 个来源`
       );
     })

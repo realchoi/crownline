@@ -1,18 +1,18 @@
-# Crownline 数据契约 v4
+# Crownline 数据契约 v5
 
-本契约在 v3 的统治者、任期、关系和事件之上，加入带适用时间、精度与来源的历史地理快照。机器可读定义以 `src/data/crownline-data.schema.json` 为准，TypeScript 消费端以 `src/domain/types.ts` 为准；本文解释两者共同采用的历史口径。
+本契约在 v4 的统治者、任期、关系、事件和点位地理快照之上，加入带适用时间、精度、来源、许可和 GeoJSON `MultiPolygon` 的简化疆域快照。机器可读定义以 `src/data/crownline-data.schema.json` 为准，TypeScript 消费端以 `src/domain/types.ts` 为准；本文解释两者共同采用的历史口径。
 
 ## 0. 源分片与运行时产物
 
 人工维护数据位于 `src/data/source/`，不再维护单一完整 JSON。每个实体分片包含唯一正整数 `order`、一个主实体，以及优先归属于该实体的人物、任期与明确空位；阶段、地区、来源、关系和事件单独分片。所有记录聚合后仍遵循本契约，并共享单一全局 ID 命名空间。
 
-`npm run generate:data` 按 `order` 聚合实体分片，执行 JSON Schema 和跨记录语义校验，然后加载 `src/data/source/coverage/coverage-review.json`，最后生成首屏 `index.json`、按实体加载的详情包，以及首次进入地图时加载的独立 `geography.json`。生成过程同时在 `.generated/data/coverage-report.json` 写出确定性的覆盖报告 v2：三项可审查维度采用状态分布，关系采用类型、可信度、参与政权和顶层地区分布，来源采用等级、URL、访问日期和关键引用定位质量统计。顶层地区的“直接归属”与“包含子地区”分别计数，跨地区政权会进入所有相关地区。覆盖审查目录只供维护工具使用，不进入 `CrownlineData`、首屏索引、详情包或地理包。`.generated/` 和 `public/data/generated/` 都是可重建产物，不得手工修改或提交。浏览器的窄校验只防止部署缺失或文件错配，不能替代生成阶段的全量校验。
+`npm run generate:data` 按 `order` 聚合实体分片，执行 JSON Schema 和跨记录语义校验，然后加载 `src/data/source/coverage/coverage-review.json`，最后生成首屏 `index.json`、按实体加载的详情包、点位 `geography.json` 和独立疆域 `boundaries.json`。疆域坐标只进入 `boundaries.json`，不进入首屏索引、详情或点位包。生成过程同时在 `.generated/data/coverage-report.json` 写出确定性的覆盖报告 v2；覆盖审查目录只供维护工具使用，不进入任何浏览器产物。`.generated/` 和 `public/data/generated/` 都是可重建产物，不得手工修改或提交。浏览器的窄校验只防止部署缺失或文件错配，不能替代生成阶段的全量校验。
 
 <!-- crownline-data-stats:start -->
-当前数据快照：133 个实体（131 个政权、2 个历史分期）、1335 位人物、1374 条任期、28 条结构化关系、18 个事件、146 条地理快照、186 项来源。
+当前数据快照：133 个实体（131 个政权、2 个历史分期）、1335 位人物、1374 条任期、28 条结构化关系、18 个事件、146 条地理快照、8 条疆域快照、187 项来源。
 <!-- crownline-data-stats:end -->
 
-截至 2026-08-22 的扩容批次和地图样本说明保留在历史记录中；2026-08-23 数据深度批次补充 18 个中国政权的 20 条地理快照、10 条关系和 4 个事件，当前可机器校验的数据摘要见上方标记区块。新增点位仍只表示历史地点浏览定位，不表示疆域。
+截至 2026-08-22 的扩容批次和地图样本说明保留在历史记录中；当前可机器校验的数据摘要见上方标记区块。疆域试点与来源审查见 [`docs/boundary-pilot.md`](boundary-pilot.md)。新增点位仍只表示历史地点浏览定位；新增疆域也只是带年份的简化示意。
 
 ## 1. ID 与引用
 
@@ -109,6 +109,20 @@
 
 构建期对全部地理记录执行严格 Schema 和语义校验，包括坐标范围、时期、政权类型、来源闭包、重复 ID 与重复语义记录。运行时先严格校验 `geography.json` 根对象、版本和来源数组，再逐条收窄快照；单条损坏记录会被跳过并计数，根对象损坏则整份地图数据不可用。运行时隔离不放宽构建期标准。
 
+## 6.1 疆域快照
+
+`GeographicBoundarySnapshot` 只表示某政权在指定时间范围内的一套采用疆域示意，不从点位推导，也不覆盖政权的其他年份：
+
+- `polityId` 必须引用 `entityKind: "polity"`，不能引用历史分期；每个 `period` 必须完整落在某一段政权存在期内，不允许公元 0 年、倒置、相邻可合并区间或同一政权同年多套采用快照。
+- `geometry` 必须严格是 GeoJSON `MultiPolygon`；单块疆域也使用只含一个 polygon 的结构。位置顺序固定为 `[longitude, latitude]`，环至少 4 个位置、首尾完全相同、非零近似面积，不接受连续重复坐标、自交、越界、非有限数值或未预先拆分的反经线几何。洞环保留在对应 polygon 内并须落在外环内。
+- `boundaryPrecision` 只能是 `schematic`、`approximate` 或 `reconstructed`，不提供 `exact`。`boundaryNote` 必须说明采用口径、适用时间和示意限制。
+- `provenance` 至少包含数据集名称、署名、许可名称、许可地址、来源地址和可复现处理说明。生产坐标不得来自许可不清或不允许派生坐标的资料。
+- 每条记录至少引用一个现有来源；低可信度或争议记录必须有 `confidenceNote`。运行时只保留来源闭包完整且几何安全的记录，坏记录计数隔离。
+
+疆域快照明确是公开资料基础上的重建或简化历史空间示意，不代表整个政权存续期、现代主权、范围内地点的同等控制或精确面积/距离/边界分析。边缘地区可能存在羁縻、间接统治、附属关系、争议或资料不确定性。两个多边形视觉上相交也不会生成接壤、空间重叠、战争、外交、臣属或领土得失结论；本 MVP 不实现任何空间关系推断、面积比较、连续年份插值或竞争性重建版本切换。
+
+疆域按需加载：只有地图图层切换为 `layer=boundaries` 或 `layer=combined` 才请求 `boundaries.json`。全时期总览不会把跨时代疆域叠加；用户必须选择明确年份。地图下方结果列表包含政权、适用时期、精度、可信度、边界说明、详情和对比入口，是手机和键盘用户的等价核心界面。预算由 `npm run check:boundaries` 固定检查：原始不超过 500 KB、gzip 不超过 150 KB、总坐标位置不超过 1,200、单条不超过 180 个位置、试点不超过 10 条。
+
 ## 7. 来源与可信度
 
 - `sources` 集中保存书目或机构来源，业务记录通过 `sourceRefs` 引用，可补充页码、章节或注释。
@@ -135,11 +149,11 @@
 - 争议年代或低可信度记录缺少说明
 - 地理快照引用历史分期、越出政权存在期、坐标越界、缺少位置说明或形成重复语义记录。
 
-4. `src/data/runtimeValidation.ts` 是浏览器包中的窄校验，不引入完整 Schema 或 Ajv。首屏索引严格检查时间轴、实体、地区、纪年策略以及当前筛选、时间轴、时间点和详情基础信息会立即读取的字段；详情严格检查人物、任期、明确空位、来源闭包和请求实体 ID；地理数据严格检查根对象、版本和来源。
+4. `src/data/runtimeValidation.ts` 是浏览器包中的窄校验，不引入完整 Schema 或 Ajv。首屏索引严格检查时间轴、实体、地区、纪年策略以及当前筛选、时间轴、时间点和详情基础信息会立即读取的字段；详情严格检查人物、任期、明确空位、来源闭包和请求实体 ID；点位地理和疆域数据分别严格检查根对象、版本和来源。
 
-覆盖审查数据不属于上述浏览器四层契约。`validate:data` 和 `generate:data` 会在聚合后的 `CrownlineData` 校验通过后独立加载它；文件缺失、JSON 损坏、结构错误、悬空政权、历史分期、重复记录或状态冲突都会失败。覆盖报告写入 `.generated/data/coverage-report.json`，不会扩展运行时 Schema v4 的 `CrownlineIndex`、`CrownlineDetail` 或 `CrownlineGeography`。
+覆盖审查数据不属于上述浏览器四层契约。`validate:data` 和 `generate:data` 会在聚合后的 `CrownlineData` 校验通过后独立加载它；文件缺失、JSON 损坏、结构错误、悬空政权、历史分期、重复记录或状态冲突都会失败。覆盖报告写入 `.generated/data/coverage-report.json`，不会扩展运行时 Schema v5 的 `CrownlineIndex`、`CrownlineDetail`、`CrownlineGeography` 或 `CrownlineBoundaries`。
 
-关系和事件继续作为详情根数组存在，但由历史关系领域层逐条收窄，因为单条校订记录损坏不应阻止双方时间对比和统治者展示。地理快照同理逐条隔离：根对象或来源闭包损坏会使地图加载失败，单条快照损坏只计入跳过数量，从而保留其余可用点位。这个容错策略只用于部署时故障隔离，不放宽构建期的完整 Schema 与语义要求。
+关系和事件继续作为详情根数组存在，但由历史关系领域层逐条收窄，因为单条校订记录损坏不应阻止双方时间对比和统治者展示。点位地理与疆域快照同理逐条隔离：根对象、版本或来源数组损坏会使对应地图包加载失败，单条记录损坏只计入跳过数量，从而保留其余可用数据。这个容错策略只用于部署时故障隔离，不放宽构建期的完整 Schema 与语义要求。
 
 `tests/runtime-contract.test.ts` 使用生成器真实产物验证 index、全部 detail 与 geography 均通过运行时校验；同时固定 UI 必需字段缺失、本地名称与 BCP 47 标签配对，以及 JSON Schema、TypeScript 常量、生成产物和运行时支持版本的一致性。Schema 版本改变时必须同步修改所有层，否则测试会显式失败。
 
@@ -148,7 +162,7 @@
 - 在 JSON Schema 中声明字段、必填性与结构约束；
 - 在 `src/domain/types.ts` 中更新对应 TypeScript 类型；
 - 若字段涉及跨记录含义，在 `src/domain/dataValidation.ts` 增加语义规则；
-- 在 `src/data/runtimeValidation.ts` 的相应 index、detail 或 geography 窄边界中验证 UI 实际读取的最小安全结构；
+- 在 `src/data/runtimeValidation.ts` 的相应 index、detail、geography 或 boundaries 窄边界中验证 UI 实际读取的最小安全结构；
 - 在生成产物契约测试中增加“有效产物通过、字段缺失被拒绝”的回归用例。
 
 修改数据后运行：

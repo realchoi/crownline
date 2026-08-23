@@ -91,7 +91,7 @@ describe("数据覆盖报告 v2", () => {
 
     expect(report).toMatchObject({
       reportVersion: DATA_COVERAGE_REPORT_VERSION,
-      dataSchemaVersion: 4,
+      dataSchemaVersion: 5,
       totals: {
         entities: 133,
         polities: 131,
@@ -101,7 +101,7 @@ describe("数据覆盖报告 v2", () => {
         relationships: 28,
         events: 18,
         geographicSnapshots: 146,
-        sources: 186
+        sources: 187
       },
       polityCoverage: {
         rulerDetails: {
@@ -148,11 +148,11 @@ describe("数据覆盖报告 v2", () => {
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 186,
-      byType: { primary: 2, secondary: 31, tertiary: 66, dataset: 2, institutional: 85 },
-      withUrl: 185,
+      total: 187,
+      byType: { primary: 2, secondary: 31, tertiary: 66, dataset: 3, institutional: 85 },
+      withUrl: 186,
       withoutUrl: 1,
-      withAccessedAt: 185,
+      withAccessedAt: 186,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toEqual({
@@ -408,7 +408,8 @@ describe("空范围", () => {
       reignVacancies: [],
       relationships: [],
       events: [],
-      geographicSnapshots: []
+      geographicSnapshots: [],
+      boundarySnapshots: []
     };
     const report: DataCoverageReport = buildDataCoverageReport(fixture, { entries: [] });
 

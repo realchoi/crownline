@@ -57,7 +57,13 @@ body:has(dialog[open]) {
 
 .type-badge.detail-contemporary {
   background: color-mix(in srgb, var(--parallel) 16%, transparent);
-  color: var(--parallel);
+  color: #6d4a18;
+}
+
+@media (prefers-color-scheme: dark) {
+  .type-badge.detail-contemporary {
+    color: #e2b664;
+  }
 }
 
 .type-badge.detail-context {

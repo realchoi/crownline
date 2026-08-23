@@ -4,6 +4,7 @@ import { validateCrownlineData } from "../src/domain/dataValidation";
 import type {
   CrownlineData,
   GeographicSnapshot,
+  GeographicBoundarySnapshot,
   HistoricalEntity,
   Person,
   Reign,
@@ -41,7 +42,7 @@ function makeEntity(overrides: Partial<HistoricalEntity> = {}): HistoricalEntity
 
 function makeValidData(): CrownlineData {
   return {
-    schemaVersion: 4,
+    schemaVersion: 5,
     chronologyPolicy: {
       calendar: "historical-year",
       hasYearZero: false,
@@ -74,6 +75,7 @@ function makeValidData(): CrownlineData {
     relationships: [],
     events: [],
     geographicSnapshots: [],
+    boundarySnapshots: [],
     sources: [
       {
         id: "source-test",
@@ -107,6 +109,49 @@ function makeValidDataWithGeography(): CrownlineData {
   return data;
 }
 
+function makeBoundarySnapshot(
+  overrides: Partial<GeographicBoundarySnapshot> = {}
+): GeographicBoundarySnapshot {
+  return {
+    id: "boundary-polity-test-1-10",
+    polityId: "polity-cn-test",
+    periods: [period(1, 10)],
+    geometry: {
+      type: "MultiPolygon",
+      coordinates: [
+        [
+          [
+            [100, 20],
+            [110, 20],
+            [110, 30],
+            [100, 30],
+            [100, 20]
+          ]
+        ]
+      ]
+    },
+    boundaryPrecision: "schematic",
+    boundaryNote: "用于验证的历史空间示意，不代表精确勘界。",
+    sourceRefs: [{ sourceId: "source-test" }],
+    provenance: {
+      datasetTitle: "测试开放疆域数据",
+      attribution: "测试数据贡献者",
+      licenseName: "CC0 1.0",
+      licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+      sourceUrl: "https://example.test/boundaries",
+      processingNote: "以 WGS 84 输入离线简化，固定参数输出。"
+    },
+    confidence: "high",
+    ...overrides
+  };
+}
+
+function makeValidDataWithBoundary(): CrownlineData {
+  const data = makeValidData();
+  data.boundarySnapshots.push(makeBoundarySnapshot());
+  return data;
+}
+
 function issueCodes(input: unknown): string[] {
   return validateCrownlineData(input).issues.map((issue) => issue.code);
 }
@@ -136,7 +181,7 @@ describe("JSON Schema 结构校验", () => {
     expect(validateCrownlineData(validTag).valid).toBe(true);
   });
 
-  it("接受带统治者空位记录的地区契约 v4", () => {
+  it("拒绝仍为 v4 的完整数据契约", () => {
     const data = makeValidData() as unknown as {
       schemaVersion: number;
       regions: Array<Record<string, unknown>>;
@@ -154,15 +199,24 @@ describe("JSON Schema 结构校验", () => {
       sourceRefs: [{ sourceId: "source-test" }]
     };
 
-    expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
+    expect(validateCrownlineData(data).issues).toContainEqual(
+      expect.objectContaining({ path: "/schemaVersion", code: "SCHEMA_ERROR" })
+    );
   });
 
   it("接受完整的最小数据集", () => {
     expect(validateCrownlineData(makeValidData())).toEqual({ valid: true, issues: [] });
   });
 
-  it("接受带来源地理快照的数据契约 v4", () => {
+  it("接受带来源地理快照的数据契约 v5", () => {
     expect(validateCrownlineData(makeValidDataWithGeography())).toEqual({
+      valid: true,
+      issues: []
+    });
+  });
+
+  it("接受带来源和许可元数据的 v5 MultiPolygon 疆域快照", () => {
+    expect(validateCrownlineData(makeValidDataWithBoundary())).toEqual({
       valid: true,
       issues: []
     });
@@ -210,6 +264,103 @@ describe("跨记录语义校验", () => {
     data.geographicSnapshots.push(makeGeographicSnapshot(overrides));
 
     expect(issueCodes(data)).toContain(code);
+  });
+
+  it.each([
+    ["历史分期政权", { polityId: "period-test" }, "INVALID_BOUNDARY_POLITY"],
+    ["越过政权存在期", { periods: [period(1, 11)] }, "BOUNDARY_OUTSIDE_POLITY"],
+    [
+      "缺少许可",
+      { provenance: { ...makeBoundarySnapshot().provenance, licenseUrl: " " } },
+      "INCOMPLETE_BOUNDARY_PROVENANCE"
+    ],
+    ["低可信度说明缺失", { confidence: "low" }, "MISSING_CONFIDENCE_NOTE"]
+  ] as Array<[string, Partial<GeographicBoundarySnapshot>, string]>)(
+    "拒绝疆域快照的%s",
+    (_label, overrides, code) => {
+      const data = makeValidData();
+      if (overrides.polityId === "period-test") {
+        data.entities.push(
+          makeEntity({ id: "period-test", entityKind: "historical-period", polityForms: [] })
+        );
+      }
+      data.boundarySnapshots.push(makeBoundarySnapshot(overrides));
+      expect(issueCodes(data)).toContain(code);
+    }
+  );
+
+  it.each([
+    ["几何类型错误", { type: "Polygon" }, "SCHEMA_ERROR"],
+    ["空几何", { coordinates: [] }, "SCHEMA_ERROR"],
+    [
+      "未闭合",
+      {
+        coordinates: [
+          [
+            [
+              [100, 20],
+              [110, 20],
+              [110, 30],
+              [100, 30]
+            ]
+          ]
+        ]
+      },
+      "UNCLOSED_BOUNDARY_RING"
+    ],
+    [
+      "退化环",
+      {
+        coordinates: [
+          [
+            [
+              [100, 20],
+              [105, 20],
+              [110, 20],
+              [100, 20]
+            ]
+          ]
+        ]
+      },
+      "DEGENERATE_BOUNDARY_RING"
+    ],
+    [
+      "连续重复坐标",
+      {
+        coordinates: [
+          [
+            [
+              [100, 20],
+              [110, 20],
+              [110, 20],
+              [100, 30],
+              [100, 20]
+            ]
+          ]
+        ]
+      },
+      "DUPLICATE_BOUNDARY_POSITION"
+    ]
+  ] as Array<[string, Record<string, unknown>, string]>)(
+    "拒绝疆域的%s",
+    (_label, geometryPatch, code) => {
+      const data = makeValidData();
+      const snapshot = makeBoundarySnapshot();
+      snapshot.geometry = { ...snapshot.geometry, ...geometryPatch } as typeof snapshot.geometry;
+      data.boundarySnapshots.push(snapshot);
+      expect(issueCodes(data)).toContain(code);
+    }
+  );
+
+  it("拒绝同一政权同一时间的重叠采用疆域快照", () => {
+    const data = makeValidDataWithBoundary();
+    data.boundarySnapshots.push(
+      makeBoundarySnapshot({
+        id: "boundary-polity-test-5-10",
+        periods: [period(5, 10)]
+      })
+    );
+    expect(issueCodes(data)).toContain("OVERLAPPING_BOUNDARY_SNAPSHOTS");
   });
 
   it("拒绝地理快照引用历史分期", () => {

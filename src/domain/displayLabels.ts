@@ -1,5 +1,6 @@
 import type {
   ConfidenceLevel,
+  BoundaryPrecision,
   DisplayCategory,
   GeographicRole,
   PolityForm,
@@ -53,6 +54,12 @@ export const DETAIL_CONFIDENCE_NAMES: Record<ConfidenceLevel, string> = {
   medium: "中等",
   low: "较低",
   disputed: "存在争议"
+};
+
+export const BOUNDARY_PRECISION_NAMES: Record<BoundaryPrecision, string> = {
+  schematic: "示意",
+  approximate: "近似",
+  reconstructed: "重建"
 };
 
 export const RELATIONSHIP_TYPE_LABELS: Record<RelationshipType, string> = {

@@ -7,7 +7,7 @@ import {
   previousHistoricalYear,
   toOrdinal
 } from "../domain/chronology";
-import type { BrowseMode, HistoricalYearBounds } from "../domain/browseState";
+import type { BrowseMode, HistoricalYearBounds, MapLayer } from "../domain/browseState";
 import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import type { RegionScope } from "../domain/regionScope";
 import type { CategoryFilter } from "../domain/selectors";
@@ -19,6 +19,7 @@ export interface FilterPanelProps {
   panelRef?: Ref<HTMLElement>;
   showModeSwitch: boolean;
   showYearControls: boolean;
+  mapLayer: MapLayer;
   mode: BrowseMode;
   year: number;
   yearBounds: HistoricalYearBounds;
@@ -28,6 +29,7 @@ export interface FilterPanelProps {
   regionScope: RegionScope;
   onModeChange: (mode: BrowseMode) => void;
   onYearChange: (year: number) => void;
+  onMapLayerChange: (layer: MapLayer) => void;
   onQueryChange: (query: string) => void;
   onCategoryChange: (category: CategoryFilter) => void;
   onRegionScopeChange: (scope: RegionScope) => void;
@@ -39,6 +41,7 @@ export function FilterPanel({
   panelRef,
   showModeSwitch,
   showYearControls,
+  mapLayer,
   mode,
   year,
   yearBounds,
@@ -48,12 +51,15 @@ export function FilterPanel({
   regionScope,
   onModeChange,
   onYearChange,
+  onMapLayerChange,
   onQueryChange,
   onCategoryChange,
   onRegionScopeChange,
   onClear
 }: FilterPanelProps) {
   const hasFilters = query.trim().length > 0 || category !== "all";
+  const showPoints = mapLayer !== "boundaries";
+  const showBoundaries = mapLayer !== "points";
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
   const isMapOverview = !showModeSwitch && mode === "overview";
   const isMapTimepoint = !showModeSwitch && mode === "point";
@@ -89,6 +95,37 @@ export function FilterPanel({
       )}
 
       <RegionScopeControl regions={regions} scope={regionScope} onChange={onRegionScopeChange} />
+
+      {!showModeSwitch && (
+        <fieldset className="map-layer-control">
+          <legend className="field-label">地图图层</legend>
+          <div className="map-layer-switch" role="group" aria-label="地图图层">
+            <button
+              type="button"
+              aria-pressed={showPoints}
+              onClick={() => {
+                if (mapLayer === "combined") onMapLayerChange("boundaries");
+                else if (mapLayer === "boundaries") onMapLayerChange("combined");
+              }}
+            >
+              地点标记
+            </button>
+            <button
+              type="button"
+              aria-pressed={showBoundaries}
+              onClick={() => {
+                if (mapLayer === "combined") onMapLayerChange("points");
+                else if (mapLayer === "points") onMapLayerChange("combined");
+              }}
+            >
+              疆域示意
+            </button>
+          </div>
+          <p className="map-layer-help">
+            默认显示地点标记；开启疆域示意后两者叠加。疆域需要明确年份，且不代表精确勘界。
+          </p>
+        </fieldset>
+      )}
 
       <div className="controls-grid">
         {showYearControls && (

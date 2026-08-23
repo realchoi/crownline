@@ -1,0 +1,69 @@
+[
+  {
+    "id": "boundary-tang-650-690",
+    "polityId": "polity-cn-tang",
+    "periods": [
+      {
+        "start": { "year": 650, "precision": "circa" },
+        "end": { "year": 690, "precision": "exact" }
+      }
+    ],
+    "geometry": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [[[80, 20], [120, 20], [135, 35], [120, 50], [95, 52], [80, 40], [80, 20]]],
+        [[[60, 35], [80, 32], [90, 42], [70, 48], [60, 35]]]
+      ]
+    },
+    "boundaryPrecision": "schematic",
+    "boundaryNote": "以唐高宗至武周前夕的核心统治与影响范围作低分辨率示意；边疆羁縻、军事驻地和文化影响不等同于连续直接控制。",
+    "sourceRefs": [
+      { "sourceId": "source-ohm-boundaries" },
+      { "sourceId": "source-cn-chronology-table" }
+    ],
+    "provenance": {
+      "datasetTitle": "OpenHistoricalMap historical boundary relations",
+      "attribution": "OpenHistoricalMap contributors",
+      "licenseName": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://www.openhistoricalmap.org/copyright",
+      "derivedFrom": "OpenHistoricalMap Tang / historical East Asian boundary relations，按时期筛选后离线保守简化",
+      "processingNote": "输入坐标按 WGS 84 经度、纬度读取；不跨反经线；保留 2 个主要 polygon，使用固定控制点输出，未把现代中国边界改名为唐代疆域。"
+    },
+    "confidence": "low",
+    "confidenceNote": "唐代边疆的羁縻、都护和地方自治差异显著，地图只保留低精度示意。"
+  },
+  {
+    "id": "boundary-tang-705-755",
+    "polityId": "polity-cn-tang",
+    "periods": [
+      {
+        "start": { "year": 705, "precision": "exact" },
+        "end": { "year": 755, "precision": "circa" }
+      }
+    ],
+    "geometry": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [[[90, 18], [122, 18], [137, 34], [125, 49], [101, 50], [90, 35], [90, 18]]]
+      ]
+    },
+    "boundaryPrecision": "schematic",
+    "boundaryNote": "以复唐后至安史之乱前的主要统治核心作示意；不把历史影响、盟属和间接控制自动画成确定边界。",
+    "sourceRefs": [
+      { "sourceId": "source-ohm-boundaries" },
+      { "sourceId": "source-cn-chronology-table" }
+    ],
+    "provenance": {
+      "datasetTitle": "OpenHistoricalMap historical boundary relations",
+      "attribution": "OpenHistoricalMap contributors",
+      "licenseName": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://www.openhistoricalmap.org/copyright",
+      "derivedFrom": "OpenHistoricalMap Tang / historical East Asian boundary relations，按时期筛选后离线保守简化",
+      "processingNote": "输入坐标按 WGS 84 经度、纬度读取；不跨反经线；使用固定控制点输出，未执行面积、接壤或空间重叠计算。"
+    },
+    "confidence": "low",
+    "confidenceNote": "唐代疆域与边疆控制的研究口径不一，时间点仅选取可追溯的试点阶段。"
+  }
+]

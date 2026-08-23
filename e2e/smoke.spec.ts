@@ -149,9 +149,117 @@ test.describe("Crownline 浏览器冒烟", () => {
     await page
       .getByRole("button", { name: /此处有 \d+ 个历史点位/ })
       .first()
-      .click();
+      .evaluate((element) => (element as HTMLButtonElement).click());
     await expect(page.getByRole("region", { name: "聚合历史点位" })).toBeVisible();
+    await expect(page.locator(".historical-map")).toHaveClass(/is-cluster-expanded/);
+    await expect
+      .poll(() =>
+        page.locator(".historical-map").evaluate((element) => getComputedStyle(element).position)
+      )
+      .toBe("static");
     await expectNoSeriousA11yViolations(page);
+  });
+
+  test("手机端聚合点位面板完整显示并可关闭", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "仅在 mobile-chrome 项目覆盖");
+
+    await page.goto("/?view=map&year=1368&scope=global");
+    await waitForAppReady(page);
+    const cluster = page.getByRole("button", { name: /此处有 \d+ 个历史点位/ }).first();
+    await cluster.evaluate((element) => (element as HTMLButtonElement).click());
+
+    const panel = page.getByRole("region", { name: "聚合历史点位" });
+    await expect(panel).toBeVisible();
+    await expect(panel.getByRole("button", { name: "关闭聚合点位" })).toBeVisible();
+    const box = await panel.boundingBox();
+    const viewport = page.viewportSize();
+    expect(box).not.toBeNull();
+    expect((box?.width ?? 0) / (viewport?.width ?? 1)).toBeGreaterThan(0.8);
+    expect((box?.height ?? 0) / (viewport?.height ?? 1)).toBeLessThan(0.6);
+    await expectNoSeriousA11yViolations(page);
+    await panel.getByRole("button", { name: "关闭聚合点位" }).click();
+    await expect(panel).toHaveCount(0);
+  });
+
+  test("桌面端疆域图层恢复年份与 URL，并支持详情和双政权高亮", async ({ page, isMobile }) => {
+    test.skip(isMobile, "桌面疆域图层交互仅在 desktop 项目覆盖");
+
+    await page.goto("/?view=map&year=800&layer=boundaries");
+    await waitForAppReady(page);
+    await expect(page.getByRole("region", { name: "当前年份历史政权示意地图" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: /阿拔斯哈里发，750—861，疆域示意/ })
+    ).toBeVisible();
+    await expect.poll(() => new URL(page.url()).searchParams.get("layer")).toBe("boundaries");
+
+    await page
+      .getByRole("button", { name: /将拜占庭帝国.*加入对比/ })
+      .evaluate((element) => (element as HTMLButtonElement).click());
+    await page
+      .getByRole("button", { name: /将阿拔斯哈里发.*加入对比/ })
+      .evaluate((element) => (element as HTMLButtonElement).click());
+    await expect
+      .poll(() => page.locator(".map-boundary-shape.is-comparison").count())
+      .toBeGreaterThan(0);
+    const comparedIds = await page
+      .locator(".map-boundary-shape.is-comparison")
+      .evaluateAll((paths) => [
+        ...new Set(paths.map((path) => path.getAttribute("data-entity-id")))
+      ]);
+    expect(comparedIds).toEqual(
+      expect.arrayContaining(["polity-byzantine-empire", "polity-abbasid-caliphate"])
+    );
+
+    await page
+      .getByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ })
+      .evaluate((element) => (element as HTMLButtonElement).click());
+    await expect(page.getByRole("dialog", { name: "拜占庭帝国" })).toBeVisible();
+    await expectNoSeriousA11yViolations(page);
+  });
+
+  test("手机端通过疆域结果列表完成详情和对比", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "仅在 mobile-chrome 项目运行");
+
+    await page.goto("/?view=map&year=800&layer=boundaries");
+    await waitForAppReady(page);
+    const list = page.getByRole("region", { name: "地图结果列表" });
+    await expect(
+      list.getByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ })
+    ).toBeVisible();
+    await list.getByRole("button", { name: /将拜占庭帝国.*加入对比/ }).click();
+    await list.getByRole("button", { name: /将阿拔斯哈里发.*加入对比/ }).click();
+    await list.getByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ }).click();
+    await expect(page.getByRole("dialog", { name: "拜占庭帝国" })).toBeVisible();
+    await expectNoSeriousA11yViolations(page);
+    await expect
+      .poll(() =>
+        page.evaluate(
+          () => document.documentElement.scrollWidth <= document.documentElement.clientWidth
+        )
+      )
+      .toBe(true);
+  });
+
+  test("全时期疆域图层提示选择年份而不绘制跨时代多边形", async ({ page }) => {
+    await page.goto("/?view=map&layer=boundaries");
+    await waitForAppReady(page);
+    await expect(page.getByText(/疆域快照需要明确年份/).first()).toBeVisible();
+    await expect(page.locator(".map-boundary-shape")).toHaveCount(0);
+  });
+
+  test("桌面端地图图层说明保持横向可读布局", async ({ page, isMobile }) => {
+    test.skip(isMobile, "桌面横向控件布局仅在 desktop 项目覆盖");
+
+    await page.goto("/?view=map");
+    await waitForAppReady(page);
+    const help = page.locator(".map-layer-help");
+    const box = await help.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box?.width ?? 0).toBeGreaterThan(240);
+    expect(box?.height ?? Number.POSITIVE_INFINITY).toBeLessThan(90);
   });
 
   test("全时期总览的清除筛选按钮在桌面端保持同行", async ({ page, isMobile }) => {

@@ -1,0 +1,69 @@
+[
+  {
+    "id": "boundary-byzantine-800-1025",
+    "polityId": "polity-byzantine-empire",
+    "periods": [
+      {
+        "start": { "year": 800, "precision": "circa" },
+        "end": { "year": 1025, "precision": "circa" }
+      }
+    ],
+    "geometry": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [[[15, 35], [42, 30], [48, 37], [45, 46], [30, 49], [18, 44], [15, 35]]],
+        [[[26, 28], [34, 27], [37, 31], [28, 34], [26, 28]]]
+      ]
+    },
+    "boundaryPrecision": "schematic",
+    "boundaryNote": "以东罗马在中世纪早期的东地中海—巴尔干核心范围作低分辨率示意；边缘、岛屿与间接控制未逐一表达。",
+    "sourceRefs": [
+      { "sourceId": "source-ohm-boundaries" },
+      { "sourceId": "source-met-byzantium" }
+    ],
+    "provenance": {
+      "datasetTitle": "OpenHistoricalMap historical boundary relations",
+      "attribution": "OpenHistoricalMap contributors",
+      "licenseName": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://www.openhistoricalmap.org/copyright",
+      "derivedFrom": "OpenHistoricalMap Byzantine / Eastern Roman boundary relations，按时期筛选后离线保守简化",
+      "processingNote": "输入坐标按 WGS 84 经度、纬度读取；不跨反经线；保留 2 个主要 polygon，沿候选外缘保留 6—8 个控制点，未在浏览器运行简化或拓扑分析。"
+    },
+    "confidence": "medium",
+    "confidenceNote": "历史疆域线条与控制程度存在争议；该记录只用于地图浏览，不是精确勘界。"
+  },
+  {
+    "id": "boundary-byzantine-1261-1453",
+    "polityId": "polity-byzantine-empire",
+    "periods": [
+      {
+        "start": { "year": 1261, "precision": "exact" },
+        "end": { "year": 1453, "precision": "exact" }
+      }
+    ],
+    "geometry": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [[[25, 35], [39, 33], [44, 39], [39, 46], [29, 47], [24, 42], [25, 35]]]
+      ]
+    },
+    "boundaryPrecision": "schematic",
+    "boundaryNote": "以 1261 年恢复君士坦丁堡后逐步收缩的东罗马核心范围作示意；不把每一处附庸、争议地或短期军事占领画成确定疆界。",
+    "sourceRefs": [
+      { "sourceId": "source-ohm-boundaries" },
+      { "sourceId": "source-met-byzantium" }
+    ],
+    "provenance": {
+      "datasetTitle": "OpenHistoricalMap historical boundary relations",
+      "attribution": "OpenHistoricalMap contributors",
+      "licenseName": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://www.openhistoricalmap.org/copyright",
+      "derivedFrom": "OpenHistoricalMap Byzantine / Eastern Roman boundary relations，按时期筛选后离线保守简化",
+      "processingNote": "输入坐标按 WGS 84 经度、纬度读取；不跨反经线；保留 1 个主要 polygon，使用固定 7 个控制点输出，未在浏览器运行简化或拓扑分析。"
+    },
+    "confidence": "medium",
+    "confidenceNote": "1204—1261 年的东罗马继承与领地状态不在本快照中自动补画。"
+  }
+]

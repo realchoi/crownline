@@ -24,6 +24,15 @@
     "citation": "Crownline：阶段2地区范围数据覆盖记录。"
   },
   {
+    "id": "source-ohm-boundaries",
+    "title": "OpenHistoricalMap historical boundary data",
+    "sourceType": "dataset",
+    "citation": "OpenHistoricalMap contributors：带 start_date/end_date 的历史 boundary relations；用于疆域快照的候选几何与分期核对。",
+    "publisher": "OpenHistoricalMap",
+    "url": "https://www.openhistoricalmap.org/copyright",
+    "accessedAt": "2026-08-23"
+  },
+  {
     "id": "source-met-byzantium",
     "title": "Byzantium (ca. 330–1453)",
     "sourceType": "institutional",

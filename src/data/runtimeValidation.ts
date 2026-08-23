@@ -1,7 +1,9 @@
+import { validateBoundaryGeometry } from "../domain/boundarySnapshots";
 import type { ValidationIssue, ValidationResult } from "../domain/dataValidation";
 import { isValidLanguageTag } from "../domain/entityNames";
 import {
   CHRONOLOGY_STATUSES,
+  BOUNDARY_PRECISIONS,
   CONFIDENCE_LEVELS,
   CROWNLINE_SCHEMA_VERSION,
   DATE_PRECISIONS,
@@ -14,15 +16,22 @@ import {
   REGION_KINDS,
   REIGN_ROLES,
   SOURCE_TYPES,
+  type CrownlineBoundaries,
   type CrownlineDetail,
   type CrownlineGeography,
   type CrownlineIndex,
   type GeographicSnapshot,
+  type GeographicBoundarySnapshot,
   type Source
 } from "../domain/types";
 
 export interface GeographyLoadResult {
   geography: CrownlineGeography;
+  omittedCount: number;
+}
+
+export interface BoundaryLoadResult {
+  boundaries: CrownlineBoundaries;
   omittedCount: number;
 }
 
@@ -187,6 +196,32 @@ function isValidGeographicSnapshot(
     value.positionNote.trim().length > 0 &&
     hasSourceRefs(value.sourceRefs, sourceIds) &&
     CONFIDENCE_LEVELS.some((confidence) => confidence === value.confidence) &&
+    (value.confidenceNote === undefined || typeof value.confidenceNote === "string")
+  );
+}
+
+function isValidBoundarySnapshot(
+  value: unknown,
+  sourceIds: Set<string>
+): value is GeographicBoundarySnapshot {
+  if (!isRecord(value) || !isRecord(value.geometry)) return false;
+  const provenance = value.provenance;
+  if (!isRecord(provenance) || validateBoundaryGeometry(value.geometry).length > 0) return false;
+  return (
+    isNonEmptyString(value.id) &&
+    isNonEmptyString(value.polityId) &&
+    hasPeriods(value.periods, true) &&
+    isEnumValue(value.boundaryPrecision, BOUNDARY_PRECISIONS) &&
+    isNonEmptyString(value.boundaryNote) &&
+    hasSourceRefs(value.sourceRefs, sourceIds) &&
+    isNonEmptyString(provenance.datasetTitle) &&
+    isNonEmptyString(provenance.attribution) &&
+    isNonEmptyString(provenance.licenseName) &&
+    isNonEmptyString(provenance.licenseUrl) &&
+    isNonEmptyString(provenance.sourceUrl) &&
+    isNonEmptyString(provenance.processingNote) &&
+    isOptionalString(provenance.derivedFrom) &&
+    isEnumValue(value.confidence, CONFIDENCE_LEVELS) &&
     (value.confidenceNote === undefined || typeof value.confidenceNote === "string")
   );
 }
@@ -604,6 +639,61 @@ export function asCrownlineGeography(input: unknown): GeographyLoadResult {
     geography: {
       schemaVersion: CROWNLINE_SCHEMA_VERSION,
       geographicSnapshots: validSnapshots,
+      sources: sources as unknown as Source[]
+    },
+    omittedCount: snapshots.length - validSnapshots.length
+  };
+}
+
+/** 严格校验疆域根对象，再逐条隔离不安全的疆域记录。 */
+export function asCrownlineBoundaries(input: unknown): BoundaryLoadResult {
+  const issues: ValidationIssue[] = [];
+  if (!isRecord(input)) {
+    throw new Error(
+      formatRuntimeIssues("疆域数据校验失败", {
+        valid: false,
+        issues: [{ code: "SCHEMA_ERROR", path: "/", message: "疆域数据必须是对象" }]
+      })
+    );
+  }
+  if (input.schemaVersion !== CROWNLINE_SCHEMA_VERSION) {
+    issues.push({
+      code: "SCHEMA_ERROR",
+      path: "/schemaVersion",
+      message: `只支持数据版本 ${CROWNLINE_SCHEMA_VERSION}`
+    });
+  }
+  if (!Array.isArray(input.boundarySnapshots)) {
+    issues.push({
+      code: "SCHEMA_ERROR",
+      path: "/boundarySnapshots",
+      message: "boundarySnapshots 必须是数组"
+    });
+  }
+  const sources = requireRecordArray(input, "sources", issues);
+  const sourceIds = new Set<string>();
+  sources.forEach((source, index) => {
+    if (!isValidSource(source) || (typeof source.id === "string" && sourceIds.has(source.id))) {
+      issues.push({
+        code: "SCHEMA_ERROR",
+        path: `/sources/${index}`,
+        message: "来源缺少必需字段或 ID 重复"
+      });
+      return;
+    }
+    sourceIds.add(source.id as string);
+  });
+  if (issues.length > 0) {
+    throw new Error(formatRuntimeIssues("疆域数据校验失败", { valid: false, issues }));
+  }
+  const snapshots = input.boundarySnapshots as unknown[];
+  const validSnapshots = snapshots.filter((snapshot) => {
+    return isValidBoundarySnapshot(snapshot, sourceIds);
+  });
+  return {
+    boundaries: {
+      schemaVersion: CROWNLINE_SCHEMA_VERSION,
+      boundarySnapshots: validSnapshots,
       sources: sources as unknown as Source[]
     },
     omittedCount: snapshots.length - validSnapshots.length

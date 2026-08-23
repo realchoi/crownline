@@ -17,6 +17,7 @@ export interface CurrentDataStats {
   relationships: number;
   events: number;
   geographicSnapshots: number;
+  boundarySnapshots: number;
   sources: number;
 }
 
@@ -33,6 +34,7 @@ export function buildCurrentDataStats(data: CrownlineData): CurrentDataStats {
     relationships: data.relationships.length,
     events: data.events.length,
     geographicSnapshots: data.geographicSnapshots.length,
+    boundarySnapshots: data.boundarySnapshots.length,
     sources: data.sources.length
   };
 }
@@ -41,7 +43,7 @@ export function renderCurrentDataStatsBlock(data: CrownlineData): string {
   const stats = buildCurrentDataStats(data);
   return [
     DATA_STATS_START,
-    `当前数据快照：${stats.entities} 个实体（${stats.polities} 个政权、${stats.historicalPeriods} 个历史分期）、${stats.persons} 位人物、${stats.reigns} 条任期、${stats.relationships} 条结构化关系、${stats.events} 个事件、${stats.geographicSnapshots} 条地理快照、${stats.sources} 项来源。`,
+    `当前数据快照：${stats.entities} 个实体（${stats.polities} 个政权、${stats.historicalPeriods} 个历史分期）、${stats.persons} 位人物、${stats.reigns} 条任期、${stats.relationships} 条结构化关系、${stats.events} 个事件、${stats.geographicSnapshots} 条地理快照、${stats.boundarySnapshots} 条疆域快照、${stats.sources} 项来源。`,
     DATA_STATS_END
   ].join("\n");
 }
@@ -56,6 +58,7 @@ function expectedFields(stats: CurrentDataStats): string {
     `relationships=${stats.relationships}`,
     `events=${stats.events}`,
     `geographicSnapshots=${stats.geographicSnapshots}`,
+    `boundarySnapshots=${stats.boundarySnapshots}`,
     `sources=${stats.sources}`
   ].join(", ");
 }

@@ -21,6 +21,30 @@ describe("运行时数据产物", () => {
     expect(index.detailEntityIds).toEqual(data.entities.map(({ id }) => id));
   });
 
+  it("疆域坐标只进入独立 boundaries 包并保持来源闭包", () => {
+    const artifacts = buildGeneratedArtifacts(data);
+    expect(artifacts.index).not.toHaveProperty("boundarySnapshots");
+    expect(artifacts.geography).not.toHaveProperty("boundarySnapshots");
+    artifacts.details.forEach((detail) => {
+      expect(detail).not.toHaveProperty("boundarySnapshots");
+      expect(JSON.stringify(detail)).not.toContain("MultiPolygon");
+    });
+    expect(artifacts.boundaries.boundarySnapshots).toHaveLength(8);
+    expect(artifacts.boundaries.sources.map(({ id }) => id)).toEqual([
+      "source-cn-chronology-table",
+      "source-ohm-boundaries",
+      "source-met-byzantium",
+      "source-met-abbasid",
+      "source-ottoman-history"
+    ]);
+    const sourceIds = new Set(artifacts.boundaries.sources.map(({ id }) => id));
+    expect(
+      artifacts.boundaries.boundarySnapshots
+        .flatMap(({ sourceRefs }) => sourceRefs)
+        .every(({ sourceId }) => sourceIds.has(sourceId))
+    ).toBe(true);
+  });
+
   it("独立地理产物只收集地理快照引用的来源", () => {
     const fixture: CrownlineData = structuredClone(data);
     fixture.sources.push(
@@ -58,7 +82,7 @@ describe("运行时数据产物", () => {
     const { geography } = buildGeneratedArtifacts(fixture);
 
     expect(geography).toMatchObject({
-      schemaVersion: 4,
+      schemaVersion: 5,
       geographicSnapshots: fixture.geographicSnapshots
     });
     const geographySourceIds = geography.sources.map(({ id }) => id);

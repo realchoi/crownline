@@ -1,0 +1,69 @@
+[
+  {
+    "id": "boundary-ottoman-1453-1683",
+    "polityId": "polity-ottoman-empire",
+    "periods": [
+      {
+        "start": { "year": 1453, "precision": "exact" },
+        "end": { "year": 1683, "precision": "circa" }
+      }
+    ],
+    "geometry": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [[[18, 30], [45, 30], [57, 39], [51, 48], [35, 50], [23, 43], [18, 30]]],
+        [[[31, 20], [38, 20], [42, 25], [35, 28], [31, 20]]]
+      ]
+    },
+    "boundaryPrecision": "approximate",
+    "boundaryNote": "以奥斯曼扩张高峰前后的巴尔干、安纳托利亚与东地中海核心范围作简化示意；附属、保护与海上控制不作统一边界表达。",
+    "sourceRefs": [
+      { "sourceId": "source-ohm-boundaries" },
+      { "sourceId": "source-ottoman-history" }
+    ],
+    "provenance": {
+      "datasetTitle": "OpenHistoricalMap historical boundary relations",
+      "attribution": "OpenHistoricalMap contributors",
+      "licenseName": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://www.openhistoricalmap.org/copyright",
+      "derivedFrom": "OpenHistoricalMap Ottoman Empire boundary relations，按日期筛选后离线保守简化",
+      "processingNote": "输入坐标按 WGS 84 经度、纬度读取；不跨反经线；保留 2 个主要 polygon 和 1 个离散海域岛屿组，未在浏览器执行拓扑分析。"
+    },
+    "confidence": "medium",
+    "confidenceNote": "奥斯曼的边缘控制、附庸关系和岛屿归属存在分期差异；此处只展示示意核心。"
+  },
+  {
+    "id": "boundary-ottoman-1829-1913",
+    "polityId": "polity-ottoman-empire",
+    "periods": [
+      {
+        "start": { "year": 1829, "precision": "circa" },
+        "end": { "year": 1913, "precision": "exact" }
+      }
+    ],
+    "geometry": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [[[24, 31], [43, 31], [51, 38], [45, 46], [32, 46], [25, 40], [24, 31]]]
+      ]
+    },
+    "boundaryPrecision": "approximate",
+    "boundaryNote": "以十九世纪收缩后的奥斯曼核心范围作简化示意；不表示每个省份拥有同等治理强度，也不表达现代主权。",
+    "sourceRefs": [
+      { "sourceId": "source-ohm-boundaries" },
+      { "sourceId": "source-ottoman-history" }
+    ],
+    "provenance": {
+      "datasetTitle": "OpenHistoricalMap historical boundary relations",
+      "attribution": "OpenHistoricalMap contributors",
+      "licenseName": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://www.openhistoricalmap.org/copyright",
+      "derivedFrom": "OpenHistoricalMap Ottoman Empire boundary relations，按日期筛选后离线保守简化",
+      "processingNote": "输入坐标按 WGS 84 经度、纬度读取；不跨反经线；以固定 7 个控制点输出，不使用现代行政边界替代历史疆域。"
+    },
+    "confidence": "medium",
+    "confidenceNote": "十九世纪边缘地区、宗教共同体与地方自治的空间表达仍有史学争议。"
+  }
+]

@@ -76,7 +76,14 @@ describe("历史地图组件", () => {
     expect(cluster).toHaveAttribute("aria-expanded", "true");
 
     const expanded = screen.getByRole("region", { name: "聚合历史点位" });
-    const beijingButton = within(expanded).getByRole("button", {
+    expect(expanded).toHaveTextContent("此处有 2 个历史点位");
+    await user.click(within(expanded).getByRole("button", { name: "关闭聚合点位" }));
+    expect(cluster).toHaveAttribute("aria-expanded", "false");
+    expect(cluster).toHaveFocus();
+
+    await user.click(cluster);
+    const reopenedPanel = screen.getByRole("region", { name: "聚合历史点位" });
+    const beijingButton = within(reopenedPanel).getByRole("button", {
       name: "明，北京，都城"
     });
     expect(beijingButton).toHaveFocus();

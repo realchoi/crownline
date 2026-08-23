@@ -1,0 +1,68 @@
+[
+  {
+    "id": "boundary-abbasid-750-861",
+    "polityId": "polity-abbasid-caliphate",
+    "periods": [
+      {
+        "start": { "year": 750, "precision": "exact" },
+        "end": { "year": 861, "precision": "exact" }
+      }
+    ],
+    "geometry": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [[[34, 12], [62, 12], [76, 24], [70, 34], [53, 39], [39, 31], [34, 12]]]
+      ]
+    },
+    "boundaryPrecision": "schematic",
+    "boundaryNote": "以阿拔斯早期从伊拉克延展至伊朗高原、阿拉伯半岛和黎凡特的核心范围作示意；地方势力与名义宗主权不作同一化处理。",
+    "sourceRefs": [
+      { "sourceId": "source-ohm-boundaries" },
+      { "sourceId": "source-met-abbasid" }
+    ],
+    "provenance": {
+      "datasetTitle": "OpenHistoricalMap historical boundary relations",
+      "attribution": "OpenHistoricalMap contributors",
+      "licenseName": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://www.openhistoricalmap.org/copyright",
+      "derivedFrom": "OpenHistoricalMap Abbasid Caliphate boundary relations，按 start_date/end_date 筛选后离线保守简化",
+      "processingNote": "输入坐标按 WGS 84 经度、纬度读取；不跨反经线；以固定 7 个控制点保留大尺度轮廓，未把现代行政边界改名为历史疆域。"
+    },
+    "confidence": "low",
+    "confidenceNote": "早期伊斯兰政治权威、直接控制与地方自治之间差异很大，OHM 记录本身也标注部分边缘为 rough。"
+  },
+  {
+    "id": "boundary-abbasid-1050-1190",
+    "polityId": "polity-abbasid-caliphate",
+    "periods": [
+      {
+        "start": { "year": 1050, "precision": "circa" },
+        "end": { "year": 1190, "precision": "circa" }
+      }
+    ],
+    "geometry": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [[[42, 15], [63, 15], [70, 24], [63, 32], [48, 32], [42, 25], [42, 15]]]
+      ]
+    },
+    "boundaryPrecision": "schematic",
+    "boundaryNote": "以巴格达时期后期哈里发名义核心范围作示意；不把塞尔柱等实际军事权力自动并入阿拔斯直接疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-ohm-boundaries" },
+      { "sourceId": "source-met-abbasid" }
+    ],
+    "provenance": {
+      "datasetTitle": "OpenHistoricalMap historical boundary relations",
+      "attribution": "OpenHistoricalMap contributors",
+      "licenseName": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://www.openhistoricalmap.org/copyright",
+      "derivedFrom": "OpenHistoricalMap Abbasid Caliphate boundary relations，按 start_date/end_date 筛选后离线保守简化",
+      "processingNote": "输入坐标按 WGS 84 经度、纬度读取；不跨反经线；以固定 7 个控制点输出，未在浏览器运行面积、重叠或接壤分析。"
+    },
+    "confidence": "low",
+    "confidenceNote": "该时期的哈里发权威与实际领地不应从单一多边形等同理解。"
+  }
+]

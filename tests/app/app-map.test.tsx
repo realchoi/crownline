@@ -1,5 +1,5 @@
 import { fireEvent, screen, waitFor, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import type { GeographyLoadResult } from "../../src/data/loadCrownlineGeography";
 import { setupUser } from "../helpers/user";
@@ -10,6 +10,7 @@ import {
   installAppTestLifecycle,
   loadGeneratedDetail,
   loadGeneratedGeography,
+  loadGeneratedBoundaries,
   renderApp
 } from "../helpers/renderApp";
 installAppTestLifecycle();
@@ -180,5 +181,90 @@ describe("Crownline 地图", () => {
 
     expect(await findMapMarker("北魏，平城，都城")).toBeInTheDocument();
     expect(screen.getByText("有 1 条地理记录格式异常，已跳过。")).toBeInTheDocument();
+  });
+
+  it("启用疆域图层后按年份显示快照，URL 恢复并可从等价列表打开详情", async () => {
+    window.history.replaceState(null, "", "/?view=map&year=800");
+    const user = setupUser();
+    const loadBoundaries = vi.fn(loadGeneratedBoundaries);
+    renderApp(loadGeneratedDetail, loadGeneratedGeography, loadBoundaries);
+
+    await screen.findByRole("region", { name: "当前年份历史政权示意地图" });
+    await user.click(screen.getByRole("button", { name: "疆域示意" }));
+    const list = await screen.findByRole("region", { name: "地图结果列表" });
+    expect(
+      within(list).getByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ })
+    ).toBeInTheDocument();
+    expect(list).toHaveTextContent("示意");
+    expect(list).toHaveTextContent("较低");
+    expect(list).not.toHaveTextContent("schematic");
+    expect(list).not.toHaveTextContent("low");
+    expect(
+      within(list).getByRole("button", { name: /阿拔斯哈里发，750—861，疆域示意/ })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/示意而非精确勘界/)).toBeInTheDocument();
+    expect(new URLSearchParams(window.location.search).get("layer")).toBe("combined");
+    expect(loadBoundaries).toHaveBeenCalledTimes(1);
+
+    await user.click(within(list).getByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ }));
+    expect(await screen.findByRole("heading", { name: "800年 · 在位统治者" })).toBeInTheDocument();
+  });
+
+  it("用两个独立图层开关表达三种内部组合状态", async () => {
+    window.history.replaceState(null, "", "/?view=map&year=800");
+    const user = setupUser();
+    renderApp();
+
+    const pointsToggle = screen.getByRole("button", { name: "地点标记" });
+    const boundariesToggle = screen.getByRole("button", { name: "疆域示意" });
+    expect(pointsToggle).toHaveAttribute("aria-pressed", "true");
+    expect(boundariesToggle).toHaveAttribute("aria-pressed", "false");
+
+    await user.click(boundariesToggle);
+    expect(new URLSearchParams(window.location.search).get("layer")).toBe("combined");
+    expect(pointsToggle).toHaveAttribute("aria-pressed", "true");
+    expect(boundariesToggle).toHaveAttribute("aria-pressed", "true");
+
+    await user.click(pointsToggle);
+    expect(new URLSearchParams(window.location.search).get("layer")).toBe("boundaries");
+    expect(pointsToggle).toHaveAttribute("aria-pressed", "false");
+    expect(boundariesToggle).toHaveAttribute("aria-pressed", "true");
+  });
+
+  it("全时期疆域图层不叠加跨时代快照，调整年份后才显示", async () => {
+    window.history.replaceState(null, "", "/?view=map&layer=boundaries");
+    const user = setupUser();
+    renderApp();
+
+    const results = await screen.findByRole("region", { name: "地图结果列表" });
+    expect(results).toHaveTextContent(/疆域快照需要明确年份/);
+    expect(document.querySelectorAll(".map-boundary-shape")).toHaveLength(0);
+    fireEvent.change(screen.getByRole("slider", { name: "历史年份滑杆，拖动后按年份显示" }), {
+      target: { value: "800" }
+    });
+    expect(
+      await screen.findByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ })
+    ).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "地点标记" }));
+    expect(new URLSearchParams(window.location.search).get("layer")).toBe("combined");
+  });
+
+  it("疆域结果列表可完成双政权对比并在地图上稳定高亮", async () => {
+    window.history.replaceState(null, "", "/?view=map&year=800&layer=boundaries");
+    const user = setupUser();
+    renderApp();
+    const list = await screen.findByRole("region", { name: "地图结果列表" });
+    await user.click(within(list).getByRole("button", { name: /将拜占庭帝国.*加入对比/ }));
+    await user.click(within(list).getByRole("button", { name: /将阿拔斯哈里发.*加入对比/ }));
+    expect(new URLSearchParams(window.location.search).getAll("compare")).toEqual([
+      "polity-byzantine-empire",
+      "polity-abbasid-caliphate"
+    ]);
+    const highlighted = [...document.querySelectorAll(".map-boundary-shape.is-comparison")].map(
+      (path) => path.getAttribute("data-entity-id")
+    );
+    expect(new Set(highlighted)).toEqual(
+      new Set(["polity-byzantine-empire", "polity-abbasid-caliphate"])
+    );
   });
 });

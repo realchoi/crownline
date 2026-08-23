@@ -4,6 +4,7 @@
   gap: 22px;
   align-items: start;
   margin-top: 20px;
+  scroll-margin-top: 330px;
 }
 
 .historical-map {
@@ -20,6 +21,11 @@
     position: sticky;
     /* 筛选面板顶部 10px，再留出 12px 呼吸间距。 */
     top: calc(var(--map-controls-height, 250px) + 22px);
+  }
+
+  /* 聚合面板展开后随页面滚动，避免 sticky 地图卡片挡住面板下半部分。 */
+  .historical-map.is-cluster-expanded {
+    position: static;
   }
 }
 
@@ -53,6 +59,41 @@
   width: 100%;
   height: 100%;
   opacity: 0.2;
+}
+
+.map-boundary-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.map-boundary-shape {
+  cursor: pointer;
+  opacity: 0.34;
+  stroke: color-mix(in srgb, var(--text) 58%, transparent);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+  transition:
+    opacity 0.16s ease,
+    stroke-width 0.16s ease,
+    filter 0.16s ease;
+}
+
+.map-boundary-shape:hover,
+.map-boundary-shape:focus-visible,
+.map-boundary-shape.is-focused {
+  opacity: 0.52;
+  stroke-width: 1.7;
+  filter: saturate(1.12);
+}
+
+.map-boundary-shape.is-comparison {
+  opacity: 0.56;
+  stroke: var(--accent);
+  stroke-width: 1.8;
 }
 
 .map-marker,
@@ -113,6 +154,7 @@
   border-radius: 9px;
   font-size: 0.76rem;
   font-weight: 800;
+  scroll-margin-top: 330px;
 }
 
 .map-cluster-trigger[aria-expanded="true"] {
@@ -129,6 +171,29 @@
   color: var(--muted);
   font-size: 0.72rem;
   list-style: none;
+}
+
+.map-legend-stack {
+  display: grid;
+  gap: 8px;
+}
+
+.map-boundary-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.map-boundary-legend-swatch {
+  display: inline-block;
+  width: 18px;
+  height: 12px;
+  border: 1px solid color-mix(in srgb, var(--text) 58%, transparent);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .map-marker-legend li {
@@ -180,21 +245,55 @@
 }
 
 .map-cluster-panel {
-  position: absolute;
-  top: 34px;
-  left: 50%;
-  width: min(230px, calc(100vw - 58px));
-  max-height: 230px;
+  width: 100%;
+  max-height: min(380px, 46vh);
+  margin-top: 14px;
   overflow: auto;
-  transform: translateX(-50%);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background: var(--surface-strong);
   box-shadow: var(--shadow);
-  padding: 8px;
+  padding: 16px;
 }
 
-.map-cluster-panel ul,
+.map-cluster-panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+.map-cluster-panel-heading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.map-cluster-panel-heading p:last-child {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.map-cluster-panel-close {
+  flex: none;
+  min-height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--text);
+  padding: 5px 13px;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.map-cluster-panel-close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.map-cluster-panel-list,
 .map-result-list,
 .map-missing-list {
   margin: 0;
@@ -202,28 +301,77 @@
   list-style: none;
 }
 
-.map-cluster-panel li + li {
-  margin-top: 5px;
+.map-cluster-panel-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
 }
 
-.map-cluster-panel li button {
+.map-cluster-panel-item {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 10px;
   width: 100%;
-  border: 0;
-  border-radius: 9px;
+  min-height: 92px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
   background: var(--surface-soft);
   color: var(--text);
-  padding: 8px 10px;
+  padding: 12px;
   text-align: left;
 }
 
-.map-cluster-panel li button span,
-.map-cluster-panel li button small {
-  color: var(--muted);
+.map-cluster-panel-item:hover,
+.map-cluster-panel-item:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent-soft) 58%, var(--surface-soft));
 }
-.map-cluster-panel li button small {
-  grid-column: 1 / -1;
+
+.map-cluster-panel-index {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: var(--surface-strong);
+  font-size: 0.7rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.map-cluster-panel-copy {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.map-cluster-panel-copy strong {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+}
+
+.map-cluster-panel-copy .map-point-local-name {
+  margin: 0;
+}
+
+.map-cluster-panel-place {
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.map-cluster-panel-copy small {
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.map-cluster-panel-action {
+  align-self: center;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 750;
+  white-space: nowrap;
 }
 
 .map-boundary-note {
@@ -289,6 +437,7 @@
   color: var(--text);
   padding: 11px 58px 11px 10px;
   text-align: left;
+  scroll-margin-top: 330px;
 }
 
 .map-result-detail strong {
@@ -326,10 +475,20 @@
   border-style: dashed;
   color: var(--regional);
 }
+
+.boundary-result-role {
+  border-style: dashed;
+  color: var(--period);
+}
+
+.map-boundary-result .map-result-place {
+  color: var(--period);
+}
 .map-result-item > .comparison-toggle {
   position: absolute;
   top: 10px;
   right: 9px;
+  scroll-margin-top: 330px;
 }
 
 .map-missing {

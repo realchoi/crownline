@@ -18,6 +18,7 @@ describe("浏览状态", () => {
   it("从 URL 恢复时间点、年份、搜索和兼容类别", () => {
     expect(readBrowseState("?mode=point&year=-221&q=%E7%A7%A6&type=parallel", bounds)).toEqual({
       viewMode: "timeline",
+      mapLayer: "points",
       mode: "point",
       year: -221,
       query: "秦",
@@ -31,6 +32,7 @@ describe("浏览状态", () => {
   it("清洗非法模式、年份和类别", () => {
     expect(readBrowseState("?mode=map&year=0&type=unknown", bounds)).toEqual({
       viewMode: "timeline",
+      mapLayer: "points",
       mode: "overview",
       year: 1922,
       query: "",
@@ -55,6 +57,7 @@ describe("浏览状态", () => {
       year: 1400
     });
     expect(readBrowseState("?view=unknown", bounds).viewMode).toBe("timeline");
+    expect(readBrowseState("?view=map&layer=invalid", bounds).mapLayer).toBe("points");
   });
 
   it("只为地图视图写入 view 参数", () => {
@@ -64,10 +67,24 @@ describe("浏览状态", () => {
     expect(writeBrowseState(defaultState, bounds).has("view")).toBe(false);
   });
 
+  it("只为非默认疆域图层写入简洁 URL 参数", () => {
+    const defaultState = readBrowseState("", bounds);
+    expect(
+      writeBrowseState(
+        { ...defaultState, viewMode: "map", mapLayer: "boundaries" },
+        bounds
+      ).toString()
+    ).toBe("view=map&layer=boundaries");
+    expect(writeBrowseState({ ...defaultState, mapLayer: "combined" }, bounds).has("layer")).toBe(
+      false
+    );
+  });
+
   it("序列化非默认状态、中国范围并保留未知参数", () => {
     const params = writeBrowseState(
       {
         viewMode: "timeline",
+        mapLayer: "points",
         mode: "point",
         year: -221,
         query: "  秦  ",
@@ -89,6 +106,7 @@ describe("浏览状态", () => {
     const params = writeBrowseState(
       {
         viewMode: "timeline",
+        mapLayer: "points",
         mode: "overview",
         year: 1922,
         query: "",
@@ -132,6 +150,7 @@ describe("浏览状态", () => {
     const custom = writeBrowseState(
       {
         viewMode: "timeline",
+        mapLayer: "points",
         mode: "point",
         year: 1000,
         query: "",
@@ -149,6 +168,7 @@ describe("浏览状态", () => {
     const china = writeBrowseState(
       {
         viewMode: "timeline",
+        mapLayer: "points",
         mode: "point",
         year: 1000,
         query: "",
@@ -169,6 +189,7 @@ describe("浏览状态", () => {
     const params = writeBrowseState(
       {
         viewMode: "timeline",
+        mapLayer: "points",
         mode: "overview",
         year: 1922,
         query: "",
@@ -223,6 +244,7 @@ describe("浏览状态", () => {
     const params = writeBrowseState(
       {
         viewMode: "timeline",
+        mapLayer: "points",
         mode: "overview",
         year: 1922,
         query: "",

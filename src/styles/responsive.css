@@ -10,6 +10,7 @@
   }
   .historical-map-shell {
     grid-template-columns: 1fr;
+    scroll-margin-top: 20px;
   }
 }
 
@@ -42,6 +43,38 @@
   .controls-overview .controls-grid {
     grid-template-columns: 1fr;
     margin-top: 14px;
+  }
+  .map-layer-control {
+    grid-template-columns: 1fr;
+  }
+  .map-layer-control .field-label,
+  .map-layer-switch,
+  .map-layer-help {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .map-layer-switch {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .map-cluster-panel {
+    max-height: min(420px, 52vh);
+    margin-top: 10px;
+    padding: 12px;
+  }
+  .map-cluster-panel-heading {
+    gap: 10px;
+  }
+  .map-cluster-panel-heading h2 {
+    font-size: 1.08rem;
+  }
+  .map-cluster-panel-list {
+    grid-template-columns: 1fr;
+  }
+  .map-cluster-panel-item {
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    min-height: 84px;
+    padding: 10px;
   }
   .controls-overview .legend {
     margin-top: 16px;
@@ -246,6 +279,7 @@
   }
   .map-result-detail {
     padding-right: 62px;
+    scroll-margin-top: 20px;
   }
   .map-result-item > .comparison-toggle {
     top: 4px;

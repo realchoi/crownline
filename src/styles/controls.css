@@ -186,6 +186,10 @@ main {
   grid-column: 1 / -1;
 }
 
+.controls-map .map-layer-control {
+  grid-column: 1 / -1;
+}
+
 .controls-point .text-input,
 .controls-point .select-input,
 .controls-point .button {
@@ -210,6 +214,65 @@ main {
 .region-scope-control {
   min-width: 0;
   border-radius: var(--radius-md);
+}
+
+.map-layer-control {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: 6px 14px;
+  align-items: center;
+  min-width: 0;
+  margin: 14px 0 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+  padding: 14px 0 0;
+}
+
+.map-layer-control .field-label {
+  grid-column: 1;
+  grid-row: 1;
+  display: block;
+  margin: 0;
+}
+
+.map-layer-switch {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: start;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+
+.map-layer-switch button {
+  min-height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.map-layer-switch button[aria-pressed="true"] {
+  background: var(--surface-strong);
+  color: var(--accent);
+  box-shadow: 0 3px 12px rgba(72, 45, 29, 0.1);
+}
+
+.map-layer-help {
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
 }
 
 .region-scope-heading {

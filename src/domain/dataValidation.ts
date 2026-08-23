@@ -2,6 +2,7 @@ import Ajv2020 from "ajv/dist/2020.js";
 import type { ErrorObject } from "ajv";
 
 import schema from "../data/crownline-data.schema.json";
+import { validateBoundaryGeometry } from "./boundarySnapshots";
 import { toOrdinal } from "./chronology";
 import { isValidLanguageTag } from "./entityNames";
 import type {
@@ -187,6 +188,7 @@ export function validateCrownlineData(input: unknown): ValidationResult {
     ...data.relationships,
     ...data.events,
     ...data.geographicSnapshots,
+    ...data.boundarySnapshots,
     ...data.sources
   ];
   const firstPathById = new Map<string, string>();
@@ -590,6 +592,106 @@ export function validateCrownlineData(input: unknown): ValidationResult {
       `${path}/confidenceNote`,
       issues
     );
+  });
+
+  const boundaryKeys = new Set<string>();
+  const boundaryGeometryKeys = new Set<string>();
+  const boundarySnapshotsByPolity = new Map<string, typeof data.boundarySnapshots>();
+  data.boundarySnapshots.forEach((snapshot, snapshotIndex) => {
+    const path = `/boundarySnapshots/${snapshotIndex}`;
+    const polity = entityById.get(snapshot.polityId);
+    if (!polity) {
+      issues.push({
+        code: "DANGLING_ENTITY_REF",
+        path: `${path}/polityId`,
+        message: `政权 ${snapshot.polityId} 不存在`
+      });
+    } else if (polity.entityKind !== "polity") {
+      issues.push({
+        code: "INVALID_BOUNDARY_POLITY",
+        path: `${path}/polityId`,
+        message: `疆域快照只能引用政权，${snapshot.polityId} 是历史分期`
+      });
+    } else {
+      snapshot.periods.forEach((period, periodIndex) => {
+        if (!periodIsContained(period, polity.existencePeriods)) {
+          issues.push({
+            code: "BOUNDARY_OUTSIDE_POLITY",
+            path: `${path}/periods/${periodIndex}`,
+            message: `疆域快照必须完整落在政权 ${snapshot.polityId} 的存在区间内`
+          });
+        }
+      });
+    }
+
+    validatePeriods(snapshot.periods, `${path}/periods`, issues);
+    validateSourceRefs(snapshot.sourceRefs, `${path}/sourceRefs`, sourceIds, issues);
+    validateConfidenceNote(
+      snapshot.confidence,
+      snapshot.confidenceNote,
+      `${path}/confidenceNote`,
+      issues
+    );
+    if (!snapshot.boundaryNote.trim()) {
+      issues.push({
+        code: "EMPTY_BOUNDARY_NOTE",
+        path: `${path}/boundaryNote`,
+        message: "疆域快照必须说明历史口径与示意限制"
+      });
+    }
+    const provenance = snapshot.provenance;
+    if (
+      !provenance.datasetTitle.trim() ||
+      !provenance.attribution.trim() ||
+      !provenance.licenseName.trim() ||
+      !provenance.licenseUrl.trim() ||
+      !provenance.sourceUrl.trim() ||
+      !provenance.processingNote.trim()
+    ) {
+      issues.push({
+        code: "INCOMPLETE_BOUNDARY_PROVENANCE",
+        path: `${path}/provenance`,
+        message: "疆域来源必须包含数据集、署名、许可地址、来源地址和处理说明"
+      });
+    }
+    validateBoundaryGeometry(snapshot.geometry, `${path}/geometry`).forEach((issue) => {
+      issues.push(issue);
+    });
+
+    const timeKey = JSON.stringify([
+      snapshot.polityId,
+      snapshot.periods.map(({ start, end }) => [start.year, end.year])
+    ]);
+    if (boundaryKeys.has(timeKey)) {
+      issues.push({
+        code: "DUPLICATE_BOUNDARY_INTERVAL",
+        path,
+        message: "同一政权的疆域适用区间重复"
+      });
+    }
+    boundaryKeys.add(timeKey);
+    const geometryKey = JSON.stringify([snapshot.polityId, snapshot.periods, snapshot.geometry]);
+    if (boundaryGeometryKeys.has(geometryKey)) {
+      issues.push({
+        code: "DUPLICATE_BOUNDARY_GEOMETRY",
+        path,
+        message: "同一政权、同一时间范围和完全相同几何的疆域快照重复"
+      });
+    }
+    boundaryGeometryKeys.add(geometryKey);
+
+    const politySnapshots = boundarySnapshotsByPolity.get(snapshot.polityId) ?? [];
+    politySnapshots.forEach((previous) => {
+      if (periodsOverlap(previous.periods, snapshot.periods)) {
+        issues.push({
+          code: "OVERLAPPING_BOUNDARY_SNAPSHOTS",
+          path: `${path}/periods`,
+          message: `政权 ${snapshot.polityId} 的采用疆域快照与 ${previous.id} 的适用时间重叠`
+        });
+      }
+    });
+    politySnapshots.push(snapshot);
+    boundarySnapshotsByPolity.set(snapshot.polityId, politySnapshots);
   });
 
   return { valid: issues.length === 0, issues };

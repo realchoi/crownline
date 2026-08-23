@@ -3,10 +3,12 @@ import { describe, expect, it } from "vitest";
 import { loadSourceData } from "../scripts/data-source";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import { createCrownlineDetailLoader } from "../src/data/loadCrownlineDetail";
+import { createCrownlineBoundariesLoader } from "../src/data/loadCrownlineBoundaries";
 import { loadGeneratedGeography } from "../src/data/loadCrownlineGeography";
 import { loadCrownlineIndex } from "../src/data/loadCrownlineIndex";
 import {
   asCrownlineGeography,
+  asCrownlineBoundaries,
   validateCrownlineDetail,
   validateCrownlineIndex
 } from "../src/data/runtimeValidation";
@@ -15,6 +17,7 @@ import type { CrownlineDetail, CrownlineIndex } from "../src/domain/types";
 const artifacts = buildGeneratedArtifacts(await loadSourceData());
 const index = artifacts.index;
 const geography = artifacts.geography;
+const boundaries = artifacts.boundaries;
 const tangDetail = artifacts.details.get("polity-cn-tang");
 if (!tangDetail) throw new Error("缺少唐详情测试数据");
 
@@ -146,6 +149,19 @@ describe("运行时数据校验", () => {
     expect(result.omittedCount).toBe(1);
     expect(input).toEqual(original);
   });
+
+  it("严格拒绝 v4 疆域根对象，并逐条隔离损坏快照", () => {
+    expect(() => asCrownlineBoundaries({ schemaVersion: 4 })).toThrow("疆域数据校验失败");
+    const input = {
+      ...structuredClone(boundaries),
+      boundarySnapshots: [structuredClone(boundaries.boundarySnapshots[0]), { broken: true }]
+    };
+    const original = structuredClone(input);
+    const result = asCrownlineBoundaries(input);
+    expect(result.boundaries.boundarySnapshots).toEqual([boundaries.boundarySnapshots[0]]);
+    expect(result.omittedCount).toBe(1);
+    expect(input).toEqual(original);
+  });
 });
 
 describe("运行时数据加载", () => {
@@ -226,5 +242,31 @@ describe("运行时数据加载", () => {
     const fetcher = async () => jsonResponse({ message: "unavailable" }, 503);
 
     await expect(loadGeneratedGeography(fetcher)).rejects.toThrow("无法加载地理数据（HTTP 503）");
+  });
+
+  it("按需加载疆域包，合并并发请求并缓存成功结果", async () => {
+    const urls: string[] = [];
+    const fetcher = async (input: RequestInfo | URL) => {
+      urls.push(String(input));
+      return jsonResponse(boundaries);
+    };
+    const loadBoundaries = createCrownlineBoundariesLoader(fetcher);
+    const [first, second] = await Promise.all([loadBoundaries(), loadBoundaries()]);
+    const third = await loadBoundaries();
+    expect(first).toEqual({ boundaries, omittedCount: 0 });
+    expect(second).toEqual(first);
+    expect(third).toEqual(first);
+    expect(urls).toEqual([String(new URL("./data/generated/boundaries.json", document.baseURI))]);
+  });
+
+  it("疆域请求失败后允许重试且不缓存失败结果", async () => {
+    let attempts = 0;
+    const loadBoundaries = createCrownlineBoundariesLoader(async () => {
+      attempts += 1;
+      return attempts === 1 ? jsonResponse({ message: "broken" }, 503) : jsonResponse(boundaries);
+    });
+    await expect(loadBoundaries()).rejects.toThrow("疆域数据请求失败：HTTP 503");
+    await expect(loadBoundaries()).resolves.toEqual({ boundaries, omittedCount: 0 });
+    expect(attempts).toBe(2);
   });
 });

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 
 import { App } from "./app/App";
 import { createCrownlineDetailLoader } from "./data/loadCrownlineDetail";
+import { createCrownlineBoundariesLoader } from "./data/loadCrownlineBoundaries";
 import { loadGeneratedGeography } from "./data/loadCrownlineGeography";
 import { loadCrownlineIndex } from "./data/loadCrownlineIndex";
 import "./styles/styles.css";
@@ -28,6 +29,7 @@ try {
         data={data}
         loadDetail={createCrownlineDetailLoader(data)}
         loadGeography={() => loadGeneratedGeography()}
+        loadBoundaries={createCrownlineBoundariesLoader()}
       />
     </StrictMode>
   );

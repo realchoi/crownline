@@ -4,6 +4,7 @@ import type { CategoryFilter } from "./selectors";
 
 export type BrowseMode = "overview" | "point";
 export type ViewMode = "timeline" | "map";
+export type MapLayer = "points" | "boundaries" | "combined";
 
 export interface HistoricalYearBounds {
   min: number;
@@ -12,6 +13,7 @@ export interface HistoricalYearBounds {
 
 export interface BrowseState {
   viewMode: ViewMode;
+  mapLayer: MapLayer;
   mode: BrowseMode;
   year: number;
   query: string;
@@ -61,6 +63,9 @@ export function readBrowseState(
   const rawCategory = params.get("type") ?? "all";
   const mappedCategory = LEGACY_CATEGORY_MAP[rawCategory] ?? rawCategory;
   const viewMode: ViewMode = params.get("view") === "map" ? "map" : "timeline";
+  const rawLayer = params.get("layer");
+  const mapLayer: MapLayer =
+    rawLayer === "boundaries" || rawLayer === "combined" ? rawLayer : "points";
   const hasExplicitYear = params.has("year") && Number.isSafeInteger(rawYear) && rawYear !== 0;
   const mode: BrowseMode =
     params.get("mode") === "point" || (viewMode === "map" && hasExplicitYear)
@@ -91,6 +96,7 @@ export function readBrowseState(
 
   return {
     viewMode,
+    mapLayer,
     mode,
     year,
     query: params.get("q") ?? "",
@@ -110,11 +116,14 @@ export function writeBrowseState(
   currentSearch = ""
 ): URLSearchParams {
   const params = new URLSearchParams(currentSearch);
-  ["view", "mode", "year", "q", "type", "scope", "region", "compare", "detail"].forEach((name) =>
-    params.delete(name)
+  ["view", "mode", "year", "q", "type", "scope", "region", "compare", "detail", "layer"].forEach(
+    (name) => params.delete(name)
   );
 
   if (state.viewMode === "map") params.set("view", "map");
+  if (state.viewMode === "map" && state.mapLayer !== "points") {
+    params.set("layer", state.mapLayer);
+  }
   if (state.mode === "point") params.set("mode", "point");
   if (state.mode === "point" && state.year !== bounds.max) params.set("year", String(state.year));
   if (state.query.trim()) params.set("q", state.query.trim());

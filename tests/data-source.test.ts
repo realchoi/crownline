@@ -35,6 +35,7 @@ async function writeSourceTree(root: string, value: CrownlineData = data): Promi
   await writeJson(join(root, "relationships", "relationships.json"), value.relationships);
   await writeJson(join(root, "events", "events.json"), value.events);
   await writeJson(join(root, "geography", "geographic-snapshots.json"), value.geographicSnapshots);
+  await writeJson(join(root, "boundaries", "boundary-snapshots.json"), value.boundarySnapshots);
   await writeJson(join(root, "coverage", "coverage-review.json"), coverageReview);
 
   const sectionEntityIds = new Set(value.timelineSections.flatMap(({ entityIds }) => entityIds));
@@ -105,24 +106,28 @@ describe("源数据分片", () => {
     expect(summary).toMatchObject({
       entities: 133,
       details: 133,
-      geographicSnapshots: data.geographicSnapshots.length
+      geographicSnapshots: data.geographicSnapshots.length,
+      boundarySnapshots: data.boundarySnapshots.length
     });
     expect(summary.persons).toBe(data.persons.length);
     expect(summary.reigns).toBe(data.reigns.length);
     expect(await readJson(join(toolOutputRoot, "crownline-data.json"))).toEqual(data);
     expect(await readJson(join(toolOutputRoot, "coverage-report.json"))).toMatchObject({
       reportVersion: 2,
-      dataSchemaVersion: 4,
+      dataSchemaVersion: 5,
       totals: { entities: 133, polities: 131 },
       topLevelRegions: expect.arrayContaining([
         expect.objectContaining({ regionId: "region-central-asia", directPolityCount: 5 })
       ])
     });
     expect(await readJson(join(publicOutputRoot, "index.json"))).toMatchObject({
-      schemaVersion: 4
+      schemaVersion: 5
     });
     expect(await readJson(join(publicOutputRoot, "geography.json"))).toEqual(
       buildGeneratedArtifacts(data).geography
+    );
+    expect(await readJson(join(publicOutputRoot, "boundaries.json"))).toEqual(
+      buildGeneratedArtifacts(data).boundaries
     );
     expect(await readJson(join(publicOutputRoot, "details", "polity-cn-tang.json"))).toMatchObject({
       entityId: "polity-cn-tang"
@@ -145,6 +150,21 @@ describe("源数据分片", () => {
       "历史数据校验失败"
     );
     expect(await readJson(join(publicOutputRoot, "sentinel.json"))).toEqual({ stable: true });
+  });
+
+  it("重复生成的独立疆域产物保持字节级确定性", async () => {
+    const root = await createTemporaryRoot();
+    const sourceRoot = join(root, "source");
+    const toolOutputRoot = join(root, "tool-output");
+    const publicOutputRoot = join(root, "public-output");
+    await writeSourceTree(sourceRoot);
+
+    await generateData({ sourceRoot, toolOutputRoot, publicOutputRoot });
+    const first = await readFile(join(publicOutputRoot, "boundaries.json"), "utf8");
+    await generateData({ sourceRoot, toolOutputRoot, publicOutputRoot });
+    const second = await readFile(join(publicOutputRoot, "boundaries.json"), "utf8");
+
+    expect(second).toBe(first);
   });
 
   it("无效覆盖审查数据会阻止生成", async () => {

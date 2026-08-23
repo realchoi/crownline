@@ -74,7 +74,7 @@ describe("双政权时间对比", () => {
   it("筛选并裁剪共同存续期内的统治者任期", () => {
     const left = polity("left", [interval(1, 20)]);
     const detail: CrownlineDetail = {
-      schemaVersion: 4,
+      schemaVersion: 5,
       entityId: "left",
       persons: [
         {
@@ -132,7 +132,7 @@ describe("双政权时间对比", () => {
   it("拒绝把其他政权的详情用于共同期统治者", () => {
     const left = polity("left", [interval(1, 20)]);
     const detail = {
-      schemaVersion: 4,
+      schemaVersion: 5,
       entityId: "right",
       persons: [],
       reigns: [],

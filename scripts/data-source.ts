@@ -109,6 +109,7 @@ export async function loadSourceData(
     relationships: await readArrayFiles(join(sourceRoot, "relationships"), "关系"),
     events: await readArrayFiles(join(sourceRoot, "events"), "事件"),
     geographicSnapshots: await readArrayFiles(join(sourceRoot, "geography"), "地理快照"),
+    boundarySnapshots: await readArrayFiles(join(sourceRoot, "boundaries"), "疆域快照"),
     sources: await readArrayFiles(join(sourceRoot, "sources"), "来源")
   };
 }
