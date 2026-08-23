@@ -1,3 +1,4 @@
+import { loadCoverageReviewData } from "./coverage-review";
 import { loadSourceData } from "./data-source";
 import { validateCrownlineData } from "../src/domain/dataValidation";
 
@@ -11,6 +12,7 @@ try {
       .join("\n");
     throw new Error(`历史数据校验失败：\n${details}`);
   }
+  await loadCoverageReviewData(undefined, data);
   console.log(
     `数据校验通过：${data.timelineSections.length} 个阶段，${data.entities.length} 个实体，` +
       `${data.persons.length} 个人物，${data.reigns.length} 条任期，` +

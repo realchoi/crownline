@@ -15,6 +15,7 @@
     "format:check": "prettier --check .",
     "validate:data": "node --import tsx scripts/validate-data.ts",
     "generate:data": "node --import tsx scripts/generate-data.ts",
+    "check:docs": "node --import tsx scripts/check-data-docs.ts",
     "precheck:fonts": "npm run generate:data",
     "check:fonts": "bash scripts/font-venv.sh scripts/check-font-subset.py",
     "preregen:fonts": "npm run generate:data",
@@ -25,7 +26,7 @@
     "setup:e2e": "playwright install chromium",
     "test:e2e": "playwright test",
     "precheck": "npm run generate:data",
-    "check": "npm run lint && npm run format:check && npm run typecheck && npm run validate:data && npm run check:fonts --ignore-scripts && npm run test:coverage --ignore-scripts && npm run build --ignore-scripts && npm run test:e2e"
+    "check": "npm run lint && npm run format:check && npm run typecheck && npm run validate:data && npm run check:docs --ignore-scripts && npm run check:fonts --ignore-scripts && npm run test:coverage --ignore-scripts && npm run build --ignore-scripts && npm run test:e2e"
   },
   "dependencies": {
     "ajv": "^8.20.0",

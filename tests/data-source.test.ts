@@ -4,11 +4,13 @@ import { tmpdir } from "node:os";
 import { basename, join } from "node:path";
 
 import { loadSourceData } from "../scripts/data-source";
+import { loadCoverageReviewData } from "../scripts/coverage-review";
 import { generateData } from "../scripts/generate-data";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import type { CrownlineData } from "../src/domain/types";
 
 const data: CrownlineData = await loadSourceData();
+const coverageReview = await loadCoverageReviewData();
 const temporaryRoots: string[] = [];
 
 async function createTemporaryRoot(): Promise<string> {
@@ -33,6 +35,7 @@ async function writeSourceTree(root: string, value: CrownlineData = data): Promi
   await writeJson(join(root, "relationships", "relationships.json"), value.relationships);
   await writeJson(join(root, "events", "events.json"), value.events);
   await writeJson(join(root, "geography", "geographic-snapshots.json"), value.geographicSnapshots);
+  await writeJson(join(root, "coverage", "coverage-review.json"), coverageReview);
 
   const sectionEntityIds = new Set(value.timelineSections.flatMap(({ entityIds }) => entityIds));
   const firstPolityByPersonId = new Map<string, string>();
@@ -108,7 +111,7 @@ describe("源数据分片", () => {
     expect(summary.reigns).toBe(data.reigns.length);
     expect(await readJson(join(toolOutputRoot, "crownline-data.json"))).toEqual(data);
     expect(await readJson(join(toolOutputRoot, "coverage-report.json"))).toMatchObject({
-      reportVersion: 1,
+      reportVersion: 2,
       dataSchemaVersion: 4,
       totals: { entities: 133, polities: 131 },
       topLevelRegions: expect.arrayContaining([
@@ -142,6 +145,28 @@ describe("源数据分片", () => {
       "历史数据校验失败"
     );
     expect(await readJson(join(publicOutputRoot, "sentinel.json"))).toEqual({ stable: true });
+  });
+
+  it("无效覆盖审查数据会阻止生成", async () => {
+    const root = await createTemporaryRoot();
+    const sourceRoot = join(root, "source");
+    const toolOutputRoot = join(root, "tool-output");
+    const publicOutputRoot = join(root, "public-output");
+    await writeSourceTree(sourceRoot);
+    await writeJson(join(sourceRoot, "coverage", "coverage-review.json"), {
+      entries: [
+        {
+          entityId: "polity-missing",
+          dimension: "localNames",
+          status: "pending-review",
+          note: "待审查。"
+        }
+      ]
+    });
+
+    await expect(generateData({ sourceRoot, toolOutputRoot, publicOutputRoot })).rejects.toThrow(
+      "覆盖审查文件校验失败"
+    );
   });
 
   it("并发生成不会冲突", async () => {

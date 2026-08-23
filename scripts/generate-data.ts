@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import { buildDataCoverageReport } from "../src/data/coverageReport";
 import { validateCrownlineData } from "../src/domain/dataValidation";
+import { loadCoverageReviewData } from "./coverage-review";
 import { loadSourceData } from "./data-source";
 import { withGenerateDataLock } from "./generate-data-lock";
 
@@ -81,8 +82,9 @@ export async function generateData(
       throw new Error(`历史数据校验失败：\n${details}`);
     }
 
+    const coverageReview = await loadCoverageReviewData(sourceRoot, data);
     const artifacts = buildGeneratedArtifacts(data);
-    const coverageReport = buildDataCoverageReport(data);
+    const coverageReport = buildDataCoverageReport(data, coverageReview);
     const toolStaging = await createStagingDirectory(toolOutputRoot);
     const publicStaging = await createStagingDirectory(publicOutputRoot);
     try {

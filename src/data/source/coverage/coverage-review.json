@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "entityId": "polity-great-zimbabwe",
+      "dimension": "rulerDetails",
+      "status": "reviewed-unavailable",
+      "note": "已检查当前收录资料；现阶段无法可靠重建可展示的统治序列。"
+    },
+    {
+      "entityId": "polity-teotihuacan-state",
+      "dimension": "rulerDetails",
+      "status": "reviewed-unavailable",
+      "note": "已检查当前收录资料；现阶段无法可靠重建可展示的统治序列。"
+    }
+  ]
+}
