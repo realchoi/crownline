@@ -935,5 +935,35 @@
     "publisher": "University of Hawaiʻi Press",
     "url": "https://doi.org/10.1515/9780824841478",
     "accessedAt": "2026-08-23"
+  },
+  {
+    "id": "source-cambridge-six-dynasties",
+    "title": "The Cambridge History of China, Volume 2: The Six Dynasties, 220–589",
+    "sourceType": "secondary",
+    "citation": "Albert E. Dien 与 Keith N. Knapp 编，The Cambridge History of China, Volume 2: The Six Dynasties, 220–589，Cambridge University Press，2019；第6章校订十六国政权中心，第9—10章校订北齐与北周都城口径。",
+    "authors": ["Albert E. Dien", "Keith N. Knapp"],
+    "publisher": "Cambridge University Press",
+    "url": "https://doi.org/10.1017/9781139107334",
+    "accessedAt": "2026-08-25"
+  },
+  {
+    "id": "source-mote-imperial-china",
+    "title": "Imperial China, 900–1800",
+    "sourceType": "secondary",
+    "citation": "Frederick W. Mote, Imperial China, 900–1800，Harvard University Press，1999；第1章第3—30页概述五代及并立十国，用于校订本批次五代十国政治中心。",
+    "authors": ["Frederick W. Mote"],
+    "publisher": "Harvard University Press",
+    "url": "https://doi.org/10.2307/j.ctv1cbn3m5",
+    "accessedAt": "2026-08-25"
+  },
+  {
+    "id": "source-oxford-xia-debate",
+    "title": "Introduction to the Xia Period: Definitions, Themes, and Debate",
+    "sourceType": "secondary",
+    "citation": "Xu Hong, ‘Introduction to the Xia Period: Definitions, Themes, and Debate’, The Oxford Handbook of Early China，2020，第160—175页；综述夏的历史性、年代及二里头文化对应关系的不同意见，指出缺少传世文字材料直接验证且争论仍在继续。",
+    "authors": ["Xu Hong"],
+    "publisher": "Oxford University Press",
+    "url": "https://doi.org/10.1093/oxfordhb/9780199328369.013.8",
+    "accessedAt": "2026-08-25"
   }
 ]

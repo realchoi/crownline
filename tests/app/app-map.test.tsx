@@ -66,9 +66,16 @@ describe("Crownline 地图", () => {
 
   it("在迁都边界年份显示正确的新增中国点位", async () => {
     window.history.replaceState(null, "", "/?view=map&year=319&q=汉赵");
+    const user = setupUser();
     renderApp();
 
-    expect(await findMapMarker("汉赵（前赵），长安，都城")).toBeInTheDocument();
+    const map = await screen.findByRole("region", { name: "当前年份历史政权示意地图" });
+    await user.click(within(map).getByRole("button", { name: "此处有 2 个历史点位" }));
+    expect(
+      within(screen.getByRole("region", { name: "聚合历史点位" })).getByRole("button", {
+        name: "汉赵（前赵），长安，都城"
+      })
+    ).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "地图结果列表" })).not.toHaveTextContent(
       "汉赵（前赵），平阳"
     );

@@ -30,7 +30,16 @@ describe("覆盖审查目录加载与校验", () => {
   it("正常加载有效文件，并固定枚举集合", async () => {
     const review = await loadCoverageReviewData();
 
-    expect(review.entries).toHaveLength(2);
+    expect(review.entries).toHaveLength(3);
+    expect(review.entries).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          entityId: "polity-cn-xia",
+          dimension: "geography",
+          status: "reviewed-unavailable"
+        })
+      ])
+    );
     expect(COVERAGE_REVIEW_DIMENSIONS).toEqual(["rulerDetails", "localNames", "geography"]);
     expect(COVERAGE_REVIEW_STATUSES).toEqual([
       "available",

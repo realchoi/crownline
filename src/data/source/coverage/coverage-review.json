@@ -11,6 +11,12 @@
       "dimension": "rulerDetails",
       "status": "reviewed-unavailable",
       "note": "2026-08-23正式审查：考古研究支持特奥蒂瓦坎存在强力统治者或统治集团，但现存文字和图像材料不能安全恢复具名、连续且带任期的统治者序列；后世王表或考古标签不录入人物，继续保留资料缺口，不写成无人统治。依据 source-annualreviews-teotihuacan-rulers、source-teotihuacan-history。"
+    },
+    {
+      "entityId": "polity-cn-xia",
+      "dimension": "geography",
+      "status": "reviewed-unavailable",
+      "note": "2026-08-25正式审查：二里头遗址是约前二千纪早期的重要政治中心，中国学界常将其与夏后期联系，但缺少同时代文字材料直接确认二里头即夏都，夏—二里头对应在国内外研究中仍有不同意见。当前不把二里头、阳城或其他候选直接写成夏的确定都城，也不以单一争议候选充当无条件代表点位；待可表达竞争性地理重建或有更强证据时再评估。依据 source-oxford-xia-debate、source-cn-chronology-table。"
     }
   ]
 }

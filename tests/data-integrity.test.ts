@@ -198,13 +198,13 @@ describe("生产历史数据", () => {
     }
   });
 
-  it("为四十四个中国代表政权提供五十五条地理快照并覆盖十一个顶层地区", () => {
+  it("为七十个中国政权提供八十一条地理快照并覆盖十一个顶层地区", () => {
     const chinaSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return CHINA_MAP_POLITY_IDS.some((id) => id === polityId);
     });
 
-    expect(chinaSnapshots).toHaveLength(55);
-    expect(data.geographicSnapshots).toHaveLength(146);
+    expect(chinaSnapshots).toHaveLength(81);
+    expect(data.geographicSnapshots).toHaveLength(172);
     for (const polityId of CHINA_MAP_POLITY_IDS) {
       expect(
         chinaSnapshots.some((snapshot) => snapshot.polityId === polityId),
@@ -305,6 +305,48 @@ describe("生产历史数据", () => {
     }
   });
 
+  it("为二十六个剩余可定位中国政权固定点位与来源定位", () => {
+    const expectedSnapshotIds = [
+      "geo-later-zhao-xiangguo",
+      "geo-former-yan-longcheng",
+      "geo-later-qin-changan",
+      "geo-later-yan-zhongshan",
+      "geo-western-qin-jincheng",
+      "geo-later-liang-lu-guzang",
+      "geo-southern-liang-ledu",
+      "geo-northern-liang-zhangye",
+      "geo-southern-yan-guanggu",
+      "geo-western-liang-dunhuang",
+      "geo-hu-xia-tongwan",
+      "geo-northern-yan-longcheng",
+      "geo-northern-qi-yecheng",
+      "geo-northern-zhou-changan",
+      "geo-later-jin-kaifeng",
+      "geo-later-han-kaifeng",
+      "geo-later-zhou-kaifeng",
+      "geo-yang-wu-guangling",
+      "geo-min-changle",
+      "geo-ma-chu-changsha",
+      "geo-former-shu-chengdu",
+      "geo-later-shu-chengdu",
+      "geo-southern-han-xingwang",
+      "geo-jingnan-jiangling",
+      "geo-northern-han-taiyuan",
+      "geo-southern-ming-nanjing"
+    ];
+    const snapshots = data.geographicSnapshots.filter(({ id }) => expectedSnapshotIds.includes(id));
+
+    expect(snapshots.map(({ id }) => id)).toEqual(expectedSnapshotIds);
+    expect(new Set(snapshots.map(({ polityId }) => polityId))).toHaveProperty("size", 26);
+    expect(
+      snapshots.every(({ sourceRefs }) =>
+        sourceRefs.some(
+          ({ sourceId, locator }) => sourceId !== "source-geonames" && locator?.trim()
+        )
+      )
+    ).toBe(true);
+  });
+
   it("按分期切换本批次迁都点位且不跨越政权存在期", () => {
     expect(activePlaces("polity-cn-han-zhao", 318)).toEqual(["平阳"]);
     expect(activePlaces("polity-cn-han-zhao", 319)).toEqual(["长安"]);
@@ -394,7 +436,7 @@ describe("生产历史数据", () => {
     );
     expect(data.relationships).toHaveLength(28);
     expect(data.events).toHaveLength(18);
-    expect(data.sources).toHaveLength(187);
+    expect(data.sources).toHaveLength(190);
     expect(
       data.relationships.every(({ sourceRefs }) => {
         return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));

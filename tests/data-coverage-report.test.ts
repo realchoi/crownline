@@ -100,8 +100,8 @@ describe("数据覆盖报告 v2", () => {
         reigns: 1374,
         relationships: 28,
         events: 18,
-        geographicSnapshots: 146,
-        sources: 187
+        geographicSnapshots: 172,
+        sources: 190
       },
       polityCoverage: {
         rulerDetails: {
@@ -126,13 +126,13 @@ describe("数据覆盖报告 v2", () => {
         },
         geography: {
           total: 131,
-          reviewedUnavailable: 0,
+          reviewedUnavailable: 1,
           notApplicable: 0,
-          available: 104,
-          pendingReview: 27,
+          available: 130,
+          pendingReview: 0,
           applicableTotal: 131,
-          availablePercentage: 79.39,
-          reviewedPercentage: 79.39
+          availablePercentage: 99.24,
+          reviewedPercentage: 100
         }
       }
     });
@@ -141,18 +141,19 @@ describe("数据覆盖报告 v2", () => {
       "polity-teotihuacan-state"
     ]);
     expect(report.reviewableGaps.localNames.pendingReview).toHaveLength(82);
-    expect(report.reviewableGaps.geography.pendingReview).toHaveLength(27);
+    expect(report.reviewableGaps.geography.reviewedUnavailable).toEqual(["polity-cn-xia"]);
+    expect(report.reviewableGaps.geography.pendingReview).toEqual([]);
     expect(report.reviewableGaps.localNames.pendingReview).toEqual(
       [...report.reviewableGaps.localNames.pendingReview].sort((left, right) =>
         left.localeCompare(right, "en")
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 187,
-      byType: { primary: 2, secondary: 31, tertiary: 66, dataset: 3, institutional: 85 },
-      withUrl: 186,
+      total: 190,
+      byType: { primary: 2, secondary: 34, tertiary: 66, dataset: 3, institutional: 85 },
+      withUrl: 189,
       withoutUrl: 1,
-      withAccessedAt: 186,
+      withAccessedAt: 189,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toEqual({
@@ -169,9 +170,9 @@ describe("数据覆盖报告 v2", () => {
         recordsWithoutLocatedSourceRefs: 0
       },
       geographicSnapshots: {
-        records: 146,
-        recordsWithSourceRefs: 146,
-        recordsWithLocatedSourceRefs: 46,
+        records: 172,
+        recordsWithSourceRefs: 172,
+        recordsWithLocatedSourceRefs: 72,
         recordsWithoutLocatedSourceRefs: 100
       }
     });
@@ -326,14 +327,16 @@ describe("关系分布和来源质量", () => {
     ]);
     expect(report.polityCoverage.geography).toMatchObject({
       total: 131,
-      available: 104,
-      pendingReview: 27,
-      availablePercentage: 79.39
+      available: 130,
+      reviewedUnavailable: 1,
+      pendingReview: 0,
+      availablePercentage: 99.24,
+      reviewedPercentage: 100
     });
     expect(report.sourceReferenceQuality).toMatchObject({
       relationships: { records: 28, recordsWithLocatedSourceRefs: 28 },
       events: { records: 18, recordsWithLocatedSourceRefs: 18 },
-      geographicSnapshots: { records: 146, recordsWithLocatedSourceRefs: 46 }
+      geographicSnapshots: { records: 172, recordsWithLocatedSourceRefs: 72 }
     });
   });
 

@@ -131,13 +131,13 @@ describe("历史地图点位", () => {
     expect(result.missingEntities).toEqual([]);
   });
 
-  it("单独列出当年缺少地理快照的政权", () => {
-    const northernZhou = entity("polity-cn-northern-zhou");
-    const result = selectMapSnapshots([northernZhou], data.geographicSnapshots, 580);
+  it("单独列出正式审查后仍不提供单一地理点位的夏", () => {
+    const xia = entity("polity-cn-xia");
+    const result = selectMapSnapshots([xia], data.geographicSnapshots, -1800);
 
     expect(result.points).toEqual([]);
     expect(result.clusters).toEqual([]);
-    expect(result.missingEntities).toEqual([northernZhou]);
+    expect(result.missingEntities).toEqual([xia]);
   });
 
   it("不受输入顺序影响地稳定聚合北京与南京测试点", () => {
