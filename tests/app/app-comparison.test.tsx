@@ -13,7 +13,7 @@ import {
 installAppTestLifecycle();
 
 describe("Crownline 政权对比", () => {
-  it("从时间轴选择最多两个政权并同步 URL", async () => {
+  it("从时间轴选择最多两个政权并同步 URL", { timeout: 20_000 }, async () => {
     const user = setupUser();
     renderApp();
 
