@@ -98,10 +98,10 @@ describe("数据覆盖报告 v2", () => {
         historicalPeriods: 2,
         persons: 1335,
         reigns: 1374,
-        relationships: 28,
+        relationships: 48,
         events: 18,
         geographicSnapshots: 172,
-        sources: 190
+        sources: 197
       },
       polityCoverage: {
         rulerDetails: {
@@ -149,18 +149,18 @@ describe("数据覆盖报告 v2", () => {
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 190,
-      byType: { primary: 2, secondary: 34, tertiary: 66, dataset: 3, institutional: 85 },
-      withUrl: 189,
+      total: 197,
+      byType: { primary: 2, secondary: 38, tertiary: 66, dataset: 3, institutional: 88 },
+      withUrl: 196,
       withoutUrl: 1,
-      withAccessedAt: 189,
+      withAccessedAt: 196,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toEqual({
       relationships: {
-        records: 28,
-        recordsWithSourceRefs: 28,
-        recordsWithLocatedSourceRefs: 28,
+        records: 48,
+        recordsWithSourceRefs: 48,
+        recordsWithLocatedSourceRefs: 48,
         recordsWithoutLocatedSourceRefs: 0
       },
       events: {
@@ -291,7 +291,9 @@ describe("关系分布和来源质量", () => {
 
     expect(Object.keys(summary.byType)).toEqual([...RELATIONSHIP_TYPES]);
     expect(Object.keys(summary.byConfidence)).toEqual([...CONFIDENCE_LEVELS]);
-    expect(summary.records).toBe(28);
+    expect(summary.records).toBe(48);
+    expect(summary.participantPolities).toBe(51);
+    expect(summary.participantPercentage).toBe(38.93);
     expect(summary.participantPolities).toBeLessThanOrEqual(summary.totalPolities);
     expect(summary.regionsWithRecords.length + summary.regionsWithoutRecords.length).toBe(11);
     expect(summary.regionsWithRecords).not.toEqual([]);
@@ -304,12 +306,12 @@ describe("关系分布和来源质量", () => {
   it("记录本批次关系的地区、类型和来源定位改善", () => {
     const report = buildDataCoverageReport(data, coverageReview);
     expect(report.relationshipSummary.byType).toEqual({
-      war: 12,
-      alliance: 1,
+      war: 26,
+      alliance: 2,
       diplomacy: 4,
-      tribute: 2,
-      vassalage: 2,
-      trade: 5,
+      tribute: 4,
+      vassalage: 3,
+      trade: 7,
       "cultural-exchange": 2
     });
     expect(report.relationshipSummary.regionsWithRecords).toEqual([
@@ -334,7 +336,7 @@ describe("关系分布和来源质量", () => {
       reviewedPercentage: 100
     });
     expect(report.sourceReferenceQuality).toMatchObject({
-      relationships: { records: 28, recordsWithLocatedSourceRefs: 28 },
+      relationships: { records: 48, recordsWithLocatedSourceRefs: 48 },
       events: { records: 18, recordsWithLocatedSourceRefs: 18 },
       geographicSnapshots: { records: 172, recordsWithLocatedSourceRefs: 72 }
     });

@@ -306,6 +306,24 @@ describe("运行时数据产物", () => {
         eventId: "event-aztec-purepecha-battle",
         sourceId: "source-met-aztec-tarascan",
         entityIds: ["polity-aztec-empire", "polity-purepecha-empire"]
+      },
+      {
+        relationshipId: "relationship-cao-wei-shu-han-war",
+        eventId: undefined,
+        sourceId: "source-cambridge-six-dynasties",
+        entityIds: ["polity-cn-cao-wei", "polity-cn-shu-han"]
+      },
+      {
+        relationshipId: "relationship-qara-khitai-khwarazmian-vassalage",
+        eventId: undefined,
+        sourceId: "source-qara-khitai-history",
+        entityIds: ["polity-qara-khitai", "polity-khwarazmian-empire"]
+      },
+      {
+        relationshipId: "relationship-ming-kilwa-indian-ocean-trade",
+        eventId: undefined,
+        sourceId: "source-springer-ming-tribute-trade",
+        entityIds: ["polity-cn-ming", "polity-kilwa-sultanate"]
       }
     ] as const;
 

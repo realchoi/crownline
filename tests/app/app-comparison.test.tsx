@@ -185,6 +185,18 @@ describe("Crownline 政权对比", () => {
     ).toBeGreaterThanOrEqual(2);
   });
 
+  it("展示历史网络批次的明—琉球朝贡贸易及非直接统治口径", async () => {
+    window.history.replaceState(null, "", "/?compare=polity-cn-ming&compare=polity-ryukyu-kingdom");
+    renderApp();
+
+    const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
+    expect(relationships).toHaveTextContent("朝贡");
+    expect(relationships).toHaveTextContent("转口贸易");
+    expect(relationships).toHaveTextContent("册封、受使与回赐方");
+    expect(relationships).toHaveTextContent("不自动等同于明对琉球的直接行政统治");
+    expect(relationships).toHaveTextContent("来源 · 2 项");
+  });
+
   it("同一政权对按类型展示多条关系及其口径说明", async () => {
     window.history.replaceState(null, "", "/?compare=polity-cn-tang&compare=polity-balhae");
     renderApp();

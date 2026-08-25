@@ -434,9 +434,9 @@ describe("生产历史数据", () => {
     expect(new Set(data.relationships.map(({ type }) => type))).toEqual(
       new Set(RELATIONSHIP_TYPES)
     );
-    expect(data.relationships).toHaveLength(28);
+    expect(data.relationships).toHaveLength(48);
     expect(data.events).toHaveLength(18);
-    expect(data.sources).toHaveLength(190);
+    expect(data.sources).toHaveLength(197);
     expect(
       data.relationships.every(({ sourceRefs }) => {
         return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));
@@ -538,6 +538,74 @@ describe("生产历史数据", () => {
       added.every(({ sourceRefs }) => sourceRefs.some(({ locator }) => Boolean(locator?.trim())))
     ).toBe(true);
     expect(added.flatMap(({ eventIds: ids }) => ids)).toEqual(expect.arrayContaining(eventIds));
+  });
+
+  it("固定四组历史网络的二十条关系及其来源边界", () => {
+    const networks = {
+      chinaFragmentation: [
+        "relationship-cao-wei-shu-han-war",
+        "relationship-cao-wei-eastern-wu-war",
+        "relationship-shu-han-eastern-wu-alliance",
+        "relationship-northern-wei-liu-song-war",
+        "relationship-eastern-wei-western-wei-war",
+        "relationship-northern-qi-northern-zhou-war",
+        "relationship-later-tang-former-shu-war",
+        "relationship-later-zhou-southern-tang-war",
+        "relationship-northern-song-northern-han-war"
+      ],
+      silkRoad: [
+        "relationship-eastern-han-kushan-silk-road-trade",
+        "relationship-qara-khitai-khwarazmian-vassalage",
+        "relationship-mongol-khwarazmian-war",
+        "relationship-timurid-ottoman-ankara-war",
+        "relationship-byzantine-sasanian-last-war"
+      ],
+      mediterraneanWestAsia: [
+        "relationship-byzantine-abbasid-amorium-war",
+        "relationship-ottoman-safavid-chaldiran-war"
+      ],
+      maritimeAsiaIndianOcean: [
+        "relationship-yuan-majapahit-java-war",
+        "relationship-ming-majapahit-tribute",
+        "relationship-ming-ryukyu-tribute-trade",
+        "relationship-ming-kilwa-indian-ocean-trade"
+      ]
+    };
+    expect(
+      Object.fromEntries(Object.entries(networks).map(([key, ids]) => [key, ids.length]))
+    ).toEqual({
+      chinaFragmentation: 9,
+      silkRoad: 5,
+      mediterraneanWestAsia: 2,
+      maritimeAsiaIndianOcean: 4
+    });
+
+    const relationshipIds = Object.values(networks).flat();
+    const added = data.relationships.filter(({ id }) => relationshipIds.includes(id));
+    expect(relationshipIds).toHaveLength(20);
+    expect(added).toHaveLength(20);
+    expect(added.map(({ id }) => id)).toEqual(relationshipIds);
+    expect(
+      Object.fromEntries(
+        RELATIONSHIP_TYPES.map((type) => [type, added.filter((item) => item.type === type).length])
+      )
+    ).toEqual({
+      war: 14,
+      alliance: 1,
+      diplomacy: 0,
+      tribute: 2,
+      vassalage: 1,
+      trade: 2,
+      "cultural-exchange": 0
+    });
+    expect(
+      added.every(({ sourceRefs }) => sourceRefs.every(({ locator }) => Boolean(locator?.trim())))
+    ).toBe(true);
+    expect(
+      added
+        .filter(({ confidence }) => confidence === "medium")
+        .every(({ confidenceNote }) => Boolean(confidenceNote?.trim()))
+    ).toBe(true);
   });
 
   it("固定两个统治者缺口的正式审查状态而不制造任期", async () => {

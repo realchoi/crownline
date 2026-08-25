@@ -940,7 +940,7 @@
     "id": "source-cambridge-six-dynasties",
     "title": "The Cambridge History of China, Volume 2: The Six Dynasties, 220–589",
     "sourceType": "secondary",
-    "citation": "Albert E. Dien 与 Keith N. Knapp 编，The Cambridge History of China, Volume 2: The Six Dynasties, 220–589，Cambridge University Press，2019；第6章校订十六国政权中心，第9—10章校订北齐与北周都城口径。",
+    "citation": "Albert E. Dien 与 Keith N. Knapp 编，The Cambridge History of China, Volume 2: The Six Dynasties, 220–589，Cambridge University Press，2019；魏、吴、蜀汉、北魏、东西魏、北齐、北周与南朝诸章用于校订分裂时期政权关系，第6章同时校订十六国政治中心。",
     "authors": ["Albert E. Dien", "Keith N. Knapp"],
     "publisher": "Cambridge University Press",
     "url": "https://doi.org/10.1017/9781139107334",
@@ -950,7 +950,7 @@
     "id": "source-mote-imperial-china",
     "title": "Imperial China, 900–1800",
     "sourceType": "secondary",
-    "citation": "Frederick W. Mote, Imperial China, 900–1800，Harvard University Press，1999；第1章第3—30页概述五代及并立十国，用于校订本批次五代十国政治中心。",
+    "citation": "Frederick W. Mote, Imperial China, 900–1800，Harvard University Press，1999；第1章第3—30页概述五代及并立十国，用于校订本批次五代十国政治中心、征服战争与并立格局。",
     "authors": ["Frederick W. Mote"],
     "publisher": "Harvard University Press",
     "url": "https://doi.org/10.2307/j.ctv1cbn3m5",
@@ -964,6 +964,73 @@
     "authors": ["Xu Hong"],
     "publisher": "Oxford University Press",
     "url": "https://doi.org/10.1093/oxfordhb/9780199328369.013.8",
+    "accessedAt": "2026-08-25"
+  },
+  {
+    "id": "source-britannica-ankara",
+    "title": "Battle of Ankara",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Britannica: ‘Battle of Ankara’；用于校订1402年帖木儿与奥斯曼苏丹巴耶济德一世在安卡拉交战、奥斯曼战败及随后陷入内战的口径。",
+    "publisher": "Encyclopaedia Britannica",
+    "url": "https://www.britannica.com/event/Battle-of-Ankara-1402",
+    "accessedAt": "2026-08-25"
+  },
+  {
+    "id": "source-iranica-byzantine-sasanian-war",
+    "title": "Egypt iv. Relations in the Sasanian period",
+    "sourceType": "institutional",
+    "citation": "Encyclopaedia Iranica: ‘Egypt iv. Relations in the Sasanian period’；用于校订602—628年萨珊—拜占庭战争、614年耶路撒冷与619年前后埃及失守、622年希拉克略反攻及628年战争终结。",
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/egypt-iv/",
+    "accessedAt": "2026-08-25"
+  },
+  {
+    "id": "source-oxford-amorium",
+    "title": "Amorium",
+    "sourceType": "secondary",
+    "citation": "Christopher Lightfoot, ‘Amorium’, The Archaeology of Byzantine Anatolia，Oxford University Press；考古与历史材料共同确认838年阿拔斯军攻陷阿莫里乌姆。",
+    "authors": ["Christopher Lightfoot"],
+    "publisher": "Oxford University Press",
+    "url": "https://doi.org/10.1093/acprof:oso/9780190610463.003.0032",
+    "accessedAt": "2026-08-25"
+  },
+  {
+    "id": "source-iranica-chaldiran",
+    "title": "Čālderān",
+    "sourceType": "institutional",
+    "citation": "Michael J. McCaffrey, Encyclopaedia Iranica: ‘Čālderān’；用于校订1514年奥斯曼苏丹塞利姆一世与萨法维沙阿伊斯玛仪一世交战及奥斯曼获胜。",
+    "authors": ["Michael J. McCaffrey"],
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/calderan-battle/",
+    "accessedAt": "2026-08-25"
+  },
+  {
+    "id": "source-anu-yuan-java",
+    "title": "Mongol fleet on the way to Java: First archaeological remains from the Karimata Strait in Indonesia",
+    "sourceType": "secondary",
+    "citation": "Hsiao-chun Hung、Hartatik、Tisna Ma'rifat 与 Truman Simanjuntak，Archaeological Research in Asia；结合石刻与历史记录校订忽必烈派遣舰队、1293年远征爪哇及其与满者伯夷兴起的关系。",
+    "authors": ["Hsiao-chun Hung", "Hartatik", "Tisna Ma'rifat", "Truman Simanjuntak"],
+    "publisher": "Elsevier",
+    "url": "https://doi.org/10.1016/j.ara.2021.100327",
+    "accessedAt": "2026-08-25"
+  },
+  {
+    "id": "source-springer-ming-tribute-trade",
+    "title": "The Structure and Transformation of the Ming Tribute Trade System",
+    "sourceType": "secondary",
+    "citation": "‘The Structure and Transformation of the Ming Tribute Trade System’；用于校订1403—1435年明廷重启市舶体系、郑和航行，以及琉球、爪哇和印度洋港口参与朝贡贸易网络的制度口径。",
+    "publisher": "Springer",
+    "url": "https://doi.org/10.1007/978-981-10-4053-5_7",
+    "accessedAt": "2026-08-25"
+  },
+  {
+    "id": "source-cambridge-majapahit-ming-envoy",
+    "title": "The two Kronik Tionghua of Semarang and Cirebon: A note on provenance and reliability",
+    "sourceType": "secondary",
+    "citation": "Russell Jones, Journal of Southeast Asian Studies；相关段落以《明实录》交叉核对1438年满者伯夷使者赴明记录，并讨论爪哇中文编年资料的可靠性边界。",
+    "authors": ["Russell Jones"],
+    "publisher": "Cambridge University Press",
+    "url": "https://doi.org/10.1017/S002246340000675X",
     "accessedAt": "2026-08-25"
   }
 ]

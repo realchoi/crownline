@@ -582,5 +582,459 @@
     ],
     "confidence": "medium",
     "confidenceNote": "证据支持边境交换与商业流动，但不能确认每次交易由双方中央政权直接组织。"
+  },
+  {
+    "id": "relationship-cao-wei-shu-han-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-cao-wei", "role": "交战方" },
+      { "entityId": "polity-cn-shu-han", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 228, "precision": "exact" },
+        "end": { "year": 234, "precision": "exact" }
+      }
+    ],
+    "summary": "228至234年，蜀汉诸葛亮多次北伐曹魏，双方围绕陇右、祁山与关中通道反复交战；234年诸葛亮病逝五丈原后，这一轮持续攻势结束。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-six-dynasties",
+        "locator": "Chapters 1 and 3, Wei and Shu-Han: Zhuge Liang's northern campaigns, 228–234"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-cao-wei-eastern-wu-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-cao-wei", "role": "交战方" },
+      { "entityId": "polity-cn-eastern-wu", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 222, "precision": "exact" },
+        "end": { "year": 225, "precision": "exact" }
+      }
+    ],
+    "summary": "孙权与曹魏关系破裂后，222至225年双方在洞口、濡须与广陵方向连续交战；曹魏未能迫使东吴重新臣服，长江下游由此形成长期对峙。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-six-dynasties",
+        "locator": "Chapters 1 and 2, Wei and Wu: Cao Pi's campaigns against Sun Quan, 222–225"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-shu-han-eastern-wu-alliance",
+    "type": "alliance",
+    "participants": [
+      { "entityId": "polity-cn-shu-han", "role": "盟约方" },
+      { "entityId": "polity-cn-eastern-wu", "role": "盟约方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 223, "precision": "exact" },
+        "end": { "year": 263, "precision": "exact" }
+      }
+    ],
+    "summary": "夷陵之战后，蜀汉与东吴于223年前后恢复外交和共同抗魏框架；双方仍各自称帝并保留利益冲突，但联盟大体维持至263年蜀汉灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-six-dynasties",
+        "locator": "Chapters 2 and 3, Wu and Shu-Han: restoration of the Wu–Shu alliance after 223"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "本条描述共同抗魏的持续战略框架，不表示两国形成统一指挥、没有边界矛盾或在每一年都进行联合军事行动。"
+  },
+  {
+    "id": "relationship-northern-wei-liu-song-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-northern-wei", "role": "北方交战方" },
+      { "entityId": "polity-cn-liu-song", "role": "南方交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 422, "precision": "exact" },
+        "end": { "year": 423, "precision": "exact" }
+      },
+      {
+        "start": { "year": 450, "precision": "exact" },
+        "end": { "year": 451, "precision": "exact" }
+      }
+    ],
+    "summary": "北魏与刘宋围绕黄河—淮河之间的战略地带多次发动大规模战争；本条记录422—423年和450—451年两轮代表性战事，不把其间所有边境摩擦合并成连续战争。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-six-dynasties",
+        "locator": "Chapters 8 and 11, Northern Wei and the Southern Dynasties: Northern Wei–Liu-Song wars"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-eastern-wei-western-wei-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-eastern-wei", "role": "交战方" },
+      { "entityId": "polity-cn-western-wei", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 537, "precision": "exact" },
+        "end": { "year": 546, "precision": "exact" }
+      }
+    ],
+    "summary": "北魏分裂后，东魏高欢集团与西魏宇文泰集团围绕关中、河东和河南反复交战；沙苑、邙山与玉壁等战役使东西对峙延续到两政权分别被北齐、北周取代。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-six-dynasties",
+        "locator": "Chapters 9 and 10, Eastern Wei–Northern Qi and Western Wei–Northern Zhou, pp. 184–236"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "537—546年表示多轮战争构成的对抗阶段，不表示双方在区间内每一年都持续作战。"
+  },
+  {
+    "id": "relationship-northern-qi-northern-zhou-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-northern-qi", "role": "交战方" },
+      { "entityId": "polity-cn-northern-zhou", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 564, "precision": "exact" },
+        "end": { "year": 577, "precision": "exact" }
+      }
+    ],
+    "summary": "北齐与北周继承东西魏对峙并多次交战；北周于576至577年攻入晋阳和邺城，北齐灭亡，北方大部由北周统一。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-cambridge-six-dynasties",
+        "locator": "Chapters 9 and 10, Northern Qi–Northern Zhou conflict and the conquest of Northern Qi, 564–577"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-later-tang-former-shu-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-later-tang", "role": "进攻方" },
+      { "entityId": "polity-cn-former-shu", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 925, "precision": "exact" },
+        "end": { "year": 925, "precision": "exact" }
+      }
+    ],
+    "summary": "925年，后唐军越过秦岭进攻前蜀，前蜀后主王衍出降；前蜀灭亡，四川一度并入后唐控制。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-mote-imperial-china",
+        "locator": "Chapter 1, The Five Dynasties, pp. 3–30: Later Tang conquest of Former Shu in 925"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-later-zhou-southern-tang-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-later-zhou", "role": "进攻方" },
+      { "entityId": "polity-cn-southern-tang", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 955, "precision": "exact" },
+        "end": { "year": 958, "precision": "exact" }
+      }
+    ],
+    "summary": "955至958年，后周世宗柴荣连续进攻南唐淮南地区；南唐割让江北诸州、去帝号并向后周称臣，长江由此成为新的政治边界。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-mote-imperial-china",
+        "locator": "Chapter 1, The Five Dynasties, pp. 3–30: Later Zhou campaigns against Southern Tang, 955–958"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-song-northern-han-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-northern-song", "role": "进攻方" },
+      { "entityId": "polity-cn-northern-han", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 976, "precision": "exact" },
+        "end": { "year": 979, "precision": "exact" }
+      }
+    ],
+    "summary": "北宋建立后继续进攻据守太原并受辽支持的北汉；979年宋太宗攻陷太原，北汉末主刘继元投降，五代十国最后一个主要并立政权终结。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-mote-imperial-china",
+        "locator": "Chapter 5, Creating the Song Dynasty: conquest of Northern Han in 979"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-eastern-han-kushan-silk-road-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-cn-eastern-han", "role": "丝路东端政权" },
+      { "entityId": "polity-kushan-empire", "role": "中亚—南亚枢纽政权" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 50, "precision": "circa" },
+        "end": { "year": 184, "precision": "exact" }
+      }
+    ],
+    "summary": "一至二世纪，贵霜控制的中亚—南亚通道连接汉地、中国丝绸、印度与罗马世界；商人、僧侣和物资沿陆路与海路流动，使贵霜成为东西交通的重要中介。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-kushan-history",
+        "locator": "Silk Road trade with China and the Roman world"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "史料支持跨越两政权的贸易与人员网络，但大量交换由中间商、绿洲城市和地方势力完成，不能写成东汉与贵霜中央政府持续经营的双边贸易协定。"
+  },
+  {
+    "id": "relationship-qara-khitai-khwarazmian-vassalage",
+    "type": "vassalage",
+    "participants": [
+      { "entityId": "polity-qara-khitai", "role": "宗主政权" },
+      { "entityId": "polity-khwarazmian-empire", "role": "纳贡附属政权" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1141, "precision": "exact" },
+        "end": { "year": 1210, "precision": "exact" }
+      }
+    ],
+    "summary": "1141年卡特万之战后，花剌子模向西辽（喀喇契丹）纳贡并承认其上位权威；随着花剌子模扩张，这种附属关系在十二世纪末至1210年前后被逐步解除。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-qara-khitai-history", "locator": "Qara Khitay suzerainty and tribute after the battle of Qatwan" },
+      { "sourceId": "source-khwarazmian-history", "locator": "Relations with the Qara Khitai and the end of tribute obligations" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "花剌子模保留世袭王统、军政机构和扩张能力；本条使用附属关系表达纳贡与宗主权，不把其写成西辽直接行政区。"
+  },
+  {
+    "id": "relationship-mongol-khwarazmian-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-mongol-empire", "role": "进攻方" },
+      { "entityId": "polity-khwarazmian-empire", "role": "防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1219, "precision": "exact" },
+        "end": { "year": 1221, "precision": "exact" }
+      }
+    ],
+    "summary": "1219年蒙古大军进攻花剌子模，先后攻陷河中和呼罗珊主要城市；沙阿穆罕默德二世败亡，札兰丁继续抵抗，但帝国核心统治结构已被摧毁。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-khwarazmian-history",
+        "locator": "ʿAlāʾ-al-Din Muhammad, the Mongol invasion of 1219–1221, and Jalāl-al-Din"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-timurid-ottoman-ankara-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-timurid-empire", "role": "进攻方" },
+      { "entityId": "polity-ottoman-empire", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1402, "precision": "exact" },
+        "end": { "year": 1402, "precision": "exact" }
+      }
+    ],
+    "summary": "1402年，帖木儿军在安卡拉击败奥斯曼苏丹巴耶济德一世并将其俘虏；奥斯曼随后进入诸王子争位的空位与内战阶段。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-britannica-ankara", "locator": "Battle of Ankara, 1402: Timur defeats and captures Bayezid I" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-byzantine-sasanian-last-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-byzantine-empire", "role": "交战方" },
+      { "entityId": "polity-sasanian-empire", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 602, "precision": "exact" },
+        "end": { "year": 628, "precision": "exact" }
+      }
+    ],
+    "summary": "602至628年的最后一次拜占庭—萨珊大战先见萨珊军占领叙利亚、耶路撒冷与埃及，后由希拉克略反攻扭转；628年和议恢复战前边界，但双方都被战争严重削弱。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-byzantine-sasanian-war",
+        "locator": "The last Sasanian war against Byzantium, 602–628"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-byzantine-abbasid-amorium-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-byzantine-empire", "role": "防守方" },
+      { "entityId": "polity-abbasid-caliphate", "role": "进攻方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 838, "precision": "exact" },
+        "end": { "year": 838, "precision": "exact" }
+      }
+    ],
+    "summary": "838年，阿拔斯哈里发穆尔台绥姆发动安纳托利亚远征并攻陷拜占庭重镇阿莫里乌姆；城址考古中的破坏层与历史记载相互印证。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-oxford-amorium", "locator": "Chapter 31, Amorium, pp. 333–341: archaeological evidence for the Arab sack in 838" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-ottoman-safavid-chaldiran-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-ottoman-empire", "role": "交战方" },
+      { "entityId": "polity-safavid-iran", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1514, "precision": "exact" },
+        "end": { "year": 1514, "precision": "exact" }
+      }
+    ],
+    "summary": "1514年，奥斯曼苏丹塞利姆一世与萨法维沙阿伊斯玛仪一世在查尔迪兰交战；奥斯曼凭火器和战术优势获胜并一度进入大不里士。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-iranica-chaldiran", "locator": "Čālderān, battle of 23 August 1514" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-yuan-majapahit-java-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-yuan", "role": "远征方" },
+      { "entityId": "polity-majapahit", "role": "先合作后反击方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1293, "precision": "exact" },
+        "end": { "year": 1293, "precision": "exact" }
+      }
+    ],
+    "summary": "1293年元军远征爪哇，初与罗登·韦查势力合作击败谏义里，随后遭其反击并撤离；这场远征与满者伯夷政权建立直接相连。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-anu-yuan-java",
+        "locator": "Mongol fleet dispatched from Quanzhou to Java in 1293 and the emergence of Majapahit"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-ming-majapahit-tribute",
+    "type": "tribute",
+    "participants": [
+      { "entityId": "polity-cn-ming", "role": "受使与册封方" },
+      { "entityId": "polity-majapahit", "role": "遣使与入贡方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1405, "precision": "exact" },
+        "end": { "year": 1438, "precision": "exact" }
+      }
+    ],
+    "summary": "永乐—宣德时期，明廷以郑和航行和市舶体系连接海上亚洲，爪哇（满者伯夷）使节参与朝贡贸易；《明实录》还保留1438年满者伯夷使者赴明记录。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-springer-ming-tribute-trade", "locator": "The second period, 1403–1435: Java in the southern tributary zone" },
+      { "sourceId": "source-cambridge-majapahit-ming-envoy", "locator": "Ming shilu record of a Majapahit envoy arriving in 1438" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "朝贡贸易表示使节、礼物、回赐、册封与贸易许可构成的外交框架；不把满者伯夷写成明朝直接行政单位。"
+  },
+  {
+    "id": "relationship-ming-ryukyu-tribute-trade",
+    "type": "tribute",
+    "participants": [
+      { "entityId": "polity-cn-ming", "role": "册封、受使与回赐方" },
+      { "entityId": "polity-ryukyu-kingdom", "role": "遣使、入贡与转口贸易方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1429, "precision": "exact" },
+        "end": { "year": 1644, "precision": "exact" }
+      }
+    ],
+    "summary": "琉球王国统一后继续与明维持册封、朝贡和转口贸易关系，借此连接中国、日本、朝鲜与东南亚；1609年萨摩入侵后，这套关系仍与对日臣属并存。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-springer-ming-tribute-trade", "locator": "Ryukyu missions in the eastern tributary zone" },
+      { "sourceId": "source-ryukyu-history", "locator": "Ryukyu Kingdom maritime trade and relations with Ming China" }
+    ],
+    "confidence": "high",
+    "confidenceNote": "朝贡与册封不自动等同于明对琉球的直接行政统治；1609年后琉球同时处于萨摩影响与对明朝贡关系之中。"
+  },
+  {
+    "id": "relationship-ming-kilwa-indian-ocean-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-cn-ming", "role": "中国商品生产与海上网络东端政权" },
+      { "entityId": "polity-kilwa-sultanate", "role": "斯瓦希里海岸贸易枢纽" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1400, "precision": "circa" },
+        "end": { "year": 1505, "precision": "exact" }
+      }
+    ],
+    "summary": "明代中国瓷器经南海、印度和阿拉伯商人组成的印度洋网络抵达斯瓦希里海岸，基尔瓦则以黄金、象牙等商品参与区域交换；考古遗存支持两端处于同一贸易链。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-springer-ming-tribute-trade", "locator": "Ming maritime and tribute trade extending into the Indian Ocean, 1403–1435" },
+      { "sourceId": "source-unesco-kilwa-trade", "locator": "Kilwa trade in Chinese porcelain, gold and Indian Ocean goods, thirteenth–sixteenth centuries" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "瓷器、钱币与贸易史料支持跨区域商品网络，但多数交易经过多层中介；本条不主张明廷与基尔瓦苏丹签有双边贸易条约，也不据器物推断政治从属。"
   }
 ]
