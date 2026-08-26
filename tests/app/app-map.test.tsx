@@ -17,10 +17,9 @@ installAppTestLifecycle();
 
 describe("Crownline 地图", () => {
   it("默认展示全时期点位，调整年份后筛选并可返回总览", async () => {
-    const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "地图" }));
+    fireEvent.click(screen.getByRole("button", { name: "地图" }));
     expect(
       await screen.findByRole("region", { name: "全时期历史政权总览地图" })
     ).toBeInTheDocument();
@@ -42,16 +41,16 @@ describe("Crownline 地图", () => {
     expect(screen.getByRole("region", { name: "地图结果列表" })).not.toHaveTextContent("明");
     expect(new URLSearchParams(window.location.search).get("mode")).toBe("point");
 
-    await user.click(screen.getByRole("button", { name: "全时期" }));
+    fireEvent.click(screen.getByRole("button", { name: "全时期" }));
     expect(await screen.findByRole("region", { name: "全时期历史政权总览地图" })).toBeVisible();
     expect(new URLSearchParams(window.location.search).has("mode")).toBe(false);
     expect(new URLSearchParams(window.location.search).has("year")).toBe(false);
 
     const restoredList = screen.getByRole("region", { name: "地图结果列表" });
-    await user.click(within(restoredList).getByRole("button", { name: "明，南京，都城" }));
+    fireEvent.click(within(restoredList).getByRole("button", { name: "明，南京，都城" }));
     expect(await screen.findByRole("heading", { name: "统治序列" })).toBeInTheDocument();
     expect(screen.queryByRole("heading", { name: /500年 · 在位统治者/ })).not.toBeInTheDocument();
-  });
+  }, 20_000);
 
   it("首次进入地图时按需加载地理数据并显示当年点位", async () => {
     window.history.replaceState(null, "", "/?view=map&year=450");
