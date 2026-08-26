@@ -1,23 +1,36 @@
 .hero {
-  padding: 72px 0 32px;
+  position: relative;
+  padding: 42px 0 20px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 74%, transparent);
+}
+
+.hero::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  width: 96px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--parallel));
+  content: "";
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin: 0 0 14px;
+  gap: 9px;
+  margin: 0 0 8px;
   color: var(--accent);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .eyebrow::before {
-  content: "";
-  width: 34px;
-  height: 2px;
+  width: 28px;
+  height: 1px;
   background: currentColor;
+  content: "";
 }
 
 h1,
@@ -27,8 +40,6 @@ p {
   margin-top: 0;
 }
 
-/* 全站标题排版的唯一规则：拉丁字符走 Source Serif 4、中文走 Noto Serif SC；
-   关闭合成加粗与合成斜体，光学尺寸随字号自动匹配，避免各处标题各自声明逐渐漂移 */
 h1,
 .year-current-value,
 .stage-title,
@@ -43,11 +54,11 @@ h1,
 }
 
 h1 {
-  max-width: 880px;
-  margin-bottom: 18px;
-  font-size: clamp(2.4rem, 6vw, 5.4rem);
-  line-height: 1.08;
-  letter-spacing: -0.035em;
+  max-width: 920px;
+  margin-bottom: 8px;
+  font-size: clamp(2.35rem, 4.8vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
   text-wrap: balance;
 }
 
@@ -57,66 +68,130 @@ h1 {
 }
 
 .site-title-brand {
-  font-size: clamp(1.95rem, 7.6vw, 5.4rem);
+  font-size: clamp(2.25rem, 5.4vw, 4.35rem);
   white-space: nowrap;
 }
 
-/* 拉丁字形比中文宋体窄，-0.035em 的中文紧排幅度会让英文显得瘦高拥挤，
-   单独放宽一档 */
 .brand-latin {
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 
 .brand-zh {
-  font-size: 0.88em;
-  letter-spacing: 0.04em;
+  font-size: 0.82em;
+  letter-spacing: 0.045em;
 }
 
 .brand-dot {
-  margin: 0 0.14em;
+  margin: 0 0.13em;
+  color: var(--parallel);
 }
 
 .site-title-sub {
-  margin-top: 14px;
+  margin-top: 8px;
   color: var(--accent);
-  font-size: clamp(1.1rem, 2.8vw, 2rem);
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: clamp(0.94rem, 2vw, 1.36rem);
+  letter-spacing: 0.12em;
 }
 
 .hero-copy {
-  max-width: 790px;
-  margin-bottom: 30px;
+  max-width: 640px;
+  margin-bottom: 16px;
   color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(0.9rem, 1.4vw, 1.02rem);
   text-wrap: pretty;
 }
 
 .stat-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  display: inline-grid;
+  grid-template-columns: repeat(3, auto);
+  border-block: 1px solid var(--border);
 }
 
 .stat-card {
-  padding: 18px 20px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 172px;
+  padding: 8px 18px;
+}
+
+.stat-card + .stat-card {
+  border-left: 1px solid var(--border);
 }
 
 .stat-label {
-  display: block;
-  margin-bottom: 4px;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
 }
 
 .stat-value {
-  display: block;
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  font-weight: 750;
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-variant-numeric: tabular-nums;
   line-height: 1.2;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    padding: 24px 0 14px;
+  }
+
+  .eyebrow {
+    margin-bottom: 7px;
+    font-size: 0.64rem;
+  }
+
+  h1 {
+    margin-bottom: 7px;
+  }
+
+  .site-title-brand {
+    font-size: clamp(2rem, 10.8vw, 3.1rem);
+  }
+
+  .site-title-sub {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    letter-spacing: 0.09em;
+  }
+
+  .hero-copy {
+    margin-bottom: 12px;
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.72fr 0.72fr;
+    width: 100%;
+  }
+
+  .stat-card {
+    display: block;
+    min-width: 0;
+    padding: 6px 8px;
+  }
+
+  .stat-card:first-child {
+    padding-left: 0;
+  }
+
+  .stat-label,
+  .stat-value {
+    display: block;
+  }
+
+  .stat-label {
+    margin-bottom: 1px;
+    font-size: 0.58rem;
+  }
+
+  .stat-value {
+    overflow: hidden;
+    font-size: 0.77rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }

@@ -4,7 +4,7 @@
   gap: 22px;
   align-items: start;
   margin-top: 20px;
-  scroll-margin-top: 330px;
+  scroll-margin-top: 82px;
 }
 
 .historical-map {
@@ -19,8 +19,8 @@
 @media (min-width: 981px) {
   .historical-map {
     position: sticky;
-    /* 筛选面板顶部 10px，再留出 12px 呼吸间距。 */
-    top: calc(var(--map-controls-height, 250px) + 22px);
+    /* 仅避让阶段 2 的紧凑工具条，不再为完整筛选面板预留大块空间。 */
+    top: 76px;
   }
 
   /* 聚合面板展开后随页面滚动，避免 sticky 地图卡片挡住面板下半部分。 */

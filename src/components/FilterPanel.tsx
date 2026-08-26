@@ -11,6 +11,7 @@ import { TimeRangeControl } from "./TimeRangeControl";
 /** 筛选面板的受控状态与事件。 */
 export interface FilterPanelProps {
   panelRef?: Ref<HTMLElement>;
+  resultCount: number;
   viewMode: ViewMode;
   mapLayer: MapLayer;
   timeRange: TimeRange;
@@ -32,6 +33,7 @@ export interface FilterPanelProps {
 /** 渲染搜索、类别筛选、清除按钮和类别图例。 */
 export function FilterPanel({
   panelRef,
+  resultCount,
   viewMode,
   mapLayer,
   timeRange,
@@ -59,7 +61,17 @@ export function FilterPanel({
       ref={panelRef}
       className={`controls-panel controls-${timeRange}${isMap ? " controls-map" : ""}`}
       aria-label="浏览与筛选工具"
+      tabIndex={-1}
     >
+      <header className="controls-panel-heading">
+        <div>
+          <span className="console-kicker">Browse index / 探索索引</span>
+          <h2>探索控制台</h2>
+        </div>
+        <p>
+          <strong>{resultCount}</strong> 个结果
+        </p>
+      </header>
       <TimeRangeControl
         value={timeRange}
         year={year}
@@ -128,8 +140,14 @@ export function FilterPanel({
             ))}
           </select>
         </label>
-        <button className="button" type="button" disabled={!hasFilters} onClick={onClear}>
-          清除筛选
+        <button
+          className="button"
+          type="button"
+          aria-label="清除搜索与类别（控制台）"
+          disabled={!hasFilters}
+          onClick={onClear}
+        >
+          清除搜索与类别
         </button>
       </div>
       {!isMap && timeRange === "all" && (

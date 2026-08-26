@@ -45,7 +45,7 @@ describe("Crownline 浏览", () => {
     await user.selectOptions(select, "context");
     expect(screen.getByRole("status")).toHaveTextContent("显示 2 / 133 个条目");
 
-    await user.click(screen.getByRole("button", { name: "清除筛选" }));
+    await user.click(screen.getByRole("button", { name: "清除搜索与类别" }));
     expect(screen.getByRole("status")).toHaveTextContent("显示 133 / 133 个条目");
     expect(select).toHaveValue("all");
   });
@@ -60,7 +60,7 @@ describe("Crownline 浏览", () => {
 
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "明" } });
     fireEvent.change(screen.getByRole("combobox"), { target: { value: "contemporary" } });
-    fireEvent.click(screen.getByRole("button", { name: "清除筛选" }));
+    fireEvent.click(screen.getByRole("button", { name: "清除搜索与类别" }));
 
     const params = new URLSearchParams(window.location.search);
     expect(params.has("q")).toBe(false);

@@ -46,6 +46,7 @@ async function expectCompleteTabOrder(page: Page) {
       "input:not([disabled])",
       "select:not([disabled])",
       "textarea:not([disabled])",
+      "summary",
       '[tabindex]:not([tabindex="-1"])'
     ].join(",");
     const elements = Array.from(document.querySelectorAll<HTMLElement>(selector)).filter(
@@ -66,6 +67,9 @@ async function expectCompleteTabOrder(page: Page) {
   });
 
   expect(tabbableCount).toBeGreaterThan(10);
+  await page.waitForTimeout(32);
+  await page.locator("[data-e2e-tab-start]").focus();
+  await expect(page.locator("[data-e2e-tab-start]")).toBeFocused();
   for (let index = 0; index < tabbableCount; index += 1) {
     await page.keyboard.press("Tab");
     const activeIndex = await page.evaluate(() =>
@@ -114,32 +118,42 @@ test.describe("Crownline 浏览器冒烟", () => {
     await expect.poll(() => new URL(page.url()).searchParams.get("detail")).toBeNull();
   });
 
-  test("探索状态在刷新、后退和前进后与 URL 一致", async ({ page }) => {
+  test("探索状态在刷新、后退和前进后与 URL 一致", async ({ page, isMobile }) => {
     await page.goto("/?view=map&year=800&scope=china&layer=boundaries");
     await waitForAppReady(page);
+    const getControls = async () => {
+      if (!isMobile) return page;
+      const existing = page.getByRole("dialog", { name: "筛选与呈现" });
+      if ((await existing.count()) === 0) {
+        await page.getByRole("button", { name: /^筛选/ }).click();
+      }
+      return page.getByRole("dialog", { name: "筛选与呈现" });
+    };
+    let controls = await getControls();
 
-    await expect(page.getByRole("button", { name: "地图" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "地图" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
-    await expect(page.getByRole("button", { name: "指定年份" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "指定年份" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
-    await expect(page.getByLabel("当前年份", { exact: true })).toHaveText("800");
-    await expect(page.getByRole("button", { name: "中国" })).toHaveAttribute(
+    await expect(controls.getByLabel("当前年份", { exact: true })).toHaveText("800");
+    await expect(controls.getByRole("button", { name: "中国" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
-    await expect(page.getByRole("button", { name: "疆域示意" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "疆域示意" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
 
     await page.reload();
     await waitForAppReady(page);
-    await expect(page.getByLabel("当前年份", { exact: true })).toHaveText("800");
-    await expect(page.getByRole("button", { name: "中国" })).toHaveAttribute(
+    controls = await getControls();
+    await expect(controls.getByLabel("当前年份", { exact: true })).toHaveText("800");
+    await expect(controls.getByRole("button", { name: "中国" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
@@ -148,28 +162,28 @@ test.describe("Crownline 浏览器冒烟", () => {
       window.history.pushState(null, "", "/?scope=global");
       window.dispatchEvent(new PopStateEvent("popstate"));
     });
-    await expect(page.getByRole("button", { name: "时间轴" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "时间轴" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
-    await expect(page.getByRole("button", { name: "全时期" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "全时期" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
 
     await page.goBack();
-    await expect(page.getByLabel("当前年份", { exact: true })).toHaveText("800");
-    await expect(page.getByRole("button", { name: "地图" })).toHaveAttribute(
+    await expect(controls.getByLabel("当前年份", { exact: true })).toHaveText("800");
+    await expect(controls.getByRole("button", { name: "地图" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
 
     await page.goForward();
-    await expect(page.getByRole("button", { name: "全时期" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "全时期" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
-    await expect(page.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
@@ -181,10 +195,16 @@ test.describe("Crownline 浏览器冒烟", () => {
     await page.goto("/");
     await waitForAppReady(page);
 
-    await expect(page.getByRole("region", { name: "地区范围" })).toBeVisible();
-    await expect(page.getByLabel("浏览与筛选工具")).toBeVisible();
-
-    await page.getByPlaceholder("例如：唐、北魏、南宋、前221").fill("明");
+    const trigger = page.getByRole("button", { name: "筛选" });
+    await expect(trigger).toBeVisible();
+    await expect(page.getByRole("region", { name: "地区范围" })).toHaveCount(0);
+    await trigger.click();
+    const sheet = page.getByRole("dialog", { name: "筛选与呈现" });
+    await expect(sheet).toBeVisible();
+    await expect(sheet.getByRole("button", { name: "关闭筛选" })).toBeFocused();
+    await sheet.getByPlaceholder("例如：唐、北魏、南宋、前221").fill("明");
+    await sheet.getByRole("button", { name: /查看 \d+ 个结果/ }).click();
+    await expect(trigger).toBeFocused();
     await expect(page.getByText(/显示 \d+ \/ \d+ 个条目/)).toBeVisible();
 
     await expect
@@ -331,20 +351,128 @@ test.describe("Crownline 浏览器冒烟", () => {
     await page.getByRole("button", { name: "地图" }).click();
 
     const searchBox = await page.getByRole("searchbox").boundingBox();
-    const clearBox = await page.getByRole("button", { name: "清除筛选" }).boundingBox();
+    const clearBox = await page
+      .getByRole("button", { name: "清除搜索与类别（控制台）" })
+      .boundingBox();
     expect(searchBox).not.toBeNull();
     expect(clearBox).not.toBeNull();
     expect(Math.abs((searchBox?.y ?? 0) - (clearBox?.y ?? 0))).toBeLessThan(2);
   });
 
-  test("深色模式下地图视图可切换且无严重无障碍问题", async ({ page, browserName }) => {
+  test("桌面完整控制台滚出后切换为紧凑工具条并可返回", async ({ page, isMobile }) => {
+    test.skip(isMobile, "桌面滚动控制台仅在 desktop 项目覆盖");
+
+    await page.goto("/");
+    await waitForAppReady(page);
+    await expect(page.getByRole("heading", { name: "探索控制台" })).toBeVisible();
+    await expect(page.getByRole("region", { name: "紧凑探索工具条" })).toHaveCount(0);
+
+    await page.evaluate(() => window.scrollTo(0, 760));
+    const toolbar = page.getByRole("region", { name: "紧凑探索工具条" });
+    await expect(toolbar).toBeVisible();
+    const toolbarBox = await toolbar.boundingBox();
+    expect(toolbarBox?.height ?? Number.POSITIVE_INFINITY).toBeLessThan(64);
+
+    await toolbar.getByRole("button", { name: "展开控制台" }).click();
+    await expect(page.locator(".full-exploration-console")).toBeFocused();
+    await expect(toolbar).toHaveCount(0);
+  });
+
+  test("移动筛选抽屉支持 Escape、焦点恢复和自选地区隔离", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "移动筛选抽屉仅在 mobile 项目覆盖");
+
+    await page.goto("/");
+    await waitForAppReady(page);
+    const trigger = page.getByRole("button", { name: "筛选" });
+    const barHeightBefore = await page
+      .locator(".mobile-explore-bar")
+      .evaluate((element) => element.getBoundingClientRect().height);
+    await trigger.click();
+    const sheet = page.getByRole("dialog", { name: "筛选与呈现" });
+    await sheet.getByRole("button", { name: "自选地区" }).click();
+    await expect(sheet.getByRole("checkbox", { name: "欧洲" })).toBeVisible();
+    await expect(sheet.locator(".region-options")).toBeVisible();
+    const barHeightAfter = await page
+      .locator(".mobile-explore-bar")
+      .evaluate((element) => element.getBoundingClientRect().height);
+    expect(barHeightAfter - barHeightBefore).toBeLessThan(64);
+    await expect
+      .poll(() =>
+        page.evaluate(
+          () => document.documentElement.scrollWidth <= document.documentElement.clientWidth
+        )
+      )
+      .toBe(true);
+    await expectNoSeriousA11yViolations(page);
+
+    await page.keyboard.press("Escape");
+    await expect(sheet).toHaveCount(0);
+    await expect(trigger).toBeFocused();
+  });
+
+  test("活跃筛选标签可分别移除", async ({ page }) => {
+    await page.goto("/?q=%E5%94%90&type=mainline&scope=custom&region=region-europe");
+    await waitForAppReady(page);
+
+    await page.getByRole("button", { name: "移除搜索：唐" }).click();
+    await expect.poll(() => new URL(page.url()).searchParams.has("q")).toBe(false);
+    await page.getByRole("button", { name: "移除类别：主线王朝" }).click();
+    await expect.poll(() => new URL(page.url()).searchParams.has("type")).toBe(false);
+    await page.getByRole("button", { name: "移除地区：欧洲" }).click();
+    await expect.poll(() => new URL(page.url()).searchParams.has("scope")).toBe(false);
+    await expect(page.getByLabel("活跃筛选")).toHaveCount(0);
+  });
+
+  test("四个验收尺寸无横向溢出且移动端首屏可见结果", async ({ page, isMobile }) => {
+    test.skip(isMobile, "尺寸矩阵在 desktop 项目单次覆盖");
+    const sizes = [
+      { width: 390, height: 844 },
+      { width: 768, height: 1024 },
+      { width: 1280, height: 720 },
+      { width: 1440, height: 900 }
+    ];
+
+    for (const size of sizes) {
+      await page.setViewportSize(size);
+      await page.goto("/");
+      await waitForAppReady(page);
+      const metrics = await page.evaluate(() => {
+        const firstResult = document.querySelector(
+          ".timeline-stage, .timepoint-card, .historical-map-shell"
+        );
+        return {
+          firstResultTop: firstResult?.getBoundingClientRect().top ?? Number.POSITIVE_INFINITY,
+          hasOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth
+        };
+      });
+      expect(metrics.hasOverflow, `${size.width}×${size.height} 出现横向溢出`).toBe(false);
+      if (size.width <= 800) {
+        expect(
+          metrics.firstResultTop,
+          `${size.width}×${size.height} 的首条结果未进入首个视口`
+        ).toBeLessThan(size.height);
+        await expect(page.getByRole("button", { name: "筛选" })).toBeVisible();
+      } else {
+        await expect(page.getByRole("heading", { name: "探索控制台" })).toBeVisible();
+      }
+    }
+  });
+
+  test("深色模式下地图视图可切换且无严重无障碍问题", async ({ page, browserName, isMobile }) => {
     test.skip(browserName !== "chromium", "深色模式探测仅在 Chromium 项目运行");
 
     await page.emulateMedia({ colorScheme: "dark" });
     await page.goto("/");
     await waitForAppReady(page);
 
-    await page.getByRole("button", { name: "地图" }).click();
+    if (isMobile) {
+      await page.getByRole("button", { name: "筛选" }).click();
+      const sheet = page.getByRole("dialog", { name: "筛选与呈现" });
+      await sheet.getByRole("button", { name: "地图" }).click();
+      await sheet.getByRole("button", { name: /查看 \d+ 个结果/ }).click();
+    } else {
+      await page.getByRole("button", { name: "地图" }).click();
+    }
     await expect(page.getByRole("region", { name: "全时期历史政权总览地图" })).toBeVisible();
 
     const pageBackground = await page.evaluate(

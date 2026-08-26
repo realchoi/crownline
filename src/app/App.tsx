@@ -54,7 +54,6 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   );
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
   const mainRef = useRef<HTMLElement>(null);
-  const controlsPanelRef = useRef<HTMLElement>(null);
   const results = useMemo(() => {
     const filters = {
       query: browseState.query,
@@ -126,28 +125,6 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   );
 
   useEffect(() => {
-    const main = mainRef.current;
-    const controlsPanel = controlsPanelRef.current;
-    if (browseState.viewMode !== "map" || !main || !controlsPanel) {
-      main?.style.removeProperty("--map-controls-height");
-      return;
-    }
-
-    const syncControlsHeight = () => {
-      main.style.setProperty(
-        "--map-controls-height",
-        `${controlsPanel.getBoundingClientRect().height}px`
-      );
-    };
-    syncControlsHeight();
-
-    if (typeof ResizeObserver === "undefined") return;
-    const observer = new ResizeObserver(syncControlsHeight);
-    observer.observe(controlsPanel);
-    return () => observer.disconnect();
-  }, [browseState.viewMode]);
-
-  useEffect(() => {
     // 等待原生 dialog 卸载后再恢复焦点，避免浏览器默认焦点处理覆盖结果。
     if (browseState.detailEntityId || !lastTriggerRef.current) return;
     const animationFrame = requestAnimationFrame(() => lastTriggerRef.current?.focus());
@@ -185,11 +162,10 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
           setBrowseState={setBrowseState}
           yearBounds={yearBounds}
           regions={data.regions}
-          panelRef={controlsPanelRef}
+          resultCount={results.all.length}
         />
 
         <section className="exploration-summary" aria-label="当前范围和结果摘要">
-          <BrowseScopeNote regionScope={browseState.regionScope} />
           <BrowseResultsSummary
             browseState={browseState}
             resultCount={results.all.length}
@@ -199,6 +175,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
             mapSelection={mapSelection}
             boundarySelection={boundarySelection}
           />
+          <BrowseScopeNote regionScope={browseState.regionScope} />
         </section>
 
         <section className="exploration-content" aria-label="主要探索内容">
