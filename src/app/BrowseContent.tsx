@@ -87,7 +87,7 @@ export function BrowseContent({
           clusters={effectiveMapSelection.clusters}
           boundaries={effectiveBoundarySelection.boundaries}
           mapLayer={browseState.mapLayer as MapLayer}
-          isOverview={browseState.mode === "overview"}
+          isOverview={browseState.timeRange === "all"}
           comparisonEntityIds={browseState.compareEntityIds}
           selectedEntityId={browseState.detailEntityId}
           onSelect={onSelect}
@@ -102,7 +102,7 @@ export function BrowseContent({
           }
           requiresBoundaryYear={effectiveBoundarySelection.requiresYear}
           mapLayer={browseState.mapLayer}
-          isOverview={browseState.mode === "overview"}
+          isOverview={browseState.timeRange === "all"}
           comparisonEntityIds={browseState.compareEntityIds}
           onSelect={onSelect}
           onToggleComparison={onToggleComparison}
@@ -111,7 +111,7 @@ export function BrowseContent({
     );
   }
 
-  if (browseState.mode === "overview") {
+  if (browseState.timeRange === "all") {
     return (
       <Timeline
         data={data}

@@ -2,8 +2,6 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 
 import { DetailDialog } from "../components/DetailDialog";
 import { ComparisonPanel } from "../components/ComparisonPanel";
-import { FilterPanel } from "../components/FilterPanel";
-import { ViewModeControl } from "../components/ViewModeControl";
 import { getHistoricalYearBounds } from "../domain/browseState";
 import { selectBoundarySnapshots, type BoundarySelection } from "../domain/boundarySnapshots";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
@@ -16,7 +14,9 @@ import type { CrownlineBoundariesLoader } from "../data/loadCrownlineBoundaries"
 import { AppFooter } from "./AppFooter";
 import { AppHeader } from "./AppHeader";
 import { BrowseContent } from "./BrowseContent";
+import { BrowseControls } from "./BrowseControls";
 import { BrowseResultsSummary } from "./BrowseResultsSummary";
+import { BrowseScopeNote } from "./BrowseScopeNote";
 import { useBrowseUrlState } from "./useBrowseUrlState";
 import { useEntityDetail } from "./useEntityDetail";
 import { useGeographyData } from "./useGeographyData";
@@ -61,7 +61,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
       category: browseState.category,
       regionScope: browseState.regionScope
     };
-    return browseState.mode === "point"
+    return browseState.timeRange === "year"
       ? selectBrowseResults(data, { ...filters, year: browseState.year })
       : selectBrowseResults(data, filters);
   }, [browseState, data]);
@@ -77,17 +77,17 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
     return selectMapSnapshots(
       results.polities.map(({ entity }) => entity),
       geographyState.result.geography.geographicSnapshots,
-      browseState.mode === "point" ? browseState.year : undefined
+      browseState.timeRange === "year" ? browseState.year : undefined
     );
-  }, [browseState.mode, browseState.year, geographyState, results.polities]);
+  }, [browseState.timeRange, browseState.year, geographyState, results.polities]);
   const boundarySelection = useMemo<BoundarySelection | null>(() => {
     if (boundaryState.status !== "ready") return null;
     return selectBoundarySnapshots(
       results.polities.map(({ entity }) => entity),
       boundaryState.result.boundaries.boundarySnapshots,
-      browseState.mode === "point" ? browseState.year : undefined
+      browseState.timeRange === "year" ? browseState.year : undefined
     );
-  }, [boundaryState, browseState.mode, browseState.year, results.polities]);
+  }, [boundaryState, browseState.timeRange, browseState.year, results.polities]);
   // 即使筛选状态变化，也要允许已打开的详情继续读取完整实体记录。
   const selectedMatch = browseState.detailEntityId
     ? allMatches.find(({ entity }) => entity.id === browseState.detailEntityId)
@@ -180,90 +180,55 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
         id="main-content"
         className={`site-shell${browseState.viewMode === "map" ? " map-view-active" : ""}`}
       >
-        <ViewModeControl
-          value={browseState.viewMode}
-          onChange={(viewMode) => setBrowseState((current) => ({ ...current, viewMode }))}
-        />
-        <FilterPanel
-          panelRef={controlsPanelRef}
-          showModeSwitch={browseState.viewMode === "timeline"}
-          showYearControls={browseState.viewMode === "map" || browseState.mode === "point"}
-          mapLayer={browseState.mapLayer}
-          mode={browseState.mode}
-          year={browseState.year}
-          yearBounds={yearBounds}
-          query={browseState.query}
-          category={browseState.category}
-          regions={data.regions}
-          regionScope={browseState.regionScope}
-          onModeChange={(mode) => setBrowseState((current) => ({ ...current, mode }))}
-          onYearChange={(year) =>
-            setBrowseState((current) => ({
-              ...current,
-              year,
-              mode: current.viewMode === "map" ? "point" : current.mode
-            }))
-          }
-          onMapLayerChange={(mapLayer) => setBrowseState((current) => ({ ...current, mapLayer }))}
-          onQueryChange={(query) => setBrowseState((current) => ({ ...current, query }))}
-          onCategoryChange={(category) => {
-            setBrowseState((current) => ({ ...current, category }));
-          }}
-          onRegionScopeChange={(regionScope) => {
-            setBrowseState((current) => ({ ...current, regionScope }));
-          }}
-          onClear={() => {
-            setBrowseState((current) => ({ ...current, query: "", category: "all" }));
-          }}
-        />
-
-        <aside className="scope-note" aria-label="收录口径说明">
-          <span className="scope-icon" aria-hidden="true">
-            注
-          </span>
-          <p>
-            {browseState.regionScope.mode === "china"
-              ? "“所有朝代”并不存在完全统一的学术边界。中国范围采用通史常见口径：覆盖主线王朝、分裂时期的主要政权，并补充少量重要区域政权；不把每一个地方割据、农民政权或短暂称帝政权都列为独立“朝代”。"
-              : "跨地区内容目前只用于验证地区机制，每个外部地区仅有少量代表条目。“全球已收录”表示当前数据集中的全部内容，不表示世界历史已经完整覆盖；空结果也不表示该地区当时没有政权。"}
-          </p>
-        </aside>
-
-        <BrowseResultsSummary
+        <BrowseControls
           browseState={browseState}
-          resultCount={results.all.length}
-          overviewTotal={overviewTotal}
-          overviewGroupCount={overviewGroups.length}
-          mapPolityCount={results.polities.length}
-          mapSelection={mapSelection}
-          boundarySelection={boundarySelection}
+          setBrowseState={setBrowseState}
+          yearBounds={yearBounds}
+          regions={data.regions}
+          panelRef={controlsPanelRef}
         />
+
+        <section className="exploration-summary" aria-label="当前范围和结果摘要">
+          <BrowseScopeNote regionScope={browseState.regionScope} />
+          <BrowseResultsSummary
+            browseState={browseState}
+            resultCount={results.all.length}
+            overviewTotal={overviewTotal}
+            overviewGroupCount={overviewGroups.length}
+            mapPolityCount={results.polities.length}
+            mapSelection={mapSelection}
+            boundarySelection={boundarySelection}
+          />
+        </section>
+
+        <section className="exploration-content" aria-label="主要探索内容">
+          <BrowseContent
+            data={data}
+            browseState={browseState}
+            results={results}
+            geographyState={geographyState}
+            mapSelection={mapSelection}
+            boundarySelection={boundarySelection}
+            boundaryState={boundaryState}
+            onRetryGeography={retryGeography}
+            onRetryBoundaries={retryBoundaries}
+            onSelect={openDetail}
+            onToggleComparison={toggleComparison}
+          />
+        </section>
 
         {comparisonEntities.length > 0 && (
-          <ComparisonPanel
-            entities={comparisonEntities}
-            regions={data.regions}
-            {...(browseState.mode === "point" ? { currentYear: browseState.year } : {})}
-            loadDetail={loadDetail}
-            onRemove={toggleComparison}
-            onClear={() => {
-              setBrowseState((current) => ({ ...current, compareEntityIds: [] }));
-            }}
-          />
+          <aside className="exploration-assistance" aria-label="对比工具">
+            <ComparisonPanel
+              entities={comparisonEntities}
+              regions={data.regions}
+              {...(browseState.timeRange === "year" ? { currentYear: browseState.year } : {})}
+              loadDetail={loadDetail}
+              onRemove={toggleComparison}
+              onClear={() => setBrowseState((current) => ({ ...current, compareEntityIds: [] }))}
+            />
+          </aside>
         )}
-
-        <BrowseContent
-          data={data}
-          browseState={browseState}
-          results={results}
-          geographyState={geographyState}
-          mapSelection={mapSelection}
-          boundarySelection={boundarySelection}
-          boundaryState={boundaryState}
-          onRetryGeography={retryGeography}
-          onRetryBoundaries={retryBoundaries}
-          onSelect={openDetail}
-          onToggleComparison={toggleComparison}
-        />
 
         <AppFooter />
       </main>
@@ -274,7 +239,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
           sectionTitle={selectedMatch.section?.title}
           regions={data.regions}
           detailState={detailState}
-          {...(browseState.mode === "point" ? { currentYear: browseState.year } : {})}
+          {...(browseState.timeRange === "year" ? { currentYear: browseState.year } : {})}
           onRetry={retryDetail}
           onClose={closeDetail}
         />

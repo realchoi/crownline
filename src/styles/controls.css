@@ -31,8 +31,16 @@ main {
   backdrop-filter: blur(18px);
 }
 
-.browse-mode-row {
-  align-self: end;
+.time-range-control {
+  min-width: 0;
+}
+
+.time-range-heading {
+  display: grid;
+  grid-template-columns: auto minmax(110px, 1fr);
+  gap: 14px;
+  align-items: end;
+  margin-bottom: 8px;
 }
 
 .mode-switch {
@@ -77,14 +85,14 @@ main {
   font-size: 0.72rem;
 }
 
-.year-current output {
+.year-current-value {
   color: var(--accent);
   font-size: 1.08rem;
   font-variant-numeric: tabular-nums;
   line-height: 1.2;
 }
 
-.year-current.is-overview output {
+.year-current.is-overview .year-current-value {
   border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--border));
   border-radius: 999px;
   background: var(--accent-soft);
@@ -162,18 +170,18 @@ main {
   text-align: center;
 }
 
-/* 两种浏览模式共享稳定的首行：浏览方式在左，观测范围在右。 */
-.controls-point,
-.controls-overview {
+/* 两种呈现方式共享稳定的控制层级：时间范围在左，观测范围在右。 */
+.controls-year,
+.controls-all {
   display: grid;
-  grid-template-columns: minmax(190px, 0.42fr) minmax(0, 1.58fr);
+  grid-template-columns: minmax(360px, 0.78fr) minmax(0, 1.22fr);
   gap: 12px 22px;
   align-items: end;
   padding: 14px 16px;
 }
 
-.controls-point .region-scope-control,
-.controls-overview .region-scope-control {
+.controls-year .region-scope-control,
+.controls-all .region-scope-control {
   grid-column: 2;
   grid-row: 1;
   margin: 0;
@@ -190,24 +198,24 @@ main {
   grid-column: 1 / -1;
 }
 
-.controls-point .text-input,
-.controls-point .select-input,
-.controls-point .button {
+.controls-year .text-input,
+.controls-year .select-input,
+.controls-year .button {
   min-height: 42px;
 }
 
-.controls-point .controls-grid .field-label {
+.controls-year .controls-grid .field-label {
   margin-bottom: 4px;
 }
 
-.controls-point .controls-grid,
-.controls-overview .controls-grid,
-.controls-overview .legend {
+.controls-year .controls-grid,
+.controls-all .controls-grid,
+.controls-all .legend {
   grid-column: 1 / -1;
   margin-top: 0;
 }
 
-.controls-overview .legend {
+.controls-all .legend {
   margin-top: 0;
 }
 
@@ -368,15 +376,6 @@ main {
   grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.7fr) auto;
   gap: 12px;
   align-items: end;
-}
-
-.controls-point .controls-grid,
-.controls-map .controls-grid {
-  grid-template-columns:
-    minmax(350px, 1.35fr)
-    minmax(210px, 1fr)
-    minmax(180px, 0.65fr)
-    auto;
 }
 
 .field-label {

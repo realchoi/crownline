@@ -1,8 +1,11 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  clearAdditionalFilters,
   getHistoricalYearBounds,
   readBrowseState,
+  selectBrowseYear,
+  selectTimeRange,
   writeBrowseState
 } from "../src/domain/browseState";
 import { loadSourceData } from "../scripts/data-source";
@@ -19,7 +22,7 @@ describe("浏览状态", () => {
     expect(readBrowseState("?mode=point&year=-221&q=%E7%A7%A6&type=parallel", bounds)).toEqual({
       viewMode: "timeline",
       mapLayer: "points",
-      mode: "point",
+      timeRange: "year",
       year: -221,
       query: "秦",
       category: "contemporary",
@@ -33,7 +36,7 @@ describe("浏览状态", () => {
     expect(readBrowseState("?mode=map&year=0&type=unknown", bounds)).toEqual({
       viewMode: "timeline",
       mapLayer: "points",
-      mode: "overview",
+      timeRange: "all",
       year: 1922,
       query: "",
       category: "all",
@@ -48,16 +51,86 @@ describe("浏览状态", () => {
   it("地图默认进入全览，显式年份链接进入时间点", () => {
     expect(readBrowseState("?view=map", bounds)).toMatchObject({
       viewMode: "map",
-      mode: "overview",
+      timeRange: "all",
       year: 1922
     });
     expect(readBrowseState("?view=map&year=1400", bounds)).toMatchObject({
       viewMode: "map",
-      mode: "point",
+      timeRange: "year",
       year: 1400
     });
     expect(readBrowseState("?view=unknown", bounds).viewMode).toBe("timeline");
     expect(readBrowseState("?view=map&layer=invalid", bounds).mapLayer).toBe("points");
+  });
+
+  it("兼容旧地图年份链接，并让显式全览优先于遗留 year 参数", () => {
+    const legacyMapYear = readBrowseState("?view=map&year=1400", bounds);
+    expect(legacyMapYear).toMatchObject({
+      viewMode: "map",
+      timeRange: "year",
+      year: 1400
+    });
+    expect(writeBrowseState(legacyMapYear, bounds).toString()).toBe(
+      "view=map&mode=point&year=1400"
+    );
+
+    const explicitOverview = readBrowseState("?view=map&mode=overview&year=1400", bounds);
+    expect(explicitOverview).toMatchObject({ timeRange: "all", year: 1400 });
+    expect(writeBrowseState(explicitOverview, bounds).toString()).toBe("view=map");
+  });
+
+  it("完整恢复旧 URL 参数组合", () => {
+    const state = readBrowseState(
+      [
+        "?view=map",
+        "mode=point",
+        "year=-221",
+        "scope=custom",
+        "region=region-east-asia",
+        "type=parallel",
+        "q=%E7%A7%A6",
+        "compare=polity-cn-qin",
+        "detail=polity-cn-qin",
+        "layer=combined"
+      ].join("&"),
+      bounds,
+      data.regions,
+      data.entities
+    );
+
+    expect(state).toMatchObject({
+      viewMode: "map",
+      timeRange: "year",
+      year: -221,
+      mapLayer: "combined",
+      query: "秦",
+      category: "contemporary",
+      regionScope: { mode: "custom", regionIds: ["region-east-asia"] },
+      compareEntityIds: ["polity-cn-qin"],
+      detailEntityId: "polity-cn-qin"
+    });
+  });
+
+  it("状态转换只改变各自负责的维度", () => {
+    const initial = readBrowseState(
+      "?view=map&mode=point&year=800&scope=china&q=%E5%94%90&type=mainline&compare=polity-cn-tang&detail=polity-cn-tang&layer=combined",
+      bounds,
+      data.regions,
+      data.entities
+    );
+    const allTime = selectTimeRange(initial, "all");
+    expect(allTime).toEqual({ ...initial, timeRange: "all" });
+    expect(selectTimeRange(allTime, "year").year).toBe(800);
+    expect(selectBrowseYear(allTime, 900)).toEqual({
+      ...initial,
+      timeRange: "year",
+      year: 900
+    });
+    expect(clearAdditionalFilters(initial)).toEqual({
+      ...initial,
+      query: "",
+      category: "all"
+    });
   });
 
   it("只为地图视图写入 view 参数", () => {
@@ -85,7 +158,7 @@ describe("浏览状态", () => {
       {
         viewMode: "timeline",
         mapLayer: "points",
-        mode: "point",
+        timeRange: "year",
         year: -221,
         query: "  秦  ",
         category: "mainline",
@@ -107,7 +180,7 @@ describe("浏览状态", () => {
       {
         viewMode: "timeline",
         mapLayer: "points",
-        mode: "overview",
+        timeRange: "all",
         year: 1922,
         query: "",
         category: "all",
@@ -126,7 +199,7 @@ describe("浏览状态", () => {
     expect(writeBrowseState({ ...defaultState, year: 1400 }, bounds).has("year")).toBe(false);
     expect(
       writeBrowseState(
-        { ...defaultState, viewMode: "map", mode: "point", year: bounds.max },
+        { ...defaultState, viewMode: "map", timeRange: "year", year: bounds.max },
         bounds
       ).toString()
     ).toBe("view=map&mode=point");
@@ -151,7 +224,7 @@ describe("浏览状态", () => {
       {
         viewMode: "timeline",
         mapLayer: "points",
-        mode: "point",
+        timeRange: "year",
         year: 1000,
         query: "",
         category: "all",
@@ -169,7 +242,7 @@ describe("浏览状态", () => {
       {
         viewMode: "timeline",
         mapLayer: "points",
-        mode: "point",
+        timeRange: "year",
         year: 1000,
         query: "",
         category: "all",
@@ -190,7 +263,7 @@ describe("浏览状态", () => {
       {
         viewMode: "timeline",
         mapLayer: "points",
-        mode: "overview",
+        timeRange: "all",
         year: 1922,
         query: "",
         category: "all",
@@ -211,7 +284,7 @@ describe("浏览状态", () => {
     );
 
     expect(state).toMatchObject({
-      mode: "overview",
+      timeRange: "all",
       regionScope: {
         mode: "custom",
         regionIds: ["region-europe", "region-west-asia"]
@@ -245,7 +318,7 @@ describe("浏览状态", () => {
       {
         viewMode: "timeline",
         mapLayer: "points",
-        mode: "overview",
+        timeRange: "all",
         year: 1922,
         query: "",
         category: "all",

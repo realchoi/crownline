@@ -30,32 +30,32 @@ export function BrowseResultsSummary({
             {browseState.category === "context"
               ? "历史分期不进入地图；请选择真实政权类别。"
               : mapPolityCount === 0
-                ? browseState.mode === "overview"
+                ? browseState.timeRange === "all"
                   ? "没有匹配的政权。"
                   : "没有当年匹配的政权。"
                 : browseState.mapLayer !== "points" && boundarySelection?.requiresYear
-                  ? "疆域快照需要明确年份；拖动年份后进入时间点地图。"
+                  ? "疆域快照需要明确年份；请选择或调整一个指定年份。"
                   : browseState.mapLayer !== "points" && boundarySelection?.boundaries.length === 0
                     ? "有匹配政权，但当前年份尚无已校订疆域快照。"
                     : mapSelection && mapSelection.points.length === 0
-                      ? browseState.mode === "overview"
+                      ? browseState.timeRange === "all"
                         ? "有匹配政权，但这些政权尚未校订地理数据。"
                         : "当年有匹配政权，但这些政权尚未校订地理数据。"
                       : mapSelection
                         ? browseState.mapLayer === "boundaries" && boundarySelection
-                          ? `${browseState.mode === "overview" ? "全时期总览：" : ""}显示 ${mapPolityCount} 个政权、${boundarySelection.boundaries.length} 条疆域快照，${boundarySelection.missingEntities.length} 个政权尚未校订疆域数据。`
-                          : `${browseState.mode === "overview" ? "全时期总览：" : ""}显示 ${mapPolityCount} 个政权、${mapSelection.points.length} 个地图点位，${mapSelection.missingEntities.length} 个政权尚未校订地理数据。`
+                          ? `${browseState.timeRange === "all" ? "全时期总览：" : ""}显示 ${mapPolityCount} 个政权、${boundarySelection.boundaries.length} 条疆域快照，${boundarySelection.missingEntities.length} 个政权尚未校订疆域数据。`
+                          : `${browseState.timeRange === "all" ? "全时期总览：" : ""}显示 ${mapPolityCount} 个政权、${mapSelection.points.length} 个地图点位，${mapSelection.missingEntities.length} 个政权尚未校订地理数据。`
                         : "正在准备地图结果。"}
           </span>
           <span>
-            {browseState.mode === "overview"
+            {browseState.timeRange === "all"
               ? "跨时期点位不表示这些政权同时存在"
               : browseState.mapLayer !== "points"
                 ? "示意而非精确勘界；不据此推断接壤、重叠或现代主权"
                 : "点位仅作历史浏览定位，不表示疆域"}
           </span>
         </>
-      ) : browseState.mode === "overview" ? (
+      ) : browseState.timeRange === "all" ? (
         <>
           <span>
             {browseState.regionScope.mode === "china"

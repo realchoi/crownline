@@ -2,7 +2,8 @@ import type { RegionScope } from "./regionScope";
 import type { BrowseData, DisplayCategory, HistoricalEntity, Region } from "./types";
 import type { CategoryFilter } from "./selectors";
 
-export type BrowseMode = "overview" | "point";
+/** 用户选择的时间范围；URL 继续使用旧的 mode=point 契约。 */
+export type TimeRange = "all" | "year";
 export type ViewMode = "timeline" | "map";
 export type MapLayer = "points" | "boundaries" | "combined";
 
@@ -14,13 +15,29 @@ export interface HistoricalYearBounds {
 export interface BrowseState {
   viewMode: ViewMode;
   mapLayer: MapLayer;
-  mode: BrowseMode;
+  timeRange: TimeRange;
+  /** 最近一次浏览的有效年份；全时期状态下仅保留，不参与结果筛选。 */
   year: number;
   query: string;
   category: CategoryFilter;
   regionScope: RegionScope;
   compareEntityIds: string[];
   detailEntityId: string | null;
+}
+
+/** 选择年份始终进入指定年份状态；其他浏览维度保持不变。 */
+export function selectBrowseYear(state: BrowseState, year: number): BrowseState {
+  return { ...state, timeRange: "year", year };
+}
+
+/** 返回全时期时保留最近浏览年份，供再次进入指定年份使用。 */
+export function selectTimeRange(state: BrowseState, timeRange: TimeRange): BrowseState {
+  return { ...state, timeRange };
+}
+
+/** “清除筛选”只负责搜索和类别，不重置探索上下文。 */
+export function clearAdditionalFilters(state: BrowseState): BrowseState {
+  return { ...state, query: "", category: "all" };
 }
 
 const VALID_CATEGORIES = new Set<CategoryFilter>([
@@ -67,10 +84,11 @@ export function readBrowseState(
   const mapLayer: MapLayer =
     rawLayer === "boundaries" || rawLayer === "combined" ? rawLayer : "points";
   const hasExplicitYear = params.has("year") && Number.isSafeInteger(rawYear) && rawYear !== 0;
-  const mode: BrowseMode =
-    params.get("mode") === "point" || (viewMode === "map" && hasExplicitYear)
-      ? "point"
-      : "overview";
+  const rawMode = params.get("mode");
+  const timeRange: TimeRange =
+    rawMode === "point" || (rawMode !== "overview" && viewMode === "map" && hasExplicitYear)
+      ? "year"
+      : "all";
   const rawScope = params.get("scope");
   const validHistoricalRegionIds = new Set(
     regions.filter(({ regionKind }) => regionKind === "historical-region").map(({ id }) => id)
@@ -97,7 +115,7 @@ export function readBrowseState(
   return {
     viewMode,
     mapLayer,
-    mode,
+    timeRange,
     year,
     query: params.get("q") ?? "",
     category: VALID_CATEGORIES.has(mappedCategory as CategoryFilter)
@@ -124,8 +142,10 @@ export function writeBrowseState(
   if (state.viewMode === "map" && state.mapLayer !== "points") {
     params.set("layer", state.mapLayer);
   }
-  if (state.mode === "point") params.set("mode", "point");
-  if (state.mode === "point" && state.year !== bounds.max) params.set("year", String(state.year));
+  if (state.timeRange === "year") params.set("mode", "point");
+  if (state.timeRange === "year" && state.year !== bounds.max) {
+    params.set("year", String(state.year));
+  }
   if (state.query.trim()) params.set("q", state.query.trim());
   if (state.category !== "all") params.set("type", state.category);
   if (state.regionScope.mode === "china") params.set("scope", "china");

@@ -30,7 +30,7 @@ p {
 /* 全站标题排版的唯一规则：拉丁字符走 Source Serif 4、中文走 Noto Serif SC；
    关闭合成加粗与合成斜体，光学尺寸随字号自动匹配，避免各处标题各自声明逐渐漂移 */
 h1,
-.year-current output,
+.year-current-value,
 .stage-title,
 .timepoint-heading h2,
 .timepoint-section-heading h3,

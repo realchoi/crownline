@@ -11,6 +11,9 @@ describe("Crownline 浏览", () => {
 
     expect(screen.getByRole("status")).toHaveTextContent("显示 133 / 133 个条目");
     expect(screen.getByRole("heading", { name: "Crownline · 王冠纪" })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "探索控制区" })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "当前范围和结果摘要" })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "主要探索内容" })).toBeInTheDocument();
     expect(screen.getByLabelText("地区范围")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
       "aria-pressed",
@@ -47,6 +50,28 @@ describe("Crownline 浏览", () => {
     expect(select).toHaveValue("all");
   });
 
+  it("搜索和类别变化及清除筛选都保留地区、年份、详情和对比", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?mode=point&year=800&scope=china&q=%E5%94%90&type=mainline&compare=polity-cn-tang&detail=polity-cn-tang"
+    );
+    renderApp();
+
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "明" } });
+    fireEvent.change(screen.getByRole("combobox"), { target: { value: "contemporary" } });
+    fireEvent.click(screen.getByRole("button", { name: "清除筛选" }));
+
+    const params = new URLSearchParams(window.location.search);
+    expect(params.has("q")).toBe(false);
+    expect(params.has("type")).toBe(false);
+    expect(params.get("scope")).toBe("china");
+    expect(params.get("mode")).toBe("point");
+    expect(params.get("year")).toBe("800");
+    expect(params.get("detail")).toBe("polity-cn-tang");
+    expect(params.getAll("compare")).toEqual(["polity-cn-tang"]);
+  });
+
   it("从 URL 恢复并同步搜索与类别状态", async () => {
     window.history.replaceState(null, "", "/?q=时期&type=context");
     const user = setupUser();
@@ -60,11 +85,11 @@ describe("Crownline 浏览", () => {
     expect(new URLSearchParams(window.location.search).has("type")).toBe(false);
   });
 
-  it("在全览和时间点模式间切换并同步 URL", async () => {
+  it("在全时期和指定年份间切换并同步 URL，同时保留最后浏览年份", async () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "时间点" }));
+    await user.click(screen.getByRole("button", { name: "指定年份" }));
 
     expect(screen.getByRole("region", { name: "1922 年时间点结果" })).toHaveTextContent(
       "1922年 · 当时存在"
@@ -72,27 +97,46 @@ describe("Crownline 浏览", () => {
     expect(screen.getByLabelText("当前年份")).toHaveTextContent("1922");
     expect(new URLSearchParams(window.location.search).get("mode")).toBe("point");
 
-    await user.click(screen.getByRole("button", { name: "全览" }));
+    fireEvent.change(screen.getByRole("slider", { name: "历史年份滑杆" }), {
+      target: { value: "1400" }
+    });
+    await user.click(screen.getByRole("button", { name: "全时期" }));
     expect(screen.getByRole("region", { name: "多地区完整时间轴" })).toBeInTheDocument();
+    expect(screen.getByLabelText("当前时间范围")).toHaveTextContent("全时期");
+    expect(screen.queryByLabelText("当前年份")).not.toBeInTheDocument();
     expect(new URLSearchParams(window.location.search).has("mode")).toBe(false);
+
+    await user.click(screen.getByRole("button", { name: "指定年份" }));
+    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1400");
   });
 
-  it("切换地图时保留年份控件并在返回时间轴后恢复原浏览模式", async () => {
+  it("在时间轴和地图间切换时保持时间范围、年份和观测范围", async () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "时间点" }));
+    await user.click(screen.getByRole("button", { name: "中国" }));
+    await user.click(screen.getByRole("button", { name: "指定年份" }));
+    fireEvent.change(screen.getByRole("slider", { name: "历史年份滑杆" }), {
+      target: { value: "1400" }
+    });
     await user.click(screen.getByRole("button", { name: "地图" }));
 
-    expect(screen.getByLabelText("当前年份")).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "全览" })).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "时间点" })).not.toBeInTheDocument();
+    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1400");
+    expect(screen.getByRole("button", { name: "指定年份" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    expect(screen.getByRole("button", { name: "中国" })).toHaveAttribute("aria-pressed", "true");
     expect(new URLSearchParams(window.location.search).get("view")).toBe("map");
 
     await user.click(screen.getByRole("button", { name: "时间轴" }));
 
-    expect(screen.getByRole("button", { name: "时间点" })).toHaveAttribute("aria-pressed", "true");
-    expect(screen.getByRole("region", { name: "1922 年时间点结果" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "指定年份" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    expect(screen.getByRole("region", { name: "1400 年时间点结果" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "中国" })).toHaveAttribute("aria-pressed", "true");
     expect(new URLSearchParams(window.location.search).has("view")).toBe(false);
   });
 
@@ -100,7 +144,7 @@ describe("Crownline 浏览", () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "时间点" }));
+    await user.click(screen.getByRole("button", { name: "指定年份" }));
     expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
 
     await user.click(screen.getByRole("button", { name: "中国" }));
@@ -135,7 +179,7 @@ describe("Crownline 浏览", () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "全览" }));
+    await user.click(screen.getByRole("button", { name: "全时期" }));
 
     expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
     expect(screen.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
@@ -199,8 +243,8 @@ describe("Crownline 浏览", () => {
 
     expect(screen.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
     expect(screen.getByRole("checkbox", { name: "西亚" })).toBeChecked();
-    await user.click(screen.getByRole("button", { name: "时间点" }));
-    await user.click(screen.getByRole("button", { name: "全览" }));
+    await user.click(screen.getByRole("button", { name: "指定年份" }));
+    await user.click(screen.getByRole("button", { name: "全时期" }));
 
     const params = new URLSearchParams(window.location.search);
     expect(params.get("scope")).toBe("custom");
@@ -226,7 +270,7 @@ describe("Crownline 浏览", () => {
 
     expect(screen.queryByLabelText("类别图例")).not.toBeInTheDocument();
 
-    await user.click(screen.getByRole("button", { name: "全览" }));
+    await user.click(screen.getByRole("button", { name: "全时期" }));
     expect(screen.getByLabelText("类别图例")).toBeInTheDocument();
   });
 
@@ -252,7 +296,7 @@ describe("Crownline 浏览", () => {
     const sliderRow = slider.closest(".year-slider-row");
 
     expect(currentYear).toHaveTextContent("前221");
-    expect(currentYear.closest(".year-current")?.nextElementSibling).toBe(sliderRow);
+    expect(currentYear.closest(".time-range-heading")?.nextElementSibling).toBe(sliderRow);
     expect(sliderRow?.firstElementChild).toHaveAccessibleName("上一年");
     expect(sliderRow?.lastElementChild).toHaveAccessibleName("下一年");
     expect(screen.queryByRole("textbox", { name: "当前年份" })).not.toBeInTheDocument();

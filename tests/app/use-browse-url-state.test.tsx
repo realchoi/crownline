@@ -61,7 +61,7 @@ describe("useBrowseUrlState", () => {
     act(() => window.dispatchEvent(new PopStateEvent("popstate")));
 
     await waitFor(() => expect(result.current.browseState.year).toBe(705));
-    expect(result.current.browseState.mode).toBe("point");
+    expect(result.current.browseState.timeRange).toBe("year");
     expect(location.search).toContain("external=kept");
     expect(replaceState).not.toHaveBeenCalled();
   });

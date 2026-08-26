@@ -24,7 +24,8 @@ describe("Crownline 地图", () => {
     expect(
       await screen.findByRole("region", { name: "全时期历史政权总览地图" })
     ).toBeInTheDocument();
-    expect(screen.getByLabelText("地图范围")).toHaveTextContent("全时期总览");
+    expect(screen.getByLabelText("当前时间范围")).toHaveTextContent("全时期");
+    expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "true");
     expect(screen.getByText(/全时期总览：显示/)).toBeInTheDocument();
     expect(screen.getByText("跨时期点位不表示这些政权同时存在")).toBeInTheDocument();
 
@@ -33,7 +34,7 @@ describe("Crownline 地图", () => {
       within(overviewList).getByRole("button", { name: "明，南京，都城" })
     ).toBeInTheDocument();
 
-    fireEvent.change(screen.getByRole("slider", { name: "历史年份滑杆，拖动后按年份显示" }), {
+    fireEvent.change(screen.getByRole("slider", { name: "选择历史年份，调整后进入指定年份" }), {
       target: { value: "500" }
     });
     expect(await screen.findByRole("region", { name: "当前年份历史政权示意地图" })).toBeVisible();
@@ -41,7 +42,7 @@ describe("Crownline 地图", () => {
     expect(screen.getByRole("region", { name: "地图结果列表" })).not.toHaveTextContent("明");
     expect(new URLSearchParams(window.location.search).get("mode")).toBe("point");
 
-    await user.click(screen.getByRole("button", { name: "返回全时期总览" }));
+    await user.click(screen.getByRole("button", { name: "全时期" }));
     expect(await screen.findByRole("region", { name: "全时期历史政权总览地图" })).toBeVisible();
     expect(new URLSearchParams(window.location.search).has("mode")).toBe(false);
     expect(new URLSearchParams(window.location.search).has("year")).toBe(false);
@@ -238,6 +239,28 @@ describe("Crownline 地图", () => {
     expect(boundariesToggle).toHaveAttribute("aria-pressed", "true");
   });
 
+  it("地图图层切换不改变全时期或指定年份状态", async () => {
+    window.history.replaceState(null, "", "/?view=map&layer=boundaries");
+    const user = setupUser();
+    renderApp();
+
+    await screen.findByRole("region", { name: "全时期历史政权总览地图" });
+    await user.click(screen.getByRole("button", { name: "地点标记" }));
+    let params = new URLSearchParams(window.location.search);
+    expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "true");
+    expect(params.has("mode")).toBe(false);
+    expect(params.has("year")).toBe(false);
+
+    await user.click(screen.getByRole("button", { name: "指定年份" }));
+    await user.click(screen.getByRole("button", { name: "疆域示意" }));
+    params = new URLSearchParams(window.location.search);
+    expect(screen.getByRole("button", { name: "指定年份" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    expect(params.get("mode")).toBe("point");
+  });
+
   it("全时期疆域图层不叠加跨时代快照，调整年份后才显示", async () => {
     window.history.replaceState(null, "", "/?view=map&layer=boundaries");
     const user = setupUser();
@@ -246,7 +269,7 @@ describe("Crownline 地图", () => {
     const results = await screen.findByRole("region", { name: "地图结果列表" });
     expect(results).toHaveTextContent(/疆域快照需要明确年份/);
     expect(document.querySelectorAll(".map-boundary-shape")).toHaveLength(0);
-    fireEvent.change(screen.getByRole("slider", { name: "历史年份滑杆，拖动后按年份显示" }), {
+    fireEvent.change(screen.getByRole("slider", { name: "选择历史年份，调整后进入指定年份" }), {
       target: { value: "800" }
     });
     expect(

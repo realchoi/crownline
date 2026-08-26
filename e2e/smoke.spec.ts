@@ -114,6 +114,67 @@ test.describe("Crownline 浏览器冒烟", () => {
     await expect.poll(() => new URL(page.url()).searchParams.get("detail")).toBeNull();
   });
 
+  test("探索状态在刷新、后退和前进后与 URL 一致", async ({ page }) => {
+    await page.goto("/?view=map&year=800&scope=china&layer=boundaries");
+    await waitForAppReady(page);
+
+    await expect(page.getByRole("button", { name: "地图" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    await expect(page.getByRole("button", { name: "指定年份" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    await expect(page.getByLabel("当前年份", { exact: true })).toHaveText("800");
+    await expect(page.getByRole("button", { name: "中国" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    await expect(page.getByRole("button", { name: "疆域示意" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+
+    await page.reload();
+    await waitForAppReady(page);
+    await expect(page.getByLabel("当前年份", { exact: true })).toHaveText("800");
+    await expect(page.getByRole("button", { name: "中国" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+
+    await page.evaluate(() => {
+      window.history.pushState(null, "", "/?scope=global");
+      window.dispatchEvent(new PopStateEvent("popstate"));
+    });
+    await expect(page.getByRole("button", { name: "时间轴" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    await expect(page.getByRole("button", { name: "全时期" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+
+    await page.goBack();
+    await expect(page.getByLabel("当前年份", { exact: true })).toHaveText("800");
+    await expect(page.getByRole("button", { name: "地图" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+
+    await page.goForward();
+    await expect(page.getByRole("button", { name: "全时期" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    await expect(page.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+  });
+
   test("手机布局保留筛选控件并支持键盘导航", async ({ page, isMobile }) => {
     test.skip(!isMobile, "仅在 mobile-chrome 项目运行");
 

@@ -1,33 +1,26 @@
 import type { Ref } from "react";
 
-import {
-  formatHistoricalYear,
-  fromOrdinal,
-  nextHistoricalYear,
-  previousHistoricalYear,
-  toOrdinal
-} from "../domain/chronology";
-import type { BrowseMode, HistoricalYearBounds, MapLayer } from "../domain/browseState";
+import type { HistoricalYearBounds, MapLayer, TimeRange, ViewMode } from "../domain/browseState";
 import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import type { RegionScope } from "../domain/regionScope";
 import type { CategoryFilter } from "../domain/selectors";
 import type { Region } from "../domain/types";
 import { RegionScopeControl } from "./RegionScopeControl";
+import { TimeRangeControl } from "./TimeRangeControl";
 
 /** 筛选面板的受控状态与事件。 */
 export interface FilterPanelProps {
   panelRef?: Ref<HTMLElement>;
-  showModeSwitch: boolean;
-  showYearControls: boolean;
+  viewMode: ViewMode;
   mapLayer: MapLayer;
-  mode: BrowseMode;
+  timeRange: TimeRange;
   year: number;
   yearBounds: HistoricalYearBounds;
   query: string;
   category: CategoryFilter;
   regions: Region[];
   regionScope: RegionScope;
-  onModeChange: (mode: BrowseMode) => void;
+  onTimeRangeChange: (timeRange: TimeRange) => void;
   onYearChange: (year: number) => void;
   onMapLayerChange: (layer: MapLayer) => void;
   onQueryChange: (query: string) => void;
@@ -39,17 +32,16 @@ export interface FilterPanelProps {
 /** 渲染搜索、类别筛选、清除按钮和类别图例。 */
 export function FilterPanel({
   panelRef,
-  showModeSwitch,
-  showYearControls,
+  viewMode,
   mapLayer,
-  mode,
+  timeRange,
   year,
   yearBounds,
   query,
   category,
   regions,
   regionScope,
-  onModeChange,
+  onTimeRangeChange,
   onYearChange,
   onMapLayerChange,
   onQueryChange,
@@ -60,43 +52,25 @@ export function FilterPanel({
   const hasFilters = query.trim().length > 0 || category !== "all";
   const showPoints = mapLayer !== "boundaries";
   const showBoundaries = mapLayer !== "points";
-  const formattedYear = formatHistoricalYear({ year, precision: "exact" });
-  const isMapOverview = !showModeSwitch && mode === "overview";
-  const isMapTimepoint = !showModeSwitch && mode === "point";
+  const isMap = viewMode === "map";
 
   return (
     <section
       ref={panelRef}
-      className={`controls-panel controls-${mode}${showModeSwitch ? "" : " controls-map"}`}
+      className={`controls-panel controls-${timeRange}${isMap ? " controls-map" : ""}`}
       aria-label="浏览与筛选工具"
     >
-      {showModeSwitch && (
-        <div className="browse-mode-row">
-          <div>
-            <span className="field-label">浏览方式</span>
-            <div className="mode-switch" role="group" aria-label="浏览方式">
-              <button
-                type="button"
-                aria-pressed={mode === "overview"}
-                onClick={() => onModeChange("overview")}
-              >
-                全览
-              </button>
-              <button
-                type="button"
-                aria-pressed={mode === "point"}
-                onClick={() => onModeChange("point")}
-              >
-                时间点
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <TimeRangeControl
+        value={timeRange}
+        year={year}
+        yearBounds={yearBounds}
+        onChange={onTimeRangeChange}
+        onYearChange={onYearChange}
+      />
 
       <RegionScopeControl regions={regions} scope={regionScope} onChange={onRegionScopeChange} />
 
-      {!showModeSwitch && (
+      {isMap && (
         <fieldset className="map-layer-control">
           <legend className="field-label">地图图层</legend>
           <div className="map-layer-switch" role="group" aria-label="地图图层">
@@ -128,64 +102,6 @@ export function FilterPanel({
       )}
 
       <div className="controls-grid">
-        {showYearControls && (
-          <div className="year-panel">
-            <div className={`year-current${isMapOverview ? " is-overview" : ""}`}>
-              <span className="field-label">{isMapOverview ? "地图范围" : "当前年份"}</span>
-              <output aria-label={isMapOverview ? "地图范围" : "当前年份"} aria-live="polite">
-                {isMapOverview ? "全时期总览" : formattedYear}
-              </output>
-              {isMapTimepoint && (
-                <button
-                  className="map-overview-return"
-                  type="button"
-                  onClick={() => onModeChange("overview")}
-                >
-                  返回全时期总览
-                </button>
-              )}
-            </div>
-            <div className="year-slider-row">
-              <button
-                className="year-step-button"
-                type="button"
-                aria-label="上一年"
-                disabled={year === yearBounds.min}
-                onClick={() => onYearChange(previousHistoricalYear(year))}
-              >
-                <span aria-hidden="true">−</span>
-              </button>
-              <div className="year-slider-wrap">
-                <input
-                  id="historical-year-slider"
-                  className="year-slider"
-                  type="range"
-                  min={toOrdinal(yearBounds.min)}
-                  max={toOrdinal(yearBounds.max)}
-                  value={toOrdinal(year)}
-                  aria-label={isMapOverview ? "历史年份滑杆，拖动后按年份显示" : "历史年份滑杆"}
-                  aria-valuetext={`${formattedYear}年`}
-                  aria-describedby="year-help"
-                  onChange={(event) => onYearChange(fromOrdinal(Number(event.currentTarget.value)))}
-                />
-                <div className="year-range" id="year-help">
-                  <span>{formatHistoricalYear({ year: yearBounds.min, precision: "exact" })}</span>
-                  <span>{isMapOverview ? "拖动后进入年份视图" : "自动跳过公元 0 年"}</span>
-                  <span>{formatHistoricalYear({ year: yearBounds.max, precision: "exact" })}</span>
-                </div>
-              </div>
-              <button
-                className="year-step-button"
-                type="button"
-                aria-label="下一年"
-                disabled={year === yearBounds.max}
-                onClick={() => onYearChange(nextHistoricalYear(year))}
-              >
-                <span aria-hidden="true">＋</span>
-              </button>
-            </div>
-          </div>
-        )}
         <label>
           <span className="field-label">搜索名称、别名、年份或说明</span>
           <input
@@ -216,7 +132,7 @@ export function FilterPanel({
           清除筛选
         </button>
       </div>
-      {showModeSwitch && mode === "overview" && (
+      {!isMap && timeRange === "all" && (
         <div className="legend" aria-label="类别图例">
           {Object.entries(DISPLAY_CATEGORY_NAMES).map(([value, label]) => (
             <span className={`legend-item legend-${value}`} key={value}>
