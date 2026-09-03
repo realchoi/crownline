@@ -434,9 +434,9 @@ describe("生产历史数据", () => {
     expect(new Set(data.relationships.map(({ type }) => type))).toEqual(
       new Set(RELATIONSHIP_TYPES)
     );
-    expect(data.relationships).toHaveLength(48);
-    expect(data.events).toHaveLength(18);
-    expect(data.sources).toHaveLength(197);
+    expect(data.relationships).toHaveLength(74);
+    expect(data.events).toHaveLength(34);
+    expect(data.sources).toHaveLength(214);
     expect(
       data.relationships.every(({ sourceRefs }) => {
         return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));
@@ -605,6 +605,69 @@ describe("生产历史数据", () => {
       added
         .filter(({ confidence }) => confidence === "medium")
         .every(({ confidenceNote }) => Boolean(confidenceNote?.trim()))
+    ).toBe(true);
+  });
+
+  it("固定第二轮跨地区网络的非战争占比、参与政权与关联事件", () => {
+    const relationshipIds = [
+      "relationship-tang-unified-silla-alliance",
+      "relationship-tang-unified-silla-war",
+      "relationship-tang-unified-silla-cultural-exchange",
+      "relationship-ming-joseon-tribute",
+      "relationship-qing-joseon-vassalage",
+      "relationship-ming-ashikaga-trade",
+      "relationship-tokugawa-joseon-diplomacy",
+      "relationship-yuan-pagan-war",
+      "relationship-northern-song-chola-trade",
+      "relationship-byzantine-first-bulgarian-war",
+      "relationship-byzantine-kievan-trade",
+      "relationship-byzantine-kievan-cultural-exchange",
+      "relationship-frankish-abbasid-diplomacy",
+      "relationship-byzantine-umayyad-war",
+      "relationship-castile-leon-diplomacy",
+      "relationship-castile-almohad-war",
+      "relationship-mali-songhai-war",
+      "relationship-aksum-kush-war",
+      "relationship-aksum-kush-trade",
+      "relationship-zulu-ndebele-war",
+      "relationship-inca-chimu-war",
+      "relationship-teotihuacan-maya-war",
+      "relationship-teotihuacan-maya-cultural-exchange",
+      "relationship-mughal-maratha-war",
+      "relationship-khmer-ayutthaya-war",
+      "relationship-tokugawa-ayutthaya-trade"
+    ];
+    const eventIds = [
+      "event-silla-expels-tang-676",
+      "event-qing-joseon-submission-1637",
+      "event-first-joseon-mission-tokugawa-1607",
+      "event-yuan-pagan-ngasaunggyan-1277",
+      "event-chola-embassy-song-1015",
+      "event-byzantine-conquest-bulgaria-1018",
+      "event-kievan-baptism-988",
+      "event-abbasid-elephant-franks-802",
+      "event-umayyad-siege-constantinople-717",
+      "event-castile-leon-union-1230",
+      "event-aksum-kush-campaign-350",
+      "event-ndebele-break-zulu-1821",
+      "event-inca-conquest-chimu-1470",
+      "event-teotihuacan-tikal-entrada-378",
+      "event-mughal-maratha-deccan-war-1680",
+      "event-ayutthaya-angkor-1431"
+    ];
+    const added = data.relationships.filter(({ id }) => relationshipIds.includes(id));
+    const participantIds = new Set(
+      added.flatMap(({ participants }) => participants.map(({ entityId }) => entityId))
+    );
+
+    expect(relationshipIds).toHaveLength(26);
+    expect(added).toHaveLength(26);
+    expect(added.filter(({ type }) => type !== "war")).toHaveLength(14);
+    expect(participantIds.size).toBe(34);
+    expect(data.events.map(({ id }) => id)).toEqual(expect.arrayContaining(eventIds));
+    expect(added.flatMap(({ eventIds: ids }) => ids)).toEqual(expect.arrayContaining(eventIds));
+    expect(
+      added.every(({ sourceRefs }) => sourceRefs.every(({ locator }) => Boolean(locator?.trim())))
     ).toBe(true);
   });
 

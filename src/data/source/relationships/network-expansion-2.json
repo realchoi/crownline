@@ -1,0 +1,569 @@
+[
+  {
+    "id": "relationship-tang-unified-silla-alliance",
+    "type": "alliance",
+    "participants": [
+      { "entityId": "polity-cn-tang", "role": "盟军与出兵方" },
+      { "entityId": "polity-unified-silla", "role": "盟军与半岛作战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 668, "precision": "exact" },
+        "end": { "year": 668, "precision": "exact" }
+      }
+    ],
+    "summary": "唐—新罗联盟在此前灭百济的基础上，于668年共同击败高句丽；本条只记录统一新罗实体口径开始后的最后一段联合行动。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-met-korea-500-1000", "locator": "Timeline: 668, Tang-Silla allies invade and defeat Goguryeo" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-tang-unified-silla-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-tang", "role": "交战方" },
+      { "entityId": "polity-unified-silla", "role": "交战方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 670, "precision": "exact" },
+        "end": { "year": 676, "precision": "exact" }
+      }
+    ],
+    "summary": "高句丽灭亡后，唐与新罗围绕百济、高句丽故地的控制爆发战争；676年新罗迫使唐军撤至半岛以北，双方军事对抗告一段落。",
+    "eventIds": ["event-silla-expels-tang-676"],
+    "sourceRefs": [
+      { "sourceId": "source-met-korea-500-1000", "locator": "Timeline: 676, Silla forces Chinese troops to withdraw into Manchuria" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-tang-unified-silla-cultural-exchange",
+    "type": "cultural-exchange",
+    "participants": [
+      { "entityId": "polity-cn-tang", "role": "外交、教育与文化交流方" },
+      { "entityId": "polity-unified-silla", "role": "外交、教育与文化交流方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 676, "precision": "exact" },
+        "end": { "year": 690, "precision": "exact" }
+      },
+      {
+        "start": { "year": 705, "precision": "exact" },
+        "end": { "year": 907, "precision": "exact" }
+      }
+    ],
+    "summary": "战争结束后，新罗与唐通过使节、留学、佛教和物质文化往来维持密切交流；这里按唐的两段存在区间分别记录，不把武周时期并入唐。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-met-korea-500-1000", "locator": "Unified Silla maintains close Tang relations through trade, diplomatic and scholarly exchanges" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "区间表示持续存在的交流框架，不表示每一年都有国家使团，也不把制度与艺术影响解释为政治从属。"
+  },
+  {
+    "id": "relationship-ming-joseon-tribute",
+    "type": "tribute",
+    "participants": [
+      { "entityId": "polity-cn-ming", "role": "册封、受使与回赐方" },
+      { "entityId": "polity-joseon-dynasty", "role": "遣使、入贡与受册封方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1401, "precision": "exact" },
+        "end": { "year": 1644, "precision": "exact" }
+      }
+    ],
+    "summary": "朝鲜建国初期经反复交涉后，在1401年前后稳定进入明的册封—朝贡外交框架；使节往来同时承担安全、贸易与文化输入功能，延续至明亡前后。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-nikh-ming-joseon-relations", "locator": "第二部分：朝鲜初期册封、朝贡及对明政策" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "朝贡和册封描述礼仪化、等级化的外交秩序；朝鲜保持自身王统、官僚体系和内政，不能据此写成明的地方行政区。"
+  },
+  {
+    "id": "relationship-qing-joseon-vassalage",
+    "type": "vassalage",
+    "participants": [
+      { "entityId": "polity-cn-qing", "role": "宗主与册封方" },
+      { "entityId": "polity-joseon-dynasty", "role": "保留王统的藩属国" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1637, "precision": "exact" },
+        "end": { "year": 1895, "precision": "exact" }
+      }
+    ],
+    "summary": "1637年战争与降服仪式后，清—朝鲜形成稳定的宗藩、册封、使节和贸易关系；1895年甲午战争后的条约体系终结了这一传统框架。",
+    "eventIds": ["event-qing-joseon-submission-1637"],
+    "sourceRefs": [
+      { "sourceId": "source-oxford-qing-joseon", "locator": "Abstract: relationship established in 1637 and ended in 1895" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "宗藩关系在不同时期的干预强度并不相同；朝鲜保留王室与内部治理，本条不把它解释为清朝直接行政领土。"
+  },
+  {
+    "id": "relationship-ming-ashikaga-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-cn-ming", "role": "使节、赏赐与海上贸易管理方" },
+      { "entityId": "polity-ashikaga-shogunate", "role": "使节、勘合贸易与海上秩序合作方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1403, "precision": "exact" },
+        "end": { "year": 1407, "precision": "exact" }
+      }
+    ],
+    "summary": "永乐初年，明廷与足利义满政权通过使节、礼物和对海盗问题的合作恢复官方往来，这一外交框架也为后续勘合贸易提供制度基础。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-met-yongle-japan", "locator": "Decorative Arts, p. 45: gifts in 1403, 1406 and 1407 to Ashikaga Yoshimitsu" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-tokugawa-joseon-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      { "entityId": "polity-tokugawa-shogunate", "role": "邀请、接待与回书方" },
+      { "entityId": "polity-joseon-dynasty", "role": "派遣通信使与国书方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1607, "precision": "exact" },
+        "end": { "year": 1811, "precision": "exact" }
+      }
+    ],
+    "summary": "壬辰战争后，朝鲜与德川幕府通过对马藩居间恢复外交；1607至1811年间朝鲜共派出十二次使团，处理将军继承、国书、俘虏遣返与双边事务。",
+    "eventIds": ["event-first-joseon-mission-tokugawa-1607"],
+    "sourceRefs": [
+      { "sourceId": "source-japan-tourism-joseon-missions", "locator": "Joseon reinstated missions in 1607; twelve embassies through 1811" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-yuan-pagan-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-cn-yuan", "role": "索贡与远征方" },
+      { "entityId": "polity-pagan-kingdom", "role": "拒绝索贡与防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1277, "precision": "exact" },
+        "end": { "year": 1287, "precision": "exact" }
+      }
+    ],
+    "summary": "蒲甘拒绝蒙古—元的索贡要求后，双方于1277、1283—1285和1287年发生多轮战争；战争与蒲甘内部危机共同促成其政治体系瓦解。",
+    "eventIds": ["event-yuan-pagan-ngasaunggyan-1277"],
+    "sourceRefs": [
+      { "sourceId": "source-pagan-history", "locator": "Mongol invasions and the end of Pagan rule in the thirteenth century" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "蒙古军是否在1287年直接攻入蒲甘城仍有争论；本条只确认多轮战争及其对王国解体的作用，不采用“必然毁城”的单线叙述。"
+  },
+  {
+    "id": "relationship-northern-song-chola-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-cn-northern-song", "role": "接待使团与海贸市场方" },
+      { "entityId": "polity-chola-empire", "role": "派遣使团与海上贸易方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1015, "precision": "exact" },
+        "end": { "year": 1015, "precision": "exact" }
+      },
+      {
+        "start": { "year": 1033, "precision": "exact" },
+        "end": { "year": 1033, "precision": "exact" }
+      },
+      {
+        "start": { "year": 1077, "precision": "exact" },
+        "end": { "year": 1077, "precision": "exact" }
+      }
+    ],
+    "summary": "宋代记录显示朱罗使团于1015、1033和1077年抵达中国；礼物、朝见与商贸诉求交织，是印度洋—南海贸易网络中的可定位国家接触。",
+    "eventIds": ["event-chola-embassy-song-1015"],
+    "sourceRefs": [
+      { "sourceId": "source-inflibnet-chola-trade", "locator": "§2.3 Trade Relation with China and other Countries, pp. 3–4" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-byzantine-first-bulgarian-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-byzantine-empire", "role": "交战与最终征服方" },
+      { "entityId": "polity-first-bulgarian-empire", "role": "交战与防守方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 811, "precision": "exact" },
+        "end": { "year": 811, "precision": "exact" }
+      },
+      {
+        "start": { "year": 894, "precision": "exact" },
+        "end": { "year": 896, "precision": "exact" }
+      },
+      {
+        "start": { "year": 971, "precision": "exact" },
+        "end": { "year": 1018, "precision": "exact" }
+      }
+    ],
+    "summary": "第一保加利亚帝国与拜占庭在巴尔干长期和战交替；本条选取811年、894—896年及971—1018年三段代表性战争，最终由巴西尔二世完成征服。",
+    "eventIds": ["event-byzantine-conquest-bulgaria-1018"],
+    "sourceRefs": [
+      { "sourceId": "source-first-bulgarian-history", "locator": "First Bulgarian Empire: Krum, Simeon I and Byzantine conquest in 1018" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-byzantine-kievan-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-byzantine-empire", "role": "黑海市场与商品来源方" },
+      { "entityId": "polity-kievan-rus", "role": "第聂伯河贸易与商品供应方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 900, "precision": "circa" },
+        "end": { "year": 1204, "precision": "exact" }
+      }
+    ],
+    "summary": "罗斯商旅沿河道和黑海进入君士坦丁堡，以毛皮、蜂蜡、木材等交换拜占庭丝绸、酒、玻璃与奢侈品；1204年君士坦丁堡陷落破坏了传统路线。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-worldhistory-kievan-trade", "locator": "Trade with the Muslims & Byzantines; Fourth Crusade disruption in 1204" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "贸易主要由商人、河港和地方网络承担；区间表示路线长期运作，不等于两国中央政府每年直接经营贸易。"
+  },
+  {
+    "id": "relationship-byzantine-kievan-cultural-exchange",
+    "type": "cultural-exchange",
+    "participants": [
+      { "entityId": "polity-byzantine-empire", "role": "宗教、礼仪与艺术传统来源方" },
+      { "entityId": "polity-kievan-rus", "role": "接受并本地化传统方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 988, "precision": "circa" },
+        "end": { "year": 1204, "precision": "exact" }
+      }
+    ],
+    "summary": "弗拉基米尔与巴西尔二世约988年的婚姻、军事援助和改宗安排，使拜占庭基督教、礼仪、文字与艺术传统持续进入罗斯并被本地化。",
+    "eventIds": ["event-kievan-baptism-988"],
+    "sourceRefs": [
+      { "sourceId": "source-worldhistory-kievan-trade", "locator": "Varangian Guard & the Rise of Moscow: pact and Christianization around 988" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "988年是传统编年锚点；改宗和文化转型是长期过程，本条不把罗斯文化简化为对拜占庭的单向复制。"
+  },
+  {
+    "id": "relationship-frankish-abbasid-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      { "entityId": "polity-frankish-kingdom", "role": "派遣使节与接受礼物方" },
+      { "entityId": "polity-abbasid-caliphate", "role": "派遣使节与赠礼方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 797, "precision": "exact" },
+        "end": { "year": 807, "precision": "exact" }
+      }
+    ],
+    "summary": "查理曼与哈伦·拉希德之间通过远程使团、国书和外交礼物保持联系；大象阿布·阿拔斯及后续礼物成为约800年前后跨地中海外交的代表证据。",
+    "eventIds": ["event-abbasid-elephant-franks-802"],
+    "sourceRefs": [
+      { "sourceId": "source-britishmuseum-frankish-abbasid", "locator": "Abu al-Abbas, Charlemagne's celebrity elephant" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-byzantine-umayyad-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-byzantine-empire", "role": "防守与反攻方" },
+      { "entityId": "polity-umayyad-caliphate", "role": "进攻与围城方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 669, "precision": "circa" },
+        "end": { "year": 674, "precision": "circa" }
+      },
+      {
+        "start": { "year": 717, "precision": "exact" },
+        "end": { "year": 718, "precision": "exact" }
+      }
+    ],
+    "summary": "倭马亚政权持续向拜占庭边境和首都施压；本条记录七世纪后期海上攻势及717—718年君士坦丁堡围城两个代表阶段。",
+    "eventIds": ["event-umayyad-siege-constantinople-717"],
+    "sourceRefs": [
+      { "sourceId": "source-oxford-arab-byzantine-wars", "locator": "Chapter 16, pp. 488–516: offensives of 669–674 and siege of 717–718" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "七世纪第一次君士坦丁堡进攻的具体日期与连续围城叙述在近年研究中有修订，因此采用约年，不沿用未经限定的674—678连续围城说。"
+  },
+  {
+    "id": "relationship-castile-leon-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      { "entityId": "polity-kingdom-of-castile", "role": "共同君主继承的一方" },
+      { "entityId": "polity-kingdom-of-leon", "role": "经继承协议合并的一方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1230, "precision": "exact" },
+        "end": { "year": 1230, "precision": "exact" }
+      }
+    ],
+    "summary": "1230年阿方索九世去世后，围绕莱昂继承的协议使费尔南多三世同时取得莱昂与卡斯蒂利亚王位，两国王冠由此形成持久联合。",
+    "eventIds": ["event-castile-leon-union-1230"],
+    "sourceRefs": [
+      { "sourceId": "source-castile-history", "locator": "Permanent union of Castile and León under Ferdinand III in 1230" },
+      { "sourceId": "source-leon-history", "locator": "Kingdom of León: union with Castile in 1230" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-castile-almohad-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-kingdom-of-castile", "role": "基督教联军主力" },
+      { "entityId": "polity-almohad-caliphate", "role": "穆瓦希德军队" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1212, "precision": "exact" },
+        "end": { "year": 1212, "precision": "exact" }
+      }
+    ],
+    "summary": "1212年，卡斯蒂利亚为主的基督教联军在托洛萨的拉斯纳瓦斯战役击败穆瓦希德军队，成为伊比利亚半岛力量格局的重要转折。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-castile-history", "locator": "Alfonso VIII and the victory at Las Navas de Tolosa, 1212" },
+      { "sourceId": "source-almohad-history", "locator": "Defeat at Las Navas de Tolosa in 1212" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-mali-songhai-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-mali-empire", "role": "失去东部属地与影响范围方" },
+      { "entityId": "polity-songhai-empire", "role": "扩张与征服方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1465, "precision": "exact" },
+        "end": { "year": 1475, "precision": "exact" }
+      }
+    ],
+    "summary": "松尼·阿里统治下的桑海向尼日尔河中游扩张，夺取梅马并进一步控制廷巴克图与杰内，削弱了马里残余的东部影响范围。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-songhai-history", "locator": "Sonni Ali's expansion and conquest of Niger trade cities" },
+      { "sourceId": "source-mali-history", "locator": "Decline of Mali and rise of Songhai" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "1465—1475表示多次扩张行动构成的阶段，不表示双方十年间持续进行同一场战争；廷巴克图当时曾受图阿雷格控制。"
+  },
+  {
+    "id": "relationship-aksum-kush-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-aksumite-kingdom", "role": "埃扎纳远征方" },
+      { "entityId": "polity-kingdom-of-kush", "role": "麦罗埃地区政权" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 350, "precision": "circa" },
+        "end": { "year": 350, "precision": "circa" }
+      }
+    ],
+    "summary": "约350年，阿克苏姆王埃扎纳的铭文所述北方远征与麦罗埃晚期终结相近；通行叙述常把它概括为阿克苏姆征服库施，但两者因果关系仍有争议。",
+    "eventIds": ["event-aksum-kush-campaign-350"],
+    "sourceRefs": [
+      { "sourceId": "source-britishmuseum-african-kingdoms", "locator": "c. AD 350: Ezana, king of Aksum, conquers the kingdom of Kush" },
+      { "sourceId": "source-butts-aksum-nubia", "locator": "Chapter 7, pp. 67–148: Fourth-century Aksumite operations in Nubia" }
+    ],
+    "confidence": "disputed",
+    "confidenceNote": "埃扎纳确有北方军事行动，但其是否直接摧毁仍在运作的麦罗埃国家、以及库施终结的具体机制均有争论。"
+  },
+  {
+    "id": "relationship-aksum-kush-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-aksumite-kingdom", "role": "红海贸易体系政权" },
+      { "entityId": "polity-kingdom-of-kush", "role": "尼罗河贸易体系政权" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 200, "precision": "circa" },
+        "end": { "year": 330, "precision": "circa" }
+      }
+    ],
+    "summary": "阿克苏姆与晚期库施分别面向红海和尼罗河网络，两者之间存在可确认的贸易联系；具体交换品种和国家参与程度仍难精确复原。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-butts-aksum-nubia", "locator": "Warfare, Commerce, and Political Fictions: discussion of Aksum–Kush trade ties" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "证据支持两地贸易联系，但不足以量化规模或证明由两个王廷直接组织；年代为两政权成熟阶段的保守约年。"
+  },
+  {
+    "id": "relationship-zulu-ndebele-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-zulu-kingdom", "role": "原宗主与追击方" },
+      { "entityId": "polity-ndebele-kingdom", "role": "脱离与迁徙方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1821, "precision": "circa" },
+        "end": { "year": 1822, "precision": "exact" }
+      },
+      {
+        "start": { "year": 1832, "precision": "exact" },
+        "end": { "year": 1832, "precision": "exact" }
+      }
+    ],
+    "summary": "姆济利卡齐拒绝向沙卡交出战利品后率部脱离祖鲁权威并北迁；祖鲁随后追击，1832年丁冈又命军队进攻北恩德贝莱，促使其继续西迁。",
+    "eventIds": ["event-ndebele-break-zulu-1821"],
+    "sourceRefs": [
+      { "sourceId": "source-sahistory-zulu-ndebele", "locator": "The Ndebele under Mzilikazi: revolt in 1821–1822 and Zulu attack in 1832" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "姆费卡内时期的年代、动机和因果链受到口述传统与后世叙事影响；本条只记录来源可支持的脱离和两次军事压力。"
+  },
+  {
+    "id": "relationship-inca-chimu-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-inca-empire", "role": "征服方" },
+      { "entityId": "polity-chimu-empire", "role": "防守与被征服方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1470, "precision": "circa" },
+        "end": { "year": 1470, "precision": "circa" }
+      }
+    ],
+    "summary": "约1470年，扩张中的印加帝国征服奇穆控制的秘鲁北海岸，并把部分金银工匠迁往库斯科；奇穆作为独立帝国由此终结。",
+    "eventIds": ["event-inca-conquest-chimu-1470"],
+    "sourceRefs": [
+      { "sourceId": "source-met-chimu-inca-conquest", "locator": "Chan Chan and Chimu Empire: Inca conquest of the North Coast around 1470" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-teotihuacan-maya-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-teotihuacan-state", "role": "进入或干预来源方" },
+      { "entityId": "polity-maya-city-states", "role": "蒂卡尔等受影响城邦集合" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 378, "precision": "exact" },
+        "end": { "year": 378, "precision": "exact" }
+      }
+    ],
+    "summary": "378年蒂卡尔铭文记录来自西方的“进入”事件；考古与铭文学研究把它与特奥蒂瓦坎人员、军事介入和蒂卡尔王统更替联系起来。",
+    "eventIds": ["event-teotihuacan-tikal-entrada-378"],
+    "sourceRefs": [
+      { "sourceId": "source-cambridge-teotihuacan-tikal", "locator": "AD 378 intrusion at Tikal and Teotihuacan-style complex" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "“玛雅城邦”是本项目的集合实体，而事件直接发生在蒂卡尔；介入者与特奥蒂瓦坎王权的具体组织关系仍有争论，故不写成对全部玛雅地区的征服。"
+  },
+  {
+    "id": "relationship-teotihuacan-maya-cultural-exchange",
+    "type": "cultural-exchange",
+    "participants": [
+      { "entityId": "polity-teotihuacan-state", "role": "中墨西哥人员与艺术传统来源方" },
+      { "entityId": "polity-maya-city-states", "role": "互动与本地重构方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 300, "precision": "circa" },
+        "end": { "year": 550, "precision": "circa" }
+      }
+    ],
+    "summary": "古典期早段，蒂卡尔等玛雅中心出现特奥蒂瓦坎式建筑、器物与精英互动证据；影响既包含人员移动和政治介入，也包含玛雅社会的主动采用与重构。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-cambridge-teotihuacan-tikal", "locator": "Evidence of reciprocal contact and combined Maya–Teotihuacan architectural elements" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "考古风格不能单独证明政治控制；本条只描述有多类证据支持的互动与文化重构。"
+  },
+  {
+    "id": "relationship-mughal-maratha-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-mughal-empire", "role": "德干远征与围剿方" },
+      { "entityId": "polity-maratha-empire", "role": "抵抗与反攻方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1680, "precision": "exact" },
+        "end": { "year": 1707, "precision": "exact" }
+      }
+    ],
+    "summary": "希瓦吉去世后，奥朗则布在德干持续对马拉塔发动战争；马拉塔在失去桑巴吉后转向分散作战，冲突延续至1707年奥朗则布去世。",
+    "eventIds": ["event-mughal-maratha-deccan-war-1680"],
+    "sourceRefs": [
+      { "sourceId": "source-fernandes-mughal-maratha", "locator": "Mughals and Marathas, 1680–1707" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-khmer-ayutthaya-war",
+    "type": "war",
+    "participants": [
+      { "entityId": "polity-khmer-empire", "role": "吴哥防守与撤离方" },
+      { "entityId": "polity-ayutthaya-kingdom", "role": "进攻与占领方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1431, "precision": "circa" },
+        "end": { "year": 1431, "precision": "circa" }
+      }
+    ],
+    "summary": "泰、柬王家编年传统把1431/1432年吴哥陷落归于阿瑜陀耶进攻；近年物质研究支持存在阿瑜陀耶占领或介入，但吴哥衰落是更长期、多因素过程。",
+    "eventIds": ["event-ayutthaya-angkor-1431"],
+    "sourceRefs": [
+      { "sourceId": "source-flinders-ayutthaya-angkor", "locator": "Abstract: chronicles and material evidence for the 1431/1432 incursion and occupation" }
+    ],
+    "confidence": "disputed",
+    "confidenceNote": "1431年日期、进攻规模和占领性质主要来自较晚编年传统；考古支持某种介入，但不能把吴哥转型完全归因于一次战争。"
+  },
+  {
+    "id": "relationship-tokugawa-ayutthaya-trade",
+    "type": "trade",
+    "participants": [
+      { "entityId": "polity-tokugawa-shogunate", "role": "朱印许可与日本市场方" },
+      { "entityId": "polity-ayutthaya-kingdom", "role": "港口、聚落与暹罗市场方" }
+    ],
+    "periods": [
+      {
+        "start": { "year": 1604, "precision": "exact" },
+        "end": { "year": 1635, "precision": "exact" }
+      }
+    ],
+    "summary": "德川初期朱印船往来暹罗，阿瑜陀耶形成规模可观的日本人聚落，鹿皮、苏木、日本银和手工业品等通过这一网络交换。",
+    "eventIds": [],
+    "sourceRefs": [
+      { "sourceId": "source-ayutthaya-japanese-village", "locator": "Japanese Village: Ayutthaya–Japan relations nourished through trading" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "贸易由持证商船、侨民、地方中介与王廷共同参与；不把全部交易写成德川幕府与阿瑜陀耶王廷直接经营。"
+  }
+]

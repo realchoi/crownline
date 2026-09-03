@@ -1,0 +1,298 @@
+[
+  {
+    "id": "event-silla-expels-tang-676",
+    "type": "battle",
+    "title": "新罗迫使唐军撤出半岛",
+    "periods": [
+      {
+        "start": { "year": 676, "precision": "exact" },
+        "end": { "year": 676, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-cn-tang", "polity-unified-silla"],
+    "regionIds": ["region-east-asia"],
+    "summary": "676年，新罗在此前数年战争后迫使唐军撤至满洲方向，确立其对朝鲜半岛大部的控制。",
+    "sourceRefs": [
+      { "sourceId": "source-met-korea-500-1000", "locator": "Timeline: 676" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-qing-joseon-submission-1637",
+    "type": "treaty",
+    "title": "清—朝鲜宗藩关系建立",
+    "periods": [
+      {
+        "start": { "year": 1637, "precision": "exact" },
+        "end": { "year": 1637, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-cn-qing", "polity-joseon-dynasty"],
+    "regionIds": ["region-china", "region-east-asia"],
+    "summary": "1637年丙子战争后的降服与盟约安排，确立清与朝鲜之间延续至十九世纪末的宗藩、使节和贸易框架。",
+    "sourceRefs": [
+      { "sourceId": "source-oxford-qing-joseon", "locator": "Abstract: relationship established in 1637" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "事件表示传统等级外交框架的建立，不意味着朝鲜王国被撤销或改为清朝直接行政区。"
+  },
+  {
+    "id": "event-first-joseon-mission-tokugawa-1607",
+    "type": "diplomatic",
+    "title": "朝鲜首次派使德川幕府",
+    "periods": [
+      {
+        "start": { "year": 1607, "precision": "exact" },
+        "end": { "year": 1607, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-joseon-dynasty", "polity-tokugawa-shogunate"],
+    "regionIds": ["region-east-asia"],
+    "summary": "1607年，朝鲜恢复向日本派遣正式使团，成为壬辰战争后朝鲜—德川外交常态化的起点。",
+    "sourceRefs": [
+      { "sourceId": "source-japan-tourism-joseon-missions", "locator": "First of twelve Tokugawa-period missions in 1607" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-yuan-pagan-ngasaunggyan-1277",
+    "type": "battle",
+    "title": "元军与蒲甘军首次主要交战",
+    "periods": [
+      {
+        "start": { "year": 1277, "precision": "exact" },
+        "end": { "year": 1277, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-cn-yuan", "polity-pagan-kingdom"],
+    "regionIds": ["region-china", "region-east-asia", "region-southeast-asia"],
+    "summary": "1277年，元军与蒲甘军在今滇缅边境发生第一次主要军事交锋，开启此后十年的多轮战争。",
+    "sourceRefs": [
+      { "sourceId": "source-pagan-history", "locator": "Mongol invasions beginning in 1277" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-chola-embassy-song-1015",
+    "type": "diplomatic",
+    "title": "朱罗使团抵达北宋",
+    "periods": [
+      {
+        "start": { "year": 1015, "precision": "exact" },
+        "end": { "year": 1015, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-chola-empire", "polity-cn-northern-song"],
+    "regionIds": ["region-south-asia", "region-china", "region-east-asia"],
+    "summary": "1015年，朱罗使团携珍珠、玻璃等礼物抵达北宋宫廷；朝见、礼物和商业诉求共同构成这次远洋接触。",
+    "sourceRefs": [
+      { "sourceId": "source-inflibnet-chola-trade", "locator": "§2.3, Song chronicle record of the 1015 Chola mission" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-byzantine-conquest-bulgaria-1018",
+    "type": "dissolution",
+    "title": "拜占庭征服第一保加利亚帝国",
+    "periods": [
+      {
+        "start": { "year": 1018, "precision": "exact" },
+        "end": { "year": 1018, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-byzantine-empire", "polity-first-bulgarian-empire"],
+    "regionIds": ["region-europe"],
+    "summary": "1018年，巴西尔二世完成对第一保加利亚帝国核心地区的征服，后者在本项目口径下终结。",
+    "sourceRefs": [
+      { "sourceId": "source-first-bulgarian-history", "locator": "First Bulgarian Empire: Byzantine conquest in 1018" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-kievan-baptism-988",
+    "type": "diplomatic",
+    "title": "罗斯改宗与拜占庭婚盟",
+    "periods": [
+      {
+        "start": { "year": 988, "precision": "circa" },
+        "end": { "year": 988, "precision": "circa" }
+      }
+    ],
+    "participantEntityIds": ["polity-kievan-rus", "polity-byzantine-empire"],
+    "regionIds": ["region-europe", "region-west-asia"],
+    "summary": "约988年，弗拉基米尔向巴西尔二世提供军事援助，并以改宗和迎娶皇室成员为核心形成政治—宗教纽带。",
+    "sourceRefs": [
+      { "sourceId": "source-worldhistory-kievan-trade", "locator": "Varangian Guard & the Rise of Moscow" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "不同叙事对洗礼地点、顺序和动机有差异；988年作为通行编年锚点，不把复杂改宗过程缩减为单日事件。"
+  },
+  {
+    "id": "event-abbasid-elephant-franks-802",
+    "type": "diplomatic",
+    "title": "阿拔斯使团向查理曼赠送大象",
+    "periods": [
+      {
+        "start": { "year": 802, "precision": "exact" },
+        "end": { "year": 802, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-frankish-kingdom", "polity-abbasid-caliphate"],
+    "regionIds": ["region-europe", "region-west-asia"],
+    "summary": "802年前后，远行归来的使团将哈伦·拉希德赠送的大象阿布·阿拔斯带到查理曼宫廷，成为双方远程外交的著名物证。",
+    "sourceRefs": [
+      { "sourceId": "source-britishmuseum-frankish-abbasid", "locator": "Abu al-Abbas, Charlemagne's celebrity elephant" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-umayyad-siege-constantinople-717",
+    "type": "battle",
+    "title": "倭马亚围攻君士坦丁堡",
+    "periods": [
+      {
+        "start": { "year": 717, "precision": "exact" },
+        "end": { "year": 718, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-umayyad-caliphate", "polity-byzantine-empire"],
+    "regionIds": ["region-west-asia", "region-europe"],
+    "summary": "717至718年，倭马亚陆海军围攻拜占庭首都君士坦丁堡，最终在城防、海战、补给困难与保加利亚援军压力下撤退。",
+    "sourceRefs": [
+      { "sourceId": "source-oxford-arab-byzantine-wars", "locator": "Chapter 16: climax in the 717–18 siege of Constantinople" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-castile-leon-union-1230",
+    "type": "succession",
+    "title": "卡斯蒂利亚与莱昂王冠联合",
+    "periods": [
+      {
+        "start": { "year": 1230, "precision": "exact" },
+        "end": { "year": 1230, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-kingdom-of-castile", "polity-kingdom-of-leon"],
+    "regionIds": ["region-europe"],
+    "summary": "1230年，费尔南多三世继承莱昂王位并与其卡斯蒂利亚王位合一，形成此后未再长期分离的王冠联合。",
+    "sourceRefs": [
+      { "sourceId": "source-castile-history", "locator": "Union with León in 1230" },
+      { "sourceId": "source-leon-history", "locator": "Union with Castile in 1230" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-aksum-kush-campaign-350",
+    "type": "battle",
+    "title": "埃扎纳北方远征与麦罗埃终结",
+    "periods": [
+      {
+        "start": { "year": 350, "precision": "circa" },
+        "end": { "year": 350, "precision": "circa" }
+      }
+    ],
+    "participantEntityIds": ["polity-aksumite-kingdom", "polity-kingdom-of-kush"],
+    "regionIds": ["region-east-africa", "region-north-africa"],
+    "summary": "约350年埃扎纳的北方军事行动与麦罗埃王国终结年代接近，但远征对象、控制范围及两者因果关系仍存在学术争议。",
+    "sourceRefs": [
+      { "sourceId": "source-britishmuseum-african-kingdoms", "locator": "c. AD 350" },
+      { "sourceId": "source-butts-aksum-nubia", "locator": "Chapter 7, pp. 67–148" }
+    ],
+    "confidence": "disputed",
+    "confidenceNote": "保留“远征与终结年代相近”的最低结论，不把传统的单次彻底征服叙事当作无争议事实。"
+  },
+  {
+    "id": "event-ndebele-break-zulu-1821",
+    "type": "other",
+    "title": "姆济利卡齐脱离祖鲁权威",
+    "periods": [
+      {
+        "start": { "year": 1821, "precision": "circa" },
+        "end": { "year": 1822, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-zulu-kingdom", "polity-ndebele-kingdom"],
+    "regionIds": ["region-southern-africa"],
+    "summary": "1821至1822年前后，姆济利卡齐拒绝向沙卡交出劫掠所得并率追随者北走，成为北恩德贝莱独立政治共同体形成的关键节点。",
+    "sourceRefs": [
+      { "sourceId": "source-sahistory-zulu-ndebele", "locator": "The Ndebele under Mzilikazi" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "事件年代与动机来自口述传统和后世整理，采用约年并避免把姆费卡内归结为单一人物冲突。"
+  },
+  {
+    "id": "event-inca-conquest-chimu-1470",
+    "type": "dissolution",
+    "title": "印加征服奇穆",
+    "periods": [
+      {
+        "start": { "year": 1470, "precision": "circa" },
+        "end": { "year": 1470, "precision": "circa" }
+      }
+    ],
+    "participantEntityIds": ["polity-inca-empire", "polity-chimu-empire"],
+    "regionIds": ["region-americas"],
+    "summary": "约1470年，印加征服奇穆及其北海岸核心地区，迁移部分工匠并终结奇穆的独立帝国阶段。",
+    "sourceRefs": [
+      { "sourceId": "source-met-chimu-inca-conquest", "locator": "Inca conquest of the North Coast around 1470" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-teotihuacan-tikal-entrada-378",
+    "type": "other",
+    "title": "特奥蒂瓦坎相关力量进入蒂卡尔",
+    "periods": [
+      {
+        "start": { "year": 378, "precision": "exact" },
+        "end": { "year": 378, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-teotihuacan-state", "polity-maya-city-states"],
+    "regionIds": ["region-americas"],
+    "summary": "378年，蒂卡尔记录“进入”事件并发生王统更替；遗址中的中墨西哥式建筑与器物支持特奥蒂瓦坎相关人员深度介入。",
+    "sourceRefs": [
+      { "sourceId": "source-cambridge-teotihuacan-tikal", "locator": "AD 378 intrusion local to Tikal but regional in impact" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "事件发生于蒂卡尔而非全部玛雅城邦；参与者是否由特奥蒂瓦坎中央权力直接派遣仍不能完全确定。"
+  },
+  {
+    "id": "event-mughal-maratha-deccan-war-1680",
+    "type": "battle",
+    "title": "莫卧儿—马拉塔德干长期战争",
+    "periods": [
+      {
+        "start": { "year": 1680, "precision": "exact" },
+        "end": { "year": 1707, "precision": "exact" }
+      }
+    ],
+    "participantEntityIds": ["polity-mughal-empire", "polity-maratha-empire"],
+    "regionIds": ["region-south-asia"],
+    "summary": "1680至1707年，莫卧儿与马拉塔在德干进行持续多年的围城、游击和领土争夺，消耗了双方大量资源。",
+    "sourceRefs": [
+      { "sourceId": "source-fernandes-mughal-maratha", "locator": "Mughals and Marathas, 1680–1707" }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "event-ayutthaya-angkor-1431",
+    "type": "battle",
+    "title": "阿瑜陀耶介入并占领吴哥",
+    "periods": [
+      {
+        "start": { "year": 1431, "precision": "circa" },
+        "end": { "year": 1431, "precision": "circa" }
+      }
+    ],
+    "participantEntityIds": ["polity-khmer-empire", "polity-ayutthaya-kingdom"],
+    "regionIds": ["region-southeast-asia"],
+    "summary": "1431/1432年前后，阿瑜陀耶力量进入并一度占领吴哥；编年记载与物质证据支持介入，但并非吴哥长期转型的唯一原因。",
+    "sourceRefs": [
+      { "sourceId": "source-flinders-ayutthaya-angkor", "locator": "Abstract: 1431/1432 chronicles and material evidence" }
+    ],
+    "confidence": "disputed",
+    "confidenceNote": "日期、规模与占领方式仍有争议，事件标题采用“介入并占领”而非无条件接受后世的彻底毁城叙事。"
+  }
+]
