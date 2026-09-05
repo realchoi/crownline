@@ -3,6 +3,7 @@ import type {
   CrownlineDetail,
   EventType,
   HistoricalDate,
+  HistoricalEntity,
   HistoricalEvent,
   HistoricalInterval,
   Relationship,
@@ -161,12 +162,12 @@ function parseEvent(value: unknown, sourceById: Map<string, Source>): Historical
   return value as unknown as HistoricalEvent;
 }
 
-function rawHasPair(value: unknown, leftEntityId: string, rightEntityId: string): boolean | null {
+function rawHasEntities(value: unknown, entityIds: readonly string[]): boolean | null {
   if (!isRecord(value) || !Array.isArray(value.participants)) return null;
   const ids = value.participants.flatMap((candidate) => {
     return isRecord(candidate) && isNonEmptyString(candidate.entityId) ? [candidate.entityId] : [];
   });
-  return ids.includes(leftEntityId) && ids.includes(rightEntityId);
+  return entityIds.every((id) => ids.includes(id));
 }
 
 function groupById(values: unknown[]): { anonymous: number; groups: Map<string, unknown[]> } {
@@ -226,10 +227,9 @@ function parseRelationship(
   return { relationship: value as unknown as Relationship, events, sources };
 }
 
-/** 合并双方详情中的同一关系，逐条校验并解析其事件与来源闭包。 */
-export function selectHistoricalRelationships(
-  leftEntityId: string,
-  rightEntityId: string,
+/** 只解析包含全部指定参与方的关系，供双政权对比和单政权发现入口共用。 */
+function selectRelationshipsForEntities(
+  entityIds: readonly string[],
   details: readonly CrownlineDetail[]
 ): HistoricalRelationshipSelection {
   const sourceById = new Map(
@@ -244,7 +244,7 @@ export function selectHistoricalRelationships(
 
   relationshipCandidates.groups.forEach((candidates) => {
     const pairStatuses = candidates.map((candidate) => {
-      return rawHasPair(candidate, leftEntityId, rightEntityId);
+      return rawHasEntities(candidate, entityIds);
     });
     if (!pairStatuses.includes(true)) {
       if (pairStatuses.includes(null)) omittedCount += 1;
@@ -276,6 +276,58 @@ export function selectHistoricalRelationships(
         ? [{ type, label: RELATIONSHIP_TYPE_LABELS[type], relationships }]
         : [];
     }),
+    omittedCount
+  };
+}
+
+/** 合并双方详情中的同一关系，逐条校验并解析其事件与来源闭包。 */
+export function selectHistoricalRelationships(
+  leftEntityId: string,
+  rightEntityId: string,
+  details: readonly CrownlineDetail[]
+): HistoricalRelationshipSelection {
+  return selectRelationshipsForEntities([leftEntityId, rightEntityId], details);
+}
+
+export interface RelatedPolity {
+  entity: HistoricalEntity;
+  relationships: Relationship[];
+}
+
+/** 从已加载的详情发现相关政权；不按当前年份或筛选结果隐藏全时期关系。 */
+export function selectRelatedPolities(
+  entityId: string,
+  entities: readonly HistoricalEntity[],
+  detail: CrownlineDetail
+): { polities: RelatedPolity[]; omittedCount: number } {
+  const polityById = new Map(
+    entities.filter((entity) => entity.entityKind === "polity").map((entity) => [entity.id, entity])
+  );
+  if (detail.entityId !== entityId || !polityById.has(entityId)) {
+    return { polities: [], omittedCount: 0 };
+  }
+  const selection = selectRelationshipsForEntities([entityId], [detail]);
+  const relatedById = new Map<string, RelatedPolity>();
+  let omittedCount = selection.omittedCount;
+  selection.groups.forEach(({ relationships }) => {
+    relationships.forEach(({ relationship }) => {
+      // 整条隔离悬空或历史分期参与方，避免制造不可用的对比入口。
+      if (relationship.participants.some(({ entityId: id }) => !polityById.has(id))) {
+        omittedCount += 1;
+        return;
+      }
+      relationship.participants.forEach(({ entityId: id }) => {
+        if (id === entityId) return;
+        const entry = relatedById.get(id) ?? { entity: polityById.get(id)!, relationships: [] };
+        entry.relationships.push(relationship);
+        relatedById.set(id, entry);
+      });
+    });
+  });
+  return {
+    polities: [...relatedById.values()].sort((left, right) =>
+      left.entity.id.localeCompare(right.entity.id, "en")
+    ),
     omittedCount
   };
 }

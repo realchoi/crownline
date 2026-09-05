@@ -16,15 +16,18 @@ import type { CrownlineDetail, HistoricalEntity, Region, SourceRef } from "../do
 import { DetailLoadPanel, type DetailLoadState } from "./DetailLoadPanel";
 import { EntityLocalName } from "./EntityLocalName";
 import { RulerOverview } from "./RulerOverview";
+import { RelatedPolities } from "./RelatedPolities";
 
 interface DetailDialogProps {
   entity: HistoricalEntity;
+  entities: readonly HistoricalEntity[];
   sectionTitle: string | undefined;
   regions: Region[];
   detailState: DetailLoadState;
   currentYear?: number;
   onRetry: () => void;
   onClose: () => void;
+  onCompare: (relatedEntityId: string) => void;
 }
 
 /** 收集实体、人物和任期来源；同一来源只展示一次，同时保留页码等定位信息。 */
@@ -64,12 +67,14 @@ function collectSourceGroups(
 /** 渲染实体完整元数据；全览展示统治序列，时间点展示当年快照。 */
 export function DetailDialog({
   entity,
+  entities,
   sectionTitle,
   regions,
   detailState,
   currentYear,
   onRetry,
-  onClose
+  onClose,
+  onCompare
 }: DetailDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -220,6 +225,15 @@ export function DetailDialog({
           )}
 
           <DetailLoadPanel state={detailState} onRetry={onRetry} />
+
+          {detail && entity.entityKind === "polity" && (
+            <RelatedPolities
+              entity={entity}
+              entities={entities}
+              detail={detail}
+              onCompare={onCompare}
+            />
+          )}
 
           {detail && entity.entityKind === "polity" && currentYear === undefined && (
             <RulerOverview key={entity.id} detail={detail} />

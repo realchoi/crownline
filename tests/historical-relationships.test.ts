@@ -2,10 +2,14 @@ import { describe, expect, it } from "vitest";
 
 import { loadSourceData } from "../scripts/data-source";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
-import { selectHistoricalRelationships } from "../src/domain/historicalRelationships";
+import {
+  selectHistoricalRelationships,
+  selectRelatedPolities
+} from "../src/domain/historicalRelationships";
 import type {
   CrownlineDetail,
   HistoricalEvent,
+  HistoricalEntity,
   HistoricalInterval,
   Relationship,
   Source
@@ -14,6 +18,96 @@ import type {
 const period = (start: number, end = start): HistoricalInterval => ({
   start: { year: start, precision: "exact" },
   end: { year: end, precision: "exact" }
+});
+
+const productionData = await loadSourceData();
+const productionDetails = buildGeneratedArtifacts(productionData).details;
+
+describe("详情中的相关政权选择", () => {
+  const entities: HistoricalEntity[] = ["polity-a", "polity-b", "polity-c"].map((id) => ({
+    ...productionData.entities[0]!,
+    id,
+    entityKind: "polity"
+  }));
+
+  it("按政权去重并保留多种关系、多段年代和跨纪元边界，输入顺序不影响结果", () => {
+    const diplomacy: Relationship = {
+      ...war,
+      id: "relationship-diplomacy",
+      type: "diplomacy",
+      periods: [period(-1, 1), period(50, 60)],
+      eventIds: []
+    };
+    const multilateral: Relationship = {
+      ...war,
+      id: "relationship-multilateral",
+      participants: [...war.participants, { entityId: "polity-c", role: "交战方" }]
+    };
+    const records = [war, diplomacy, multilateral, war];
+    const result = selectRelatedPolities("polity-a", entities, detail("polity-a", records));
+    expect(result.omittedCount).toBe(0);
+    expect(result.polities.map(({ entity }) => entity.id)).toEqual(["polity-b", "polity-c"]);
+    expect(result.polities[0]?.relationships.map(({ id }) => id)).toEqual([
+      "relationship-a-b-war",
+      "relationship-multilateral",
+      "relationship-diplomacy"
+    ]);
+    expect(result.polities[0]?.relationships[2]?.periods).toEqual([period(-1, 1), period(50, 60)]);
+    expect(
+      selectRelatedPolities(
+        "polity-a",
+        [...entities].reverse(),
+        detail("polity-a", [...records].reverse())
+      )
+    ).toEqual(result);
+  });
+
+  it("逐条隔离损坏、冲突、悬空来源和不可对比参与方，保留有效记录", () => {
+    const invalidParticipant = (id: string, entityId: string) => ({
+      ...war,
+      id,
+      participants: [...war.participants, { entityId, role: "交战方" }]
+    });
+    const result = selectRelatedPolities(
+      "polity-a",
+      [
+        ...entities,
+        { ...entities[0]!, id: "period-a", entityKind: "historical-period", polityForms: [] }
+      ],
+      detail("polity-a", [
+        war,
+        { broken: true },
+        { ...war, id: "missing-source", sourceRefs: [{ sourceId: "missing" }] },
+        invalidParticipant("unknown-entity", "unknown"),
+        invalidParticipant("period-participant", "period-a"),
+        { ...war, id: "conflict" },
+        { ...war, id: "conflict", summary: "冲突的记录" }
+      ])
+    );
+    expect(result.omittedCount).toBe(5);
+    expect(result.polities).toHaveLength(1);
+    expect(result.polities[0]?.relationships).toEqual([war]);
+  });
+
+  it("只收录当前政权参与的关系，空记录、错配详情和历史分期没有入口", () => {
+    const noRelations = { polities: [], omittedCount: 0 };
+    expect(selectRelatedPolities("polity-c", entities, detail("polity-c", [war]))).toEqual(
+      noRelations
+    );
+    expect(selectRelatedPolities("polity-a", entities, detail("polity-b", [war]))).toEqual(
+      noRelations
+    );
+    expect(selectRelatedPolities("polity-a", entities, detail("polity-a", []))).toEqual(
+      noRelations
+    );
+    expect(
+      selectRelatedPolities(
+        "polity-a",
+        [{ ...entities[0]!, entityKind: "historical-period", polityForms: [] }],
+        detail("polity-a", [war])
+      )
+    ).toEqual(noRelations);
+  });
 });
 
 const source: Source = {
@@ -49,9 +143,6 @@ const war: Relationship = {
   sourceRefs: [{ sourceId: source.id, locator: "第1章" }],
   confidence: "high"
 };
-
-const productionData = await loadSourceData();
-const productionDetails = buildGeneratedArtifacts(productionData).details;
 
 function detail(
   entityId: string,

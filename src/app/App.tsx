@@ -53,6 +53,8 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
     loadBoundaries
   );
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const comparisonRef = useRef<HTMLElement>(null);
+  const focusComparisonRef = useRef(false);
   const mainRef = useRef<HTMLElement>(null);
   const results = useMemo(() => {
     const filters = {
@@ -126,8 +128,26 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
 
   useEffect(() => {
     // 等待原生 dialog 卸载后再恢复焦点，避免浏览器默认焦点处理覆盖结果。
-    if (browseState.detailEntityId || !lastTriggerRef.current) return;
-    const animationFrame = requestAnimationFrame(() => lastTriggerRef.current?.focus());
+    if (browseState.detailEntityId) return;
+    const animationFrame = requestAnimationFrame(() => {
+      if (focusComparisonRef.current) {
+        focusComparisonRef.current = false;
+        comparisonRef.current?.focus({ preventScroll: true });
+        comparisonRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
+        // 为当前尺寸下的吸顶控件保留实际高度，避免对比标题被遮挡。
+        const toolbar = mainRef.current?.querySelector<HTMLElement>(
+          ".mobile-explore-bar, .compact-console-slot"
+        );
+        if (toolbar?.offsetHeight) {
+          window.scrollBy({
+            top: -(toolbar.offsetHeight + (parseFloat(getComputedStyle(toolbar).top) || 0)),
+            behavior: "instant"
+          });
+        }
+      } else {
+        lastTriggerRef.current?.focus();
+      }
+    });
     return () => cancelAnimationFrame(animationFrame);
   }, [browseState.detailEntityId]);
 
@@ -141,6 +161,16 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   const closeDetail = useCallback(() => {
     setBrowseState((current) => ({ ...current, detailEntityId: null }));
   }, [setBrowseState]);
+
+  const compareFromDetail = (relatedEntityId: string) => {
+    if (!selectedMatch) return;
+    focusComparisonRef.current = true;
+    setBrowseState((current) => ({
+      ...current,
+      detailEntityId: null,
+      compareEntityIds: [selectedMatch.entity.id, relatedEntityId]
+    }));
+  };
 
   return (
     <>
@@ -195,7 +225,12 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
         </section>
 
         {comparisonEntities.length > 0 && (
-          <aside className="exploration-assistance" aria-label="对比工具">
+          <aside
+            ref={comparisonRef}
+            className="exploration-assistance"
+            aria-label="对比工具"
+            tabIndex={-1}
+          >
             <ComparisonPanel
               entities={comparisonEntities}
               regions={data.regions}
@@ -213,12 +248,14 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
       {selectedMatch && (
         <DetailDialog
           entity={selectedMatch.entity}
+          entities={data.entities}
           sectionTitle={selectedMatch.section?.title}
           regions={data.regions}
           detailState={detailState}
           {...(browseState.timeRange === "year" ? { currentYear: browseState.year } : {})}
           onRetry={retryDetail}
           onClose={closeDetail}
+          onCompare={compareFromDetail}
         />
       )}
     </>

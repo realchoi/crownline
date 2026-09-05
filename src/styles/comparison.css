@@ -106,7 +106,7 @@
   padding: 12px;
 }
 
-.comparison-slot > span {
+.comparison-slot > span:first-child {
   display: grid;
   width: 28px;
   height: 28px;
@@ -132,9 +132,16 @@
   border-style: solid;
   border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
 }
-.comparison-slot.is-filled > span {
+.comparison-slot.is-filled > span:first-child {
   background: var(--accent-soft);
   color: var(--accent);
+}
+
+.comparison-slot button {
+  grid-column: 3;
+  grid-row: 1;
+  min-height: 44px;
+  white-space: nowrap;
 }
 
 .comparison-summary {
@@ -547,4 +554,13 @@
 .relationship-warning {
   margin-top: 12px;
   border-left: 3px solid var(--accent);
+}
+
+.exploration-assistance:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.exploration-assistance {
+  scroll-margin-top: 20px;
 }

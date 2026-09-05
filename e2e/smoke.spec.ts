@@ -81,6 +81,72 @@ async function expectCompleteTabOrder(page: Page) {
 }
 
 test.describe("Crownline 浏览器冒烟", () => {
+  for (const colorScheme of ["light", "dark"] as const) {
+    test(`详情发现关系并进入对比（${colorScheme}）`, async ({ page }, testInfo) => {
+      await page.emulateMedia({ colorScheme, reducedMotion: "reduce" });
+      await page.goto(
+        "/?view=map&mode=point&year=1292&scope=china&q=元&detail=polity-cn-yuan&custom=keep&compare=polity-cn-ming&compare=polity-cn-qing"
+      );
+      await waitForAppReady(page);
+      const dialog = page.getByRole("dialog", { name: "元" });
+      const related = dialog.getByRole("region", { name: "相关政权" });
+      const entry = related.getByRole("button", { name: "进入对比：元与素可泰王国" });
+      await expect(related.getByRole("list", { name: "素可泰王国的已校订关系" })).toContainText(
+        "1292—1323"
+      );
+      await entry.scrollIntoViewIfNeeded();
+      await expect(dialog).toBeVisible();
+      expect(await dialog.evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(
+        true
+      );
+      expect(
+        await dialog
+          .locator(".dialog-body")
+          .evaluate((element) => element.scrollWidth <= element.clientWidth)
+      ).toBe(true);
+      await expectNoSeriousA11yViolations(page);
+      await page.screenshot({ path: testInfo.outputPath("related-polities.png") });
+      await entry.focus();
+      await page.keyboard.press("Enter");
+      await expect(dialog).toHaveCount(0);
+      await expect(page.getByRole("complementary", { name: "对比工具" })).toBeFocused();
+      const relationships = page.getByRole("region", { name: "已校订历史关系" });
+      await expect(relationships).toContainText("元与素可泰使节和工艺交流");
+      const heading = page.getByRole("heading", { name: "政权时间对比" });
+      const toolbar = page.locator(".mobile-explore-bar, .compact-console-slot");
+      const headingBox = await heading.boundingBox();
+      const toolbarBox = await toolbar.boundingBox();
+      expect
+        .soft(headingBox!.y, "对比标题不应被探索工具条遮挡")
+        .toBeGreaterThanOrEqual(toolbarBox!.y + toolbarBox!.height);
+      const slots = page.getByRole("group", { name: "已选对比政权" });
+      const removeBox = await slots
+        .getByRole("button", { name: /从对比中移除素可泰王国/ })
+        .boundingBox();
+      const localBox = await slots.getByText("สุโขทัย").boundingBox();
+      expect
+        .soft(removeBox!.y, "移除按钮应与主名称同行，原名单独位于下方")
+        .toBeLessThan(localBox!.y);
+      await page.screenshot({ path: testInfo.outputPath("related-comparison.png") });
+      await expect(page).toHaveURL(/compare=polity-cn-yuan&compare=polity-sukhothai-kingdom/);
+      expect(new URL(page.url()).searchParams.get("custom")).toBe("keep");
+      expect(new URL(page.url()).searchParams.get("view")).toBe("map");
+      expect(new URL(page.url()).searchParams.get("year")).toBe("1292");
+      expect(new URL(page.url()).searchParams.get("q")).toBe("元");
+      await expectNoSeriousA11yViolations(page);
+      await page.goBack();
+      await expect(dialog).toBeVisible();
+      expect(new URL(page.url()).searchParams.getAll("compare")).toEqual([
+        "polity-cn-ming",
+        "polity-cn-qing"
+      ]);
+      await page.goForward();
+      await expect(dialog).toHaveCount(0);
+      await page.reload();
+      await expect(relationships).toContainText("元与素可泰使节和工艺交流");
+    });
+  }
+
   test("桌面端加载时间轴并打开原生 dialog", async ({ page }) => {
     await page.goto("/");
     await waitForAppReady(page);

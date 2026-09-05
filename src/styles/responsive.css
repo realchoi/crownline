@@ -160,6 +160,15 @@
 }
 
 @media (max-width: 460px) {
+  .related-polity {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .related-polity-compare {
+    justify-self: start;
+  }
+
   :root {
     --label-column: 90px;
   }
