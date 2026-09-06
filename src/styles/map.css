@@ -7,6 +7,16 @@
   scroll-margin-top: 82px;
 }
 
+.map-layer-status-list {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 10px;
+}
+
+.map-layer-status-list .map-load-panel {
+  margin-top: 0;
+}
+
 .historical-map {
   min-width: 0;
   border: 1px solid var(--border);

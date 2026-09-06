@@ -1,6 +1,9 @@
 .hero {
   position: relative;
-  padding: 42px 0 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 24px;
+  padding: 8px 0 8px;
   border-bottom: 1px solid color-mix(in srgb, var(--border) 74%, transparent);
 }
 
@@ -18,7 +21,8 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  margin: 0 0 8px;
+  grid-column: 1;
+  margin: 0 0 4px;
   color: var(--accent);
   font-size: 0.72rem;
   font-weight: 750;
@@ -54,8 +58,9 @@ h1,
 }
 
 h1 {
+  grid-column: 1;
   max-width: 920px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-size: clamp(2.35rem, 4.8vw, 4.2rem);
   line-height: 1.02;
   letter-spacing: -0.028em;
@@ -68,7 +73,7 @@ h1 {
 }
 
 .site-title-brand {
-  font-size: clamp(2.25rem, 5.4vw, 4.35rem);
+  font-size: clamp(2.25rem, 3.4vw, 3rem);
   white-space: nowrap;
 }
 
@@ -87,23 +92,27 @@ h1 {
 }
 
 .site-title-sub {
-  margin-top: 8px;
+  margin-top: 5px;
   color: var(--accent);
-  font-size: clamp(0.94rem, 2vw, 1.36rem);
+  font-size: 0.95rem;
   letter-spacing: 0.12em;
 }
 
 .hero-copy {
+  grid-column: 1;
   max-width: 640px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   color: var(--muted);
-  font-size: clamp(0.9rem, 1.4vw, 1.02rem);
+  font-size: 0.86rem;
   text-wrap: pretty;
 }
 
 .stat-grid {
-  display: inline-grid;
-  grid-template-columns: repeat(3, auto);
+  display: grid;
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: center;
+  grid-template-columns: 1fr;
   border-block: 1px solid var(--border);
 }
 
@@ -111,12 +120,13 @@ h1 {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  min-width: 172px;
-  padding: 8px 18px;
+  justify-content: space-between;
+  min-width: 200px;
+  padding: 5px 0;
 }
 
 .stat-card + .stat-card {
-  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
 }
 
 .stat-label {
@@ -130,68 +140,4 @@ h1 {
   font-size: 0.96rem;
   font-variant-numeric: tabular-nums;
   line-height: 1.2;
-}
-
-@media (max-width: 800px) {
-  .hero {
-    padding: 24px 0 14px;
-  }
-
-  .eyebrow {
-    margin-bottom: 7px;
-    font-size: 0.64rem;
-  }
-
-  h1 {
-    margin-bottom: 7px;
-  }
-
-  .site-title-brand {
-    font-size: clamp(2rem, 10.8vw, 3.1rem);
-  }
-
-  .site-title-sub {
-    margin-top: 6px;
-    font-size: 0.9rem;
-    letter-spacing: 0.09em;
-  }
-
-  .hero-copy {
-    margin-bottom: 12px;
-    font-size: 0.84rem;
-    line-height: 1.55;
-  }
-
-  .stat-grid {
-    display: grid;
-    grid-template-columns: 1.35fr 0.72fr 0.72fr;
-    width: 100%;
-  }
-
-  .stat-card {
-    display: block;
-    min-width: 0;
-    padding: 6px 8px;
-  }
-
-  .stat-card:first-child {
-    padding-left: 0;
-  }
-
-  .stat-label,
-  .stat-value {
-    display: block;
-  }
-
-  .stat-label {
-    margin-bottom: 1px;
-    font-size: 0.58rem;
-  }
-
-  .stat-value {
-    overflow: hidden;
-    font-size: 0.77rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
 }

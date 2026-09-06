@@ -14,32 +14,6 @@
   :root {
     --label-column: 112px;
   }
-  .hero {
-    padding-top: 48px;
-  }
-  .stat-grid {
-    grid-template-columns: 1fr;
-  }
-  .controls-panel {
-    position: static;
-  }
-  .view-mode-control {
-    align-items: center;
-  }
-  .controls-year,
-  .controls-all {
-    display: block;
-    padding: 18px;
-  }
-  .controls-year .region-scope-control,
-  .controls-all .region-scope-control {
-    margin-top: 14px;
-  }
-  .controls-year .controls-grid,
-  .controls-all .controls-grid {
-    grid-template-columns: 1fr;
-    margin-top: 14px;
-  }
   .map-layer-control {
     grid-template-columns: 1fr;
   }
@@ -71,9 +45,6 @@
     grid-template-columns: 28px minmax(0, 1fr) auto;
     min-height: 84px;
     padding: 10px;
-  }
-  .controls-all .legend {
-    margin-top: 16px;
   }
   .region-scope-heading {
     grid-template-columns: 1fr;
@@ -174,9 +145,6 @@
   }
   .site-shell {
     width: min(100% - 20px, 1120px);
-  }
-  .scope-note {
-    grid-template-columns: 1fr;
   }
   .axis-labels {
     font-size: 0.64rem;
@@ -326,14 +294,6 @@
 
 /* 探索控制台在平板竖屏及以下切换为专用抽屉。 */
 @media (max-width: 800px) {
-  .hero {
-    padding-top: 24px;
-  }
-
-  .stat-grid {
-    grid-template-columns: 1.35fr 0.72fr 0.72fr;
-  }
-
   .mobile-explore-bar {
     position: sticky;
     top: 6px;
@@ -489,11 +449,6 @@
     padding-bottom: 18px;
   }
 
-  .filter-sheet .view-mode-control {
-    min-height: 60px;
-    padding-inline: 16px;
-  }
-
   .filter-sheet .mode-switch button,
   .filter-sheet .scope-switch button,
   .filter-sheet .map-layer-switch button,
@@ -513,8 +468,25 @@
     margin-bottom: 12px;
   }
 
+  .filter-sheet .controls-panel-heading h2,
+  .filter-sheet .view-mode-control .field-label {
+    display: none;
+  }
+
+  .filter-sheet .view-mode-control,
+  .filter-sheet .view-mode-control .mode-switch {
+    width: 100%;
+  }
+
+  .filter-sheet .year-era-select,
+  .filter-sheet .year-number-input,
+  .filter-sheet .year-jump-button {
+    min-height: 44px;
+  }
+
   .filter-sheet .time-range-heading,
   .filter-sheet .region-scope-heading {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
   }
@@ -641,11 +613,77 @@
     border-inline: 0;
   }
 
-  .scope-note {
+  .mobile-explore-bar .console-status-items > span {
+    padding-inline: 8px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    display: block;
+    padding: 24px 0 14px;
+  }
+
+  .eyebrow {
+    margin-bottom: 7px;
+    font-size: 0.64rem;
+  }
+
+  h1 {
+    margin-bottom: 7px;
+  }
+
+  .site-title-brand {
+    font-size: clamp(2rem, 10.8vw, 3.1rem);
+  }
+
+  .site-title-sub {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    letter-spacing: 0.09em;
+  }
+
+  .hero-copy {
+    margin-bottom: 12px;
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.72fr 0.72fr;
+    width: 100%;
+  }
+
+  .stat-card {
+    display: block;
+    min-width: 0;
+    padding: 6px 8px;
+  }
+
+  .stat-card + .stat-card {
+    border-top: 0;
+    border-left: 1px solid var(--border);
+  }
+
+  .stat-card:first-child {
+    padding-left: 0;
+  }
+
+  .stat-label,
+  .stat-value {
     display: block;
   }
 
-  .mobile-explore-bar .console-status-items > span {
-    padding-inline: 8px;
+  .stat-label {
+    margin-bottom: 1px;
+    font-size: 0.58rem;
+  }
+
+  .stat-value {
+    overflow: hidden;
+    font-size: 0.77rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

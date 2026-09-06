@@ -10,7 +10,6 @@ import {
 
 import { ActiveFilterChips } from "../components/ActiveFilterChips";
 import { FilterPanel } from "../components/FilterPanel";
-import { ViewModeControl } from "../components/ViewModeControl";
 import {
   clearAdditionalFilters,
   selectBrowseYear,
@@ -170,9 +169,7 @@ export function BrowseControls({
 
   const renderConsole = () => (
     <>
-      <ViewModeControl value={browseState.viewMode} onChange={updateState.onViewModeChange} />
       <FilterPanel
-        resultCount={resultCount}
         viewMode={browseState.viewMode}
         mapLayer={browseState.mapLayer}
         timeRange={browseState.timeRange}
@@ -182,6 +179,7 @@ export function BrowseControls({
         category={browseState.category}
         regions={regions}
         regionScope={browseState.regionScope}
+        onViewModeChange={updateState.onViewModeChange}
         onTimeRangeChange={updateState.onTimeRangeChange}
         onYearChange={updateState.onYearChange}
         onMapLayerChange={updateState.onMapLayerChange}

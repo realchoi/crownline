@@ -203,7 +203,7 @@ export function ComparisonPanel({
     <section className="comparison-panel" aria-labelledby="comparison-title">
       <div className="comparison-panel-heading">
         <div>
-          <p className="comparison-kicker">阶段 4 · 时间与历史关系</p>
+          <p className="comparison-kicker">时间与历史关系</p>
           <h2 id="comparison-title">政权时间对比</h2>
         </div>
         <button className="comparison-clear" type="button" onClick={onClear}>

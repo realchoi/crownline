@@ -1,5 +1,5 @@
 import { screen, waitFor, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import type { CrownlineDetail } from "../../src/domain/types";
 import { setupUser } from "../helpers/user";
@@ -13,6 +13,48 @@ import {
 installAppTestLifecycle();
 
 describe("Crownline 政权对比", () => {
+  it("通过时间轴名称打开详情并在关闭后恢复焦点", async () => {
+    const user = setupUser();
+    renderApp();
+
+    const nameButton = screen.getByRole("button", { name: "查看唐详情" });
+    await user.click(nameButton);
+
+    const dialog = screen.getByRole("dialog", { name: "唐" });
+    expect(dialog).toBeInTheDocument();
+    await user.click(within(dialog).getByRole("button", { name: "关闭详情" }));
+    await waitFor(() => expect(nameButton).toHaveFocus());
+  });
+
+  it("选择后显示对比快捷栏，仅在明确操作时定位对比面板", async () => {
+    const originalScrollIntoView = HTMLElement.prototype.scrollIntoView;
+    const scrollIntoView = vi.fn();
+    HTMLElement.prototype.scrollIntoView = scrollIntoView;
+    try {
+      const user = setupUser();
+      renderApp();
+
+      await user.click(screen.getByRole("button", { name: "将唐加入对比" }));
+
+      const tray = screen.getByRole("complementary", { name: "对比快捷栏" });
+      expect(tray).toHaveTextContent("已选 1/2");
+      expect(tray).toHaveTextContent("唐");
+      expect(scrollIntoView).not.toHaveBeenCalled();
+
+      await user.click(within(tray).getByRole("button", { name: "查看对比" }));
+
+      const comparison = screen.getByRole("complementary", { name: "对比工具" });
+      expect(comparison).toHaveFocus();
+      expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth", block: "start" });
+    } finally {
+      if (originalScrollIntoView) {
+        HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
+      } else {
+        Reflect.deleteProperty(HTMLElement.prototype, "scrollIntoView");
+      }
+    }
+  });
+
   it("从时间轴选择最多两个政权并同步 URL", { timeout: 20_000 }, async () => {
     const user = setupUser();
     renderApp();

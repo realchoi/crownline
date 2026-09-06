@@ -59,7 +59,9 @@ describe("Crownline 浏览", () => {
     renderApp();
 
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "明" } });
-    fireEvent.change(screen.getByRole("combobox"), { target: { value: "contemporary" } });
+    fireEvent.change(screen.getByRole("combobox", { name: "显示类别" }), {
+      target: { value: "contemporary" }
+    });
     fireEvent.click(screen.getByRole("button", { name: "清除搜索与类别" }));
 
     const params = new URLSearchParams(window.location.search);
@@ -78,10 +80,10 @@ describe("Crownline 浏览", () => {
     renderApp();
 
     expect(screen.getByRole("searchbox")).toHaveValue("时期");
-    expect(screen.getByRole("combobox")).toHaveValue("context");
+    expect(screen.getByRole("combobox", { name: "显示类别" })).toHaveValue("context");
     expect(screen.getByRole("status")).toHaveTextContent("显示 2 / 133 个条目");
 
-    await user.selectOptions(screen.getByRole("combobox"), "all");
+    await user.selectOptions(screen.getByRole("combobox", { name: "显示类别" }), "all");
     expect(new URLSearchParams(window.location.search).has("type")).toBe(false);
   });
 

@@ -43,24 +43,18 @@ export function BrowseContent({
   if (browseState.viewMode === "map") {
     const pointsRequired = browseState.mapLayer !== "boundaries";
     const boundariesRequired = browseState.mapLayer !== "points";
-    if (pointsRequired && (geographyState.status !== "ready" || !mapSelection)) {
-      return (
-        <MapLoadPanel
-          kind="geography"
-          state={geographyState.status === "error" ? { error: geographyState.message } : "loading"}
-          onRetry={onRetryGeography}
-        />
-      );
-    }
-    if (boundariesRequired && (boundaryState.status !== "ready" || !boundarySelection)) {
-      return (
-        <MapLoadPanel
-          kind="boundaries"
-          state={boundaryState.status === "error" ? { error: boundaryState.message } : "loading"}
-          onRetry={onRetryBoundaries}
-        />
-      );
-    }
+    const pointsReady =
+      pointsRequired && geographyState.status === "ready" && mapSelection !== null;
+    const boundariesReady =
+      boundariesRequired && boundaryState.status === "ready" && boundarySelection !== null;
+    const availableMapLayer: MapLayer | null =
+      pointsReady && boundariesReady
+        ? "combined"
+        : pointsReady
+          ? "points"
+          : boundariesReady
+            ? "boundaries"
+            : null;
     const effectiveMapSelection = mapSelection ?? { points: [], clusters: [], missingEntities: [] };
     const effectiveBoundarySelection = boundarySelection ?? {
       boundaries: [],
@@ -69,6 +63,28 @@ export function BrowseContent({
     };
     return (
       <section className="historical-map-shell" aria-label="历史地图浏览结果">
+        {((pointsRequired && !pointsReady) || (boundariesRequired && !boundariesReady)) && (
+          <section className="map-layer-status-list" aria-label="地图图层状态">
+            {pointsRequired && !pointsReady && (
+              <MapLoadPanel
+                kind="geography"
+                state={
+                  geographyState.status === "error" ? { error: geographyState.message } : "loading"
+                }
+                onRetry={onRetryGeography}
+              />
+            )}
+            {boundariesRequired && !boundariesReady && (
+              <MapLoadPanel
+                kind="boundaries"
+                state={
+                  boundaryState.status === "error" ? { error: boundaryState.message } : "loading"
+                }
+                onRetry={onRetryBoundaries}
+              />
+            )}
+          </section>
+        )}
         {pointsRequired &&
           geographyState.status === "ready" &&
           geographyState.result.omittedCount > 0 && (
@@ -83,30 +99,40 @@ export function BrowseContent({
               有 {boundaryState.result.omittedCount} 条疆域记录格式异常，已跳过。
             </p>
           )}
-        <HistoricalMap
-          clusters={effectiveMapSelection.clusters}
-          boundaries={effectiveBoundarySelection.boundaries}
-          mapLayer={browseState.mapLayer as MapLayer}
-          isOverview={browseState.timeRange === "all"}
-          comparisonEntityIds={browseState.compareEntityIds}
-          selectedEntityId={browseState.detailEntityId}
-          onSelect={onSelect}
-        />
-        <MapResultList
-          points={effectiveMapSelection.points}
-          boundaries={effectiveBoundarySelection.boundaries}
-          missingEntities={
-            browseState.mapLayer === "points"
-              ? effectiveMapSelection.missingEntities
-              : effectiveBoundarySelection.missingEntities
-          }
-          requiresBoundaryYear={effectiveBoundarySelection.requiresYear}
-          mapLayer={browseState.mapLayer}
-          isOverview={browseState.timeRange === "all"}
-          comparisonEntityIds={browseState.compareEntityIds}
-          onSelect={onSelect}
-          onToggleComparison={onToggleComparison}
-        />
+        {availableMapLayer && (
+          <>
+            <HistoricalMap
+              clusters={availableMapLayer === "boundaries" ? [] : effectiveMapSelection.clusters}
+              boundaries={
+                availableMapLayer === "points" ? [] : effectiveBoundarySelection.boundaries
+              }
+              mapLayer={availableMapLayer}
+              isOverview={browseState.timeRange === "all"}
+              comparisonEntityIds={browseState.compareEntityIds}
+              selectedEntityId={browseState.detailEntityId}
+              onSelect={onSelect}
+            />
+            <MapResultList
+              points={availableMapLayer === "boundaries" ? [] : effectiveMapSelection.points}
+              boundaries={
+                availableMapLayer === "points" ? [] : effectiveBoundarySelection.boundaries
+              }
+              missingEntities={
+                availableMapLayer === "points"
+                  ? effectiveMapSelection.missingEntities
+                  : effectiveBoundarySelection.missingEntities
+              }
+              requiresBoundaryYear={
+                availableMapLayer === "points" ? false : effectiveBoundarySelection.requiresYear
+              }
+              mapLayer={availableMapLayer}
+              isOverview={browseState.timeRange === "all"}
+              comparisonEntityIds={browseState.compareEntityIds}
+              onSelect={onSelect}
+              onToggleComparison={onToggleComparison}
+            />
+          </>
+        )}
       </section>
     );
   }

@@ -70,9 +70,15 @@ export function TimelineStage({
             key={entity.id}
           >
             <div className="row-label">
-              <div className="row-name" title={entity.names.primary}>
+              <button
+                className="row-name"
+                type="button"
+                aria-label={`查看${entity.names.primary}详情`}
+                title={`查看${entity.names.primary}详情`}
+                onClick={(event) => onSelect(entity.id, event.currentTarget)}
+              >
                 {entity.names.primary}
-              </div>
+              </button>
               <div className="row-years" title={displayRange}>
                 {displayRange}
               </div>
@@ -97,8 +103,8 @@ export function TimelineStage({
                 const clippedEnd = Math.min(toOrdinal(period.end.year), endOrdinal);
                 const left = ((clippedStart - startOrdinal) / span) * 100;
                 const rawWidth = ((clippedEnd - clippedStart) / span) * 100;
-                // 极短政权保留最小可点击宽度，同时不得溢出轨道右侧。
-                const width = Math.min(100 - Math.max(0, left), Math.max(rawWidth, 1.1));
+                // 时间条只表达真实比例；详情入口由左侧名称提供足够大的点击区域。
+                const width = Math.min(100 - Math.max(0, left), rawWidth);
                 const periodLabel = formatPeriods([period]);
                 const categoryLabel = DISPLAY_CATEGORY_NAMES[entity.displayCategory];
                 return (

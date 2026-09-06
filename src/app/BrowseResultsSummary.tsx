@@ -1,5 +1,6 @@
 import type { BrowseState } from "../domain/browseState";
 import type { BoundarySelection } from "../domain/boundarySnapshots";
+import { getBrowseResultsSummary } from "../domain/browseResultsSummary";
 import type { MapSelection } from "../domain/mapSnapshots";
 
 interface BrowseResultsSummaryProps {
@@ -22,54 +23,19 @@ export function BrowseResultsSummary({
   mapSelection,
   boundarySelection
 }: BrowseResultsSummaryProps) {
+  const summary = getBrowseResultsSummary({
+    browseState,
+    resultCount,
+    overviewTotal,
+    overviewGroupCount,
+    mapPolityCount,
+    mapSelection,
+    boundarySelection
+  });
   return (
     <div className="results-line" role="status" aria-atomic="true">
-      {browseState.viewMode === "map" ? (
-        <>
-          <span>
-            {browseState.category === "context"
-              ? "历史分期不进入地图；请选择真实政权类别。"
-              : mapPolityCount === 0
-                ? browseState.timeRange === "all"
-                  ? "没有匹配的政权。"
-                  : "没有当年匹配的政权。"
-                : browseState.mapLayer !== "points" && boundarySelection?.requiresYear
-                  ? "疆域快照需要明确年份；请选择或调整一个指定年份。"
-                  : browseState.mapLayer !== "points" && boundarySelection?.boundaries.length === 0
-                    ? "有匹配政权，但当前年份尚无已校订疆域快照。"
-                    : mapSelection && mapSelection.points.length === 0
-                      ? browseState.timeRange === "all"
-                        ? "有匹配政权，但这些政权尚未校订地理数据。"
-                        : "当年有匹配政权，但这些政权尚未校订地理数据。"
-                      : mapSelection
-                        ? browseState.mapLayer === "boundaries" && boundarySelection
-                          ? `${browseState.timeRange === "all" ? "全时期总览：" : ""}显示 ${mapPolityCount} 个政权、${boundarySelection.boundaries.length} 条疆域快照，${boundarySelection.missingEntities.length} 个政权尚未校订疆域数据。`
-                          : `${browseState.timeRange === "all" ? "全时期总览：" : ""}显示 ${mapPolityCount} 个政权、${mapSelection.points.length} 个地图点位，${mapSelection.missingEntities.length} 个政权尚未校订地理数据。`
-                        : "正在准备地图结果。"}
-          </span>
-          <span>
-            {browseState.timeRange === "all"
-              ? "跨时期点位不表示这些政权同时存在"
-              : browseState.mapLayer !== "points"
-                ? "示意而非精确勘界；不据此推断接壤、重叠或现代主权"
-                : "点位仅作历史浏览定位，不表示疆域"}
-          </span>
-        </>
-      ) : browseState.timeRange === "all" ? (
-        <>
-          <span>
-            {browseState.regionScope.mode === "china"
-              ? `显示 ${resultCount} / ${overviewTotal} 个条目，涉及 ${overviewGroupCount} 个历史阶段`
-              : `显示 ${resultCount} / ${overviewTotal} 个条目，分为 ${overviewGroupCount} 个时间轴组`}
-          </span>
-          <span>点击任意时间条查看说明</span>
-        </>
-      ) : (
-        <>
-          <span>{`显示 ${mapPolityCount} 个政权，另有 ${resultCount - mapPolityCount} 条历史背景`}</span>
-          <span>点击任意条目查看说明</span>
-        </>
-      )}
+      <span>{summary.primary}</span>
+      <span>{summary.secondary}</span>
     </div>
   );
 }

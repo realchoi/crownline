@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 
 import { DetailDialog } from "../components/DetailDialog";
 import { ComparisonPanel } from "../components/ComparisonPanel";
+import { ComparisonTray } from "../components/ComparisonTray";
 import { getHistoricalYearBounds } from "../domain/browseState";
 import { selectBoundarySnapshots, type BoundarySelection } from "../domain/boundarySnapshots";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
@@ -45,6 +46,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   );
   const { geographyState, retry: retryGeography } = useGeographyData(
     browseState.viewMode,
+    browseState.mapLayer,
     loadGeography
   );
   const { boundaryState, retry: retryBoundaries } = useBoundaryData(
@@ -126,30 +128,35 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
     [setBrowseState]
   );
 
+  const focusComparison = useCallback((behavior: ScrollBehavior) => {
+    const comparison = comparisonRef.current;
+    if (!comparison) return;
+    const toolbarOffset = Array.from(
+      mainRef.current?.querySelectorAll<HTMLElement>(".mobile-explore-bar, .compact-console-bar") ??
+        []
+    ).reduce((largestOffset, toolbar) => {
+      if (!toolbar.offsetHeight) return largestOffset;
+      const top = parseFloat(getComputedStyle(toolbar).top);
+      return Math.max(largestOffset, toolbar.offsetHeight + (Number.isFinite(top) ? top : 0));
+    }, 0);
+    comparison.style.scrollMarginTop = `${toolbarOffset + 12}px`;
+    comparison.focus({ preventScroll: true });
+    comparison.scrollIntoView?.({ block: "start", behavior });
+  }, []);
+
   useEffect(() => {
     // 等待原生 dialog 卸载后再恢复焦点，避免浏览器默认焦点处理覆盖结果。
     if (browseState.detailEntityId) return;
     const animationFrame = requestAnimationFrame(() => {
       if (focusComparisonRef.current) {
         focusComparisonRef.current = false;
-        comparisonRef.current?.focus({ preventScroll: true });
-        comparisonRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
-        // 为当前尺寸下的吸顶控件保留实际高度，避免对比标题被遮挡。
-        const toolbar = mainRef.current?.querySelector<HTMLElement>(
-          ".mobile-explore-bar, .compact-console-slot"
-        );
-        if (toolbar?.offsetHeight) {
-          window.scrollBy({
-            top: -(toolbar.offsetHeight + (parseFloat(getComputedStyle(toolbar).top) || 0)),
-            behavior: "instant"
-          });
-        }
+        focusComparison("instant");
       } else {
         lastTriggerRef.current?.focus();
       }
     });
     return () => cancelAnimationFrame(animationFrame);
-  }, [browseState.detailEntityId]);
+  }, [browseState.detailEntityId, focusComparison]);
 
   /** 记录触发元素、打开对应实体详情并启动按需加载。 */
   const openDetail = (entityId: string, trigger: HTMLButtonElement | null) => {
@@ -185,7 +192,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
       <main
         ref={mainRef}
         id="main-content"
-        className={`site-shell${browseState.viewMode === "map" ? " map-view-active" : ""}`}
+        className={`site-shell${browseState.viewMode === "map" ? " map-view-active" : ""}${comparisonEntities.length > 0 ? " has-comparison-tray" : ""}`}
       >
         <BrowseControls
           browseState={browseState}
@@ -244,6 +251,19 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
 
         <AppFooter />
       </main>
+
+      {comparisonEntities.length > 0 && (
+        <ComparisonTray
+          entities={comparisonEntities}
+          onRemove={toggleComparison}
+          onView={() => {
+            const reduceMotion =
+              typeof window.matchMedia === "function" &&
+              window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            focusComparison(reduceMotion ? "instant" : "smooth");
+          }}
+        />
+      )}
 
       {selectedMatch && (
         <DetailDialog

@@ -489,7 +489,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await expect(page.getByLabel("活跃筛选")).toHaveCount(0);
   });
 
-  test("四个验收尺寸无横向溢出且移动端首屏可见结果", async ({ page, isMobile }) => {
+  test("四个验收尺寸无横向溢出且首屏可见历史条目", async ({ page, isMobile }) => {
     test.skip(isMobile, "尺寸矩阵在 desktop 项目单次覆盖");
     const sizes = [
       { width: 390, height: 844 },
@@ -502,9 +502,10 @@ test.describe("Crownline 浏览器冒烟", () => {
       await page.setViewportSize(size);
       await page.goto("/");
       await waitForAppReady(page);
+      await page.evaluate(() => document.fonts.ready);
       const metrics = await page.evaluate(() => {
         const firstResult = document.querySelector(
-          ".timeline-stage, .timepoint-card, .historical-map-shell"
+          ".timeline-row, .timepoint-card, .historical-map-shell"
         );
         return {
           firstResultTop: firstResult?.getBoundingClientRect().top ?? Number.POSITIVE_INFINITY,
@@ -512,11 +513,11 @@ test.describe("Crownline 浏览器冒烟", () => {
         };
       });
       expect(metrics.hasOverflow, `${size.width}×${size.height} 出现横向溢出`).toBe(false);
+      expect(
+        metrics.firstResultTop,
+        `${size.width}×${size.height} 的首条历史记录未进入首个视口`
+      ).toBeLessThan(size.height);
       if (size.width <= 800) {
-        expect(
-          metrics.firstResultTop,
-          `${size.width}×${size.height} 的首条结果未进入首个视口`
-        ).toBeLessThan(size.height);
         await expect(page.getByRole("button", { name: "筛选" })).toBeVisible();
       } else {
         await expect(page.getByRole("heading", { name: "探索控制台" })).toBeVisible();

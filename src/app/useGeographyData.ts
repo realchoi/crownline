@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { CrownlineGeographyLoader, GeographyLoadResult } from "../data/loadCrownlineGeography";
-import type { ViewMode } from "../domain/browseState";
+import type { MapLayer, ViewMode } from "../domain/browseState";
 
 export type GeographyState =
   | { status: "idle" }
@@ -9,17 +9,27 @@ export type GeographyState =
   | { status: "ready"; result: GeographyLoadResult }
   | { status: "error"; message: string };
 
-/** Lazily loads and caches geography while isolating requests after leaving the map. */
-export function useGeographyData(viewMode: ViewMode, loadGeography: CrownlineGeographyLoader) {
+/** 只在地图启用点位或组合图层时加载，并隔离离开图层后的迟到结果。 */
+export function useGeographyData(
+  viewMode: ViewMode,
+  mapLayer: MapLayer,
+  loadGeography: CrownlineGeographyLoader
+) {
   const [geographyState, setGeographyState] = useState<GeographyState>({ status: "idle" });
   const requestSequenceRef = useRef(0);
+  const successfulRef = useRef<GeographyLoadResult | null>(null);
 
   const retry = useCallback(() => {
+    if (successfulRef.current) {
+      setGeographyState({ status: "ready", result: successfulRef.current });
+      return;
+    }
     const requestSequence = ++requestSequenceRef.current;
     setGeographyState({ status: "loading" });
     void loadGeography()
       .then((result) => {
         if (requestSequence !== requestSequenceRef.current) return;
+        successfulRef.current = result;
         setGeographyState({ status: "ready", result });
       })
       .catch((error: unknown) => {
@@ -31,16 +41,21 @@ export function useGeographyData(viewMode: ViewMode, loadGeography: CrownlineGeo
       });
   }, [loadGeography]);
 
+  const enabled = viewMode === "map" && mapLayer !== "boundaries";
   useEffect(() => {
-    if (viewMode === "map" && geographyState.status === "idle") {
+    if (enabled && geographyState.status === "idle") {
       retry();
       return;
     }
-    if (viewMode === "timeline" && geographyState.status === "loading") {
+    if (!enabled && geographyState.status === "loading") {
       requestSequenceRef.current += 1;
-      setGeographyState({ status: "idle" });
+      if (successfulRef.current) {
+        setGeographyState({ status: "ready", result: successfulRef.current });
+      } else {
+        setGeographyState({ status: "idle" });
+      }
     }
-  }, [geographyState.status, retry, viewMode]);
+  }, [enabled, geographyState.status, retry]);
 
   return { geographyState, retry };
 }

@@ -115,6 +115,35 @@ describe("Crownline 地图", () => {
     expect(attempts).toBe(2);
   });
 
+  it("组合图层的疆域加载失败时仍保留已加载的点位", async () => {
+    window.history.replaceState(null, "", "/?view=map&year=800&layer=combined");
+    renderApp(loadGeneratedDetail, loadGeneratedGeography, async () => {
+      throw new Error("疆域数据暂时不可用");
+    });
+
+    expect(await screen.findByRole("alert")).toHaveTextContent("疆域数据暂时不可用");
+    expect(await findMapMarker("唐，长安，都城")).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "地图结果列表" })).toHaveTextContent("长安");
+  });
+
+  it("组合图层的地理加载失败时仍保留已加载的疆域", async () => {
+    window.history.replaceState(null, "", "/?view=map&year=800&layer=combined");
+    renderApp(
+      loadGeneratedDetail,
+      async () => {
+        throw new Error("地理数据暂时不可用");
+      },
+      loadGeneratedBoundaries
+    );
+
+    expect(await screen.findByRole("alert")).toHaveTextContent("地理数据暂时不可用");
+    const list = await screen.findByRole("region", { name: "地图结果列表" });
+    expect(
+      within(list).getByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ })
+    ).toBeInTheDocument();
+    expect(screen.queryByText("正在准备地图结果。")).not.toBeInTheDocument();
+  });
+
   it("离开后重新进入地图时忽略旧请求的迟到错误", async () => {
     window.history.replaceState(null, "", "/?view=map&year=450");
     const user = setupUser();
@@ -215,6 +244,19 @@ describe("Crownline 地图", () => {
 
     await user.click(within(list).getByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ }));
     expect(await screen.findByRole("heading", { name: "800年 · 在位统治者" })).toBeInTheDocument();
+  });
+
+  it("仅启用疆域时不请求地理数据且摘要直接报告疆域结果", async () => {
+    window.history.replaceState(null, "", "/?view=map&year=800&layer=boundaries");
+    const loadGeography = vi.fn(loadGeneratedGeography);
+    renderApp(loadGeneratedDetail, loadGeography, loadGeneratedBoundaries);
+
+    expect(
+      await screen.findByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/显示 \d+ 个政权、\d+ 条疆域快照/)).toBeInTheDocument();
+    expect(screen.queryByText("正在准备地图结果。")).not.toBeInTheDocument();
+    expect(loadGeography).not.toHaveBeenCalled();
   });
 
   it("用两个独立图层开关表达三种内部组合状态", async () => {

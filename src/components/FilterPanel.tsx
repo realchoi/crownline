@@ -7,11 +7,11 @@ import type { CategoryFilter } from "../domain/selectors";
 import type { Region } from "../domain/types";
 import { RegionScopeControl } from "./RegionScopeControl";
 import { TimeRangeControl } from "./TimeRangeControl";
+import { ViewModeControl } from "./ViewModeControl";
 
 /** 筛选面板的受控状态与事件。 */
 export interface FilterPanelProps {
   panelRef?: Ref<HTMLElement>;
-  resultCount: number;
   viewMode: ViewMode;
   mapLayer: MapLayer;
   timeRange: TimeRange;
@@ -21,6 +21,7 @@ export interface FilterPanelProps {
   category: CategoryFilter;
   regions: Region[];
   regionScope: RegionScope;
+  onViewModeChange: (viewMode: ViewMode) => void;
   onTimeRangeChange: (timeRange: TimeRange) => void;
   onYearChange: (year: number) => void;
   onMapLayerChange: (layer: MapLayer) => void;
@@ -33,7 +34,6 @@ export interface FilterPanelProps {
 /** 渲染搜索、类别筛选、清除按钮和类别图例。 */
 export function FilterPanel({
   panelRef,
-  resultCount,
   viewMode,
   mapLayer,
   timeRange,
@@ -43,6 +43,7 @@ export function FilterPanel({
   category,
   regions,
   regionScope,
+  onViewModeChange,
   onTimeRangeChange,
   onYearChange,
   onMapLayerChange,
@@ -64,13 +65,8 @@ export function FilterPanel({
       tabIndex={-1}
     >
       <header className="controls-panel-heading">
-        <div>
-          <span className="console-kicker">Browse index / 探索索引</span>
-          <h2>探索控制台</h2>
-        </div>
-        <p>
-          <strong>{resultCount}</strong> 个结果
-        </p>
+        <h2>探索控制台</h2>
+        <ViewModeControl value={viewMode} onChange={onViewModeChange} />
       </header>
       <TimeRangeControl
         value={timeRange}
