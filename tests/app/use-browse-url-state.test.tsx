@@ -31,7 +31,7 @@ describe("useBrowseUrlState", () => {
     expect(replaceState).toHaveBeenCalled();
   });
 
-  it("仅在详情开关变化时创建历史记录", async () => {
+  it("详情开关创建历史记录，普通筛选只替换", async () => {
     const pushState = vi.spyOn(window.history, "pushState");
     const { result } = renderHook(() => useBrowseUrlState(options));
 
@@ -49,6 +49,28 @@ describe("useBrowseUrlState", () => {
 
     act(() => result.current.setBrowseState((current) => ({ ...current, detailEntityId: null })));
     await waitFor(() => expect(pushState).toHaveBeenCalledTimes(2));
+  });
+
+  it("对比开关创建历史记录，选择只替换，前进后退恢复弹窗", async () => {
+    const push = vi.spyOn(window.history, "pushState");
+    const { result } = renderHook(() => useBrowseUrlState(options));
+    act(() =>
+      result.current.setBrowseState((current) => ({
+        ...current,
+        compareEntityIds: ["polity-cn-tang"]
+      }))
+    );
+    expect(push).not.toHaveBeenCalled();
+    act(() => result.current.setBrowseState((current) => ({ ...current, comparisonOpen: true })));
+    expect(push).toHaveBeenCalledTimes(1);
+    act(() => result.current.setBrowseState((current) => ({ ...current, comparisonOpen: false })));
+    expect(push).toHaveBeenCalledTimes(2);
+    window.history.back();
+    await waitFor(() => expect(result.current.browseState.comparisonOpen).toBe(true));
+    window.history.forward();
+    await waitFor(() => expect(result.current.browseState.comparisonOpen).toBe(false));
+    expect(result.current.browseState.compareEntityIds).toEqual(["polity-cn-tang"]);
+    expect(push).toHaveBeenCalledTimes(2);
   });
 
   it("恢复 popstate 后不会立即覆盖浏览器中的状态", async () => {

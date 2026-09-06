@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 import { DetailDialog } from "../components/DetailDialog";
-import { ComparisonPanel } from "../components/ComparisonPanel";
+import { ComparisonDialog } from "../components/ComparisonDialog";
+import { useDialogReturnFocus } from "./useDialogReturnFocus";
 import { ComparisonTray } from "../components/ComparisonTray";
 import { getHistoricalYearBounds } from "../domain/browseState";
 import { selectBoundarySnapshots, type BoundarySelection } from "../domain/boundarySnapshots";
@@ -54,10 +55,9 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
     browseState.mapLayer,
     loadBoundaries
   );
-  const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
-  const comparisonRef = useRef<HTMLElement>(null);
-  const focusComparisonRef = useRef(false);
+  const [comparisonOrigin, setComparisonOrigin] = useState<string | null>(null);
   const mainRef = useRef<HTMLElement>(null);
+  useDialogReturnFocus(Boolean(browseState.detailEntityId || browseState.comparisonOpen), mainRef);
   const results = useMemo(() => {
     const filters = {
       query: browseState.query,
@@ -118,7 +118,8 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
         if (current.compareEntityIds.includes(entityId)) {
           return {
             ...current,
-            compareEntityIds: current.compareEntityIds.filter((id) => id !== entityId)
+            compareEntityIds: current.compareEntityIds.filter((id) => id !== entityId),
+            comparisonOpen: current.comparisonOpen && current.compareEntityIds.length > 1
           };
         }
         if (current.compareEntityIds.length >= 2) return current;
@@ -128,54 +129,27 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
     [setBrowseState]
   );
 
-  const focusComparison = useCallback((behavior: ScrollBehavior) => {
-    const comparison = comparisonRef.current;
-    if (!comparison) return;
-    const toolbarOffset = Array.from(
-      mainRef.current?.querySelectorAll<HTMLElement>(".mobile-explore-bar, .compact-console-bar") ??
-        []
-    ).reduce((largestOffset, toolbar) => {
-      if (!toolbar.offsetHeight) return largestOffset;
-      const top = parseFloat(getComputedStyle(toolbar).top);
-      return Math.max(largestOffset, toolbar.offsetHeight + (Number.isFinite(top) ? top : 0));
-    }, 0);
-    comparison.style.scrollMarginTop = `${toolbarOffset + 12}px`;
-    comparison.focus({ preventScroll: true });
-    comparison.scrollIntoView?.({ block: "start", behavior });
-  }, []);
-
-  useEffect(() => {
-    // 等待原生 dialog 卸载后再恢复焦点，避免浏览器默认焦点处理覆盖结果。
-    if (browseState.detailEntityId) return;
-    const animationFrame = requestAnimationFrame(() => {
-      if (focusComparisonRef.current) {
-        focusComparisonRef.current = false;
-        focusComparison("instant");
-      } else {
-        lastTriggerRef.current?.focus();
-      }
-    });
-    return () => cancelAnimationFrame(animationFrame);
-  }, [browseState.detailEntityId, focusComparison]);
-
-  /** 记录触发元素、打开对应实体详情并启动按需加载。 */
-  const openDetail = (entityId: string, trigger: HTMLButtonElement | null) => {
-    lastTriggerRef.current = trigger;
-    setBrowseState((current) => ({ ...current, detailEntityId: entityId }));
+  const openDetail = (entityId: string) => {
+    setBrowseState((current) => ({ ...current, detailEntityId: entityId, comparisonOpen: false }));
   };
 
-  /** 关闭详情；焦点恢复由上方 effect 在卸载完成后处理。 */
+  const closeComparison = useCallback(() => {
+    setBrowseState((current) => ({ ...current, comparisonOpen: false }));
+  }, [setBrowseState]);
+
+  /** 关闭详情；焦点与浏览位置由 useDialogReturnFocus 统一恢复。 */
   const closeDetail = useCallback(() => {
     setBrowseState((current) => ({ ...current, detailEntityId: null }));
   }, [setBrowseState]);
 
   const compareFromDetail = (relatedEntityId: string) => {
     if (!selectedMatch) return;
-    focusComparisonRef.current = true;
+    setComparisonOrigin(selectedMatch.entity.id);
     setBrowseState((current) => ({
       ...current,
       detailEntityId: null,
-      compareEntityIds: [selectedMatch.entity.id, relatedEntityId]
+      compareEntityIds: [selectedMatch.entity.id, relatedEntityId],
+      comparisonOpen: true
     }));
   };
 
@@ -192,6 +166,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
       <main
         ref={mainRef}
         id="main-content"
+        tabIndex={-1}
         className={`site-shell${browseState.viewMode === "map" ? " map-view-active" : ""}${comparisonEntities.length > 0 ? " has-comparison-tray" : ""}`}
       >
         <BrowseControls
@@ -231,24 +206,6 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
           />
         </section>
 
-        {comparisonEntities.length > 0 && (
-          <aside
-            ref={comparisonRef}
-            className="exploration-assistance"
-            aria-label="对比工具"
-            tabIndex={-1}
-          >
-            <ComparisonPanel
-              entities={comparisonEntities}
-              regions={data.regions}
-              {...(browseState.timeRange === "year" ? { currentYear: browseState.year } : {})}
-              loadDetail={loadDetail}
-              onRemove={toggleComparison}
-              onClear={() => setBrowseState((current) => ({ ...current, compareEntityIds: [] }))}
-            />
-          </aside>
-        )}
-
         <AppFooter />
       </main>
 
@@ -257,11 +214,28 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
           entities={comparisonEntities}
           onRemove={toggleComparison}
           onView={() => {
-            const reduceMotion =
-              typeof window.matchMedia === "function" &&
-              window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-            focusComparison(reduceMotion ? "instant" : "smooth");
+            setComparisonOrigin(null);
+            setBrowseState((current) => ({ ...current, comparisonOpen: true }));
           }}
+        />
+      )}
+
+      {browseState.comparisonOpen && comparisonEntities.length > 0 && !selectedMatch && (
+        <ComparisonDialog
+          entities={comparisonEntities}
+          regions={data.regions}
+          {...(browseState.timeRange === "year" ? { currentYear: browseState.year } : {})}
+          loadDetail={loadDetail}
+          onRemove={toggleComparison}
+          onClear={() =>
+            setBrowseState((current) => ({
+              ...current,
+              compareEntityIds: [],
+              comparisonOpen: false
+            }))
+          }
+          onClose={closeComparison}
+          {...(comparisonOrigin ? { onReturnToDetail: () => openDetail(comparisonOrigin) } : {})}
         />
       )}
 

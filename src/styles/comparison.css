@@ -742,3 +742,65 @@
 .exploration-assistance {
   scroll-margin-top: 20px;
 }
+
+/* 延续对页式排版，标题与退出入口始终留在滚动内容之外。 */
+dialog.comparison-dialog {
+  width: min(1120px, calc(100% - 48px));
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  overflow: hidden;
+}
+
+.comparison-dialog-shell {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 50px);
+}
+
+.comparison-dialog-head {
+  display: flex;
+  flex: none;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 28px 12px;
+}
+
+.comparison-dialog-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 4vw, 2.35rem);
+}
+
+#comparison-dialog-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.comparison-dialog-actions {
+  display: flex;
+  flex: none;
+  gap: 10px;
+  padding: 0 28px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.comparison-dialog .comparison-clear,
+.comparison-dialog .comparison-slot button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.comparison-dialog-body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.comparison-dialog .comparison-panel {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}

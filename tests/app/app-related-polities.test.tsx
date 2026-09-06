@@ -46,16 +46,14 @@ describe("从详情发现历史关系", () => {
     });
     await user.click(within(related).getByRole("button", { name: "进入对比：元与素可泰王国" }));
 
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(screen.queryByRole("dialog", { name: "元" })).not.toBeInTheDocument();
     const panel = screen.getByRole("region", { name: "政权时间对比" });
     const relationships = await within(panel).findByRole("region", { name: "已校订历史关系" });
     expect(relationships).toHaveTextContent("元与素可泰使节和工艺交流");
     expect(within(relationships).getAllByRole("link", { name: /查看来源/ }).length).toBeGreaterThan(
       0
     );
-    await waitFor(() =>
-      expect(screen.getByRole("complementary", { name: "对比工具" })).toHaveFocus()
-    );
+    await waitFor(() => expect(screen.getByRole("button", { name: "关闭对比" })).toHaveFocus());
     const after = new URL(window.location.href);
     expect(after.searchParams.getAll("compare")).toEqual([
       "polity-cn-yuan",
@@ -74,12 +72,33 @@ describe("从详情发现历史关系", () => {
       "polity-cn-qing"
     ]);
     window.history.forward();
-    await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
+    await waitFor(() =>
+      expect(screen.queryByRole("dialog", { name: "元" })).not.toBeInTheDocument()
+    );
     expect(window.location.href).toBe(after.href);
     app.unmount();
     renderApp();
     expect(await screen.findByRole("region", { name: "已校订历史关系" })).toHaveTextContent("朝贡");
     expect(new URLSearchParams(window.location.search).getAll("compare")).toEqual([
+      "polity-cn-yuan",
+      "polity-sukhothai-kingdom"
+    ]);
+  });
+
+  it("对比可返回来源详情，最后关闭回到原来的浏览按钮", async () => {
+    const user = setupUser();
+    renderApp();
+    const trigger = screen.getByRole("button", { name: "查看元详情" });
+    await user.click(trigger);
+    const entry = await screen.findByRole("button", { name: "进入对比：元与素可泰王国" });
+    await user.click(entry);
+    expect(screen.getAllByRole("dialog")).toHaveLength(1);
+    await user.click(screen.getByRole("button", { name: "返回详情" }));
+    expect(screen.getAllByRole("dialog")).toHaveLength(1);
+    expect(screen.getByRole("dialog", { name: "元" })).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "关闭详情" }));
+    await waitFor(() => expect(trigger).toHaveFocus());
+    expect(new URLSearchParams(location.search).getAll("compare")).toEqual([
       "polity-cn-yuan",
       "polity-sukhothai-kingdom"
     ]);

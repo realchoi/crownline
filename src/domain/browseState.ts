@@ -23,6 +23,7 @@ export interface BrowseState {
   regionScope: RegionScope;
   compareEntityIds: string[];
   detailEntityId: string | null;
+  comparisonOpen: boolean;
 }
 
 /** 选择年份始终进入指定年份状态；其他浏览维度保持不变。 */
@@ -123,7 +124,9 @@ export function readBrowseState(
       : "all",
     regionScope,
     compareEntityIds,
-    detailEntityId
+    detailEntityId,
+    comparisonOpen:
+      params.get("comparison") === "open" && compareEntityIds.length > 0 && !detailEntityId
   };
 }
 
@@ -134,9 +137,19 @@ export function writeBrowseState(
   currentSearch = ""
 ): URLSearchParams {
   const params = new URLSearchParams(currentSearch);
-  ["view", "mode", "year", "q", "type", "scope", "region", "compare", "detail", "layer"].forEach(
-    (name) => params.delete(name)
-  );
+  [
+    "view",
+    "mode",
+    "year",
+    "q",
+    "type",
+    "scope",
+    "region",
+    "compare",
+    "detail",
+    "layer",
+    "comparison"
+  ].forEach((name) => params.delete(name));
 
   if (state.viewMode === "map") params.set("view", "map");
   if (state.viewMode === "map" && state.mapLayer !== "points") {
@@ -159,5 +172,8 @@ export function writeBrowseState(
     params.append("compare", entityId);
   });
   if (state.detailEntityId) params.set("detail", state.detailEntityId);
+  if (state.comparisonOpen && state.compareEntityIds.length > 0 && !state.detailEntityId) {
+    params.set("comparison", "open");
+  }
   return params;
 }

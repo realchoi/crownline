@@ -7,7 +7,7 @@ interface ComparisonTrayProps {
   onView: () => void;
 }
 
-/** 在长结果页中持续提供当前选择和完整对比区入口。 */
+/** 在长结果页中持续提供当前选择和对比弹窗入口。 */
 export function ComparisonTray({ entities, onRemove, onView }: ComparisonTrayProps) {
   return (
     <aside className="comparison-tray" aria-label="对比快捷栏">
@@ -33,7 +33,12 @@ export function ComparisonTray({ entities, onRemove, onView }: ComparisonTrayPro
           {entities.length === 1 && <li className="is-empty">再选一个政权</li>}
         </ul>
 
-        <button className="comparison-tray-view" type="button" onClick={onView}>
+        <button
+          className="comparison-tray-view"
+          type="button"
+          aria-haspopup="dialog"
+          onClick={onView}
+        >
           查看对比
         </button>
       </div>

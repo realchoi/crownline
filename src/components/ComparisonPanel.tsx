@@ -19,13 +19,12 @@ type ComparisonDetailState =
   | { status: "ready"; entityIds: [string, string]; details: [CrownlineDetail, CrownlineDetail] }
   | { status: "error"; message: string };
 
-interface ComparisonPanelProps {
+export interface ComparisonPanelProps {
   entities: HistoricalEntity[];
   regions: Region[];
   currentYear?: number;
   loadDetail: CrownlineDetailLoader;
   onRemove: (entityId: string) => void;
-  onClear: () => void;
 }
 
 function CurrentYearStatus({ snapshot, year }: { snapshot: RulerSnapshot; year: number }) {
@@ -143,8 +142,7 @@ export function ComparisonPanel({
   regions,
   currentYear,
   loadDetail,
-  onRemove,
-  onClear
+  onRemove
 }: ComparisonPanelProps) {
   const [retrySequence, setRetrySequence] = useState(0);
   const [detailState, setDetailState] = useState<ComparisonDetailState>({ status: "idle" });
@@ -201,16 +199,6 @@ export function ComparisonPanel({
 
   return (
     <section className="comparison-panel" aria-labelledby="comparison-title">
-      <div className="comparison-panel-heading">
-        <div>
-          <p className="comparison-kicker">时间与历史关系</p>
-          <h2 id="comparison-title">政权时间对比</h2>
-        </div>
-        <button className="comparison-clear" type="button" onClick={onClear}>
-          清空对比
-        </button>
-      </div>
-
       <div className="comparison-slots" role="group" aria-label="已选对比政权">
         {[0, 1].map((index) => {
           const entity = entities[index];

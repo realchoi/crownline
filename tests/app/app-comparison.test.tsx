@@ -26,33 +26,53 @@ describe("Crownline 政权对比", () => {
     await waitFor(() => expect(nameButton).toHaveFocus());
   });
 
-  it("选择后显示对比快捷栏，仅在明确操作时定位对比面板", async () => {
-    const originalScrollIntoView = HTMLElement.prototype.scrollIntoView;
-    const scrollIntoView = vi.fn();
-    HTMLElement.prototype.scrollIntoView = scrollIntoView;
-    try {
-      const user = setupUser();
-      renderApp();
+  it("选择不打开对比，主动查看后关闭或 Escape 保留选择和焦点", async () => {
+    const user = setupUser();
+    const loader = vi.fn(loadGeneratedDetail);
+    renderApp(loader);
+    await user.click(screen.getByRole("button", { name: "将唐加入对比" }));
+    await user.click(screen.getByRole("button", { name: "将明加入对比" }));
+    expect(screen.queryByRole("region", { name: "政权时间对比" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(loader).not.toHaveBeenCalled();
+    const view = screen.getByRole("button", { name: "查看对比" });
+    await user.click(view);
+    const dialog = screen.getByRole("dialog", { name: "政权时间对比" });
+    expect(within(dialog).getByRole("button", { name: "关闭对比" })).toHaveFocus();
+    expect(new URLSearchParams(location.search).get("comparison")).toBe("open");
+    await user.click(within(dialog).getByRole("button", { name: "关闭对比" }));
+    await waitFor(() => expect(view).toHaveFocus());
+    expect(new URLSearchParams(location.search).getAll("compare")).toEqual([
+      "polity-cn-tang",
+      "polity-cn-ming"
+    ]);
+    expect(new URLSearchParams(location.search).has("comparison")).toBe(false);
+    await user.click(view);
+    await user.keyboard("{Escape}");
+    await waitFor(() => expect(view).toHaveFocus());
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  });
 
-      await user.click(screen.getByRole("button", { name: "将唐加入对比" }));
-
-      const tray = screen.getByRole("complementary", { name: "对比快捷栏" });
-      expect(tray).toHaveTextContent("已选 1/2");
-      expect(tray).toHaveTextContent("唐");
-      expect(scrollIntoView).not.toHaveBeenCalled();
-
-      await user.click(within(tray).getByRole("button", { name: "查看对比" }));
-
-      const comparison = screen.getByRole("complementary", { name: "对比工具" });
-      expect(comparison).toHaveFocus();
-      expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth", block: "start" });
-    } finally {
-      if (originalScrollIntoView) {
-        HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
-      } else {
-        Reflect.deleteProperty(HTMLElement.prototype, "scrollIntoView");
-      }
-    }
+  it("关闭加载中的弹窗后迟到错误不会重开弹窗，重新查看可以恢复", async () => {
+    const request = createDeferred<CrownlineDetail | null>();
+    let attempts = 0;
+    window.history.replaceState(
+      null,
+      "",
+      "/?comparison=open&compare=polity-cn-tang&compare=polity-cn-wu-zhou"
+    );
+    const user = setupUser();
+    renderApp((id) =>
+      id === "polity-cn-tang" && ++attempts === 1 ? request.promise : loadGeneratedDetail(id)
+    );
+    await user.click(screen.getByRole("button", { name: "关闭对比" }));
+    request.reject(new Error("已关闭对比的迟到错误"));
+    await waitFor(() => expect(screen.getByRole("button", { name: "查看对比" })).toHaveFocus());
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "查看对比" }));
+    expect(await screen.findByText("唐中宗")).toBeInTheDocument();
+    expect(screen.queryByText("已关闭对比的迟到错误")).not.toBeInTheDocument();
   });
 
   it("从时间轴选择最多两个政权并同步 URL", { timeout: 20_000 }, async () => {
@@ -89,11 +109,12 @@ describe("Crownline 政权对比", () => {
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "将唐加入对比" }));
+    await user.click(screen.getByRole("button", { name: "查看对比" }));
     const panel = screen.getByRole("region", { name: "政权时间对比" });
     expect(panel).toHaveTextContent("唐");
     expect(panel).toHaveTextContent("再选择一个政权");
 
-    await user.click(within(panel).getByRole("button", { name: "清空对比" }));
+    await user.click(screen.getByRole("button", { name: "清空对比" }));
     expect(screen.queryByRole("region", { name: "政权时间对比" })).not.toBeInTheDocument();
     expect(new URLSearchParams(window.location.search).has("compare")).toBe(false);
   });
@@ -105,6 +126,7 @@ describe("Crownline 政权对比", () => {
 
     await user.click(screen.getByRole("button", { name: "将唐加入对比" }));
     await user.click(screen.getByRole("button", { name: "将武周加入对比" }));
+    await user.click(screen.getByRole("button", { name: "查看对比" }));
 
     const panel = screen.getByRole("region", { name: "政权时间对比" });
     expect(within(panel).getByRole("heading", { name: "唐" })).toBeInTheDocument();
@@ -121,7 +143,7 @@ describe("Crownline 政权对比", () => {
     window.history.replaceState(
       null,
       "",
-      "/?mode=point&year=-221&compare=polity-cn-qin&compare=polity-maurya-empire"
+      "/?mode=point&year=-221&comparison=open&compare=polity-cn-qin&compare=polity-maurya-empire"
     );
     renderApp();
 
@@ -135,7 +157,7 @@ describe("Crownline 政权对比", () => {
     window.history.replaceState(
       null,
       "",
-      "/?mode=point&year=705&compare=polity-cn-tang&compare=polity-cn-wu-zhou"
+      "/?mode=point&year=705&comparison=open&compare=polity-cn-tang&compare=polity-cn-wu-zhou"
     );
     let tangAttempts = 0;
     const user = setupUser();
@@ -158,7 +180,11 @@ describe("Crownline 政权对比", () => {
   });
 
   it("没有时间交集时不把资料缺失解释为没有历史关系", () => {
-    window.history.replaceState(null, "", "/?compare=polity-cn-qin&compare=polity-cn-ming");
+    window.history.replaceState(
+      null,
+      "",
+      "/?comparison=open&compare=polity-cn-qin&compare=polity-cn-ming"
+    );
     renderApp();
 
     const panel = screen.getByRole("region", { name: "政权时间对比" });
@@ -170,7 +196,7 @@ describe("Crownline 政权对比", () => {
     window.history.replaceState(
       null,
       "",
-      "/?compare=polity-byzantine-empire&compare=polity-seljuk-empire"
+      "/?comparison=open&compare=polity-byzantine-empire&compare=polity-seljuk-empire"
     );
     renderApp();
 
@@ -196,7 +222,7 @@ describe("Crownline 政权对比", () => {
     window.history.replaceState(
       null,
       "",
-      "/?compare=polity-cn-jin&compare=polity-cn-northern-song"
+      "/?comparison=open&compare=polity-cn-jin&compare=polity-cn-northern-song"
     );
     renderApp();
 
@@ -211,7 +237,7 @@ describe("Crownline 政权对比", () => {
     window.history.replaceState(
       null,
       "",
-      "/?compare=polity-cn-yuan&compare=polity-sukhothai-kingdom"
+      "/?comparison=open&compare=polity-cn-yuan&compare=polity-sukhothai-kingdom"
     );
     renderApp();
 
@@ -228,7 +254,11 @@ describe("Crownline 政权对比", () => {
   });
 
   it("展示历史网络批次的明—琉球朝贡贸易及非直接统治口径", async () => {
-    window.history.replaceState(null, "", "/?compare=polity-cn-ming&compare=polity-ryukyu-kingdom");
+    window.history.replaceState(
+      null,
+      "",
+      "/?comparison=open&compare=polity-cn-ming&compare=polity-ryukyu-kingdom"
+    );
     renderApp();
 
     const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
@@ -240,7 +270,11 @@ describe("Crownline 政权对比", () => {
   });
 
   it("同一政权对按类型展示多条关系及其口径说明", async () => {
-    window.history.replaceState(null, "", "/?compare=polity-cn-tang&compare=polity-balhae");
+    window.history.replaceState(
+      null,
+      "",
+      "/?comparison=open&compare=polity-cn-tang&compare=polity-balhae"
+    );
     renderApp();
 
     const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
@@ -253,7 +287,11 @@ describe("Crownline 政权对比", () => {
   });
 
   it("没有匹配关系时只说明尚未校订", async () => {
-    window.history.replaceState(null, "", "/?compare=polity-cn-qin&compare=polity-cn-ming");
+    window.history.replaceState(
+      null,
+      "",
+      "/?comparison=open&compare=polity-cn-qin&compare=polity-cn-ming"
+    );
     renderApp();
 
     const relationships = await screen.findByRole("region", { name: "已校订历史关系" });
@@ -265,7 +303,7 @@ describe("Crownline 政权对比", () => {
     window.history.replaceState(
       null,
       "",
-      "/?compare=polity-byzantine-empire&compare=polity-seljuk-empire"
+      "/?comparison=open&compare=polity-byzantine-empire&compare=polity-seljuk-empire"
     );
     renderApp(async (entityId) => {
       const detail = artifacts.details.get(entityId);
@@ -284,7 +322,11 @@ describe("Crownline 政权对比", () => {
   });
 
   it("切换对比政权后忽略旧详情请求的迟到错误", async () => {
-    window.history.replaceState(null, "", "/?compare=polity-cn-tang&compare=polity-cn-wu-zhou");
+    window.history.replaceState(
+      null,
+      "",
+      "/?comparison=open&compare=polity-cn-tang&compare=polity-cn-wu-zhou"
+    );
     const tang = createDeferred<CrownlineDetail | null>();
     const wuZhou = createDeferred<CrownlineDetail | null>();
     const user = setupUser();
@@ -299,6 +341,7 @@ describe("Crownline 政权对比", () => {
     await user.click(within(panel).getByRole("button", { name: "从对比中移除武周" }));
     await user.click(screen.getByRole("button", { name: "将明加入对比" }));
     await user.click(screen.getByRole("button", { name: "将清加入对比" }));
+    await user.click(screen.getByRole("button", { name: "查看对比" }));
 
     panel = screen.getByRole("region", { name: "政权时间对比" });
     expect(await within(panel).findByText("崇祯帝")).toBeInTheDocument();

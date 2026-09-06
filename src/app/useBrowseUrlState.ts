@@ -20,6 +20,7 @@ export function useBrowseUrlState({ yearBounds, regions, entities }: BrowseUrlSt
     readBrowseState(window.location.search, yearBounds, regions, entities)
   );
   const detailHistoryRef = useRef(browseState.detailEntityId);
+  const comparisonHistoryRef = useRef(browseState.comparisonOpen);
   const skipUrlSyncRef = useRef(false);
 
   useEffect(() => {
@@ -35,6 +36,7 @@ export function useBrowseUrlState({ yearBounds, regions, entities }: BrowseUrlSt
     if (skipUrlSyncRef.current) {
       skipUrlSyncRef.current = false;
       detailHistoryRef.current = browseState.detailEntityId;
+      comparisonHistoryRef.current = browseState.comparisonOpen;
       return;
     }
 
@@ -42,9 +44,15 @@ export function useBrowseUrlState({ yearBounds, regions, entities }: BrowseUrlSt
     const query = params.toString();
     const next = `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`;
     const detailChanged = detailHistoryRef.current !== browseState.detailEntityId;
+    const comparisonChanged = comparisonHistoryRef.current !== browseState.comparisonOpen;
     detailHistoryRef.current = browseState.detailEntityId;
+    comparisonHistoryRef.current = browseState.comparisonOpen;
 
-    window.history[detailChanged ? "pushState" : "replaceState"](null, "", next);
+    window.history[detailChanged || comparisonChanged ? "pushState" : "replaceState"](
+      null,
+      "",
+      next
+    );
   }, [browseState, yearBounds]);
 
   return { browseState, setBrowseState };

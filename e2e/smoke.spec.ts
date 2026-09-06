@@ -109,16 +109,13 @@ test.describe("Crownline 浏览器冒烟", () => {
       await entry.focus();
       await page.keyboard.press("Enter");
       await expect(dialog).toHaveCount(0);
-      await expect(page.getByRole("complementary", { name: "对比工具" })).toBeFocused();
+      await expect(page.getByRole("button", { name: "关闭对比" })).toBeFocused();
       const relationships = page.getByRole("region", { name: "已校订历史关系" });
       await expect(relationships).toContainText("元与素可泰使节和工艺交流");
-      const heading = page.getByRole("heading", { name: "政权时间对比" });
-      const toolbar = page.locator(".mobile-explore-bar, .compact-console-slot");
-      const headingBox = await heading.boundingBox();
-      const toolbarBox = await toolbar.boundingBox();
-      expect
-        .soft(headingBox!.y, "对比标题不应被探索工具条遮挡")
-        .toBeGreaterThanOrEqual(toolbarBox!.y + toolbarBox!.height);
+      const comparisonDialog = page.getByRole("dialog", { name: "政权时间对比" });
+      expect(
+        await comparisonDialog.evaluate((element) => element.scrollWidth <= element.clientWidth)
+      ).toBe(true);
       const slots = page.getByRole("group", { name: "已选对比政权" });
       const removeBox = await slots
         .getByRole("button", { name: /从对比中移除素可泰王国/ })

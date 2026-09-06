@@ -687,3 +687,37 @@
     white-space: nowrap;
   }
 }
+
+@media (max-width: 600px) {
+  dialog.comparison-dialog {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .comparison-dialog-shell {
+    height: 100%;
+    max-height: 100dvh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .comparison-dialog-head {
+    padding: 18px 16px 10px;
+  }
+
+  .comparison-dialog-actions {
+    padding: 0 16px 10px;
+  }
+
+  .comparison-dialog-body {
+    flex: 1;
+  }
+
+  .comparison-dialog .comparison-panel {
+    padding: 18px 16px;
+  }
+}

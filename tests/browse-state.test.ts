@@ -14,6 +14,33 @@ const data = await loadSourceData();
 const bounds = getHistoricalYearBounds(data);
 
 describe("浏览状态", () => {
+  it("对比弹窗显式恢复，缺省和非法入口保持关闭，详情优先", () => {
+    const query = "?compare=polity-cn-tang&compare=polity-cn-ming";
+    const read = (suffix: string) =>
+      readBrowseState(query + suffix, bounds, data.regions, data.entities);
+    expect(read("").comparisonOpen).toBe(false);
+    expect(read("&comparison=invalid").comparisonOpen).toBe(false);
+    expect(read("&comparison=open").comparisonOpen).toBe(true);
+    expect(read("&comparison=open&detail=polity-cn-tang").comparisonOpen).toBe(false);
+    expect(
+      readBrowseState("?compare=missing&comparison=open", bounds, data.regions, data.entities)
+        .comparisonOpen
+    ).toBe(false);
+    const state = read("&comparison=open");
+    const params = writeBrowseState(state, bounds, "?custom=keep&comparison=invalid");
+    expect(params.toString()).toBe(
+      "custom=keep&compare=polity-cn-tang&compare=polity-cn-ming&comparison=open"
+    );
+    expect(
+      writeBrowseState({ ...state, comparisonOpen: false }, bounds, params.toString()).has(
+        "comparison"
+      )
+    ).toBe(false);
+    expect(writeBrowseState({ ...state, compareEntityIds: [] }, bounds).has("comparison")).toBe(
+      false
+    );
+  });
+
   it("从已加载实体的存在区间推导年份范围", () => {
     expect(bounds).toEqual({ min: -2070, max: 1922 });
   });
@@ -28,6 +55,7 @@ describe("浏览状态", () => {
       category: "contemporary",
       regionScope: { mode: "global" },
       compareEntityIds: [],
+      comparisonOpen: false,
       detailEntityId: null
     });
   });
@@ -42,6 +70,7 @@ describe("浏览状态", () => {
       category: "all",
       regionScope: { mode: "global" },
       compareEntityIds: [],
+      comparisonOpen: false,
       detailEntityId: null
     });
     expect(readBrowseState("?mode=point&year=-9999", bounds).year).toBe(-2070);
@@ -164,6 +193,7 @@ describe("浏览状态", () => {
         category: "mainline",
         regionScope: { mode: "china" },
         compareEntityIds: [],
+        comparisonOpen: false,
         detailEntityId: null
       },
       bounds,
@@ -186,6 +216,7 @@ describe("浏览状态", () => {
         category: "all",
         regionScope: { mode: "global" },
         compareEntityIds: [],
+        comparisonOpen: false,
         detailEntityId: null
       },
       bounds
@@ -230,6 +261,7 @@ describe("浏览状态", () => {
         category: "all",
         regionScope: { mode: "custom", regionIds: ["region-south-asia", "region-europe"] },
         compareEntityIds: [],
+        comparisonOpen: false,
         detailEntityId: null
       },
       bounds
@@ -248,6 +280,7 @@ describe("浏览状态", () => {
         category: "all",
         regionScope: { mode: "china" },
         compareEntityIds: [],
+        comparisonOpen: false,
         detailEntityId: null
       },
       bounds
@@ -269,6 +302,7 @@ describe("浏览状态", () => {
         category: "all",
         regionScope: { mode: "global" },
         compareEntityIds: [],
+        comparisonOpen: false,
         detailEntityId: null
       },
       bounds
@@ -324,6 +358,7 @@ describe("浏览状态", () => {
         category: "all",
         regionScope: { mode: "global" },
         compareEntityIds: ["polity-cn-ming", "polity-cn-tang"],
+        comparisonOpen: false,
         detailEntityId: null
       },
       bounds
