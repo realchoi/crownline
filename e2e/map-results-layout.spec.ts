@@ -1,5 +1,7 @@
 import { expect, test, type Locator } from "@playwright/test";
 
+import { installBoundaryFixture } from "./boundary-fixture";
+
 async function expectReadableCards(cards: Locator, maxLines: number) {
   const metrics = await cards.evaluateAll((elements) =>
     elements.map((card) => {
@@ -65,6 +67,7 @@ test("地图长名称和原名在窄屏及桌面侧栏完整排布", async ({ pa
 
 test("疆域与点位列表宽度一致且卡片之间留有间距", async ({ page, isMobile }) => {
   await page.setViewportSize({ width: isMobile ? 375 : 1280, height: 915 });
+  await installBoundaryFixture(page);
   await page.goto("/?view=map&scope=global&year=800&layer=combined");
   const results = page.getByRole("region", { name: "地图结果列表" });
   await expect(results.getByRole("button", { name: /^第一保加利亚帝国/ })).toBeVisible();

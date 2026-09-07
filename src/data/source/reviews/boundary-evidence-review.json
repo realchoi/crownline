@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-07",
+  "archives": [
+    {
+      "path": "boundary-archive/abbasid-caliphate.json",
+      "sha256": "7614ff78f4461588f8a0d799017ca4de0bcdc10083a7f0e9767d1999ff0c6ddd"
+    },
+    {
+      "path": "boundary-archive/byzantine-empire.json",
+      "sha256": "8054e82a027c0970ff84cae840090a98befb4064925b45327460de163258a832"
+    },
+    {
+      "path": "boundary-archive/ottoman-empire.json",
+      "sha256": "c78332fe59e4649f17fb79e4e03979330dcb416a4977c0248b2fc2e43e221d64"
+    },
+    {
+      "path": "boundary-archive/tang.json",
+      "sha256": "fb62d2b8166eb5d392cfd641b97b65aa1593d0a9c57ea1ea0c08163ad20f7e0c"
+    }
+  ],
+  "entries": [
+    {
+      "snapshotId": "boundary-abbasid-750-861",
+      "polityId": "polity-abbasid-caliphate",
+      "status": "retired",
+      "archivePath": "boundary-archive/abbasid-caliphate.json",
+      "reasonCodes": [
+        "missing-upstream-object-id",
+        "missing-upstream-version",
+        "missing-element-license-evidence",
+        "non-reproducible-derivation"
+      ],
+      "note": "原记录只称来自 OpenHistoricalMap 的 Abbasid Caliphate boundary relations，并链接通用版权页；没有 relation/way ID、对象版本、导出文件或查询、元素级 source/license 标签，也没有从上游几何得到 7 个控制点的可复现步骤。Met 的阿拔斯通史文章可辅助核对时代背景，不能证明这些坐标。"
+    },
+    {
+      "snapshotId": "boundary-abbasid-1050-1190",
+      "polityId": "polity-abbasid-caliphate",
+      "status": "retired",
+      "archivePath": "boundary-archive/abbasid-caliphate.json",
+      "reasonCodes": [
+        "missing-upstream-object-id",
+        "missing-upstream-version",
+        "missing-element-license-evidence",
+        "non-reproducible-derivation"
+      ],
+      "note": "原记录只称来自 OpenHistoricalMap 的 Abbasid Caliphate boundary relations，并链接通用版权页；没有 relation/way ID、对象版本、导出文件或查询、元素级 source/license 标签，也没有从上游几何得到 7 个控制点的可复现步骤。Met 的阿拔斯通史文章没有给出 1050—1190 年采用范围的坐标依据。"
+    },
+    {
+      "snapshotId": "boundary-byzantine-800-1025",
+      "polityId": "polity-byzantine-empire",
+      "status": "retired",
+      "archivePath": "boundary-archive/byzantine-empire.json",
+      "reasonCodes": [
+        "missing-upstream-object-id",
+        "missing-upstream-version",
+        "missing-element-license-evidence",
+        "non-reproducible-derivation"
+      ],
+      "note": "原记录只称来自 OpenHistoricalMap 的 Byzantine / Eastern Roman relations，并链接通用版权页；没有 relation/way ID、对象版本、导出文件或查询、元素级 source/license 标签，也没有从上游几何得到两个多边形和 12 个控制点的可复现步骤。Met 的拜占庭通史文章不能证明这些坐标。"
+    },
+    {
+      "snapshotId": "boundary-byzantine-1261-1453",
+      "polityId": "polity-byzantine-empire",
+      "status": "retired",
+      "archivePath": "boundary-archive/byzantine-empire.json",
+      "reasonCodes": [
+        "missing-upstream-object-id",
+        "missing-upstream-version",
+        "missing-element-license-evidence",
+        "non-reproducible-derivation"
+      ],
+      "note": "原记录只称来自 OpenHistoricalMap 的 Byzantine / Eastern Roman relations，并链接通用版权页；没有 relation/way ID、对象版本、导出文件或查询、元素级 source/license 标签，也没有从上游几何得到 7 个控制点的可复现步骤。Met 的拜占庭通史文章不提供 1261—1453 年单一采用边界的坐标依据。"
+    },
+    {
+      "snapshotId": "boundary-ottoman-1453-1683",
+      "polityId": "polity-ottoman-empire",
+      "status": "retired",
+      "archivePath": "boundary-archive/ottoman-empire.json",
+      "reasonCodes": [
+        "missing-upstream-object-id",
+        "missing-upstream-version",
+        "missing-element-license-evidence",
+        "non-reproducible-derivation"
+      ],
+      "note": "原记录只称来自 OpenHistoricalMap 的 Ottoman Empire boundary relations，并链接通用版权页；没有 relation/way ID、对象版本、导出文件或查询、元素级 source/license 标签，也没有从上游几何得到两个多边形和 12 个控制点的可复现步骤。British Museum 的王朝词条不能证明这些坐标。"
+    },
+    {
+      "snapshotId": "boundary-ottoman-1829-1913",
+      "polityId": "polity-ottoman-empire",
+      "status": "retired",
+      "archivePath": "boundary-archive/ottoman-empire.json",
+      "reasonCodes": [
+        "missing-upstream-object-id",
+        "missing-upstream-version",
+        "missing-element-license-evidence",
+        "non-reproducible-derivation"
+      ],
+      "note": "原记录只称来自 OpenHistoricalMap 的 Ottoman Empire boundary relations，并链接通用版权页；没有 relation/way ID、对象版本、导出文件或查询、元素级 source/license 标签，也没有从上游几何得到 7 个控制点的可复现步骤。British Museum 的王朝词条没有提供 1829—1913 年采用范围的坐标依据。"
+    },
+    {
+      "snapshotId": "boundary-tang-650-690",
+      "polityId": "polity-cn-tang",
+      "status": "retired",
+      "archivePath": "boundary-archive/tang.json",
+      "reasonCodes": [
+        "missing-upstream-object-id",
+        "missing-upstream-version",
+        "missing-element-license-evidence",
+        "non-reproducible-derivation"
+      ],
+      "note": "原记录只称来自 OpenHistoricalMap 的 Tang / historical East Asian boundary relations，并链接通用版权页；没有 relation/way ID、对象版本、导出文件或查询、元素级 source/license 标签，也没有从上游几何得到两个多边形和 12 个控制点的可复现步骤。中国历史纪年简表只能核对朝代年代，不能证明这些坐标。"
+    },
+    {
+      "snapshotId": "boundary-tang-705-755",
+      "polityId": "polity-cn-tang",
+      "status": "retired",
+      "archivePath": "boundary-archive/tang.json",
+      "reasonCodes": [
+        "missing-upstream-object-id",
+        "missing-upstream-version",
+        "missing-element-license-evidence",
+        "non-reproducible-derivation"
+      ],
+      "note": "原记录只称来自 OpenHistoricalMap 的 Tang / historical East Asian boundary relations，并链接通用版权页；没有 relation/way ID、对象版本、导出文件或查询、元素级 source/license 标签，也没有从上游几何得到 7 个控制点的可复现步骤。中国历史纪年简表不能证明 705—755 年采用范围的坐标。"
+    }
+  ]
+}

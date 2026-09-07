@@ -4,10 +4,30 @@ import { loadSourceData } from "../scripts/data-source";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import type { CrownlineData } from "../src/domain/types";
 import { GLOBAL_SAMPLE_POLITY_IDS } from "./global-sample-polities";
+import { createBoundaryFixture } from "./helpers/boundaryFixtures";
 
 const data: CrownlineData = await loadSourceData();
 
 describe("运行时数据产物", () => {
+  it("退役疆域和工具侧审查档案不进入任何浏览器产物", () => {
+    const artifacts = buildGeneratedArtifacts(data);
+    expect(artifacts.boundaries).toEqual({
+      schemaVersion: data.schemaVersion,
+      boundarySnapshots: [],
+      sources: []
+    });
+    const browserJson = JSON.stringify({
+      index: artifacts.index,
+      geography: artifacts.geography,
+      boundaries: artifacts.boundaries,
+      details: [...artifacts.details.values()]
+    });
+    expect(browserJson).not.toContain("boundary-tang-650-690");
+    expect(browserJson).not.toContain("boundaryEvidence");
+    expect(browserJson).not.toContain("temporalCoverage");
+    expect(browserJson).not.toContain("archivePath");
+  });
+
   it("首屏索引不携带详情数组", () => {
     const { index } = buildGeneratedArtifacts(data);
 
@@ -22,21 +42,20 @@ describe("运行时数据产物", () => {
   });
 
   it("疆域坐标只进入独立 boundaries 包并保持来源闭包", () => {
-    const artifacts = buildGeneratedArtifacts(data);
+    const fixture = createBoundaryFixture();
+    const artifacts = buildGeneratedArtifacts({
+      ...data,
+      boundarySnapshots: fixture.boundarySnapshots,
+      sources: [...data.sources, ...fixture.sources]
+    });
     expect(artifacts.index).not.toHaveProperty("boundarySnapshots");
     expect(artifacts.geography).not.toHaveProperty("boundarySnapshots");
     artifacts.details.forEach((detail) => {
       expect(detail).not.toHaveProperty("boundarySnapshots");
       expect(JSON.stringify(detail)).not.toContain("MultiPolygon");
     });
-    expect(artifacts.boundaries.boundarySnapshots).toHaveLength(8);
-    expect(artifacts.boundaries.sources.map(({ id }) => id)).toEqual([
-      "source-cn-chronology-table",
-      "source-ohm-boundaries",
-      "source-met-byzantium",
-      "source-met-abbasid",
-      "source-ottoman-history"
-    ]);
+    expect(artifacts.boundaries.boundarySnapshots).toEqual(fixture.boundarySnapshots);
+    expect(artifacts.boundaries.sources).toEqual(fixture.sources);
     const sourceIds = new Set(artifacts.boundaries.sources.map(({ id }) => id));
     expect(
       artifacts.boundaries.boundarySnapshots

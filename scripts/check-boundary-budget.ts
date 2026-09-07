@@ -1,6 +1,7 @@
 import { gzipSync } from "node:zlib";
 
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
+import { loadBoundaryEvidenceReview } from "./boundary-evidence-review";
 import { loadSourceData } from "./data-source";
 
 export const BOUNDARY_BUDGET = {
@@ -18,7 +19,9 @@ function countPositions(value: unknown): number {
 }
 
 export async function checkBoundaryBudget() {
-  const artifacts = buildGeneratedArtifacts(await loadSourceData());
+  const data = await loadSourceData();
+  await loadBoundaryEvidenceReview(undefined, data);
+  const artifacts = buildGeneratedArtifacts(data);
   const serialized = `${JSON.stringify(artifacts.boundaries, null, 2)}\n`;
   const rawBytes = Buffer.byteLength(serialized, "utf8");
   const gzipBytes = gzipSync(serialized).byteLength;

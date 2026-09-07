@@ -85,7 +85,37 @@ function sourceQualityFixture(): CrownlineData {
   return fixture;
 }
 
-describe("数据覆盖报告 v2", () => {
+describe("数据覆盖报告 v3", () => {
+  it("报告年份覆盖、明确空位、来源定位并保持全输入顺序不变", () => {
+    const report = buildDataCoverageReport(data, coverageReview);
+    expect(report.temporalCoverage.summary).toMatchObject({
+      polities: 131,
+      politiesWithYearsWithoutReignRecords: 42,
+      politiesWithUnknownGeographyYears: 24
+    });
+    const hre = report.temporalCoverage.polities.find(
+      ({ entityId }) => entityId === "polity-holy-roman-empire"
+    )!;
+    expect(hre.rulerDetails.explicitVacancyPeriods).toEqual([{ startYear: 1741, endYear: 1741 }]);
+    expect(hre.rulerDetails.unknownPeriods).toEqual([]);
+    expect(report.sourceReferenceQuality.boundarySnapshots).toEqual({
+      records: 0,
+      recordsWithSourceRefs: 0,
+      recordsWithLocatedSourceRefs: 0,
+      recordsWithoutLocatedSourceRefs: 0
+    });
+    expect(report.boundaryEvidence).toBeNull();
+    const shuffled = structuredClone(data);
+    shuffled.entities.reverse();
+    shuffled.reigns.reverse();
+    shuffled.reignVacancies.reverse();
+    shuffled.geographicSnapshots.reverse();
+    expect(buildDataCoverageReport(shuffled, coverageReview).temporalCoverage).toEqual(
+      report.temporalCoverage
+    );
+    expect(report.temporalCoverage.definitions.intervalSemantics).toContain("约年");
+  });
+
   it("固定真实数据摘要并区分已用数据、已审查不可用和尚未审查", () => {
     const report = buildDataCoverageReport(data, coverageReview);
 
@@ -100,8 +130,8 @@ describe("数据覆盖报告 v2", () => {
         reigns: 1374,
         relationships: 74,
         events: 34,
-        geographicSnapshots: 172,
-        sources: 214
+        geographicSnapshots: 175,
+        sources: 222
       },
       polityCoverage: {
         rulerDetails: {
@@ -149,14 +179,14 @@ describe("数据覆盖报告 v2", () => {
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 214,
-      byType: { primary: 2, secondary: 45, tertiary: 67, dataset: 3, institutional: 97 },
-      withUrl: 213,
+      total: 222,
+      byType: { primary: 2, secondary: 45, tertiary: 67, dataset: 7, institutional: 101 },
+      withUrl: 221,
       withoutUrl: 1,
-      withAccessedAt: 213,
+      withAccessedAt: 221,
       withoutAccessedAt: 1
     });
-    expect(report.sourceReferenceQuality).toEqual({
+    expect(report.sourceReferenceQuality).toMatchObject({
       relationships: {
         records: 74,
         recordsWithSourceRefs: 74,
@@ -170,9 +200,9 @@ describe("数据覆盖报告 v2", () => {
         recordsWithoutLocatedSourceRefs: 0
       },
       geographicSnapshots: {
-        records: 172,
-        recordsWithSourceRefs: 172,
-        recordsWithLocatedSourceRefs: 72,
+        records: 175,
+        recordsWithSourceRefs: 175,
+        recordsWithLocatedSourceRefs: 75,
         recordsWithoutLocatedSourceRefs: 100
       }
     });
@@ -338,7 +368,7 @@ describe("关系分布和来源质量", () => {
     expect(report.sourceReferenceQuality).toMatchObject({
       relationships: { records: 74, recordsWithLocatedSourceRefs: 74 },
       events: { records: 34, recordsWithLocatedSourceRefs: 34 },
-      geographicSnapshots: { records: 172, recordsWithLocatedSourceRefs: 72 }
+      geographicSnapshots: { records: 175, recordsWithLocatedSourceRefs: 75 }
     });
   });
 
@@ -380,7 +410,7 @@ describe("关系分布和来源质量", () => {
       withAccessedAt: 1,
       withoutAccessedAt: 2
     });
-    expect(report.sourceReferenceQuality).toEqual({
+    expect(report.sourceReferenceQuality).toMatchObject({
       relationships: {
         records: 3,
         recordsWithSourceRefs: 2,

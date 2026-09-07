@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { mkdtemp, mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { cp, mkdtemp, mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, join } from "node:path";
 
@@ -8,6 +8,7 @@ import { loadCoverageReviewData } from "../scripts/coverage-review";
 import { generateData } from "../scripts/generate-data";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import type { CrownlineData } from "../src/domain/types";
+import { createBoundaryFixture } from "./helpers/boundaryFixtures";
 
 const data: CrownlineData = await loadSourceData();
 const coverageReview = await loadCoverageReviewData();
@@ -37,6 +38,9 @@ async function writeSourceTree(root: string, value: CrownlineData = data): Promi
   await writeJson(join(root, "geography", "geographic-snapshots.json"), value.geographicSnapshots);
   await writeJson(join(root, "boundaries", "boundary-snapshots.json"), value.boundarySnapshots);
   await writeJson(join(root, "coverage", "coverage-review.json"), coverageReview);
+  await cp(join(process.cwd(), "src/data/source/reviews"), join(root, "reviews"), {
+    recursive: true
+  });
 
   const sectionEntityIds = new Set(value.timelineSections.flatMap(({ entityIds }) => entityIds));
   const firstPolityByPersonId = new Map<string, string>();
@@ -113,7 +117,7 @@ describe("源数据分片", () => {
     expect(summary.reigns).toBe(data.reigns.length);
     expect(await readJson(join(toolOutputRoot, "crownline-data.json"))).toEqual(data);
     expect(await readJson(join(toolOutputRoot, "coverage-report.json"))).toMatchObject({
-      reportVersion: 2,
+      reportVersion: 3,
       dataSchemaVersion: 5,
       totals: { entities: 133, polities: 131 },
       topLevelRegions: expect.arrayContaining([
@@ -187,6 +191,26 @@ describe("源数据分片", () => {
     await expect(generateData({ sourceRoot, toolOutputRoot, publicOutputRoot })).rejects.toThrow(
       "覆盖审查文件校验失败"
     );
+  });
+
+  it("未经批准的疆域阻止生成且保留原有工具与浏览器产物", async () => {
+    const root = await createTemporaryRoot();
+    const sourceRoot = join(root, "source");
+    const toolOutputRoot = join(root, "tool-output");
+    const publicOutputRoot = join(root, "public-output");
+    const fixture = createBoundaryFixture();
+    await writeSourceTree(sourceRoot, {
+      ...data,
+      boundarySnapshots: fixture.boundarySnapshots,
+      sources: [...data.sources, ...fixture.sources]
+    });
+    await writeJson(join(toolOutputRoot, "sentinel.json"), { stable: true });
+    await writeJson(join(publicOutputRoot, "sentinel.json"), { stable: true });
+    await expect(generateData({ sourceRoot, toolOutputRoot, publicOutputRoot })).rejects.toThrow(
+      "BOUNDARY_EVIDENCE_APPROVAL_REQUIRED"
+    );
+    expect(await readJson(join(toolOutputRoot, "sentinel.json"))).toEqual({ stable: true });
+    expect(await readJson(join(publicOutputRoot, "sentinel.json"))).toEqual({ stable: true });
   });
 
   it("并发生成不会冲突", async () => {

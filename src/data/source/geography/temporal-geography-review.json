@@ -1,0 +1,112 @@
+[
+  {
+    "id": "geo-southern-ming-fuzhou",
+    "polityId": "polity-cn-southern-ming",
+    "periods": [
+      {
+        "start": {
+          "year": 1645,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1646,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "福州",
+    "role": "political-center",
+    "coordinates": {
+      "latitude": 26.06139,
+      "longitude": 119.30611
+    },
+    "positionPrecision": "regional",
+    "positionNote": "仅表示1645—1646年隆武政权的福州政治中心。坐标取 GeoNames 福州城市记录作区域浏览定位，不是宫殿遗址，也不把福州扩展为整个南明时期的唯一都城或疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-temporal-fuzhou-history",
+        "locator": "清为福州府段：1645年朱聿键在福州称帝，天兴府号福京；1646年复称福州府"
+      },
+      {
+        "sourceId": "source-geonames-temporal-fuzhou",
+        "locator": "Feature 1810821：26.06139, 119.30611；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-western-liang-jiuquan",
+    "polityId": "polity-cn-western-liang",
+    "periods": [
+      {
+        "start": {
+          "year": 405,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 420,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "酒泉",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 39.743183,
+      "longitude": 98.517363
+    },
+    "positionPrecision": "regional",
+    "positionNote": "按405年迁都酒泉至420年酒泉失守的口径；首尾年仅表示该年内曾为都城，不表示全年控制。坐标为 GeoNames 酒泉城市记录的区域参照，不是古城勘界或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-temporal-western-liang-history",
+        "locator": "第一节末段：405年迁都酒泉；第三节末段：420年李歆战死，北凉攻占酒泉"
+      },
+      {
+        "sourceId": "source-geonames-temporal-jiuquan",
+        "locator": "Feature 1279945，官方 Jiuquan 搜索结果的城市记录：39.743183, 98.517363"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-former-yan-ji",
+    "polityId": "polity-cn-former-yan",
+    "periods": [
+      {
+        "start": {
+          "year": 350,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 357,
+          "precision": "exact"
+        }
+      }
+    ],
+    "placeName": "蓟城",
+    "role": "capital",
+    "coordinates": {
+      "latitude": 39.88802,
+      "longitude": 116.34229
+    },
+    "positionPrecision": "regional",
+    "positionNote": "按350年迁蓟、357年迁邺的口径，首尾年表示年内曾作为都城。蓟城位于今北京广安门一带，坐标取现代广安门桥作区域浏览锚点，不把桥梁视为古城遗址，也不表示古城范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-temporal-former-yan-history",
+        "locator": "一、三燕王朝的历史，前燕段：350年在蓟城建立新都，357年由蓟城迁邺"
+      },
+      {
+        "sourceId": "source-temporal-ji-location",
+        "locator": "第一部分：蓟城对应今宣武区广安门一带"
+      },
+      {
+        "sourceId": "source-geonames-temporal-guanganmen",
+        "locator": "Feature 6268990，广安门桥：39.888016883923754, 116.34229123592377，四舍五入至小数点后5位"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "史料只支持古城所在区域，现代桥梁坐标仅为区域参照；朝阳文章其他人物生卒叙述不作为本条依据。"
+  }
+]

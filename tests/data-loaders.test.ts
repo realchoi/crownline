@@ -13,11 +13,12 @@ import {
   validateCrownlineIndex
 } from "../src/data/runtimeValidation";
 import type { CrownlineDetail, CrownlineIndex } from "../src/domain/types";
+import { createBoundaryFixture } from "./helpers/boundaryFixtures";
 
 const artifacts = buildGeneratedArtifacts(await loadSourceData());
 const index = artifacts.index;
 const geography = artifacts.geography;
-const boundaries = artifacts.boundaries;
+const boundaries = createBoundaryFixture();
 const tangDetail = artifacts.details.get("polity-cn-tang");
 if (!tangDetail) throw new Error("缺少唐详情测试数据");
 

@@ -18,8 +18,18 @@ import {
   type CoverageReviewDimension,
   type CoverageReviewStatus
 } from "./coverageReview";
+import {
+  buildPolityTemporalCoverage,
+  type PolityTemporalCoverage
+} from "../domain/temporalCoverage";
 
-export const DATA_COVERAGE_REPORT_VERSION = 2 as const;
+import {
+  summarizeBoundaryEvidenceReview,
+  type BoundaryEvidenceSummary,
+  type LoadedBoundaryEvidenceReview
+} from "./boundaryEvidenceReview";
+
+export const DATA_COVERAGE_REPORT_VERSION = 3 as const;
 
 export interface ReviewableCoverageMetric {
   total: number;
@@ -69,6 +79,7 @@ export interface SourceReferenceQualitySummary {
   relationships: SourceReferenceQuality;
   events: SourceReferenceQuality;
   geographicSnapshots: SourceReferenceQuality;
+  boundarySnapshots: SourceReferenceQuality;
 }
 
 export interface RegionDataCoverage {
@@ -89,6 +100,38 @@ export interface ReviewableGapStatuses {
 
 export type ReviewableGaps = Record<CoverageReviewDimension, ReviewableGapStatuses>;
 
+export interface TemporalCoverageSummary {
+  polities: number;
+  totalExistenceYears: number;
+  rulerCoveredYears: number;
+  anyReignYears: number;
+  yearsWithoutReignRecords: number;
+  politiesWithYearsWithoutReignRecords: number;
+  explicitVacancyYears: number;
+  documentedRulerOrVacancyYears: number;
+  unknownRulerYears: number;
+  rulerCoveragePercentage: number;
+  documentedRulerOrVacancyPercentage: number;
+  politiesWithUnknownRulerYears: number;
+  geographyCoveredYears: number;
+  unknownGeographyYears: number;
+  geographyCoveragePercentage: number;
+  politiesWithUnknownGeographyYears: number;
+}
+
+export interface TemporalCoverageReport {
+  definitions: {
+    intervalSemantics: string;
+    rulerCoverage: string;
+    anyReignCoverage: string;
+    explicitVacancy: string;
+    unknownRulerCoverage: string;
+    geographyCoverage: string;
+  };
+  summary: TemporalCoverageSummary;
+  polities: PolityTemporalCoverage[];
+}
+
 export interface DataCoverageReport {
   reportVersion: typeof DATA_COVERAGE_REPORT_VERSION;
   dataSchemaVersion: CrownlineData["schemaVersion"];
@@ -102,6 +145,7 @@ export interface DataCoverageReport {
     relationships: number;
     events: number;
     geographicSnapshots: number;
+    boundarySnapshots: number;
     sources: number;
   };
   polityCoverage: PolityCoverageMetrics;
@@ -109,6 +153,8 @@ export interface DataCoverageReport {
   relationshipSummary: RelationshipCoverageSummary;
   sourceQuality: SourceQualitySummary;
   sourceReferenceQuality: SourceReferenceQualitySummary;
+  temporalCoverage: TemporalCoverageReport;
+  boundaryEvidence: BoundaryEvidenceSummary | null;
   topLevelRegions: RegionDataCoverage[];
 }
 
@@ -293,10 +339,100 @@ function throwIfInvalidReview(data: CrownlineData, review: CoverageReviewData): 
   }
 }
 
-/** 生成覆盖报告 v2；报告只供数据治理工具使用，不属于浏览器运行时契约。 */
+function buildTemporalCoverage(
+  data: CrownlineData,
+  polities: readonly HistoricalEntity[]
+): TemporalCoverageReport {
+  const polityCoverage = [...polities]
+    .sort((left, right) => compareIds(left.id, right.id))
+    .map((polity) => {
+      return buildPolityTemporalCoverage(
+        polity,
+        data.reigns,
+        data.reignVacancies,
+        data.geographicSnapshots
+      );
+    });
+  const totalExistenceYears = polityCoverage.reduce(
+    (total, polity) => total + polity.totalExistenceYears,
+    0
+  );
+  const rulerCoveredYears = polityCoverage.reduce(
+    (total, polity) => total + polity.rulerDetails.rulerCoveredYears,
+    0
+  );
+  const anyReignYears = polityCoverage.reduce(
+    (total, polity) => total + polity.rulerDetails.anyReignYears,
+    0
+  );
+  const explicitVacancyYears = polityCoverage.reduce(
+    (total, polity) => total + polity.rulerDetails.explicitVacancyYears,
+    0
+  );
+  const documentedRulerOrVacancyYears = polityCoverage.reduce(
+    (total, polity) => total + polity.rulerDetails.documentedYears,
+    0
+  );
+  const unknownRulerYears = polityCoverage.reduce(
+    (total, polity) => total + polity.rulerDetails.unknownYears,
+    0
+  );
+  const geographyCoveredYears = polityCoverage.reduce(
+    (total, polity) => total + polity.geography.coveredYears,
+    0
+  );
+  const unknownGeographyYears = polityCoverage.reduce(
+    (total, polity) => total + polity.geography.unknownYears,
+    0
+  );
+
+  return {
+    definitions: {
+      intervalSemantics:
+        "按源数据采用年代计算闭区间，约年与争议不因此成为精确历史事实；负数为公元前，正数为公元后，不存在公元 0 年。跨政权累计的是政权年，不是全球不重复年份。",
+      rulerCoverage: "仅 ruler 与 co-ruler 角色的任期计入正式统治者任期覆盖；重叠年份只计一次。",
+      anyReignCoverage: "所有任期角色（含摄政与争位者）的记录并集，仅表示已有任期类资料。",
+      explicitVacancy: "仅有来源明确支持的 reignVacancies 计为明确空位。",
+      unknownRulerCoverage:
+        "政权存续期扣除正式统治者任期与明确空位后的年份；摄政或争位记录本身不会消除此未知状态。",
+      geographyCoverage: "存在适用地理快照的年份；点位仅表示都城、政治中心或浏览定位，不表示疆域。"
+    },
+    summary: {
+      polities: polityCoverage.length,
+      totalExistenceYears,
+      rulerCoveredYears,
+      anyReignYears,
+      yearsWithoutReignRecords: totalExistenceYears - anyReignYears,
+      politiesWithYearsWithoutReignRecords: polityCoverage.filter(
+        ({ totalExistenceYears, rulerDetails }) => rulerDetails.anyReignYears < totalExistenceYears
+      ).length,
+      explicitVacancyYears,
+      documentedRulerOrVacancyYears,
+      unknownRulerYears,
+      rulerCoveragePercentage: percentage(rulerCoveredYears, totalExistenceYears),
+      documentedRulerOrVacancyPercentage: percentage(
+        documentedRulerOrVacancyYears,
+        totalExistenceYears
+      ),
+      politiesWithUnknownRulerYears: polityCoverage.filter(
+        ({ rulerDetails }) => rulerDetails.unknownYears > 0
+      ).length,
+      geographyCoveredYears,
+      unknownGeographyYears,
+      geographyCoveragePercentage: percentage(geographyCoveredYears, totalExistenceYears),
+      politiesWithUnknownGeographyYears: polityCoverage.filter(
+        ({ geography }) => geography.unknownYears > 0
+      ).length
+    },
+    polities: polityCoverage
+  };
+}
+
+/** 生成覆盖报告 v3；报告只供数据治理工具使用，不属于浏览器运行时契约。 */
 export function buildDataCoverageReport(
   data: CrownlineData,
-  coverageReview: CoverageReviewData = { entries: [] }
+  coverageReview: CoverageReviewData = { entries: [] },
+  boundaryEvidence?: LoadedBoundaryEvidenceReview
 ): DataCoverageReport {
   throwIfInvalidReview(data, coverageReview);
   const polities = data.entities.filter(({ entityKind }) => entityKind === "polity");
@@ -371,6 +507,7 @@ export function buildDataCoverageReport(
       relationships: data.relationships.length,
       events: data.events.length,
       geographicSnapshots: data.geographicSnapshots.length,
+      boundarySnapshots: data.boundarySnapshots.length,
       sources: data.sources.length
     },
     polityCoverage: buildPolityCoverage(data, polities, reviewByKey),
@@ -380,8 +517,13 @@ export function buildDataCoverageReport(
     sourceReferenceQuality: {
       relationships: sourceReferenceQuality(data.relationships),
       events: sourceReferenceQuality(data.events),
-      geographicSnapshots: sourceReferenceQuality(data.geographicSnapshots)
+      geographicSnapshots: sourceReferenceQuality(data.geographicSnapshots),
+      boundarySnapshots: sourceReferenceQuality(data.boundarySnapshots)
     },
+    temporalCoverage: buildTemporalCoverage(data, polities),
+    boundaryEvidence: boundaryEvidence
+      ? summarizeBoundaryEvidenceReview(boundaryEvidence, data.boundarySnapshots)
+      : null,
     topLevelRegions
   };
 }

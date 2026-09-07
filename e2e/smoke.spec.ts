@@ -2,6 +2,8 @@ import AxeBuilder from "@axe-core/playwright";
 import type { Result } from "axe-core";
 import { expect, test, type Page } from "@playwright/test";
 
+import { installBoundaryFixture } from "./boundary-fixture";
+
 const tangTimelineButtonName = "唐，618—690，主线王朝。点击查看详情。";
 
 async function waitForAppReady(page: Page) {
@@ -394,6 +396,7 @@ test.describe("Crownline 浏览器冒烟", () => {
   test("桌面端疆域图层恢复年份与 URL，并支持详情和双政权高亮", async ({ page, isMobile }) => {
     test.skip(isMobile, "桌面疆域图层交互仅在 desktop 项目覆盖");
 
+    await installBoundaryFixture(page);
     await page.goto("/?view=map&year=800&layer=boundaries");
     await waitForAppReady(page);
     await expect(page.getByRole("region", { name: "当前年份历史政权示意地图" })).toBeVisible();
@@ -433,6 +436,7 @@ test.describe("Crownline 浏览器冒烟", () => {
   test("手机端通过疆域结果列表完成详情和对比", async ({ page, isMobile }) => {
     test.skip(!isMobile, "仅在 mobile-chrome 项目运行");
 
+    await installBoundaryFixture(page);
     await page.goto("/?view=map&year=800&layer=boundaries");
     await waitForAppReady(page);
     const list = page.getByRole("region", { name: "地图结果列表" });
@@ -458,6 +462,20 @@ test.describe("Crownline 浏览器冒烟", () => {
     await waitForAppReady(page);
     await expect(page.getByText(/疆域快照需要明确年份/).first()).toBeVisible();
     await expect(page.locator(".map-boundary-shape")).toHaveCount(0);
+  });
+
+  test("生产疆域退役后保留缺口说明和点位详情入口", async ({ page }) => {
+    await page.goto("/?view=map&year=800&layer=combined");
+    await waitForAppReady(page);
+    await expect(page.getByText("当前年份没有匹配的疆域快照。")).toBeVisible();
+    await expect(page.locator(".map-boundary-shape")).toHaveCount(0);
+    await expect(page.getByRole("region", { name: "尚未校订疆域数据" })).toContainText(
+      "这不表示它们没有疆域"
+    );
+    const list = page.getByRole("region", { name: "地图结果列表" });
+    await list.getByRole("button", { name: /^拜占庭帝国.*，.*都城/ }).click();
+    await expect(page.getByRole("dialog", { name: "拜占庭帝国" })).toBeVisible();
+    await expectNoSeriousA11yViolations(page);
   });
 
   test("桌面端地图图层说明保持横向可读布局", async ({ page, isMobile }) => {

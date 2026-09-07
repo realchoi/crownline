@@ -1,0 +1,74 @@
+[
+  {
+    "id": "source-temporal-fuzhou-history",
+    "title": "福州市方志委：福州建置沿革",
+    "sourceType": "institutional",
+    "citation": "福州市方志委：福州建置沿革",
+    "publisher": "福州市方志委",
+    "url": "https://www.fuzhou.gov.cn/zgfzzt/zjrc/qhyg/202509/t20250925_5083026.htm",
+    "accessedAt": "2026-09-07"
+  },
+  {
+    "id": "source-temporal-western-liang-history",
+    "title": "甘肃文博局：西凉王李暠对敦煌酒泉的经营",
+    "sourceType": "institutional",
+    "citation": "屈直敏：《西凉王李暠对敦煌酒泉的经营》，甘肃日报，甘肃文博局网站转载，2023-02-16。",
+    "publisher": "甘肃文博局",
+    "url": "https://www.gswbj.gov.cn/a/2023/02/16/16474.html",
+    "accessedAt": "2026-09-07"
+  },
+  {
+    "id": "source-temporal-former-yan-history",
+    "title": "朝阳市人民政府：朝阳三燕文化概述",
+    "sourceType": "institutional",
+    "citation": "朝阳市人民政府：朝阳三燕文化概述",
+    "publisher": "朝阳市人民政府",
+    "url": "https://chaoyang.gov.cn/html/CYSZF/202105/0162104991559956.html",
+    "accessedAt": "2026-09-07"
+  },
+  {
+    "id": "source-temporal-ji-location",
+    "title": "北京市发展改革委：北京市“十五”时期历史文化名城保护规划",
+    "sourceType": "institutional",
+    "citation": "北京市发展改革委：北京市“十五”时期历史文化名城保护规划",
+    "publisher": "北京市发展改革委",
+    "url": "https://fgw.beijing.gov.cn/fgwzwgk/2024zcwj/ghjhwb/wngh/202003/t20200331_3739269.htm",
+    "accessedAt": "2026-09-07"
+  },
+  {
+    "id": "source-geonames-temporal-fuzhou",
+    "title": "GeoNames: Fuzhou, 1810821",
+    "sourceType": "dataset",
+    "citation": "GeoNames, Fuzhou, 1810821；WGS 84 现代定位记录，CC BY 4.0。仅作历史地点所在区域的浏览定位参照。",
+    "publisher": "GeoNames",
+    "url": "https://www.geonames.org/1810821/fuzhou.html",
+    "accessedAt": "2026-09-07"
+  },
+  {
+    "id": "source-geonames-temporal-jiuquan",
+    "title": "GeoNames: Jiuquan, 1279945",
+    "sourceType": "dataset",
+    "citation": "GeoNames, Jiuquan, 1279945；WGS 84 现代定位记录，CC BY 4.0。仅作历史地点所在区域的浏览定位参照。",
+    "publisher": "GeoNames",
+    "url": "https://www.geonames.org/1279945/jiuquan.html",
+    "accessedAt": "2026-09-07"
+  },
+  {
+    "id": "source-geonames-temporal-dunhuang",
+    "title": "GeoNames: Dunhuang, 1529531",
+    "sourceType": "dataset",
+    "citation": "GeoNames, Dunhuang, 1529531；WGS 84 现代定位记录，CC BY 4.0。仅作历史地点所在区域的浏览定位参照。",
+    "publisher": "GeoNames",
+    "url": "https://www.geonames.org/1529531/dunhuang.html",
+    "accessedAt": "2026-09-07"
+  },
+  {
+    "id": "source-geonames-temporal-guanganmen",
+    "title": "GeoNames: Guang’anmen Qiao, 6268990",
+    "sourceType": "dataset",
+    "citation": "GeoNames, Guang’anmen Qiao, 6268990；WGS 84 现代定位记录，CC BY 4.0。仅作历史地点所在区域的浏览定位参照。",
+    "publisher": "GeoNames",
+    "url": "https://www.geonames.org/6268990/guang-anmen-qiao.html",
+    "accessedAt": "2026-09-07"
+  }
+]

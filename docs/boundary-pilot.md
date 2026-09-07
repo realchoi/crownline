@@ -1,47 +1,44 @@
-# Crownline 疆域快照 MVP 试点记录
+# 疆域试点证据审查与生产门禁
 
-本试点只建立可按年份浏览的低分辨率空间示意，不建立完整历史 GIS。所有记录都使用 `MultiPolygon`、WGS 84 经度/纬度顺序 `[longitude, latitude]`，并在生成前经过闭合、非零面积、连续重复坐标、反经线和时间语义校验。
+审查日期：2026-09-07。原试点 8 条快照全部退出生产，当前生产疆域快照为 0 条。疆域图层、按需加载、年份筛选、空状态和等价结果列表继续保留。本次结论是现有登记不能支持可复核的生产坐标，不是认定这些政权没有疆域，也不声称穷尽了所有上游历史地图资料。
 
-## 资料与许可审查
+## 逐条结论
 
-候选资料先核查是否允许坐标再分发和派生。OpenHistoricalMap 的版权说明称，除单独标注的条目外，其数据以 CC0 方式提供；其 Overpass 文档也说明可按带日期的 boundary relation 查询和导出。该平台同时提醒使用者检查个别元素的 license 标签，因此本批次只采用平台版权说明和数据记录均能支持的候选，并保留保守的 `schematic` / `approximate` 精度，不把结果写成精确边界。
+| 原快照 ID                    | 采用时期  | 原控制点数 | 结论                                                         |
+| ---------------------------- | --------- | ---------- | ------------------------------------------------------------ |
+| boundary-tang-650-690        | 650—690   | 12         | 退役，缺少具体上游对象、版本、元素级许可依据及可复现派生过程 |
+| boundary-tang-705-755        | 705—755   | 7          | 退役，同上                                                   |
+| boundary-byzantine-800-1025  | 800—1025  | 12         | 退役，同上                                                   |
+| boundary-byzantine-1261-1453 | 1261—1453 | 7          | 退役，同上                                                   |
+| boundary-abbasid-750-861     | 750—861   | 7          | 退役，同上                                                   |
+| boundary-abbasid-1050-1190   | 1050—1190 | 7          | 退役，同上                                                   |
+| boundary-ottoman-1453-1683   | 1453—1683 | 12         | 退役，同上                                                   |
+| boundary-ottoman-1829-1913   | 1829—1913 | 7          | 退役，同上                                                   |
 
-审查入口：
+8 条原记录均以 OpenHistoricalMap 通用版权页作为 `sourceUrl`，`derivedFrom` 仅描述政权称谓和按时期筛选，未登记 relation/way ID、版本、查询、原始导出或具体几何处理。附带的通史和纪年引用也没有定位到可支撑这些坐标的地图或数据对象，因此无法确认这 71 个控制点及宽时间区间的派生依据。
 
-- [OpenHistoricalMap copyright](https://www.openhistoricalmap.org/copyright)
-- [OpenHistoricalMap reuse / REST API](https://wiki.openstreetmap.org/wiki/OpenHistoricalMap/Reuse)
-- [OpenHistoricalMap Overpass](https://wiki.openstreetmap.org/wiki/OpenHistoricalMap/Overpass)
-- [OpenHistoricalMap boundaries](https://wiki.openstreetmap.org/wiki/OpenHistoricalMap/Boundaries)
-- [The Metropolitan Museum of Art: Byzantium](https://www.metmuseum.org/essays/byzantium-ca-330-1453)
-- [The Metropolitan Museum of Art: Abbasid period](https://www.metmuseum.org/essays/the-art-of-the-abbasid-period-750-1258)
-- [British Museum: Ottoman dynasty](https://www.britishmuseum.org/collection/term/x14382)
-- [中国历史纪年简表](https://scopsr.gov.cn/zlzx/lsgk/201811/t20181120_326615.html)
+[OpenHistoricalMap 官方版权说明](https://www.openhistoricalmap.org/copyright)说明部分对象有独立许可，必须核对元素自身的 `license` 信息；仅凭通用说明不能确认某组坐标的许可。[官方 Overpass 文档](https://wiki.openstreetmap.org/wiki/OpenHistoricalMap/Overpass)提供按时间筛选边界对象的查询和导出方式，但存在这种能力不证明旧快照曾按该流程导出。两页于 2026-09-07 核查。
 
-| 政权 | 候选快照年代 | 资料来源 | 许可 | 是否采用 | 原因 |
-| --- | --- | --- | --- | --- | --- |
-| 唐 | 650—690；705—755 | OpenHistoricalMap dated boundary relations；中国历史纪年简表核对时期 | CC0 1.0（OHM 数据口径） | 是 | 已有政权与点位数据；覆盖中国历史地区；只保留低分辨率核心示意 |
-| 拜占庭帝国 | 800—1025；1261—1453 | OpenHistoricalMap Byzantine / Eastern Roman relations；Met Byzantium | CC0 1.0（OHM 数据口径） | 是 | 已有真实政权；覆盖欧洲与西亚；分期变化明确，但边缘控制仍有争议 |
-| 阿拔斯哈里发 | 750—861；1050—1190 | OpenHistoricalMap Abbasid relations；Met Abbasid period | CC0 1.0（OHM 数据口径） | 是 | 已有真实政权；早期扩张与后期核心范围可作为对比，可信度降为 low |
-| 奥斯曼帝国 | 1453—1683；1829—1913 | OpenHistoricalMap Ottoman relations；British Museum Ottoman dynasty | CC0 1.0（OHM 数据口径） | 是 | 已有真实政权；扩张高峰与十九世纪收缩可形成时间点对比 |
-| 历史底图仓库（通用候选） | 多个年份 | aourednik/historical-basemaps | GPL-3.0 与数据许可边界仍有公开疑问 | 否 | 仓库 README 表示需核验，且数据许可是否独立于软件许可存在争议；不进入生产坐标 |
-| 商业历史地图或未注明许可图片 | 静态概览图 | 未核明 | 不明 | 否 | 不满足可再分发派生坐标要求；不描摹、不转换进生产数据 |
+## 归档与恢复要求
 
-## 处理流程
+原始四个 JSON 文件按原字节保存在 `src/data/source/reviews/boundary-archive/`，SHA-256 登记在 `src/data/source/reviews/boundary-evidence-review.json`；每个退役 ID 保留政权、原因和归档路径。它们不参与源数据聚合，不进入 `CrownlineData`、首屏、详情、点位或生产疆域包。
 
-生产源文件位于 `src/data/source/boundaries/`，按政权分片维护；生成器只读取已提交的 JSON，不在构建期联网。每条记录的 `provenance` 固定登记：资料集名称、署名、许可地址、来源地址、派生关系、坐标系、控制点数量变化、简化方法和人工检查口径。
+生产快照必须有唯一 `approved` 审查，并登记：
 
-本批次的离线处理约定如下：
+- 具体上游数据集、记录类型/ID/版本、记录 URL、访问日期。
+- 元素级许可名称、许可链接、核验说明，以及年代与几何口径的史料定位。
+- `sourceArtifactPath` 指向工具侧保留的原始来源文件，`sourceArtifactSha256` 校验文件字节。
+- 输入/输出坐标系、经纬顺序、简化方法及可复核步骤。
+- `snapshotSha256` 绑定完整生产快照内容（对象键稳定排序后计算）；坐标、时期或说明改变后必须重新审查。
 
-1. 从带 `start_date` / `end_date` 的公开 boundary relation 中筛选与 Crownline 采用年份相符的候选。
-2. 按 WGS 84 / EPSG:4326 读取坐标；统一为 GeoJSON `[longitude, latitude]`，不跨反经线。
-3. 对候选轮廓进行固定控制点保留的保守简化；不在浏览器执行简化，不使用现代行政边界替代历史疆域。
-4. 保留离散 polygon，必要时保留洞环结构；不修复错误坐标，不用构建脚本静默改形。
-5. 运行 `npm run validate:data` 和 `npm run check:boundaries`，再人工检查浅色/深色与多政权叠加显示。
+批准只是一条人工证据记录。自动门禁能阻止缺字段、泛化链接、错配、篡改、缺失与未审查发布，不能自动判断历史事实或许可说明是否真实充分；恢复生产前仍需人工复核原始材料。不得为了通过门禁填写虚构的对象编号、来源或批准。
 
-当前预算：原始 `boundaries.json` 不超过 500 KB，gzip 不超过 150 KB，总坐标位置不超过 1,200，单条快照不超过 180 个位置，试点快照不超过 10 条。当前实际为 8 条、71 个坐标位置，单条最多 12 个位置；原始与 gzip 大小由 `npm run check:boundaries` 重新计算，不手填到文档。
+`validate:data`、`generate:data` 和 `check:boundaries` 都读取并校验此审查。缺失或损坏审查、未批准生产快照、退役快照回流、归档或原始来源文件哈希变化、生产内容与批准哈希不一致均失败。生成器在替换任何输出之前完成门禁。
 
-## 历史解释限制
+## 报告与验证
 
-这些多边形是根据公开资料重建或简化的历史空间示意，只适用于各自的时间范围，不代表整个政权存续期、范围内每个地点的同等控制、现代主权或精确面积/距离。边缘地区可能涉及羁縻、附庸、间接统治、海上控制和资料争议。两个图形视觉上相交时，Crownline 仍只显示两个独立快照，不自动生成接壤、空间重叠、战争、外交、臣属或领土得失结论。
+覆盖报告 v3 的 `boundaryEvidence` 汇总已审查、批准、退役、归档和生产数量；`sourceReferenceQuality.boundarySnapshots` 单独报告生产来源定位情况。零生产记录不表示历史资料已完整覆盖。
 
-本 MVP 不支持连续年份插值、竞争性重建版本、自动空间关系、面积排序或反经线几何。扩展试点前必须先完成逐政权、逐时期、逐来源的许可和历史口径复核。
+生产 `boundaries.json` 当前为合法空数组；UI 明确显示尚无匹配资料。正向几何、加载、对比、键盘与响应式测试使用 `tests/helpers/boundaryFixtures.ts` 中明确标注的合成矩形，浏览器测试仅在指定用例拦截疆域请求注入 fixture。另有不拦截请求的真实生产空状态回归；测试不再依赖无证据的旧坐标。
+
+疆域性能预算保持原始 500 KB、gzip 150 KB、总位置 1,200、单快照 180、试点最多 10 条。当前大小由 `npm run check:boundaries` 计算。本阶段仍不计算接壤、重叠、面积、主权关系、连续年份插值或竞争性重建。

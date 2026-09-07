@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import { buildDataCoverageReport } from "../src/data/coverageReport";
 import { validateCrownlineData } from "../src/domain/dataValidation";
+import { loadBoundaryEvidenceReview } from "./boundary-evidence-review";
 import { loadCoverageReviewData } from "./coverage-review";
 import { loadSourceData } from "./data-source";
 import { withGenerateDataLock } from "./generate-data-lock";
@@ -84,8 +85,9 @@ export async function generateData(
     }
 
     const coverageReview = await loadCoverageReviewData(sourceRoot, data);
+    const boundaryEvidence = await loadBoundaryEvidenceReview(sourceRoot, data);
     const artifacts = buildGeneratedArtifacts(data);
-    const coverageReport = buildDataCoverageReport(data, coverageReview);
+    const coverageReport = buildDataCoverageReport(data, coverageReview, boundaryEvidence);
     const toolStaging = await createStagingDirectory(toolOutputRoot);
     const publicStaging = await createStagingDirectory(publicOutputRoot);
     try {

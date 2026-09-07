@@ -1236,14 +1236,47 @@
   {
     "id": "geo-western-liang-dunhuang",
     "polityId": "polity-cn-western-liang",
-    "periods": [{ "start": { "year": 400, "precision": "exact" }, "end": { "year": 404, "precision": "exact" } }],
+    "periods": [
+      {
+        "start": {
+          "year": 400,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 405,
+          "precision": "exact"
+        }
+      },
+      {
+        "start": {
+          "year": 420,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 421,
+          "precision": "exact"
+        }
+      }
+    ],
     "placeName": "敦煌",
     "role": "capital",
-    "coordinates": { "latitude": 40.1421, "longitude": 94.6619 },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今敦煌的历史城市区域；西凉于405年前后迁都酒泉，本条只表示建国初期都城，不表示整个存续期或政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cambridge-six-dynasties", "locator": "Chapter 6, The Sixteen Kingdoms: Western Liang founded at Dunhuang" }],
-    "confidence": "high"
+    "coordinates": {
+      "latitude": 40.1666667,
+      "longitude": 94.6833333
+    },
+    "positionPrecision": "regional",
+    "positionNote": "敦煌为400年建国初期至405年迁都前的都城，420年酒泉失守后李恂重入敦煌，421年西凉灭亡。中间迁都时期不合并。坐标改为 GeoNames 敦煌城市记录的区域参照，不是西凉城址的精确定位，不表示疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-temporal-western-liang-history",
+        "locator": "第一节：400年定都敦煌、405年迁酒泉；第三节末段：420年李恂返回敦煌，421年败亡"
+      },
+      {
+        "sourceId": "source-geonames-temporal-dunhuang",
+        "locator": "Feature 1529531，官方 Jiuquan 搜索结果中的 Dunhuang 城市记录：40.1666667, 94.6833333"
+      }
+    ],
+    "confidence": "medium"
   },
   {
     "id": "geo-hu-xia-tongwan",

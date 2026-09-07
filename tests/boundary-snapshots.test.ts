@@ -6,8 +6,10 @@ import {
   selectBoundarySnapshots,
   validateBoundaryGeometry
 } from "../src/domain/boundarySnapshots";
+import { createBoundaryFixture } from "./helpers/boundaryFixtures";
 
 const data = await loadSourceData();
+const boundaries = createBoundaryFixture().boundarySnapshots;
 
 function entity(id: string) {
   const result = data.entities.find((candidate) => candidate.id === id);
@@ -19,23 +21,20 @@ describe("历史疆域快照领域层", () => {
   it("按年份选择正确快照并返回缺少数据的真实政权", () => {
     const result = selectBoundarySnapshots(
       [entity("polity-abbasid-caliphate"), entity("polity-byzantine-empire")],
-      data.boundarySnapshots,
+      boundaries,
       800
     );
 
     expect(result.boundaries.map(({ snapshot }) => snapshot.id)).toEqual([
-      "boundary-abbasid-750-861",
-      "boundary-byzantine-800-1025"
+      "boundary-test-polity-abbasid-caliphate-750-861",
+      "boundary-test-polity-byzantine-empire-800-1025"
     ]);
     expect(result.missingEntities).toEqual([]);
     expect(result.requiresYear).toBe(false);
   });
 
   it("不指定年份时拒绝把跨时代疆域拼成总览", () => {
-    const result = selectBoundarySnapshots(
-      [entity("polity-ottoman-empire")],
-      data.boundarySnapshots
-    );
+    const result = selectBoundarySnapshots([entity("polity-ottoman-empire")], boundaries);
 
     expect(result.boundaries).toEqual([]);
     expect(result.missingEntities.map(({ id }) => id)).toEqual(["polity-ottoman-empire"]);
@@ -44,10 +43,10 @@ describe("历史疆域快照领域层", () => {
 
   it("输入顺序不影响输出，且多个政权可以在同年同时命中", () => {
     const polities = [entity("polity-byzantine-empire"), entity("polity-abbasid-caliphate")];
-    const forward = selectBoundarySnapshots(polities, data.boundarySnapshots, 800);
+    const forward = selectBoundarySnapshots(polities, boundaries, 800);
     const reverse = selectBoundarySnapshots(
       [...polities].reverse(),
-      [...data.boundarySnapshots].reverse(),
+      [...boundaries].reverse(),
       800
     );
 
