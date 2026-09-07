@@ -86,18 +86,26 @@ describe("从详情发现历史关系", () => {
   });
 
   it("对比可返回来源详情，最后关闭回到原来的浏览按钮", async () => {
+    // 聚焦弹窗往返流程，避免在完整时间轴的大 DOM 上反复计算可访问名称。
+    window.history.replaceState(null, "", "/?q=元");
     const user = setupUser();
     renderApp();
-    const trigger = screen.getByRole("button", { name: "查看元详情" });
+    const browse = screen.getByRole("region", { name: "主要探索内容" });
+    const trigger = within(browse).getByRole("button", { name: "查看元详情" });
     await user.click(trigger);
-    const entry = await screen.findByRole("button", { name: "进入对比：元与素可泰王国" });
+    const detail = screen.getByRole("dialog", { name: "元" });
+    const related = await within(detail).findByRole("region", { name: "相关政权" });
+    const entry = within(related).getByRole("button", { name: "进入对比：元与素可泰王国" });
     await user.click(entry);
     expect(screen.getAllByRole("dialog")).toHaveLength(1);
-    await user.click(screen.getByRole("button", { name: "返回详情" }));
+    const comparison = screen.getByRole("dialog", { name: "政权时间对比" });
+    await user.click(within(comparison).getByRole("button", { name: "返回详情" }));
     expect(screen.getAllByRole("dialog")).toHaveLength(1);
-    expect(screen.getByRole("dialog", { name: "元" })).toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "关闭详情" }));
+    const returnedDetail = screen.getByRole("dialog", { name: "元" });
+    await user.click(within(returnedDetail).getByRole("button", { name: "关闭详情" }));
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     await waitFor(() => expect(trigger).toHaveFocus());
+    expect(new URLSearchParams(location.search).get("q")).toBe("元");
     expect(new URLSearchParams(location.search).getAll("compare")).toEqual([
       "polity-cn-yuan",
       "polity-sukhothai-kingdom"
