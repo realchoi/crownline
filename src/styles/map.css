@@ -304,7 +304,7 @@
 }
 
 .map-cluster-panel-list,
-.map-result-list,
+.map-results-list,
 .map-missing-list {
   margin: 0;
   padding: 0;
@@ -417,9 +417,13 @@
 .map-results-heading > span {
   color: var(--muted);
 }
-.map-result-list {
+.map-results-list {
   display: grid;
   gap: 10px;
+}
+
+.map-results-list + .map-results-list {
+  margin-top: 10px;
 }
 
 .map-result-item {
@@ -438,7 +442,7 @@
 
 .map-result-detail {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto minmax(0, 1fr);
   gap: 2px 9px;
   width: 100%;
   border: 0;
@@ -453,6 +457,12 @@
 .map-result-detail strong {
   font-family: var(--font-display);
   font-size: 1.08rem;
+}
+
+.map-result-local-name {
+  /* 原名单独占一行，避免撑宽标签列并挤压中文标题。 */
+  grid-column: 1 / -1;
+  overflow-wrap: anywhere;
 }
 
 .map-result-place {

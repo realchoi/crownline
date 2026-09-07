@@ -125,7 +125,7 @@
   .sequence-detail {
     padding-left: max(8px, calc(32% + 3px));
   }
-  .map-result-list {
+  .map-results-list {
     grid-template-columns: 1fr;
   }
 }
