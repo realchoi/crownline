@@ -33,6 +33,58 @@ afterEach(() => {
 });
 
 describe("探索控制台", () => {
+  it("移动端可直接切换视图，并保留年份、地区、筛选、对比与未知参数", async () => {
+    mockMobileViewport(true);
+    window.history.replaceState(
+      null,
+      "",
+      "/?mode=point&year=800&scope=china&q=唐&type=mainline&compare=polity-cn-tang&custom=keep"
+    );
+    const user = setupUser();
+    renderApp();
+
+    const map = screen.getByRole("button", { name: "地图" });
+    await user.click(map);
+    expect(map).toHaveAttribute("aria-pressed", "true");
+    expect(screen.queryByRole("dialog", { name: "筛选与呈现" })).not.toBeInTheDocument();
+    expect(
+      await screen.findByRole("region", { name: "当前年份历史政权示意地图" })
+    ).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "时间轴" }));
+    expect(screen.getByRole("region", { name: "800 年时间点结果" })).toBeInTheDocument();
+    const params = new URLSearchParams(window.location.search);
+    expect(params.get("year")).toBe("800");
+    expect(params.get("scope")).toBe("china");
+    expect(params.get("q")).toBe("唐");
+    expect(params.get("type")).toBe("mainline");
+    expect(params.getAll("compare")).toEqual(["polity-cn-tang"]);
+    expect(params.get("custom")).toBe("keep");
+    expect(params.has("view")).toBe(false);
+
+    const summary = screen.getByRole("region", { name: "当前范围和结果摘要" });
+    expect(within(summary).getByRole("status")).toHaveTextContent("中国 · 800");
+  });
+
+  it("移动端外部视图按钮与筛选抽屉共享状态，关闭抽屉后可继续切换", async () => {
+    mockMobileViewport(true);
+    const user = setupUser();
+    renderApp();
+
+    await user.click(screen.getByRole("button", { name: "地图" }));
+    await user.click(screen.getByRole("button", { name: "筛选" }));
+    const dialog = screen.getByRole("dialog", { name: "筛选与呈现" });
+    expect(within(dialog).getByRole("button", { name: "地图" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    await user.click(within(dialog).getByRole("button", { name: "时间轴" }));
+    await user.click(within(dialog).getByRole("button", { name: "关闭筛选" }));
+    expect(screen.getByRole("button", { name: "时间轴" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("status")).toHaveTextContent("全球已收录 · 全时期");
+    expect(screen.queryByLabelText("当前探索状态")).not.toBeInTheDocument();
+  });
+
   it("完整控制台滚出视口后显示紧凑工具条，并以回滞阈值恢复", async () => {
     mockMobileViewport(false);
     renderApp();

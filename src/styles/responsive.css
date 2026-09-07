@@ -144,7 +144,7 @@
     --label-column: 90px;
   }
   .site-shell {
-    width: min(100% - 20px, 1120px);
+    width: min(100% - 32px, 1120px);
   }
   .axis-labels {
     font-size: 0.64rem;
@@ -296,14 +296,12 @@
 @media (max-width: 800px) {
   .mobile-explore-bar {
     position: sticky;
-    top: 6px;
+    top: 0;
     z-index: 24;
     display: block;
-    margin: 10px 0 8px;
-    border: 1px solid var(--border);
-    border-top: 2px solid var(--accent);
-    background: color-mix(in srgb, var(--surface-strong) 94%, transparent);
-    box-shadow: 0 7px 22px rgba(38, 29, 25, 0.09);
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--page) 96%, transparent);
     backdrop-filter: blur(16px);
   }
 
@@ -312,48 +310,26 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 7px 7px 6px 11px;
+    padding: 10px 0;
   }
 
-  .mobile-explore-heading > div {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    min-width: 0;
-  }
-
-  .mobile-explore-heading strong {
-    font-family: var(--font-display);
-    font-size: 0.92rem;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .open-filter-button {
-    min-width: 82px;
-    min-height: 44px;
-    padding-inline: 12px;
-  }
-
-  .mobile-explore-bar .console-status-items {
-    display: flex;
-    overflow-x: auto;
-    border-top: 1px solid var(--border);
-    padding: 7px 10px;
-    scrollbar-width: none;
-  }
-
-  .mobile-explore-bar .console-status-items::-webkit-scrollbar {
+  .mobile-explore-heading .field-label {
     display: none;
   }
 
-  .mobile-explore-bar .console-status-items > span {
-    flex: none;
-    padding-inline: 10px;
-    font-size: 0.72rem;
+  .mobile-explore-heading .mode-switch button {
+    min-height: 44px;
+    font-size: 0.875rem;
   }
 
-  .mobile-explore-bar .console-status-items > span:first-child {
-    padding-left: 0;
+  .open-filter-button {
+    min-width: 76px;
+    min-height: 44px;
+    padding-inline: 12px;
+    background: var(--surface-strong);
+    border-color: var(--border);
+    color: var(--text);
+    font-size: 0.875rem;
   }
 
   .mobile-explore-bar .active-filter-bar {
@@ -582,27 +558,39 @@
   }
 
   .exploration-summary {
-    margin-bottom: 12px;
+    gap: 0 12px;
+    margin-bottom: 8px;
   }
 
   .results-line {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2px 12px;
-    padding-block: 7px;
-    font-size: 0.72rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    padding-block: 10px;
+    font-size: 0.75rem;
+  }
+
+  .results-context {
+    display: block;
+    color: var(--text);
+    font-size: 0.8125rem;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+  }
+
+  .results-timeline .results-hint {
+    display: none;
   }
 
   .scope-note summary {
     min-height: 44px;
-  }
-
-  .scope-summary-hint {
-    display: none;
+    font-size: 0.75rem;
   }
 
   .scope-note p {
-    padding-inline: 4px;
+    padding-inline: 0;
+    font-size: 0.8125rem;
   }
 }
 
@@ -612,79 +600,133 @@
     height: 96dvh;
     border-inline: 0;
   }
-
-  .mobile-explore-bar .console-status-items > span {
-    padding-inline: 8px;
-  }
 }
 
 @media (max-width: 800px) {
   .hero {
     display: block;
-    padding: 24px 0 14px;
-  }
-
-  .eyebrow {
-    margin-bottom: 7px;
-    font-size: 0.64rem;
+    padding: 20px 0 14px;
   }
 
   h1 {
-    margin-bottom: 7px;
+    margin-bottom: 10px;
   }
 
   .site-title-brand {
-    font-size: clamp(2rem, 10.8vw, 3.1rem);
+    font-size: clamp(1.8rem, 8.2vw, 2.6rem);
   }
 
   .site-title-sub {
-    margin-top: 6px;
-    font-size: 0.9rem;
-    letter-spacing: 0.09em;
+    margin-top: 8px;
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
   }
 
-  .hero-copy {
+  .hero-stats {
+    gap: 4px 10px;
+    font-size: 0.75rem;
+  }
+
+  .hero-stats span + span {
+    padding-left: 10px;
+  }
+
+  /* 名称与年代使用整行宽度，所有时间条仍共享同一横向比例。 */
+  .timeline-stage {
+    padding: 16px 0;
+    border: 0;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
     margin-bottom: 12px;
-    font-size: 0.84rem;
-    line-height: 1.55;
   }
 
-  .stat-grid {
+  .stage-heading {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px;
+    margin-bottom: 12px;
+  }
+
+  .stage-title {
+    font-size: 1.375rem;
+  }
+
+  .stage-range {
+    font-size: 0.8125rem;
+  }
+
+  .timeline-shared-axis,
+  .axis-row,
+  .timeline-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .timeline-shared-axis {
+    padding: 6px 0;
+  }
+
+  .shared-axis-caption,
+  .axis-labels {
+    font-size: 0.75rem;
+  }
+
+  .axis-row > span {
+    display: none;
+  }
+
+  .timeline-row {
+    border-radius: 0;
+    padding: 6px 0 10px;
+  }
+
+  .row-label {
     display: grid;
-    grid-template-columns: 1.35fr 0.72fr 0.72fr;
-    width: 100%;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    align-items: center;
   }
 
-  .stat-card {
-    display: block;
-    min-width: 0;
-    padding: 6px 8px;
+  .row-name,
+  .row-years,
+  .row-regions {
+    grid-column: 1;
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: anywhere;
   }
 
-  .stat-card + .stat-card {
-    border-top: 0;
-    border-left: 1px solid var(--border);
+  .row-name {
+    font-size: 1rem;
+    line-height: 1.4;
   }
 
-  .stat-card:first-child {
-    padding-left: 0;
+  .row-years {
+    font-size: 0.8125rem;
+    line-height: 1.5;
   }
 
-  .stat-label,
-  .stat-value {
-    display: block;
+  .row-regions {
+    font-size: 0.75rem;
   }
 
-  .stat-label {
-    margin-bottom: 1px;
-    font-size: 0.58rem;
+  .row-label .comparison-toggle {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    min-width: 60px;
+    min-height: 44px;
+    margin: 0;
+    border-radius: var(--radius-control);
+    font-size: 0.75rem;
   }
 
-  .stat-value {
-    overflow: hidden;
-    font-size: 0.77rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .timeline-row.is-comparison-selected {
+    box-shadow: none;
+    outline: 1px solid var(--accent);
+    outline-offset: 3px;
   }
 }
 

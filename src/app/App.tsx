@@ -180,6 +180,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
         <section className="exploration-summary" aria-label="当前范围和结果摘要">
           <BrowseResultsSummary
             browseState={browseState}
+            regions={data.regions}
             resultCount={results.all.length}
             overviewTotal={overviewTotal}
             overviewGroupCount={overviewGroups.length}

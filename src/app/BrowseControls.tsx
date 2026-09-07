@@ -10,6 +10,7 @@ import {
 
 import { ActiveFilterChips } from "../components/ActiveFilterChips";
 import { FilterPanel } from "../components/FilterPanel";
+import { ViewModeControl } from "../components/ViewModeControl";
 import {
   clearAdditionalFilters,
   selectBrowseYear,
@@ -18,6 +19,7 @@ import {
   type HistoricalYearBounds
 } from "../domain/browseState";
 import { formatHistoricalYear } from "../domain/chronology";
+import { getRegionScopeLabel } from "../domain/regionScope";
 import type { Region } from "../domain/types";
 
 interface BrowseControlsProps {
@@ -49,18 +51,6 @@ function useMobileControls() {
   return isMobile;
 }
 
-function getScopeLabel(state: BrowseState, regions: Region[]) {
-  if (state.regionScope.mode === "china") return "中国";
-  if (state.regionScope.mode === "global") return "全球已收录";
-  const names = state.regionScope.regionIds.flatMap((regionId) => {
-    const region = regions.find(({ id }) => id === regionId);
-    return region ? [region.names.primary] : [];
-  });
-  return names.length > 2
-    ? `${names.slice(0, 2).join("、")}等 ${names.length} 地区`
-    : names.join("、");
-}
-
 /** 完整控制台、滚动后工具条和移动筛选抽屉的页面级组合。 */
 export function BrowseControls({
   browseState,
@@ -77,7 +67,7 @@ export function BrowseControls({
   const sheetTriggerRef = useRef<HTMLButtonElement>(null);
   const sheetCloseRef = useRef<HTMLButtonElement>(null);
   const hasOpenedSheetRef = useRef(false);
-  const scopeLabel = useMemo(() => getScopeLabel(browseState, regions), [browseState, regions]);
+  const scopeLabel = getRegionScopeLabel(browseState.regionScope, regions);
   const timeLabel =
     browseState.timeRange === "all"
       ? "全时期"
@@ -228,10 +218,10 @@ export function BrowseControls({
         <>
           <div className="mobile-explore-bar">
             <div className="mobile-explore-heading">
-              <div>
-                <span className="console-kicker">Explore / 探索</span>
-                <strong>{resultCount} 个结果</strong>
-              </div>
+              <ViewModeControl
+                value={browseState.viewMode}
+                onChange={updateState.onViewModeChange}
+              />
               <button
                 ref={sheetTriggerRef}
                 className="open-filter-button"
@@ -242,7 +232,6 @@ export function BrowseControls({
                 筛选{activeFilterCount > 0 ? ` · ${activeFilterCount}` : ""}
               </button>
             </div>
-            {statusItems}
             <ActiveFilterChips
               query={browseState.query}
               category={browseState.category}

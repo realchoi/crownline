@@ -8,12 +8,8 @@ interface BrowseScopeNoteProps {
 export function BrowseScopeNote({ regionScope }: BrowseScopeNoteProps) {
   return (
     <details className="scope-note">
-      <summary>
-        <span className="scope-icon" aria-hidden="true">
-          注
-        </span>
-        <span>方法与收录说明</span>
-        <span className="scope-summary-hint">数据覆盖、范围与空结果口径</span>
+      <summary aria-label="方法与收录说明">
+        <span>收录说明</span>
       </summary>
       <p>
         {regionScope.mode === "china"

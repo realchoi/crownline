@@ -2,9 +2,27 @@ import { describe, expect, it } from "vitest";
 
 import { loadSourceData } from "../scripts/data-source";
 import { selectBrowseResults } from "../src/domain/selectors";
+import { getRegionScopeLabel, type RegionScope } from "../src/domain/regionScope";
 import type { CrownlineData, HistoricalEntity } from "../src/domain/types";
 
 const data = await loadSourceData();
+
+describe("地区摘要", () => {
+  it("多地区摘要保留选择顺序，且不受地区数据输入顺序影响", () => {
+    const scope: RegionScope = {
+      mode: "custom",
+      regionIds: ["region-europe", "region-east-asia", "region-south-asia"]
+    };
+    expect(getRegionScopeLabel(scope, data.regions)).toBe("欧洲、东亚等 3 地区");
+    expect(getRegionScopeLabel(scope, [...data.regions].reverse())).toBe("欧洲、东亚等 3 地区");
+  });
+
+  it("单地区显示名称，未识别引用不变成可见地区或计入数量", () => {
+    expect(
+      getRegionScopeLabel({ mode: "custom", regionIds: ["missing", "region-europe"] }, data.regions)
+    ).toBe("欧洲");
+  });
+});
 
 function makeCrossRegionData(): CrownlineData {
   const result = structuredClone(data);

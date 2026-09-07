@@ -81,6 +81,72 @@ async function expectCompleteTabOrder(page: Page) {
 }
 
 test.describe("Crownline 浏览器冒烟", () => {
+  test("移动首页保留可读字号和完整时间条，首屏可阅读三条记录", async ({
+    page,
+    isMobile
+  }, testInfo) => {
+    test.skip(!isMobile, "在移动项目验证手机首屏和触控入口");
+    for (const colorScheme of ["light", "dark"] as const) {
+      await page.emulateMedia({ colorScheme, reducedMotion: "reduce" });
+      for (const width of [320, 390]) {
+        await page.setViewportSize({ width, height: 844 });
+        await page.goto("/");
+        await waitForAppReady(page);
+        await page.evaluate(() => document.fonts.ready);
+        const metrics = await page.evaluate(() => {
+          const rows = Array.from(document.querySelectorAll<HTMLElement>(".timeline-row"));
+          const first = rows[0]!;
+          const label = first.querySelector<HTMLElement>(".row-label")!;
+          const track = first.querySelector<HTMLElement>(".track")!;
+          const name = first.querySelector<HTMLElement>(".row-name")!;
+          const years = first.querySelector<HTMLElement>(".row-years")!;
+          const compare = first.querySelector<HTMLElement>(".comparison-toggle")!;
+          return {
+            hasOverflow:
+              document.documentElement.scrollWidth > document.documentElement.clientWidth,
+            thirdBottom: rows[2]!.getBoundingClientRect().bottom,
+            nameSize: parseFloat(getComputedStyle(name).fontSize),
+            yearsSize: parseFloat(getComputedStyle(years).fontSize),
+            compareHeight: compare.getBoundingClientRect().height,
+            trackTop: track.getBoundingClientRect().top,
+            labelBottom: label.getBoundingClientRect().bottom,
+            trackWidth: track.getBoundingClientRect().width,
+            rowWidth: first.getBoundingClientRect().width,
+            clippedLabels: rows
+              .flatMap((row) =>
+                Array.from(row.querySelectorAll<HTMLElement>(".row-name, .row-years"))
+              )
+              .filter((label) => label.scrollWidth > label.clientWidth).length
+          };
+        });
+        expect(metrics.hasOverflow).toBe(false);
+        expect(metrics.clippedLabels).toBe(0);
+        expect(metrics.nameSize).toBeGreaterThanOrEqual(15);
+        expect(metrics.yearsSize).toBeGreaterThanOrEqual(12);
+        expect(metrics.compareHeight).toBeGreaterThanOrEqual(44);
+        expect(metrics.trackTop).toBeGreaterThan(metrics.labelBottom);
+        expect(metrics.trackWidth).toBeCloseTo(metrics.rowWidth, 0);
+        if (width === 390) {
+          await page.screenshot({ path: testInfo.outputPath(`homepage-${colorScheme}.png`) });
+          expect(metrics.thirdBottom).toBeLessThan(844);
+          await expectNoSeriousA11yViolations(page);
+        }
+      }
+    }
+
+    await page.getByRole("button", { name: "地图", exact: true }).click();
+    await expect(page.getByRole("region", { name: "全时期历史政权总览地图" })).toBeVisible();
+    await expect(page.getByRole("dialog", { name: "筛选与呈现" })).toHaveCount(0);
+    await page.getByRole("button", { name: "时间轴", exact: true }).click();
+    await expect(page.getByRole("button", { name: "时间轴", exact: true })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    await page.getByText("收录说明", { exact: true }).click();
+    await expect(page.getByText(/空结果也不表示该地区当时没有政权/)).toBeVisible();
+    await expectNoSeriousA11yViolations(page);
+  });
+
   for (const colorScheme of ["light", "dark"] as const) {
     test(`详情发现关系并进入对比（${colorScheme}）`, async ({ page }, testInfo) => {
       await page.emulateMedia({ colorScheme, reducedMotion: "reduce" });
@@ -486,7 +552,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await expect(page.getByLabel("活跃筛选")).toHaveCount(0);
   });
 
-  test("四个验收尺寸无横向溢出且首屏可见历史条目", async ({ page, isMobile }) => {
+  test("四个验收尺寸无横向溢出且首屏可见历史条目", async ({ page, isMobile }, testInfo) => {
     test.skip(isMobile, "尺寸矩阵在 desktop 项目单次覆盖");
     const sizes = [
       { width: 390, height: 844 },
@@ -500,6 +566,9 @@ test.describe("Crownline 浏览器冒烟", () => {
       await page.goto("/");
       await waitForAppReady(page);
       await page.evaluate(() => document.fonts.ready);
+      if (size.width === 1440) {
+        await page.screenshot({ path: testInfo.outputPath("homepage-desktop.png") });
+      }
       const metrics = await page.evaluate(() => {
         const firstResult = document.querySelector(
           ".timeline-row, .timepoint-card, .historical-map-shell"
