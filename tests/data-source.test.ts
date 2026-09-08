@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { cp, mkdtemp, mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { cp, mkdtemp, mkdir, readdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { basename, join } from "node:path";
+import { basename, join, relative } from "node:path";
 
 import { loadSourceData } from "../scripts/data-source";
 import { loadCoverageReviewData } from "../scripts/coverage-review";
@@ -72,6 +72,29 @@ afterEach(async () => {
 });
 
 describe("源数据分片", () => {
+  it("仅复制源文件的全新检出也能生成数据，不依赖本地空目录", async () => {
+    const root = await createTemporaryRoot();
+    const sourceRoot = join(root, "source");
+    const originalRoot = join(process.cwd(), "src/data/source");
+    const files = await readdir(originalRoot, { recursive: true, withFileTypes: true });
+    for (const file of files) {
+      if (!file.isFile()) continue;
+      const originalPath = join(file.parentPath, file.name);
+      const targetPath = join(sourceRoot, relative(originalRoot, originalPath));
+      await mkdir(join(targetPath, ".."), { recursive: true });
+      await cp(originalPath, targetPath);
+    }
+
+    const toolOutputRoot = join(root, "tool-output");
+    const publicOutputRoot = join(root, "public-output");
+    await generateData({ sourceRoot, toolOutputRoot, publicOutputRoot });
+
+    expect(await readJson(join(toolOutputRoot, "crownline-data.json"))).toEqual(data);
+    expect(await readJson(join(publicOutputRoot, "boundaries.json"))).toEqual(
+      buildGeneratedArtifacts(data).boundaries
+    );
+  });
+
   it("按显式顺序无损聚合完整数据", async () => {
     const sourceRoot = await createTemporaryRoot();
     await writeSourceTree(sourceRoot);
