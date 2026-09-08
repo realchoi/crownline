@@ -51,7 +51,7 @@ function useMobileControls() {
   return isMobile;
 }
 
-/** 完整控制台、滚动后工具条和移动筛选抽屉的页面级组合。 */
+/** 完整控制台、滚动后工具条和响应式筛选面板的页面级组合。 */
 export function BrowseControls({
   browseState,
   setBrowseState,
@@ -66,6 +66,7 @@ export function BrowseControls({
   const dialogRef = useRef<HTMLDialogElement>(null);
   const sheetTriggerRef = useRef<HTMLButtonElement>(null);
   const sheetCloseRef = useRef<HTMLButtonElement>(null);
+  const sheetResultsRef = useRef<HTMLButtonElement>(null);
   const hasOpenedSheetRef = useRef(false);
   const scopeLabel = getRegionScopeLabel(browseState.regionScope, regions);
   const timeLabel =
@@ -114,7 +115,9 @@ export function BrowseControls({
         else dialog.setAttribute("open", "");
       }
       document.body.classList.add("filter-sheet-open");
-      const frame = requestAnimationFrame(() => sheetCloseRef.current?.focus());
+      const frame = requestAnimationFrame(() =>
+        sheetCloseRef.current?.focus({ preventScroll: true })
+      );
       return () => cancelAnimationFrame(frame);
     }
 
@@ -124,15 +127,12 @@ export function BrowseControls({
     }
     document.body.classList.remove("filter-sheet-open");
     if (hasOpenedSheetRef.current) {
-      const frame = requestAnimationFrame(() => sheetTriggerRef.current?.focus());
+      const frame = requestAnimationFrame(() =>
+        (sheetTriggerRef.current ?? fullConsoleRef.current)?.focus({ preventScroll: true })
+      );
       return () => cancelAnimationFrame(frame);
     }
   }, [isSheetOpen]);
-
-  useEffect(() => {
-    if (isMobile || !isSheetOpen) return;
-    setIsSheetOpen(false);
-  }, [isMobile, isSheetOpen]);
 
   useEffect(() => () => document.body.classList.remove("filter-sheet-open"), []);
 
@@ -227,6 +227,8 @@ export function BrowseControls({
                 className="open-filter-button"
                 type="button"
                 aria-haspopup="dialog"
+                aria-expanded={isSheetOpen}
+                aria-controls="filter-sheet"
                 onClick={() => setIsSheetOpen(true)}
               >
                 筛选{activeFilterCount > 0 ? ` · ${activeFilterCount}` : ""}
@@ -243,45 +245,6 @@ export function BrowseControls({
               onClearAdditional={updateState.onClear}
             />
           </div>
-
-          <dialog
-            ref={dialogRef}
-            className="filter-sheet"
-            aria-labelledby="filter-sheet-title"
-            onCancel={(event) => {
-              event.preventDefault();
-              closeSheet();
-            }}
-            onKeyDown={(event) => {
-              if (event.key !== "Escape") return;
-              event.preventDefault();
-              closeSheet();
-            }}
-            onClose={() => setIsSheetOpen(false)}
-          >
-            <div className="filter-sheet-frame">
-              <header className="filter-sheet-heading">
-                <div>
-                  <span className="console-kicker">Explore / 探索</span>
-                  <h2 id="filter-sheet-title">筛选与呈现</h2>
-                </div>
-                <button
-                  ref={sheetCloseRef}
-                  type="button"
-                  aria-label="关闭筛选"
-                  onClick={closeSheet}
-                >
-                  <span aria-hidden="true">×</span>
-                </button>
-              </header>
-              <div className="filter-sheet-scroll">{renderConsole()}</div>
-              <footer className="filter-sheet-footer">
-                <button type="button" onClick={closeSheet}>
-                  查看 {resultCount} 个结果
-                </button>
-              </footer>
-            </div>
-          </dialog>
         </>
       ) : (
         <>
@@ -295,13 +258,11 @@ export function BrowseControls({
                 <button
                   className="expand-console-button"
                   type="button"
-                  onClick={() => {
-                    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-                      ? "auto"
-                      : "smooth";
-                    fullConsoleRef.current?.scrollIntoView({ behavior, block: "start" });
-                    fullConsoleRef.current?.focus({ preventScroll: true });
-                  }}
+                  ref={sheetTriggerRef}
+                  aria-haspopup="dialog"
+                  aria-expanded={isSheetOpen}
+                  aria-controls="filter-sheet"
+                  onClick={() => setIsSheetOpen(true)}
                 >
                   展开控制台
                 </button>
@@ -310,6 +271,49 @@ export function BrowseControls({
           </div>
         </>
       )}
+      <dialog
+        id="filter-sheet"
+        ref={dialogRef}
+        className="filter-sheet"
+        aria-labelledby="filter-sheet-title"
+        onCancel={(event) => {
+          event.preventDefault();
+          closeSheet();
+        }}
+        onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            event.preventDefault();
+            closeSheet();
+          } else if (event.key === "Tab") {
+            if (event.shiftKey && document.activeElement === sheetCloseRef.current) {
+              event.preventDefault();
+              sheetResultsRef.current?.focus();
+            } else if (!event.shiftKey && document.activeElement === sheetResultsRef.current) {
+              event.preventDefault();
+              sheetCloseRef.current?.focus();
+            }
+          }
+        }}
+        onClose={() => setIsSheetOpen(false)}
+      >
+        <div className="filter-sheet-frame">
+          <header className="filter-sheet-heading">
+            <div>
+              <span className="console-kicker">Explore / 探索</span>
+              <h2 id="filter-sheet-title">筛选与呈现</h2>
+            </div>
+            <button ref={sheetCloseRef} type="button" aria-label="关闭筛选" onClick={closeSheet}>
+              <span aria-hidden="true">×</span>
+            </button>
+          </header>
+          <div className="filter-sheet-scroll">{isSheetOpen && renderConsole()}</div>
+          <footer className="filter-sheet-footer">
+            <button ref={sheetResultsRef} type="button" onClick={closeSheet}>
+              查看 {resultCount} 个结果
+            </button>
+          </footer>
+        </div>
+      </dialog>
     </section>
   );
 }

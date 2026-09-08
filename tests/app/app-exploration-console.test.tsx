@@ -108,6 +108,20 @@ describe("探索控制台", () => {
       "时间轴"
     );
 
+    const user = setupUser();
+    const trigger = screen.getByRole("button", { name: "展开控制台" });
+    await user.click(trigger);
+    const dialog = screen.getByRole("dialog", { name: "筛选与呈现" });
+    await waitFor(() =>
+      expect(within(dialog).getByRole("button", { name: "关闭筛选" })).toHaveFocus()
+    );
+    await user.click(within(dialog).getByRole("button", { name: "中国" }));
+    await user.keyboard("{Escape}");
+    await waitFor(() => expect(trigger).toHaveFocus());
+    expect(screen.queryByRole("dialog", { name: "筛选与呈现" })).not.toBeInTheDocument();
+    expect(new URLSearchParams(window.location.search).get("scope")).toBe("china");
+    expect(screen.getByRole("region", { name: "紧凑探索工具条" })).toHaveTextContent("中国");
+
     bottom = 96;
     fireEvent.scroll(window);
     await waitFor(() =>

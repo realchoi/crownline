@@ -506,7 +506,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     expect(Math.abs((searchBox?.y ?? 0) - (clearBox?.y ?? 0))).toBeLessThan(2);
   });
 
-  test("桌面完整控制台滚出后切换为紧凑工具条并可返回", async ({ page, isMobile }) => {
+  test("桌面底部展开控制台保留滚动位置，关闭后恢复焦点", async ({ page, isMobile }, testInfo) => {
     test.skip(isMobile, "桌面滚动控制台仅在 desktop 项目覆盖");
 
     await page.goto("/");
@@ -514,15 +514,41 @@ test.describe("Crownline 浏览器冒烟", () => {
     await expect(page.getByRole("heading", { name: "探索控制台" })).toBeVisible();
     await expect(page.getByRole("region", { name: "紧凑探索工具条" })).toHaveCount(0);
 
-    await page.evaluate(() => window.scrollTo(0, 760));
+    await page.evaluate(() =>
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "instant" })
+    );
     const toolbar = page.getByRole("region", { name: "紧凑探索工具条" });
     await expect(toolbar).toBeVisible();
     const toolbarBox = await toolbar.boundingBox();
     expect(toolbarBox?.height ?? Number.POSITIVE_INFINITY).toBeLessThan(64);
 
-    await toolbar.getByRole("button", { name: "展开控制台" }).click();
-    await expect(page.locator(".full-exploration-console")).toBeFocused();
-    await expect(toolbar).toHaveCount(0);
+    const position = await page.evaluate(() => window.scrollY);
+    expect(position).toBeGreaterThan(760);
+    const trigger = toolbar.getByRole("button", { name: "展开控制台" });
+    for (const colorScheme of ["light", "dark"] as const) {
+      await page.emulateMedia({ colorScheme, reducedMotion: "reduce" });
+      await trigger.click();
+      const sheet = page.getByRole("dialog", { name: "筛选与呈现" });
+      await expect(sheet).toBeVisible();
+      const close = sheet.getByRole("button", { name: "关闭筛选" });
+      await expect(close).toBeFocused();
+      await expect.poll(() => page.evaluate(() => window.scrollY)).toBeCloseTo(position, 0);
+      await expect(sheet.getByRole("searchbox")).toBeVisible();
+      expect(await sheet.evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(
+        true
+      );
+      await close.focus();
+      await page.keyboard.press("Shift+Tab");
+      expect(await sheet.evaluate((element) => element.contains(document.activeElement))).toBe(
+        true
+      );
+      await expectNoSeriousA11yViolations(page);
+      await page.screenshot({ path: testInfo.outputPath(`desktop-filters-${colorScheme}.png`) });
+      await page.keyboard.press("Escape");
+      await expect(sheet).toHaveCount(0);
+      await expect(trigger).toBeFocused();
+      await expect.poll(() => page.evaluate(() => window.scrollY)).toBeCloseTo(position, 0);
+    }
   });
 
   test("移动筛选抽屉支持 Escape、焦点恢复和自选地区隔离", async ({ page, isMobile }) => {
