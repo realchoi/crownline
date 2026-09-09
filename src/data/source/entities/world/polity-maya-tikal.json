@@ -1,0 +1,80 @@
+{
+  "order": 1021,
+  "entities": [
+    {
+      "id": "polity-maya-tikal",
+      "entityKind": "polity",
+      "polityForms": ["state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "蒂卡尔",
+        "aliases": ["Tikal", "Tikal polity", "蒂卡尔城邦"]
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 90, "precision": "circa" },
+          "end": { "year": 900, "precision": "circa" }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": ["region-americas"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "蒂卡尔是危地马拉佩滕地区的玛雅政治体和大型城市中心。铭文王表把约90年的 Yax Ehb’ Xook 视为王统奠基者；378年的“进入”事件发生在蒂卡尔，并伴随王统更替。7—8世纪贾萨·钱·卡维一世及其继承者推动蒂卡尔复兴，遗址的末期历史活动延续至约900年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mesoweb-maya-tikal-rulers",
+          "locator": "Los Gobernantes de Tikal：Yax Ehb’ Xook，fundador，约90年；Jasaw Chan K’awiil I，682—734年"
+        },
+        {
+          "sourceId": "source-unesco-maya-tikal",
+          "locator": "Outstanding Universal Value, Brief synthesis：政治、经济与军事中心；铭文记录王统及与 Teotihuacan、Calakmul、Copan 等中心的关系；历史活动末期约900年"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "起点采用现有王表所列约90年的王统奠基者，终点采用遗址约900年的末期历史活动；两端都不应理解为城市或居民在某一确定年份突然出现或消失。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-maya-jasaw-chan-kawiil",
+      "names": {
+        "primary": "贾萨·钱·卡维一世",
+        "aliases": ["Jasaw Chan K'awiil I", "Ah Cacao", "Ruler A of Tikal"]
+      },
+      "description": "贾萨·钱·卡维一世是蒂卡尔君主，682年即位；其统治与蒂卡尔摆脱卡拉克穆尔压力、恢复区域影响力和兴建主要纪念建筑有关。734年其子伊基因·钱·卡维即位，作为本条任期的终点。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mesoweb-maya-tikal-rulers",
+          "locator": "Jasaw Chan K’awiil I：682年5月3日即位；Yik’in Chan K’awiil：734年12月8日即位"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-maya-jasaw-chan-kawiil",
+      "personId": "person-maya-jasaw-chan-kawiil",
+      "polityId": "polity-maya-tikal",
+      "titles": ["蒂卡尔 ajaw"],
+      "localTitles": ["Ajaw"],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": { "year": 682, "precision": "exact" },
+          "end": { "year": 734, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "682年即位；734年继承者伊基因·钱·卡维即位。本条按年闭区间展示，因此首尾年只表示该年内曾在位。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mesoweb-maya-tikal-rulers",
+          "locator": "Jasaw Chan K’awiil I 即位：9.12.9.17.16（682-05-03）；Yik’in Chan K’awiil 即位：9.15.3.6.8（734-12-08）"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

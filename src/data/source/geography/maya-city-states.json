@@ -1,11 +1,11 @@
 [
   {
     "id": "geo-maya-tikal",
-    "polityId": "polity-maya-city-states",
+    "polityId": "polity-maya-tikal",
     "periods": [
       {
         "start": {
-          "year": 250,
+          "year": 90,
           "precision": "circa"
         },
         "end": {
@@ -15,21 +15,109 @@
       }
     ],
     "placeName": "Tikal",
-    "role": "representative-center",
+    "role": "political-center",
     "coordinates": {
-      "latitude": 17.222,
-      "longitude": -89.6237
+      "latitude": 17.2167,
+      "longitude": -89.6167
     },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用蒂卡尔考古遗址中心点；作为古典期玛雅城邦网络的代表性中心之一，仅表示浏览定位，不表示单一政权疆域。",
+    "positionPrecision": "regional",
+    "positionNote": "坐标由 UNESCO 世界遗产条目所列 N17 13 0、W89 37 0 换算并四舍五入至小数点后4位，仅作为蒂卡尔遗址区域的浏览定位，不表示古城边界或政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
-      },
-      {
-        "sourceId": "source-maya-history"
+        "sourceId": "source-unesco-maya-tikal",
+        "locator": "World Heritage List no. 64，Dossier 坐标 N17 13 0 W89 37 0；Brief synthesis 说明蒂卡尔为政治、经济与军事中心，末期历史活动约至900年"
       }
     ],
     "confidence": "medium"
+  },
+  {
+    "id": "geo-maya-palenque",
+    "polityId": "polity-maya-palenque",
+    "periods": [
+      {
+        "start": { "year": 431, "precision": "exact" },
+        "end": { "year": 900, "precision": "circa" }
+      }
+    ],
+    "placeName": "Palenque",
+    "role": "political-center",
+    "coordinates": {
+      "latitude": 17.4833,
+      "longitude": -92.05
+    },
+    "positionPrecision": "regional",
+    "positionNote": "坐标由 UNESCO 世界遗产条目所列 N17 28 59.988、W92 2 60 换算并四舍五入，仅作为帕伦克遗址区域的浏览定位，不表示古城边界或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-unesco-maya-palenque",
+        "locator": "World Heritage List no. 411，Dossier 坐标 N17 28 59.988 W92 2 60；Brief synthesis 说明约500年成为区域政治单位的强势首都、约9世纪弃城"
+      },
+      {
+        "sourceId": "source-mesoweb-maya-palenque-rulers",
+        "locator": "Table of Palenque Rulers：王统奠基者 K’uk’ B’ahlam I 于431-03-11即位"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "适用期以王统起点和遗址弃置宽口径限定；UNESCO 坐标是世界遗产记录的区域锚点，不是宫殿或古城边界测绘。"
+  },
+  {
+    "id": "geo-maya-calakmul",
+    "polityId": "polity-maya-calakmul",
+    "periods": [
+      {
+        "start": { "year": 562, "precision": "exact" },
+        "end": { "year": 909, "precision": "circa" }
+      }
+    ],
+    "placeName": "Calakmul",
+    "role": "political-center",
+    "coordinates": {
+      "latitude": 18.053,
+      "longitude": -89.7373
+    },
+    "positionPrecision": "regional",
+    "positionNote": "坐标由 UNESCO 扩展后的卡拉克穆尔世界遗产地条目所列 N18 3 10.9、W89 44 14.22 换算并四舍五入，仅作遗产地范围内的区域浏览锚点，不冒充古城核心点或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-unesco-maya-calakmul",
+        "locator": "World Heritage List no. 1061bis，Dossier 坐标 N18 3 10.9 W89 44 14.22；铭文石碑记录区域政治史与领土组织"
+      },
+      {
+        "sourceId": "source-inah-maya-calakmul",
+        "locator": "Calakmul，历史段：562年成为蛇首王国首都；最后一块有日期石碑为909年"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "UNESCO 坐标对应扩展后的世界遗产地，精度只按区域处理；909年是最后有日期石碑，不是确定的政权终结年。"
+  },
+  {
+    "id": "geo-maya-copan",
+    "polityId": "polity-maya-copan",
+    "periods": [
+      {
+        "start": { "year": 427, "precision": "exact" },
+        "end": { "year": 900, "precision": "circa" }
+      }
+    ],
+    "placeName": "Copán",
+    "role": "political-center",
+    "coordinates": {
+      "latitude": 14.838,
+      "longitude": -89.142
+    },
+    "positionPrecision": "regional",
+    "positionNote": "坐标由 UNESCO 世界遗产条目所列 N14 50 16.8、W89 8 31.2 换算并四舍五入，仅作为科潘遗址区域的浏览定位，不表示古城边界或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-unesco-maya-copan",
+        "locator": "World Heritage List no. 129bis，Dossier 坐标 N14 50 16.8 W89 8 31.2；Brief synthesis 说明427年开启王统、遗址约10世纪初弃置"
+      },
+      {
+        "sourceId": "source-peabody-maya-copan-rulers",
+        "locator": "Copán’s Dynastic History: Altar Q：427年以后王统与末期铭文记录"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "适用期末端是遗址弃置的宽口径，不表示王统在确定的900年终结。"
   }
 ]

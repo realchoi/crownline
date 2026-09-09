@@ -1,20 +1,93 @@
 [
   {
-    "id": "source-maya-history",
-    "title": "Maya",
-    "sourceType": "institutional",
-    "citation": "Encyclopaedia Britannica: 'Maya'；用于校订古典期玛雅城邦网络、铭文纪年与9世纪前后衰落等叙述。",
-    "publisher": "Encyclopaedia Britannica",
-    "url": "https://www.britannica.com/topic/Maya",
-    "accessedAt": "2026-08-18"
+    "id": "source-openstax-maya-city-states",
+    "title": "World History Volume 1, §8.2: Early Cultures and Civilizations in the Americas",
+    "sourceType": "tertiary",
+    "citation": "OpenStax, World History Volume 1, to 1500, §8.2；用于古典期玛雅分期与多个独立城邦并存的概览。",
+    "publisher": "OpenStax, Rice University",
+    "url": "https://openstax.org/books/world-history-volume-1/pages/8-2-early-cultures-and-civilizations-in-the-americas",
+    "accessedAt": "2026-09-08"
   },
   {
-    "id": "source-maya-rulers",
-    "title": "List of Maya rulers",
-    "sourceType": "tertiary",
-    "citation": "Wikipedia contributors: List of Maya rulers 及各城邦君主条目；用于交叉核对帕伦克、蒂卡尔、卡拉克穆尔与科潘代表性 ajaw 的在位年份。",
-    "publisher": "Wikimedia Foundation",
-    "url": "https://en.wikipedia.org/wiki/List_of_Maya_rulers",
-    "accessedAt": "2026-08-18"
+    "id": "source-unesco-maya-tikal",
+    "title": "Tikal National Park",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre, Tikal National Park, World Heritage List no. 64；用于蒂卡尔的政治中心属性、跨城关系、末期活动与遗址区域坐标。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/64/",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-mesoweb-maya-tikal-rulers",
+    "title": "Los Gobernantes de Tikal",
+    "sourceType": "secondary",
+    "citation": "Mesoweb：Los Gobernantes de Tikal；王表基于 Simon Martin 与 Nikolai Grube 等人的铭文学研究，用于校订蒂卡尔王统与即位日期。",
+    "publisher": "Mesoweb",
+    "url": "https://www.mesoweb.com/es/gobernantes/tikal/gobernantes.html",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-unesco-maya-palenque",
+    "title": "Pre-Hispanic City and National Park of Palenque",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre, Pre-Hispanic City and National Park of Palenque, World Heritage List no. 411；用于帕伦克的区域政治中心属性及约9世纪弃置口径。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/411/",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-mesoweb-maya-palenque-rulers",
+    "title": "Table of Palenque Rulers",
+    "sourceType": "secondary",
+    "citation": "Joel Skidmore 与 Mesoweb：Table of Palenque Rulers；据帕伦克铭文校订王统、长纪历与公历日期。",
+    "authors": ["Joel Skidmore"],
+    "publisher": "Mesoweb",
+    "url": "https://www.mesoweb.com/palenque/resources/rulers/rulers_table.html",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-inah-maya-pakal",
+    "title": "La Tumba de Pakal: un hito en la arqueología mexicana",
+    "sourceType": "institutional",
+    "citation": "Instituto Nacional de Antropología e Historia：La Tumba de Pakal；用于交叉核对帕卡尔在帕伦克的615—683年统治。",
+    "publisher": "Instituto Nacional de Antropología e Historia",
+    "url": "https://www.inah.gob.mx/foto-del-dia/la-tumba-de-pakal-un-hito-en-la-arqueologia-mexicana",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-inah-maya-calakmul",
+    "title": "Calakmul",
+    "sourceType": "institutional",
+    "citation": "Instituto Nacional de Antropología e Historia, Lugares INAH：Calakmul；用于校订卡拉克穆尔政治节点、王表与末期石碑日期。",
+    "publisher": "Instituto Nacional de Antropología e Historia",
+    "url": "https://lugares.inah.gob.mx/es/node/4376",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-unesco-maya-calakmul",
+    "title": "Ancient Maya City and Protected Tropical Forests of Calakmul, Campeche",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre, Ancient Maya City and Protected Tropical Forests of Calakmul, Campeche, World Heritage List no. 1061；用于卡拉克穆尔铭文政治史与9—10世纪衰退口径。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/1061/",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-unesco-maya-copan",
+    "title": "Maya Site of Copan",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre, Maya Site of Copan, World Heritage List no. 129；用于科潘王统建立、政治中心属性与遗址弃置口径。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/129/",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-peabody-maya-copan-rulers",
+    "title": "Altar Q and Copán",
+    "sourceType": "institutional",
+    "citation": "Peabody Museum of Archaeology & Ethnology, Harvard University：Altar Q and Copán；用于科潘第11至13位君主及晚期王统的铭文日期与身份。",
+    "publisher": "Peabody Museum of Archaeology & Ethnology, Harvard University",
+    "url": "https://peabody.harvard.edu/altar-q-and-cop%C3%A1n",
+    "accessedAt": "2026-09-08"
   }
 ]

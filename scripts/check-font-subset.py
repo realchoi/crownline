@@ -6,7 +6,13 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-from font_charsets import ASCII, DATA_EXCLUDED_KEYS, collect_display_chars, strip_comments
+from font_charsets import (
+    ASCII,
+    DATA_EXCLUDED_KEYS,
+    collect_checked_chars,
+    collect_display_chars,
+    strip_comments,
+)
 
 try:
     from fontTools.ttLib import TTFont
@@ -30,21 +36,24 @@ def cmap_chars(path: Path) -> set[int]:
 def collect_usage() -> tuple[dict[str, set[str]], dict]:
     """收集源码与数据中的非 ASCII 字符及其出处。"""
     usage: dict[str, set[str]] = defaultdict(set)
+
+    def add_usage(text: str, origin: str):
+        for ch in collect_checked_chars(text):
+            if ord(ch) > 127:
+                usage[ch].add(origin)
+
     for path in list((ROOT / "src").rglob("*.ts")) + list((ROOT / "src").rglob("*.tsx")):
-        for ch in strip_comments(path.read_text(encoding="utf-8")):
-            if ch.strip() and ord(ch) > 127:
-                usage[ch].add(str(path.relative_to(ROOT)))
-    for ch in (ROOT / "index.html").read_text(encoding="utf-8"):
-        if ch.strip() and ord(ch) > 127:
-            usage[ch].add("index.html")
+        add_usage(
+            strip_comments(path.read_text(encoding="utf-8")),
+            str(path.relative_to(ROOT)),
+        )
+    add_usage((ROOT / "index.html").read_text(encoding="utf-8"), "index.html")
 
     data = json.loads((ROOT / ".generated/data/crownline-data.json").read_text(encoding="utf-8"))
 
     def walk(node, trail: str):
         if isinstance(node, str):
-            for ch in node:
-                if ch.strip() and ord(ch) > 127:
-                    usage[ch].add(f"data:{trail}")
+            add_usage(node, f"data:{trail}")
         elif isinstance(node, dict):
             for key, value in node.items():
                 if key not in DATA_EXCLUDED_KEYS:
@@ -93,7 +102,7 @@ def main() -> int:
     print(
         f"字体子集覆盖检查通过:拉丁正文 {len(latin_body)} 字符,"
         f"中文正文 {len(sans)} 字符,标题 {len(song)} 字符,"
-        f"拉丁标题 {len(latin)} 字符,全站用字均已覆盖。"
+        f"拉丁标题 {len(latin)} 字符,站内字体覆盖检查通过；泰文、韩文依系统字体回退。"
     )
     return 0
 

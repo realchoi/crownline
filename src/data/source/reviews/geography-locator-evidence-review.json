@@ -1,0 +1,2338 @@
+{
+  "reviewVersion": 1,
+  "reviewedAt": "2026-09-08",
+  "scope": "2026-09-08 基线中100条所有 sourceRefs 均缺少非空 locator 的既有地理快照；本文件为维护侧证据审查，不进入浏览器产物。",
+  "method": [
+    "坐标证据、历史地点/角色证据、适用年代证据分开判断。",
+    "通用 GeoNames 首页不视为具体坐标证据；只有可对应 feature/dossier 的记录才可标为已核实。",
+    "政权纪年不能推出都城或政治中心；点位区间等同政权存续期时仍需直接来源。",
+    "pending-evidence 表示尚待核查，不表示证据不存在或历史判断为否。"
+  ],
+  "summary": {
+    "baselineRecords": 100,
+    "verifiedThisReview": 9,
+    "correctedThisReview": 4,
+    "pendingEvidence": 91
+  },
+  "maintenanceNotes": [
+    "polity-maya-city-states 保留原稳定 ID，但已改为历史分期；其旧 Tikal 点位迁到 polity-maya-tikal。",
+    "person-maya-k-ahk 与 reign-maya-k-ahk 保留稳定 ID；人物已由误混的基里瓜 Cauac Sky 更正为科潘第11位君主 Buts’ Chan / K’ak’ Chan Yopaat。"
+  ],
+  "groups": [
+    {
+      "id": "china",
+      "entries": [
+        {
+          "recordId": "geo-balhae-shangjing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-balhae",
+          "placeName": "上京龙泉府",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-history-korea-balhae-culture"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“上京龙泉府”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-cao-wei-luoyang",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-cao-wei",
+          "placeName": "洛阳",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-zgbk-three-kingdoms"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“洛阳”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-dali-capital",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-dali",
+          "placeName": "羊苴咩城",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "查找直接支持“羊苴咩城”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-eastern-han-changan",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-eastern-han",
+          "placeName": "长安",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "查找直接支持“长安”在所列区间担任political-center的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-eastern-han-luoyang",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-eastern-han",
+          "placeName": "洛阳",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "查找直接支持“洛阳”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-eastern-han-xuchang",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-eastern-han",
+          "placeName": "许昌",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "查找直接支持“许昌”在所列区间担任political-center的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-eastern-jin-jiankang",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-eastern-jin",
+          "placeName": "建康",
+          "group": "china",
+          "reviewStatus": "verified",
+          "outcome": "period-corrected-and-evidence-added",
+          "baselineSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-locator-review-nanjing-history",
+              "locator": "History，Six Dynasties 段：Nanjing（then Jiankang）continued to serve as capital of the Eastern Jin dynasty"
+            },
+            {
+              "sourceId": "source-locator-review-geonames-nanjing",
+              "locator": "Feature 1799962：Nanjing，32.06167, 118.77778；城市级区域参照"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用具体 UNESCO dossier 坐标或 GeoNames feature 记录核实；仅按区域精度使用。",
+            "historicalIdentity": "已用机构或学术来源的具体段落核实政治中心/都城身份。",
+            "temporalApplicability": "已用可定位来源核实，并受对应政权存在区间约束。"
+          }
+        },
+        {
+          "recordId": "geo-eastern-wu-jianye",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-eastern-wu",
+          "placeName": "建业",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-zgbk-three-kingdoms"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“建业”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-eastern-wu-wuchang",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-eastern-wu",
+          "placeName": "武昌",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-zgbk-three-kingdoms"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“武昌”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-jin-bianjing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-jin",
+          "placeName": "汴京",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "查找直接支持“汴京”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-jin-huining",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-jin",
+          "placeName": "会宁府",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "查找直接支持“会宁府”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-jin-zhongdu",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-jin",
+          "placeName": "中都",
+          "group": "china",
+          "reviewStatus": "verified",
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-locator-review-beijing-capitals",
+              "locator": "金代中都史段：1153年迁都燕京并称中都；1214年金宣宗弃中都迁汴，翌年蒙古军攻破中都"
+            },
+            {
+              "sourceId": "source-locator-review-geonames-beijing",
+              "locator": "Feature 1816670：Beijing，39.9075, 116.39723；城市级区域参照"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用具体 UNESCO dossier 坐标或 GeoNames feature 记录核实；仅按区域精度使用。",
+            "historicalIdentity": "已用机构或学术来源的具体段落核实政治中心/都城身份。",
+            "temporalApplicability": "已区分1214年金廷迁汴与1215年中都城破；点位以迁都年1214为适用终点。"
+          }
+        },
+        {
+          "recordId": "geo-liao-shangjing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-liao",
+          "placeName": "上京临潢府",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "查找直接支持“上京临潢府”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-ming-beijing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-ming",
+          "placeName": "北京",
+          "group": "china",
+          "reviewStatus": "verified",
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-locator-review-nanjing-history",
+              "locator": "History，明代段：1421年迁主要都城到 Beijing；南京降为次都"
+            },
+            {
+              "sourceId": "source-locator-review-geonames-beijing",
+              "locator": "Feature 1816670：Beijing，39.9075, 116.39723；城市级区域参照"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用具体 UNESCO dossier 坐标或 GeoNames feature 记录核实；仅按区域精度使用。",
+            "historicalIdentity": "已用机构或学术来源的具体段落核实政治中心/都城身份。",
+            "temporalApplicability": "已用可定位来源核实，并受对应政权存在区间约束。"
+          }
+        },
+        {
+          "recordId": "geo-ming-nanjing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-ming",
+          "placeName": "南京",
+          "group": "china",
+          "reviewStatus": "verified",
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-locator-review-nanjing-history",
+              "locator": "History，明代段：1368年朱元璋在应天府即位并以南京为都；1421年迁主要都城到北京"
+            },
+            {
+              "sourceId": "source-locator-review-geonames-nanjing",
+              "locator": "Feature 1799962：Nanjing，32.06167, 118.77778；城市级区域参照"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用具体 UNESCO dossier 坐标或 GeoNames feature 记录核实；仅按区域精度使用。",
+            "historicalIdentity": "已用机构或学术来源的具体段落核实政治中心/都城身份。",
+            "temporalApplicability": "已用可定位来源核实，并受对应政权存在区间约束。"
+          }
+        },
+        {
+          "recordId": "geo-mongol-karakorum",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-mongol-empire",
+          "placeName": "哈拉和林",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "查找直接支持“哈拉和林”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-nanzhao-taihe",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-nanzhao",
+          "placeName": "太和城",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "查找直接支持“太和城”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-northern-song-kaifeng",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-northern-song",
+          "placeName": "开封",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "查找直接支持“开封”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-northern-wei-luoyang",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-northern-wei",
+          "placeName": "洛阳",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-shanxi-yungang-chronology"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“洛阳”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-northern-wei-pingcheng",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-northern-wei",
+          "placeName": "平城",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-shanxi-yungang-chronology"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“平城”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-northern-wei-shengle",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-northern-wei",
+          "placeName": "盛乐",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-shanxi-yungang-chronology"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“盛乐”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-qin-xianyang",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-qin",
+          "placeName": "咸阳",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "查找直接支持“咸阳”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-qing-beijing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-qing",
+          "placeName": "北京",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-dpm-later-jin"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“北京”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-qing-shengjing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-qing",
+          "placeName": "盛京",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-dpm-later-jin"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“盛京”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-shang-yin",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-shang",
+          "placeName": "殷",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "查找直接支持“殷”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-shu-han-chengdu",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-shu-han",
+          "placeName": "成都",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-zgbk-three-kingdoms"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“成都”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-southern-song-linan",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-southern-song",
+          "placeName": "临安",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "查找直接支持“临安”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-sui-daxing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-sui",
+          "placeName": "大兴城",
+          "group": "china",
+          "reviewStatus": "verified",
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-locator-review-xian-capital-site",
+              "locator": "隋大兴城、唐长安城遗址：开皇三年（583）隋王朝迁至新都大兴城"
+            },
+            {
+              "sourceId": "source-locator-review-geonames-xian",
+              "locator": "Feature 1790630：Xi'an，34.25833, 108.92861；城市级区域参照"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用具体 UNESCO dossier 坐标或 GeoNames feature 记录核实；仅按区域精度使用。",
+            "historicalIdentity": "已用机构或学术来源的具体段落核实政治中心/都城身份。",
+            "temporalApplicability": "已按西安市地方志把起年由581修正为583。"
+          }
+        },
+        {
+          "recordId": "geo-tang-changan",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-tang",
+          "placeName": "长安",
+          "group": "china",
+          "reviewStatus": "verified",
+          "outcome": "period-corrected-and-evidence-added",
+          "baselineSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-locator-review-xian-capital-site",
+              "locator": "隋大兴城、唐长安城遗址：唐长安城基本承继大兴城规模、布局与设施，并作为唐代都城"
+            },
+            {
+              "sourceId": "source-locator-review-tang-move-luoyang",
+              "locator": "唐代段：天祐元年（904）朱全忠胁迫唐昭宗迁都洛阳"
+            },
+            {
+              "sourceId": "source-locator-review-geonames-xian",
+              "locator": "Feature 1790630：Xi'an，34.25833, 108.92861；城市级区域参照"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用具体 UNESCO dossier 坐标或 GeoNames feature 记录核实；仅按区域精度使用。",
+            "historicalIdentity": "已用机构或学术来源的具体段落核实政治中心/都城身份。",
+            "temporalApplicability": "已按陕州区政府历史资料把第二段终年由907修正为904；武周中断依唐的实体分段排除。"
+          }
+        },
+        {
+          "recordId": "geo-tibet-lhasa",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-tibet-empire",
+          "placeName": "逻些",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-li-tang-tibet-treaty"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“逻些”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-western-han-changan",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-western-han",
+          "placeName": "长安",
+          "group": "china",
+          "reviewStatus": "verified",
+          "outcome": "period-corrected-and-evidence-added",
+          "baselineSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-locator-review-xian-gazetteer",
+              "locator": "第二节 建置沿革：西汉高祖七年（前200），国都从栎阳迁至长安；新始建国元年（9）改长安县为常安县"
+            },
+            {
+              "sourceId": "source-locator-review-geonames-xian",
+              "locator": "Feature 1790630：Xi'an，34.25833, 108.92861；城市级区域参照"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用具体 UNESCO dossier 坐标或 GeoNames feature 记录核实；仅按区域精度使用。",
+            "historicalIdentity": "已用机构或学术来源的具体段落核实政治中心/都城身份。",
+            "temporalApplicability": "已按《西安市长安区志》把起年由前202修正为前200。"
+          }
+        },
+        {
+          "recordId": "geo-western-jin-luoyang",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-western-jin",
+          "placeName": "洛阳",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "查找直接支持“洛阳”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-western-xia-xingqing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-western-xia",
+          "placeName": "兴庆府",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "查找直接支持“兴庆府”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-western-zhou-haojing",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-western-zhou",
+          "placeName": "镐京",
+          "group": "china",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "证据不足：中国历史纪年简表只支持政权纪年，不能支持地点身份或都城角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "查找直接支持“镐京”在所列区间担任capital的机构/学术来源，并另配具体坐标数据集记录。"
+        },
+        {
+          "recordId": "geo-yuan-dadu",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-cn-yuan",
+          "placeName": "大都",
+          "group": "china",
+          "reviewStatus": "verified",
+          "outcome": "period-corrected-and-evidence-added",
+          "baselineSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-cn-chronology-table"
+            }
+          ],
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-locator-review-beijing-history",
+              "locator": "北京何以称“北京”，元代段：1272年迁都燕京，称大都；1368年明军攻占大都"
+            },
+            {
+              "sourceId": "source-locator-review-geonames-beijing",
+              "locator": "Feature 1816670：Beijing，39.9075, 116.39723；城市级区域参照"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用具体 UNESCO dossier 坐标或 GeoNames feature 记录核实；仅按区域精度使用。",
+            "historicalIdentity": "已用机构或学术来源的具体段落核实政治中心/都城身份。",
+            "temporalApplicability": "已按北京市文物资料把起年由1271修正为1272。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "other-asia",
+      "entries": [
+        {
+          "recordId": "geo-ayutthaya-capital",
+          "sourcePath": "src/data/source/geography/ayutthaya-kingdom.json",
+          "polityId": "polity-ayutthaya-kingdom",
+          "placeName": "Ayutthaya",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-ayutthaya-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Ayutthaya”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-chalukya-badami",
+          "sourcePath": "src/data/source/geography/chalukya-dynasty.json",
+          "polityId": "polity-chalukya-dynasty",
+          "placeName": "Badami",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-chalukya-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Badami”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-champa-vijaya",
+          "sourcePath": "src/data/source/geography/champa-kingdom.json",
+          "polityId": "polity-champa-kingdom",
+          "placeName": "Vijaya",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-champa-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Vijaya”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-chola-gangaikonda",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-chola-empire",
+          "placeName": "Gangaikonda Cholapuram",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-inflibnet-chola"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Gangaikonda Cholapuram”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-chola-thanjavur",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-chola-empire",
+          "placeName": "Thanjavur",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-inflibnet-chola"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Thanjavur”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-delhi-sultanate-delhi",
+          "sourcePath": "src/data/source/geography/delhi-sultanate.json",
+          "polityId": "polity-delhi-sultanate",
+          "placeName": "Delhi",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-delhi-sultanate-britannica"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Delhi”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-goryeo-gaegyeong",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-goryeo",
+          "placeName": "Gaegyeong",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-goryeo-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Gaegyeong”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-goryeo-ganghwa",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-goryeo",
+          "placeName": "Ganghwa",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-goryeo-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Ganghwa”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-gupta-pataliputra",
+          "sourcePath": "src/data/source/geography/gupta-empire.json",
+          "polityId": "polity-gupta-empire",
+          "placeName": "Pataliputra",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-gupta-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Pataliputra”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-khmer-angkor",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-khmer-empire",
+          "placeName": "Angkor",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-khmer-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Angkor”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-kushan-begram",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-kushan-empire",
+          "placeName": "Begram",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-kushan-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Begram”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-majapahit-trowulan",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-majapahit",
+          "placeName": "Trowulan",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-majapahit-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Trowulan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-maurya-pataliputra",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-maurya-empire",
+          "placeName": "Pataliputra",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-maurya-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Pataliputra”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-mughal-agra",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-mughal-empire",
+          "placeName": "Agra",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-mughal-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Agra”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-mughal-delhi",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-mughal-empire",
+          "placeName": "Delhi",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-mughal-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Delhi”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-mughal-fatehpur-sikri",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-mughal-empire",
+          "placeName": "Fatehpur Sikri",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-mughal-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Fatehpur Sikri”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-mughal-lahore",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-mughal-empire",
+          "placeName": "Lahore",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-mughal-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Lahore”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-pagan-bagan",
+          "sourcePath": "src/data/source/geography/pagan-kingdom.json",
+          "polityId": "polity-pagan-kingdom",
+          "placeName": "Pagan",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-pagan-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Pagan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-safavid-isfahan",
+          "sourcePath": "src/data/source/geography/safavid-iran.json",
+          "polityId": "polity-safavid-iran",
+          "placeName": "Isfahan",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-safavid-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Isfahan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-safavid-qazvin",
+          "sourcePath": "src/data/source/geography/safavid-iran.json",
+          "polityId": "polity-safavid-iran",
+          "placeName": "Qazvin",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-safavid-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Qazvin”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-safavid-tabriz",
+          "sourcePath": "src/data/source/geography/safavid-iran.json",
+          "polityId": "polity-safavid-iran",
+          "placeName": "Tabriz",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-safavid-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Tabriz”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-sasanian-ctesiphon",
+          "sourcePath": "src/data/source/geography/sasanian-empire.json",
+          "polityId": "polity-sasanian-empire",
+          "placeName": "Ctesiphon",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-sasanian-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Ctesiphon”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-seljuk-hamadan",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-seljuk-empire",
+          "placeName": "Hamadan",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-seljuk-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Hamadan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-seljuk-isfahan",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-seljuk-empire",
+          "placeName": "Isfahan",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-seljuk-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Isfahan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-seljuk-merv",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-seljuk-empire",
+          "placeName": "Merv",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-seljuk-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Merv”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-seljuk-nishapur",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-seljuk-empire",
+          "placeName": "Nishapur",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-seljuk-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Nishapur”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-seljuk-ray",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-seljuk-empire",
+          "placeName": "Ray",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-seljuk-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Ray”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-sukhothai-capital",
+          "sourcePath": "src/data/source/geography/sukhothai-kingdom.json",
+          "polityId": "polity-sukhothai-kingdom",
+          "placeName": "Sukhothai",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-sukhothai-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Sukhothai”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-timurid-herat",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-timurid-empire",
+          "placeName": "Herat",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-timurid-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Herat”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-timurid-samarkand",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-timurid-empire",
+          "placeName": "Samarkand",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-timurid-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Samarkand”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-tokugawa-edo",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-tokugawa-shogunate",
+          "placeName": "Edo",
+          "group": "other-asia",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-tokugawa-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Edo”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        }
+      ]
+    },
+    {
+      "id": "europe",
+      "entries": [
+        {
+          "recordId": "geo-byzantine-constantinople",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-byzantine-empire",
+          "placeName": "Constantinople",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-met-byzantium"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Constantinople”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-byzantine-nicaea",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-byzantine-empire",
+          "placeName": "Nicaea",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-met-byzantium"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Nicaea”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-castile-burgos",
+          "sourcePath": "src/data/source/geography/kingdom-of-castile.json",
+          "polityId": "polity-kingdom-of-castile",
+          "placeName": "Burgos",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-castile-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Burgos”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-castile-toledo",
+          "sourcePath": "src/data/source/geography/kingdom-of-castile.json",
+          "polityId": "polity-kingdom-of-castile",
+          "placeName": "Toledo",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-castile-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Toledo”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-england-london",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-kingdom-of-england",
+          "placeName": "London",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-england-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“London”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-england-winchester",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-kingdom-of-england",
+          "placeName": "Winchester",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-england-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Winchester”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-first-bulgarian-pliska",
+          "sourcePath": "src/data/source/geography/first-bulgarian-empire.json",
+          "polityId": "polity-first-bulgarian-empire",
+          "placeName": "Pliska",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-first-bulgarian-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Pliska”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-first-bulgarian-preslav",
+          "sourcePath": "src/data/source/geography/first-bulgarian-empire.json",
+          "polityId": "polity-first-bulgarian-empire",
+          "placeName": "Preslav",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-first-bulgarian-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Preslav”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-frankish-aachen",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-frankish-kingdom",
+          "placeName": "Aachen",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-frankish-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Aachen”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-hre-aachen",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-holy-roman-empire",
+          "placeName": "Aachen",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-dhm-hre"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Aachen”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-kievan-rus-kiev",
+          "sourcePath": "src/data/source/geography/kievan-rus.json",
+          "polityId": "polity-kievan-rus",
+          "placeName": "Kiev",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-kievan-rus-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Kiev”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-leon-capital",
+          "sourcePath": "src/data/source/geography/kingdom-of-leon.json",
+          "polityId": "polity-kingdom-of-leon",
+          "placeName": "León",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-leon-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“León”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-ottoman-bursa",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-ottoman-empire",
+          "placeName": "Bursa",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-ottoman-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Bursa”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-ottoman-edirne",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-ottoman-empire",
+          "placeName": "Edirne",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-ottoman-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Edirne”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-ottoman-istanbul",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-ottoman-empire",
+          "placeName": "Istanbul",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-ottoman-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Istanbul”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-ottoman-sogut",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-ottoman-empire",
+          "placeName": "Söğüt",
+          "group": "europe",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-ottoman-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Söğüt”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        }
+      ]
+    },
+    {
+      "id": "africa",
+      "entries": [
+        {
+          "recordId": "geo-abbasid-baghdad",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-abbasid-caliphate",
+          "placeName": "Baghdad",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-met-abbasid"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Baghdad”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-aksum-axum",
+          "sourcePath": "src/data/source/geography/aksumite-kingdom.json",
+          "polityId": "polity-aksumite-kingdom",
+          "placeName": "Axum",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-aksum-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Axum”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-ethiopian-gondar",
+          "sourcePath": "src/data/source/geography/ethiopian-empire.json",
+          "polityId": "polity-ethiopian-empire",
+          "placeName": "Gondar",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-ethiopian-empire-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Gondar”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-fatimid-cairo",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-fatimid-caliphate",
+          "placeName": "Cairo",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-fatimid-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Cairo”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-fatimid-mahdia",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-fatimid-caliphate",
+          "placeName": "Mahdia",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-fatimid-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Mahdia”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-fatimid-mansuriya",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-fatimid-caliphate",
+          "placeName": "Mansuriya",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-fatimid-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Mansuriya”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-great-zimbabwe-site",
+          "sourcePath": "src/data/source/geography/great-zimbabwe.json",
+          "polityId": "polity-great-zimbabwe",
+          "placeName": "Great Zimbabwe",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-great-zimbabwe-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Great Zimbabwe”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-kanem-bornu-ngazargamu",
+          "sourcePath": "src/data/source/geography/kanem-bornu-empire.json",
+          "polityId": "polity-kanem-bornu-empire",
+          "placeName": "Ngazargamu",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-kanem-bornu-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Ngazargamu”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-mali-niani",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-mali-empire",
+          "placeName": "Niani",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-mali-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Niani”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-mutapa-zvongombe",
+          "sourcePath": "src/data/source/geography/mutapa-empire.json",
+          "polityId": "polity-mutapa-empire",
+          "placeName": "Zvongombe",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-mutapa-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Zvongombe”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-songhai-gao",
+          "sourcePath": "src/data/source/geography/songhai-empire.json",
+          "polityId": "polity-songhai-empire",
+          "placeName": "Gao",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-songhai-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Gao”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-umayyad-damascus",
+          "sourcePath": "src/data/source/geography/umayyad-caliphate.json",
+          "polityId": "polity-umayyad-caliphate",
+          "placeName": "Damascus",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-umayyad-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Damascus”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-umayyad-harran",
+          "sourcePath": "src/data/source/geography/umayyad-caliphate.json",
+          "polityId": "polity-umayyad-caliphate",
+          "placeName": "Harran",
+          "group": "africa",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-umayyad-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Harran”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        }
+      ]
+    },
+    {
+      "id": "americas",
+      "entries": [
+        {
+          "recordId": "geo-aztec-tenochtitlan",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-aztec-empire",
+          "placeName": "Tenochtitlan",
+          "group": "americas",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-aztec-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Tenochtitlan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-inca-cusco",
+          "sourcePath": "src/data/source/geography/geographic-snapshots.json",
+          "polityId": "polity-inca-empire",
+          "placeName": "Cusco",
+          "group": "americas",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-inca-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Cusco”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-maya-tikal",
+          "sourcePath": "src/data/source/geography/maya-city-states.json",
+          "polityId": "polity-maya-tikal",
+          "placeName": "Tikal",
+          "group": "americas",
+          "reviewStatus": "verified",
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-maya-history"
+            }
+          ],
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-unesco-maya-tikal",
+              "locator": "World Heritage List no. 64，Dossier 坐标 N17 13 0 W89 37 0；Brief synthesis 说明蒂卡尔为政治、经济与军事中心，末期历史活动约至900年"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用具体 UNESCO dossier 坐标或 GeoNames feature 记录核实；仅按区域精度使用。",
+            "historicalIdentity": "已用机构或学术来源的具体段落核实政治中心/都城身份。",
+            "temporalApplicability": "已用可定位来源核实，并受对应政权存在区间约束。"
+          }
+        },
+        {
+          "recordId": "geo-teotihuacan-city",
+          "sourcePath": "src/data/source/geography/teotihuacan-state.json",
+          "polityId": "polity-teotihuacan-state",
+          "placeName": "Teotihuacan",
+          "group": "americas",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-teotihuacan-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Teotihuacan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        },
+        {
+          "recordId": "geo-toltec-tula",
+          "sourcePath": "src/data/source/geography/toltec-state.json",
+          "polityId": "polity-toltec-state",
+          "placeName": "Tula",
+          "group": "americas",
+          "reviewStatus": "pending-evidence",
+          "currentSourceRefs": [
+            {
+              "sourceId": "source-geonames"
+            },
+            {
+              "sourceId": "source-toltec-history"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
+            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
+            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
+          },
+          "requiredFollowUp": "定位现有历史来源中直接支持“Tula”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+        }
+      ]
+    }
+  ]
+}

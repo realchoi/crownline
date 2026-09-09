@@ -89,9 +89,9 @@ describe("数据覆盖报告 v3", () => {
   it("报告年份覆盖、明确空位、来源定位并保持全输入顺序不变", () => {
     const report = buildDataCoverageReport(data, coverageReview);
     expect(report.temporalCoverage.summary).toMatchObject({
-      polities: 131,
+      polities: 134,
       politiesWithYearsWithoutReignRecords: 42,
-      politiesWithUnknownGeographyYears: 24
+      politiesWithUnknownGeographyYears: 26
     });
     const hre = report.temporalCoverage.polities.find(
       ({ entityId }) => entityId === "polity-holy-roman-empire"
@@ -123,45 +123,45 @@ describe("数据覆盖报告 v3", () => {
       reportVersion: DATA_COVERAGE_REPORT_VERSION,
       dataSchemaVersion: 5,
       totals: {
-        entities: 133,
-        polities: 131,
-        historicalPeriods: 2,
-        persons: 1335,
-        reigns: 1374,
+        entities: 137,
+        polities: 134,
+        historicalPeriods: 3,
+        persons: 1385,
+        reigns: 1424,
         relationships: 74,
         events: 34,
-        geographicSnapshots: 175,
-        sources: 222
+        geographicSnapshots: 191,
+        sources: 257
       },
       polityCoverage: {
         rulerDetails: {
-          total: 131,
-          available: 129,
+          total: 134,
+          available: 132,
           reviewedUnavailable: 2,
           notApplicable: 0,
           pendingReview: 0,
-          applicableTotal: 131,
-          availablePercentage: 98.47,
+          applicableTotal: 134,
+          availablePercentage: 98.51,
           reviewedPercentage: 100
         },
         localNames: {
-          total: 131,
-          available: 49,
+          total: 134,
+          available: 48,
           reviewedUnavailable: 0,
           notApplicable: 0,
-          pendingReview: 82,
-          applicableTotal: 131,
-          availablePercentage: 37.4,
-          reviewedPercentage: 37.4
+          pendingReview: 86,
+          applicableTotal: 134,
+          availablePercentage: 35.82,
+          reviewedPercentage: 35.82
         },
         geography: {
-          total: 131,
+          total: 134,
           reviewedUnavailable: 1,
           notApplicable: 0,
-          available: 130,
+          available: 133,
           pendingReview: 0,
-          applicableTotal: 131,
-          availablePercentage: 99.24,
+          applicableTotal: 134,
+          availablePercentage: 99.25,
           reviewedPercentage: 100
         }
       }
@@ -170,7 +170,7 @@ describe("数据覆盖报告 v3", () => {
       "polity-great-zimbabwe",
       "polity-teotihuacan-state"
     ]);
-    expect(report.reviewableGaps.localNames.pendingReview).toHaveLength(82);
+    expect(report.reviewableGaps.localNames.pendingReview).toHaveLength(86);
     expect(report.reviewableGaps.geography.reviewedUnavailable).toEqual(["polity-cn-xia"]);
     expect(report.reviewableGaps.geography.pendingReview).toEqual([]);
     expect(report.reviewableGaps.localNames.pendingReview).toEqual(
@@ -179,11 +179,11 @@ describe("数据覆盖报告 v3", () => {
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 222,
-      byType: { primary: 2, secondary: 45, tertiary: 67, dataset: 7, institutional: 101 },
-      withUrl: 221,
+      total: 257,
+      byType: { primary: 3, secondary: 47, tertiary: 67, dataset: 13, institutional: 127 },
+      withUrl: 256,
       withoutUrl: 1,
-      withAccessedAt: 221,
+      withAccessedAt: 256,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toMatchObject({
@@ -200,10 +200,10 @@ describe("数据覆盖报告 v3", () => {
         recordsWithoutLocatedSourceRefs: 0
       },
       geographicSnapshots: {
-        records: 175,
-        recordsWithSourceRefs: 175,
-        recordsWithLocatedSourceRefs: 75,
-        recordsWithoutLocatedSourceRefs: 100
+        records: 191,
+        recordsWithSourceRefs: 191,
+        recordsWithLocatedSourceRefs: 100,
+        recordsWithoutLocatedSourceRefs: 91
       }
     });
   });
@@ -221,15 +221,15 @@ describe("数据覆盖报告 v3", () => {
     const metric = report.polityCoverage.localNames;
 
     expect(metric).toMatchObject({
-      total: 131,
-      available: 49,
+      total: 134,
+      available: 48,
       reviewedUnavailable: 1,
       notApplicable: 1,
-      pendingReview: 80,
-      applicableTotal: 130,
-      reviewedPercentage: 38.93
+      pendingReview: 84,
+      applicableTotal: 133,
+      reviewedPercentage: 37.31
     });
-    expect(metric.availablePercentage).toBe(37.69);
+    expect(metric.availablePercentage).toBe(36.09);
     expect(report.reviewableGaps.localNames.notApplicable).toEqual([missingLocal[1]]);
     expect(report.reviewableGaps.localNames.reviewedUnavailable).toEqual([missingLocal[0]]);
   });
@@ -323,7 +323,7 @@ describe("关系分布和来源质量", () => {
     expect(Object.keys(summary.byConfidence)).toEqual([...CONFIDENCE_LEVELS]);
     expect(summary.records).toBe(74);
     expect(summary.participantPolities).toBe(76);
-    expect(summary.participantPercentage).toBe(58.02);
+    expect(summary.participantPercentage).toBe(56.72);
     expect(summary.participantPolities).toBeLessThanOrEqual(summary.totalPolities);
     expect(summary.regionsWithRecords.length + summary.regionsWithoutRecords.length).toBe(11);
     expect(summary.regionsWithRecords).not.toEqual([]);
@@ -358,17 +358,17 @@ describe("关系分布和来源质量", () => {
       "region-southern-africa"
     ]);
     expect(report.polityCoverage.geography).toMatchObject({
-      total: 131,
-      available: 130,
+      total: 134,
+      available: 133,
       reviewedUnavailable: 1,
       pendingReview: 0,
-      availablePercentage: 99.24,
+      availablePercentage: 99.25,
       reviewedPercentage: 100
     });
     expect(report.sourceReferenceQuality).toMatchObject({
       relationships: { records: 74, recordsWithLocatedSourceRefs: 74 },
       events: { records: 34, recordsWithLocatedSourceRefs: 34 },
-      geographicSnapshots: { records: 175, recordsWithLocatedSourceRefs: 75 }
+      geographicSnapshots: { records: 191, recordsWithLocatedSourceRefs: 100 }
     });
   });
 

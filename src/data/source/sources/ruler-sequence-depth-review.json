@@ -1,0 +1,29 @@
+[
+  {
+    "id": "source-korea-heritage-joseon-kings",
+    "title": "왕의 생애: 왕의 즉위 표",
+    "sourceType": "institutional",
+    "citation": "韩国国家遗产厅宫陵遗迹本部：‘王的生涯’即位表；逐项列出朝鲜王朝统治者、即位年份与在位时长，用于校订1392—1897年的完整统治序列。",
+    "publisher": "궁능유적본부 (Royal Palaces and Tombs Center), 국가유산청",
+    "url": "https://royal.cha.go.kr/ROYAL/contents/R308020000.do?grpCode=acm&pageType=academic_info2",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-naha-history-ryukyu-kings",
+    "title": "Dynasty culture and city history",
+    "sourceType": "institutional",
+    "citation": "那霸市历史博物馆：‘Dynasty culture and city history’；第一尚氏、第二尚氏表逐项列出国王姓名及在位年份，用于校订1429—1879年的琉球国王序列。",
+    "publisher": "Naha City Museum of History",
+    "url": "https://www.rekishi-archive.city.naha.okinawa.jp/en/history",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-ayutthaya-provincial-kings",
+    "title": "ประวัติความเป็นมาจังหวัดพระนครศรีอยุธยา",
+    "sourceType": "institutional",
+    "citation": "泰国大城府政府：‘大城府历史’国王与王朝表；列出阿瑜陀耶时期33位君主、王朝归属及佛历在位年份，用于补齐君主序列，并与 source-ayutthaya-rulers 交叉核对公历年份。",
+    "publisher": "สำนักงานจังหวัดพระนครศรีอยุธยา (Phra Nakhon Si Ayutthaya Provincial Office)",
+    "url": "https://www.ayutthaya.go.th/showatg.php?selatg=14",
+    "accessedAt": "2026-09-08"
+  }
+]

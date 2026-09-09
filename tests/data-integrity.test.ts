@@ -142,7 +142,7 @@ function mappedTopLevelRegionIds(): Set<string> {
 describe("生产历史数据", () => {
   it("保留中国七个阶段和七十三个时间轴实体，并扩展全球总实体数量", () => {
     expect(data.timelineSections).toHaveLength(7);
-    expect(data.entities).toHaveLength(133);
+    expect(data.entities).toHaveLength(137);
     expect(data.timelineSections.flatMap((section) => section.entityIds)).toHaveLength(73);
     expect(data.entities.map(({ id }) => id)).toEqual(
       expect.arrayContaining([
@@ -158,7 +158,7 @@ describe("生产历史数据", () => {
   });
 
   it("收录全球均衡样本政权并为每条政权接入任期", () => {
-    expect(data.entities).toHaveLength(133);
+    expect(data.entities).toHaveLength(137);
     expect(data.entities.map(({ id }) => id)).toEqual(
       expect.arrayContaining([...GLOBAL_SAMPLE_POLITY_IDS])
     );
@@ -173,7 +173,7 @@ describe("生产历史数据", () => {
   it("有本地名称的实体均携带有效语言标签", () => {
     const localizedEntities = data.entities.filter(({ names }) => names.local !== undefined);
 
-    expect(localizedEntities).toHaveLength(49);
+    expect(localizedEntities).toHaveLength(48);
     for (const entity of localizedEntities) {
       expect(entity.names.localLanguageTag, entity.id).toBeTruthy();
       expect(
@@ -183,12 +183,12 @@ describe("生产历史数据", () => {
     }
   });
 
-  it("为六十个世界样本政权提供九十一条可追溯地理快照", () => {
+  it("为六十三个世界样本政权提供九十五条可追溯地理快照", () => {
     const worldSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return WORLD_MAP_POLITY_IDS.some((id) => id === polityId);
     });
 
-    expect(worldSnapshots).toHaveLength(91);
+    expect(worldSnapshots).toHaveLength(95);
     expect(worldSnapshots.every(({ sourceRefs }) => sourceRefs.length > 0)).toBe(true);
     for (const polityId of WORLD_MAP_POLITY_IDS) {
       expect(
@@ -198,13 +198,13 @@ describe("生产历史数据", () => {
     }
   });
 
-  it("为七十个中国政权提供八十四条地理快照并覆盖十一个顶层地区", () => {
+  it("为七十个中国政权提供九十六条地理快照并覆盖十一个顶层地区", () => {
     const chinaSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return CHINA_MAP_POLITY_IDS.some((id) => id === polityId);
     });
 
-    expect(chinaSnapshots).toHaveLength(84);
-    expect(data.geographicSnapshots).toHaveLength(175);
+    expect(chinaSnapshots).toHaveLength(96);
+    expect(data.geographicSnapshots).toHaveLength(191);
     for (const polityId of CHINA_MAP_POLITY_IDS) {
       expect(
         chinaSnapshots.some((snapshot) => snapshot.polityId === polityId),
@@ -427,7 +427,7 @@ describe("生产历史数据", () => {
 
   it("通过结构和跨记录校验", () => {
     expect(validateCrownlineData(data)).toEqual({ valid: true, issues: [] });
-    expect(data.entities).toHaveLength(133);
+    expect(data.entities).toHaveLength(137);
   });
 
   it("结构化关系覆盖七种类型并保持事件与来源闭合", () => {
@@ -436,7 +436,7 @@ describe("生产历史数据", () => {
     );
     expect(data.relationships).toHaveLength(74);
     expect(data.events).toHaveLength(34);
-    expect(data.sources).toHaveLength(222);
+    expect(data.sources).toHaveLength(257);
     expect(
       data.relationships.every(({ sourceRefs }) => {
         return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));
@@ -994,7 +994,7 @@ describe("生产历史数据", () => {
   });
 
   it("补全阿瑜陀耶王国详情与统治者", () => {
-    expectWorldPolityDetails("polity-ayutthaya-kingdom", 12);
+    expectWorldPolityDetails("polity-ayutthaya-kingdom", 33);
     expect(rulerSnapshot("polity-ayutthaya-kingdom", 1600).status).toBe("known");
     expect(
       rulerSnapshot("polity-ayutthaya-kingdom", 1600).entries.map(({ person }) => person.id)
@@ -1062,13 +1062,21 @@ describe("生产历史数据", () => {
     expect(activePlaces("polity-great-zimbabwe", 1300)).toEqual(["Great Zimbabwe"]);
   });
 
-  it("补全玛雅城邦详情与代表性统治者", () => {
-    expectWorldPolityDetails("polity-maya-city-states", 4);
-    expect(rulerSnapshot("polity-maya-city-states", 680).status).toBe("known");
+  it("把古典期玛雅浏览分期与四个真实城邦主体分开", () => {
+    expect(data.entities.find(({ id }) => id === "polity-maya-city-states")?.entityKind).toBe(
+      "historical-period"
+    );
+    expectWorldPolityDetails("polity-maya-tikal", 1);
+    expectWorldPolityDetails("polity-maya-palenque", 1);
+    expectWorldPolityDetails("polity-maya-calakmul", 1);
+    expectWorldPolityDetails("polity-maya-copan", 2);
     expect(
-      rulerSnapshot("polity-maya-city-states", 680).entries.map(({ person }) => person.id)
-    ).toEqual(expect.arrayContaining(["person-maya-pakal", "person-maya-yuknoom-great"]));
-    expect(activePlaces("polity-maya-city-states", 680)).toEqual(["Tikal"]);
+      rulerSnapshot("polity-maya-palenque", 680).entries.map(({ person }) => person.id)
+    ).toEqual(["person-maya-pakal"]);
+    expect(
+      rulerSnapshot("polity-maya-calakmul", 680).entries.map(({ person }) => person.id)
+    ).toEqual(["person-maya-yuknoom-great"]);
+    expect(activePlaces("polity-maya-tikal", 680)).toEqual(["Tikal"]);
   });
 
   it("补全托尔特克详情与统治者", () => {
@@ -1232,9 +1240,9 @@ describe("生产历史数据", () => {
 
   it("扩展统一新罗、朝鲜王朝、足利幕府与琉球王国的详情和点位", () => {
     expectWorldPolityDetails("polity-unified-silla", 10);
-    expectWorldPolityDetails("polity-joseon-dynasty", 14);
+    expectWorldPolityDetails("polity-joseon-dynasty", 26);
     expectWorldPolityDetails("polity-ashikaga-shogunate", 12);
-    expectWorldPolityDetails("polity-ryukyu-kingdom", 8);
+    expectWorldPolityDetails("polity-ryukyu-kingdom", 25);
 
     expect(
       rulerSnapshot("polity-unified-silla", 670).entries.map(({ person }) => person.id)

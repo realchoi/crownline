@@ -467,7 +467,7 @@
     "type": "war",
     "participants": [
       { "entityId": "polity-teotihuacan-state", "role": "进入或干预来源方" },
-      { "entityId": "polity-maya-city-states", "role": "蒂卡尔等受影响城邦集合" }
+      { "entityId": "polity-maya-tikal", "role": "发生王统更替的蒂卡尔政治体" }
     ],
     "periods": [
       {
@@ -481,14 +481,14 @@
       { "sourceId": "source-cambridge-teotihuacan-tikal", "locator": "AD 378 intrusion at Tikal and Teotihuacan-style complex" }
     ],
     "confidence": "medium",
-    "confidenceNote": "“玛雅城邦”是本项目的集合实体，而事件直接发生在蒂卡尔；介入者与特奥蒂瓦坎王权的具体组织关系仍有争论，故不写成对全部玛雅地区的征服。"
+    "confidenceNote": "事件直接发生在蒂卡尔；介入者与特奥蒂瓦坎王权的具体组织关系仍有争论，故不写成特奥蒂瓦坎国家对蒂卡尔的确定征服。"
   },
   {
     "id": "relationship-teotihuacan-maya-cultural-exchange",
     "type": "cultural-exchange",
     "participants": [
       { "entityId": "polity-teotihuacan-state", "role": "中墨西哥人员与艺术传统来源方" },
-      { "entityId": "polity-maya-city-states", "role": "互动与本地重构方" }
+      { "entityId": "polity-maya-tikal", "role": "互动与本地重构方" }
     ],
     "periods": [
       {
@@ -496,13 +496,13 @@
         "end": { "year": 550, "precision": "circa" }
       }
     ],
-    "summary": "古典期早段，蒂卡尔等玛雅中心出现特奥蒂瓦坎式建筑、器物与精英互动证据；影响既包含人员移动和政治介入，也包含玛雅社会的主动采用与重构。",
+    "summary": "古典期早段，蒂卡尔出现特奥蒂瓦坎式建筑、器物与精英互动证据；影响既包含人员移动和政治介入，也包含蒂卡尔社会的主动采用与重构。",
     "eventIds": [],
     "sourceRefs": [
       { "sourceId": "source-cambridge-teotihuacan-tikal", "locator": "Evidence of reciprocal contact and combined Maya–Teotihuacan architectural elements" }
     ],
     "confidence": "medium",
-    "confidenceNote": "考古风格不能单独证明政治控制；本条只描述有多类证据支持的互动与文化重构。"
+    "confidenceNote": "现有引用具体研究蒂卡尔遗址，不能据此扩大到全部玛雅政治体；考古风格也不能单独证明政治控制。"
   },
   {
     "id": "relationship-mughal-maratha-war",

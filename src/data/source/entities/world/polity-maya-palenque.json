@@ -1,0 +1,88 @@
+{
+  "order": 1022,
+  "entities": [
+    {
+      "id": "polity-maya-palenque",
+      "entityKind": "polity",
+      "polityForms": ["state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "帕伦克",
+        "aliases": ["Palenque", "Palenque polity", "帕伦克城邦"]
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 431, "precision": "exact" },
+          "end": { "year": 900, "precision": "circa" }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": ["region-americas"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "帕伦克是今墨西哥恰帕斯北部的古典期玛雅政治体，铭文王表从431年即位的 K’uk’ B’ahlam 一世开始。约500年后帕伦克成为区域政治单位的强势首都，帕卡尔大帝在615—683年统治期间推动大型建筑与铭文工程；城市约在9世纪衰落和弃置。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mesoweb-maya-palenque-rulers",
+          "locator": "Table of Palenque Rulers：K’uk’ B’ahlam I 为王统奠基者，431-03-11即位；K’inich Janahb’ Pakal，615—683年"
+        },
+        {
+          "sourceId": "source-unesco-maya-palenque",
+          "locator": "Outstanding Universal Value, Brief synthesis：约500年成为区域政治单位的强势首都；约9世纪弃城"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "431年是目前王表的王统起点；约900年的终点取自遗址约9世纪弃置的宽口径，不表示最后一位统治者或政权终结发生在确定的900年。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-maya-pakal",
+      "names": {
+        "primary": "帕卡尔大帝",
+        "aliases": ["K'inich Janaab' Pakal", "Pacal the Great", "Pakal I"]
+      },
+      "description": "帕卡尔大帝是帕伦克君主，615年即位、683年去世。其统治时期建设了铭文神庙等纪念建筑，并留下可由长纪历换算的即位与死亡日期。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mesoweb-maya-palenque-rulers",
+          "locator": "K’inich Janahb’ Pakal：615-07-29即位，683-08-31去世"
+        },
+        {
+          "sourceId": "source-inah-maya-pakal",
+          "locator": "La Tumba de Pakal：Pakal el Grande 于615—683年统治 Palenque"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-maya-pakal",
+      "personId": "person-maya-pakal",
+      "polityId": "polity-maya-palenque",
+      "titles": ["帕伦克 ajaw"],
+      "localTitles": ["Ajaw"],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": { "year": 615, "precision": "exact" },
+          "end": { "year": 683, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "帕伦克铭文记录的即位与死亡日期；页面按闭区间年份展示。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-mesoweb-maya-palenque-rulers",
+          "locator": "K’inich Janahb’ Pakal：9.9.2.4.8即位，9.12.11.5.18去世（615—683年）"
+        },
+        {
+          "sourceId": "source-inah-maya-pakal",
+          "locator": "La Tumba de Pakal：615—683年统治 Palenque"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

@@ -1,0 +1,80 @@
+{
+  "order": 1023,
+  "entities": [
+    {
+      "id": "polity-maya-calakmul",
+      "entityKind": "polity",
+      "polityForms": ["state"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "卡拉克穆尔",
+        "aliases": ["Calakmul", "Calakmul polity", "卡拉克穆尔城邦"]
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 562, "precision": "exact" },
+          "end": { "year": 909, "precision": "circa" }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": ["region-americas"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "卡拉克穆尔是今墨西哥坎佩切地区的古典期玛雅政治中心。墨西哥国家人类学与历史研究所把562年称为其成为“蛇首王国”首都并战胜蒂卡尔的节点；尤克诺姆大帝在636—686年统治，卡拉克穆尔于695年败于蒂卡尔后衰落，遗址最后一块有日期的石碑记到909年。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inah-maya-calakmul",
+          "locator": "Calakmul，历史段：562年成为蛇首王国首都，695年败于 Tikal，最后一块有日期石碑为909年；Yuknom el Grande 636—686年"
+        },
+        {
+          "sourceId": "source-unesco-maya-calakmul",
+          "locator": "Outstanding Universal Value, criteria (iii)：9—10世纪聚落显著衰退；铭文石碑记录区域政治史与领土组织"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "562年标记现有来源明确记载的首都地位，不排除更早的地方政治体；909年只是遗址最后一块有日期石碑，不能据此断言政权恰在该年终结，故终点采用约年口径。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-maya-yuknoom-great",
+      "names": {
+        "primary": "尤克诺姆大帝",
+        "aliases": ["Yuknoom Ch'een II", "Yuknoom the Great", "Yuknom el Grande"]
+      },
+      "description": "尤克诺姆大帝是卡拉克穆尔主要君主之一，636—686年在位。卡拉克穆尔铭文与其他城邦材料保存了其部分政治活动，但现有资料并不能恢复完整王统。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inah-maya-calakmul",
+          "locator": "Calakmul，王表段：Yuknom el Grande（636—686）"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-maya-yuknoom-great",
+      "personId": "person-maya-yuknoom-great",
+      "polityId": "polity-maya-calakmul",
+      "titles": ["卡拉克穆尔 ajaw"],
+      "localTitles": ["Ajaw"],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": { "year": 636, "precision": "exact" },
+          "end": { "year": 686, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "按卡拉克穆尔已释读王表的常用公历换算记录。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-inah-maya-calakmul",
+          "locator": "Calakmul，王表段：Yuknom el Grande（636—686）"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "reignVacancies": []
+}

@@ -249,14 +249,14 @@
         "end": { "year": 378, "precision": "exact" }
       }
     ],
-    "participantEntityIds": ["polity-teotihuacan-state", "polity-maya-city-states"],
+    "participantEntityIds": ["polity-teotihuacan-state", "polity-maya-tikal"],
     "regionIds": ["region-americas"],
     "summary": "378年，蒂卡尔记录“进入”事件并发生王统更替；遗址中的中墨西哥式建筑与器物支持特奥蒂瓦坎相关人员深度介入。",
     "sourceRefs": [
       { "sourceId": "source-cambridge-teotihuacan-tikal", "locator": "AD 378 intrusion local to Tikal but regional in impact" }
     ],
     "confidence": "medium",
-    "confidenceNote": "事件发生于蒂卡尔而非全部玛雅城邦；参与者是否由特奥蒂瓦坎中央权力直接派遣仍不能完全确定。"
+    "confidenceNote": "参与方已收窄到事件发生地蒂卡尔；相关人员是否由特奥蒂瓦坎中央权力直接派遣仍不能完全确定。"
   },
   {
     "id": "event-mughal-maratha-deccan-war-1680",

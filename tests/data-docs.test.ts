@@ -14,22 +14,22 @@ describe("当前数据文档摘要", () => {
   it("README、数据契约和路线图当前摘要与真实数据一致", async () => {
     expect(await checkDataDocs(process.cwd(), data)).toEqual([]);
     expect(buildCurrentDataStats(data)).toMatchObject({
-      entities: 133,
-      polities: 131,
-      historicalPeriods: 2,
-      persons: 1335,
-      reigns: 1374,
-      geographicSnapshots: 175,
-      sources: 222,
+      entities: 137,
+      polities: 134,
+      historicalPeriods: 3,
+      persons: 1385,
+      reigns: 1424,
+      geographicSnapshots: 191,
+      sources: 257,
       boundarySnapshots: 0
     });
   });
 
   it.each([
-    ["entities", "133 个实体", "999 个实体"],
-    ["persons", "1335 位人物", "999 位人物"],
-    ["geographicSnapshots", "175 条地理快照", "999 条地理快照"],
-    ["sources", "222 项来源", "999 项来源"]
+    ["entities", "137 个实体", "999 个实体"],
+    ["persons", "1385 位人物", "999 位人物"],
+    ["geographicSnapshots", "191 条地理快照", "999 条地理快照"],
+    ["sources", "257 项来源", "999 项来源"]
   ])("摘要中的%s错误时失败并指出文件和字段", (field, expected, actual) => {
     const contents = renderCurrentDataStatsBlock(data).replace(expected, actual);
     const issues = checkDataDocument("README.md", contents, data);

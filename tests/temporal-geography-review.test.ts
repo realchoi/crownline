@@ -22,26 +22,26 @@ describe("首批按年份地理缺口校订", () => {
     expect(activePlaces("polity-cn-western-liang", 422)).toEqual([]);
   });
 
-  it("南明福州仅适用于隆武阶段，不外推到其他南明年份", () => {
+  it("南明福州仅适用于隆武阶段，后续年份使用各自证据点位", () => {
     expect(activePlaces("polity-cn-southern-ming", 1644)).toEqual(["南京"]);
     expect(activePlaces("polity-cn-southern-ming", 1645)).toEqual(["南京", "福州"]);
     expect(activePlaces("polity-cn-southern-ming", 1646)).toEqual(["福州"]);
-    expect(activePlaces("polity-cn-southern-ming", 1647)).toEqual([]);
+    expect(activePlaces("polity-cn-southern-ming", 1647)).toEqual(["桂林"]);
   });
 
-  it("前燕蓟城阶段不填补尚未校订的邺城阶段", () => {
+  it("前燕蓟城与后续邺城按迁都年闭区间衔接", () => {
     expect(activePlaces("polity-cn-former-yan", 349)).toEqual(["龙城"]);
     expect(activePlaces("polity-cn-former-yan", 350)).toEqual(["蓟城"]);
-    expect(activePlaces("polity-cn-former-yan", 357)).toEqual(["蓟城"]);
-    expect(activePlaces("polity-cn-former-yan", 358)).toEqual([]);
+    expect(activePlaces("polity-cn-former-yan", 357)).toEqual(["蓟城", "邺城"]);
+    expect(activePlaces("polity-cn-former-yan", 358)).toEqual(["邺城"]);
   });
 
   it.each([
     ["polity-cn-western-liang", 22, 0],
-    ["polity-cn-southern-ming", 3, 16],
-    ["polity-cn-former-yan", 16, 18],
-    ["polity-cn-western-qin", 7, 32],
-    ["polity-holy-roman-empire", 63, 782]
+    ["polity-cn-southern-ming", 15, 4],
+    ["polity-cn-former-yan", 34, 0],
+    ["polity-cn-western-qin", 39, 0],
+    ["polity-holy-roman-empire", 207, 638]
   ])("%s 的年份覆盖与明确保留缺口一致", (id, coveredYears, unknownYears) => {
     expect(
       report.temporalCoverage.polities.find(({ entityId }) => entityId === id)?.geography

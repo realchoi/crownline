@@ -7,6 +7,32 @@ from pathlib import Path
 ASCII = {chr(codepoint) for codepoint in range(0x20, 0x7F)}
 DATA_EXCLUDED_KEYS = {"local"}
 
+# 本项目将泰文、韩文交由系统字体回退，不纳入中文子集。
+# 只排除明确识别的脚本区段，CJK、拉丁扩展和通用标点仍进入子集与覆盖检查。
+SYSTEM_FALLBACK_RANGES = (
+    (0x0E00, 0x0E7F),  # Thai（含组合符）
+    (0x1100, 0x11FF),  # Hangul Jamo
+    (0x3130, 0x318F),  # Hangul Compatibility Jamo
+    (0xA960, 0xA97F),  # Hangul Jamo Extended-A
+    (0xAC00, 0xD7AF),  # Hangul Syllables
+    (0xD7B0, 0xD7FF),  # Hangul Jamo Extended-B
+)
+
+
+def uses_system_font_fallback(char: str) -> bool:
+    """返回字符是否由现有 CSS 字体栈交给系统字体渲染。"""
+    codepoint = ord(char)
+    return any(start <= codepoint <= end for start, end in SYSTEM_FALLBACK_RANGES)
+
+
+def collect_checked_chars(text: str) -> set[str]:
+    """收集需要由站内字体覆盖的非空白字符。"""
+    return {
+        char
+        for char in text
+        if char.strip() and not uses_system_font_fallback(char)
+    }
+
 
 def strip_comments(text: str) -> str:
     """移除源码注释，避免为不会渲染的注释文字扩大字体。"""
@@ -19,8 +45,8 @@ def collect_source_chars(root: Path) -> set[str]:
     chars: set[str] = set()
     source_paths = list((root / "src").rglob("*.ts")) + list((root / "src").rglob("*.tsx"))
     for path in source_paths:
-        chars.update(char for char in strip_comments(path.read_text(encoding="utf-8")) if char.strip())
-    chars.update(char for char in (root / "index.html").read_text(encoding="utf-8") if char.strip())
+        chars.update(collect_checked_chars(strip_comments(path.read_text(encoding="utf-8"))))
+    chars.update(collect_checked_chars((root / "index.html").read_text(encoding="utf-8")))
     return chars
 
 
@@ -30,7 +56,7 @@ def collect_data_chars(data: dict) -> set[str]:
 
     def walk(node):
         if isinstance(node, str):
-            chars.update(char for char in node if char.strip())
+            chars.update(collect_checked_chars(node))
         elif isinstance(node, dict):
             for key, value in node.items():
                 if key not in DATA_EXCLUDED_KEYS:
@@ -54,7 +80,12 @@ def collect_display_chars(root: Path, data: dict) -> set[str]:
     strings += [person["names"]["primary"] for person in data["persons"]]
     strings += [section["title"] for section in data["timelineSections"]]
     strings += [region["names"]["primary"] for region in data["regions"]]
-    dynamic_chars = {char for string in strings for char in string if char.strip()}
+    dynamic_chars = {
+        char
+        for string in strings
+        for char in string
+        if char.strip() and not uses_system_font_fallback(char)
+    }
     return (static_chars | dynamic_chars) - {"·"}
 
 

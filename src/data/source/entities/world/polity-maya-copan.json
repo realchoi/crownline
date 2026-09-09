@@ -1,0 +1,122 @@
+{
+  "order": 1024,
+  "entities": [
+    {
+      "id": "polity-maya-copan",
+      "entityKind": "polity",
+      "polityForms": ["state", "dynasty"],
+      "displayCategory": "contemporary",
+      "names": {
+        "primary": "科潘",
+        "aliases": ["Copán", "Copan polity", "科潘城邦"]
+      },
+      "existencePeriods": [
+        {
+          "start": { "year": 427, "precision": "exact" },
+          "end": { "year": 900, "precision": "circa" }
+        }
+      ],
+      "chronologyStatus": "disputed",
+      "historicalRegionIds": ["region-americas"],
+      "culturalSphereIds": [],
+      "modernAreaIds": [],
+      "description": "科潘是洪都拉斯科潘河谷的古典期玛雅政治、宗教与城市中心。联合国教科文组织记载 Yax Kuk Mo 于427年到达并开启十六位统治者的王统；第11至13位君主的在位年代由铭文材料较清楚地保存。科潘末期中央王权衰退，遗址在约10世纪初弃置，本条以约900年作为宽口径终点。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-unesco-maya-copan",
+          "locator": "Outstanding Universal Value, Brief synthesis：Yax Kuk Mo 于427年到达并开启16位统治者的王统；遗址约10世纪初弃置"
+        },
+        {
+          "sourceId": "source-peabody-maya-copan-rulers",
+          "locator": "Copán’s Dynastic History: Altar Q：第11—13位君主及王统末期铭文记录"
+        }
+      ],
+      "confidence": "medium",
+      "chronologyNote": "427年是来源给出的王统建立节点；约900年的终点来自遗址弃置的宽口径，不等同于已知最后王号、最后铭文或中央王权终结的精确年份。"
+    }
+  ],
+  "persons": [
+    {
+      "id": "person-maya-k-ahk",
+      "names": {
+        "primary": "卡克·钱·约帕特",
+        "aliases": ["K'ak' Chan Yopaat", "Buts' Chan", "Butz' Chan", "Copan Ruler 11"]
+      },
+      "description": "卡克·钱·约帕特是科潘王统第11位君主，578年即位，628年由第12位君主继承。科潘祭坛 Q 的研究把他记作 Buts’ Chan，不能与738年击败科潘第13位君主的基里瓜统治者 K’ak’ Tiliw Chan Yopaat（Cauac Sky）混同。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-peabody-maya-copan-rulers",
+          "locator": "Ruler 11：578-11-19即位，名作 Buts’ Chan / Fire-Eating Serpent；Ruler 12 于628-02-08即位"
+        }
+      ]
+    },
+    {
+      "id": "person-maya-waxaklajuun-ubaah-kawiil",
+      "names": {
+        "primary": "瓦沙克卢洪·乌巴·卡维",
+        "aliases": [
+          "Waxaklajuun Ubaah K'awiil",
+          "Waxaklahun Ubah K'awil",
+          "18 Rabbit",
+          "Copan Ruler 13"
+        ]
+      },
+      "description": "瓦沙克卢洪·乌巴·卡维是科潘王统第13位君主，695年继承第12位君主，738年在基里瓜统治者 Cauac Sky 手中覆亡。来源明确区分这位科潘君主与实施俘获的基里瓜君主。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-peabody-maya-copan-rulers",
+          "locator": "Ruler 13：第12位君主于695-07-02去世后继位；The Demise of Ruler 13：738-05-03在 Quirigua 统治者 Cauac Sky 手中覆亡"
+        }
+      ]
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-maya-k-ahk",
+      "personId": "person-maya-k-ahk",
+      "polityId": "polity-maya-copan",
+      "titles": ["科潘 ajaw"],
+      "localTitles": ["Ajaw"],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": { "year": 578, "precision": "exact" },
+          "end": { "year": 628, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "科潘王统第11位君主；578年即位，628年第12位君主即位。科潘铭文中的 Buts’ Chan 与基里瓜的 Cauac Sky 是不同人物。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-peabody-maya-copan-rulers",
+          "locator": "Ruler 11：578-11-19即位；Ruler 12：628-02-08即位"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reign-maya-waxaklajuun-ubaah-kawiil",
+      "personId": "person-maya-waxaklajuun-ubaah-kawiil",
+      "polityId": "polity-maya-copan",
+      "titles": ["科潘 ajaw"],
+      "localTitles": ["Ajaw"],
+      "role": "ruler",
+      "periods": [
+        {
+          "start": { "year": 695, "precision": "exact" },
+          "end": { "year": 738, "precision": "exact" }
+        }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "第12位君主于695年去世后继位，738年在基里瓜事件中覆亡；页面按闭区间年份展示。",
+      "sourceRefs": [
+        {
+          "sourceId": "source-peabody-maya-copan-rulers",
+          "locator": "Ruler 13 与 The Demise of Ruler 13：695年继位，738-05-03覆亡"
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "reignVacancies": []
+}

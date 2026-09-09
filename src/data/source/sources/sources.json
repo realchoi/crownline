@@ -1,5 +1,86 @@
 [
   {
+    "id": "source-locator-review-xian-gazetteer",
+    "title": "《西安市长安区志（1990—2010）》",
+    "sourceType": "institutional",
+    "citation": "西安市长安区地方志编纂委员会：《西安市长安区志（1990—2010）》；用于核对西汉从栎阳迁都长安的年份。",
+    "publisher": "西安市长安区地方志编纂委员会",
+    "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/sxdelpdf/dxas_16198/202007/P020240923597830211775.pdf",
+    "accessedAt": "2026-09-09"
+  },
+  {
+    "id": "source-locator-review-xian-capital-site",
+    "title": "隋大兴城、唐长安城遗址",
+    "sourceType": "institutional",
+    "citation": "西安市地方志办公室：隋大兴城、唐长安城遗址；用于核对583年迁入大兴城及唐长安城承继关系。",
+    "publisher": "西安市地方志办公室",
+    "url": "https://xadfz.xa.gov.cn/xadq/rwxa/1960625284585664514.html",
+    "accessedAt": "2026-09-09"
+  },
+  {
+    "id": "source-locator-review-tang-move-luoyang",
+    "title": "陕州区历史沿革",
+    "sourceType": "institutional",
+    "citation": "三门峡市陕州区人民政府：历史沿革；用于核对904年朱全忠胁迫唐昭宗迁都洛阳。",
+    "publisher": "三门峡市陕州区人民政府",
+    "url": "https://www.shanzhou.gov.cn/18034/0000/list-1.html",
+    "accessedAt": "2026-09-09"
+  },
+  {
+    "id": "source-locator-review-nanjing-history",
+    "title": "History of Nanjing",
+    "sourceType": "institutional",
+    "citation": "Nanjing Municipal People's Government：History；用于核对建康与明初南京的都城角色及明代迁都节点。",
+    "publisher": "Nanjing Municipal People's Government",
+    "url": "https://english.nanjing.gov.cn/ThisisNanjing/WelcometoNanjing/History/202405/t20240510_4663022.html",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-locator-review-beijing-capitals",
+    "title": "北京辽金史迹研究资料：金中都迁汴与陷落",
+    "sourceType": "institutional",
+    "citation": "北京市文物局所载北京辽金史迹研究资料；用于区分1153年建都、1214年金廷迁汴与1215年中都城破。",
+    "publisher": "北京市文物局",
+    "url": "https://wwj.beijing.gov.cn/bjww/resource/cms/article/bjww_362762/10872042/2020101016390547075.pdf",
+    "accessedAt": "2026-09-09"
+  },
+  {
+    "id": "source-locator-review-beijing-history",
+    "title": "北京何以称“北京”——“京”“师”“都”义考",
+    "sourceType": "institutional",
+    "citation": "北京市人民政府：北京何以称“北京”——“京”“师”“都”义考；用于核对1272年元迁都燕京称大都及1368年明军攻占大都。",
+    "publisher": "北京市人民政府",
+    "url": "https://www.beijing.gov.cn/renwen/sy/whkb/201907/t20190715_1866582.html",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-locator-review-geonames-xian",
+    "title": "GeoNames: Xi'an, 1790630",
+    "sourceType": "dataset",
+    "citation": "GeoNames, Xi'an, feature 1790630；WGS 84 现代城市定位记录，CC BY 4.0，仅作历史地点所在区域的浏览参照。",
+    "publisher": "GeoNames",
+    "url": "https://www.geonames.org/1790630/xi-an.html",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-locator-review-geonames-nanjing",
+    "title": "GeoNames: Nanjing, 1799962",
+    "sourceType": "dataset",
+    "citation": "GeoNames, Nanjing, feature 1799962；WGS 84 现代城市定位记录，CC BY 4.0，仅作历史地点所在区域的浏览参照。",
+    "publisher": "GeoNames",
+    "url": "https://www.geonames.org/1799962/nanjing.html",
+    "accessedAt": "2026-09-08"
+  },
+  {
+    "id": "source-locator-review-geonames-beijing",
+    "title": "GeoNames: Beijing, 1816670",
+    "sourceType": "dataset",
+    "citation": "GeoNames, Beijing, feature 1816670；WGS 84 现代城市定位记录，CC BY 4.0，仅作历史地点所在区域的浏览参照。",
+    "publisher": "GeoNames",
+    "url": "https://www.geonames.org/1816670/beijing.html",
+    "accessedAt": "2026-09-08"
+  },
+  {
     "id": "source-cn-chronology-table",
     "title": "中国历史纪年简表",
     "sourceType": "institutional",

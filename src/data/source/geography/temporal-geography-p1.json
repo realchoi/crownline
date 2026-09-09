@@ -1,0 +1,375 @@
+[
+  {
+    "id": "geo-former-yan-jicheng",
+    "polityId": "polity-cn-former-yan",
+    "periods": [
+      {
+        "start": { "year": 337, "precision": "exact" },
+        "end": { "year": 342, "precision": "exact" }
+      }
+    ],
+    "placeName": "棘城",
+    "role": "capital",
+    "coordinates": { "latitude": 41.589722, "longitude": 120.695556 },
+    "positionPrecision": "regional",
+    "positionNote": "按337年慕容皝在棘城称燕王、342年迁龙城的口径；首尾年表示年内曾为都城。坐标取朝阳市政府所采用的北票市章吉营子乡对应现代聚落作区域锚点；棘城确切遗址仍有不同考证，不把该点解释为宫城、城界或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-temporal-former-yan-history",
+        "locator": "一、三燕王朝的历史：337年都棘城，342年由棘城迁都龙城；前文定位今北票市章吉营子乡"
+      },
+      {
+        "sourceId": "source-p1-nga-zhangjiying",
+        "locator": "Zhangjiying，UFI -1938259 / UNI -2705507：41.589722, 120.695556；现代聚落区域参照"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "棘城现代对应存在义县西南、北票章吉营子等不同考证；本条采用朝阳市政府所述章吉营子乡口径并降为regional精度。"
+  },
+  {
+    "id": "geo-former-yan-yecheng",
+    "polityId": "polity-cn-former-yan",
+    "periods": [
+      {
+        "start": { "year": 357, "precision": "exact" },
+        "end": { "year": 370, "precision": "exact" }
+      }
+    ],
+    "placeName": "邺城",
+    "role": "capital",
+    "coordinates": { "latitude": 36.2748, "longitude": 114.4002 },
+    "positionPrecision": "approximate",
+    "positionNote": "按357年由蓟迁邺、370年邺城失守的口径；首尾年只表示该年内曾作为前燕都城。坐标采用邺城遗址数据点作浏览定位，遗址范围与单一点位不等同，也不表示前燕疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-temporal-former-yan-history",
+        "locator": "一、三燕王朝的历史：357年由蓟迁邺（今河北临漳西南），370年前秦攻打燕都邺城并使其失守"
+      },
+      {
+        "sourceId": "source-p1-yecheng-site",
+        "locator": "邺城遗址段：遗址位于临漳县西南20公里；前燕357—370年以邺城为国都"
+      },
+      {
+        "sourceId": "source-p1-wikidata-yecheng",
+        "locator": "Q1274372 coordinate location：36°16′29.280″N, 114°24′0.720″E（36.2748, 114.4002）"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "geo-southern-ming-guilin",
+    "polityId": "polity-cn-southern-ming",
+    "periods": [
+      {
+        "start": { "year": 1647, "precision": "exact" },
+        "end": { "year": 1647, "precision": "exact" }
+      }
+    ],
+    "placeName": "桂林",
+    "role": "political-center",
+    "coordinates": { "latitude": 25.278, "longitude": 110.2911 },
+    "positionPrecision": "regional",
+    "positionNote": "仅表示永历帝于1647年二月抵达桂林后的临时朝廷驻地；同年朝廷继续迁往武冈、柳州，因此不把桂林写成全年或后续阶段的固定都城。坐标取现代桂林城市记录作区域浏览定位，不表示行宫遗址或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-southern-ming-lingui",
+        "locator": "正文永历帝行程段：1646年底离肇庆，经梧州、桂平、平乐，于1647年二月抵达桂林，后又迁武冈、柳州"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1809498，Guilin：25.278, 110.2911；现代城市区域参照"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-southern-ming-nanning",
+    "polityId": "polity-cn-southern-ming",
+    "periods": [
+      {
+        "start": { "year": 1649, "precision": "exact" },
+        "end": { "year": 1651, "precision": "exact" }
+      }
+    ],
+    "placeName": "南宁",
+    "role": "political-center",
+    "coordinates": { "latitude": 22.81667, "longitude": 108.31667 },
+    "positionPrecision": "regional",
+    "positionNote": "按1649年永历朝廷被迫迁至南宁、1651年仍在南宁制印且尚未进入黔滇的口径；只表示这一阶段的流动朝廷驻地。坐标取现代南宁城市记录作区域浏览定位，不表示具体行宫、连续控制范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-southern-ming-hubei-archives",
+        "locator": "援剿总兵关防说明：1649年桂王被迫逃至南宁；关防制于进入黔滇之前的1651年4月"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1799869，Nanning：22.81667, 108.31667；现代城市区域参照"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-southern-ming-anlong",
+    "polityId": "polity-cn-southern-ming",
+    "periods": [
+      {
+        "start": { "year": 1652, "precision": "exact" },
+        "end": { "year": 1656, "precision": "exact" }
+      }
+    ],
+    "placeName": "安龙",
+    "role": "political-center",
+    "coordinates": { "latitude": 25.1, "longitude": 105.51667 },
+    "positionPrecision": "regional",
+    "positionNote": "按1652年永历朝廷迁安龙、1656年由安龙赴昆明的口径；首尾年表示年内曾驻。坐标取现代安龙城市记录作区域参照，不把现代县城中心解释为行宫精确遗址，也不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-southern-ming-hubei-archives",
+        "locator": "援剿总兵关防说明：1652年2月桂王政府被迎居贵州安隆所"
+      },
+      {
+        "sourceId": "source-p1-southern-ming-guizhou-review",
+        "locator": "智斗反王段：1652年迁都安龙；1656年李定国迎永历帝赴云南昆明"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1818019，Anlong：25.1, 105.51667；现代城市区域参照"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "geo-southern-ming-kunming",
+    "polityId": "polity-cn-southern-ming",
+    "periods": [
+      {
+        "start": { "year": 1656, "precision": "exact" },
+        "end": { "year": 1659, "precision": "exact" }
+      }
+    ],
+    "placeName": "昆明",
+    "role": "political-center",
+    "coordinates": { "latitude": 25.03889, "longitude": 102.71833 },
+    "positionPrecision": "regional",
+    "positionNote": "按1656年永历帝入昆明、1659年春清军入云南后朝廷离昆明逃往缅甸的口径；首尾年表示年内曾驻。1661年被引渡回昆明及1662年被杀属于拘押阶段，不据此延长政治中心时期。坐标为现代昆明城市区域参照，不表示行宫遗址或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-southern-ming-guizhou-review",
+        "locator": "智斗反王段：1656年永历帝被迎至昆明；皈依佛门段：1659年春离昆明入缅，1661年冬被引渡回昆明并于次年被杀"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1804651，Kunming：25.03889, 102.71833；现代城市区域参照"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "geo-western-qin-yongshi",
+    "polityId": "polity-cn-western-qin",
+    "periods": [
+      {
+        "start": { "year": 385, "precision": "exact" },
+        "end": { "year": 388, "precision": "exact" }
+      }
+    ],
+    "placeName": "勇士城",
+    "role": "capital",
+    "coordinates": { "latitude": 35.8475, "longitude": 104.1129 },
+    "positionPrecision": "regional",
+    "positionNote": "按385年筑勇士城为都、388年迁金城的口径；首尾年表示年内曾为都。史料将勇士城定位于今榆中东北，坐标取现代榆中城市记录作区域锚点，不表示古城遗址精确位置或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-western-qin-gansu-history",
+        "locator": "西秦政权兴起段：385年筑勇士城（今榆中县东北）为国都；388年国仁死后乾归迁都金城"
+      },
+      {
+        "sourceId": "source-p1-western-qin-lanzhou-gazetteer",
+        "locator": "大事辑要第39页：385年筑勇士城都之，388年西秦自苑川城迁都金城县"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1785532，Yuzhong：35.8475, 104.1129；现代城市区域参照"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "勇士城只可靠定位到今榆中东北的区域范围，未采用现代城市点作为古城遗址坐标。"
+  },
+  {
+    "id": "geo-western-qin-yuanchuan",
+    "polityId": "polity-cn-western-qin",
+    "periods": [
+      {
+        "start": { "year": 395, "precision": "exact" },
+        "end": { "year": 400, "precision": "exact" }
+      },
+      {
+        "start": { "year": 409, "precision": "exact" },
+        "end": { "year": 412, "precision": "exact" }
+      }
+    ],
+    "placeName": "苑川",
+    "role": "capital",
+    "coordinates": { "latitude": 35.8475, "longitude": 104.1129 },
+    "positionPrecision": "regional",
+    "positionNote": "第一段按395年迁苑川西城至400年后秦攻占；第二段按409年复国复都苑川至412年迁谭郊、枹罕。401—408年是政权中断期，明确不连接两段。坐标取现代榆中作苑川区域锚点，不表示古城遗址、控制范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-western-qin-lanzhou-gazetteer",
+        "locator": "大事辑要第39页：395年复迁苑川城；400年后秦攻占西秦苑川、金城郡"
+      },
+      {
+        "sourceId": "source-p1-western-qin-yuzhong-gazetteer",
+        "locator": "大事记第11页：409年西秦复国并复都苑川；412年乞伏炽磐迁都枹罕"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1785532，Yuzhong：35.8475, 104.1129；现代城市区域参照"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "苑川及苑川西城采用今榆中范围的区域级定位，不把现代县城中心当作古城精确坐标。"
+  },
+  {
+    "id": "geo-western-qin-dujianshan",
+    "polityId": "polity-cn-western-qin",
+    "periods": [
+      {
+        "start": { "year": 409, "precision": "exact" },
+        "end": { "year": 409, "precision": "exact" }
+      }
+    ],
+    "placeName": "度坚山",
+    "role": "political-center",
+    "coordinates": { "latitude": 36.5596, "longitude": 104.6822 },
+    "positionPrecision": "regional",
+    "positionNote": "仅表示409年复国过程中乞伏乾归率众移居度坚山的临时政治中心；同年复都苑川，因此两点并存。史料仅能定位到今靖远西一带，坐标取现代靖远作区域锚点，不表示山体或营地精确位置，也不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-western-qin-gansu-history",
+        "locator": "西秦再次兴起段：乾归在枹罕会合后留炽磐守城，自率三万人迁度坚山，并于409年七月复国"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1805547，Jingyuan：36.5596, 104.6822；今靖远范围的区域参照"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "度坚山的具体山址未精确落实，本条只采用今靖远范围的regional定位。"
+  },
+  {
+    "id": "geo-western-qin-tanjiao",
+    "polityId": "polity-cn-western-qin",
+    "periods": [
+      {
+        "start": { "year": 412, "precision": "exact" },
+        "end": { "year": 412, "precision": "exact" }
+      }
+    ],
+    "placeName": "谭郊",
+    "role": "capital",
+    "coordinates": { "latitude": 35.6051, "longitude": 103.2402 },
+    "positionPrecision": "regional",
+    "positionNote": "仅表示412年二月乾归由苑川迁谭郊、同年六月后又迁枹罕的短期都城；同一年可同时显示迁都前后地点。史料只定位到今临夏西北，坐标取现代临夏城市记录作区域参照，不表示古城或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-western-qin-linxia-gazetteer",
+        "locator": "建置与大事记：412年二月乞伏乾归迁都谭郊（今积石山县刘集乡境），同年六月炽磐迁都枹罕"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1803331，Linxia：35.6051, 103.2402；临夏区域参照"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "谭郊只采用临夏地区的regional定位，未把现代城市坐标解释为古城精确位置。"
+  },
+  {
+    "id": "geo-western-qin-fuhan",
+    "polityId": "polity-cn-western-qin",
+    "periods": [
+      {
+        "start": { "year": 412, "precision": "exact" },
+        "end": { "year": 429, "precision": "exact" }
+      }
+    ],
+    "placeName": "枹罕",
+    "role": "capital",
+    "coordinates": { "latitude": 35.6051, "longitude": 103.2402 },
+    "positionPrecision": "regional",
+    "positionNote": "按412年六月迁都枹罕至429年暮末迁保定连、相国仍留守枹罕的口径；429年只表示年内仍有都城机构，不外推至430—431年的南安末期。坐标取现代临夏城市记录作区域参照，不表示枹罕古城精确范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-western-qin-linxia-gazetteer",
+        "locator": "大事记第15页：412年迁都枹罕；429年暮末迁保定连、相国元基留守枹罕，北凉进兵枹罕"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1803331，Linxia：35.6051, 103.2402；现代临夏城市区域参照"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "枹罕古城采用现代临夏的regional定位；429年存在君主驻地与留守都城并置，记录不表达唯一中心。"
+  },
+  {
+    "id": "geo-western-qin-nanan",
+    "polityId": "polity-cn-western-qin",
+    "periods": [
+      {
+        "start": { "year": 430, "precision": "exact" },
+        "end": { "year": 431, "precision": "exact" }
+      }
+    ],
+    "placeName": "南安",
+    "role": "political-center",
+    "coordinates": { "latitude": 35.0079, "longitude": 104.639 },
+    "positionPrecision": "regional",
+    "positionNote": "按430年暮末东迁受阻后留保南安、431年南安失守与西秦灭亡的口径；仅表示末期君主及残余政权驻地。南安郡治只能对应今陇西县东南的区域范围，坐标取现代陇西城市记录作区域锚点，不表示古城精确位置或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-western-qin-primary",
+        "locator": "卷121，宋文帝元嘉七年至八年：暮末东行受夏兵阻，留保南安、故地入吐谷浑；次年夏军攻南安，暮末出降"
+      },
+      {
+        "sourceId": "source-p1-western-qin-longxi-gazetteer",
+        "locator": "建置第4页：南安郡治对应今陇西县东南；431年陇西、南安二郡为夏所夺"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1802304，Longxi：35.0079, 104.639；今陇西范围的区域参照"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "南安郡治只落实到今陇西县东南范围，现代城市坐标不等于古城址。"
+  },
+  {
+    "id": "geo-hre-regensburg-diet",
+    "polityId": "polity-holy-roman-empire",
+    "periods": [
+      {
+        "start": { "year": 1663, "precision": "exact" },
+        "end": { "year": 1806, "precision": "exact" }
+      }
+    ],
+    "placeName": "Regensburg",
+    "role": "political-center",
+    "coordinates": { "latitude": 49.01513, "longitude": 12.10161 },
+    "positionPrecision": "regional",
+    "positionNote": "仅表示1663—1806年永久帝国议会常驻雷根斯堡、帝国等级与使节在此处理帝国政治；这不是神圣罗马帝国固定皇都，也不代表皇帝宫廷持续驻此。坐标取现代雷根斯堡城市记录作浏览定位，不表示帝国疆域或中心权重。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-hre-regensburg",
+        "locator": "document Reichstag：1663—1806年永久帝国议会在旧市政厅开会，并将德国与欧洲政治及其代表带到雷根斯堡"
+      },
+      {
+        "sourceId": "source-p1-hre-itinerant",
+        "locator": "962年条与11世纪段：帝国没有固定首都，君主携宫廷巡行，行宫只是临时政府驻地"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 2849483，Regensburg：49.01513, 12.10161；现代城市区域参照"
+      }
+    ],
+    "confidence": "high"
+  }
+]

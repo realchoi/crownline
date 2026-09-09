@@ -494,14 +494,23 @@
   {
     "id": "geo-western-han-changan",
     "polityId": "polity-cn-western-han",
-    "periods": [{ "start": { "year": -202, "precision": "exact" }, "end": { "year": 8, "precision": "exact" } }],
+    "periods": [{ "start": { "year": -200, "precision": "exact" }, "end": { "year": 8, "precision": "exact" } }],
     "placeName": "长安",
     "role": "capital",
-    "coordinates": { "latitude": 34.2658, "longitude": 108.9541 },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cn-chronology-table" }],
-    "confidence": "high"
+    "coordinates": { "latitude": 34.25833, "longitude": 108.92861 },
+    "positionPrecision": "regional",
+    "positionNote": "《西安市长安区志》记载西汉高祖七年（前200）从栎阳迁都长安，因此不把汉政权起年直接当作长安适用起年。坐标取 GeoNames 西安城市记录作区域锚点，不表示汉长安城遗址中心、范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-locator-review-xian-gazetteer",
+        "locator": "第二节 建置沿革：西汉高祖七年（前200），国都从栎阳迁至长安；新始建国元年（9）改长安县为常安县"
+      },
+      {
+        "sourceId": "source-locator-review-geonames-xian",
+        "locator": "Feature 1790630：Xi'an，34.25833, 108.92861；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
   },
   {
     "id": "geo-eastern-han-luoyang",
@@ -628,15 +637,28 @@
     "polityId": "polity-cn-tang",
     "periods": [
       { "start": { "year": 618, "precision": "exact" }, "end": { "year": 690, "precision": "exact" } },
-      { "start": { "year": 705, "precision": "exact" }, "end": { "year": 907, "precision": "exact" } }
+      { "start": { "year": 705, "precision": "exact" }, "end": { "year": 904, "precision": "exact" } }
     ],
     "placeName": "长安",
     "role": "capital",
-    "coordinates": { "latitude": 34.2658, "longitude": 108.9541 },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cn-chronology-table" }],
-    "confidence": "high"
+    "coordinates": { "latitude": 34.25833, "longitude": 108.92861 },
+    "positionPrecision": "regional",
+    "positionNote": "西安市地方志资料确认唐长安城承继隋大兴城；陕州区政府资料记载904年唐昭宗被迫迁都洛阳，因此不把唐政权终年907直接当作长安适用终年。坐标只作西安区域锚点；武周中断期依实体分段保留为空。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-locator-review-xian-capital-site",
+        "locator": "隋大兴城、唐长安城遗址：唐长安城基本承继大兴城规模、布局与设施，并作为唐代都城"
+      },
+      {
+        "sourceId": "source-locator-review-tang-move-luoyang",
+        "locator": "唐代段：天祐元年（904）朱全忠胁迫唐昭宗迁都洛阳"
+      },
+      {
+        "sourceId": "source-locator-review-geonames-xian",
+        "locator": "Feature 1790630：Xi'an，34.25833, 108.92861；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
   },
   {
     "id": "geo-northern-song-kaifeng",
@@ -665,14 +687,23 @@
   {
     "id": "geo-yuan-dadu",
     "polityId": "polity-cn-yuan",
-    "periods": [{ "start": { "year": 1271, "precision": "exact" }, "end": { "year": 1368, "precision": "exact" } }],
+    "periods": [{ "start": { "year": 1272, "precision": "exact" }, "end": { "year": 1368, "precision": "exact" } }],
     "placeName": "大都",
     "role": "capital",
-    "coordinates": { "latitude": 39.9042, "longitude": 116.4074 },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cn-chronology-table" }],
-    "confidence": "high"
+    "coordinates": { "latitude": 39.9075, "longitude": 116.39723 },
+    "positionPrecision": "regional",
+    "positionNote": "北京市政府资料明确记载1272年迁都燕京并称大都，因此不再把元政权建立年1271直接当作大都适用起年。坐标取 GeoNames 北京城市记录，仅作区域锚点，不表示元大都城址中心或范围。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-locator-review-beijing-history",
+        "locator": "北京何以称“北京”，元代段：1272年迁都燕京，称大都；1368年明军攻占大都"
+      },
+      {
+        "sourceId": "source-locator-review-geonames-beijing",
+        "locator": "Feature 1816670：Beijing，39.9075, 116.39723；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
   },
   {
     "id": "geo-ming-nanjing",
@@ -680,11 +711,20 @@
     "periods": [{ "start": { "year": 1368, "precision": "exact" }, "end": { "year": 1420, "precision": "exact" } }],
     "placeName": "南京",
     "role": "capital",
-    "coordinates": { "latitude": 32.0603, "longitude": 118.7969 },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cn-chronology-table" }],
-    "confidence": "high"
+    "coordinates": { "latitude": 32.06167, "longitude": 118.77778 },
+    "positionPrecision": "regional",
+    "positionNote": "南京市政府历史页记载1368年明朝在应天府建立并以南京为首都，1421年迁主要都城到北京。坐标取 GeoNames 南京城市记录，仅作区域锚点，不表示明南京城核心或范围。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-locator-review-nanjing-history",
+        "locator": "History，明代段：1368年朱元璋在应天府即位并以南京为都；1421年迁主要都城到北京"
+      },
+      {
+        "sourceId": "source-locator-review-geonames-nanjing",
+        "locator": "Feature 1799962：Nanjing，32.06167, 118.77778；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
   },
   {
     "id": "geo-ming-beijing",
@@ -692,11 +732,20 @@
     "periods": [{ "start": { "year": 1421, "precision": "exact" }, "end": { "year": 1644, "precision": "exact" } }],
     "placeName": "北京",
     "role": "capital",
-    "coordinates": { "latitude": 39.9042, "longitude": 116.4074 },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cn-chronology-table" }],
-    "confidence": "high"
+    "coordinates": { "latitude": 39.9075, "longitude": 116.39723 },
+    "positionPrecision": "regional",
+    "positionNote": "南京市政府历史页记载1421年明朝迁主要都城到北京；坐标取 GeoNames 北京城市记录作区域锚点，不表示明北京城核心、宫城或范围。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-locator-review-nanjing-history",
+        "locator": "History，明代段：1421年迁主要都城到 Beijing；南京降为次都"
+      },
+      {
+        "sourceId": "source-locator-review-geonames-beijing",
+        "locator": "Feature 1816670：Beijing，39.9075, 116.39723；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
   },
   {
     "id": "geo-qing-shengjing",
@@ -752,11 +801,20 @@
     "periods": [{ "start": { "year": 1153, "precision": "exact" }, "end": { "year": 1214, "precision": "exact" } }],
     "placeName": "中都",
     "role": "capital",
-    "coordinates": { "latitude": 39.9042, "longitude": 116.4074 },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cn-chronology-table" }],
-    "confidence": "high"
+    "coordinates": { "latitude": 39.9075, "longitude": 116.39723 },
+    "positionPrecision": "regional",
+    "positionNote": "北京市文物局资料明确记载1153年金迁都燕京并称中都，1214年金宣宗弃中都迁汴，1215年蒙古军攻破中都。点位以迁都年1214为适用终点；坐标取 GeoNames 北京城市记录，仅作区域锚点，不表示金中都遗址中心或城址范围。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-locator-review-beijing-capitals",
+        "locator": "金代中都史段：1153年迁都燕京并称中都；1214年金宣宗弃中都迁汴，翌年蒙古军攻破中都"
+      },
+      {
+        "sourceId": "source-locator-review-geonames-beijing",
+        "locator": "Feature 1816670：Beijing，39.9075, 116.39723；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
   },
   {
     "id": "geo-jin-bianjing",
@@ -785,14 +843,23 @@
   {
     "id": "geo-sui-daxing",
     "polityId": "polity-cn-sui",
-    "periods": [{ "start": { "year": 581, "precision": "exact" }, "end": { "year": 618, "precision": "exact" } }],
+    "periods": [{ "start": { "year": 583, "precision": "exact" }, "end": { "year": 618, "precision": "exact" } }],
     "placeName": "大兴城",
     "role": "capital",
-    "coordinates": { "latitude": 34.2658, "longitude": 108.9541 },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cn-chronology-table" }],
-    "confidence": "high"
+    "coordinates": { "latitude": 34.25833, "longitude": 108.92861 },
+    "positionPrecision": "regional",
+    "positionNote": "西安市地方志资料记载582年营建大兴城、583年隋王朝迁入新都，因此不把隋政权建立年581直接当作大兴城适用起年。坐标取 GeoNames 西安城市记录作区域锚点，不表示大兴城遗址中心、范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-locator-review-xian-capital-site",
+        "locator": "隋大兴城、唐长安城遗址：开皇三年（583）隋王朝迁至新都大兴城"
+      },
+      {
+        "sourceId": "source-locator-review-geonames-xian",
+        "locator": "Feature 1790630：Xi'an，34.25833, 108.92861；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
   },
   {
     "id": "geo-western-jin-luoyang",
@@ -812,11 +879,20 @@
     "periods": [{ "start": { "year": 317, "precision": "exact" }, "end": { "year": 420, "precision": "exact" } }],
     "placeName": "建康",
     "role": "capital",
-    "coordinates": { "latitude": 32.0603, "longitude": 118.7969 },
-    "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cn-chronology-table" }],
-    "confidence": "high"
+    "coordinates": { "latitude": 32.06167, "longitude": 118.77778 },
+    "positionPrecision": "regional",
+    "positionNote": "南京市政府历史页明确记载当时称建康的南京继续作为东晋首都；坐标取 GeoNames 南京城市记录作区域锚点，不表示东晋建康城核心、范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-locator-review-nanjing-history",
+        "locator": "History，Six Dynasties 段：Nanjing（then Jiankang）continued to serve as capital of the Eastern Jin dynasty"
+      },
+      {
+        "sourceId": "source-locator-review-geonames-nanjing",
+        "locator": "Feature 1799962：Nanjing，32.06167, 118.77778；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
   },
   {
     "id": "geo-balhae-shangjing",
@@ -1173,15 +1249,24 @@
   {
     "id": "geo-western-qin-jincheng",
     "polityId": "polity-cn-western-qin",
-    "periods": [{ "start": { "year": 388, "precision": "exact" }, "end": { "year": 394, "precision": "exact" } }],
+    "periods": [{ "start": { "year": 388, "precision": "exact" }, "end": { "year": 395, "precision": "exact" } }],
     "placeName": "金城",
     "role": "capital",
-    "coordinates": { "latitude": 36.0611, "longitude": 103.8343 },
+    "coordinates": { "latitude": 36.05701, "longitude": 103.83987 },
     "positionPrecision": "regional",
-    "positionNote": "坐标采用 GeoNames 对应今兰州—榆中一带的金城历史区域；西秦迁都频繁，本条只定位388—394年的政治中心，不表示其他年份都城或政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cambridge-six-dynasties", "locator": "Chapter 6, The Sixteen Kingdoms: Western Qin capital sequence, Jincheng phase" }],
+    "positionNote": "按388年迁都金城、395年六月迁苑川西城的口径；首尾年表示年内曾为都，因此395年与苑川并存。坐标取现代兰州城市记录作金城所在区域的浏览锚点，不表示古城、宫城或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p1-western-qin-lanzhou-gazetteer",
+        "locator": "建置与大事辑要第39、51页：388年九月由苑川迁金城；395年六月由金城迁苑川西城"
+      },
+      {
+        "sourceId": "source-p1-geonames",
+        "locator": "Feature 1804430，Lanzhou：36.05701, 103.83987；现代城市区域参照"
+      }
+    ],
     "confidence": "medium",
-    "confidenceNote": "金城在历史地理资料中的现代对应存在区域范围差异，因此使用兰州地区的 regional 坐标。"
+    "confidenceNote": "金城故址与现代兰州城市点不重合，本条只保留兰州地区的regional定位。"
   },
   {
     "id": "geo-later-liang-lu-guzang",

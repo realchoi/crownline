@@ -44,6 +44,10 @@
         },
         {
           "sourceId": "source-ayutthaya-rulers"
+        },
+        {
+          "sourceId": "source-ayutthaya-provincial-kings",
+          "locator": "พระมหากษัตริย์และพระราชวงศ์ ในสมัยกรุงศรีอยุธยา（33王表）"
         }
       ],
       "confidence": "medium",
@@ -232,6 +236,132 @@
           "sourceId": "source-ayutthaya-rulers"
         }
       ]
+    },
+    {
+      "id": "person-ayutthaya-ramesuan",
+      "names": { "primary": "拉梅萱", "aliases": ["Ramesuan"] },
+      "description": "阿瑜陀耶早期国王，先后两次在位。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第2项及第5项：สมเด็จพระราเมศวร" }]
+    },
+    {
+      "id": "person-ayutthaya-thong-lan",
+      "names": { "primary": "通兰", "aliases": ["Thong Lan", "Thong Chan"] },
+      "description": "博罗玛拉查一世之子，1388年短暂在位约七日。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第4项：สมเด็จพระเจ้าทองลัน" }]
+    },
+    {
+      "id": "person-ayutthaya-ramaracha",
+      "names": { "primary": "罗摩罗阇", "aliases": ["Ramaracha", "Ramrachathirat"] },
+      "description": "拉梅萱之子，1395年继位的阿瑜陀耶国王。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第5项：สมเด็จพระรามราชาธิราช" }]
+    },
+    {
+      "id": "person-ayutthaya-borommaracha-iii",
+      "names": { "primary": "博罗玛拉查三世", "aliases": ["Borommaracha III"] },
+      "description": "特莱洛卡纳之后即位的阿瑜陀耶国王。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第9项：สมเด็จพระบรมราชาธิราชที่ 3" }]
+    },
+    {
+      "id": "person-ayutthaya-ramathibodi-ii",
+      "names": { "primary": "拉玛铁菩提二世", "aliases": ["Ramathibodi II"] },
+      "description": "素攀那蓬王统的阿瑜陀耶国王，1491年即位。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第10项：สมเด็จพระรามาธิบดีที่ 2" }]
+    },
+    {
+      "id": "person-ayutthaya-borommaracha-iv",
+      "names": { "primary": "博罗玛拉查四世", "aliases": ["Borommaracha IV"] },
+      "description": "拉玛铁菩提二世之后即位的阿瑜陀耶国王。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第11项：สมเด็จพระบรมราชาธิราชที่ 4" }]
+    },
+    {
+      "id": "person-ayutthaya-ratsadathirat",
+      "names": { "primary": "拉萨达提拉", "aliases": ["Ratsadathirat", "Ratsada"] },
+      "description": "幼年继位的阿瑜陀耶国王，在位约一年。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第12项：พระรัษฎาธิราช" }]
+    },
+    {
+      "id": "person-ayutthaya-chairacha",
+      "names": { "primary": "凯拉差", "aliases": ["Chairacha", "Chai Racha"] },
+      "description": "素攀那蓬王统的阿瑜陀耶国王，1534年即位。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第13项：สมเด็จพระไชยราชาธิราช" }]
+    },
+    {
+      "id": "person-ayutthaya-yot-fa",
+      "names": { "primary": "约法", "aliases": ["Yot Fa", "Kaeo Fa"] },
+      "description": "凯拉差之子，1546年幼年即位。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第14项：พระแก้วฟ้า（พระยอดฟ้า）" }]
+    },
+    {
+      "id": "person-ayutthaya-maha-chakkraphat",
+      "names": { "primary": "摩诃·查克腊帕", "aliases": ["Maha Chakkraphat"] },
+      "description": "1548年即位的阿瑜陀耶国王，在缅甸战争时期统治。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第15项：สมเด็จพระมหาจักรพรรดิ" }]
+    },
+    {
+      "id": "person-ayutthaya-mahinthrathirat",
+      "names": { "primary": "玛欣塔提拉", "aliases": ["Mahinthrathirat"] },
+      "description": "摩诃·查克腊帕之子，阿瑜陀耶第一次陷落前的国王。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第16项：สมเด็จพระมหินทราธิราช" }]
+    },
+    {
+      "id": "person-ayutthaya-mahathammarachathirat",
+      "names": { "primary": "摩诃·昙摩罗阇", "aliases": ["Mahathammarachathirat", "Sanphet I"] },
+      "description": "素可泰王统首位阿瑜陀耶国王，1569年即位。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第17项：สมเด็จพระมหาธรรมราชา" }]
+    },
+    {
+      "id": "person-ayutthaya-si-saowaphak",
+      "names": { "primary": "西绍瓦帕", "aliases": ["Si Saowaphak"] },
+      "description": "艾卡托沙罗之后短暂在位的阿瑜陀耶国王。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第20项：พระศรีเสาวภาคย์" }]
+    },
+    {
+      "id": "person-ayutthaya-songtham",
+      "names": { "primary": "宋昙", "aliases": ["Songtham", "Intharacha I"] },
+      "description": "素可泰王统的阿瑜陀耶国王，1610年即位。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第21项：สมเด็จพระเจ้าทรงธรรม" }]
+    },
+    {
+      "id": "person-ayutthaya-chetthathirat",
+      "names": { "primary": "切塔提拉", "aliases": ["Chetthathirat"] },
+      "description": "宋昙之子，1628年后短暂在位。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第22项：สมเด็จพระเชษฐาธิราช" }]
+    },
+    {
+      "id": "person-ayutthaya-athittayawong",
+      "names": { "primary": "阿滴亚旺", "aliases": ["Athittayawong"] },
+      "description": "1629年短暂在位约二十八日的阿瑜陀耶国王。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第23项：พระอาทิตยวงศ์" }]
+    },
+    {
+      "id": "person-ayutthaya-chai",
+      "names": { "primary": "猜", "aliases": ["Chai", "Chao Fa Chai"] },
+      "description": "帕赛通之子，1656年短暂在位数日。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第25项：สมเด็จเจ้าฟ้าไชย" }]
+    },
+    {
+      "id": "person-ayutthaya-si-suthammaracha",
+      "names": { "primary": "西素探玛拉差", "aliases": ["Si Suthammaracha"] },
+      "description": "帕赛通之弟，1656年短暂在位约三个月。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第26项：พระศรีสุธรรมราชา" }]
+    },
+    {
+      "id": "person-ayutthaya-suea",
+      "names": { "primary": "虎王", "aliases": ["Suea", "Sanphet VIII", "Suriyenthrathibodi"] },
+      "description": "班普銮王统第二位国王，1703年即位。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第29项：สมเด็จพระสรรเพชญ์ที่ 8（พระเจ้าเสือ）" }]
+    },
+    {
+      "id": "person-ayutthaya-thai-sa",
+      "names": { "primary": "泰沙", "aliases": ["Thai Sa", "Sanphet IX"] },
+      "description": "虎王之子，1709年即位的阿瑜陀耶国王。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第30项：สมเด็จพระเจ้าท้ายสระ" }]
+    },
+    {
+      "id": "person-ayutthaya-uthumphon",
+      "names": { "primary": "乌通蓬", "aliases": ["Uthumphon", "Dok Madua"] },
+      "description": "博隆玛固之子，1758年短暂在位约两个月。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第32项：สมเด็จพระเจ้าอุทุมพร" }]
     }
   ],
   "reigns": [
@@ -264,6 +394,21 @@
       "confidence": "medium"
     },
     {
+      "id": "reign-ayutthaya-ramesuan",
+      "personId": "person-ayutthaya-ramesuan",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [
+        { "start": { "year": 1369, "precision": "exact" }, "end": { "year": 1370, "precision": "exact" } },
+        { "start": { "year": 1388, "precision": "exact" }, "end": { "year": 1395, "precision": "exact" } }
+      ],
+      "chronologyStatus": "accepted",
+      "note": "拉梅萱两度在位；年度模型保留两段任期，交接年可能与前后任同时显示。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第2项（1369—1370）及第5项（1388—1395）" }],
+      "confidence": "medium"
+    },
+    {
       "id": "reign-ayutthaya-borommaracha-i",
       "personId": "person-ayutthaya-borommaracha-i",
       "polityId": "polity-ayutthaya-kingdom",
@@ -289,6 +434,29 @@
           "sourceId": "source-ayutthaya-rulers"
         }
       ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-thong-lan",
+      "personId": "person-ayutthaya-thong-lan",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1388, "precision": "exact" }, "end": { "year": 1388, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "王表记在位七日；年度模型显示为1388年。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第4项：佛历1931年（约7日）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-ramaracha",
+      "personId": "person-ayutthaya-ramaracha",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1395, "precision": "exact" }, "end": { "year": 1409, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第5项：佛历1938—1952（公历1395—1409）" }],
       "confidence": "medium"
     },
     {
@@ -376,6 +544,108 @@
       "confidence": "medium"
     },
     {
+      "id": "reign-ayutthaya-borommaracha-iii",
+      "personId": "person-ayutthaya-borommaracha-iii",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1488, "precision": "exact" }, "end": { "year": 1491, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第9项：佛历2031—2034（公历1488—1491）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-ramathibodi-ii",
+      "personId": "person-ayutthaya-ramathibodi-ii",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1491, "precision": "exact" }, "end": { "year": 1529, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第10项：佛历2034—2072（公历1491—1529）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-borommaracha-iv",
+      "personId": "person-ayutthaya-borommaracha-iv",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1529, "precision": "exact" }, "end": { "year": 1533, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第11项：佛历2072—2076（公历1529—1533）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-ratsadathirat",
+      "personId": "person-ayutthaya-ratsadathirat",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1533, "precision": "exact" }, "end": { "year": 1534, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "王表记在位约一年；年度模型保留两个端点年。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第12项：佛历2076—2077（约1年）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-chairacha",
+      "personId": "person-ayutthaya-chairacha",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1534, "precision": "exact" }, "end": { "year": 1546, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第13项：佛历2077—2089（公历1534—1546）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-yot-fa",
+      "personId": "person-ayutthaya-yot-fa",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1546, "precision": "exact" }, "end": { "year": 1548, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第14项：佛历2089—2091（公历1546—1548）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-maha-chakkraphat",
+      "personId": "person-ayutthaya-maha-chakkraphat",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1548, "precision": "exact" }, "end": { "year": 1568, "precision": "exact" } }],
+      "chronologyStatus": "disputed",
+      "note": "大城府王表将其任期概括为1548—1568；其他年表会将1564年的退位、1568年的复位与玛欣塔提拉的名义统治分段。当前采用机构王表的年度概括，不据此否认期间的权力变化。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第15项：佛历2091—2111（公历1548—1568）" }, { "sourceId": "source-ayutthaya-rulers", "locator": "Ayutthaya Kingdom：Maha Chakkraphat 与 Mahinthrathirat" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-mahinthrathirat",
+      "personId": "person-ayutthaya-mahinthrathirat",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1568, "precision": "exact" }, "end": { "year": 1569, "precision": "exact" } }],
+      "chronologyStatus": "disputed",
+      "note": "大城府王表概括为1568—1569；其他年表会另计1564—1568年的名义统治。此处与摩诃·查克腊帕条共同披露差异。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第16项：佛历2111—2112（公历1568—1569）" }, { "sourceId": "source-ayutthaya-rulers", "locator": "Ayutthaya Kingdom：Mahinthrathirat" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-mahathammarachathirat",
+      "personId": "person-ayutthaya-mahathammarachathirat",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1569, "precision": "exact" }, "end": { "year": 1590, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第17项：佛历2112—2133（公历1569—1590）" }],
+      "confidence": "medium"
+    },
+    {
       "id": "reign-ayutthaya-naresuan",
       "personId": "person-ayutthaya-naresuan",
       "polityId": "polity-ayutthaya-kingdom",
@@ -418,7 +688,7 @@
             "precision": "exact"
           },
           "end": {
-            "year": 1620,
+            "year": 1610,
             "precision": "exact"
           }
         }
@@ -432,6 +702,53 @@
       "confidence": "medium"
     },
     {
+      "id": "reign-ayutthaya-si-saowaphak",
+      "personId": "person-ayutthaya-si-saowaphak",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1610, "precision": "exact" }, "end": { "year": 1610, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "王表记在位约一年；年度模型显示为1610年。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第20项：佛历2153年（公历1610）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-songtham",
+      "personId": "person-ayutthaya-songtham",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1610, "precision": "exact" }, "end": { "year": 1628, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第21项：佛历2153—2171（公历1610—1628）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-chetthathirat",
+      "personId": "person-ayutthaya-chetthathirat",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1628, "precision": "exact" }, "end": { "year": 1629, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "王表记在位约八个月；年度模型保留1628—1629两个端点年。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第22项：佛历2172年（约8个月）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-athittayawong",
+      "personId": "person-ayutthaya-athittayawong",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1629, "precision": "exact" }, "end": { "year": 1629, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "王表记在位约二十八日；年度模型显示为1629年。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第23项：佛历2172年（约28日）" }],
+      "confidence": "medium"
+    },
+    {
       "id": "reign-ayutthaya-prasat-thong",
       "personId": "person-ayutthaya-prasat-thong",
       "polityId": "polity-ayutthaya-kingdom",
@@ -442,11 +759,11 @@
       "periods": [
         {
           "start": {
-            "year": 1630,
+            "year": 1629,
             "precision": "exact"
           },
           "end": {
-            "year": 1655,
+            "year": 1656,
             "precision": "exact"
           }
         }
@@ -457,6 +774,30 @@
           "sourceId": "source-ayutthaya-rulers"
         }
       ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-chai",
+      "personId": "person-ayutthaya-chai",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1656, "precision": "exact" }, "end": { "year": 1656, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "王表记在位约三至四日；年度模型显示为1656年。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第25项：佛历2199年（约3—4日）" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-si-suthammaracha",
+      "personId": "person-ayutthaya-si-suthammaracha",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1656, "precision": "exact" }, "end": { "year": 1656, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "王表记在位约三个月；年度模型显示为1656年。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第26项：佛历2199年（约3个月）" }],
       "confidence": "medium"
     },
     {
@@ -516,6 +857,30 @@
       "confidence": "medium"
     },
     {
+      "id": "reign-ayutthaya-suea",
+      "personId": "person-ayutthaya-suea",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1703, "precision": "exact" }, "end": { "year": 1709, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "大城府王表本行佛历终年排印与其‘6年’时长不一致；公历端点按现有泰王表交叉核对为1703—1709。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第29项：สมเด็จพระสรรเพชญ์ที่ 8（พระเจ้าเสือ），时长6年" }, { "sourceId": "source-ayutthaya-rulers", "locator": "§ Ayutthaya Kingdom：Sanphet VIII" }],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-thai-sa",
+      "personId": "person-ayutthaya-thai-sa",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1709, "precision": "exact" }, "end": { "year": 1733, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "大城府王表本行佛历端点与继承次序存在排印错位；公历端点按现有泰王表交叉核对。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第30项：สมเด็จพระเจ้าท้ายสระ，时长24年" }, { "sourceId": "source-ayutthaya-rulers", "locator": "§ Ayutthaya Kingdom：Thai Sa" }],
+      "confidence": "medium"
+    },
+    {
       "id": "reign-ayutthaya-borommakot",
       "personId": "person-ayutthaya-borommakot",
       "polityId": "polity-ayutthaya-kingdom",
@@ -541,6 +906,18 @@
           "sourceId": "source-ayutthaya-rulers"
         }
       ],
+      "confidence": "medium"
+    },
+    {
+      "id": "reign-ayutthaya-uthumphon",
+      "personId": "person-ayutthaya-uthumphon",
+      "polityId": "polity-ayutthaya-kingdom",
+      "titles": ["国王"],
+      "role": "ruler",
+      "periods": [{ "start": { "year": 1758, "precision": "exact" }, "end": { "year": 1758, "precision": "exact" } }],
+      "chronologyStatus": "accepted",
+      "note": "王表记在位约两个月；年度模型显示为1758年。",
+      "sourceRefs": [{ "sourceId": "source-ayutthaya-provincial-kings", "locator": "王表第32项：佛历2301年（约2个月）" }],
       "confidence": "medium"
     },
     {
