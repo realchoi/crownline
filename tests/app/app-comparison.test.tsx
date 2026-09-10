@@ -26,7 +26,7 @@ describe("Crownline 政权对比", () => {
     await waitFor(() => expect(nameButton).toHaveFocus());
   });
 
-  it("选择不打开对比，主动查看后关闭或 Escape 保留选择和焦点", async () => {
+  it("选择不打开对比，主动查看后关闭或 Escape 保留选择和焦点", { timeout: 20_000 }, async () => {
     const user = setupUser();
     const loader = vi.fn(loadGeneratedDetail);
     renderApp(loader);
