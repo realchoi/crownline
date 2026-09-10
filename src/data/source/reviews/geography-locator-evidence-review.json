@@ -1,6 +1,6 @@
 {
-  "reviewVersion": 1,
-  "reviewedAt": "2026-09-08",
+  "reviewVersion": 2,
+  "reviewedAt": "2026-09-10",
   "scope": "2026-09-08 基线中100条所有 sourceRefs 均缺少非空 locator 的既有地理快照；本文件为维护侧证据审查，不进入浏览器产物。",
   "method": [
     "坐标证据、历史地点/角色证据、适用年代证据分开判断。",
@@ -10,9 +10,9 @@
   ],
   "summary": {
     "baselineRecords": 100,
-    "verifiedThisReview": 9,
-    "correctedThisReview": 4,
-    "pendingEvidence": 91
+    "verifiedThisReview": 25,
+    "correctedThisReview": 6,
+    "pendingEvidence": 75
   },
   "maintenanceNotes": [
     "polity-maya-city-states 保留原稳定 ID，但已改为历史分期；其旧 Tikal 点位迁到 polity-maya-tikal。",
@@ -887,21 +887,31 @@
           "polityId": "polity-ayutthaya-kingdom",
           "placeName": "Ayutthaya",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-ayutthaya",
+              "locator": "页面摘要及 Outstanding Universal Value / Brief synthesis：约1350年建立、暹罗首都、1767年毁城"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM way 786197170（Historic City of Ayutthaya）；14.3502755, 100.5565450；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至大城历史公园 OSM way 786197170，并采用其对象中心点。",
+            "historicalIdentity": "UNESCO 页面摘要与 Brief synthesis 直接确认大城作为暹罗首都。",
+            "temporalApplicability": "UNESCO 说明约1350年建城及1767年毁城；记录起点随本项目王国采用口径使用1351年。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-ayutthaya-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Ayutthaya”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-chalukya-badami",
@@ -1019,21 +1029,35 @@
           "polityId": "polity-goryeo",
           "placeName": "Gaegyeong",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-kaesong",
+              "locator": "页面摘要及 Outstanding Universal Value / Brief synthesis：开城为918—1392年高丽统治基础与首都"
+            },
+            {
+              "sourceId": "source-p2-goryeo-ganghwa-capital",
+              "locator": "正文：1232年迁都江华，1270年还都开京"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM way 215254348（Manwoldae Palace）；37.9858974, 126.5425051；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至开城满月台宫址 OSM way 215254348，并采用其对象中心点。",
+            "historicalIdentity": "UNESCO 直接确认开城为高丽统治基础与首都。",
+            "temporalApplicability": "韩国国家遗产资料确认1232年迁都江华、1270年还都开京，支持开京两段区间。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-goryeo-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Gaegyeong”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-goryeo-ganghwa",
@@ -1041,21 +1065,31 @@
           "polityId": "polity-goryeo",
           "placeName": "Ganghwa",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-goryeo-ganghwa-capital",
+              "locator": "正文：1232年营建宫城并迁都江华，1270年还都开京"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 12718043698（강화 고려궁지）；37.7513968, 126.4851303；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至江华高丽宫址 OSM node 12718043698，并采用其地点坐标。",
+            "historicalIdentity": "韩国国家遗产资料直接确认江华宫城与高丽迁都。",
+            "temporalApplicability": "资料给出1232年迁都与1270年还都；记录终年由1269修正为1270，迁都年按闭区间与开京并列。"
+          },
+          "outcome": "period-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-goryeo-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Ganghwa”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-gupta-pataliputra",
@@ -1085,21 +1119,31 @@
           "polityId": "polity-khmer-empire",
           "placeName": "Angkor",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-khmer-history",
+              "locator": "页面摘要及 Outstanding Universal Value / Brief synthesis：高棉帝国9至15世纪历代首都遗存及吴哥中心地位"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM way 1113380295（Angkor Wat）；13.4125210, 103.8665896；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至吴哥窟 OSM way 1113380295，作为吴哥区域锚点。",
+            "historicalIdentity": "UNESCO 直接说明吴哥保存高棉帝国历代首都遗存，并长期为王国中心。",
+            "temporalApplicability": "UNESCO 支持9至15世纪口径；802—1431年沿用本项目已披露的高棉帝国策展区间，不表示单一城市形态始终不变。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-khmer-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Angkor”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-kushan-begram",
@@ -1217,21 +1261,31 @@
           "polityId": "polity-mughal-empire",
           "placeName": "Fatehpur Sikri",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-fatehpur-sikri",
+              "locator": "页面摘要及遗产说明：莫卧儿帝国首都；1571—1585年建筑与首都阶段；Dossier 255"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 568383174（Fatehpur Sikri）；27.0911655, 77.6623984；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至 Fatehpur Sikri OSM node 568383174，并采用其城镇坐标。",
+            "historicalIdentity": "UNESCO 直接确认法泰赫普尔西格里为阿克巴营建的莫卧儿帝国首都。",
+            "temporalApplicability": "UNESCO 遗产说明给出1571—1585年阶段，记录终年由1584修正为1585。"
+          },
+          "outcome": "period-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-mughal-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Fatehpur Sikri”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-mughal-lahore",
@@ -1261,21 +1315,35 @@
           "polityId": "polity-pagan-kingdom",
           "placeName": "Pagan",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-bagan",
+              "locator": "页面摘要及 Outstanding Universal Value：11至13世纪蒲甘文明高峰期为区域帝国首都"
+            },
+            {
+              "sourceId": "source-pagan-history",
+              "locator": "正文：阿奴律陀1044年即位至1287年蒲甘失去政治中心地位的年代口径"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 253298858（Old Bagan）；21.1708105, 94.8595191；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至 Old Bagan OSM node 253298858，并采用其地点坐标。",
+            "historicalIdentity": "UNESCO 直接确认蒲甘在11至13世纪为区域帝国首都。",
+            "temporalApplicability": "UNESCO 的世纪级首都口径与 Britannica 的1044—1287年王朝节点共同限定采用区间。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-pagan-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Pagan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-safavid-isfahan",
@@ -1481,21 +1549,35 @@
           "polityId": "polity-sukhothai-kingdom",
           "placeName": "Sukhothai",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-sukhothai",
+              "locator": "页面摘要及 Outstanding Universal Value / Brief synthesis：素可泰为早期暹罗王国的政治、行政首府"
+            },
+            {
+              "sourceId": "source-sukhothai-history",
+              "locator": "正文：1238年建国及1438年并入阿瑜陀耶的王国年代口径"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 21125459（Sukhothai Historical Park）；17.0218403, 99.7031151；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至素可泰历史公园 OSM relation 21125459，并采用其关系中心点。",
+            "historicalIdentity": "UNESCO 页面直接确认素可泰的政治与行政首府身份。",
+            "temporalApplicability": "UNESCO 支持首府身份，Britannica 专题支持1238—1438年的王国采用区间；点位不外推疆域。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-sukhothai-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Sukhothai”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-timurid-herat",
@@ -1525,21 +1607,35 @@
           "polityId": "polity-timurid-empire",
           "placeName": "Samarkand",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-met-timurid",
+              "locator": "正文首段：1370年帖木儿控制河中地区并确立Samarqand为首都"
+            },
+            {
+              "sourceId": "source-p2-unesco-samarkand",
+              "locator": "Outstanding Universal Value / Brief synthesis：14至15世纪帖木儿时期为其强大政权首都"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 15589846（Samarqand shahri）；39.6550017, 66.9756954；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至撒马尔罕 OSM relation 15589846，并采用其行政关系中心点作区域锚点。",
+            "historicalIdentity": "大都会博物馆与 UNESCO 均直接确认帖木儿时期撒马尔罕的首都身份。",
+            "temporalApplicability": "大都会博物馆明确给出1370年确立首都；终年1404沿用帖木儿本人统治阶段的闭区间口径。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-timurid-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Samarkand”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-tokugawa-edo",
@@ -1574,21 +1670,35 @@
           "polityId": "polity-byzantine-empire",
           "placeName": "Constantinople",
           "group": "europe",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-met-byzantium",
+              "locator": "正文：1204年第四次十字军攻占帝国首都，1261年拜占庭统治在君士坦丁堡恢复"
+            },
+            {
+              "sourceId": "source-p2-unesco-istanbul",
+              "locator": "Outstanding Universal Value：历史半岛上的Byzantium与Constantinople及拜占庭城市遗存"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 1882099475（İstanbul）；41.0063810, 28.9758715；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至伊斯坦布尔 OSM node 1882099475，作为君士坦丁堡历史半岛区域锚点。",
+            "historicalIdentity": "大都会博物馆资料直接称君士坦丁堡为拜占庭帝国首都，UNESCO核对历史半岛身份。",
+            "temporalApplicability": "大都会博物馆明确给出1204年失守与1261年恢复拜占庭统治，支持两段区间。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-met-byzantium"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Constantinople”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-byzantine-nicaea",
@@ -1838,21 +1948,35 @@
           "polityId": "polity-ottoman-empire",
           "placeName": "Bursa",
           "group": "europe",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-bursa",
+              "locator": "Outstanding Universal Value / Brief synthesis：14世纪初奥斯曼帝国第一座首都与苏丹驻地"
+            },
+            {
+            "sourceId": "source-p2-turkey-edirne-capital",
+            "locator": "历史背景：1365年奥斯曼将首都从布尔萨迁至埃迪尔内"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 289534897（Bursa）；40.1825734, 29.0675039；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至布尔萨 OSM node 289534897，并采用其城市坐标作区域锚点。",
+            "historicalIdentity": "UNESCO 直接确认布尔萨是奥斯曼帝国第一座首都与苏丹驻地。",
+          "temporalApplicability": "UNESCO 与土耳其文化和旅游部资料共同支持1326年成为首都、1365年迁往埃迪尔内，因此本记录止于1364年。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-ottoman-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Bursa”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-ottoman-edirne",
@@ -1953,21 +2077,35 @@
           "polityId": "polity-aksumite-kingdom",
           "placeName": "Axum",
           "group": "africa",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-aksum",
+              "locator": "页面摘要：阿克苏姆为王国时期古代埃塞俄比亚核心，约10世纪发生政治衰落"
+            },
+            {
+              "sourceId": "source-aksum-history",
+              "locator": "正文：阿克苏姆王国约公元100年至约940年的采用年代"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 298296175（Axum）；14.1220982, 38.7321749；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至 Axum OSM node 298296175，并采用其现代城镇坐标。",
+            "historicalIdentity": "UNESCO 直接将阿克苏姆描述为王国时期古代埃塞俄比亚核心。",
+            "temporalApplicability": "UNESCO 给出约10世纪政治衰落，Britannica 专题支持约100—940年的采用口径。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-aksum-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Axum”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-ethiopian-gondar",
@@ -1997,21 +2135,35 @@
           "polityId": "polity-fatimid-caliphate",
           "placeName": "Cairo",
           "group": "africa",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-cairo",
+              "locator": "Outstanding Universal Value / Brief synthesis：开罗于969年作为法蒂玛哈里发国总部建立"
+            },
+            {
+              "sourceId": "source-p2-iranica-fatimid",
+              "locator": "正文首段：362/973年统治中心迁至埃及，567/1171年法蒂玛王朝终结"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 330154299（Islamic Cairo）；30.0487472, 31.2637754；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至 Islamic Cairo OSM node 330154299，并采用其地点坐标。",
+            "historicalIdentity": "UNESCO 直接说明开罗作为法蒂玛哈里发国统治中心建立。",
+            "temporalApplicability": "Encyclopaedia Iranica 明确给出973年宫廷迁入与1171年王朝终结。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-fatimid-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Cairo”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-fatimid-mahdia",
@@ -2063,21 +2215,35 @@
           "polityId": "polity-great-zimbabwe",
           "placeName": "Great Zimbabwe",
           "group": "africa",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-great-zimbabwe",
+              "locator": "页面摘要：11至15世纪绍纳文明遗址及重要贸易中心"
+            },
+            {
+              "sourceId": "source-great-zimbabwe-history",
+              "locator": "正文：大津巴布韦约1220—1450年的主要城市与国家阶段"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 2492683868（Great Zimbabwe archaeological site）；-20.2709359, 30.9331977；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至 Great Zimbabwe OSM node 2492683868，并采用其遗址坐标。",
+            "historicalIdentity": "UNESCO 直接确认遗址的绍纳文明与重要贸易中心身份。",
+            "temporalApplicability": "UNESCO 给出11至15世纪范围，Britannica 专题支持约1220—1450年的主要阶段。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-great-zimbabwe-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Great Zimbabwe”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-kanem-bornu-ngazargamu",
@@ -2222,21 +2388,35 @@
           "polityId": "polity-aztec-empire",
           "placeName": "Tenochtitlan",
           "group": "americas",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-mexico-city",
+              "locator": "页面摘要：现代墨西哥城建于阿兹特克旧都Tenochtitlan遗址之上"
+            },
+            {
+              "sourceId": "source-aztec-history",
+              "locator": "正文：1428—1521年三方同盟／墨西卡帝国阶段及Tenochtitlan首都口径"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM way 1423783282（Templo Mayor）；19.4350622, -99.1314324；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至大神庙遗址 OSM way 1423783282，并采用其对象中心点。",
+            "historicalIdentity": "UNESCO 直接确认特诺奇蒂特兰为阿兹特克旧都。",
+            "temporalApplicability": "专题来源支持1428—1521年帝国阶段；点位只表示首都核心遗址。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-aztec-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Tenochtitlan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-inca-cusco",
@@ -2244,21 +2424,35 @@
           "polityId": "polity-inca-empire",
           "placeName": "Cusco",
           "group": "americas",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-cuzco",
+              "locator": "页面摘要：库斯科在帕查库蒂时期成为具有行政与宗教职能的印加城市中心"
+            },
+            {
+              "sourceId": "source-inca-history",
+              "locator": "正文：1438—1533年印加帝国阶段与Cusco首都口径"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 59115290（Cuzco）；-13.5170887, -71.9785356；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至 Cuzco OSM node 59115290，并采用其城市坐标作区域锚点。",
+            "historicalIdentity": "UNESCO 直接确认库斯科在帕查库蒂时期具有行政与宗教中心职能。",
+            "temporalApplicability": "专题来源支持1438—1533年帝国阶段；点位不表示整个城市或帝国范围。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-inca-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Cusco”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-maya-tikal",
@@ -2294,21 +2488,35 @@
           "polityId": "polity-teotihuacan-state",
           "placeName": "Teotihuacan",
           "group": "americas",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-unesco-teotihuacan",
+              "locator": "页面摘要：公元1至7世纪城市及中部美洲重要文化中心；Dossier 414"
+            },
+            {
+              "sourceId": "source-teotihuacan-history",
+              "locator": "正文：约150—550年的城市国家活跃期与550年前后衰落口径"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 14301857（Zona Arqueológica de Teotihuacán）；19.6902654, -98.8767276；2026-09-10检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已定位至特奥蒂瓦坎考古保护区 OSM relation 14301857，并采用其关系中心点。",
+            "historicalIdentity": "UNESCO 直接确认该城为公元1至7世纪中部美洲重要文化中心。",
+            "temporalApplicability": "Britannica 专题支持约150—550年的城市国家活跃期与衰落口径。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-teotihuacan-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Teotihuacan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-toltec-tula",

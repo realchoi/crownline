@@ -1,0 +1,80 @@
+[
+  {
+    "id": "geo-sui-old-changan",
+    "polityId": "polity-cn-sui",
+    "periods": [
+      {
+        "start": { "year": 581, "precision": "exact" },
+        "end": { "year": 582, "precision": "exact" }
+      }
+    ],
+    "placeName": "长安旧城",
+    "role": "capital",
+    "coordinates": { "latitude": 34.25833, "longitude": 108.92861 },
+    "positionPrecision": "regional",
+    "positionNote": "陕西省志记载隋于581年建都长安、582年另建大兴城、583年迁入新都；坐标只作西安城市级区域锚点，不表示汉长安城遗址中心、范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-sui-old-changan",
+        "locator": "隋文帝开皇元年至三年大事记：581年建都长安、582年营建大兴城、583年迁入新都"
+      },
+      {
+        "sourceId": "source-locator-review-geonames-xian",
+        "locator": "Feature 1790630：Xi'an，34.25833, 108.92861；城市级区域参照"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-tang-luoyang",
+    "polityId": "polity-cn-tang",
+    "periods": [
+      {
+        "start": { "year": 904, "precision": "exact" },
+        "end": { "year": 907, "precision": "exact" }
+      }
+    ],
+    "placeName": "洛阳",
+    "role": "capital",
+    "coordinates": { "latitude": 34.6196539, "longitude": 112.4477046 },
+    "positionPrecision": "regional",
+    "positionNote": "洛阳市志与陕州区政府资料共同记载904年朱全忠营修洛阳宫并迫使唐昭宗迁都洛阳；坐标取现代洛阳市行政关系中心点，只作区域锚点，不表示唐洛阳宫城范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-luoyang-chronology",
+        "locator": "唐昭宗天复四年、天祐元年（904）：营修洛阳宫，闰四月昭宗入洛阳；其后记至唐末"
+      },
+      {
+        "sourceId": "source-locator-review-tang-move-luoyang",
+        "locator": "唐代段：天祐元年（904）朱全忠胁迫唐昭宗迁都洛阳"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 3246491（洛阳市）；34.6196539, 112.4477046；2026-09-10检索"
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "geo-yuan-shangdu",
+    "polityId": "polity-cn-yuan",
+    "periods": [
+      {
+        "start": { "year": 1271, "precision": "exact" },
+        "end": { "year": 1364, "precision": "exact" }
+      }
+    ],
+    "placeName": "上都",
+    "role": "political-center",
+    "coordinates": { "latitude": 42.358, "longitude": 116.1851278 },
+    "positionPrecision": "approximate",
+    "positionNote": "UNESCO将上都划分为忽必烈1263—1273年的首都及1274—1364年的元朝夏都；本记录从元国号建立年1271起连续表示其政治中心功能，坐标为遗产地登记点，不表示城址范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-unesco-xanadu",
+        "locator": "Outstanding Universal Value / Brief synthesis：1263—1273年首都、1274—1364年元朝夏都；Dossier 1389坐标 N42 21 28.8 E116 11 6.46"
+      }
+    ],
+    "confidence": "high"
+  }
+]

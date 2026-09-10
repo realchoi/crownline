@@ -17,17 +17,23 @@
     "placeName": "Sukhothai",
     "role": "capital",
     "coordinates": {
-      "latitude": 17.0077,
-      "longitude": 99.8236
+      "latitude": 17.0218403,
+      "longitude": 99.7031151
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代素可泰历史城区坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "positionNote": "UNESCO资料确认素可泰是早期暹罗王国的政治与行政首府，王国起止年沿用专题来源；坐标取素可泰历史公园OSM关系中心，只表示历史都城区域，不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p2-unesco-sukhothai",
+        "locator": "页面摘要及 Outstanding Universal Value / Brief synthesis：素可泰为早期暹罗王国的政治、行政首府"
       },
       {
-        "sourceId": "source-sukhothai-history"
+        "sourceId": "source-sukhothai-history",
+        "locator": "正文：1238年建国及1438年并入阿瑜陀耶的王国年代口径"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 21125459（Sukhothai Historical Park）；17.0218403, 99.7031151；2026-09-10检索"
       }
     ],
     "confidence": "medium"

@@ -198,13 +198,13 @@ describe("生产历史数据", () => {
     }
   });
 
-  it("为七十个中国政权提供九十六条地理快照并覆盖十一个顶层地区", () => {
+  it("为七十个中国政权提供九十九条地理快照并覆盖十一个顶层地区", () => {
     const chinaSnapshots = data.geographicSnapshots.filter(({ polityId }) => {
       return CHINA_MAP_POLITY_IDS.some((id) => id === polityId);
     });
 
-    expect(chinaSnapshots).toHaveLength(96);
-    expect(data.geographicSnapshots).toHaveLength(191);
+    expect(chinaSnapshots).toHaveLength(99);
+    expect(data.geographicSnapshots).toHaveLength(194);
     for (const polityId of CHINA_MAP_POLITY_IDS) {
       expect(
         chinaSnapshots.some((snapshot) => snapshot.polityId === polityId),
@@ -436,7 +436,7 @@ describe("生产历史数据", () => {
     );
     expect(data.relationships).toHaveLength(74);
     expect(data.events).toHaveLength(34);
-    expect(data.sources).toHaveLength(257);
+    expect(data.sources).toHaveLength(279);
     expect(
       data.relationships.every(({ sourceRefs }) => {
         return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));

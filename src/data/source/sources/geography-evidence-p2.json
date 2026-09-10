@@ -1,0 +1,200 @@
+[
+  {
+    "id": "source-p2-osm-nominatim",
+    "title": "OpenStreetMap Nominatim 点位记录",
+    "sourceType": "dataset",
+    "citation": "OpenStreetMap Nominatim 检索结果；各业务引用以 OSM 对象类型、对象 ID 与返回的 WGS 84 中心点定位，OpenStreetMap 数据采用 ODbL 1.0。",
+    "publisher": "OpenStreetMap Foundation",
+    "url": "https://nominatim.openstreetmap.org/",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-ayutthaya",
+    "title": "Historic City of Ayutthaya",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Historic City of Ayutthaya；说明大城约1350年建立、作为暹罗都城延续至1767年毁城，并给出遗产地位置。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/576",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-sukhothai",
+    "title": "Historic Town of Sukhothai and Associated Historic Towns",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Historic Town of Sukhothai and Associated Historic Towns；说明素可泰为暹罗早期王国的政治与行政首府。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/574",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-bagan",
+    "title": "Bagan",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Bagan；说明蒲甘在11至13世纪文明高峰期为区域帝国首都。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/1588",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-fatehpur-sikri",
+    "title": "Fatehpur Sikri",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Fatehpur Sikri；说明阿克巴营建该城并在1571—1585年间将其用作莫卧儿帝国首都。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/255",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-istanbul",
+    "title": "Historic Areas of Istanbul",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Historic Areas of Istanbul；说明历史半岛上的拜占庭—君士坦丁堡及其拜占庭、奥斯曼遗存。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/356",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-bursa",
+    "title": "Bursa and Cumalıkızık: the Birth of the Ottoman Empire",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Bursa and Cumalıkızık；说明布尔萨在14世纪初形成奥斯曼新首都的城市与乡村体系。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/1452",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-turkey-edirne-capital",
+    "title": "Selimiye Mosque and its Social Complex",
+    "sourceType": "institutional",
+    "citation": "土耳其文化和旅游部遗产资料：Selimiye Mosque and its Social Complex；说明奥斯曼于1365年将首都从布尔萨迁至埃迪尔内。",
+    "publisher": "Republic of Türkiye Ministry of Culture and Tourism",
+    "url": "https://teda.ktb.gov.tr/Eklenti/6590%2Cselimiyepdf.pdf?0=",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-cairo",
+    "title": "Historic Cairo",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Historic Cairo；说明开罗于10世纪建立并成为伊斯兰世界的新中心。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/89",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-aksum",
+    "title": "Aksum",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Aksum；说明阿克苏姆古城为古代埃塞俄比亚核心，并在约10世纪发生政治衰落。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/15",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-great-zimbabwe",
+    "title": "Great Zimbabwe National Monument",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Great Zimbabwe National Monument；说明11至15世纪绍纳文明遗址及其重要贸易中心地位。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/364",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-mexico-city",
+    "title": "Historic Centre of Mexico City and Xochimilco",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Historic Centre of Mexico City and Xochimilco；说明墨西哥城建于阿兹特克首都特诺奇蒂特兰遗址之上。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/412",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-cuzco",
+    "title": "City of Cuzco",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：City of Cuzco；说明库斯科在帕查库蒂时期发展为具有行政与宗教职能的印加城市中心。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/273",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-teotihuacan",
+    "title": "Pre-Hispanic City of Teotihuacan",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Pre-Hispanic City of Teotihuacan；说明该城在公元1至7世纪形成并成为中部美洲重要文化中心。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/414",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-samarkand",
+    "title": "Samarkand – Crossroad of Cultures",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Samarkand – Crossroad of Cultures；说明撒马尔罕在14至15世纪帖木儿时期为帝国首都。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/603",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-met-timurid",
+    "title": "The Art of the Timurid Period (ca. 1370–1507)",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History：The Art of the Timurid Period；说明帖木儿于1370年确立撒马尔罕为首都。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/essays/the-art-of-the-timurid-period-ca-1370-1507",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-kaesong",
+    "title": "Historic Monuments and Sites in Kaesong",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Historic Monuments and Sites in Kaesong；说明开城为918—1392年高丽统治基础与首都，并列出宫城、城墙和机构遗址。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/1278",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-goryeo-ganghwa-capital",
+    "title": "Ganghwasanseong Fortress",
+    "sourceType": "institutional",
+    "citation": "韩国国家遗产门户：Ganghwasanseong Fortress；说明高丽于1232年迁都江华、1270年还都开京。",
+    "publisher": "Korea Heritage Service",
+    "url": "https://www.heritage.go.kr/DATA1/heritage/hub_img/html/cul_1332301320000.html",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-unesco-xanadu",
+    "title": "Site of Xanadu",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Site of Xanadu；说明上都在1263—1273年为忽必烈首都、1274—1364年为元朝夏都，并给出遗产地坐标。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/1389",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-iranica-fatimid",
+    "title": "FATIMIDS",
+    "sourceType": "secondary",
+    "citation": "Encyclopaedia Iranica：FATIMIDS；说明法蒂玛王朝于973年将统治中心迁至埃及，并于1171年终结。",
+    "publisher": "Encyclopaedia Iranica Foundation",
+    "url": "https://www.iranicaonline.org/articles/fatimids/",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-sui-old-changan",
+    "title": "陕西省志·大事记：隋",
+    "sourceType": "institutional",
+    "citation": "陕西省地方志办公室《陕西省志·大事记》隋代部分；记载581年隋建都长安、582年营建大兴城及583年迁入新都。",
+    "publisher": "陕西省地方志办公室",
+    "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923616206405975.pdf",
+    "accessedAt": "2026-09-10"
+  },
+  {
+    "id": "source-p2-luoyang-chronology",
+    "title": "洛阳市志·大事记：唐昭宗迁都洛阳",
+    "sourceType": "institutional",
+    "citation": "洛阳市地方史志办公室《洛阳市志·大事记》；记载904年营修洛阳宫、唐昭宗迁入洛阳及唐末政局。",
+    "publisher": "洛阳市人民政府",
+    "url": "https://oss.ly.gov.cn/upload-file/files/20241218/4bf4f3e74241441c9b6f9dc5f46ace8f.pdf",
+    "accessedAt": "2026-09-10"
+  }
+]

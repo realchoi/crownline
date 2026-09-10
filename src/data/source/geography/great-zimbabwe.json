@@ -17,17 +17,23 @@
     "placeName": "Great Zimbabwe",
     "role": "political-center",
     "coordinates": {
-      "latitude": -20.2675,
-      "longitude": 30.9333
+      "latitude": -20.2709359,
+      "longitude": 30.9331977
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用大津巴布韦考古遗址中心点；仅表示该时期主要政治—贸易中心的大致位置，不表示王国疆域。",
+    "positionNote": "UNESCO确认大津巴布韦是11至15世纪绍纳文明的重要贸易中心，具体采用端点沿用考古专题来源；坐标取遗址OSM节点，只表示政治—贸易中心，不表示王国疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p2-unesco-great-zimbabwe",
+        "locator": "页面摘要：11至15世纪绍纳文明遗址及重要贸易中心"
       },
       {
-        "sourceId": "source-great-zimbabwe-history"
+        "sourceId": "source-great-zimbabwe-history",
+        "locator": "正文：大津巴布韦约1220—1450年的主要城市与国家阶段"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 2492683868（Great Zimbabwe archaeological site）；-20.2709359, 30.9331977；2026-09-10检索"
       }
     ],
     "confidence": "medium"

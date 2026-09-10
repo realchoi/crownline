@@ -17,17 +17,23 @@
     "placeName": "Teotihuacan",
     "role": "political-center",
     "coordinates": {
-      "latitude": 19.6925,
-      "longitude": -98.8438
+      "latitude": 19.6902654,
+      "longitude": -98.8767276
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用特奥蒂瓦坎考古遗址中心点；仅表示该时期城市国家核心的大致位置，不表示政权疆域。",
+    "positionNote": "UNESCO确认特奥蒂瓦坎在公元1至7世纪形成并成为中部美洲重要文化中心，约150—550年的采用端点沿用考古专题来源；坐标取考古保护区OSM关系中心，不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p2-unesco-teotihuacan",
+        "locator": "页面摘要：公元1至7世纪城市及中部美洲重要文化中心；Dossier 414"
       },
       {
-        "sourceId": "source-teotihuacan-history"
+        "sourceId": "source-teotihuacan-history",
+        "locator": "正文：约150—550年的城市国家活跃期与550年前后衰落口径"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 14301857（Zona Arqueológica de Teotihuacán）；19.6902654, -98.8767276；2026-09-10检索"
       }
     ],
     "confidence": "medium"

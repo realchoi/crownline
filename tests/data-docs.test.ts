@@ -19,8 +19,8 @@ describe("当前数据文档摘要", () => {
       historicalPeriods: 3,
       persons: 1385,
       reigns: 1424,
-      geographicSnapshots: 191,
-      sources: 257,
+      geographicSnapshots: 194,
+      sources: 279,
       boundarySnapshots: 0
     });
   });
@@ -28,8 +28,8 @@ describe("当前数据文档摘要", () => {
   it.each([
     ["entities", "137 个实体", "999 个实体"],
     ["persons", "1385 位人物", "999 位人物"],
-    ["geographicSnapshots", "191 条地理快照", "999 条地理快照"],
-    ["sources", "257 项来源", "999 项来源"]
+    ["geographicSnapshots", "194 条地理快照", "999 条地理快照"],
+    ["sources", "279 项来源", "999 项来源"]
   ])("摘要中的%s错误时失败并指出文件和字段", (field, expected, actual) => {
     const contents = renderCurrentDataStatsBlock(data).replace(expected, actual);
     const issues = checkDataDocument("README.md", contents, data);

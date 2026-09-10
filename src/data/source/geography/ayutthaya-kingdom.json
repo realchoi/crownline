@@ -17,17 +17,19 @@
     "placeName": "Ayutthaya",
     "role": "capital",
     "coordinates": {
-      "latitude": 14.3532,
-      "longitude": 100.5689
+      "latitude": 14.3502755,
+      "longitude": 100.556545
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代大城（Ayutthaya）历史城区坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "positionNote": "UNESCO资料确认大城约1350年建立并作为暹罗都城延续至1767年毁城；坐标取大城历史公园OSM对象中心，只表示都城遗址区域，不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p2-unesco-ayutthaya",
+        "locator": "页面摘要及 Outstanding Universal Value / Brief synthesis：约1350年建立、暹罗首都、1767年毁城"
       },
       {
-        "sourceId": "source-ayutthaya-history"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM way 786197170（Historic City of Ayutthaya）；14.3502755, 100.5565450；2026-09-10检索"
       }
     ],
     "confidence": "medium"

@@ -17,17 +17,23 @@
     "placeName": "Pagan",
     "role": "capital",
     "coordinates": {
-      "latitude": 21.1717,
-      "longitude": 94.8585
+      "latitude": 21.1708105,
+      "longitude": 94.8595191
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代蒲甘（Bagan）一带坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "positionNote": "UNESCO资料确认蒲甘在11至13世纪文明高峰期为区域帝国首都，王朝端点沿用专题来源；坐标取Old Bagan的OSM地点，只表示历史都城区域，不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p2-unesco-bagan",
+        "locator": "页面摘要及 Outstanding Universal Value：11至13世纪蒲甘文明高峰期为区域帝国首都"
       },
       {
-        "sourceId": "source-pagan-history"
+        "sourceId": "source-pagan-history",
+        "locator": "正文：阿奴律陀1044年即位至1287年蒲甘失去政治中心地位的年代口径"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 253298858（Old Bagan）；21.1708105, 94.8595191；2026-09-10检索"
       }
     ],
     "confidence": "medium"

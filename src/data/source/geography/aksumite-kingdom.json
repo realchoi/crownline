@@ -17,17 +17,23 @@
     "placeName": "Axum",
     "role": "capital",
     "coordinates": {
-      "latitude": 14.1211,
-      "longitude": 38.7234
+      "latitude": 14.1220982,
+      "longitude": 38.7321749
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代阿克苏姆；仅表示该时期政治与宗教中心的大致位置，不表示政权疆域。",
+    "positionNote": "UNESCO将阿克苏姆古城描述为王国时期古代埃塞俄比亚的核心，并指出约10世纪政治衰落；坐标取现代Axum的OSM地点，只表示政治与宗教中心区域，不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p2-unesco-aksum",
+        "locator": "页面摘要：阿克苏姆为王国时期古代埃塞俄比亚核心，约10世纪发生政治衰落"
       },
       {
-        "sourceId": "source-aksum-history"
+        "sourceId": "source-aksum-history",
+        "locator": "正文：阿克苏姆王国约公元100年至约940年的采用年代"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 298296175（Axum）；14.1220982, 38.7321749；2026-09-10检索"
       }
     ],
     "confidence": "medium"

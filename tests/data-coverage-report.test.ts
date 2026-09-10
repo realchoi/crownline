@@ -91,7 +91,7 @@ describe("数据覆盖报告 v3", () => {
     expect(report.temporalCoverage.summary).toMatchObject({
       polities: 134,
       politiesWithYearsWithoutReignRecords: 42,
-      politiesWithUnknownGeographyYears: 26
+      politiesWithUnknownGeographyYears: 23
     });
     const hre = report.temporalCoverage.polities.find(
       ({ entityId }) => entityId === "polity-holy-roman-empire"
@@ -130,8 +130,8 @@ describe("数据覆盖报告 v3", () => {
         reigns: 1424,
         relationships: 74,
         events: 34,
-        geographicSnapshots: 191,
-        sources: 257
+        geographicSnapshots: 194,
+        sources: 279
       },
       polityCoverage: {
         rulerDetails: {
@@ -179,11 +179,11 @@ describe("数据覆盖报告 v3", () => {
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 257,
-      byType: { primary: 3, secondary: 47, tertiary: 67, dataset: 13, institutional: 127 },
-      withUrl: 256,
+      total: 279,
+      byType: { primary: 3, secondary: 48, tertiary: 67, dataset: 14, institutional: 147 },
+      withUrl: 278,
       withoutUrl: 1,
-      withAccessedAt: 256,
+      withAccessedAt: 278,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toMatchObject({
@@ -200,10 +200,10 @@ describe("数据覆盖报告 v3", () => {
         recordsWithoutLocatedSourceRefs: 0
       },
       geographicSnapshots: {
-        records: 191,
-        recordsWithSourceRefs: 191,
-        recordsWithLocatedSourceRefs: 100,
-        recordsWithoutLocatedSourceRefs: 91
+        records: 194,
+        recordsWithSourceRefs: 194,
+        recordsWithLocatedSourceRefs: 119,
+        recordsWithoutLocatedSourceRefs: 75
       }
     });
   });
@@ -368,7 +368,7 @@ describe("关系分布和来源质量", () => {
     expect(report.sourceReferenceQuality).toMatchObject({
       relationships: { records: 74, recordsWithLocatedSourceRefs: 74 },
       events: { records: 34, recordsWithLocatedSourceRefs: 34 },
-      geographicSnapshots: { records: 191, recordsWithLocatedSourceRefs: 100 }
+      geographicSnapshots: { records: 194, recordsWithLocatedSourceRefs: 119 }
     });
   });
 

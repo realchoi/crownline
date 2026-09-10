@@ -8,10 +8,23 @@
     ],
     "placeName": "Constantinople",
     "role": "capital",
-    "coordinates": { "latitude": 41.0082, "longitude": 28.9784 },
+    "coordinates": { "latitude": 41.006381, "longitude": 28.9758715 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-met-byzantium" }],
+    "positionNote": "大都会博物馆资料区分1204年失守与1261年恢复拜占庭统治，UNESCO资料核对历史半岛位置；坐标取现代伊斯坦布尔OSM城市节点，只表示君士坦丁堡区域，不表示古城范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-met-byzantium",
+        "locator": "正文：1204年第四次十字军攻占帝国首都，1261年拜占庭统治在君士坦丁堡恢复"
+      },
+      {
+        "sourceId": "source-p2-unesco-istanbul",
+        "locator": "Outstanding Universal Value：历史半岛上的Byzantium与Constantinople及拜占庭城市遗存"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 1882099475（İstanbul）；41.0063810, 28.9758715；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -83,22 +96,44 @@
     ],
     "placeName": "Gaegyeong",
     "role": "capital",
-    "coordinates": { "latitude": 37.9708, "longitude": 126.5544 },
+    "coordinates": { "latitude": 37.9858974, "longitude": 126.5425051 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-goryeo-history" }],
+    "positionNote": "UNESCO确认开城为918—1392年高丽统治基础，韩国国家遗产资料确认1232年迁都江华、1270年还都开京；坐标取开城满月台宫址OSM对象中心，不表示都城范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-unesco-kaesong",
+        "locator": "页面摘要及 Outstanding Universal Value / Brief synthesis：开城为918—1392年高丽统治基础与首都"
+      },
+      {
+        "sourceId": "source-p2-goryeo-ganghwa-capital",
+        "locator": "正文：1232年迁都江华，1270年还都开京"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM way 215254348（Manwoldae Palace）；37.9858974, 126.5425051；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
     "id": "geo-goryeo-ganghwa",
     "polityId": "polity-goryeo",
-    "periods": [{ "start": { "year": 1232, "precision": "exact" }, "end": { "year": 1269, "precision": "exact" } }],
+    "periods": [{ "start": { "year": 1232, "precision": "exact" }, "end": { "year": 1270, "precision": "exact" } }],
     "placeName": "Ganghwa",
     "role": "political-center",
-    "coordinates": { "latitude": 37.7465, "longitude": 126.488 },
+    "coordinates": { "latitude": 37.7513968, "longitude": 126.4851303 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期政治中心的大致位置，不表示固定首都或政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-goryeo-history" }],
+    "positionNote": "韩国国家遗产资料确认高丽于1232年迁都江华、1270年还都开京；迁都年按闭区间与开京并列，坐标取江华高丽宫址OSM节点，只表示宫址区域，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-goryeo-ganghwa-capital",
+        "locator": "正文：1232年营建宫城并迁都江华，1270年还都开京"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 12718043698（강화 고려궁지）；37.7513968, 126.4851303；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -119,10 +154,19 @@
     "periods": [{ "start": { "year": 802, "precision": "exact" }, "end": { "year": 1431, "precision": "exact" } }],
     "placeName": "Angkor",
     "role": "political-center",
-    "coordinates": { "latitude": 13.4125, "longitude": 103.867 },
+    "coordinates": { "latitude": 13.412521, "longitude": 103.8665896 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期政治中心的大致位置，不表示固定首都或政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-khmer-history" }],
+    "positionNote": "UNESCO确认吴哥保存高棉帝国9至15世纪历代首都遗存，802—1431年是本项目采用的高棉帝国策展区间；坐标取吴哥窟OSM对象中心，只作吴哥区域锚点，不表示单一固定首都或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-khmer-history",
+        "locator": "页面摘要及 Outstanding Universal Value / Brief synthesis：高棉帝国9至15世纪历代首都遗存及吴哥中心地位"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM way 1113380295（Angkor Wat）；13.4125210, 103.8665896；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -155,10 +199,23 @@
     "periods": [{ "start": { "year": 1370, "precision": "exact" }, "end": { "year": 1404, "precision": "exact" } }],
     "placeName": "Samarkand",
     "role": "capital",
-    "coordinates": { "latitude": 39.6542, "longitude": 66.9597 },
+    "coordinates": { "latitude": 39.6550017, "longitude": 66.9756954 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-timurid-history" }],
+    "positionNote": "大都会博物馆资料记载帖木儿于1370年确立撒马尔罕为首都，UNESCO确认其14至15世纪帖木儿时期地位；坐标取现代撒马尔罕OSM行政关系中心，只作区域锚点，不表示古城范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-met-timurid",
+        "locator": "正文首段：1370年帖木儿控制河中地区并确立Samarqand为首都"
+      },
+      {
+        "sourceId": "source-p2-unesco-samarkand",
+        "locator": "Outstanding Universal Value / Brief synthesis：14至15世纪帖木儿时期为其强大政权首都"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 15589846（Samarqand shahri）；39.6550017, 66.9756954；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -203,13 +260,22 @@
   {
     "id": "geo-mughal-fatehpur-sikri",
     "polityId": "polity-mughal-empire",
-    "periods": [{ "start": { "year": 1571, "precision": "exact" }, "end": { "year": 1584, "precision": "exact" } }],
+    "periods": [{ "start": { "year": 1571, "precision": "exact" }, "end": { "year": 1585, "precision": "exact" } }],
     "placeName": "Fatehpur Sikri",
     "role": "capital",
-    "coordinates": { "latitude": 27.0945, "longitude": 77.6679 },
+    "coordinates": { "latitude": 27.0911655, "longitude": 77.6623984 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-mughal-history" }],
+    "positionNote": "UNESCO将法泰赫普尔西格里的主要建造和首都阶段定为1571—1585年，因此把原终年1584修正为1585；坐标取现代城镇OSM节点，只表示历史都城区域，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-unesco-fatehpur-sikri",
+        "locator": "页面摘要及遗产说明：莫卧儿帝国首都；1571—1585年建筑与首都阶段；Dossier 255"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 568383174（Fatehpur Sikri）；27.0911655, 77.6623984；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -314,10 +380,23 @@
     "periods": [{ "start": { "year": 1326, "precision": "exact" }, "end": { "year": 1364, "precision": "exact" } }],
     "placeName": "Bursa",
     "role": "capital",
-    "coordinates": { "latitude": 40.195, "longitude": 29.06 },
+    "coordinates": { "latitude": 40.1825734, "longitude": 29.0675039 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-ottoman-history" }],
+    "positionNote": "UNESCO确认布尔萨是14世纪初奥斯曼帝国第一座首都与苏丹驻地，1326—1364年采用现有首都序列口径；坐标取现代布尔萨OSM城市节点，只作历史城市区域锚点，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-unesco-bursa",
+        "locator": "Outstanding Universal Value / Brief synthesis：14世纪初奥斯曼帝国第一座首都与苏丹驻地"
+      },
+      {
+        "sourceId": "source-p2-turkey-edirne-capital",
+        "locator": "历史背景：1365年奥斯曼将首都从布尔萨迁至埃迪尔内"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 289534897（Bursa）；40.1825734, 29.0675039；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -413,10 +492,23 @@
     "periods": [{ "start": { "year": 973, "precision": "exact" }, "end": { "year": 1171, "precision": "exact" } }],
     "placeName": "Cairo",
     "role": "capital",
-    "coordinates": { "latitude": 30.0444, "longitude": 31.2357 },
+    "coordinates": { "latitude": 30.0487472, "longitude": 31.2637754 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-fatimid-history" }],
+    "positionNote": "UNESCO确认开罗于969年作为法蒂玛哈里发国统治中心建立，Iranica记载973年宫廷迁入及1171年王朝终结；坐标取Islamic Cairo的OSM地点，只表示法蒂玛城市核心区域，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-unesco-cairo",
+        "locator": "Outstanding Universal Value / Brief synthesis：开罗于969年作为法蒂玛哈里发国总部建立"
+      },
+      {
+        "sourceId": "source-p2-iranica-fatimid",
+        "locator": "正文首段：362/973年统治中心迁至埃及，567/1171年法蒂玛王朝终结"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 330154299（Islamic Cairo）；30.0487472, 31.2637754；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -437,10 +529,23 @@
     "periods": [{ "start": { "year": 1428, "precision": "exact" }, "end": { "year": 1521, "precision": "exact" } }],
     "placeName": "Tenochtitlan",
     "role": "capital",
-    "coordinates": { "latitude": 19.4326, "longitude": -99.1332 },
+    "coordinates": { "latitude": 19.4350622, "longitude": -99.1314324 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-aztec-history" }],
+    "positionNote": "UNESCO确认现代墨西哥城建立在阿兹特克首都特诺奇蒂特兰遗址上，帝国阶段端点沿用专题来源；坐标取大神庙遗址OSM对象中心，只表示首都核心遗址，不表示城市或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-unesco-mexico-city",
+        "locator": "页面摘要：现代墨西哥城建于阿兹特克旧都Tenochtitlan遗址之上"
+      },
+      {
+        "sourceId": "source-aztec-history",
+        "locator": "正文：1428—1521年三方同盟／墨西卡帝国阶段及Tenochtitlan首都口径"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM way 1423783282（Templo Mayor）；19.4350622, -99.1314324；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -449,10 +554,23 @@
     "periods": [{ "start": { "year": 1438, "precision": "exact" }, "end": { "year": 1533, "precision": "exact" } }],
     "placeName": "Cusco",
     "role": "capital",
-    "coordinates": { "latitude": -13.5319, "longitude": -71.9675 },
+    "coordinates": { "latitude": -13.5170887, "longitude": -71.9785356 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-inca-history" }],
+    "positionNote": "UNESCO确认库斯科在帕查库蒂统治下成为具有行政与宗教职能的印加城市中心，帝国阶段端点沿用专题来源；坐标取现代库斯科OSM城市节点，只作历史核心区域锚点，不表示政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-unesco-cuzco",
+        "locator": "页面摘要：库斯科在帕查库蒂时期成为具有行政与宗教职能的印加城市中心"
+      },
+      {
+        "sourceId": "source-inca-history",
+        "locator": "正文：1438—1533年印加帝国阶段与Cusco首都口径"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 59115290（Cuzco）；-13.5170887, -71.9785356；2026-09-10检索"
+      }
+    ],
     "confidence": "high"
   },
   {
