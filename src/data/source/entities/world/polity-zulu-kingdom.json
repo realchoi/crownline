@@ -5,7 +5,7 @@
       "id": "polity-zulu-kingdom",
       "entityKind": "polity",
       "polityForms": ["kingdom", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "祖鲁王国",
         "aliases": ["祖鲁兰王国", "Zulu Kingdom", "Kingdom of Zululand", "Zulu Empire"],

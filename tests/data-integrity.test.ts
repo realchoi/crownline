@@ -170,6 +170,15 @@ describe("生产历史数据", () => {
     }
   });
 
+  it("中国范围之外的世界政权使用区域政权展示层级", () => {
+    const worldPolities = data.entities.filter(({ entityKind, historicalRegionIds }) => {
+      return entityKind === "polity" && !historicalRegionIds.includes("region-china");
+    });
+
+    expect(worldPolities).toHaveLength(63);
+    expect(worldPolities.every(({ displayCategory }) => displayCategory === "regional")).toBe(true);
+  });
+
   it("有本地名称的实体均携带有效语言标签", () => {
     const localizedEntities = data.entities.filter(({ names }) => names.local !== undefined);
 

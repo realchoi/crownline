@@ -5,7 +5,7 @@
       "id": "polity-vijayanagara-empire",
       "entityKind": "polity",
       "polityForms": ["dynasty", "empire", "kingdom"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "毗奢耶那伽罗帝国",
         "aliases": ["维贾亚纳加尔帝国", "毗奢耶那伽罗王朝", "Vijayanagara Empire", "Vijayanagar Empire", "Karnata Empire"]

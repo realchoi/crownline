@@ -5,7 +5,7 @@
       "id": "polity-kingdom-of-kush",
       "entityKind": "polity",
       "polityForms": ["kingdom", "empire", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "库施王国",
         "aliases": ["努比亚库施王国", "纳帕塔—麦罗埃王国", "Kingdom of Kush", "Kushite Kingdom", "Meroitic Kingdom"]

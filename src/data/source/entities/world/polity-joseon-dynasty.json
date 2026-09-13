@@ -5,7 +5,7 @@
       "id": "polity-joseon-dynasty",
       "entityKind": "polity",
       "polityForms": ["dynasty", "kingdom", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "朝鲜王朝",
         "aliases": ["李氏朝鲜", "朝鲜国", "Joseon", "Joseon dynasty", "Kingdom of Joseon"],

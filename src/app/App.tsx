@@ -159,8 +159,10 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
         跳到主要内容
       </a>
       <AppHeader
-        entityCount={data.entities.length}
-        timelineSectionCount={data.timelineSections.length}
+        polityCount={data.entities.filter(({ entityKind }) => entityKind === "polity").length}
+        historicalPeriodCount={
+          data.entities.filter(({ entityKind }) => entityKind === "historical-period").length
+        }
       />
 
       <main

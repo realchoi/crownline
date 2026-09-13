@@ -5,7 +5,7 @@
       "id": "polity-chimu-empire",
       "entityKind": "polity",
       "polityForms": ["dynasty", "empire", "kingdom"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": { "primary": "奇穆帝国", "aliases": ["奇穆王国", "奇莫尔王国", "Chimu Empire", "Chimú Empire", "Kingdom of Chimor", "Chimor"] },
       "existencePeriods": [{ "start": { "year": 1000, "precision": "circa" }, "end": { "year": 1470, "precision": "circa" } }],
       "chronologyStatus": "disputed",

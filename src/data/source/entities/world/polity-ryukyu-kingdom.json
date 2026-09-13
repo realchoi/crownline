@@ -5,7 +5,7 @@
       "id": "polity-ryukyu-kingdom",
       "entityKind": "polity",
       "polityForms": ["dynasty", "kingdom", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "琉球王国",
         "aliases": ["琉球国", "Ryukyu Kingdom", "Kingdom of Ryukyu", "Lūchū Kingdom"],

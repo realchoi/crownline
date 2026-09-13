@@ -5,7 +5,7 @@
       "id": "polity-maya-palenque",
       "entityKind": "polity",
       "polityForms": ["state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "帕伦克",
         "aliases": ["Palenque", "Palenque polity", "帕伦克城邦"]

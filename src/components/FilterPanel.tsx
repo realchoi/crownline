@@ -115,7 +115,7 @@ export function FilterPanel({
           <input
             className="text-input"
             type="search"
-            placeholder="例如：唐、北魏、南宋、前221"
+            placeholder="例如：唐、奥斯曼、前221"
             autoComplete="off"
             value={query}
             onChange={(event) => onQueryChange(event.currentTarget.value)}

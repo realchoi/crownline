@@ -5,7 +5,7 @@
       "id": "polity-maratha-empire",
       "entityKind": "polity",
       "polityForms": ["dynasty", "empire", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "马拉塔帝国",
         "aliases": ["马拉塔联盟", "Maratha Empire", "Maratha Confederacy", "Maratha state"],

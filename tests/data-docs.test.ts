@@ -5,13 +5,14 @@ import {
   buildCurrentDataStats,
   checkDataDocument,
   checkDataDocs,
+  checkPageMetadata,
   renderCurrentDataStatsBlock
 } from "../scripts/check-data-docs";
 
 const data = await loadSourceData();
 
 describe("当前数据文档摘要", () => {
-  it("README、数据契约和路线图当前摘要与真实数据一致", async () => {
+  it("README、数据契约、路线图和页面元数据与真实数据一致", async () => {
     expect(await checkDataDocs(process.cwd(), data)).toEqual([]);
     expect(buildCurrentDataStats(data)).toMatchObject({
       entities: 137,
@@ -23,6 +24,19 @@ describe("当前数据文档摘要", () => {
       sources: 279,
       boundarySnapshots: 0
     });
+  });
+
+  it("页面元数据中的世界政权数量错误时失败", () => {
+    const contents = [
+      '<meta name="description" content="收录 62 个世界政权样本">',
+      '<meta property="og:description" content="收录 62 个世界政权样本">',
+      '<script type="application/ld+json">{"description":"收录 62 个世界政权样本"}</script>'
+    ].join("\n");
+    const issues = checkPageMetadata("index.html", contents, data);
+
+    expect(issues).toHaveLength(3);
+    expect(issues.every((issue) => issue.includes("index.html"))).toBe(true);
+    expect(issues.every((issue) => issue.includes("世界政权样本"))).toBe(true);
   });
 
   it.each([

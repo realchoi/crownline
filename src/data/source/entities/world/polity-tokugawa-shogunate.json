@@ -5,7 +5,7 @@
       "id": "polity-tokugawa-shogunate",
       "entityKind": "polity",
       "polityForms": ["dynasty", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "德川幕府",
         "aliases": ["江户幕府", "Tokugawa shogunate", "Edo bakufu"],

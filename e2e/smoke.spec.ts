@@ -333,7 +333,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     const sheet = page.getByRole("dialog", { name: "筛选与呈现" });
     await expect(sheet).toBeVisible();
     await expect(sheet.getByRole("button", { name: "关闭筛选" })).toBeFocused();
-    await sheet.getByPlaceholder("例如：唐、北魏、南宋、前221").fill("明");
+    await sheet.getByPlaceholder("例如：唐、奥斯曼、前221").fill("明");
     await sheet.getByRole("button", { name: /查看 \d+ 个结果/ }).click();
     await expect(trigger).toBeFocused();
     await expect(page.getByText(/显示 \d+ \/ \d+ 个条目/)).toBeVisible();

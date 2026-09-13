@@ -5,7 +5,7 @@
       "id": "polity-qara-khitai",
       "entityKind": "polity",
       "polityForms": ["dynasty", "empire", "khanate"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "西辽（喀喇契丹）",
         "aliases": ["西辽", "喀喇契丹", "哈剌契丹", "Qara Khitai", "Kara Khitai", "Western Liao"],

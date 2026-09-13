@@ -11,6 +11,10 @@ describe("Crownline 浏览", () => {
 
     expect(screen.getByRole("status")).toHaveTextContent("显示 137 / 137 个条目");
     expect(screen.getByRole("heading", { name: "Crownline · 王冠纪" })).toBeInTheDocument();
+    const overview = within(screen.getByLabelText("时间轴概览"));
+    expect(overview.getByText("约前2070—1922")).toBeInTheDocument();
+    expect(overview.getByText("134 个政权")).toBeInTheDocument();
+    expect(overview.getByText("3 个历史分期")).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "探索控制区" })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "当前范围和结果摘要" })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "主要探索内容" })).toBeInTheDocument();
@@ -26,6 +30,7 @@ describe("Crownline 浏览", () => {
     const user = setupUser();
     renderApp();
     const search = screen.getByRole("searchbox", { name: "搜索名称、别名、年份或说明" });
+    expect(search).toHaveAttribute("placeholder", "例如：唐、奥斯曼、前221");
 
     await user.type(search, "殷商");
     expect(screen.getByRole("status")).toHaveTextContent("显示 1 / 137 个条目");

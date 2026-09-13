@@ -5,7 +5,7 @@
       "id": "polity-ndebele-kingdom",
       "entityKind": "polity",
       "polityForms": ["kingdom", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "北恩德贝莱王国",
         "aliases": ["恩德贝莱王国", "马塔贝莱王国", "Ndebele Kingdom", "Northern Ndebele Kingdom", "Matabele Kingdom", "Mthwakazi"],

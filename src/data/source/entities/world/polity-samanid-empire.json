@@ -5,7 +5,7 @@
       "id": "polity-samanid-empire",
       "entityKind": "polity",
       "polityForms": ["dynasty", "empire"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "萨曼帝国",
         "aliases": ["萨曼王朝", "萨曼尼王朝", "Samanid Empire", "Samanid dynasty"],

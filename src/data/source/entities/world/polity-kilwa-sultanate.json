@@ -5,7 +5,7 @@
       "id": "polity-kilwa-sultanate",
       "entityKind": "polity",
       "polityForms": ["dynasty", "state", "other"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "基尔瓦苏丹国",
         "aliases": ["基尔瓦王国", "Kilwa Sultanate", "Sultanate of Kilwa", "Kilwa Kisiwani Sultanate"]

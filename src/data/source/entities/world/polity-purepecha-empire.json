@@ -5,7 +5,7 @@
       "id": "polity-purepecha-empire",
       "entityKind": "polity",
       "polityForms": ["dynasty", "empire", "kingdom"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": { "primary": "普雷佩查帝国", "aliases": ["塔拉斯卡王国", "米却肯王国", "Purépecha Empire", "Purepecha Empire", "Tarascan state", "Tarascan Empire"] },
       "existencePeriods": [{ "start": { "year": 1325, "precision": "circa" }, "end": { "year": 1530, "precision": "exact" } }],
       "chronologyStatus": "disputed",

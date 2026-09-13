@@ -3,6 +3,7 @@ import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 import { loadSourceData } from "./data-source";
+import { CHINA_REGION_ID } from "../src/domain/regionScope";
 import type { CrownlineData } from "../src/domain/types";
 
 export const DATA_STATS_START = "<!-- crownline-data-stats:start -->";
@@ -22,6 +23,7 @@ export interface CurrentDataStats {
 }
 
 export const CURRENT_DATA_DOCUMENTS = ["README.md", "docs/data-contract.md", "ROADMAP.md"] as const;
+export const CURRENT_METADATA_DOCUMENTS = ["index.html"] as const;
 
 export function buildCurrentDataStats(data: CrownlineData): CurrentDataStats {
   return {
@@ -80,6 +82,28 @@ export function checkDataDocument(path: string, contents: string, data: Crownlin
   ];
 }
 
+export function countWorldPolities(data: CrownlineData): number {
+  return data.entities.filter(({ entityKind, historicalRegionIds }) => {
+    return entityKind === "polity" && !historicalRegionIds.includes(CHINA_REGION_ID);
+  }).length;
+}
+
+/** 页面搜索和分享元数据中的当前世界政权数必须全部来自真实源数据。 */
+export function checkPageMetadata(path: string, contents: string, data: CrownlineData): string[] {
+  const expectedCount = countWorldPolities(data);
+  const matches = [...contents.matchAll(/(\d+) 个世界政权样本/g)];
+  if (matches.length === 0) {
+    return [`文件 ${path} 缺少世界政权样本数量元数据；期望 ${expectedCount} 个`];
+  }
+  return matches.flatMap((match, index) => {
+    return Number(match[1]) === expectedCount
+      ? []
+      : [
+          `文件 ${path} 第 ${index + 1} 处世界政权样本数量不一致；期望 ${expectedCount} 个，实际 ${match[1]} 个`
+        ];
+  });
+}
+
 export async function checkDataDocs(root = process.cwd(), data?: CrownlineData): Promise<string[]> {
   const sourceData = data ?? (await loadSourceData());
   const issues: string[] = [];
@@ -95,6 +119,20 @@ export async function checkDataDocs(root = process.cwd(), data?: CrownlineData):
         return;
       }
       issues.push(...checkDataDocument(relativePath, contents, sourceData));
+    })
+  );
+  await Promise.all(
+    CURRENT_METADATA_DOCUMENTS.map(async (relativePath) => {
+      const path = join(root, relativePath);
+      let contents: string;
+      try {
+        contents = await readFile(path, "utf8");
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        issues.push(`无法读取页面元数据 ${path}：${message}`);
+        return;
+      }
+      issues.push(...checkPageMetadata(relativePath, contents, sourceData));
     })
   );
   return issues.sort((left, right) => left.localeCompare(right, "en"));

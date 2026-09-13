@@ -5,7 +5,7 @@
       "id": "polity-goryeo",
       "entityKind": "polity",
       "polityForms": ["dynasty", "kingdom"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "高丽",
         "aliases": ["高麗", "高丽王朝", "Goryeo", "Goryeo dynasty"],

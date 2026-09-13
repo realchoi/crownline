@@ -5,7 +5,7 @@
       "id": "polity-khwarazmian-empire",
       "entityKind": "polity",
       "polityForms": ["dynasty", "empire"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "花剌子模帝国",
         "aliases": ["花剌子模沙王朝", "安努什特勤王朝", "Khwarazmian Empire", "Khwarezmian Empire", "Anushteginid dynasty"],

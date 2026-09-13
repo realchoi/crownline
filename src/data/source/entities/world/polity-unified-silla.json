@@ -5,7 +5,7 @@
       "id": "polity-unified-silla",
       "entityKind": "polity",
       "polityForms": ["dynasty", "kingdom"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "统一新罗",
         "aliases": ["后期新罗", "Unified Silla", "Later Silla", "Silla Kingdom"],

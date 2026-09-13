@@ -5,7 +5,7 @@
       "id": "polity-maya-copan",
       "entityKind": "polity",
       "polityForms": ["state", "dynasty"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "科潘",
         "aliases": ["Copán", "Copan polity", "科潘城邦"]

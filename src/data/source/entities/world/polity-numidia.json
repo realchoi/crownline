@@ -5,7 +5,7 @@
       "id": "polity-numidia",
       "entityKind": "polity",
       "polityForms": ["kingdom", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": { "primary": "努米底亚王国", "aliases": ["努米底亚", "Kingdom of Numidia", "Numidia", "Numidian Kingdom"] },
       "existencePeriods": [{ "start": { "year": -202, "precision": "circa" }, "end": { "year": -46, "precision": "exact" } }],
       "chronologyStatus": "accepted",

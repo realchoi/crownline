@@ -5,7 +5,7 @@
       "id": "polity-almohad-caliphate",
       "entityKind": "polity",
       "polityForms": ["dynasty", "empire", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": { "primary": "穆瓦希德哈里发国", "aliases": ["穆瓦希德王朝", "阿尔摩哈德王朝", "Almohad Caliphate", "Almohad dynasty"], "local": "الخلافة الموحدية", "localLanguageTag": "ar" },
       "existencePeriods": [{ "start": { "year": 1130, "precision": "exact" }, "end": { "year": 1269, "precision": "exact" } }],
       "chronologyStatus": "accepted",

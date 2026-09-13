@@ -5,7 +5,7 @@
       "id": "polity-ashikaga-shogunate",
       "entityKind": "polity",
       "polityForms": ["dynasty", "state"],
-      "displayCategory": "contemporary",
+      "displayCategory": "regional",
       "names": {
         "primary": "足利幕府",
         "aliases": ["室町幕府", "Ashikaga shogunate", "Muromachi shogunate", "Muromachi bakufu"],
