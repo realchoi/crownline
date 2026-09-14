@@ -6,7 +6,7 @@
 
 人工维护数据位于 `src/data/source/`，不再维护单一完整 JSON。每个实体分片包含唯一正整数 `order`、一个主实体，以及优先归属于该实体的人物、任期与明确空位；阶段、地区、来源、关系和事件单独分片。所有记录聚合后仍遵循本契约，并共享单一全局 ID 命名空间。
 
-`npm run generate:data` 按 `order` 聚合实体分片，执行 JSON Schema 和跨记录语义校验，然后加载独立的覆盖审查与疆域证据审查目录，最后生成首屏 `index.json`、按实体加载的详情包、点位 `geography.json` 和独立疆域 `boundaries.json`。疆域坐标只进入 `boundaries.json`，不进入首屏索引、详情或点位包。生成过程同时在 `.generated/data/coverage-report.json` 写出确定性的覆盖报告 v3；覆盖审查目录只供维护工具使用，不进入任何浏览器产物。`.generated/` 和 `public/data/generated/` 都是可重建产物，不得手工修改或提交。浏览器的窄校验只防止部署缺失或文件错配，不能替代生成阶段的全量校验。
+`npm run generate:data` 按 `order` 聚合实体分片，执行 JSON Schema 和跨记录语义校验，然后加载独立的覆盖审查与疆域证据审查目录，最后生成首屏 `index.json`、按实体加载的详情包、点位 `geography.json` 和独立疆域 `boundaries.json`。疆域坐标只进入 `boundaries.json`，不进入首屏索引、详情或点位包。生成过程同时在 `.generated/data/coverage-report.json` 写出确定性的覆盖报告 v4；覆盖审查目录只供维护工具使用，不进入任何浏览器产物。`.generated/` 和 `public/data/generated/` 都是可重建产物，不得手工修改或提交。浏览器的窄校验只防止部署缺失或文件错配，不能替代生成阶段的全量校验。
 
 <!-- crownline-data-stats:start -->
 
@@ -156,7 +156,9 @@
 - `confidence` 可为 `high`、`medium`、`low` 或 `disputed`。
 - `low` 与 `disputed` 必须填写 `confidenceNote`，避免把不确定数据呈现为确定事实。
 
-覆盖报告还按 `sourceType` 统计来源等级，并分别统计 URL 与 `accessedAt` 是否非空。关系、事件、地理和生产疆域快照的 `sourceReferenceQuality` 统计记录是否有来源引用，以及是否至少有一个非空 `locator`；空白定位不算已定位。所有来源类型和可信度枚举都会在报告中出现，即使数量为 0。
+覆盖报告还按 `sourceType` 统计来源等级，并分别统计 URL 与 `accessedAt` 是否非空。实体、人物、任期、明确空位、地区、关系、事件、地理和生产疆域快照的 `sourceReferenceQuality` 分别统计至少一项定位、全部引用定位及完全无定位记录，并列出无定位记录 ID；空白 `locator` 不算已定位。`npm run check:evidence` 以当前缺口为上限阻止回退，但不能把未核实引用自动补成已定位。
+
+`globalCoverageMatrix` 按六个时代段与顶层历史地区统计存续区间相交的去重政权，供数据扩充排期使用。跨地区政权进入其绑定的每个地区；矩阵只描述当前数据集，零值不表示该地区当时没有政权。提交的维护矩阵见[全球政权覆盖矩阵与扩充顺序](global-coverage-plan.md)，并由 `npm run check:coverage-plan` 防止与源数据漂移。
 
 独立的 `reviews/geography-locator-evidence-review.json` 保存地理引用证据审查，不进入 `CrownlineData` 或浏览器包。审查把坐标证据、历史地点/角色证据与适用年代证据分别记录；只有业务点位实际补入非空、可核查的 `locator` 后，覆盖报告才计入 `recordsWithLocatedSourceRefs`。截至2026-09-10，194条点位中119条至少有一项定位，75条仍完全缺少定位；至少一项定位并不等于全部引用已闭环，当前49条达到全部引用定位、70条仍为部分定位。未核实记录继续保留具体缺口和后续要求，不从同政权的其他来源自动推定。
 
@@ -194,10 +196,14 @@
 - 在 `src/data/runtimeValidation.ts` 的相应 index、detail、geography 或 boundaries 窄边界中验证 UI 实际读取的最小安全结构；
 - 在生成产物契约测试中增加“有效产物通过、字段缺失被拒绝”的回归用例。
 
+`CrownlineIndex.boundarySnapshotCount` 是生成器派生的非负计数，只用于在加载疆域包前决定入口状态，不包含几何数据；为 0 时旧疆域深链接降级到点位层。
+
 修改数据后运行：
 
 ```bash
 npm run validate:data
+npm run check:evidence
+npm run check:coverage-plan
 npm test
 ```
 

@@ -40,6 +40,9 @@ describe("从详情发现历史关系", () => {
     );
     const user = setupUser();
     const app = renderApp();
+    await waitFor(() =>
+      expect(new URLSearchParams(window.location.search).has("layer")).toBe(false)
+    );
     const before = new URL(window.location.href);
     const related = await within(screen.getByRole("dialog", { name: "元" })).findByRole("region", {
       name: "相关政权"
@@ -60,7 +63,7 @@ describe("从详情发现历史关系", () => {
       "polity-sukhothai-kingdom"
     ]);
     expect(after.searchParams.has("detail")).toBe(false);
-    for (const key of ["view", "mode", "year", "scope", "q", "type", "layer", "custom"]) {
+    for (const key of ["view", "mode", "year", "scope", "q", "type", "custom"]) {
       expect(after.searchParams.get(key)).toBe(before.searchParams.get(key));
     }
     expect(after.hash).toBe(before.hash);

@@ -218,7 +218,11 @@ test.describe("Crownline 浏览器冒烟", () => {
 
     const tangBar = page.getByRole("button", { name: tangTimelineButtonName });
     await tangBar.click();
-    await expect(page.getByRole("dialog", { name: "唐" })).toBeVisible();
+    const dialog = page.getByRole("dialog", { name: "唐" });
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByRole("region", { name: "统治者资料年度覆盖" })).toContainText(
+      /正式统治者覆盖 \d+ \/ \d+ 个政权年/
+    );
     await expect(page.getByRole("button", { name: "关闭详情" })).toBeFocused();
     await expectNoSeriousA11yViolations(page);
 
@@ -250,6 +254,7 @@ test.describe("Crownline 浏览器冒烟", () => {
   });
 
   test("探索状态在刷新、后退和前进后与 URL 一致", async ({ page, isMobile }) => {
+    await installBoundaryFixture(page);
     await page.goto("/?view=map&year=800&scope=china&layer=boundaries");
     await waitForAppReady(page);
     const getControls = async () => {
@@ -457,21 +462,19 @@ test.describe("Crownline 浏览器冒烟", () => {
       .toBe(true);
   });
 
-  test("全时期疆域图层提示选择年份而不绘制跨时代多边形", async ({ page }) => {
+  test("无生产疆域时将全时期旧图层链接降级为点位", async ({ page }) => {
     await page.goto("/?view=map&layer=boundaries");
     await waitForAppReady(page);
-    await expect(page.getByText(/疆域快照需要明确年份/).first()).toBeVisible();
+    await expect.poll(() => new URL(page.url()).searchParams.get("layer")).toBeNull();
+    await expect(page.getByRole("region", { name: "全时期历史政权总览地图" })).toBeVisible();
     await expect(page.locator(".map-boundary-shape")).toHaveCount(0);
   });
 
   test("生产疆域退役后保留缺口说明和点位详情入口", async ({ page }) => {
     await page.goto("/?view=map&year=800&layer=combined");
     await waitForAppReady(page);
-    await expect(page.getByText("当前年份没有匹配的疆域快照。")).toBeVisible();
+    await expect.poll(() => new URL(page.url()).searchParams.get("layer")).toBeNull();
     await expect(page.locator(".map-boundary-shape")).toHaveCount(0);
-    await expect(page.getByRole("region", { name: "尚未校订疆域数据" })).toContainText(
-      "这不表示它们没有疆域"
-    );
     const list = page.getByRole("region", { name: "地图结果列表" });
     await list.getByRole("button", { name: /^拜占庭帝国.*，.*都城/ }).click();
     await expect(page.getByRole("dialog", { name: "拜占庭帝国" })).toBeVisible();

@@ -5,6 +5,7 @@ import type { GeographyLoadResult } from "../../src/data/loadCrownlineGeography"
 import { setupUser } from "../helpers/user";
 import {
   artifacts,
+  boundaryFixtureIndex,
   createDeferred,
   findMapMarker,
   installAppTestLifecycle,
@@ -17,19 +18,28 @@ import { loadBoundaryFixture } from "../helpers/boundaryFixtures";
 installAppTestLifecycle();
 
 describe("Crownline 地图", () => {
-  it("生产疆域退役后显示资料缺口，点位仍可打开详情", async () => {
+  it("生产疆域退役后把旧图层链接降级为点位并保留详情", async () => {
     window.history.replaceState(null, "", "/?view=map&year=800&layer=combined");
     const user = setupUser();
     renderApp();
 
-    expect(await screen.findByText("当前年份没有匹配的疆域快照。")).toBeVisible();
-    expect(document.querySelectorAll(".map-boundary-shape")).toHaveLength(0);
-    expect(screen.getByRole("region", { name: "尚未校订疆域数据" })).toHaveTextContent(
-      "这不表示它们没有疆域"
+    await waitFor(() =>
+      expect(new URLSearchParams(window.location.search).has("layer")).toBe(false)
     );
+    expect(screen.getByRole("button", { name: "疆域示意（暂无数据）" })).toBeDisabled();
+    expect(document.querySelectorAll(".map-boundary-shape")).toHaveLength(0);
     const list = screen.getByRole("region", { name: "地图结果列表" });
     await user.click(await within(list).findByRole("button", { name: /^拜占庭帝国.*，.*都城/ }));
     expect(await screen.findByRole("dialog", { name: "拜占庭帝国" })).toBeVisible();
+  });
+
+  it("生产疆域为零时明确禁用疆域入口", async () => {
+    const user = setupUser();
+    renderApp();
+
+    await user.click(screen.getByRole("button", { name: "地图" }));
+    expect(screen.getByRole("button", { name: "疆域示意（暂无数据）" })).toBeDisabled();
+    expect(screen.getByText("当前暂无通过证据审查的疆域快照；地点标记仍可使用。")).toBeVisible();
   });
 
   it("默认展示全时期点位，调整年份后筛选并可返回总览", async () => {
@@ -133,9 +143,14 @@ describe("Crownline 地图", () => {
 
   it("组合图层的疆域加载失败时仍保留已加载的点位", async () => {
     window.history.replaceState(null, "", "/?view=map&year=800&layer=combined");
-    renderApp(loadGeneratedDetail, loadGeneratedGeography, async () => {
-      throw new Error("疆域数据暂时不可用");
-    });
+    renderApp(
+      loadGeneratedDetail,
+      loadGeneratedGeography,
+      async () => {
+        throw new Error("疆域数据暂时不可用");
+      },
+      boundaryFixtureIndex
+    );
 
     expect(await screen.findByRole("alert")).toHaveTextContent("疆域数据暂时不可用");
     expect(await findMapMarker("唐，长安，都城")).toBeInTheDocument();
@@ -149,7 +164,8 @@ describe("Crownline 地图", () => {
       async () => {
         throw new Error("地理数据暂时不可用");
       },
-      loadBoundaryFixture
+      loadBoundaryFixture,
+      boundaryFixtureIndex
     );
 
     expect(await screen.findByRole("alert")).toHaveTextContent("地理数据暂时不可用");
@@ -239,7 +255,7 @@ describe("Crownline 地图", () => {
     window.history.replaceState(null, "", "/?view=map&year=800");
     const user = setupUser();
     const loadBoundaries = vi.fn(loadBoundaryFixture);
-    renderApp(loadGeneratedDetail, loadGeneratedGeography, loadBoundaries);
+    renderApp(loadGeneratedDetail, loadGeneratedGeography, loadBoundaries, boundaryFixtureIndex);
 
     await screen.findByRole("region", { name: "当前年份历史政权示意地图" });
     await user.click(screen.getByRole("button", { name: "疆域示意" }));
@@ -265,7 +281,7 @@ describe("Crownline 地图", () => {
   it("仅启用疆域时不请求地理数据且摘要直接报告疆域结果", async () => {
     window.history.replaceState(null, "", "/?view=map&year=800&layer=boundaries");
     const loadGeography = vi.fn(loadGeneratedGeography);
-    renderApp(loadGeneratedDetail, loadGeography, loadBoundaryFixture);
+    renderApp(loadGeneratedDetail, loadGeography, loadBoundaryFixture, boundaryFixtureIndex);
 
     expect(
       await screen.findByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ })
@@ -278,7 +294,12 @@ describe("Crownline 地图", () => {
   it("用两个独立图层开关表达三种内部组合状态", async () => {
     window.history.replaceState(null, "", "/?view=map&year=800");
     const user = setupUser();
-    renderApp();
+    renderApp(
+      loadGeneratedDetail,
+      loadGeneratedGeography,
+      loadBoundaryFixture,
+      boundaryFixtureIndex
+    );
 
     const pointsToggle = screen.getByRole("button", { name: "地点标记" });
     const boundariesToggle = screen.getByRole("button", { name: "疆域示意" });
@@ -299,7 +320,12 @@ describe("Crownline 地图", () => {
   it("地图图层切换不改变全时期或指定年份状态", async () => {
     window.history.replaceState(null, "", "/?view=map&layer=boundaries");
     const user = setupUser();
-    renderApp();
+    renderApp(
+      loadGeneratedDetail,
+      loadGeneratedGeography,
+      loadBoundaryFixture,
+      boundaryFixtureIndex
+    );
 
     await screen.findByRole("region", { name: "全时期历史政权总览地图" });
     await user.click(screen.getByRole("button", { name: "地点标记" }));
@@ -321,7 +347,12 @@ describe("Crownline 地图", () => {
   it("全时期疆域图层不叠加跨时代快照，调整年份后才显示", async () => {
     window.history.replaceState(null, "", "/?view=map&layer=boundaries");
     const user = setupUser();
-    renderApp(loadGeneratedDetail, loadGeneratedGeography, loadBoundaryFixture);
+    renderApp(
+      loadGeneratedDetail,
+      loadGeneratedGeography,
+      loadBoundaryFixture,
+      boundaryFixtureIndex
+    );
 
     const results = await screen.findByRole("region", { name: "地图结果列表" });
     expect(results).toHaveTextContent(/疆域快照需要明确年份/);
@@ -339,7 +370,12 @@ describe("Crownline 地图", () => {
   it("疆域结果列表可完成双政权对比并在地图上稳定高亮", async () => {
     window.history.replaceState(null, "", "/?view=map&year=800&layer=boundaries");
     const user = setupUser();
-    renderApp(loadGeneratedDetail, loadGeneratedGeography, loadBoundaryFixture);
+    renderApp(
+      loadGeneratedDetail,
+      loadGeneratedGeography,
+      loadBoundaryFixture,
+      boundaryFixtureIndex
+    );
     const list = await screen.findByRole("region", { name: "地图结果列表" });
     await user.click(within(list).getByRole("button", { name: /将拜占庭帝国.*加入对比/ }));
     await user.click(within(list).getByRole("button", { name: /将阿拔斯哈里发.*加入对比/ }));

@@ -39,6 +39,7 @@ describe("运行时数据产物", () => {
     expect(index).not.toHaveProperty("geographicSnapshots");
     expect(index).not.toHaveProperty("sources");
     expect(index.detailEntityIds).toEqual(data.entities.map(({ id }) => id));
+    expect(index.boundarySnapshotCount).toBe(0);
   });
 
   it("疆域坐标只进入独立 boundaries 包并保持来源闭包", () => {
@@ -49,6 +50,7 @@ describe("运行时数据产物", () => {
       sources: [...data.sources, ...fixture.sources]
     });
     expect(artifacts.index).not.toHaveProperty("boundarySnapshots");
+    expect(artifacts.index.boundarySnapshotCount).toBe(2);
     expect(artifacts.geography).not.toHaveProperty("boundarySnapshots");
     artifacts.details.forEach((detail) => {
       expect(detail).not.toHaveProperty("boundarySnapshots");

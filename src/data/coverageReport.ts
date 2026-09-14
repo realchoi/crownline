@@ -29,7 +29,16 @@ import {
   type LoadedBoundaryEvidenceReview
 } from "./boundaryEvidenceReview";
 
-export const DATA_COVERAGE_REPORT_VERSION = 3 as const;
+export const DATA_COVERAGE_REPORT_VERSION = 4 as const;
+
+export const GLOBAL_COVERAGE_ERAS = [
+  { id: "before-1000-bce", label: "公元前1000年以前", endYear: -1001 },
+  { id: "1000-bce-to-1-bce", label: "公元前1000—前1年", startYear: -1000, endYear: -1 },
+  { id: "1-to-499", label: "1—499年", startYear: 1, endYear: 499 },
+  { id: "500-to-999", label: "500—999年", startYear: 500, endYear: 999 },
+  { id: "1000-to-1499", label: "1000—1499年", startYear: 1000, endYear: 1499 },
+  { id: "1500-and-later", label: "1500年以后", startYear: 1500 }
+] as const;
 
 export interface ReviewableCoverageMetric {
   total: number;
@@ -73,13 +82,46 @@ export interface SourceReferenceQuality {
   recordsWithSourceRefs: number;
   recordsWithLocatedSourceRefs: number;
   recordsWithoutLocatedSourceRefs: number;
+  recordsWithAllSourceRefsLocated: number;
+  recordIdsWithoutLocatedSourceRefs: string[];
 }
 
 export interface SourceReferenceQualitySummary {
+  entities: SourceReferenceQuality;
+  persons: SourceReferenceQuality;
+  reigns: SourceReferenceQuality;
+  reignVacancies: SourceReferenceQuality;
+  regions: SourceReferenceQuality;
   relationships: SourceReferenceQuality;
   events: SourceReferenceQuality;
   geographicSnapshots: SourceReferenceQuality;
   boundarySnapshots: SourceReferenceQuality;
+}
+
+export interface GlobalCoverageEra {
+  id: (typeof GLOBAL_COVERAGE_ERAS)[number]["id"];
+  label: string;
+  startYear?: number;
+  endYear?: number;
+}
+
+export interface GlobalCoverageCell {
+  eraId: GlobalCoverageEra["id"];
+  polityCount: number;
+  polityIds: string[];
+}
+
+export interface GlobalCoverageMatrix {
+  definitions: {
+    counting: string;
+    interpretation: string;
+  };
+  eras: GlobalCoverageEra[];
+  regions: Array<{
+    regionId: string;
+    name: string;
+    cells: GlobalCoverageCell[];
+  }>;
 }
 
 export interface RegionDataCoverage {
@@ -154,6 +196,7 @@ export interface DataCoverageReport {
   sourceQuality: SourceQualitySummary;
   sourceReferenceQuality: SourceReferenceQualitySummary;
   temporalCoverage: TemporalCoverageReport;
+  globalCoverageMatrix: GlobalCoverageMatrix;
   boundaryEvidence: BoundaryEvidenceSummary | null;
   topLevelRegions: RegionDataCoverage[];
 }
@@ -294,7 +337,7 @@ function buildRelationshipSummary(
 }
 
 function sourceReferenceQuality(
-  records: ReadonlyArray<{ sourceRefs: readonly SourceRef[] }>
+  records: ReadonlyArray<{ id: string; sourceRefs: readonly SourceRef[] }>
 ): SourceReferenceQuality {
   const recordsWithSourceRefs = records.filter(({ sourceRefs }) => sourceRefs.length > 0).length;
   const recordsWithLocatedSourceRefs = records.filter(({ sourceRefs }) => {
@@ -302,11 +345,64 @@ function sourceReferenceQuality(
       return typeof locator === "string" && locator.trim().length > 0;
     });
   }).length;
+  const recordsWithAllSourceRefsLocated = records.filter(({ sourceRefs }) => {
+    return (
+      sourceRefs.length > 0 &&
+      sourceRefs.every(({ locator }) => typeof locator === "string" && locator.trim().length > 0)
+    );
+  }).length;
+  const recordIdsWithoutLocatedSourceRefs = records
+    .filter(({ sourceRefs }) => {
+      return !sourceRefs.some(
+        ({ locator }) => typeof locator === "string" && locator.trim().length > 0
+      );
+    })
+    .map(({ id }) => id)
+    .sort(compareIds);
   return {
     records: records.length,
     recordsWithSourceRefs,
     recordsWithLocatedSourceRefs,
-    recordsWithoutLocatedSourceRefs: records.length - recordsWithLocatedSourceRefs
+    recordsWithoutLocatedSourceRefs: records.length - recordsWithLocatedSourceRefs,
+    recordsWithAllSourceRefsLocated,
+    recordIdsWithoutLocatedSourceRefs
+  };
+}
+
+function overlapsEra(polity: HistoricalEntity, era: GlobalCoverageEra): boolean {
+  return polity.existencePeriods.some(({ start, end }) => {
+    return (
+      (era.endYear === undefined || start.year <= era.endYear) &&
+      (era.startYear === undefined || end.year >= era.startYear)
+    );
+  });
+}
+
+function buildGlobalCoverageMatrix(
+  topLevelRegions: readonly Region[],
+  regionPolities: readonly (readonly HistoricalEntity[])[]
+): GlobalCoverageMatrix {
+  const eras: GlobalCoverageEra[] = GLOBAL_COVERAGE_ERAS.map((era) => ({ ...era }));
+  return {
+    definitions: {
+      counting: "每格统计存续区间与该时代段相交的去重政权；跨地区政权会进入其绑定的每个顶层地区。",
+      interpretation: "矩阵只描述当前数据集的时间与地区分布；空格或低计数不表示历史上没有政权。"
+    },
+    eras,
+    regions: topLevelRegions.map((region, index) => {
+      const polities = regionPolities[index] ?? [];
+      return {
+        regionId: region.id,
+        name: region.names.primary,
+        cells: eras.map((era) => {
+          const polityIds = polities
+            .filter((polity) => overlapsEra(polity, era))
+            .map(({ id }) => id)
+            .sort(compareIds);
+          return { eraId: era.id, polityCount: polityIds.length, polityIds };
+        })
+      };
+    })
   };
 }
 
@@ -428,7 +524,7 @@ function buildTemporalCoverage(
   };
 }
 
-/** 生成覆盖报告 v3；报告只供数据治理工具使用，不属于浏览器运行时契约。 */
+/** 生成覆盖报告 v4；报告只供数据治理工具使用，不属于浏览器运行时契约。 */
 export function buildDataCoverageReport(
   data: CrownlineData,
   coverageReview: CoverageReviewData = { entries: [] },
@@ -515,12 +611,18 @@ export function buildDataCoverageReport(
     relationshipSummary,
     sourceQuality: buildSourceQuality(data),
     sourceReferenceQuality: {
+      entities: sourceReferenceQuality(data.entities),
+      persons: sourceReferenceQuality(data.persons),
+      reigns: sourceReferenceQuality(data.reigns),
+      reignVacancies: sourceReferenceQuality(data.reignVacancies),
+      regions: sourceReferenceQuality(data.regions),
       relationships: sourceReferenceQuality(data.relationships),
       events: sourceReferenceQuality(data.events),
       geographicSnapshots: sourceReferenceQuality(data.geographicSnapshots),
       boundarySnapshots: sourceReferenceQuality(data.boundarySnapshots)
     },
     temporalCoverage: buildTemporalCoverage(data, polities),
+    globalCoverageMatrix: buildGlobalCoverageMatrix(topLevelRegionDefinitions, regionPolities),
     boundaryEvidence: boundaryEvidence
       ? summarizeBoundaryEvidenceReview(boundaryEvidence, data.boundarySnapshots)
       : null,

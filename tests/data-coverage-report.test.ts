@@ -85,7 +85,7 @@ function sourceQualityFixture(): CrownlineData {
   return fixture;
 }
 
-describe("数据覆盖报告 v3", () => {
+describe("数据覆盖报告 v4", () => {
   it("报告年份覆盖、明确空位、来源定位并保持全输入顺序不变", () => {
     const report = buildDataCoverageReport(data, coverageReview);
     expect(report.temporalCoverage.summary).toMatchObject({
@@ -98,7 +98,7 @@ describe("数据覆盖报告 v3", () => {
     )!;
     expect(hre.rulerDetails.explicitVacancyPeriods).toEqual([{ startYear: 1741, endYear: 1741 }]);
     expect(hre.rulerDetails.unknownPeriods).toEqual([]);
-    expect(report.sourceReferenceQuality.boundarySnapshots).toEqual({
+    expect(report.sourceReferenceQuality.boundarySnapshots).toMatchObject({
       records: 0,
       recordsWithSourceRefs: 0,
       recordsWithLocatedSourceRefs: 0,
@@ -187,6 +187,31 @@ describe("数据覆盖报告 v3", () => {
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toMatchObject({
+      entities: {
+        records: 137,
+        recordsWithLocatedSourceRefs: 23,
+        recordsWithoutLocatedSourceRefs: 114
+      },
+      persons: {
+        records: 1385,
+        recordsWithLocatedSourceRefs: 188,
+        recordsWithoutLocatedSourceRefs: 1197
+      },
+      reigns: {
+        records: 1424,
+        recordsWithLocatedSourceRefs: 188,
+        recordsWithoutLocatedSourceRefs: 1236
+      },
+      reignVacancies: {
+        records: 12,
+        recordsWithLocatedSourceRefs: 1,
+        recordsWithoutLocatedSourceRefs: 11
+      },
+      regions: {
+        records: 12,
+        recordsWithLocatedSourceRefs: 0,
+        recordsWithoutLocatedSourceRefs: 12
+      },
       relationships: {
         records: 74,
         recordsWithSourceRefs: 74,
@@ -206,6 +231,32 @@ describe("数据覆盖报告 v3", () => {
         recordsWithoutLocatedSourceRefs: 75
       }
     });
+    expect(report.sourceReferenceQuality.entities.recordIdsWithoutLocatedSourceRefs).toContain(
+      "polity-cn-xia"
+    );
+  });
+
+  it("按六个时代段生成顶层地区覆盖矩阵", () => {
+    const report = buildDataCoverageReport(data, coverageReview);
+    const matrix = report.globalCoverageMatrix;
+
+    expect(matrix.eras.map(({ id }) => id)).toEqual([
+      "before-1000-bce",
+      "1000-bce-to-1-bce",
+      "1-to-499",
+      "500-to-999",
+      "1000-to-1499",
+      "1500-and-later"
+    ]);
+    expect(matrix.regions).toHaveLength(11);
+    expect(matrix.regions.find(({ regionId }) => regionId === "region-west-asia")?.cells).toEqual([
+      expect.objectContaining({ eraId: "before-1000-bce", polityCount: 0 }),
+      expect.objectContaining({ eraId: "1000-bce-to-1-bce", polityCount: 0 }),
+      expect.objectContaining({ eraId: "1-to-499", polityCount: 2 }),
+      expect.objectContaining({ eraId: "500-to-999", polityCount: 5 }),
+      expect.objectContaining({ eraId: "1000-to-1499", polityCount: 6 }),
+      expect.objectContaining({ eraId: "1500-and-later", polityCount: 3 })
+    ]);
   });
 
   it("四种状态使用明确分母，且不适用不进入适用分母", () => {

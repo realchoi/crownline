@@ -21,6 +21,7 @@ export interface FilterPanelProps {
   category: CategoryFilter;
   regions: Region[];
   regionScope: RegionScope;
+  boundarySnapshotCount: number;
   onViewModeChange: (viewMode: ViewMode) => void;
   onTimeRangeChange: (timeRange: TimeRange) => void;
   onYearChange: (year: number) => void;
@@ -43,6 +44,7 @@ export function FilterPanel({
   category,
   regions,
   regionScope,
+  boundarySnapshotCount,
   onViewModeChange,
   onTimeRangeChange,
   onYearChange,
@@ -56,6 +58,7 @@ export function FilterPanel({
   const showPoints = mapLayer !== "boundaries";
   const showBoundaries = mapLayer !== "points";
   const isMap = viewMode === "map";
+  const hasBoundaries = boundarySnapshotCount > 0;
 
   return (
     <section
@@ -94,17 +97,20 @@ export function FilterPanel({
             </button>
             <button
               type="button"
-              aria-pressed={showBoundaries}
+              aria-pressed={hasBoundaries && showBoundaries}
+              disabled={!hasBoundaries}
               onClick={() => {
                 if (mapLayer === "combined") onMapLayerChange("points");
                 else if (mapLayer === "points") onMapLayerChange("combined");
               }}
             >
-              疆域示意
+              {hasBoundaries ? "疆域示意" : "疆域示意（暂无数据）"}
             </button>
           </div>
           <p className="map-layer-help">
-            默认显示地点标记；开启疆域示意后两者叠加。疆域需要明确年份，且不代表精确勘界。
+            {hasBoundaries
+              ? "默认显示地点标记；开启疆域示意后两者叠加。疆域需要明确年份，且不代表精确勘界。"
+              : "当前暂无通过证据审查的疆域快照；地点标记仍可使用。"}
           </p>
         </fieldset>
       )}

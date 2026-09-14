@@ -37,7 +37,7 @@
 
 ## 报告与验证
 
-覆盖报告 v3 的 `boundaryEvidence` 汇总已审查、批准、退役、归档和生产数量；`sourceReferenceQuality.boundarySnapshots` 单独报告生产来源定位情况。零生产记录不表示历史资料已完整覆盖。
+覆盖报告 v4 的 `boundaryEvidence` 汇总已审查、批准、退役、归档和生产数量；`sourceReferenceQuality.boundarySnapshots` 单独报告生产来源定位情况。零生产记录不表示历史资料已完整覆盖。
 
 生产 `boundaries.json` 当前为合法空数组；UI 明确显示尚无匹配资料。正向几何、加载、对比、键盘与响应式测试使用 `tests/helpers/boundaryFixtures.ts` 中明确标注的合成矩形，浏览器测试仅在指定用例拦截疆域请求注入 fixture。另有不拦截请求的真实生产空状态回归；测试不再依赖无证据的旧坐标。
 

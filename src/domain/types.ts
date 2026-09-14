@@ -321,6 +321,8 @@ export interface CrownlineIndex {
   entities: HistoricalEntity[];
   regions: Region[];
   detailEntityIds: string[];
+  /** 仅用于在加载疆域包前声明当前生产数据是否提供可用入口。 */
+  boundarySnapshotCount: number;
 }
 
 /** 一个实体可独立加载的引用闭包。 */

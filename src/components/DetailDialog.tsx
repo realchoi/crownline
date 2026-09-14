@@ -236,7 +236,7 @@ export function DetailDialog({
           )}
 
           {detail && entity.entityKind === "polity" && currentYear === undefined && (
-            <RulerOverview key={entity.id} detail={detail} />
+            <RulerOverview key={entity.id} entity={entity} detail={detail} />
           )}
 
           {snapshot && (

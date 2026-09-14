@@ -7,10 +7,15 @@ import { buildGeneratedArtifacts } from "../../src/data/artifacts";
 import type { CrownlineDetail } from "../../src/domain/types";
 import type { CrownlineGeographyLoader } from "../../src/data/loadCrownlineGeography";
 import type { CrownlineBoundariesLoader } from "../../src/data/loadCrownlineBoundaries";
+import { createBoundaryFixture } from "./boundaryFixtures";
 import "../../src/styles/styles.css";
 
 export const sourceData = await loadSourceData();
 export const artifacts = buildGeneratedArtifacts(sourceData);
+export const boundaryFixtureIndex = {
+  ...artifacts.index,
+  boundarySnapshotCount: createBoundaryFixture().boundarySnapshots.length
+};
 
 const showModalDescriptor = Object.getOwnPropertyDescriptor(
   HTMLDialogElement.prototype,
@@ -48,11 +53,12 @@ export const loadGeneratedBoundaries = async () => ({
 export function renderApp(
   loadDetail: (entityId: string) => Promise<CrownlineDetail | null> = loadGeneratedDetail,
   loadGeography: CrownlineGeographyLoader = loadGeneratedGeography,
-  loadBoundaries: CrownlineBoundariesLoader = loadGeneratedBoundaries
+  loadBoundaries: CrownlineBoundariesLoader = loadGeneratedBoundaries,
+  data = artifacts.index
 ) {
   return render(
     <App
-      data={artifacts.index}
+      data={data}
       loadDetail={loadDetail}
       loadGeography={loadGeography}
       loadBoundaries={loadBoundaries}

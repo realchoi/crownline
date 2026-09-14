@@ -24,7 +24,7 @@ Crownline（王冠纪）是一个面向全球历史的交互式王朝图谱项�
 - 明确区分尚未收录、覆盖有限和被搜索或类别筛选为空
 - 支持传统纪年输入、逐年增减和连续滑杆，跨公元前后时自动跳过公元 0 年
 - 时间点结果将真实政权与历史分期背景分开，并提示约年、争议与端点口径
-- 政权详情在全览模式展示可筛选、可展开的完整统治序列，在时间点模式聚焦指定年份的在位者、共治者、摄政者与争位者
+- 政权详情在全览模式展示可筛选、可展开的已收录统治序列，并披露正式统治者覆盖政权年、未知年份与区间；时间点模式聚焦指定年份的在位者、共治者、摄政者与争位者
 - 71 个中国政权与 61 个世界政权已接入统治者任期；当前数据集累计 137 个实体、1385 位人物、1424 条任期、74 条关系、34 条事件、194 条地理快照、0 条疆域快照与 279 项来源，数据契约为 v5。关系案例涉及 76 个政权并覆盖 11 个顶层地区；大津巴布韦王国与特奥蒂瓦坎的结论见 [统治者资料缺口审查](docs/ruler-gap-review.md)，夏的地图结论见 [地理点位缺口审查](docs/geography-gap-review.md)。
 - 48 个有可靠本地名称的实体会在详情、地图聚合与对比中显示原名，并携带语言标签与文字方向；无法可靠恢复历史自称的条目保持缺省
 - 支持名称、别名、年份和说明搜索，以及展示类别筛选
@@ -120,9 +120,9 @@ npm run preview
 当前数据快照：137 个实体（134 个政权、3 个历史分期）、1385 位人物、1424 条任期、74 条结构化关系、34 个事件、194 条地理快照、0 条疆域快照、279 项来源。
 <!-- crownline-data-stats:end -->
 
-`src/data/source/coverage/coverage-review.json` 是工具侧人工审查目录，不进入浏览器运行时数据。覆盖报告 v3 对统治者详情、本地名称和地理维度分别给出 `available`、`reviewed-unavailable`、`not-applicable`、`pending-review` 四种状态；已有业务数据自动为 `available`，缺少记录且没有审查条目则为 `pending-review`。`reviewed-unavailable` 表示当前审查后无法可靠补充，不表示历史上不存在；`not-applicable` 不进入适用分母。关系只报告已收录案例的类型、可信度、参与政权和顶层地区分布，参与比例不是关系完成率。
+`src/data/source/coverage/coverage-review.json` 是工具侧人工审查目录，不进入浏览器运行时数据。覆盖报告 v4 对统治者详情、本地名称和地理维度分别给出 `available`、`reviewed-unavailable`、`not-applicable`、`pending-review` 四种状态；已有业务数据自动为 `available`，缺少记录且没有审查条目则为 `pending-review`。`reviewed-unavailable` 表示当前审查后无法可靠补充，不表示历史上不存在；`not-applicable` 不进入适用分母。关系只报告已收录案例的类型、可信度、参与政权和顶层地区分布，参与比例不是关系完成率。
 
-覆盖报告 v3 另有 `temporalCoverage`，按政权存续期报告正式统治者、摄政、争位、明确空位和点位的已覆盖/未知年份区间；共治和同年迁都去重，跨纪元跳过公元0年。`boundaryEvidence` 汇总生产疆域的批准、退役和归档情况。报告不进入浏览器包；运行时数据契约仍为 v5。首批地理校订与保留缺口见 [年份覆盖审查](docs/temporal-coverage-review.md)，前燕、南明、西秦与神圣罗马帝国的后续分期审查见 [第二批分期地图点位审查](docs/temporal-geography-p1-review.md)。
+覆盖报告 v4 另有 `temporalCoverage`、全记录类型的 `sourceReferenceQuality` 与 `globalCoverageMatrix`，分别报告逐年资料覆盖、来源定位缺口，以及六个时代段和顶层地区的政权分布。`boundaryEvidence` 汇总生产疆域的批准、退役和归档情况。报告不进入浏览器包；运行时数据契约仍为 v5。全球扩充顺序见 [全球政权覆盖矩阵](docs/global-coverage-plan.md)，分期地理审查见 [第二批分期地图点位审查](docs/temporal-geography-p1-review.md)。
 
 地理来源定位审查已为原100条完全缺少定位的基线点位建立证据账本，并完成两批核查。当前194条生产点位中119条至少有一项非空 `locator`，其中49条的全部引用均已定位、70条仍有部分引用待补，另外75条所有引用仍缺定位。第二批闭环16条跨地区记录，并新增隋长安旧城、唐洛阳和元上都三条有完整定位的分期点位；详见[第二批地理点位证据审查](docs/geography-evidence-p2.md)。未定位不表示记录已判错，也不能用通用来源页自动补齐。
 
@@ -131,8 +131,8 @@ npm run preview
 `npm run generate:data` 会先聚合并全量校验分片，再生成：
 
 - `.generated/data/crownline-data.json`：仅供测试和字体工具使用的完整数据，不进入生产包。
-- `.generated/data/coverage-report.json`：确定性的机器可读覆盖报告 v3，记录全局及顶层历史地区的状态化覆盖、关系分布、来源质量和审查缺口，不进入生产包。
-- `public/data/generated/index.json`：首屏时间轴、搜索和筛选数据。
+- `.generated/data/coverage-report.json`：确定性的机器可读覆盖报告 v4，记录逐年覆盖、来源定位缺口、关系分布、疆域证据和全球地区×时代矩阵，不进入生产包。
+- `public/data/generated/index.json`：首屏时间轴、搜索、筛选和生产疆域可用数量。
 - `public/data/generated/geography.json`：首次进入地图时按需加载的地理快照与来源闭包。
 - `public/data/generated/boundaries.json`：只有启用疆域图层时按需加载的疆域快照与来源闭包。
 - `public/data/generated/details/<entity-id>.json`：打开详情时按需加载的人物、任期、关系、事件和来源闭包。
@@ -143,6 +143,8 @@ npm run preview
 
 ```bash
 npm run validate:data
+npm run check:evidence
+npm run check:coverage-plan
 npm run check:boundaries
 npm run generate:data
 npm test

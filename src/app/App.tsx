@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { DetailDialog } from "../components/DetailDialog";
 import { ComparisonDialog } from "../components/ComparisonDialog";
@@ -58,6 +58,12 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   const [comparisonOrigin, setComparisonOrigin] = useState<string | null>(null);
   const mainRef = useRef<HTMLElement>(null);
   useDialogReturnFocus(Boolean(browseState.detailEntityId || browseState.comparisonOpen), mainRef);
+  useEffect(() => {
+    if (data.boundarySnapshotCount > 0) return;
+    setBrowseState((current) => {
+      return current.mapLayer === "points" ? current : { ...current, mapLayer: "points" };
+    });
+  }, [data.boundarySnapshotCount, setBrowseState]);
   const results = useMemo(() => {
     const filters = {
       query: browseState.query,
@@ -177,6 +183,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
           yearBounds={yearBounds}
           regions={data.regions}
           resultCount={results.all.length}
+          boundarySnapshotCount={data.boundarySnapshotCount}
         />
 
         <section className="exploration-summary" aria-label="当前范围和结果摘要">

@@ -73,6 +73,15 @@ describe("生成产物与浏览器运行时契约一致性", () => {
     expect(validateCrownlineIndex(invalidTag).valid).toBe(false);
   });
 
+  it("首屏索引拒绝非法疆域快照数量", () => {
+    const broken = structuredClone(artifacts.index);
+    broken.boundarySnapshotCount = -1;
+
+    expect(validateCrownlineIndex(broken).issues).toContainEqual(
+      expect.objectContaining({ code: "SCHEMA_ERROR", path: "/boundarySnapshotCount" })
+    );
+  });
+
   it("Schema、TypeScript 版本常量、生成产物与运行时支持版本必须同步", () => {
     expect(schema.properties.schemaVersion.const).toBe(CROWNLINE_SCHEMA_VERSION);
     expect(artifacts.index.schemaVersion).toBe(CROWNLINE_SCHEMA_VERSION);

@@ -123,7 +123,7 @@ describe("Crownline 详情", () => {
     expect(within(dialog).getByText(/不等于当时无人统治/)).toBeInTheDocument();
   });
 
-  it("全览详情展示完整统治序列、支持展开与角色筛选", { timeout: 20_000 }, async () => {
+  it("全览详情展示已收录统治序列、覆盖年份并支持角色筛选", { timeout: 20_000 }, async () => {
     const user = setupUser();
     renderApp();
 
@@ -131,6 +131,8 @@ describe("Crownline 详情", () => {
     const mingDialog = screen.getByRole("dialog", { name: "明" });
     const sequence = within(mingDialog).getByRole("region", { name: "统治序列" });
     expect(within(sequence).getByText(/收录 16 条任期记录/)).toBeInTheDocument();
+    expect(within(sequence).getByText("正式统治者覆盖 277 / 277 个政权年")).toBeInTheDocument();
+    expect(within(sequence).getByText("年度覆盖 100%")).toBeInTheDocument();
     expect(sequence.querySelectorAll("details")).toHaveLength(16);
     expect(
       Array.from(sequence.querySelectorAll(".sequence-name"), (item) => item.textContent)
@@ -164,6 +166,23 @@ describe("Crownline 详情", () => {
         name: "统治序列"
       })
     ).not.toBeInTheDocument();
+  });
+
+  it("稀疏统治序列明确披露未知年份与区间", async () => {
+    const user = setupUser();
+    renderApp();
+
+    await user.click(screen.getByRole("button", { name: /阿克苏姆王国，约100—约940/ }));
+    const sequence = within(screen.getByRole("dialog", { name: "阿克苏姆王国" })).getByRole(
+      "region",
+      { name: "统治序列" }
+    );
+
+    expect(within(sequence).getByText("正式统治者覆盖 121 / 841 个政权年")).toBeInTheDocument();
+    expect(within(sequence).getByText("资料未知 720 年")).toBeInTheDocument();
+    await user.click(within(sequence).getByText("查看未知年份区间"));
+    expect(within(sequence).getByText(/100—199/)).toBeVisible();
+    expect(within(sequence).getByText(/632—940/)).toBeVisible();
   });
 
   it("打开详情时立即显示基础信息并在数据到达后展示统治者", async () => {

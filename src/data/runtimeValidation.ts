@@ -420,6 +420,17 @@ export function validateCrownlineIndex(input: unknown): ValidationResult {
   requireField(sections, "/timelineSections", "entityIds", isStringArray, issues);
 
   if (
+    !Number.isInteger(input.boundarySnapshotCount) ||
+    (input.boundarySnapshotCount as number) < 0
+  ) {
+    issues.push({
+      code: "SCHEMA_ERROR",
+      path: "/boundarySnapshotCount",
+      message: "boundarySnapshotCount 必须是非负整数"
+    });
+  }
+
+  if (
     !Array.isArray(input.detailEntityIds) ||
     input.detailEntityIds.some((id) => typeof id !== "string")
   ) {

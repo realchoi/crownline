@@ -28,6 +28,7 @@ interface BrowseControlsProps {
   yearBounds: HistoricalYearBounds;
   regions: Region[];
   resultCount: number;
+  boundarySnapshotCount: number;
 }
 
 const MOBILE_CONTROLS_QUERY = "(max-width: 800px)";
@@ -57,7 +58,8 @@ export function BrowseControls({
   setBrowseState,
   yearBounds,
   regions,
-  resultCount
+  resultCount,
+  boundarySnapshotCount
 }: BrowseControlsProps) {
   const isMobile = useMobileControls();
   const [isCompact, setIsCompact] = useState(false);
@@ -169,6 +171,7 @@ export function BrowseControls({
         category={browseState.category}
         regions={regions}
         regionScope={browseState.regionScope}
+        boundarySnapshotCount={boundarySnapshotCount}
         onViewModeChange={updateState.onViewModeChange}
         onTimeRangeChange={updateState.onTimeRangeChange}
         onYearChange={updateState.onYearChange}

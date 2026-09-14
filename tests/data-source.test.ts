@@ -140,7 +140,7 @@ describe("源数据分片", () => {
     expect(summary.reigns).toBe(data.reigns.length);
     expect(await readJson(join(toolOutputRoot, "crownline-data.json"))).toEqual(data);
     expect(await readJson(join(toolOutputRoot, "coverage-report.json"))).toMatchObject({
-      reportVersion: 3,
+      reportVersion: 4,
       dataSchemaVersion: 5,
       totals: { entities: 137, polities: 134 },
       topLevelRegions: expect.arrayContaining([

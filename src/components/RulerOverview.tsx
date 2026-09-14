@@ -1,9 +1,14 @@
 import { useMemo, useState } from "react";
 
-import { formatPeriods, toOrdinal } from "../domain/chronology";
+import { formatHistoricalYear, formatPeriods, toOrdinal } from "../domain/chronology";
 import { DETAIL_REIGN_ROLE_NAMES } from "../domain/displayLabels";
+import {
+  buildPolityTemporalCoverage,
+  type PolityTemporalCoverage
+} from "../domain/temporalCoverage";
 import type {
   CrownlineDetail,
+  HistoricalEntity,
   HistoricalInterval,
   Person,
   Reign,
@@ -13,6 +18,7 @@ import type {
 } from "../domain/types";
 
 interface RulerOverviewProps {
+  entity: HistoricalEntity;
   detail: CrownlineDetail;
 }
 
@@ -60,9 +66,18 @@ function collectEntrySources(detail: CrownlineDetail, refs: SourceRef[]) {
   });
 }
 
-/** 全览模式的完整统治序列；默认展示所有角色，详细资料按条目展开。 */
-export function RulerOverview({ detail }: RulerOverviewProps) {
+function formatCoverageRange(startYear: number, endYear: number): string {
+  const start = formatHistoricalYear({ year: startYear, precision: "exact" });
+  const end = formatHistoricalYear({ year: endYear, precision: "exact" });
+  return startYear === endYear ? start : `${start}—${end}`;
+}
+
+/** 全览模式的已收录统治序列；默认展示所有角色，详细资料按条目展开。 */
+export function RulerOverview({ entity, detail }: RulerOverviewProps) {
   const [activeFilter, setActiveFilter] = useState<OverviewFilter>("all");
+  const coverage = useMemo(() => {
+    return buildPolityTemporalCoverage(entity, detail.reigns, detail.reignVacancies, []);
+  }, [detail.reignVacancies, detail.reigns, entity]);
   const items = useMemo<RulerOverviewItem[]>(() => {
     const personById = new Map(detail.persons.map((person) => [person.id, person]));
     const reignItems = detail.reigns.flatMap<RulerOverviewItem>((reign) => {
@@ -127,6 +142,8 @@ export function RulerOverview({ detail }: RulerOverviewProps) {
           {items.length}
         </span>
       </div>
+
+      <RulerCoverage coverage={coverage} />
 
       <div className="ruler-filter-list" role="group" aria-label="按统治角色筛选">
         {availableFilters.map((filter) => (
@@ -200,6 +217,44 @@ export function RulerOverview({ detail }: RulerOverviewProps) {
         })}
       </div>
       <p className="ruler-overview-hint">展开任一条目，可查看人物说明、称号与资料来源。</p>
+    </section>
+  );
+}
+
+function RulerCoverage({ coverage }: { coverage: PolityTemporalCoverage }) {
+  const ruler = coverage.rulerDetails;
+  return (
+    <section className="ruler-coverage" aria-label="统治者资料年度覆盖">
+      <div className="ruler-coverage-heading">
+        <strong>
+          正式统治者覆盖 {ruler.rulerCoveredYears} / {coverage.totalExistenceYears} 个政权年
+        </strong>
+        <span>年度覆盖 {ruler.rulerCoveragePercentage}%</span>
+      </div>
+      <progress
+        aria-label={`正式统治者年度覆盖 ${ruler.rulerCoveragePercentage}%`}
+        max={coverage.totalExistenceYears}
+        value={ruler.rulerCoveredYears}
+      />
+      <div className="ruler-coverage-notes">
+        {ruler.explicitVacancyYears > 0 && (
+          <span>有来源的明确空位 {ruler.explicitVacancyYears} 年</span>
+        )}
+        <span>资料未知 {ruler.unknownYears} 年</span>
+      </div>
+      {ruler.unknownPeriods.length > 0 && (
+        <details className="ruler-coverage-gaps">
+          <summary>查看未知年份区间</summary>
+          <p>
+            {ruler.unknownPeriods
+              .map(({ startYear, endYear }) => formatCoverageRange(startYear, endYear))
+              .join("、")}
+          </p>
+        </details>
+      )}
+      <p className="ruler-coverage-caveat">
+        按当前采用年代的年度粒度计算；资料未知不表示当时无人统治。
+      </p>
     </section>
   );
 }

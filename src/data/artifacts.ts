@@ -58,7 +58,8 @@ export function buildGeneratedArtifacts(data: CrownlineData): GeneratedArtifacts
     timelineSections: data.timelineSections,
     entities: data.entities,
     regions: data.regions,
-    detailEntityIds: data.entities.map(({ id }) => id)
+    detailEntityIds: data.entities.map(({ id }) => id),
+    boundarySnapshotCount: data.boundarySnapshots.length
   };
   const sourceById = new Map(data.sources.map((source) => [source.id, source]));
   const sourceOrderById = new Map(data.sources.map(({ id }, index) => [id, index]));
