@@ -65,12 +65,13 @@ export function getHistoricalYearBounds(data: Pick<BrowseData, "entities">): His
   return { min: Math.min(...years), max: Math.max(...years) };
 }
 
-/** 从 URL 读取并清洗阶段 1 的共享浏览状态。 */
+/** 从 URL 读取并清洗共享浏览状态；疆域不可用时旧图层链接降级为点位。 */
 export function readBrowseState(
   search: string,
   bounds: HistoricalYearBounds,
   regions: Region[] = [],
-  entities: HistoricalEntity[] = []
+  entities: HistoricalEntity[] = [],
+  boundariesAvailable = true
 ): BrowseState {
   const params = new URLSearchParams(search);
   const rawYear = Number(params.get("year"));
@@ -83,7 +84,9 @@ export function readBrowseState(
   const viewMode: ViewMode = params.get("view") === "map" ? "map" : "timeline";
   const rawLayer = params.get("layer");
   const mapLayer: MapLayer =
-    rawLayer === "boundaries" || rawLayer === "combined" ? rawLayer : "points";
+    boundariesAvailable && (rawLayer === "boundaries" || rawLayer === "combined")
+      ? rawLayer
+      : "points";
   const hasExplicitYear = params.has("year") && Number.isSafeInteger(rawYear) && rawYear !== 0;
   const rawMode = params.get("mode");
   const timeRange: TimeRange =

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 import { DetailDialog } from "../components/DetailDialog";
 import { ComparisonDialog } from "../components/ComparisonDialog";
@@ -38,7 +38,8 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   const { browseState, setBrowseState } = useBrowseUrlState({
     yearBounds,
     regions: data.regions,
-    entities: data.entities
+    entities: data.entities,
+    boundariesAvailable: data.boundarySnapshotCount > 0
   });
   const { detailState, retry: retryDetail } = useEntityDetail(
     browseState.detailEntityId,
@@ -58,12 +59,6 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   const [comparisonOrigin, setComparisonOrigin] = useState<string | null>(null);
   const mainRef = useRef<HTMLElement>(null);
   useDialogReturnFocus(Boolean(browseState.detailEntityId || browseState.comparisonOpen), mainRef);
-  useEffect(() => {
-    if (data.boundarySnapshotCount > 0) return;
-    setBrowseState((current) => {
-      return current.mapLayer === "points" ? current : { ...current, mapLayer: "points" };
-    });
-  }, [data.boundarySnapshotCount, setBrowseState]);
   const results = useMemo(() => {
     const filters = {
       query: browseState.query,

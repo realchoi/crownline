@@ -12,12 +12,18 @@ interface BrowseUrlStateOptions {
   yearBounds: HistoricalYearBounds;
   regions: Region[];
   entities: HistoricalEntity[];
+  boundariesAvailable: boolean;
 }
 
 /** Owns URL initialization, history semantics, and browser navigation for browse state. */
-export function useBrowseUrlState({ yearBounds, regions, entities }: BrowseUrlStateOptions) {
+export function useBrowseUrlState({
+  yearBounds,
+  regions,
+  entities,
+  boundariesAvailable
+}: BrowseUrlStateOptions) {
   const [browseState, setBrowseState] = useState<BrowseState>(() =>
-    readBrowseState(window.location.search, yearBounds, regions, entities)
+    readBrowseState(window.location.search, yearBounds, regions, entities, boundariesAvailable)
   );
   const detailHistoryRef = useRef(browseState.detailEntityId);
   const comparisonHistoryRef = useRef(browseState.comparisonOpen);
@@ -26,11 +32,13 @@ export function useBrowseUrlState({ yearBounds, regions, entities }: BrowseUrlSt
   useEffect(() => {
     const onPopstate = () => {
       skipUrlSyncRef.current = true;
-      setBrowseState(readBrowseState(window.location.search, yearBounds, regions, entities));
+      setBrowseState(
+        readBrowseState(window.location.search, yearBounds, regions, entities, boundariesAvailable)
+      );
     };
     window.addEventListener("popstate", onPopstate);
     return () => window.removeEventListener("popstate", onPopstate);
-  }, [entities, regions, yearBounds]);
+  }, [boundariesAvailable, entities, regions, yearBounds]);
 
   useEffect(() => {
     if (skipUrlSyncRef.current) {

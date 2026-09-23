@@ -9,7 +9,8 @@ const yearBounds = getHistoricalYearBounds(artifacts.index);
 const options = {
   yearBounds,
   regions: artifacts.index.regions,
-  entities: artifacts.index.entities
+  entities: artifacts.index.entities,
+  boundariesAvailable: true
 };
 
 beforeEach(() => {

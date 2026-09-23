@@ -475,6 +475,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await waitForAppReady(page);
     await expect.poll(() => new URL(page.url()).searchParams.get("layer")).toBeNull();
     await expect(page.locator(".map-boundary-shape")).toHaveCount(0);
+    await expect(page.getByRole("group", { name: "地图图层" })).toHaveCount(0);
     const list = page.getByRole("region", { name: "地图结果列表" });
     await list.getByRole("button", { name: /^拜占庭帝国.*，.*都城/ }).click();
     await expect(page.getByRole("dialog", { name: "拜占庭帝国" })).toBeVisible();
@@ -484,6 +485,8 @@ test.describe("Crownline 浏览器冒烟", () => {
   test("桌面端地图图层说明保持横向可读布局", async ({ page, isMobile }) => {
     test.skip(isMobile, "桌面横向控件布局仅在 desktop 项目覆盖");
 
+    // 图层入口只在存在疆域数据时出现，布局检查使用疆域 fixture。
+    await installBoundaryFixture(page);
     await page.goto("/?view=map");
     await waitForAppReady(page);
     const help = page.locator(".map-layer-help");

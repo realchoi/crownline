@@ -81,7 +81,7 @@ export function FilterPanel({
 
       <RegionScopeControl regions={regions} scope={regionScope} onChange={onRegionScopeChange} />
 
-      {isMap && (
+      {isMap && hasBoundaries && (
         <fieldset className="map-layer-control">
           <legend className="field-label">地图图层</legend>
           <div className="map-layer-switch" role="group" aria-label="地图图层">
@@ -97,20 +97,17 @@ export function FilterPanel({
             </button>
             <button
               type="button"
-              aria-pressed={hasBoundaries && showBoundaries}
-              disabled={!hasBoundaries}
+              aria-pressed={showBoundaries}
               onClick={() => {
                 if (mapLayer === "combined") onMapLayerChange("points");
                 else if (mapLayer === "points") onMapLayerChange("combined");
               }}
             >
-              {hasBoundaries ? "疆域示意" : "疆域示意（暂无数据）"}
+              疆域示意
             </button>
           </div>
           <p className="map-layer-help">
-            {hasBoundaries
-              ? "默认显示地点标记；开启疆域示意后两者叠加。疆域需要明确年份，且不代表精确勘界。"
-              : "当前暂无通过证据审查的疆域快照；地点标记仍可使用。"}
+            默认显示地点标记；开启疆域示意后两者叠加。疆域需要明确年份，且不代表精确勘界。
           </p>
         </fieldset>
       )}

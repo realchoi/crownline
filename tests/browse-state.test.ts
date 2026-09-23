@@ -41,6 +41,16 @@ describe("浏览状态", () => {
     );
   });
 
+  it("疆域可用时恢复图层，不可用时把旧图层链接降级为点位", () => {
+    expect(readBrowseState("?view=map&layer=combined", bounds).mapLayer).toBe("combined");
+    expect(readBrowseState("?view=map&layer=boundaries", bounds, [], [], false).mapLayer).toBe(
+      "points"
+    );
+    expect(readBrowseState("?view=map&layer=combined", bounds, [], [], false).mapLayer).toBe(
+      "points"
+    );
+  });
+
   it("从已加载实体的存在区间推导年份范围", () => {
     expect(bounds).toEqual({ min: -2070, max: 1922 });
   });

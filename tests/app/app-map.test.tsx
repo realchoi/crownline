@@ -26,20 +26,21 @@ describe("Crownline 地图", () => {
     await waitFor(() =>
       expect(new URLSearchParams(window.location.search).has("layer")).toBe(false)
     );
-    expect(screen.getByRole("button", { name: "疆域示意（暂无数据）" })).toBeDisabled();
+    expect(screen.queryByRole("group", { name: "地图图层" })).not.toBeInTheDocument();
     expect(document.querySelectorAll(".map-boundary-shape")).toHaveLength(0);
     const list = screen.getByRole("region", { name: "地图结果列表" });
     await user.click(await within(list).findByRole("button", { name: /^拜占庭帝国.*，.*都城/ }));
     expect(await screen.findByRole("dialog", { name: "拜占庭帝国" })).toBeVisible();
   });
 
-  it("生产疆域为零时明确禁用疆域入口", async () => {
+  it("生产疆域为零时不展示地图图层入口", async () => {
     const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "地图" }));
-    expect(screen.getByRole("button", { name: "疆域示意（暂无数据）" })).toBeDisabled();
-    expect(screen.getByText("当前暂无通过证据审查的疆域快照；地点标记仍可使用。")).toBeVisible();
+    expect(await screen.findByRole("region", { name: "地图结果列表" })).toBeInTheDocument();
+    expect(screen.queryByRole("group", { name: "地图图层" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /疆域示意/ })).not.toBeInTheDocument();
   });
 
   it("默认展示全时期点位，调整年份后筛选并可返回总览", async () => {
