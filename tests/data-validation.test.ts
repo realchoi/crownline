@@ -600,6 +600,88 @@ describe("跨记录语义校验", () => {
     expect(issueCodes(data)).toContain("EVENT_OUTSIDE_PARTICIPANT_EXISTENCE");
   });
 
+  it("拒绝一端越出参与政权存续期的关系，即使区间与存续期相交", () => {
+    const data = makeValidData();
+    data.relationships.push({
+      id: "relationship-starts-before-participant",
+      type: "war",
+      participants: [
+        { entityId: "polity-cn-test", role: "交战方" },
+        { entityId: "polity-cn-test-2", role: "交战方" }
+      ],
+      periods: [period(-2, 5)],
+      summary: "测试起点早于参与政权的关系。",
+      eventIds: [],
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    });
+    data.entities.push(makeEntity({ id: "polity-cn-test-2", existencePeriods: [period(-5, 10)] }));
+
+    expect(issueCodes(data)).toContain("RELATIONSHIP_OUTSIDE_PARTICIPANT_EXISTENCE");
+  });
+
+  it("拒绝跨越参与政权存续中断期的关系", () => {
+    const data = makeValidData();
+    data.entities.push(
+      makeEntity({
+        id: "polity-cn-split-test",
+        existencePeriods: [period(1, 4), period(8, 10)]
+      })
+    );
+    data.relationships.push({
+      id: "relationship-across-gap",
+      type: "alliance",
+      participants: [
+        { entityId: "polity-cn-test", role: "盟约方" },
+        { entityId: "polity-cn-split-test", role: "盟约方" }
+      ],
+      periods: [period(3, 9)],
+      summary: "测试跨越中断期的关系。",
+      eventIds: [],
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    });
+
+    expect(issueCodes(data)).toContain("RELATIONSHIP_OUTSIDE_PARTICIPANT_EXISTENCE");
+  });
+
+  it("拒绝一端越出参与政权存续期的事件", () => {
+    const data = makeValidData();
+    data.events.push({
+      id: "event-ends-after-participant",
+      type: "treaty",
+      title: "测试越界事件",
+      periods: [period(9, 11)],
+      participantEntityIds: ["polity-cn-test"],
+      regionIds: ["region-east-asia"],
+      summary: "测试终点晚于参与政权的事件。",
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    });
+
+    expect(issueCodes(data)).toContain("EVENT_OUTSIDE_PARTICIPANT_EXISTENCE");
+  });
+
+  it("接受端点恰好落在参与政权存续期首尾的关系与事件", () => {
+    const data = makeValidData();
+    data.relationships.push({
+      id: "relationship-at-boundaries",
+      type: "diplomacy",
+      participants: [
+        { entityId: "polity-cn-test", role: "遣使方" },
+        { entityId: "polity-cn-test-2", role: "受使方" }
+      ],
+      periods: [period(1, 1), period(10, 10)],
+      summary: "测试闭区间端点。",
+      eventIds: [],
+      sourceRefs: [{ sourceId: "source-test" }],
+      confidence: "high"
+    });
+    data.entities.push(makeEntity({ id: "polity-cn-test-2", existencePeriods: [period(1, 10)] }));
+
+    expect(issueCodes(data)).not.toContain("RELATIONSHIP_OUTSIDE_PARTICIPANT_EXISTENCE");
+  });
+
   it("拒绝任期引用历史分期或越出政权存在区间", () => {
     const makePerson = (): Person => ({
       id: "person-test",

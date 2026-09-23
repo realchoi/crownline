@@ -277,16 +277,20 @@
     ],
     "periods": [
       {
-        "start": { "year": 1205, "precision": "exact" },
+        "start": { "year": 1207, "precision": "exact" },
         "end": { "year": 1227, "precision": "exact" }
       }
     ],
-    "summary": "1205至1227年，蒙古多次征伐西夏；1227年西夏末帝投降，西夏作为独立政权终结。",
+    "summary": "1206年成吉思汗即位、大蒙古国建立后，1207年再征西夏，1209年围中兴府迫使夏主纳女请和，此后多次用兵；1227年西夏末帝李睍投降，西夏作为独立政权终结。铁木真在1205年已首次攻掠西夏，但该次出兵早于1206年建国，因此不计入本条大蒙古国与西夏的关系区间。",
     "eventIds": ["event-mongol-conquest-of-xixia"],
     "sourceRefs": [
       {
         "sourceId": "source-cambridge-alien-regimes",
         "locator": "The last years of the Hsi Hsia state and the Mongolian conquest, pp. 205–214"
+      },
+      {
+        "sourceId": "source-wikisource-yuan-shi",
+        "locator": "卷一 太祖本纪：岁乙丑（1205）帝征西夏；元年丙寅（1206）即皇帝位于斡难河之源；二年丁卯（1207）秋再征西夏；四年己巳（1209）夏主纳女请和；二十二年丁亥（1227）夏主李睍降"
       }
     ],
     "confidence": "high"

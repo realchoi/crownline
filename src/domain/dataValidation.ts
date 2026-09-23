@@ -106,6 +106,14 @@ function periodIsContained(
   });
 }
 
+/** 判断每个业务区间是否都完整落在某一个存在分段中；关系和事件不能早于或晚于参与方。 */
+function periodsAreContained(
+  periods: HistoricalInterval[],
+  containerPeriods: HistoricalInterval[]
+): boolean {
+  return periods.every((period) => periodIsContained(period, containerPeriods));
+}
+
 /** 检查业务记录引用的来源是否存在。 */
 function validateSourceRefs(
   refs: SourceRef[],
@@ -461,11 +469,11 @@ export function validateCrownlineData(input: unknown): ValidationResult {
           path: `${path}/participants/${participantIndex}/entityId`,
           message: `实体 ${participant.entityId} 不存在`
         });
-      } else if (!periodsOverlap(relationship.periods, entity.existencePeriods)) {
+      } else if (!periodsAreContained(relationship.periods, entity.existencePeriods)) {
         issues.push({
           code: "RELATIONSHIP_OUTSIDE_PARTICIPANT_EXISTENCE",
           path: `${path}/participants/${participantIndex}/entityId`,
-          message: `关系区间与参与实体 ${participant.entityId} 的存续期完全错位`
+          message: `关系区间未完整落在参与实体 ${participant.entityId} 的某一段存续期内`
         });
       }
       if (participants.has(participant.entityId)) {
@@ -506,11 +514,11 @@ export function validateCrownlineData(input: unknown): ValidationResult {
           path: `${path}/participantEntityIds/${participantIndex}`,
           message: `实体 ${entityId} 不存在`
         });
-      } else if (!periodsOverlap(event.periods, entity.existencePeriods)) {
+      } else if (!periodsAreContained(event.periods, entity.existencePeriods)) {
         issues.push({
           code: "EVENT_OUTSIDE_PARTICIPANT_EXISTENCE",
           path: `${path}/participantEntityIds/${participantIndex}`,
-          message: `事件区间与参与实体 ${entityId} 的存续期完全错位`
+          message: `事件区间未完整落在参与实体 ${entityId} 的某一段存续期内`
         });
       }
     });
