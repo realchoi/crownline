@@ -15,7 +15,7 @@ import tempfile
 import urllib.request
 from pathlib import Path
 
-from font_charsets import collect_font_charsets
+from font_charsets import collect_font_charsets, is_latin_body_char
 
 try:
     from fontTools.ttLib import TTFont
@@ -52,7 +52,7 @@ def main() -> int:
     sans_chars, song_chars, latin_chars = collect_font_charsets(ROOT, data)
     # Latin Extended characters used by scholarly transliteration (for example ʿ/ḥ)
     # belong in the Latin body subset rather than falling through to the CJK font.
-    latin_body_chars = {char for char in sans_chars if ord(char) < 0x0300}
+    latin_body_chars = {char for char in sans_chars if is_latin_body_char(char)}
 
     with tempfile.TemporaryDirectory() as tmp:
         tmpdir = Path(tmp)

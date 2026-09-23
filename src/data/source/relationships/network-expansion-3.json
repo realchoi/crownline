@@ -1,0 +1,1912 @@
+[
+  {
+    "id": "relationship-western-jin-eastern-wu-war-280",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-western-jin",
+        "role": "伐吴与受降方"
+      },
+      {
+        "entityId": "polity-cn-eastern-wu",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 280,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 280,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "太康元年晋军水陆并进，王濬舟师入石头城，吴主出降，孙吴灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷081 太康元年（280）：王濬舟师入石头，吴主面缚舆榇诣军门降"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-han-zhao-western-jin-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-han-zhao",
+        "role": "攻陷洛阳、长安方"
+      },
+      {
+        "entityId": "polity-cn-western-jin",
+        "role": "都城失陷方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 311,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 311,
+          "precision": "exact"
+        }
+      },
+      {
+        "start": {
+          "year": 316,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 316,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "永嘉五年汉军攻入洛阳、俘晋怀帝；建兴四年刘曜围长安，晋愍帝出降，西晋灭亡。本条只记录两次都城陷落的年份。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷087 永嘉五年（311）：刘曜、王弥入洛阳，汉主以晋帝为特进左光禄大夫"
+      },
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷089 建兴四年（316）十一月：晋帝使侍中宗敞送降笺于刘曜"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-later-zhao-han-zhao-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-later-zhao",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-han-zhao",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 328,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 329,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "咸和三年石勒与刘曜战于洛阳，刘曜被擒；次年石虎破上邽，执前赵太子，前赵灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷094 咸和三年（328）：石勒与刘曜战于洛西；咸和四年（329）九月：上邽溃，石虎执赵太子熙"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-eastern-jin-cheng-han-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-eastern-jin",
+        "role": "西征方"
+      },
+      {
+        "entityId": "polity-cn-cheng-han",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 346,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 347,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "桓温于永和二年出兵伐蜀，次年进至成都，成汉末主李势出降，成汉灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷097 永和二年（346）：桓温将伐汉；永和三年（347）：李势送降文于温，舆榇面缚诣军门"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-former-qin-former-yan-war-370",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-former-qin",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-former-yan",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 370,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 370,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "太和五年前秦攻破前燕都城邺，前燕主出奔，秦王苻坚遣郭庆追击，前燕灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷102 太和五年（370）：燕主之出邺也……秦王坚使游击将军郭庆追之"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-former-qin-former-liang-war-376",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-former-qin",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-former-liang",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 376,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 376,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "太元元年前秦军至姑臧，前凉主张天锡出降，凉州郡县尽降于秦。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷104 太元元年（376）：秦兵至姑臧，天锡素车白马，面缚舆榇，降于军门"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-eastern-jin-former-qin-war-383",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-eastern-jin",
+        "role": "防御方"
+      },
+      {
+        "entityId": "polity-cn-former-qin",
+        "role": "南征方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 383,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 383,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "太元八年前秦大举南下，晋将谢玄等于淝水击溃秦军，即淝水之战。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷105 太元八年（383）十一月：秦兵逼肥水而陈，谢玄等引兵渡水击之，秦兵大败"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-wei-later-yan-war-395",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-northern-wei",
+        "role": "追击方"
+      },
+      {
+        "entityId": "polity-cn-later-yan",
+        "role": "撤退方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 395,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 395,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "太元二十年后燕太子慕容宝北伐北魏，撤军途中在参合陂被魏王拓跋珪追击大败。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷108 太元二十年（395）十一月：魏王珪引兵济河急追，燕军至参合陂"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-eastern-jin-southern-yan-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-eastern-jin",
+        "role": "北伐方"
+      },
+      {
+        "entityId": "polity-cn-southern-yan",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 409,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 410,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "义熙五年刘裕北伐南燕，围广固；次年城破，南燕主被送建康处死，南燕灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷115 义熙五年（409）：裕乘胜逐北至广固，筑长围守之；义熙六年（410）：送超诣建康，斩之"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-eastern-jin-later-qin-war-417",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-eastern-jin",
+        "role": "北伐方"
+      },
+      {
+        "entityId": "polity-cn-later-qin",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 417,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 417,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "义熙十三年刘裕北伐军入长安，后秦主姚泓出降，后秦灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷118 义熙十三年（417）：泓将妻子、群臣诣镇恶垒门请降"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-wei-hu-xia-war-427",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-northern-wei",
+        "role": "进攻方"
+      },
+      {
+        "entityId": "polity-cn-hu-xia",
+        "role": "都城失陷方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 427,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 427,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "元嘉四年北魏太武帝亲征胡夏都城统万，退军示弱诱夏军出战后大破之，夏主不及入城，奔上邽。本条不延伸到胡夏431年亡于吐谷浑的另一过程。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷120 元嘉四年（427）六月：魏主至统万，乃退军以示弱……夏众大溃，夏主不及入城，遂奔上邽"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-wei-northern-yan-war-436",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-northern-wei",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-northern-yan",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 436,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 436,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "元嘉十三年北魏军攻北燕都城和龙，北燕王在高句丽军接应下东奔，北燕灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷123 元嘉十三年（436）四月：魏娥清、古弼攻燕白狼城；高丽遣将至和龙迎燕王"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-wei-northern-liang-war-439",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-northern-wei",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-northern-liang",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 439,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 439,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "元嘉十六年北魏太武帝亲征北凉，围姑臧；九月城溃，北凉主沮渠牧犍面缚请降，北凉灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷123 元嘉十六年（439）九月：姑臧城溃，牧犍帅其文武五千人面缚请降"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-liang-northern-wei-war-zhongli",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-liang",
+        "role": "守城与解围方"
+      },
+      {
+        "entityId": "polity-cn-northern-wei",
+        "role": "围城方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 506,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 507,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "天监五年北魏中山王元英围梁钟离城；次年梁将韦睿等焚毁魏军浮桥，魏军大溃，即钟离之战。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷146 天监五年（506）十月：英进围钟离；天监六年（507）：焚其桥，魏军大溃"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-chen-northern-zhou-war-lvliang",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-chen",
+        "role": "北伐方"
+      },
+      {
+        "entityId": "polity-cn-northern-zhou",
+        "role": "防御方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 577,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 578,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "太建九年陈将吴明彻乘北周灭北齐之际北伐，围彭城于吕梁；次年北周王轨断其退路，吴明彻被俘，陈军覆没。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷173 太建九年（577）：明彻军至吕梁；太建十年（578）：明彻为周人所执，将士三万并器械辎重皆没于周"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-sui-chen-war-589",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-sui",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-chen",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 589,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 589,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "开皇九年隋军渡江攻入建康，陈后主被俘，陈亡，隋统一南北。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷177 开皇九年（589）：韩擒虎已得陈叔宝，高颎先入建康"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-wu-zhou-tibet-war-692",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-wu-zhou",
+        "role": "收复四镇方"
+      },
+      {
+        "entityId": "polity-tibet-empire",
+        "role": "失地方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 692,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 692,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "长寿元年武周以王孝杰为武威军总管击吐蕃，大破吐蕃，复取龟兹、于阗、疏勒、碎叶四镇。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷205 长寿元年（692）十月：大破吐蕃，复取四镇，置安西都护府于龟兹"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-tang-nanzhao-war-751",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-tang",
+        "role": "进攻方"
+      },
+      {
+        "entityId": "polity-nanzhao",
+        "role": "防御方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 751,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 751,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "天宝十年剑南节度使鲜于仲通征南诏，在西洱河大败，士卒死者六万人。本条只记录资料直接支持的751年战役。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷216 天宝十年（751）：进军至西洱河，与阁罗凤战，军大败"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-nanzhao-tibet-vassalage",
+    "type": "vassalage",
+    "participants": [
+      {
+        "entityId": "polity-nanzhao",
+        "role": "称臣方，保留本国王统"
+      },
+      {
+        "entityId": "polity-tibet-empire",
+        "role": "宗主方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 751,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 794,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "西洱河战后阁罗凤北臣于吐蕃，受“赞普钟”（意为赞普之弟）称号与金印，号东帝；南诏保留自己的王统与国政。贞元十年异牟寻去吐蕃所立之号、复南诏旧名，臣属关系结束。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷216 天宝十年（751）：阁罗凤遂北臣于吐蕃，吐蕃命阁罗凤为赞普钟，号曰东帝，给以金印"
+      },
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷234 贞元十年（794）：异牟寻悉斩吐蕃使者，去吐蕃所立之号，献其金印，复南诏旧名"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-tang-nanzhao-alliance-794",
+    "type": "alliance",
+    "participants": [
+      {
+        "entityId": "polity-cn-tang",
+        "role": "会盟方"
+      },
+      {
+        "entityId": "polity-nanzhao",
+        "role": "会盟方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 794,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 794,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "贞元十年唐使崔佐时与南诏王异牟寻盟于点苍山神祠，南诏断绝与吐蕃的从属关系并转与唐结盟。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷234 贞元十年（794）：异牟寻帅其子寻梦凑等与佐时盟于点苍山神祠"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-later-tang-later-liang-war-923",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-later-tang",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-later-liang-zhu",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 923,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 923,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "同光元年后唐庄宗采纳奇袭大梁之策，李嗣源率前军兼程南下，后梁灭亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷272 同光元年（923）：嗣源帅前军倍道趣大梁"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-later-jin-liao-vassalage",
+    "type": "vassalage",
+    "participants": [
+      {
+        "entityId": "polity-cn-later-jin",
+        "role": "称臣、父事并割地方"
+      },
+      {
+        "entityId": "polity-cn-liao",
+        "role": "宗主方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 936,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 942,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "石敬瑭求契丹援兵时称臣于契丹、以父礼事之，并约割卢龙一道及雁门以北诸州；后晋仍保留自身帝号与朝廷。天福七年出帝即位后致书称孙而不称臣，原有称臣关系终止。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷280 天福元年（936）：令桑维翰草表称臣于契丹主，且请以父礼事之，约割卢龙一道及雁门关以北诸州"
+      },
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷283 天福七年（942）：景延广请致书称孙而不称臣，帝卒从延广议"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-later-jin-liao-war-946",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-later-jin",
+        "role": "被征服方"
+      },
+      {
+        "entityId": "polity-cn-liao",
+        "role": "南下攻灭方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 946,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 947,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "开运三年契丹大举南下，晋将杜威降，契丹遣张彦泽先取大梁，后晋灭亡；年末事件按公历已进入947年初。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-zizhi-tongjian",
+        "locator": "卷285 开运三年（946）：杜威等降，契丹主遣张彦泽将二千骑先取大梁"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-song-later-shu-war-965",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-northern-song",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-later-shu",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 965,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 965,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "乾德三年宋将王全斌攻克剑门，后蜀主孟昶出降，宋得州四十五。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷二 太祖本纪二 乾德三年（965）：王全斌克剑门……蜀主孟昶降"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-song-southern-han-war-971",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-northern-song",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-southern-han",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 971,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 971,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "开宝四年宋将潘美攻克广州，俘南汉后主，岭南归宋。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷二 太祖本纪二 开宝四年（971）二月：潘美克广州，俘南汉主，广南平"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-song-southern-tang-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-northern-song",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-cn-southern-tang",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 974,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 975,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "开宝七年宋太祖命曹彬、潘美率军十万伐江南，开宝八年宋军连败江南军；开宝九年正月太祖于明德门见李煜，封违命侯，南唐已亡。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷三 太祖本纪三 开宝七年（974）：以曹彬、潘美将兵十万出荆南以伐江南"
+      },
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷三 太祖本纪三 开宝八年（975）：田钦祚败江南军于溧水等连战记事；开宝九年（976）正月：御明德门见李煜，封违命侯"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-song-dali-tribute",
+    "type": "tribute",
+    "participants": [
+      {
+        "entityId": "polity-cn-northern-song",
+        "role": "受贡方"
+      },
+      {
+        "entityId": "polity-dali",
+        "role": "遣使入贡方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1076,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1076,
+          "precision": "exact"
+        }
+      },
+      {
+        "start": {
+          "year": 1116,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1116,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "宋史记大理熙宁九年遣使入贡；政和年间经广州观察使奏请后，大理于政和六年遣进奉使至宋。其余年份“不常来”，本条不写成持续朝贡或政治臣属。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷四百八十八 外国四·大理：熙宁九年（1076）遣使贡金装碧玕山……自后不常来"
+      },
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷四百八十八 外国四·大理：政和六年（1116）遣进奉使天驷爽彦贲李紫琮等来"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-mongol-empire-dali-war-1253",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-mongol-empire",
+        "role": "攻灭方"
+      },
+      {
+        "entityId": "polity-dali",
+        "role": "被征服方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1253,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1253,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "宪宗三年忽必烈率军分三道进攻大理，十二月入大理城，大理政权在本数据集中至此结束。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-yuan-shi",
+        "locator": "卷四 世祖本纪一 宪宗三年（1253）九月：分三道以进；十二月：军薄大理城，帝既入大理"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-yuan-champa-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-yuan",
+        "role": "进攻方"
+      },
+      {
+        "entityId": "polity-champa-kingdom",
+        "role": "抵抗方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1282,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1284,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "至元十九年元廷命唆都在占城立行省，占城王子拒命；次年元军攻占城木城，至元二十一年唆都领军撤回。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-yuan-shi",
+        "locator": "卷二百一十 外夷三·占城：至元十九年（1282）十月命唆都等即其地立省……既而其子补的专国，负固弗服"
+      },
+      {
+        "sourceId": "source-wikisource-yuan-shi",
+        "locator": "卷二百一十 外夷三·占城：至元二十年（1283）正月发船攻城；二十一年（1284）三月六日唆都领军回"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-later-jin-jurchen-ming-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-later-jin-jurchen",
+        "role": "进攻方"
+      },
+      {
+        "entityId": "polity-cn-ming",
+        "role": "防御方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1618,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1619,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "天命三年努尔哈赤以七大恨告天伐明，取抚顺；次年明经略杨镐四路进攻，在萨尔浒一线被后金击败。本条只记录这两年的直接记事。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-qing-shi-gao",
+        "locator": "卷一 太祖本纪 天命三年（1618）二月：上伐明，以七大恨告天……明抚顺游击李永芳降"
+      },
+      {
+        "sourceId": "source-wikisource-qing-shi-gao",
+        "locator": "卷一 太祖本纪 天命四年（1619）：杨镐督师二十万来伐……杜松军由东路渡浑河出抚顺、萨尔浒"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-qing-southern-ming-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-qing",
+        "role": "进攻方"
+      },
+      {
+        "entityId": "polity-cn-southern-ming",
+        "role": "抵抗方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1645,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1662,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "顺治二年清军南下，弘光帝被执；此后清军持续进攻南明各政权，顺治十八年末吴三桂入缅，缅人执永历帝以献，南明抵抗随之结束。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-qing-shi-gao",
+        "locator": "卷四 世祖本纪一 顺治二年（1645）：多铎遣军追故明福王朱由崧于芜湖……执福王及其妃来献"
+      },
+      {
+        "sourceId": "source-wikisource-qing-shi-gao",
+        "locator": "卷六 圣祖本纪一 顺治十八年（1661）十二月：吴三桂会报大军入缅，缅人执明永历帝朱由榔以献"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-northern-song-goryeo-tribute",
+    "type": "tribute",
+    "participants": [
+      {
+        "entityId": "polity-cn-northern-song",
+        "role": "受贡与册封方"
+      },
+      {
+        "entityId": "polity-goryeo",
+        "role": "遣使朝贡方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 962,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1031,
+          "precision": "exact"
+        }
+      },
+      {
+        "start": {
+          "year": 1070,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1126,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "建隆三年高丽遣使朝贡，此后多次入贡；天圣八年使团次年辞归后，“绝不通中国者四十三年”。熙宁年间高丽复遣使，政和以来人使岁至，直至钦宗即位仍有贺使。朝贡是礼仪与外交框架，高丽同期亦接受辽的册封，本条不表示政治臣属。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷四百八十七 外国三·高丽：建隆三年（962）十月遣广评侍郎李兴祐等来朝贡"
+      },
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷四百八十七 外国三·高丽：天圣八年（1030）遣元颖等奉表入见，明年二月辞归，其后绝不通中国者四十三年"
+      },
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷四百八十七 外国三·高丽：熙宁三年（1070）徽遣金悌等来；钦宗立（1126），贺使至明州"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "宋史所记四十三年断绝期与遣使年份按传文推算为1031—1069年；各段内并非每年遣使，区间只表示朝贡往来持续的大致范围。"
+  },
+  {
+    "id": "relationship-liao-goryeo-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-liao",
+        "role": "进攻方"
+      },
+      {
+        "entityId": "polity-goryeo",
+        "role": "防御方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 992,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 993,
+          "precision": "exact"
+        }
+      },
+      {
+        "start": {
+          "year": 1010,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1011,
+          "precision": "exact"
+        }
+      },
+      {
+        "start": {
+          "year": 1015,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1019,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "辽三次大规模征伐高丽：统和十年萧恒德东征、次年高丽奉表请罪；统和二十八年圣宗亲征、焚开京后于次年班师；开泰四年起再度连年用兵，至开泰八年仍在调兵，次年高丽上降表。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-liao-shi",
+        "locator": "卷一百一十五 二国外记·高丽：统和十年（992）以东京留守萧恒德伐高丽；十一年（993）王治奉表请罪"
+      },
+      {
+        "sourceId": "source-wikisource-liao-shi",
+        "locator": "卷一百一十五 二国外记·高丽：统和二十八年（1010）八月圣宗自将伐高丽；二十九年（1011）正月班师"
+      },
+      {
+        "sourceId": "source-wikisource-liao-shi",
+        "locator": "卷一百一十五 二国外记·高丽：开泰四年（1015）以世良、虚烈总兵伐高丽；七年萧排押复伐高丽；八年（1019）会大军同讨高丽"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-jin-goryeo-tribute-1126",
+    "type": "tribute",
+    "participants": [
+      {
+        "entityId": "polity-cn-jin",
+        "role": "受表方"
+      },
+      {
+        "entityId": "polity-goryeo",
+        "role": "奉表称藩方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1126,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1126,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "天会四年高丽王王楷遣使奉表称藩，金廷要求往来依辽旧例。本条只记录称藩起始年，不外推此后的持续时段，也不把称藩写成直接统治。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-jin-shi",
+        "locator": "卷一百三十五 外国下·高丽：天会四年（1126），国王王楷遣使奉表称藩，优诏答之"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-sasanian-northern-wei-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-sasanian-empire",
+        "role": "遣使方"
+      },
+      {
+        "entityId": "polity-cn-northern-wei",
+        "role": "接待方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 455,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 522,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "萨珊波斯使团在455—522年间十次抵达北魏宫廷，518年使团携来卡瓦德一世国书。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-chinese-iranian-relations-i",
+        "locator": "Sasanian embassies: embassies from Po-ssu arrived at the Northern Wei court ten times between 455 and 522"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-sasanian-liang-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-sasanian-empire",
+        "role": "遣使方"
+      },
+      {
+        "entityId": "polity-cn-liang",
+        "role": "接待方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 533,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 533,
+          "precision": "exact"
+        }
+      },
+      {
+        "start": {
+          "year": 535,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 535,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "南朝梁于533年和535年接待萨珊波斯使团。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-chinese-iranian-relations-i",
+        "locator": "Sasanian embassies: the southern dynasty Liang received Persian embassies in 533 and 535"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-sasanian-western-wei-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-sasanian-empire",
+        "role": "遣使方"
+      },
+      {
+        "entityId": "polity-cn-western-wei",
+        "role": "接待方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 555,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 555,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "承继北魏西部的西魏于555年接待一次萨珊波斯使团。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-chinese-iranian-relations-i",
+        "locator": "Sasanian embassies: Western Wei received a Persian embassy in 555"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-sasanian-sui-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-sasanian-empire",
+        "role": "回使方"
+      },
+      {
+        "entityId": "polity-cn-sui",
+        "role": "遣使方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 605,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 617,
+          "precision": "circa"
+        }
+      }
+    ],
+    "summary": "隋炀帝遣使至萨珊库思老二世宫廷，引来波斯回使。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-chinese-iranian-relations-i",
+        "locator": "Sasanian embassies: the Sui emperor Yang-ti (605–17) sent an embassy to Ḵosrow II, which elicited a reciprocal embassy (Sui shu 83)"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "来源只给出隋炀帝在位年代，未给出两次遣使的具体年份，因此区间使用炀帝在位期并标为约年。"
+  },
+  {
+    "id": "relationship-sasanian-tang-diplomacy-638",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-sasanian-empire",
+        "role": "遣使方"
+      },
+      {
+        "entityId": "polity-cn-tang",
+        "role": "接待方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 638,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 638,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "萨珊末代君主伊嗣俟三世在突厥与阿拉伯军队夹击下于638年遣使至唐。651年萨珊亡后卑路斯流亡求援的事迹不计入本条。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-chinese-iranian-relations-i",
+        "locator": "T’ang period: Yazdegerd III … sent an embassy to China in 638"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-kushan-cao-wei-diplomacy-230",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-kushan-empire",
+        "role": "遣使方"
+      },
+      {
+        "entityId": "polity-cn-cao-wei",
+        "role": "接待方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 230,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 230,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "230年贵霜王波调（韦苏提婆）遣使至曹魏宫廷，这是汉文史料中最后一次提到贵霜。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-chinese-iranian-relations-i",
+        "locator": "Kushans: in 230 an embassy was sent by the Kushan king Po-t’iao (Vāsudeva) to the court of Wei"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-tang-abbasid-war-talas",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-cn-tang",
+        "role": "联军一方"
+      },
+      {
+        "entityId": "polity-abbasid-caliphate",
+        "role": "呼罗珊军一方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 751,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 751,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "751年7月，阿拔斯呼罗珊总督阿布·穆斯林派撒马尔罕总督齐亚德迎击唐军及其盟友，双方战于怛罗斯，唐联军溃败，即怛罗斯之战。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-khorasan-abbasid",
+        "locator": "Abu Moslem: Ziād … to attack the Chinese and their allies; the main battle took place at Aṭlaḵ (Ṭarāz or Talas) in July 751"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-qara-khitai-seljuk-war-qatwan",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-qara-khitai",
+        "role": "获胜方"
+      },
+      {
+        "entityId": "polity-seljuk-empire",
+        "role": "战败方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1141,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1141,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "1141年9月西辽耶律大石与塞尔柱苏丹桑贾尔及喀喇汗联军战于撒马尔罕附近的卡特万草原，塞尔柱联军大败，即卡特万之战。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-qara-khitai-history",
+        "locator": "History: confrontation between the Qarā Ḵeṭāy and the Qarakhanids-Saljuqs at Qaṭvān Steppe, Moḥarram 536/September 1141"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-khwarazm-seljuk-war-1194",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-khwarazmian-empire",
+        "role": "获胜方"
+      },
+      {
+        "entityId": "polity-seljuk-empire",
+        "role": "战败方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1194,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1194,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "1194年花剌子模沙帖乞失击败并杀死大塞尔柱末代苏丹图格里勒三世。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-khwarazmian-history",
+        "locator": "Tekiš: in 590/1194 he defeated and killed the last Great Saljuq Sultan Ṭoḡrïl III b. Arslān"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-timurid-delhi-war-1398",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-timurid-empire",
+        "role": "入侵方"
+      },
+      {
+        "entityId": "polity-delhi-sultanate",
+        "role": "被劫掠方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1398,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1399,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "帖木儿于1398—1399年入侵旁遮普并劫掠德里，图格鲁克王朝统治随之大为衰落。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-delhi-sultanate-i",
+        "locator": "Political history: Tīmūr’s devastating raid on Punjab and Delhi in 800/1398-99"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-timurid-ming-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-timurid-empire",
+        "role": "遣使方"
+      },
+      {
+        "entityId": "polity-cn-ming",
+        "role": "接待方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1419,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1422,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "沙哈鲁与拜松忽尔派出的四百余人使团于1419年11月离开赫拉特出使明廷，1422年8月返回，随员盖耶速丁留下行程日记。明方以朝贡体制接待，本条只记录遣使往来，不把它写成臣属。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-ghiyath-naqqash",
+        "locator": "Embassy to the Ming court: departure from Herat 24 November 1419, return 29 August 1422"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-timurid-vijayanagara-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-timurid-empire",
+        "role": "遣使方"
+      },
+      {
+        "entityId": "polity-vijayanagara-empire",
+        "role": "接待方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1442,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1444,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "沙哈鲁派阿卜杜·拉扎克·撒马尔罕迪于1442—1444年出使印度，他受邀前往毗奢耶那伽罗宫廷，留下对王城与宫廷的记述。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-iranica-abd-al-razzaq-samarqandi",
+        "locator": "Official mission to India, January 1442 – December 1444: invited to Vijayanagar"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-frankish-umayyad-war-tours",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-frankish-kingdom",
+        "role": "防御方"
+      },
+      {
+        "entityId": "polity-umayyad-caliphate",
+        "role": "入侵方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 732,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 732,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "732年10月初，查理·马特率法兰克军与北上的穆斯林军队交战于图尔—普瓦捷之间，法兰克一方获胜。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-whe-charles-martel-tours",
+        "locator": "Introduction: the Battle of Tours, early October 732, a Frankish army led by Charles Martel against an invading Muslim army under the nominal sovereignty of the Umayyad Caliphate"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "来源称入侵军处于倭马亚哈里发国的“名义宗主权”下，实际由安达卢斯地方统帅指挥；本条不表示大马士革中央直接组织此役。"
+  },
+  {
+    "id": "relationship-kievan-rus-mongol-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-kievan-rus",
+        "role": "被征服方"
+      },
+      {
+        "entityId": "polity-mongol-empire",
+        "role": "入侵方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1237,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1240,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "蒙古于1237年起大举进攻罗斯诸公国，基辅罗斯至此瓦解；来源记战役持续到1242年，本条按基辅罗斯存续期止于1240年。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-whe-kievan-rus",
+        "locator": "Introduction: Kievan Rus fell to the Mongols between 1237-1242; the Mongol Invasion of 1237-1242"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-kievan-rus-first-bulgarian-war-968",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-kievan-rus",
+        "role": "入侵方"
+      },
+      {
+        "entityId": "polity-first-bulgarian-empire",
+        "role": "被入侵方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 968,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 968,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "拜占庭皇帝尼基弗鲁斯二世出资促使罗斯大公斯维亚托斯拉夫进攻保加利亚，968年罗斯军深入保加利亚境内。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-whe-nikephoros-ii",
+        "locator": "Foreign & Religious policy: Nikephoros paid Sviatoslav to raid Bulgaria; Sviatoslav raided deep into Bulgaria in 968"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-calakmul-tikal-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-maya-calakmul",
+        "role": "对抗方"
+      },
+      {
+        "entityId": "polity-maya-tikal",
+        "role": "对抗方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 562,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 562,
+          "precision": "exact"
+        }
+      },
+      {
+        "start": {
+          "year": 695,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 695,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "卡拉克穆尔与蒂卡尔长期争霸：562年卡拉克穆尔战胜蒂卡尔；695年蒂卡尔在结成新联盟后击败卡拉克穆尔，卡拉克穆尔此后走向衰落。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-inah-maya-calakmul",
+        "locator": "Historia: al inicio venció Calakmul en el año 562; después Tikal … derrotó a su enemigo en 695"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-kanem-bornu-ottoman-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-kanem-bornu-empire",
+        "role": "遣使方"
+      },
+      {
+        "entityId": "polity-ottoman-empire",
+        "role": "接待与回书方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1574,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1579,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "1574年博尔努君主伊德里斯·阿洛马遣使伊斯坦布尔，奥斯曼方面在1577年和1579年的文书中指示的黎波里、费赞和埃及官员与博尔努保持良好关系、保护其使节与商旅。来源明确指出博尔努不是奥斯曼的附庸。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-flynn-ottoman-bornu",
+        "locator": "§5.5 Mai Idris Alooma and Sultan Murad III, pp. 113–117: 1574 embassy to Istanbul; documents of 1577 and 1579"
+      },
+      {
+        "sourceId": "source-flynn-ottoman-bornu",
+        "locator": "§5.3, pp. 106–107: Bornu was clearly not a vassal of the Ottomans"
+      }
+    ],
+    "confidence": "high"
+  }
+]

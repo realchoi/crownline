@@ -7,7 +7,7 @@ function inspectFixtureCharacters() {
 import json
 from tempfile import TemporaryDirectory
 from pathlib import Path
-from scripts.font_charsets import collect_font_charsets
+from scripts.font_charsets import collect_font_charsets, is_latin_body_char
 
 fixture = {
     "entities": [],
@@ -30,6 +30,8 @@ print(json.dumps({
     "punctuation": "：" in sans,
     "ascii_body": "A" in sans,
     "ascii_title": "A" in latin,
+    "latin_body_transliteration": [is_latin_body_char(ch) for ch in "éʿḥṯ"],
+    "latin_body_excludes_cjk": is_latin_body_char("王"),
 }))
 `;
   return JSON.parse(
@@ -37,7 +39,7 @@ print(json.dumps({
       cwd: process.cwd(),
       encoding: "utf8"
     })
-  ) as Record<string, boolean>;
+  ) as Record<string, unknown>;
 }
 
 describe("字体字符集系统回退边界", () => {
@@ -50,7 +52,9 @@ describe("字体字符集系统回退边界", () => {
       cjk: true,
       punctuation: true,
       ascii_body: true,
-      ascii_title: true
+      ascii_title: true,
+      latin_body_transliteration: [true, true, true, true],
+      latin_body_excludes_cjk: false
     });
   });
 });

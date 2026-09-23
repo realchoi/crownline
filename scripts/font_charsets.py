@@ -19,6 +19,19 @@ SYSTEM_FALLBACK_RANGES = (
 )
 
 
+# 学术转写使用的拉丁字母（如 ā、ʿ、ḥ、ṯ）由拉丁正文子集承担，中文字体不保证收录。
+LATIN_BODY_RANGES = (
+    (0x0000, 0x02FF),  # Basic Latin 至 Spacing Modifier Letters
+    (0x1E00, 0x1EFF),  # Latin Extended Additional
+)
+
+
+def is_latin_body_char(char: str) -> bool:
+    """返回字符是否应进入拉丁正文字体子集。"""
+    codepoint = ord(char)
+    return any(start <= codepoint <= end for start, end in LATIN_BODY_RANGES)
+
+
 def uses_system_font_fallback(char: str) -> bool:
     """返回字符是否由现有 CSS 字体栈交给系统字体渲染。"""
     codepoint = ord(char)

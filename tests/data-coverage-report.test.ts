@@ -128,10 +128,10 @@ describe("数据覆盖报告 v4", () => {
         historicalPeriods: 3,
         persons: 1385,
         reigns: 1424,
-        relationships: 74,
+        relationships: 125,
         events: 34,
         geographicSnapshots: 195,
-        sources: 292
+        sources: 307
       },
       polityCoverage: {
         rulerDetails: {
@@ -179,11 +179,11 @@ describe("数据覆盖报告 v4", () => {
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 292,
-      byType: { primary: 3, secondary: 50, tertiary: 67, dataset: 16, institutional: 156 },
-      withUrl: 291,
+      total: 307,
+      byType: { primary: 9, secondary: 51, tertiary: 70, dataset: 16, institutional: 161 },
+      withUrl: 306,
       withoutUrl: 1,
-      withAccessedAt: 291,
+      withAccessedAt: 306,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toMatchObject({
@@ -213,9 +213,9 @@ describe("数据覆盖报告 v4", () => {
         recordsWithoutLocatedSourceRefs: 12
       },
       relationships: {
-        records: 74,
-        recordsWithSourceRefs: 74,
-        recordsWithLocatedSourceRefs: 74,
+        records: 125,
+        recordsWithSourceRefs: 125,
+        recordsWithLocatedSourceRefs: 125,
         recordsWithoutLocatedSourceRefs: 0
       },
       events: {
@@ -372,9 +372,9 @@ describe("关系分布和来源质量", () => {
 
     expect(Object.keys(summary.byType)).toEqual([...RELATIONSHIP_TYPES]);
     expect(Object.keys(summary.byConfidence)).toEqual([...CONFIDENCE_LEVELS]);
-    expect(summary.records).toBe(74);
-    expect(summary.participantPolities).toBe(76);
-    expect(summary.participantPercentage).toBe(56.72);
+    expect(summary.records).toBe(125);
+    expect(summary.participantPolities).toBe(105);
+    expect(summary.participantPercentage).toBe(78.36);
     expect(summary.participantPolities).toBeLessThanOrEqual(summary.totalPolities);
     expect(summary.regionsWithRecords.length + summary.regionsWithoutRecords.length).toBe(11);
     expect(summary.regionsWithRecords).not.toEqual([]);
@@ -387,11 +387,11 @@ describe("关系分布和来源质量", () => {
   it("记录本批次关系的地区、类型和来源定位改善", () => {
     const report = buildDataCoverageReport(data, coverageReview);
     expect(report.relationshipSummary.byType).toEqual({
-      war: 38,
-      alliance: 3,
-      diplomacy: 7,
-      tribute: 5,
-      vassalage: 4,
+      war: 74,
+      alliance: 4,
+      diplomacy: 16,
+      tribute: 8,
+      vassalage: 6,
       trade: 12,
       "cultural-exchange": 5
     });
@@ -417,7 +417,7 @@ describe("关系分布和来源质量", () => {
       reviewedPercentage: 100
     });
     expect(report.sourceReferenceQuality).toMatchObject({
-      relationships: { records: 74, recordsWithLocatedSourceRefs: 74 },
+      relationships: { records: 125, recordsWithLocatedSourceRefs: 125 },
       events: { records: 34, recordsWithLocatedSourceRefs: 34 },
       geographicSnapshots: { records: 195, recordsWithLocatedSourceRefs: 137 }
     });

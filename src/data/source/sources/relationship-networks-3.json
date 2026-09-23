@@ -1,0 +1,170 @@
+[
+  {
+    "id": "source-wikisource-zizhi-tongjian",
+    "title": "资治通鉴",
+    "sourceType": "primary",
+    "citation": "司马光等：《资治通鉴》，维基文库繁体校录本；按卷、纪年与年内月份定位十六国、南北朝、隋唐五代关系记事。",
+    "authors": [
+      "司马光"
+    ],
+    "publisher": "维基文库",
+    "url": "https://zh.wikisource.org/wiki/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%91",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-wikisource-song-shi",
+    "title": "宋史",
+    "sourceType": "primary",
+    "citation": "脱脱等：《宋史》，维基文库校录本；本纪与外国传用于定位北宋统一战争及高丽、大理朝贡记事。",
+    "authors": [
+      "脱脱"
+    ],
+    "publisher": "维基文库",
+    "url": "https://zh.wikisource.org/wiki/%E5%AE%8B%E5%8F%B2",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-wikisource-yuan-shi",
+    "title": "元史",
+    "sourceType": "primary",
+    "citation": "宋濂等：《元史》，维基文库校录本；世祖本纪与外夷传用于定位征大理、征占城记事。",
+    "authors": [
+      "宋濂"
+    ],
+    "publisher": "维基文库",
+    "url": "https://zh.wikisource.org/wiki/%E5%85%83%E5%8F%B2",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-wikisource-liao-shi",
+    "title": "辽史",
+    "sourceType": "primary",
+    "citation": "脱脱等：《辽史》卷一百一十五《二国外记》，维基文库校录本；用于定位辽与高丽的战争记事。",
+    "authors": [
+      "脱脱"
+    ],
+    "publisher": "维基文库",
+    "url": "https://zh.wikisource.org/wiki/%E9%81%BC%E5%8F%B2",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-wikisource-jin-shi",
+    "title": "金史",
+    "sourceType": "primary",
+    "citation": "脱脱等：《金史》卷一百三十五《外国下·高丽》，维基文库校录本；用于定位高丽向金奉表称藩记事。",
+    "authors": [
+      "脱脱"
+    ],
+    "publisher": "维基文库",
+    "url": "https://zh.wikisource.org/wiki/%E9%87%91%E5%8F%B2",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-wikisource-qing-shi-gao",
+    "title": "清史稿",
+    "sourceType": "primary",
+    "citation": "赵尔巽等：《清史稿》，维基文库校录本；太祖、世祖、圣祖本纪用于定位后金对明及清对南明战争记事。",
+    "authors": [
+      "赵尔巽"
+    ],
+    "publisher": "维基文库",
+    "url": "https://zh.wikisource.org/wiki/%E6%B8%85%E5%8F%B2%E7%A8%BF",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-iranica-chinese-iranian-relations-i",
+    "title": "Chinese-Iranian Relations i. In Pre-Islamic Times",
+    "sourceType": "institutional",
+    "citation": "E. G. Pulleyblank, ‘Chinese-Iranian Relations i. In Pre-Islamic Times’, Encyclopaedia Iranica, Vol. V, Fasc. 4, pp. 424–431, 1991.",
+    "authors": [
+      "E. G. Pulleyblank"
+    ],
+    "publisher": "Encyclopaedia Iranica Foundation",
+    "url": "https://www.iranicaonline.org/articles/chinese-iranian-i/",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-iranica-khorasan-abbasid",
+    "title": "Khorasan v. History in the ʿAbbasid Period",
+    "sourceType": "institutional",
+    "citation": "‘Khorasan v. History in the ʿAbbasid Period’, Encyclopaedia Iranica, Vol. XVI, pp. 615–630.",
+    "publisher": "Encyclopaedia Iranica Foundation",
+    "url": "https://www.iranicaonline.org/articles/khorasan-v-history-in-the-%CA%BFabbasid-period/",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-iranica-delhi-sultanate-i",
+    "title": "Delhi Sultanate i. Political and Cultural History",
+    "sourceType": "institutional",
+    "citation": "‘Delhi Sultanate i. Political and cultural history’, Encyclopaedia Iranica, Vol. VII, Fasc. 3, pp. 242–250, 1994.",
+    "publisher": "Encyclopaedia Iranica Foundation",
+    "url": "https://www.iranicaonline.org/articles/delhi-sultanate/delhi-sultanate-i-political-and-cultural-history/",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-iranica-ghiyath-naqqash",
+    "title": "Ḡīāṯ-al-Dīn Naqqāš",
+    "sourceType": "institutional",
+    "citation": "Priscilla P. Soucek, ‘Ḡīāṯ-al-Dīn Naqqāš’, Encyclopaedia Iranica, Vol. X, Fasc. 6, pp. 599–600, 2001.",
+    "authors": [
+      "Priscilla P. Soucek"
+    ],
+    "publisher": "Encyclopaedia Iranica Foundation",
+    "url": "https://www.iranicaonline.org/articles/gia-al-din-naqqas",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-iranica-abd-al-razzaq-samarqandi",
+    "title": "ʿAbd-al-Razzāq Samarqandī",
+    "sourceType": "institutional",
+    "citation": "‘ʿAbd-al-Razzāq Samarqandī’, Encyclopaedia Iranica, Vol. I, Fasc. 2, pp. 158–160, 1982.",
+    "publisher": "Encyclopaedia Iranica Foundation",
+    "url": "https://www.iranicaonline.org/articles/abd-al-razzaq-samarqandi",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-whe-charles-martel-tours",
+    "title": "The Legacy of Charles Martel & the Battle of Tours",
+    "sourceType": "tertiary",
+    "citation": "World History Encyclopedia：‘The Legacy of Charles Martel & the Battle of Tours’。",
+    "publisher": "World History Encyclopedia",
+    "url": "https://www.worldhistory.org/article/1809/the-legacy-of-charles-martel--the-battle-of-tours/",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-whe-kievan-rus",
+    "title": "Kievan Rus",
+    "sourceType": "tertiary",
+    "citation": "Joshua J. Mark, ‘Kievan Rus’, World History Encyclopedia, 2018.",
+    "authors": [
+      "Joshua J. Mark"
+    ],
+    "publisher": "World History Encyclopedia",
+    "url": "https://www.worldhistory.org/Kievan_Rus/",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-whe-nikephoros-ii",
+    "title": "Nikephoros II Phokas",
+    "sourceType": "tertiary",
+    "citation": "Michael Goodyear, ‘Nikephoros II Phokas’, World History Encyclopedia, 2018.",
+    "authors": [
+      "Michael Goodyear"
+    ],
+    "publisher": "World History Encyclopedia",
+    "url": "https://www.worldhistory.org/Nikephoros_II_Phokas/",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-flynn-ottoman-bornu",
+    "title": "The Relationship between the Ottoman Empire and Kanem-Bornu during the Reign of Sultan Murad III",
+    "sourceType": "secondary",
+    "citation": "Sébastien Flynn, The Relationship between the Ottoman Empire and Kanem-Bornu during the Reign of Sultan Murad III, M.A. thesis, İhsan Doğramacı Bilkent University, 2015.",
+    "authors": [
+      "Sébastien Flynn"
+    ],
+    "publisher": "İhsan Doğramacı Bilkent University",
+    "url": "https://repository.bilkent.edu.tr/bitstreams/dccc8709-1d64-4f6c-aaed-f2d40826e413/download",
+    "accessedAt": "2026-09-23"
+  }
+]
