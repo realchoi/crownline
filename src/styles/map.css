@@ -46,6 +46,14 @@
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--period) 34%, var(--border));
   border-radius: calc(var(--radius-lg) - 8px);
+  background: color-mix(in srgb, var(--surface-soft) 72%, var(--period) 8%);
+  isolation: isolate;
+}
+
+/* 底图、经纬网与疆域一起按视野缩放平移；标记另按视野坐标定位，大小不变。 */
+.map-world-layer {
+  position: absolute;
+  z-index: 0;
   background:
     linear-gradient(
       to right,
@@ -56,10 +64,73 @@
       to bottom,
       color-mix(in srgb, var(--period) 11%, transparent) 1px,
       transparent 1px
-    ),
-    color-mix(in srgb, var(--surface-soft) 72%, var(--period) 8%);
+    );
   background-size: 12.5% 25%;
-  isolation: isolate;
+  transition:
+    left 0.25s ease,
+    top 0.25s ease,
+    width 0.25s ease,
+    height 0.25s ease;
+}
+
+.map-viewport-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  margin-bottom: 6px;
+}
+
+.map-viewport-presets,
+.map-zoom-controls {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  background: var(--surface-soft);
+}
+
+.map-viewport-presets button,
+.map-zoom-controls button {
+  min-height: 30px;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--muted);
+  padding: 3px 10px;
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.map-zoom-controls button {
+  min-width: 34px;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.map-viewport-presets button[aria-pressed="true"] {
+  background: var(--surface-strong);
+  color: var(--period);
+  box-shadow: 0 3px 12px rgba(72, 45, 29, 0.1);
+}
+
+.map-zoom-controls button:hover:not(:disabled),
+.map-viewport-presets button:hover {
+  background: color-mix(in srgb, var(--surface-strong) 70%, transparent);
+}
+
+.map-zoom-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.map-viewport-status {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.74rem;
 }
 
 .historical-map-land {
@@ -366,6 +437,12 @@
   margin: 0;
 }
 
+/* 悬停与聚焦底色较深，原名改用正文色以保持 4.5:1 对比度。 */
+.map-cluster-panel-item:hover .map-point-local-name,
+.map-cluster-panel-item:focus-visible .map-point-local-name {
+  color: var(--text);
+}
+
 .map-cluster-panel-place {
   color: var(--accent);
   font-size: 0.85rem;
@@ -400,12 +477,37 @@
   padding: 20px;
 }
 
+/* 结果列表在卡片内滚动，页面高度不再随点位数线性增长。 */
+.map-results {
+  max-height: min(78vh, 760px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-top: 0;
+}
+
+.map-results-heading {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface);
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 981px) {
+  .map-results {
+    position: sticky;
+    top: 76px;
+    max-height: calc(100vh - 96px);
+  }
+}
+
 .map-results-heading {
   display: flex;
   align-items: end;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 14px;
+  margin-bottom: 4px;
 }
 
 .map-results-heading h2 {

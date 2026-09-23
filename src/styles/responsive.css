@@ -204,7 +204,10 @@
     padding: 8px;
   }
   .map-results {
-    padding: 16px;
+    padding: 0 16px 16px;
+  }
+  .map-results-heading {
+    padding-top: 16px;
   }
   .map-result-detail {
     padding-right: 62px;
@@ -669,6 +672,33 @@
   }
 
   .row-label .comparison-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* 窄屏地图视野按钮单行横向滚动，缩放按钮固定在右侧。 */
+@media (max-width: 640px) {
+  .map-viewport-controls {
+    flex-wrap: nowrap;
+  }
+
+  .map-viewport-presets {
+    flex: 1;
+    flex-wrap: nowrap;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .map-viewport-presets button {
+    flex: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .map-viewport-presets button,
+  .map-zoom-controls button {
     min-width: 44px;
     min-height: 44px;
   }

@@ -1,63 +1,173 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 import worldLandUrl from "../assets/maps/world-land.svg";
 import { formatEntityNameWithLocal } from "../domain/entityNames";
 import type { BoundaryMapShape } from "../domain/boundarySnapshots";
 import type { MapLayer } from "../domain/browseState";
-import { GEOGRAPHIC_ROLE_NAMES, type MapCluster, type MapPoint } from "../domain/mapSnapshots";
+import {
+  GEOGRAPHIC_ROLE_NAMES,
+  MAP_CLUSTER_DISTANCE_PERCENT,
+  clusterMapPoints,
+  type MapPoint
+} from "../domain/mapSnapshots";
+import {
+  GLOBAL_MAP_VIEWPORT,
+  MAP_VIEWPORT_PRESETS,
+  MAP_ZOOM_STEP,
+  MAX_MAP_ZOOM,
+  MIN_MAP_ZOOM,
+  selectViewportPoints,
+  viewportFromBounds,
+  zoomViewport,
+  type MapViewport,
+  type MapViewportPresetId
+} from "../domain/mapViewport";
 import { EntityLocalName } from "./EntityLocalName";
 import { HistoricalBoundaries } from "./HistoricalBoundaries";
 
 interface HistoricalMapProps {
-  clusters: MapCluster[];
+  points: MapPoint[];
   boundaries?: BoundaryMapShape[];
   mapLayer?: MapLayer;
   isOverview?: boolean;
   comparisonEntityIds?: string[];
   selectedEntityId?: string | null;
+  /** 聚合半径，单位为当前视野宽度的百分比；缺省时按地图实际宽度保证标记不重叠。 */
+  clusterThresholdPercent?: number;
   onSelect: (entityId: string) => void;
 }
+
+/** 26px 标记加少量间隙；窄屏地图上按像素换算聚合半径，避免标记互相遮挡。 */
+const MARKER_SPACING_PX = 30;
 
 function pointLabel({ entity, snapshot }: MapPoint): string {
   return `${formatEntityNameWithLocal(entity.names)}，${snapshot.placeName}，${GEOGRAPHIC_ROLE_NAMES[snapshot.role]}`;
 }
 
-/** 呈现离线世界轮廓、单点标记与可展开的密集点位聚合。 */
+/** 呈现离线世界轮廓、大区视野与缩放、单点标记与可展开的密集点位聚合。 */
 export function HistoricalMap({
-  clusters,
+  points,
   boundaries = [],
   mapLayer = "points",
   isOverview = false,
   comparisonEntityIds = [],
   selectedEntityId = null,
+  clusterThresholdPercent,
   onSelect
 }: HistoricalMapProps) {
-  const [expandedClusterId, setExpandedClusterId] = useState<string | null>(null);
+  const canvasRef = useRef<HTMLDivElement>(null);
+  const [canvasWidth, setCanvasWidth] = useState<number | null>(null);
+  // 首次绘制前同步读取宽度，避免先按默认阈值聚合再闪动重排。
+  useLayoutEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    setCanvasWidth(canvas.getBoundingClientRect().width || null);
+    if (typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(([entry]) => {
+      setCanvasWidth(entry?.contentRect.width || null);
+    });
+    observer.observe(canvas);
+    return () => observer.disconnect();
+  }, []);
+  const threshold =
+    clusterThresholdPercent ??
+    (canvasWidth
+      ? Math.max(MAP_CLUSTER_DISTANCE_PERCENT, (MARKER_SPACING_PX / canvasWidth) * 100)
+      : MAP_CLUSTER_DISTANCE_PERCENT);
+  const [viewport, setViewport] = useState<MapViewport>(GLOBAL_MAP_VIEWPORT);
+  const [presetId, setPresetId] = useState<MapViewportPresetId | null>("global");
+  const visiblePoints = useMemo(() => selectViewportPoints(points, viewport), [points, viewport]);
+  // 聚合在视野坐标中进行，放大后邻近点位会自然拆开。
+  const clusters = useMemo(
+    () => clusterMapPoints(visiblePoints, threshold),
+    [threshold, visiblePoints]
+  );
+  const hiddenPointCount = points.length - visiblePoints.length;
+  const worldLayerStyle = {
+    width: `${viewport.zoom * 100}%`,
+    height: `${viewport.zoom * 100}%`,
+    left: `${-(viewport.centerX - 50 / viewport.zoom) * viewport.zoom}%`,
+    top: `${-(viewport.centerY - 50 / viewport.zoom) * viewport.zoom}%`
+  };
+  const zoomBy = (factor: number) => {
+    setViewport((current) => zoomViewport(current, factor));
+    setPresetId(null);
+  };
+  // 以聚合中的一个点位记录展开状态，视野或尺寸变化重新聚合时面板保持打开。
+  const [expandedPointId, setExpandedPointId] = useState<string | null>(null);
   const expandedTriggerRef = useRef<HTMLButtonElement | null>(null);
   const clusterPanelRef = useRef<HTMLElement | null>(null);
-  const expandedCluster = clusters.find(({ id }) => id === expandedClusterId);
+  const expandedCluster = clusters.find(({ points: clusterPoints }) => {
+    return (
+      clusterPoints.length > 1 &&
+      clusterPoints.some(({ snapshot }) => snapshot.id === expandedPointId)
+    );
+  });
+  const expandedClusterId = expandedCluster?.id;
 
   useEffect(() => {
-    if (expandedCluster) {
+    if (expandedClusterId) {
       clusterPanelRef.current?.querySelector<HTMLButtonElement>(".map-cluster-panel-item")?.focus();
     }
-  }, [expandedCluster]);
+  }, [expandedClusterId]);
 
   return (
     <section
       className={`historical-map${expandedCluster ? " is-cluster-expanded" : ""}`}
       aria-label={isOverview ? "全时期历史政权总览地图" : "当前年份历史政权示意地图"}
     >
-      <div className="historical-map-canvas world-map">
-        <img className="historical-map-land" src={worldLandUrl} alt="" role="presentation" />
-        {mapLayer !== "points" && !isOverview && (
-          <HistoricalBoundaries
-            boundaries={boundaries}
-            comparisonEntityIds={comparisonEntityIds}
-            selectedEntityId={selectedEntityId}
-            onSelect={onSelect}
-          />
-        )}
+      <div className="map-viewport-controls">
+        <div className="map-viewport-presets" role="group" aria-label="地图视野">
+          {MAP_VIEWPORT_PRESETS.map(({ id, label, bounds }) => (
+            <button
+              key={id}
+              type="button"
+              aria-pressed={presetId === id}
+              onClick={() => {
+                setViewport(id === "global" ? GLOBAL_MAP_VIEWPORT : viewportFromBounds(bounds));
+                setPresetId(id);
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        <div className="map-zoom-controls" role="group" aria-label="地图缩放">
+          <button
+            type="button"
+            aria-label="放大视野"
+            disabled={viewport.zoom >= MAX_MAP_ZOOM}
+            onClick={() => zoomBy(MAP_ZOOM_STEP)}
+          >
+            <span aria-hidden="true">＋</span>
+          </button>
+          <button
+            type="button"
+            aria-label="缩小视野"
+            disabled={viewport.zoom <= MIN_MAP_ZOOM}
+            onClick={() => zoomBy(1 / MAP_ZOOM_STEP)}
+          >
+            <span aria-hidden="true">−</span>
+          </button>
+        </div>
+      </div>
+      <p className="map-viewport-status" role="status">
+        {hiddenPointCount > 0
+          ? `视野内 ${visiblePoints.length} 个点位，另有 ${hiddenPointCount} 个在视野外，仍列在结果列表中。`
+          : `视野内 ${visiblePoints.length} 个点位。`}
+      </p>
+      <div className="historical-map-canvas world-map" ref={canvasRef}>
+        <div className="map-world-layer" style={worldLayerStyle}>
+          <img className="historical-map-land" src={worldLandUrl} alt="" role="presentation" />
+          {mapLayer !== "points" && !isOverview && (
+            <HistoricalBoundaries
+              boundaries={boundaries}
+              comparisonEntityIds={comparisonEntityIds}
+              selectedEntityId={selectedEntityId}
+              onSelect={onSelect}
+            />
+          )}
+        </div>
         {clusters.map((cluster) => {
           const [firstPoint] = cluster.points;
           if (!firstPoint) return null;
@@ -91,7 +201,7 @@ export function HistoricalMap({
                 aria-controls={expanded ? "map-cluster-panel" : undefined}
                 onClick={(event) => {
                   if (!expanded) expandedTriggerRef.current = event.currentTarget;
-                  setExpandedClusterId(expanded ? null : cluster.id);
+                  setExpandedPointId(expanded ? null : firstPoint.snapshot.id);
                 }}
               >
                 <span aria-hidden="true">{cluster.points.length}</span>
@@ -109,7 +219,7 @@ export function HistoricalMap({
           onKeyDown={(event) => {
             if (event.key !== "Escape") return;
             event.preventDefault();
-            setExpandedClusterId(null);
+            setExpandedPointId(null);
             expandedTriggerRef.current?.focus();
           }}
         >
@@ -124,7 +234,7 @@ export function HistoricalMap({
               type="button"
               aria-label="关闭聚合点位"
               onClick={() => {
-                setExpandedClusterId(null);
+                setExpandedPointId(null);
                 expandedTriggerRef.current?.focus();
               }}
             >

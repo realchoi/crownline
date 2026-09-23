@@ -136,8 +136,23 @@ describe("历史地图点位", () => {
     const result = selectMapSnapshots([xia], data.geographicSnapshots, -1800);
 
     expect(result.points).toEqual([]);
-    expect(result.clusters).toEqual([]);
     expect(result.missingEntities).toEqual([xia]);
+  });
+
+  it("聚合距离按 2:1 底图的屏幕距离计算，纵向百分比折半", () => {
+    const ming = entity("polity-cn-ming");
+    const base = snapshot("geo-ming-beijing");
+    const at = (xPercent: number, yPercent: number) => ({
+      entity: ming,
+      snapshot: { ...base, id: `${xPercent}-${yPercent}` },
+      xPercent,
+      yPercent
+    });
+
+    // 纵向相差 6% 只相当于 3% 地图宽度，落在 4% 阈值内。
+    expect(clusterMapPoints([at(50, 50), at(50, 56)], 4)).toHaveLength(1);
+    // 横向相差 6% 即 6% 地图宽度，超出阈值。
+    expect(clusterMapPoints([at(50, 50), at(56, 50)], 4)).toHaveLength(2);
   });
 
   it("不受输入顺序影响地稳定聚合北京与南京测试点", () => {

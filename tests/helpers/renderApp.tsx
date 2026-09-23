@@ -72,8 +72,11 @@ export function openMoreFilters() {
   if (toggle.getAttribute("aria-expanded") !== "true") fireEvent.click(toggle);
 }
 
+/** 在东亚视野中查找中国点位的单点标记；全球视野下相邻都城会按屏幕距离聚合。 */
 export async function findMapMarker(name: string): Promise<HTMLButtonElement> {
   const map = await screen.findByRole("region", { name: /历史政权(?:总览|示意)地图/ });
+  const eastAsia = within(map).getByRole("button", { name: "东亚" });
+  if (eastAsia.getAttribute("aria-pressed") !== "true") fireEvent.click(eastAsia);
   return within(map).getByRole("button", { name });
 }
 

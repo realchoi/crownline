@@ -6,7 +6,7 @@ import type { BoundarySelection } from "../src/domain/boundarySnapshots";
 import type { MapSelection } from "../src/domain/mapSnapshots";
 
 const bounds = { min: -2000, max: 2000 };
-const emptyMap: MapSelection = { points: [], clusters: [], missingEntities: [] };
+const emptyMap: MapSelection = { points: [], missingEntities: [] };
 const emptyBoundaries: BoundarySelection = {
   boundaries: [],
   missingEntities: [],

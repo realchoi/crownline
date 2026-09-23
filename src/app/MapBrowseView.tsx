@@ -20,7 +20,7 @@ export interface MapBrowseViewProps {
   onToggleComparison: (entityId: string) => void;
 }
 
-const EMPTY_MAP_SELECTION: MapSelection = { points: [], clusters: [], missingEntities: [] };
+const EMPTY_MAP_SELECTION: MapSelection = { points: [], missingEntities: [] };
 const EMPTY_BOUNDARY_SELECTION: BoundarySelection = {
   boundaries: [],
   missingEntities: [],
@@ -95,7 +95,7 @@ export function MapBrowseView({
       {layer && (
         <>
           <HistoricalMap
-            clusters={points.clusters}
+            points={points.points}
             boundaries={boundaries.boundaries}
             mapLayer={layer}
             isOverview={isOverview}

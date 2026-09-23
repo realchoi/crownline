@@ -6,12 +6,7 @@ import { loadSourceData } from "../scripts/data-source";
 import { HistoricalMap } from "../src/components/HistoricalMap";
 import { MapLoadPanel } from "../src/components/MapLoadPanel";
 import { MapResultList } from "../src/components/MapResultList";
-import {
-  clusterMapPoints,
-  projectCoordinates,
-  selectMapSnapshots,
-  type MapPoint
-} from "../src/domain/mapSnapshots";
+import { projectCoordinates, selectMapSnapshots, type MapPoint } from "../src/domain/mapSnapshots";
 
 const data = await loadSourceData();
 
@@ -46,7 +41,7 @@ describe("历史地图组件", () => {
       500
     );
 
-    render(<HistoricalMap clusters={selection.clusters} onSelect={onSelect} />);
+    render(<HistoricalMap points={selection.points} onSelect={onSelect} />);
 
     const map = screen.getByRole("region", { name: "当前年份历史政权示意地图" });
     const marker = within(map).getByRole("button", { name: "北魏，洛阳，都城" });
@@ -66,9 +61,10 @@ describe("历史地图组件", () => {
     const onSelect = vi.fn();
     const beijing = point("polity-cn-ming", "geo-ming-beijing");
     const nanjing = point("polity-cn-ming", "geo-ming-nanjing");
-    const clusters = clusterMapPoints([nanjing, beijing], 5);
 
-    render(<HistoricalMap clusters={clusters} onSelect={onSelect} />);
+    render(
+      <HistoricalMap points={[nanjing, beijing]} clusterThresholdPercent={5} onSelect={onSelect} />
+    );
 
     const cluster = screen.getByRole("button", { name: "此处有 2 个历史点位" });
     expect(cluster).toHaveAttribute("aria-expanded", "false");
@@ -100,6 +96,55 @@ describe("历史地图组件", () => {
     ).getByRole("button", { name: "明，北京，都城" });
     await user.click(reopenedBeijingButton);
     expect(onSelect).toHaveBeenCalledWith("polity-cn-ming");
+  });
+
+  it("切换大区视野时只渲染视野内标记并提示视野外数量", async () => {
+    const user = setupUser();
+    const beijing = point("polity-cn-ming", "geo-ming-beijing");
+    const luoyang = point("polity-cn-northern-wei", "geo-northern-wei-luoyang");
+    const tenochtitlan = selectMapSnapshots(
+      [entity("polity-aztec-empire")],
+      data.geographicSnapshots
+    ).points;
+    expect(tenochtitlan.length).toBeGreaterThan(0);
+
+    render(<HistoricalMap points={[beijing, luoyang, ...tenochtitlan]} onSelect={vi.fn()} />);
+    const map = screen.getByRole("region", { name: "当前年份历史政权示意地图" });
+    const status = within(map).getByRole("status");
+    expect(status).toHaveTextContent(`视野内 ${2 + tenochtitlan.length} 个点位。`);
+
+    const eastAsia = within(map).getByRole("button", { name: "东亚" });
+    await user.click(eastAsia);
+    expect(eastAsia).toHaveAttribute("aria-pressed", "true");
+    expect(within(map).getByRole("button", { name: "全球" })).toHaveAttribute(
+      "aria-pressed",
+      "false"
+    );
+    expect(within(map).getByRole("button", { name: "明，北京，都城" })).toBeInTheDocument();
+    expect(within(map).queryByRole("button", { name: /阿兹特克帝国/ })).not.toBeInTheDocument();
+    expect(status).toHaveTextContent(
+      `视野内 2 个点位，另有 ${tenochtitlan.length} 个在视野外，仍列在结果列表中。`
+    );
+  });
+
+  it("缩放按钮在全球视野禁用缩小，放大后取消预设选中", async () => {
+    const user = setupUser();
+    render(
+      <HistoricalMap points={[point("polity-cn-ming", "geo-ming-beijing")]} onSelect={vi.fn()} />
+    );
+
+    const zoomOut = screen.getByRole("button", { name: "缩小视野" });
+    const zoomIn = screen.getByRole("button", { name: "放大视野" });
+    expect(zoomOut).toBeDisabled();
+    await user.click(zoomIn);
+    expect(zoomOut).toBeEnabled();
+    expect(screen.getByRole("button", { name: "全球" })).toHaveAttribute("aria-pressed", "false");
+
+    for (let step = 0; step < 10; step += 1) {
+      if (zoomIn.hasAttribute("disabled")) break;
+      await user.click(zoomIn);
+    }
+    expect(zoomIn).toBeDisabled();
   });
 
   it("结果列表提供等价详情入口并单列缺少地理数据的政权", async () => {

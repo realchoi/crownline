@@ -23,7 +23,6 @@ export interface MapCluster extends ProjectedCoordinates {
 
 export interface MapSelection {
   points: MapPoint[];
-  clusters: MapCluster[];
   missingEntities: HistoricalEntity[];
 }
 
@@ -47,7 +46,10 @@ function compareMapPoints(left: MapPoint, right: MapPoint): number {
   );
 }
 
-/** 按投影距离生成与输入顺序无关的稳定聚合组。 */
+/**
+ * 按屏幕上的实际距离生成与输入顺序无关的稳定聚合组。
+ * 底图宽高比为 2:1，纵向百分比先折半换算为宽度百分比，阈值统一以地图宽度计。
+ */
 export function clusterMapPoints(
   points: readonly MapPoint[],
   thresholdPercent = MAP_CLUSTER_DISTANCE_PERCENT
@@ -58,7 +60,7 @@ export function clusterMapPoints(
   sortedPoints.forEach((point) => {
     const group = groups.find(({ anchor }) => {
       return (
-        Math.hypot(point.xPercent - anchor.xPercent, point.yPercent - anchor.yPercent) <=
+        Math.hypot(point.xPercent - anchor.xPercent, (point.yPercent - anchor.yPercent) / 2) <=
         thresholdPercent
       );
     });
@@ -103,9 +105,5 @@ export function selectMapSnapshots(
     .filter(({ id }) => !mappedEntityIds.has(id))
     .sort((left, right) => left.id.localeCompare(right.id));
 
-  return {
-    points,
-    clusters: clusterMapPoints(points),
-    missingEntities
-  };
+  return { points, missingEntities };
 }
