@@ -32,7 +32,6 @@
     "check": "npm run lint && npm run format:check && npm run typecheck && npm run validate:data && npm run check:docs --ignore-scripts && npm run check:evidence --ignore-scripts && npm run check:coverage-plan --ignore-scripts && npm run check:boundaries --ignore-scripts && npm run check:fonts --ignore-scripts && npm run test:coverage --ignore-scripts && npm run build --ignore-scripts && npm run test:e2e"
   },
   "dependencies": {
-    "ajv": "^8.20.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -53,6 +52,7 @@
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.0.5",
     "@vitest/coverage-v8": "^4.1.10",
+    "ajv": "^8.20.0",
     "eslint": "^9.39.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
