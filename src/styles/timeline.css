@@ -31,8 +31,8 @@
 }
 
 .timeline-stage {
-  margin-bottom: 22px;
-  padding: 22px;
+  margin-bottom: 16px;
+  padding: 16px 20px 12px;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--surface);
@@ -68,12 +68,12 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .stage-title {
   margin: 0;
-  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
 }
 
 .stage-range {
@@ -91,7 +91,7 @@
 }
 
 .axis-row {
-  margin-bottom: 7px;
+  margin-bottom: 4px;
 }
 
 .axis-labels {
@@ -105,7 +105,7 @@
 .timeline-row {
   align-items: center;
   border-radius: var(--radius-sm);
-  padding: 5px 0;
+  padding: 2px 6px 2px 0;
   transition: background 0.12s ease;
 }
 
@@ -122,14 +122,23 @@
   border-top: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
 }
 
+/* 名称、年代与对比入口同行；跨地区分组的地区名称另起一行。 */
 .row-label {
+  display: grid;
   min-width: 0;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-areas:
+    "name years compare"
+    "regions regions regions";
+  column-gap: 10px;
+  align-items: center;
 }
 
 .row-name {
   display: flex;
+  grid-area: name;
   width: 100%;
-  min-height: 44px;
+  min-height: 30px;
   align-items: center;
   overflow: hidden;
   border: 0;
@@ -156,26 +165,35 @@
 }
 
 .row-years {
+  grid-area: years;
   overflow: hidden;
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-variant-numeric: tabular-nums;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .row-regions {
+  grid-area: regions;
+  margin-top: -4px;
+  padding-bottom: 3px;
   overflow: hidden;
   color: var(--period);
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   font-weight: 650;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.row-label .comparison-toggle {
+  grid-area: compare;
+  margin: 0;
+}
+
 .track {
   position: relative;
-  height: 26px;
+  height: 18px;
   overflow: visible;
   border-radius: 999px;
   background:
@@ -191,9 +209,9 @@
 
 .timeline-bar {
   position: absolute;
-  top: 4px;
+  top: 3px;
   min-width: 1px;
-  height: 18px;
+  height: 12px;
   border: 0;
   border-radius: 999px;
   background: var(--accent);
@@ -206,7 +224,7 @@
 .timeline-bar:hover,
 .timeline-bar:focus-visible {
   z-index: 2;
-  transform: scaleY(1.25);
+  transform: scaleY(1.35);
   filter: brightness(1.08);
 }
 
@@ -220,8 +238,8 @@
   background: var(--regional);
 }
 .bar-context {
-  top: 3px;
-  height: 20px;
+  top: 2px;
+  height: 14px;
   border: 2px dashed var(--period);
   background: transparent;
 }

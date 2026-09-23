@@ -9,7 +9,9 @@ test("时间轴名称和固定快捷栏提供可达的详情与对比路径", as
   const nameButton = page.getByRole("button", { name: "查看唐详情" });
   await nameButton.scrollIntoViewIfNeeded();
   const nameBox = await nameButton.boundingBox();
-  expect(nameBox!.height).toBeGreaterThanOrEqual(44);
+  const coarsePointer = await page.evaluate(() => matchMedia("(pointer: coarse)").matches);
+  // 触屏保持 44px 触控目标；精确指针下的紧凑行满足 WCAG 2.5.8 的 24px 最小目标。
+  expect(nameBox!.height).toBeGreaterThanOrEqual(coarsePointer ? 44 : 24);
 
   await nameButton.click();
   const dialog = page.getByRole("dialog", { name: "唐" });
