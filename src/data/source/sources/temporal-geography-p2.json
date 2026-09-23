@@ -1,0 +1,20 @@
+[
+  {
+    "id": "source-temporal-p2-unesco-samarra",
+    "title": "Samarra Archaeological City",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre：Samarra Archaeological City；Outstanding Universal Value明确记载萨迈拉为阿拔斯哈里发国继巴格达后的第二都城，适用年代为836—892年。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/276",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-temporal-p2-unesco-samarra-centre",
+    "title": "Samarra Archaeological City - Maps",
+    "sourceType": "dataset",
+    "citation": "UNESCO World Heritage Centre：Samarra Archaeological City 地理数据；276rev-002 Samarra Centre Zone 的登记坐标只作古城所在区域的浏览锚点。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/276/maps/",
+    "accessedAt": "2026-09-23"
+  }
+]

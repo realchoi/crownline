@@ -130,8 +130,8 @@ describe("数据覆盖报告 v4", () => {
         reigns: 1424,
         relationships: 74,
         events: 34,
-        geographicSnapshots: 194,
-        sources: 290
+        geographicSnapshots: 195,
+        sources: 292
       },
       polityCoverage: {
         rulerDetails: {
@@ -179,11 +179,11 @@ describe("数据覆盖报告 v4", () => {
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 290,
-      byType: { primary: 3, secondary: 50, tertiary: 67, dataset: 15, institutional: 155 },
-      withUrl: 289,
+      total: 292,
+      byType: { primary: 3, secondary: 50, tertiary: 67, dataset: 16, institutional: 156 },
+      withUrl: 291,
       withoutUrl: 1,
-      withAccessedAt: 289,
+      withAccessedAt: 291,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toMatchObject({
@@ -225,9 +225,9 @@ describe("数据覆盖报告 v4", () => {
         recordsWithoutLocatedSourceRefs: 0
       },
       geographicSnapshots: {
-        records: 194,
-        recordsWithSourceRefs: 194,
-        recordsWithLocatedSourceRefs: 136,
+        records: 195,
+        recordsWithSourceRefs: 195,
+        recordsWithLocatedSourceRefs: 137,
         recordsWithoutLocatedSourceRefs: 58
       }
     });
@@ -419,7 +419,7 @@ describe("关系分布和来源质量", () => {
     expect(report.sourceReferenceQuality).toMatchObject({
       relationships: { records: 74, recordsWithLocatedSourceRefs: 74 },
       events: { records: 34, recordsWithLocatedSourceRefs: 34 },
-      geographicSnapshots: { records: 194, recordsWithLocatedSourceRefs: 136 }
+      geographicSnapshots: { records: 195, recordsWithLocatedSourceRefs: 137 }
     });
   });
 

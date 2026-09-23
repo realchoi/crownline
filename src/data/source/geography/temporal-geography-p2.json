@@ -1,0 +1,28 @@
+[
+  {
+    "id": "geo-abbasid-samarra",
+    "polityId": "polity-abbasid-caliphate",
+    "periods": [
+      {
+        "start": { "year": 836, "precision": "exact" },
+        "end": { "year": 892, "precision": "exact" }
+      }
+    ],
+    "placeName": "Samarra",
+    "role": "capital",
+    "coordinates": { "latitude": 34.226275, "longitude": 43.882572 },
+    "positionPrecision": "approximate",
+    "positionNote": "UNESCO将萨迈拉记为阿拔斯哈里发国836—892年的第二都城；点位采用其276rev-002萨迈拉中心区登记坐标作古城区域锚点，不表示宫殿位置、遗址边界或政权疆域。750—761年仍没有本批可安全采用的点位。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-temporal-p2-unesco-samarra",
+        "locator": "Outstanding Universal Value：Samarra为阿拔斯哈里发国继巴格达后的第二都城，古都年代836—892"
+      },
+      {
+        "sourceId": "source-temporal-p2-unesco-samarra-centre",
+        "locator": "Geographical data：276rev-002 Samarra Centre Zone，N34 13 34.59 / E43 52 57.26（34.226275, 43.882572）"
+      }
+    ],
+    "confidence": "high"
+  }
+]
