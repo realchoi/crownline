@@ -67,6 +67,7 @@ Crownline（王冠纪）是一个面向全球历史的交互式王朝图谱项�
 ├── scripts/validate-data.ts  # 独立数据校验入口
 ├── tests/                    # 单元与界面回归测试
 ├── docs/                     # 数据契约与实施设计
+│   └── archive/              # 已完成批次的证据审查记录
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.ts
@@ -122,9 +123,9 @@ npm run preview
 
 `src/data/source/coverage/coverage-review.json` 是工具侧人工审查目录，不进入浏览器运行时数据。覆盖报告 v4 对统治者详情、本地名称和地理维度分别给出 `available`、`reviewed-unavailable`、`not-applicable`、`pending-review` 四种状态；已有业务数据自动为 `available`，缺少记录且没有审查条目则为 `pending-review`。`reviewed-unavailable` 表示当前审查后无法可靠补充，不表示历史上不存在；`not-applicable` 不进入适用分母。关系只报告已收录案例的类型、可信度、参与政权和顶层地区分布，参与比例不是关系完成率。
 
-覆盖报告 v4 另有 `temporalCoverage`、全记录类型的 `sourceReferenceQuality` 与 `globalCoverageMatrix`，分别报告逐年资料覆盖、来源定位缺口，以及六个时代段和顶层地区的政权分布。`boundaryEvidence` 汇总生产疆域的批准、退役和归档情况。报告不进入浏览器包；运行时数据契约仍为 v5。全球扩充顺序见 [全球政权覆盖矩阵](docs/global-coverage-plan.md)，分期地理审查见 [第二批分期地图点位审查](docs/temporal-geography-p1-review.md)。
+覆盖报告 v4 另有 `temporalCoverage`、全记录类型的 `sourceReferenceQuality` 与 `globalCoverageMatrix`，分别报告逐年资料覆盖、来源定位缺口，以及六个时代段和顶层地区的政权分布。`boundaryEvidence` 汇总生产疆域的批准、退役和归档情况。报告不进入浏览器包；运行时数据契约仍为 v5。全球扩充顺序见 [全球政权覆盖矩阵](docs/global-coverage-plan.md)，分期地理审查见 [第二批分期地图点位审查](docs/archive/temporal-geography-p1-review.md)。
 
-地理来源定位审查已为原100条完全缺少定位的基线点位建立证据账本，并持续分批核查。当前195条生产点位中137条至少有一项非空 `locator`，其中83条的全部引用均已定位、54条仍有部分引用待补，另外58条所有引用仍缺定位。P0 批次还将无定位实体、人物与任期分别降至102、1067与1103条，并同时约束无定位与部分定位点位；详见[第一批](docs/source-evidence-p0.md)、[第二批](docs/source-evidence-p0-2.md)、[第三批](docs/source-evidence-p0-3.md)与[第四批](docs/source-evidence-p0-4.md)来源定位。未定位不表示记录已判错，也不能用通用来源页自动补齐。
+地理来源定位审查已为原100条完全缺少定位的基线点位建立证据账本，并持续分批核查。当前195条生产点位中137条至少有一项非空 `locator`，其中83条的全部引用均已定位、54条仍有部分引用待补，另外58条所有引用仍缺定位。P0 批次还将无定位实体、人物与任期分别降至102、1067与1103条，并同时约束无定位与部分定位点位；详见[第一批](docs/archive/source-evidence-p0.md)、[第二批](docs/archive/source-evidence-p0-2.md)、[第三批](docs/archive/source-evidence-p0-3.md)与[第四批](docs/archive/source-evidence-p0-4.md)来源定位。未定位不表示记录已判错，也不能用通用来源页自动补齐。
 
 实体分片中的 `order` 是唯一正整数，控制聚合后的稳定顺序。现有记录以 10 为间隔；插入记录时优先使用相邻值之间的空位。所有分片仍共享全局 ID 命名空间，跨文件引用只能使用稳定 ID。
 

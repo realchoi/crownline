@@ -26,7 +26,7 @@ Crownline（王冠纪）是一个中文优先、纯静态部署的世界历史�
 - `src/styles/`：全局 class 样式。`styles.css` 的导入顺序就是层叠顺序：`base`、`hero`、`controls`、`comparison`、`timeline`、`footer`、`detail`、`map`、`responsive`；不要随意改序。
 - `tests/`：领域、数据与组件测试；`tests/app/` 是应用集成测试；`tests/helpers/renderApp.tsx` 提供真实生成数据、loader、deferred promise 和清理工具。
 - `e2e/`：Playwright 桌面/移动浏览器冒烟、响应式与无障碍测试。
-- `docs/`：数据契约、历史口径审查和设计记录。`README.md` 是当前行为与维护入口，`ROADMAP.md` 是路线与历史进展。
+- `docs/`：数据契约、历史口径审查和设计记录；已完成的 P0/P1/P2 等批次审查记录归档在 `docs/archive/`，只作历史追溯，当前规则以数据契约和测试为准。`README.md` 是当前行为与维护入口，`ROADMAP.md` 是路线与历史进展。
 
 依赖方向通常应为 `app/components -> domain + data`，`data -> domain`。不要让领域层依赖 React、DOM 或网络。
 

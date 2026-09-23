@@ -16,14 +16,14 @@
 **Goal**: 把 p0/p1/p2 批次审查记录移入 `docs/archive/`，同步修正 README、ROADMAP、数据契约和文档间链接。
 **Success Criteria**: 仓库内无指向旧路径的链接；`check:docs`、`check:evidence`、`check:coverage-plan` 不受影响（`global-coverage-plan.md` 与数据契约保持原位）；`npm run check` 通过。
 **Tests**: 链接扫描脚本确认所有相对 Markdown 链接目标存在。
-**Status**: In Progress
+**Status**: Complete
 
 ## Stage 3: 关系覆盖分析与候选清单
 
 **Goal**: 统计无关系政权、同时存续且地区相邻但缺少已录关系的组合，列出候选关系及拟用来源（含 locator 草案），交用户审核。
 **Success Criteria**: 候选清单只包含来源直接支持参与方、类型与时间口径的关系；不写入数据。
 **Tests**: 无（分析产物）。
-**Status**: Not Started
+**Status**: In Progress
 
 ## Stage 4: 写入经审核的关系
 
