@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 import type { GeographyLoadResult } from "../../src/data/loadCrownlineGeography";
 import { setupUser } from "../helpers/user";
 import {
+  openMoreFilters,
   artifacts,
   boundaryFixtureIndex,
   createDeferred,
@@ -259,6 +260,7 @@ describe("Crownline 地图", () => {
     renderApp(loadGeneratedDetail, loadGeneratedGeography, loadBoundaries, boundaryFixtureIndex);
 
     await screen.findByRole("region", { name: "当前年份历史政权示意地图" });
+    openMoreFilters();
     await user.click(screen.getByRole("button", { name: "疆域示意" }));
     const list = await screen.findByRole("region", { name: "地图结果列表" });
     expect(
@@ -301,6 +303,7 @@ describe("Crownline 地图", () => {
       loadBoundaryFixture,
       boundaryFixtureIndex
     );
+    openMoreFilters();
 
     const pointsToggle = screen.getByRole("button", { name: "地点标记" });
     const boundariesToggle = screen.getByRole("button", { name: "疆域示意" });
@@ -329,6 +332,7 @@ describe("Crownline 地图", () => {
     );
 
     await screen.findByRole("region", { name: "全时期历史政权总览地图" });
+    openMoreFilters();
     await user.click(screen.getByRole("button", { name: "地点标记" }));
     let params = new URLSearchParams(window.location.search);
     expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "true");
@@ -364,6 +368,7 @@ describe("Crownline 地图", () => {
     expect(
       await screen.findByRole("button", { name: /拜占庭帝国，800—1025，疆域示意/ })
     ).toBeInTheDocument();
+    openMoreFilters();
     await user.click(screen.getByRole("button", { name: "地点标记" }));
     expect(new URLSearchParams(window.location.search).get("layer")).toBe("combined");
   });

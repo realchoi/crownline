@@ -11,6 +11,12 @@ async function waitForAppReady(page: Page) {
   await expect(page.getByRole("main")).toBeVisible();
 }
 
+/** 桌面工具条把类别、精确跳转、地区多选与地图图层收在“更多筛选”中。 */
+async function openMoreFilters(page: Page) {
+  const toggle = page.getByRole("button", { name: /^更多筛选/ });
+  if ((await toggle.getAttribute("aria-expanded")) !== "true") await toggle.click();
+}
+
 async function expectNoSeriousA11yViolations(page: Page) {
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
@@ -258,7 +264,10 @@ test.describe("Crownline 浏览器冒烟", () => {
     await page.goto("/?view=map&year=800&scope=china&layer=boundaries");
     await waitForAppReady(page);
     const getControls = async () => {
-      if (!isMobile) return page;
+      if (!isMobile) {
+        await openMoreFilters(page);
+        return page;
+      }
       const existing = page.getByRole("dialog", { name: "筛选与呈现" });
       if ((await existing.count()) === 0) {
         await page.getByRole("button", { name: /^筛选/ }).click();
@@ -489,6 +498,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await installBoundaryFixture(page);
     await page.goto("/?view=map");
     await waitForAppReady(page);
+    await openMoreFilters(page);
     const help = page.locator(".map-layer-help");
     const box = await help.boundingBox();
     expect(box).not.toBeNull();
@@ -496,20 +506,21 @@ test.describe("Crownline 浏览器冒烟", () => {
     expect(box?.height ?? Number.POSITIVE_INFINITY).toBeLessThan(90);
   });
 
-  test("全时期总览的清除筛选按钮在桌面端保持同行", async ({ page, isMobile }) => {
+  test("全时期总览的清除筛选按钮与类别选择在桌面端保持同行", async ({ page, isMobile }) => {
     test.skip(isMobile, "桌面网格布局仅在 desktop-chromium 项目覆盖");
 
     await page.goto("/");
     await waitForAppReady(page);
     await page.getByRole("button", { name: "地图" }).click();
+    await openMoreFilters(page);
 
-    const searchBox = await page.getByRole("searchbox").boundingBox();
+    const categoryBox = await page.getByRole("combobox", { name: "显示类别" }).boundingBox();
     const clearBox = await page
       .getByRole("button", { name: "清除搜索与类别（控制台）" })
       .boundingBox();
-    expect(searchBox).not.toBeNull();
+    expect(categoryBox).not.toBeNull();
     expect(clearBox).not.toBeNull();
-    expect(Math.abs((searchBox?.y ?? 0) - (clearBox?.y ?? 0))).toBeLessThan(2);
+    expect(Math.abs((categoryBox?.y ?? 0) - (clearBox?.y ?? 0))).toBeLessThan(2);
   });
 
   test("桌面底部展开控制台保留滚动位置，关闭后恢复焦点", async ({ page, isMobile }, testInfo) => {
@@ -517,7 +528,7 @@ test.describe("Crownline 浏览器冒烟", () => {
 
     await page.goto("/");
     await waitForAppReady(page);
-    await expect(page.getByRole("heading", { name: "探索控制台" })).toBeVisible();
+    await expect(page.getByRole("region", { name: "浏览与筛选工具" })).toBeVisible();
     await expect(page.getByRole("region", { name: "紧凑探索工具条" })).toHaveCount(0);
 
     await page.evaluate(() =>
@@ -636,7 +647,7 @@ test.describe("Crownline 浏览器冒烟", () => {
       if (size.width <= 800) {
         await expect(page.getByRole("button", { name: "筛选" })).toBeVisible();
       } else {
-        await expect(page.getByRole("heading", { name: "探索控制台" })).toBeVisible();
+        await expect(page.getByRole("region", { name: "浏览与筛选工具" })).toBeVisible();
       }
     }
   });

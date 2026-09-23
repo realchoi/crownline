@@ -5,10 +5,17 @@ interface RegionScopeControlProps {
   regions: Region[];
   scope: RegionScope;
   onChange: (scope: RegionScope) => void;
+  /** 桌面工具条分开放置预设按钮与“覆盖说明 + 多选地区”；筛选抽屉使用完整控件。 */
+  part?: "all" | "presets" | "details";
 }
 
 /** 全时期与指定年份共享的地区预设、多选地区和数据覆盖说明。 */
-export function RegionScopeControl({ regions, scope, onChange }: RegionScopeControlProps) {
+export function RegionScopeControl({
+  regions,
+  scope,
+  onChange,
+  part = "all"
+}: RegionScopeControlProps) {
   const selectableRegions = regions.filter((region) => {
     return region.regionKind === "historical-region" && region.id !== CHINA_REGION_ID;
   });
@@ -34,62 +41,83 @@ export function RegionScopeControl({ regions, scope, onChange }: RegionScopeCont
     }
   };
 
+  const presets = (
+    <div className="scope-switch" role="group" aria-label="地区范围预设">
+      {(
+        [
+          ["china", "中国"],
+          ["custom", "自选地区"],
+          ["global", "全球已收录"]
+        ] as const
+      ).map(([mode, label]) => (
+        <button
+          key={mode}
+          type="button"
+          aria-pressed={scope.mode === mode}
+          disabled={mode === "custom" && selectableRegions.length === 0}
+          onClick={() => chooseMode(mode)}
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+  );
+  const coverageNote = <p className="region-coverage-note">{coverageText}</p>;
+  const customOptions = scope.mode === "custom" && (
+    <fieldset className="region-options">
+      <legend>选择一个或多个历史地区</legend>
+      <div className="region-option-list">
+        {selectableRegions.map((region) => {
+          const checked = selectedIds.includes(region.id);
+          return (
+            <label key={region.id}>
+              <input
+                type="checkbox"
+                aria-label={region.names.primary}
+                checked={checked}
+                disabled={checked && selectedIds.length === 1}
+                onChange={(event) => {
+                  const nextIds = event.currentTarget.checked
+                    ? [...new Set([...selectedIds, region.id])]
+                    : selectedIds.filter((id) => id !== region.id);
+                  onChange({ mode: "custom", regionIds: nextIds });
+                }}
+              />
+              <span>{region.names.primary}</span>
+              <small>{region.coverage.status === "none" ? "未收录" : "覆盖有限"}</small>
+            </label>
+          );
+        })}
+      </div>
+    </fieldset>
+  );
+
+  if (part === "presets") {
+    return (
+      <section className="region-scope-control" aria-label="地区范围">
+        <span className="field-label">观测范围</span>
+        {presets}
+      </section>
+    );
+  }
+  if (part === "details") {
+    return (
+      <section className="region-scope-details" aria-label="地区范围说明">
+        {coverageNote}
+        {customOptions}
+      </section>
+    );
+  }
   return (
     <section className="region-scope-control" aria-label="地区范围">
       <div className="region-scope-heading">
         <div>
           <span className="field-label">观测范围</span>
-          <div className="scope-switch" role="group" aria-label="地区范围预设">
-            {(
-              [
-                ["china", "中国"],
-                ["custom", "自选地区"],
-                ["global", "全球已收录"]
-              ] as const
-            ).map(([mode, label]) => (
-              <button
-                key={mode}
-                type="button"
-                aria-pressed={scope.mode === mode}
-                disabled={mode === "custom" && selectableRegions.length === 0}
-                onClick={() => chooseMode(mode)}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
+          {presets}
         </div>
-        <p className="region-coverage-note">{coverageText}</p>
+        {coverageNote}
       </div>
-
-      {scope.mode === "custom" && (
-        <fieldset className="region-options">
-          <legend>选择一个或多个历史地区</legend>
-          <div className="region-option-list">
-            {selectableRegions.map((region) => {
-              const checked = selectedIds.includes(region.id);
-              return (
-                <label key={region.id}>
-                  <input
-                    type="checkbox"
-                    aria-label={region.names.primary}
-                    checked={checked}
-                    disabled={checked && selectedIds.length === 1}
-                    onChange={(event) => {
-                      const nextIds = event.currentTarget.checked
-                        ? [...new Set([...selectedIds, region.id])]
-                        : selectedIds.filter((id) => id !== region.id);
-                      onChange({ mode: "custom", regionIds: nextIds });
-                    }}
-                  />
-                  <span>{region.names.primary}</span>
-                  <small>{region.coverage.status === "none" ? "未收录" : "覆盖有限"}</small>
-                </label>
-              );
-            })}
-          </div>
-        </fieldset>
-      )}
+      {customOptions}
     </section>
   );
 }

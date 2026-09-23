@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { TimeRangeControl } from "../src/components/TimeRangeControl";
 import type { TimeRange } from "../src/domain/browseState";
-import { installAppTestLifecycle, renderApp } from "./helpers/renderApp";
+import { openMoreFilters, installAppTestLifecycle, renderApp } from "./helpers/renderApp";
 import { setupUser } from "./helpers/user";
 
 installAppTestLifecycle();
@@ -118,6 +118,7 @@ describe("精确历史年份输入", () => {
     window.history.replaceState(null, "", "/?mode=point&year=-221&external=kept");
     const user = setupUser();
     renderApp();
+    openMoreFilters();
 
     const era = screen.getByRole("combobox", { name: "纪元" });
     const input = screen.getByRole("textbox", { name: "年份" });

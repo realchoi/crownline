@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach } from "vitest";
 
 import { loadSourceData } from "../../scripts/data-source";
@@ -64,6 +64,12 @@ export function renderApp(
       loadBoundaries={loadBoundaries}
     />
   );
+}
+
+/** 桌面工具条把类别、精确跳转、地区多选与地图图层收在“更多筛选”中；已展开时不重复点击。 */
+export function openMoreFilters() {
+  const toggle = screen.getByRole("button", { name: /更多筛选/ });
+  if (toggle.getAttribute("aria-expanded") !== "true") fireEvent.click(toggle);
 }
 
 export async function findMapMarker(name: string): Promise<HTMLButtonElement> {

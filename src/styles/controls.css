@@ -425,6 +425,163 @@ a:focus-visible {
   opacity: 0.38;
 }
 
+/* 桌面首屏工具条：主控件一行排列，窄于约 1280px 时自然折为两行。 */
+.console-toolbar {
+  display: block;
+  padding: 10px 14px;
+}
+
+.console-toolbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.console-toolbar .view-mode-control .field-label,
+.console-toolbar .time-range-heading .field-label,
+.console-toolbar .region-scope-control .field-label,
+.console-toolbar .year-range,
+.console-toolbar .year-current.is-overview {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* 时间控件在工具条中排列为：范围切换、滑杆、当前年份。 */
+.console-toolbar .time-range-control {
+  display: flex;
+  flex: 3 1 400px;
+  min-width: max-content;
+  align-items: center;
+  gap: 8px;
+}
+
+.console-toolbar .time-range-heading {
+  display: contents;
+}
+
+.console-toolbar .year-current {
+  order: 3;
+  min-width: 3.5em;
+  min-height: 0;
+}
+
+.console-toolbar .year-slider-row {
+  order: 2;
+  flex: 1;
+  grid-template-columns: 34px minmax(110px, 1fr) 34px;
+  align-items: center;
+}
+
+.console-toolbar .mode-switch {
+  grid-template-columns: repeat(2, auto);
+}
+
+.console-toolbar .mode-switch button,
+.console-toolbar .scope-switch button {
+  padding-inline: 10px;
+}
+
+.console-toolbar .scope-switch {
+  flex-wrap: nowrap;
+  gap: 2px;
+}
+
+.console-toolbar .year-slider {
+  margin: 0;
+}
+
+.console-toolbar .search-field {
+  flex: 1 1 180px;
+  min-width: 160px;
+}
+
+.console-toolbar .search-field .text-input {
+  min-height: 38px;
+}
+
+.console-more-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  background: var(--surface-soft);
+  color: var(--text);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.console-more-toggle:hover {
+  border-color: var(--accent);
+}
+
+.console-more-count {
+  display: inline-grid;
+  min-width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--surface-strong);
+  font-size: 0.68rem;
+}
+
+.console-more-chevron {
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.15s ease;
+}
+
+.console-more-toggle[aria-expanded="true"] .console-more-chevron {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.console-more:not([hidden]) {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 12px 24px;
+  align-items: start;
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.console-more .region-scope-details {
+  grid-column: 1 / -1;
+}
+
+.console-more .year-jump-form {
+  margin: 0;
+}
+
+.console-more-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.console-more-filters .button {
+  height: 40px;
+  padding-block: 0;
+}
+
+.console-more .map-layer-control,
+.console-more .legend {
+  grid-column: 1 / -1;
+}
+
 /* 控制台与结果共享页面流，滚动工具条不占首屏空间。 */
 .exploration-controls {
   display: contents;

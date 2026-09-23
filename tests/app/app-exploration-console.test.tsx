@@ -172,4 +172,43 @@ describe("探索控制台", () => {
     expect(params.get("year")).toBe("800");
     expect(screen.queryByLabelText("活跃筛选")).not.toBeInTheDocument();
   });
+
+  it("桌面工具条默认收起更多筛选，展开后可使用类别与精确跳转", async () => {
+    const user = setupUser();
+    renderApp();
+
+    const toggle = screen.getByRole("button", { name: "更多筛选" });
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+    expect(screen.getByRole("searchbox")).toBeInTheDocument();
+    expect(screen.queryByRole("combobox", { name: "显示类别" })).not.toBeInTheDocument();
+
+    await user.click(toggle);
+    expect(toggle).toHaveAttribute("aria-expanded", "true");
+    expect(document.getElementById(toggle.getAttribute("aria-controls")!)).toBeVisible();
+    expect(screen.getByRole("combobox", { name: "纪元" })).toBeInTheDocument();
+    await user.selectOptions(screen.getByRole("combobox", { name: "显示类别" }), "context");
+    expect(screen.getByRole("button", { name: "更多筛选，已启用 1 项" })).toBe(toggle);
+
+    await user.click(toggle);
+    expect(screen.queryByRole("combobox", { name: "纪元" })).not.toBeInTheDocument();
+  });
+
+  it("选择自选地区时自动展开地区多选", async () => {
+    const user = setupUser();
+    renderApp();
+
+    await user.click(screen.getByRole("button", { name: "自选地区" }));
+    expect(screen.getByRole("button", { name: "更多筛选" })).toHaveAttribute(
+      "aria-expanded",
+      "true"
+    );
+    expect(screen.getByRole("group", { name: "选择一个或多个历史地区" })).toBeVisible();
+  });
+
+  it("从自选地区链接进入时默认展开地区多选", () => {
+    window.history.replaceState(null, "", "/?scope=custom&region=region-europe");
+    renderApp();
+
+    expect(screen.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
+  });
 });

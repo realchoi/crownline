@@ -2,7 +2,7 @@ import { fireEvent, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { setupUser } from "../helpers/user";
-import { installAppTestLifecycle, renderApp } from "../helpers/renderApp";
+import { openMoreFilters, installAppTestLifecycle, renderApp } from "../helpers/renderApp";
 installAppTestLifecycle();
 
 describe("Crownline 浏览", () => {
@@ -45,6 +45,7 @@ describe("Crownline 浏览", () => {
   it("按展示类别筛选并清除筛选", async () => {
     const user = setupUser();
     renderApp();
+    openMoreFilters();
     const select = screen.getByRole("combobox", { name: "显示类别" });
 
     await user.selectOptions(select, "context");
@@ -62,6 +63,7 @@ describe("Crownline 浏览", () => {
       "/?mode=point&year=800&scope=china&q=%E5%94%90&type=mainline&compare=polity-cn-tang&detail=polity-cn-tang"
     );
     renderApp();
+    openMoreFilters();
 
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "明" } });
     fireEvent.change(screen.getByRole("combobox", { name: "显示类别" }), {
@@ -83,6 +85,7 @@ describe("Crownline 浏览", () => {
     window.history.replaceState(null, "", "/?q=时期&type=context");
     const user = setupUser();
     renderApp();
+    openMoreFilters();
 
     expect(screen.getByRole("searchbox")).toHaveValue("时期");
     expect(screen.getByRole("combobox", { name: "显示类别" })).toHaveValue("context");
@@ -160,7 +163,7 @@ describe("Crownline 浏览", () => {
     await user.click(screen.getByRole("button", { name: "全球已收录" }));
 
     expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
-    expect(screen.getByLabelText("地区范围")).toHaveTextContent("当前数据集中的全部已收录条目");
+    expect(screen.getByLabelText("地区范围说明")).toHaveTextContent("当前数据集中的全部已收录条目");
   });
 
   it("从 URL 恢复自选地区并把覆盖有限与历史不存在区分开", () => {

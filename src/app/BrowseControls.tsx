@@ -150,9 +150,10 @@ export function BrowseControls({
     [setBrowseState]
   );
 
-  const renderConsole = () => (
+  const renderConsole = (layout: "full" | "toolbar") => (
     <>
       <FilterPanel
+        layout={layout}
         viewMode={browseState.viewMode}
         mapLayer={browseState.mapLayer}
         timeRange={browseState.timeRange}
@@ -243,7 +244,7 @@ export function BrowseControls({
       ) : (
         <>
           <section ref={fullConsoleRef} className="full-exploration-console" tabIndex={-1}>
-            {renderConsole()}
+            {renderConsole("toolbar")}
           </section>
           <div className="compact-console-slot">
             {isCompact && (
@@ -282,7 +283,7 @@ export function BrowseControls({
               <span aria-hidden="true">×</span>
             </button>
           </header>
-          <div className="filter-sheet-scroll">{isSheetOpen && renderConsole()}</div>
+          <div className="filter-sheet-scroll">{isSheetOpen && renderConsole("full")}</div>
           <footer className="filter-sheet-footer">
             <button type="button" onClick={closeSheet}>
               查看 {resultCount} 个结果

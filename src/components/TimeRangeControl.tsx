@@ -1,4 +1,4 @@
-import { useEffect, useId, useState, type FormEvent } from "react";
+import { useId } from "react";
 
 import {
   formatHistoricalYear,
@@ -8,6 +8,7 @@ import {
   toOrdinal
 } from "../domain/chronology";
 import type { HistoricalYearBounds, TimeRange } from "../domain/browseState";
+import { YearJumpForm } from "./YearJumpForm";
 
 interface TimeRangeControlProps {
   value: TimeRange;
@@ -15,15 +16,8 @@ interface TimeRangeControlProps {
   yearBounds: HistoricalYearBounds;
   onChange: (value: TimeRange) => void;
   onYearChange: (year: number) => void;
-}
-
-type HistoricalEra = "bce" | "ce";
-
-function getYearDraft(year: number) {
-  return {
-    era: year < 0 ? ("bce" as const) : ("ce" as const),
-    value: String(Math.abs(year))
-  };
+  /** 桌面工具条把精确跳转放入“更多筛选”，此处只保留切换与滑杆。 */
+  showJumpForm?: boolean;
 }
 
 /** 时间轴与地图共享的时间范围和历史年份控制。 */
@@ -32,55 +26,12 @@ export function TimeRangeControl({
   year,
   yearBounds,
   onChange,
-  onYearChange
+  onYearChange,
+  showJumpForm = true
 }: TimeRangeControlProps) {
   const isAllTime = value === "all";
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
-  const [yearDraft, setYearDraft] = useState(() => getYearDraft(year));
-  const [yearInputError, setYearInputError] = useState<string | null>(null);
-  const yearInputErrorId = useId();
   const yearHelpId = useId();
-
-  useEffect(() => {
-    setYearDraft(getYearDraft(year));
-    setYearInputError(null);
-  }, [year]);
-
-  const submitYear = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const normalized = yearDraft.value.trim();
-
-    if (!normalized) {
-      setYearInputError("请输入年份。");
-      return;
-    }
-    if (!/^\d+$/.test(normalized)) {
-      setYearInputError("年份必须是大于 0 的整数。");
-      return;
-    }
-
-    const absoluteYear = Number(normalized);
-    if (!Number.isSafeInteger(absoluteYear)) {
-      setYearInputError("请输入有效的整数年份。");
-      return;
-    }
-    if (absoluteYear === 0) {
-      setYearInputError("历史纪年不存在公元 0 年。");
-      return;
-    }
-
-    const nextYear = yearDraft.era === "bce" ? -absoluteYear : absoluteYear;
-    if (nextYear < yearBounds.min || nextYear > yearBounds.max) {
-      setYearInputError(
-        `可跳转范围为${formatHistoricalYear({ year: yearBounds.min, precision: "exact" })}至${formatHistoricalYear({ year: yearBounds.max, precision: "exact" })}。`
-      );
-      return;
-    }
-
-    setYearDraft((current) => ({ ...current, value: String(absoluteYear) }));
-    setYearInputError(null);
-    onYearChange(nextYear);
-  };
 
   return (
     <section className="time-range-control" aria-label="时间范围">
@@ -149,50 +100,9 @@ export function TimeRangeControl({
         </button>
       </div>
 
-      <form className="year-jump-form" onSubmit={submitYear} noValidate>
-        <span className="year-jump-label">精确跳转</span>
-        <div className="year-jump-controls">
-          <select
-            className="year-era-select"
-            aria-label="纪元"
-            value={yearDraft.era}
-            onChange={(event) => {
-              const era = event.currentTarget.value as HistoricalEra;
-              setYearDraft((current) => ({
-                ...current,
-                era
-              }));
-              setYearInputError(null);
-            }}
-          >
-            <option value="bce">公元前</option>
-            <option value="ce">公元</option>
-          </select>
-          <input
-            className="year-number-input"
-            type="text"
-            inputMode="numeric"
-            autoComplete="off"
-            aria-label="年份"
-            aria-invalid={yearInputError ? "true" : "false"}
-            {...(yearInputError ? { "aria-describedby": yearInputErrorId } : {})}
-            value={yearDraft.value}
-            onChange={(event) => {
-              const value = event.currentTarget.value;
-              setYearDraft((current) => ({ ...current, value }));
-              setYearInputError(null);
-            }}
-          />
-          <button className="year-jump-button" type="submit">
-            跳转
-          </button>
-        </div>
-        {yearInputError && (
-          <p className="year-input-error" id={yearInputErrorId} role="alert">
-            {yearInputError}
-          </p>
-        )}
-      </form>
+      {showJumpForm && (
+        <YearJumpForm year={year} yearBounds={yearBounds} onYearChange={onYearChange} />
+      )}
     </section>
   );
 }
