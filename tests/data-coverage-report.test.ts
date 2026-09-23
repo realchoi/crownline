@@ -131,7 +131,7 @@ describe("数据覆盖报告 v4", () => {
         relationships: 125,
         events: 34,
         geographicSnapshots: 195,
-        sources: 307
+        sources: 308
       },
       polityCoverage: {
         rulerDetails: {
@@ -179,11 +179,11 @@ describe("数据覆盖报告 v4", () => {
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 307,
-      byType: { primary: 9, secondary: 51, tertiary: 70, dataset: 16, institutional: 161 },
-      withUrl: 306,
+      total: 308,
+      byType: { primary: 9, secondary: 52, tertiary: 70, dataset: 16, institutional: 161 },
+      withUrl: 307,
       withoutUrl: 1,
-      withAccessedAt: 306,
+      withAccessedAt: 307,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toMatchObject({

@@ -19,14 +19,36 @@
         }
       ],
       "chronologyStatus": "disputed",
-      "chronologyNote": "耶律大石1124年自立为王是本条起点；汉文年号与现代年换算使部分交接年份存在一年前后差异。1211年屈出律夺取实权，耶律直鲁古此后仍短暂保有名义地位；本条把屈出律统治延续至1218年蒙古军处死他为止。",
+      "chronologyNote": "本条采用 Biran 在 Oxford Research Encyclopedia of Asian History“The Qara Khitai”条中的1124—1218口径：以耶律大石1124年自立为起点，把1211年乃蛮屈出律夺权后的统治延续至1218年蒙古军处死他为止。Encyclopaedia Iranica“Qarā Ḵeṭāy”条则以608/1211年屈出律篡位为西辽终结，列为替代口径；《辽史》卷三十记屈出律擒直鲁古、据其位并尊为太上皇，“直鲁古死，辽绝”，以末主之死而非屈出律之死为终点。Iranica 另记屈出律1217年被擒斩，与采用终年相差一年。汉文年号与现代年换算也使部分交接年份存在一年前后差异。",
+      "alternativeChronologies": [
+        {
+          "label": "屈出律篡位终结口径",
+          "existencePeriods": [
+            {
+              "start": { "year": 1124, "precision": "exact" },
+              "end": { "year": 1211, "precision": "exact" }
+            }
+          ],
+          "note": "Encyclopaedia Iranica 以608/1211年乃蛮首领屈出律击灭并篡夺西辽为帝国终结；按此口径，屈出律1211—1218年的统治属于乃蛮政权，不再计入西辽。",
+          "sourceRefs": [
+            {
+              "sourceId": "source-qara-khitai-history",
+              "locator": "导言：their empire was crushed by the Naiman leader Küčlüg in 608/1211；History：subjugation in 608/1211 by Mongol Naiman conquerors"
+            }
+          ]
+        }
+      ],
       "historicalRegionIds": ["region-central-asia"],
       "culturalSphereIds": [],
       "modernAreaIds": [],
       "description": "辽朝宗室耶律大石在女真金朝攻灭辽的过程中率部西迁，于中亚建立的契丹政权。穆斯林史料称其为喀喇契丹，汉文史学称西辽；统治者兼用契丹—内亚的菊儿汗称号和中国式年号、庙号。它以七河与河中为核心，通过保留当地诸侯和征收贡赋维持较松散的宗主体系，并一度使花剌子模称臣。1211年乃蛮王子屈出律夺权，1218年蒙古军追杀屈出律后政权终结。",
       "sourceRefs": [
         { "sourceId": "source-qara-khitai-history", "locator": "History" },
-        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Sovereigns of Qara Khitai" }
+        { "sourceId": "source-qara-khitai-rulers", "locator": "§ Sovereigns of Qara Khitai" },
+        {
+          "sourceId": "source-biran-qara-khitai-orea",
+          "locator": "Abstract: The Qara Khitai or Western Liao dynasty (1124–1218)"
+        }
       ],
       "confidence": "disputed",
       "confidenceNote": "政权总体脉络明确，但摄政者交接年、耶律直鲁古在1211年后的名义地位和屈出律时期是否仍应称为西辽存在不同编年口径。"
@@ -165,7 +187,7 @@
       "role": "ruler",
       "periods": [{ "start": { "year": 1211, "precision": "exact" }, "end": { "year": 1218, "precision": "exact" } }],
       "chronologyStatus": "accepted",
-      "note": "屈出律夺权后的统治是否继续归入西辽存在分类差异；本数据集为解释政权终结过程而保留此段。",
+      "note": "屈出律夺权后的统治是否继续归入西辽存在分类差异；本数据集按采用口径保留此段，Iranica 替代口径则止于1211年。Iranica 记其1217年被蒙古军擒斩，此处沿用1218年终点。",
       "sourceRefs": [
         { "sourceId": "source-qara-khitai-history", "locator": "History" },
         { "sourceId": "source-qara-khitai-rulers", "locator": "§ Kuchlug's usurpation" }

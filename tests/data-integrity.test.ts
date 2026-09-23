@@ -445,7 +445,7 @@ describe("生产历史数据", () => {
     );
     expect(data.relationships).toHaveLength(125);
     expect(data.events).toHaveLength(34);
-    expect(data.sources).toHaveLength(307);
+    expect(data.sources).toHaveLength(308);
     expect(
       data.relationships.every(({ sourceRefs }) => {
         return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));
@@ -1201,6 +1201,20 @@ describe("生产历史数据", () => {
     ).toEqual(["person-qara-khitai-kuchlug"]);
     expect(activePlaces("polity-qara-khitai", 1130)).toEqual([]);
     expect(activePlaces("polity-qara-khitai", 1150)).toEqual(["Balasagun"]);
+
+    const qaraKhitai = data.entities.find(({ id }) => id === "polity-qara-khitai");
+    expect(qaraKhitai?.chronologyStatus).toBe("disputed");
+    expect(qaraKhitai?.alternativeChronologies).toEqual([
+      expect.objectContaining({
+        existencePeriods: [
+          {
+            start: { year: 1124, precision: "exact" },
+            end: { year: 1211, precision: "exact" }
+          }
+        ],
+        sourceRefs: [expect.objectContaining({ sourceId: "source-qara-khitai-history" })]
+      })
+    ]);
 
     expect(
       rulerSnapshot("polity-khwarazmian-empire", 1180).entries.map(({ person }) => person.id)

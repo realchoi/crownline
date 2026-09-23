@@ -17,5 +17,15 @@
     "publisher": "Wikimedia Foundation",
     "url": "https://en.wikipedia.org/wiki/Qara_Khitai#Sovereigns_of_Qara_Khitai",
     "accessedAt": "2026-08-22"
+  },
+  {
+    "id": "source-biran-qara-khitai-orea",
+    "title": "The Qara Khitai",
+    "sourceType": "secondary",
+    "citation": "Michal Biran, “The Qara Khitai,” Oxford Research Encyclopedia of Asian History, Oxford University Press, 2020；用于核对西辽（1124—1218）的采用起讫口径及乃蛮王子篡位后被蒙古攻灭的过程。",
+    "authors": ["Michal Biran"],
+    "publisher": "Oxford University Press",
+    "url": "https://doi.org/10.1093/acrefore/9780190277727.013.59",
+    "accessedAt": "2026-09-23"
   }
 ]
