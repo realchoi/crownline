@@ -190,11 +190,12 @@ test.describe("Crownline 浏览器冒烟", () => {
       expect(
         await comparisonDialog.evaluate((element) => element.scrollWidth <= element.clientWidth)
       ).toBe(true);
-      const slots = page.getByRole("group", { name: "已选对比政权" });
-      const removeBox = await slots
+      await expect(comparisonDialog.getByRole("group", { name: "已选对比政权" })).toHaveCount(0);
+      const column = comparisonDialog.getByRole("article", { name: "素可泰王国" });
+      const removeBox = await column
         .getByRole("button", { name: /从对比中移除素可泰王国/ })
         .boundingBox();
-      const localBox = await slots.getByText("สุโขทัย").boundingBox();
+      const localBox = await column.getByText("สุโขทัย").boundingBox();
       expect
         .soft(removeBox!.y, "移除按钮应与主名称同行，原名单独位于下方")
         .toBeLessThan(localBox!.y);

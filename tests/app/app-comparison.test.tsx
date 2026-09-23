@@ -104,6 +104,22 @@ describe("Crownline 政权对比", () => {
     expect(screen.getByRole("button", { name: "将清加入对比" })).toBeEnabled();
   });
 
+  it("选满两个政权后政权名只作为两栏标题出现一次", async () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?compare=polity-cn-tang&compare=polity-cn-ming&comparison=open"
+    );
+    renderApp();
+
+    const panel = screen.getByRole("region", { name: "政权时间对比" });
+    expect(within(panel).queryByRole("group", { name: "已选对比政权" })).not.toBeInTheDocument();
+    expect(within(panel).getAllByText("唐", { exact: true })).toHaveLength(1);
+    const tang = within(panel).getByRole("article", { name: "唐" });
+    expect(within(tang).getByRole("heading", { level: 3, name: "唐" })).toBeInTheDocument();
+    expect(within(tang).getByRole("button", { name: "从对比中移除唐" })).toBeInTheDocument();
+  });
+
   it("选择一个政权后显示待完成的对比台并允许清空", async () => {
     const user = setupUser();
     renderApp();

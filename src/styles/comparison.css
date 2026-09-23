@@ -332,6 +332,13 @@
   text-align: center;
 }
 
+/* 选满两个政权后选择卡隐藏，共同区间直接位于面板顶部。 */
+.comparison-summary:first-child {
+  margin-top: 0;
+  border-top: 0;
+  padding-top: 4px;
+}
+
 .comparison-summary p {
   margin-bottom: 2px;
   color: var(--muted);
@@ -369,15 +376,45 @@
 .comparison-column header {
   margin-bottom: 16px;
 }
-.comparison-column header p {
-  margin-bottom: 2px;
-  color: var(--period);
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+.comparison-column-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comparison-column-slot {
+  display: grid;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 .comparison-column h3 {
-  margin-bottom: 2px;
-  font-size: clamp(1.65rem, 4vw, 2.5rem);
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+}
+.comparison-column-remove {
+  flex: none;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-strong);
+  color: var(--muted);
+  padding: 6px 11px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.comparison-column-remove:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 .comparison-column header > span {
   color: var(--muted);
@@ -760,30 +797,31 @@ dialog.comparison-dialog {
 .comparison-dialog-head {
   display: flex;
   flex: none;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 24px 28px 12px;
+  gap: 10px 18px;
+  padding: 16px 24px 12px;
+  border-bottom: 1px solid var(--border);
 }
 
 .comparison-dialog-head h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 4vw, 2.35rem);
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
 }
 
 #comparison-dialog-note {
-  margin: 6px 0 0;
+  margin: 2px 0 0;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 .comparison-dialog-actions {
   display: flex;
   flex: none;
+  align-items: center;
   gap: 10px;
-  padding: 0 28px 12px;
-  border-bottom: 1px solid var(--border);
 }
 
 .comparison-dialog .comparison-clear,

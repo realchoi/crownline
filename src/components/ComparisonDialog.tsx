@@ -35,24 +35,24 @@ export function ComparisonDialog({
             <h2 id="comparison-title">政权时间对比</h2>
             <p id="comparison-dialog-note">关闭后保留已选政权，继续浏览。</p>
           </div>
-          <button
-            ref={closeRef}
-            className="icon-button"
-            type="button"
-            aria-label="关闭对比"
-            onClick={onClose}
-          />
-        </header>
-        <div className="comparison-dialog-actions">
-          {onReturnToDetail && (
-            <button className="comparison-clear" type="button" onClick={onReturnToDetail}>
-              返回详情
+          <div className="comparison-dialog-actions">
+            {onReturnToDetail && (
+              <button className="comparison-clear" type="button" onClick={onReturnToDetail}>
+                返回详情
+              </button>
+            )}
+            <button className="comparison-clear" type="button" onClick={onClear}>
+              清空对比
             </button>
-          )}
-          <button className="comparison-clear" type="button" onClick={onClear}>
-            清空对比
-          </button>
-        </div>
+            <button
+              ref={closeRef}
+              className="icon-button"
+              type="button"
+              aria-label="关闭对比"
+              onClick={onClose}
+            />
+          </div>
+        </header>
         <div className="comparison-dialog-body">
           <ComparisonPanel
             {...panelProps}

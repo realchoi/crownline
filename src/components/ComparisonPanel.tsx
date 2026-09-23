@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 
 import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
 import { formatHistoricalYear, formatPeriods, isYearInPeriods } from "../domain/chronology";
@@ -78,28 +78,45 @@ function ComparisonRulerList({
 }
 
 function PolityColumn({
+  slot,
   entity,
   regions,
   detail,
   overlapPeriods,
-  currentYear
+  currentYear,
+  onRemove
 }: {
+  slot: "A" | "B";
   entity: HistoricalEntity;
   regions: Region[];
   detail?: CrownlineDetail;
   overlapPeriods: ReturnType<typeof buildPolityComparison>["overlapPeriods"];
   currentYear?: number;
+  onRemove: (entityId: string) => void;
 }) {
+  const headingId = useId();
   const regionNames = getRegionNames(regions, entity.historicalRegionIds);
   const entries = detail ? selectRulersDuringPeriods(entity, detail, overlapPeriods) : [];
   const snapshot =
     detail && currentYear ? selectRulerSnapshot(entity, detail, currentYear) : undefined;
 
   return (
-    <article className="comparison-column">
+    <article className="comparison-column" aria-labelledby={headingId}>
       <header>
-        <p>对比政权</p>
-        <h3>{entity.names.primary}</h3>
+        <div className="comparison-column-title">
+          <span className="comparison-column-slot" aria-hidden="true">
+            {slot}
+          </span>
+          <h3 id={headingId}>{entity.names.primary}</h3>
+          <button
+            className="comparison-column-remove"
+            type="button"
+            aria-label={`从对比中移除${formatEntityNameWithLocal(entity.names)}`}
+            onClick={() => onRemove(entity.id)}
+          >
+            移除
+          </button>
+        </div>
         <EntityLocalName names={entity.names} className="comparison-local-name" />
         <span>{formatPeriods(entity.existencePeriods, entity.displayRangeOverride)}</span>
       </header>
@@ -197,31 +214,34 @@ export function ComparisonPanel({
 
   return (
     <section className="comparison-panel" aria-labelledby="comparison-title">
-      <div className="comparison-slots" role="group" aria-label="已选对比政权">
-        {[0, 1].map((index) => {
-          const entity = entities[index];
-          return entity ? (
-            <div className="comparison-slot is-filled" key={entity.id}>
-              <span>{index === 0 ? "A" : "B"}</span>
-              <strong>{entity.names.primary}</strong>
-              <EntityLocalName names={entity.names} className="comparison-slot-local-name" />
-              <button
-                type="button"
-                aria-label={`从对比中移除${formatEntityNameWithLocal(entity.names)}`}
-                onClick={() => onRemove(entity.id)}
-              >
-                移除
-              </button>
-            </div>
-          ) : (
-            <div className="comparison-slot" key={index}>
-              <span>B</span>
-              <strong>再选择一个政权</strong>
-              <small>可先搜索或切换地区，再点击“+ 对比”</small>
-            </div>
-          );
-        })}
-      </div>
+      {/* 选满两个政权后，A/B 标记与移除入口并入下方两栏标题，避免重复政权名。 */}
+      {!comparison && (
+        <div className="comparison-slots" role="group" aria-label="已选对比政权">
+          {[0, 1].map((index) => {
+            const entity = entities[index];
+            return entity ? (
+              <div className="comparison-slot is-filled" key={entity.id}>
+                <span>{index === 0 ? "A" : "B"}</span>
+                <strong>{entity.names.primary}</strong>
+                <EntityLocalName names={entity.names} className="comparison-slot-local-name" />
+                <button
+                  type="button"
+                  aria-label={`从对比中移除${formatEntityNameWithLocal(entity.names)}`}
+                  onClick={() => onRemove(entity.id)}
+                >
+                  移除
+                </button>
+              </div>
+            ) : (
+              <div className="comparison-slot" key={index}>
+                <span>B</span>
+                <strong>再选择一个政权</strong>
+                <small>可先搜索或切换地区，再点击“+ 对比”</small>
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {comparison && (
         <>
@@ -249,14 +269,18 @@ export function ComparisonPanel({
 
           <div className="comparison-columns">
             <PolityColumn
+              slot="A"
               entity={comparison.left}
+              onRemove={onRemove}
               regions={regions}
               overlapPeriods={comparison.overlapPeriods}
               {...(readyDetails?.[0] ? { detail: readyDetails[0] } : {})}
               {...(comparisonYear !== undefined ? { currentYear: comparisonYear } : {})}
             />
             <PolityColumn
+              slot="B"
               entity={comparison.right}
+              onRemove={onRemove}
               regions={regions}
               overlapPeriods={comparison.overlapPeriods}
               {...(readyDetails?.[1] ? { detail: readyDetails[1] } : {})}
