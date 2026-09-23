@@ -1,26 +1,25 @@
 import { formatHistoricalYear, fromOrdinal, toOrdinal } from "../domain/chronology";
-import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
+import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
 import type { RegionScope } from "../domain/regionScope";
-import type { MatchedEntity } from "../domain/selectors";
-import type { BrowseData, Region } from "../domain/types";
+import type { Region } from "../domain/types";
 import { TimelineStage } from "./TimelineStage";
 
-/** 时间轴列表所需的数据和详情选择事件。 */
+/** 时间轴列表所需的已分组结果和详情选择事件。 */
 interface TimelineProps {
-  data: Pick<BrowseData, "timelineSections" | "regions">;
-  matches: MatchedEntity[];
+  groups: OverviewTimelineGroup[];
+  matchCount: number;
   regions: Region[];
   regionScope: RegionScope;
   emptyReason: "unindexed" | "limited-coverage" | "filtered-out" | null;
   comparisonEntityIds: string[];
   onToggleComparison: (entityId: string) => void;
-  onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
+  onSelect: (entityId: string) => void;
 }
 
 /** 按中国历史阶段或动态地区组织全览结果，并处理资料覆盖空状态。 */
 export function Timeline({
-  data,
-  matches,
+  groups,
+  matchCount,
   regions,
   regionScope,
   emptyReason,
@@ -28,7 +27,6 @@ export function Timeline({
   onToggleComparison,
   onSelect
 }: TimelineProps) {
-  const groups = buildOverviewTimelineGroups(data, matches, regionScope);
   const sharedRange =
     regionScope.mode !== "china" && groups.length > 0
       ? {
@@ -57,7 +55,7 @@ export function Timeline({
   const scopeName =
     regionScope.mode === "global" ? "全球已收录范围" : selectedRegionNames.join("、");
 
-  if (matches.length === 0) {
+  if (matchCount === 0) {
     return (
       <section id="timeline" aria-label={timelineLabel} aria-live="polite">
         <div className="empty-state">

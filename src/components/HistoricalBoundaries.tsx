@@ -6,7 +6,7 @@ interface HistoricalBoundariesProps {
   boundaries: BoundaryMapShape[];
   comparisonEntityIds: string[];
   selectedEntityId?: string | null;
-  onSelect: (entityId: string, trigger: HTMLButtonElement | null) => void;
+  onSelect: (entityId: string) => void;
 }
 
 const BOUNDARY_COLORS = ["#8b5e3c", "#2e7180", "#766b35", "#765477", "#3f6b4f", "#a05b45"];
@@ -51,7 +51,7 @@ export function HistoricalBoundaries({
             fill={color}
             fillRule="evenodd"
             key={`${shape.snapshot.id}-${pathIndex}`}
-            onClick={() => onSelect(shape.entity.id, null)}
+            onClick={() => onSelect(shape.entity.id)}
             pointerEvents="all"
             aria-label={boundaryLabel(shape)}
           />

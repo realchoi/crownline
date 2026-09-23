@@ -58,7 +58,7 @@ describe("历史地图组件", () => {
     expect(legend).toHaveTextContent("代表性中心");
     expect(legend).toHaveTextContent("数字表示邻近点位聚合");
     await user.click(marker);
-    expect(onSelect).toHaveBeenCalledWith("polity-cn-northern-wei", marker);
+    expect(onSelect).toHaveBeenCalledWith("polity-cn-northern-wei");
   });
 
   it("展开稳定聚合后提供每个历史点位的详情入口", async () => {
@@ -99,7 +99,7 @@ describe("历史地图组件", () => {
       })
     ).getByRole("button", { name: "明，北京，都城" });
     await user.click(reopenedBeijingButton);
-    expect(onSelect).toHaveBeenCalledWith("polity-cn-ming", reopenedBeijingButton);
+    expect(onSelect).toHaveBeenCalledWith("polity-cn-ming");
   });
 
   it("结果列表提供等价详情入口并单列缺少地理数据的政权", async () => {
@@ -124,7 +124,7 @@ describe("历史地图组件", () => {
     const item = within(list).getByRole("button", { name: "北魏，洛阳，都城" });
     expect(within(item).getByText("洛阳")).toHaveClass("map-result-place");
     await user.click(item);
-    expect(onSelect).toHaveBeenCalledWith("polity-cn-northern-wei", item);
+    expect(onSelect).toHaveBeenCalledWith("polity-cn-northern-wei");
   });
 
   it("复用对比按钮标签并禁用第三个未选政权", async () => {

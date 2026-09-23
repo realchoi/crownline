@@ -15,7 +15,7 @@ interface HistoricalMapProps {
   isOverview?: boolean;
   comparisonEntityIds?: string[];
   selectedEntityId?: string | null;
-  onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
+  onSelect: (entityId: string) => void;
 }
 
 function pointLabel({ entity, snapshot }: MapPoint): string {
@@ -55,7 +55,7 @@ export function HistoricalMap({
             boundaries={boundaries}
             comparisonEntityIds={comparisonEntityIds}
             selectedEntityId={selectedEntityId}
-            onSelect={(entityId) => onSelect(entityId, document.createElement("button"))}
+            onSelect={onSelect}
           />
         )}
         {clusters.map((cluster) => {
@@ -73,7 +73,7 @@ export function HistoricalMap({
                 type="button"
                 style={style}
                 aria-label={pointLabel(firstPoint)}
-                onClick={(event) => onSelect(firstPoint.entity.id, event.currentTarget)}
+                onClick={() => onSelect(firstPoint.entity.id)}
               >
                 <span aria-hidden="true" />
               </button>
@@ -138,7 +138,7 @@ export function HistoricalMap({
                   className="map-cluster-panel-item"
                   type="button"
                   aria-label={pointLabel(point)}
-                  onClick={(event) => onSelect(point.entity.id, event.currentTarget)}
+                  onClick={() => onSelect(point.entity.id)}
                 >
                   <span className="map-cluster-panel-index" aria-hidden="true">
                     {String(index + 1).padStart(2, "0")}

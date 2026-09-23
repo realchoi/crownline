@@ -13,7 +13,7 @@ interface TimelineStageProps {
   showAxis?: boolean;
   comparisonEntityIds: string[];
   onToggleComparison: (entityId: string) => void;
-  onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
+  onSelect: (entityId: string) => void;
 }
 
 /**
@@ -71,7 +71,7 @@ export function TimelineStage({
                 type="button"
                 aria-label={`查看${entity.names.primary}详情`}
                 title={`查看${entity.names.primary}详情`}
-                onClick={(event) => onSelect(entity.id, event.currentTarget)}
+                onClick={() => onSelect(entity.id)}
               >
                 {entity.names.primary}
               </button>
@@ -111,7 +111,7 @@ export function TimelineStage({
                     style={{ left: `${Math.max(0, left)}%`, width: `${width}%` }}
                     title={`${entity.names.primary}｜${periodLabel}`}
                     aria-label={`${entity.names.primary}，${periodLabel}，${categoryLabel}。点击查看详情。`}
-                    onClick={(event) => onSelect(entity.id, event.currentTarget)}
+                    onClick={() => onSelect(entity.id)}
                   />
                 );
               })}

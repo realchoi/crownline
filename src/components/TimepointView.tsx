@@ -16,7 +16,7 @@ interface TimepointViewProps {
   polityEmptyReason: "unindexed" | "limited-coverage" | "filtered-out" | null;
   comparisonEntityIds: string[];
   onToggleComparison: (entityId: string) => void;
-  onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
+  onSelect: (entityId: string) => void;
 }
 
 function TimepointCard({
@@ -46,7 +46,7 @@ function TimepointCard({
         className={`timepoint-card timepoint-${entity.displayCategory}`}
         type="button"
         aria-label={`${formatEntityNameWithLocal(entity.names)}，${periods}，${DISPLAY_CATEGORY_NAMES[entity.displayCategory]}。点击查看详情。`}
-        onClick={(event) => onSelect(entity.id, event.currentTarget)}
+        onClick={() => onSelect(entity.id)}
       >
         <span className="timepoint-card-topline">
           <span className={`type-badge detail-${entity.displayCategory}`}>

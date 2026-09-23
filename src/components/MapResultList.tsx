@@ -15,7 +15,7 @@ interface MapResultListProps {
   mapLayer?: MapLayer;
   isOverview?: boolean;
   comparisonEntityIds: string[];
-  onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
+  onSelect: (entityId: string) => void;
   onToggleComparison: (entityId: string) => void;
 }
 
@@ -73,7 +73,7 @@ export function MapResultList({
                   className="map-result-detail"
                   type="button"
                   aria-label={pointLabel(point)}
-                  onClick={(event) => onSelect(point.entity.id, event.currentTarget)}
+                  onClick={() => onSelect(point.entity.id)}
                 >
                   <span className={`map-result-role role-${point.snapshot.role}`}>
                     {GEOGRAPHIC_ROLE_NAMES[point.snapshot.role]}
@@ -118,7 +118,7 @@ export function MapResultList({
                       className="map-result-detail"
                       type="button"
                       aria-label={`${boundary.entity.names.primary}，${range}，疆域示意`}
-                      onClick={(event) => onSelect(boundary.entity.id, event.currentTarget)}
+                      onClick={() => onSelect(boundary.entity.id)}
                     >
                       <span className="map-result-role boundary-result-role">
                         {BOUNDARY_PRECISION_NAMES[boundary.snapshot.boundaryPrecision]}

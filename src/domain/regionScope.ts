@@ -53,14 +53,13 @@ export function expandHistoricalRegionIds(regions: Region[], selectedIds: string
   return expanded;
 }
 
-/** 判断实体是否属于当前地区范围；多地区采用并集语义。 */
-export function entityMatchesRegionScope(
-  entity: HistoricalEntity,
+/** 为一个地区范围创建实体匹配函数；地区树只展开一次，多地区采用并集语义。 */
+export function createRegionScopeMatcher(
   regions: Region[],
   scope: RegionScope
-): boolean {
-  if (scope.mode === "global") return true;
+): (entity: HistoricalEntity) => boolean {
+  if (scope.mode === "global") return () => true;
   const selectedIds = scope.mode === "china" ? [CHINA_REGION_ID] : scope.regionIds;
   const expandedIds = expandHistoricalRegionIds(regions, selectedIds);
-  return entity.historicalRegionIds.some((regionId) => expandedIds.has(regionId));
+  return (entity) => entity.historicalRegionIds.some((regionId) => expandedIds.has(regionId));
 }

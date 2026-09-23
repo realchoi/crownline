@@ -1,5 +1,5 @@
 import { formatPeriods, isYearInPeriods } from "./chronology";
-import { entityMatchesRegionScope, getRegionsByIds, type RegionScope } from "./regionScope";
+import { createRegionScopeMatcher, getRegionsByIds, type RegionScope } from "./regionScope";
 import type { BrowseData, DisplayCategory, HistoricalEntity, TimelineSection } from "./types";
 
 /** 页面类别筛选值；`all` 表示不限制展示类别。 */
@@ -52,34 +52,6 @@ function normalizeText(value: string): string {
 }
 
 /**
- * 按查询词和展示类别筛选实体。
- * 返回值保持时间轴阶段及阶段内部原有顺序，避免筛选后视觉位置跳动。
- */
-export function filterEntities(
-  data: BrowseData,
-  query: string,
-  category: CategoryFilter
-): MatchedEntity[] {
-  const normalizedQuery = normalizeText(query);
-  const entityById = new Map(data.entities.map((entity) => [entity.id, entity]));
-  const matches: MatchedEntity[] = [];
-
-  data.timelineSections.forEach((section) => {
-    section.entityIds.forEach((entityId) => {
-      const entity = entityById.get(entityId);
-      if (!entity) return;
-      const categoryMatches = category === "all" || entity.displayCategory === category;
-      const indexedText = searchableText(data, entity, section);
-      if (categoryMatches && (!normalizedQuery || indexedText.includes(normalizedQuery))) {
-        matches.push({ entity, section });
-      }
-    });
-  });
-
-  return matches;
-}
-
-/**
  * 组合搜索、类别和可选年份筛选，并将真实政权与历史分期明确分区。
  * 未提供年份时保持全览模式的原有结果。
  */
@@ -89,10 +61,12 @@ export function selectBrowseResults(data: BrowseData, filters: EntityFilters): B
   data.timelineSections.forEach((section) => {
     section.entityIds.forEach((entityId) => sectionByEntityId.set(entityId, section));
   });
-  const scope = filters.regionScope ?? { mode: "china" };
+  const matchesScope = createRegionScopeMatcher(
+    data.regions,
+    filters.regionScope ?? { mode: "china" }
+  );
   const regionMatches = data.entities.flatMap((entity): MatchedEntity[] => {
-    const section = sectionByEntityId.get(entity.id);
-    return entityMatchesRegionScope(entity, data.regions, scope) ? [{ entity, section }] : [];
+    return matchesScope(entity) ? [{ entity, section: sectionByEntityId.get(entity.id) }] : [];
   });
   const selectedYear = filters.year;
   const timeMatches =

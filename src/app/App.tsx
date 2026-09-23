@@ -8,6 +8,7 @@ import { getHistoricalYearBounds } from "../domain/browseState";
 import { selectBoundarySnapshots, type BoundarySelection } from "../domain/boundarySnapshots";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
 import { selectMapSnapshots } from "../domain/mapSnapshots";
+import { createRegionScopeMatcher } from "../domain/regionScope";
 import { selectBrowseResults } from "../domain/selectors";
 import type { CrownlineIndex, TimelineSection } from "../domain/types";
 import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
@@ -59,59 +60,57 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   const [comparisonOrigin, setComparisonOrigin] = useState<string | null>(null);
   const mainRef = useRef<HTMLElement>(null);
   useDialogReturnFocus(Boolean(browseState.detailEntityId || browseState.comparisonOpen), mainRef);
+  const { query, category, regionScope } = browseState;
+  const selectedYear = browseState.timeRange === "year" ? browseState.year : undefined;
+  // 只随筛选相关状态重算；打开详情或调整对比不触发。
   const results = useMemo(() => {
-    const filters = {
-      query: browseState.query,
-      category: browseState.category,
-      regionScope: browseState.regionScope
-    };
-    return browseState.timeRange === "year"
-      ? selectBrowseResults(data, { ...filters, year: browseState.year })
-      : selectBrowseResults(data, filters);
-  }, [browseState, data]);
-  const allMatches = useMemo(() => {
-    const sectionByEntityId = new Map<string, TimelineSection>();
+    const filters = { query, category, regionScope };
+    return selectedYear === undefined
+      ? selectBrowseResults(data, filters)
+      : selectBrowseResults(data, { ...filters, year: selectedYear });
+  }, [category, data, query, regionScope, selectedYear]);
+  const entityById = useMemo(() => {
+    return new Map(data.entities.map((entity) => [entity.id, entity]));
+  }, [data.entities]);
+  const sectionByEntityId = useMemo(() => {
+    const sections = new Map<string, TimelineSection>();
     data.timelineSections.forEach((section) => {
-      section.entityIds.forEach((entityId) => sectionByEntityId.set(entityId, section));
+      section.entityIds.forEach((entityId) => sections.set(entityId, section));
     });
-    return data.entities.map((entity) => ({ entity, section: sectionByEntityId.get(entity.id) }));
-  }, [data]);
+    return sections;
+  }, [data.timelineSections]);
   const mapSelection = useMemo(() => {
     if (geographyState.status !== "ready") return null;
     return selectMapSnapshots(
       results.polities.map(({ entity }) => entity),
       geographyState.result.geography.geographicSnapshots,
-      browseState.timeRange === "year" ? browseState.year : undefined
+      selectedYear
     );
-  }, [browseState.timeRange, browseState.year, geographyState, results.polities]);
+  }, [geographyState, results.polities, selectedYear]);
   const boundarySelection = useMemo<BoundarySelection | null>(() => {
     if (boundaryState.status !== "ready") return null;
     return selectBoundarySnapshots(
       results.polities.map(({ entity }) => entity),
       boundaryState.result.boundaries.boundarySnapshots,
-      browseState.timeRange === "year" ? browseState.year : undefined
+      selectedYear
     );
-  }, [boundaryState, browseState.timeRange, browseState.year, results.polities]);
+  }, [boundaryState, results.polities, selectedYear]);
   // 即使筛选状态变化，也要允许已打开的详情继续读取完整实体记录。
-  const selectedMatch = browseState.detailEntityId
-    ? allMatches.find(({ entity }) => entity.id === browseState.detailEntityId)
+  const selectedEntity = browseState.detailEntityId
+    ? entityById.get(browseState.detailEntityId)
     : undefined;
   const overviewGroups = useMemo(() => {
-    return buildOverviewTimelineGroups(data, results.all, browseState.regionScope);
-  }, [browseState.regionScope, data, results.all]);
+    return buildOverviewTimelineGroups(data, results.all, regionScope);
+  }, [data, regionScope, results.all]);
   const overviewTotal = useMemo(() => {
-    return selectBrowseResults(data, {
-      query: "",
-      category: "all",
-      regionScope: browseState.regionScope
-    }).all.length;
-  }, [browseState.regionScope, data]);
+    return data.entities.filter(createRegionScopeMatcher(data.regions, regionScope)).length;
+  }, [data.entities, data.regions, regionScope]);
   const comparisonEntities = useMemo(() => {
     return browseState.compareEntityIds.flatMap((entityId) => {
-      const entity = data.entities.find(({ id }) => id === entityId);
+      const entity = entityById.get(entityId);
       return entity ? [entity] : [];
     });
-  }, [browseState.compareEntityIds, data.entities]);
+  }, [browseState.compareEntityIds, entityById]);
 
   const toggleComparison = useCallback(
     (entityId: string) => {
@@ -144,12 +143,12 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   }, [setBrowseState]);
 
   const compareFromDetail = (relatedEntityId: string) => {
-    if (!selectedMatch) return;
-    setComparisonOrigin(selectedMatch.entity.id);
+    if (!selectedEntity) return;
+    setComparisonOrigin(selectedEntity.id);
     setBrowseState((current) => ({
       ...current,
       detailEntityId: null,
-      compareEntityIds: [selectedMatch.entity.id, relatedEntityId],
+      compareEntityIds: [selectedEntity.id, relatedEntityId],
       comparisonOpen: true
     }));
   };
@@ -200,6 +199,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
             data={data}
             browseState={browseState}
             results={results}
+            overviewGroups={overviewGroups}
             geographyState={geographyState}
             mapSelection={mapSelection}
             boundarySelection={boundarySelection}
@@ -225,7 +225,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
         />
       )}
 
-      {browseState.comparisonOpen && comparisonEntities.length > 0 && !selectedMatch && (
+      {browseState.comparisonOpen && comparisonEntities.length > 0 && !selectedEntity && (
         <ComparisonDialog
           entities={comparisonEntities}
           regions={data.regions}
@@ -244,11 +244,11 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
         />
       )}
 
-      {selectedMatch && (
+      {selectedEntity && (
         <DetailDialog
-          entity={selectedMatch.entity}
+          entity={selectedEntity}
           entities={data.entities}
-          sectionTitle={selectedMatch.section?.title}
+          sectionTitle={sectionByEntityId.get(selectedEntity.id)?.title}
           regions={data.regions}
           detailState={detailState}
           {...(browseState.timeRange === "year" ? { currentYear: browseState.year } : {})}

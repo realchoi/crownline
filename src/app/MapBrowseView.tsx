@@ -16,7 +16,7 @@ export interface MapBrowseViewProps {
   boundarySelection: BoundarySelection | null;
   onRetryGeography: () => void;
   onRetryBoundaries: () => void;
-  onSelect: (entityId: string, trigger: HTMLButtonElement) => void;
+  onSelect: (entityId: string) => void;
   onToggleComparison: (entityId: string) => void;
 }
 
