@@ -5,14 +5,28 @@ export const CHINA_REGION_ID = "region-china";
 export type RegionScope =
   { mode: "china" } | { mode: "custom"; regionIds: string[] } | { mode: "global" };
 
+/** 按给定 ID 的顺序取地区，跳过当前数据中不存在的 ID。 */
+export function getRegionsByIds(
+  regions: readonly Region[],
+  regionIds: readonly string[]
+): Region[] {
+  const regionById = new Map(regions.map((region) => [region.id, region]));
+  return regionIds.flatMap((regionId) => {
+    const region = regionById.get(regionId);
+    return region ? [region] : [];
+  });
+}
+
+/** 按给定 ID 的顺序取地区主名称，跳过不存在的 ID。 */
+export function getRegionNames(regions: readonly Region[], regionIds: readonly string[]): string[] {
+  return getRegionsByIds(regions, regionIds).map(({ names }) => names.primary);
+}
+
 /** 控制条与结果摘要共享的范围名称，长选择保留前两个地区与总数。 */
 export function getRegionScopeLabel(scope: RegionScope, regions: Region[]): string {
   if (scope.mode === "china") return "中国";
   if (scope.mode === "global") return "全球已收录";
-  const names = scope.regionIds.flatMap((regionId) => {
-    const region = regions.find(({ id }) => id === regionId);
-    return region ? [region.names.primary] : [];
-  });
+  const names = getRegionNames(regions, scope.regionIds);
   return names.length > 2
     ? `${names.slice(0, 2).join("、")}等 ${names.length} 地区`
     : names.join("、");

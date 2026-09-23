@@ -11,6 +11,7 @@ import {
 import { ActiveFilterChips } from "../components/ActiveFilterChips";
 import { FilterPanel } from "../components/FilterPanel";
 import { ViewModeControl } from "../components/ViewModeControl";
+import { useModalDialog } from "../components/useModalDialog";
 import {
   clearAdditionalFilters,
   selectBrowseYear,
@@ -68,7 +69,6 @@ export function BrowseControls({
   const dialogRef = useRef<HTMLDialogElement>(null);
   const sheetTriggerRef = useRef<HTMLButtonElement>(null);
   const sheetCloseRef = useRef<HTMLButtonElement>(null);
-  const sheetResultsRef = useRef<HTMLButtonElement>(null);
   const hasOpenedSheetRef = useRef(false);
   const scopeLabel = getRegionScopeLabel(browseState.regionScope, regions);
   const timeLabel =
@@ -107,25 +107,18 @@ export function BrowseControls({
     };
   }, [isMobile]);
 
+  const closeSheet = useCallback(() => setIsSheetOpen(false), []);
+  useModalDialog(dialogRef, {
+    open: isSheetOpen,
+    onClose: closeSheet,
+    initialFocusRef: sheetCloseRef
+  });
+
   useEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
     if (isSheetOpen) {
       hasOpenedSheetRef.current = true;
-      if (!dialog.open) {
-        if (typeof dialog.showModal === "function") dialog.showModal();
-        else dialog.setAttribute("open", "");
-      }
       document.body.classList.add("filter-sheet-open");
-      const frame = requestAnimationFrame(() =>
-        sheetCloseRef.current?.focus({ preventScroll: true })
-      );
-      return () => cancelAnimationFrame(frame);
-    }
-
-    if (dialog.open) {
-      if (typeof dialog.close === "function") dialog.close();
-      else dialog.removeAttribute("open");
+      return;
     }
     document.body.classList.remove("filter-sheet-open");
     if (hasOpenedSheetRef.current) {
@@ -156,8 +149,6 @@ export function BrowseControls({
     }),
     [setBrowseState]
   );
-
-  const closeSheet = useCallback(() => setIsSheetOpen(false), []);
 
   const renderConsole = () => (
     <>
@@ -279,24 +270,6 @@ export function BrowseControls({
         ref={dialogRef}
         className="filter-sheet"
         aria-labelledby="filter-sheet-title"
-        onCancel={(event) => {
-          event.preventDefault();
-          closeSheet();
-        }}
-        onKeyDown={(event) => {
-          if (event.key === "Escape") {
-            event.preventDefault();
-            closeSheet();
-          } else if (event.key === "Tab") {
-            if (event.shiftKey && document.activeElement === sheetCloseRef.current) {
-              event.preventDefault();
-              sheetResultsRef.current?.focus();
-            } else if (!event.shiftKey && document.activeElement === sheetResultsRef.current) {
-              event.preventDefault();
-              sheetCloseRef.current?.focus();
-            }
-          }
-        }}
         onClose={() => setIsSheetOpen(false)}
       >
         <div className="filter-sheet-frame">
@@ -311,7 +284,7 @@ export function BrowseControls({
           </header>
           <div className="filter-sheet-scroll">{isSheetOpen && renderConsole()}</div>
           <footer className="filter-sheet-footer">
-            <button ref={sheetResultsRef} type="button" onClick={closeSheet}>
+            <button type="button" onClick={closeSheet}>
               查看 {resultCount} 个结果
             </button>
           </footer>

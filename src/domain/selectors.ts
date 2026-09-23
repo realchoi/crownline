@@ -1,5 +1,5 @@
 import { formatPeriods, isYearInPeriods } from "./chronology";
-import { entityMatchesRegionScope, type RegionScope } from "./regionScope";
+import { entityMatchesRegionScope, getRegionsByIds, type RegionScope } from "./regionScope";
 import type { BrowseData, DisplayCategory, HistoricalEntity, TimelineSection } from "./types";
 
 /** 页面类别筛选值；`all` 表示不限制展示类别。 */
@@ -30,10 +30,9 @@ function searchableText(
   entity: HistoricalEntity,
   section?: TimelineSection
 ): string {
-  const regionNames = entity.historicalRegionIds.flatMap((regionId) => {
-    const region = data.regions.find(({ id }) => id === regionId);
-    return region ? [region.names.primary, ...region.names.aliases, region.names.local ?? ""] : [];
-  });
+  const regionNames = getRegionsByIds(data.regions, entity.historicalRegionIds).flatMap(
+    ({ names }) => [names.primary, ...names.aliases, names.local ?? ""]
+  );
   return normalizeText(
     [
       entity.names.primary,

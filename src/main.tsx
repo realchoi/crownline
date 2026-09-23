@@ -5,7 +5,7 @@ import { App } from "./app/App";
 import { AppBootstrap } from "./app/AppBootstrap";
 import { createCrownlineDetailLoader } from "./data/loadCrownlineDetail";
 import { createCrownlineBoundariesLoader } from "./data/loadCrownlineBoundaries";
-import { loadGeneratedGeography } from "./data/loadCrownlineGeography";
+import { createCrownlineGeographyLoader } from "./data/loadCrownlineGeography";
 import { loadCrownlineIndex } from "./data/loadCrownlineIndex";
 import "./styles/styles.css";
 
@@ -23,7 +23,7 @@ root.render(
         <App
           data={data}
           loadDetail={createCrownlineDetailLoader(data)}
-          loadGeography={() => loadGeneratedGeography()}
+          loadGeography={createCrownlineGeographyLoader()}
           loadBoundaries={createCrownlineBoundariesLoader()}
         />
       </StrictMode>

@@ -1,6 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { ComparisonPanel, type ComparisonPanelProps } from "./ComparisonPanel";
+import { useModalDialog } from "./useModalDialog";
 
 interface ComparisonDialogProps extends ComparisonPanelProps {
   onClose: () => void;
@@ -18,41 +19,7 @@ export function ComparisonDialog({
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-    if (typeof dialog.showModal === "function") dialog.showModal();
-    else dialog.setAttribute("open", "");
-    closeRef.current?.focus({ preventScroll: true });
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.preventDefault();
-        onClose();
-      }
-      if (event.key === "Tab") {
-        const focusable = Array.from(
-          dialog.querySelectorAll<HTMLElement>(
-            'button:not(:disabled), a[href], summary, [tabindex]:not([tabindex="-1"])'
-          )
-        ).filter((element) => element.getClientRects().length > 0);
-        const first = focusable[0];
-        const last = focusable.at(-1);
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last?.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first?.focus();
-        }
-      }
-    };
-    dialog.addEventListener("keydown", onKeyDown);
-    return () => {
-      dialog.removeEventListener("keydown", onKeyDown);
-      if (dialog.open && typeof dialog.close === "function") dialog.close();
-      else dialog.removeAttribute("open");
-    };
-  }, [onClose]);
+  useModalDialog(dialogRef, { onClose, initialFocusRef: closeRef });
 
   return (
     <dialog
@@ -60,10 +27,6 @@ export function ComparisonDialog({
       className="comparison-dialog"
       aria-labelledby="comparison-title"
       aria-describedby="comparison-dialog-note"
-      onCancel={(event) => {
-        event.preventDefault();
-        onClose();
-      }}
     >
       <div className="comparison-dialog-shell">
         <header className="comparison-dialog-head">

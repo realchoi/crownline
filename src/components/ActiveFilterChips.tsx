@@ -1,5 +1,5 @@
 import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
-import type { RegionScope } from "../domain/regionScope";
+import { getRegionsByIds, type RegionScope } from "../domain/regionScope";
 import type { CategoryFilter } from "../domain/selectors";
 import type { Region } from "../domain/types";
 
@@ -27,12 +27,7 @@ export function ActiveFilterChips({
 }: ActiveFilterChipsProps) {
   const trimmedQuery = query.trim();
   const customRegions =
-    regionScope.mode === "custom"
-      ? regionScope.regionIds.flatMap((regionId) => {
-          const region = regions.find(({ id }) => id === regionId);
-          return region ? [region] : [];
-        })
-      : [];
+    regionScope.mode === "custom" ? getRegionsByIds(regions, regionScope.regionIds) : [];
   const hasAdditionalFilters = trimmedQuery.length > 0 || category !== "all";
   const hasActiveFilters = hasAdditionalFilters || customRegions.length > 0;
 

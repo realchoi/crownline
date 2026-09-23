@@ -1,6 +1,7 @@
 import { fromOrdinal, formatHistoricalYear, formatPeriods, toOrdinal } from "../domain/chronology";
 import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
+import { getRegionNames } from "../domain/regionScope";
 import type { Region } from "../domain/types";
 import { ComparisonToggle } from "./ComparisonToggle";
 
@@ -58,12 +59,7 @@ export function TimelineStage({
         const displayRange = formatPeriods(entity.existencePeriods, entity.displayRangeOverride);
         const comparisonSelected = comparisonEntityIds.includes(entity.id);
         const regionNames =
-          group.kind === "cross-region"
-            ? entity.historicalRegionIds.flatMap((regionId) => {
-                const region = regions.find(({ id }) => id === regionId);
-                return region ? [region.names.primary] : [];
-              })
-            : [];
+          group.kind === "cross-region" ? getRegionNames(regions, entity.historicalRegionIds) : [];
         return (
           <div
             className={`timeline-row${comparisonSelected ? " is-comparison-selected" : ""}`}

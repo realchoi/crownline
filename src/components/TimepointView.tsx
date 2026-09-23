@@ -2,7 +2,7 @@ import { formatHistoricalYear, formatPeriods } from "../domain/chronology";
 import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import { formatEntityNameWithLocal } from "../domain/entityNames";
 import type { MatchedEntity } from "../domain/selectors";
-import type { RegionScope } from "../domain/regionScope";
+import { getRegionNames, type RegionScope } from "../domain/regionScope";
 import type { Region } from "../domain/types";
 import { ComparisonToggle } from "./ComparisonToggle";
 import { EntityLocalName } from "./EntityLocalName";
@@ -33,10 +33,7 @@ function TimepointCard({
   onToggleComparison: TimepointViewProps["onToggleComparison"];
 }) {
   const { entity, section } = match;
-  const regionNames = entity.historicalRegionIds.flatMap((regionId) => {
-    const region = regions.find(({ id }) => id === regionId);
-    return region ? [region.names.primary] : [];
-  });
+  const regionNames = getRegionNames(regions, entity.historicalRegionIds);
   const periods = formatPeriods(entity.existencePeriods, entity.displayRangeOverride);
   const isApproximate = entity.existencePeriods.some((period) => {
     return period.start.precision !== "exact" || period.end.precision !== "exact";

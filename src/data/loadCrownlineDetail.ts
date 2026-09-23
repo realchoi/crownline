@@ -1,5 +1,5 @@
 import type { CrownlineDetail, CrownlineIndex } from "../domain/types";
-import type { FetchData } from "./loadCrownlineIndex";
+import { fetchGeneratedJson, generatedDataUrl, type FetchData } from "./fetchGenerated";
 import { asCrownlineDetail } from "./runtimeValidation";
 
 export type CrownlineDetailLoader = (entityId: string) => Promise<CrownlineDetail | null>;
@@ -18,12 +18,10 @@ export function createCrownlineDetailLoader(
     const cached = cache.get(entityId);
     if (cached) return cached;
 
-    const request = fetcher(
-      `${baseUrl}data/generated/details/${encodeURIComponent(entityId)}.json`
-    ).then(async (response) => {
-      if (!response.ok) throw new Error(`详情数据请求失败：HTTP ${response.status}`);
-      return asCrownlineDetail(await response.json(), entityId);
-    });
+    const url = generatedDataUrl(baseUrl, `details/${encodeURIComponent(entityId)}.json`);
+    const request = fetchGeneratedJson(fetcher, url, "详情数据").then((json) =>
+      asCrownlineDetail(json, entityId)
+    );
     cache.set(entityId, request);
     request.catch(() => cache.delete(entityId));
     return request;

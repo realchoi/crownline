@@ -4,7 +4,10 @@ import { loadSourceData } from "../scripts/data-source";
 import { buildGeneratedArtifacts } from "../src/data/artifacts";
 import { createCrownlineDetailLoader } from "../src/data/loadCrownlineDetail";
 import { createCrownlineBoundariesLoader } from "../src/data/loadCrownlineBoundaries";
-import { loadGeneratedGeography } from "../src/data/loadCrownlineGeography";
+import {
+  createCrownlineGeographyLoader,
+  loadGeneratedGeography
+} from "../src/data/loadCrownlineGeography";
 import { loadCrownlineIndex } from "../src/data/loadCrownlineIndex";
 import {
   asCrownlineGeography,
@@ -225,24 +228,42 @@ describe("运行时数据加载", () => {
     expect(requested).toBe(false);
   });
 
-  it("从文档基准地址按需加载独立地理数据", async () => {
+  it("从站点基准地址按需加载独立地理数据", async () => {
     const urls: string[] = [];
     const fetcher = async (input: RequestInfo | URL) => {
       urls.push(String(input));
       return jsonResponse(geography);
     };
 
-    await expect(loadGeneratedGeography(fetcher)).resolves.toEqual({
+    await expect(loadGeneratedGeography(fetcher, "./")).resolves.toEqual({
       geography,
       omittedCount: 0
     });
-    expect(urls).toEqual([String(new URL("./data/generated/geography.json", document.baseURI))]);
+    expect(urls).toEqual(["./data/generated/geography.json"]);
   });
 
   it("用明确状态描述地理数据请求失败", async () => {
     const fetcher = async () => jsonResponse({ message: "unavailable" }, 503);
 
-    await expect(loadGeneratedGeography(fetcher)).rejects.toThrow("无法加载地理数据（HTTP 503）");
+    await expect(loadGeneratedGeography(fetcher, "./")).rejects.toThrow(
+      "地理数据请求失败：HTTP 503"
+    );
+  });
+
+  it("地理加载器合并并发请求、缓存成功结果，失败后可重试", async () => {
+    let attempts = 0;
+    const loadGeography = createCrownlineGeographyLoader(async () => {
+      attempts += 1;
+      return attempts === 1 ? jsonResponse({ message: "broken" }, 503) : jsonResponse(geography);
+    }, "./");
+
+    await expect(loadGeography()).rejects.toThrow("地理数据请求失败：HTTP 503");
+    const [first, second] = await Promise.all([loadGeography(), loadGeography()]);
+    const third = await loadGeography();
+    expect(first).toEqual({ geography, omittedCount: 0 });
+    expect(second).toBe(first);
+    expect(third).toBe(first);
+    expect(attempts).toBe(2);
   });
 
   it("按需加载疆域包，合并并发请求并缓存成功结果", async () => {
@@ -251,13 +272,13 @@ describe("运行时数据加载", () => {
       urls.push(String(input));
       return jsonResponse(boundaries);
     };
-    const loadBoundaries = createCrownlineBoundariesLoader(fetcher);
+    const loadBoundaries = createCrownlineBoundariesLoader(fetcher, "./");
     const [first, second] = await Promise.all([loadBoundaries(), loadBoundaries()]);
     const third = await loadBoundaries();
     expect(first).toEqual({ boundaries, omittedCount: 0 });
     expect(second).toEqual(first);
     expect(third).toEqual(first);
-    expect(urls).toEqual([String(new URL("./data/generated/boundaries.json", document.baseURI))]);
+    expect(urls).toEqual(["./data/generated/boundaries.json"]);
   });
 
   it("疆域请求失败后允许重试且不缓存失败结果", async () => {
@@ -265,7 +286,7 @@ describe("运行时数据加载", () => {
     const loadBoundaries = createCrownlineBoundariesLoader(async () => {
       attempts += 1;
       return attempts === 1 ? jsonResponse({ message: "broken" }, 503) : jsonResponse(boundaries);
-    });
+    }, "./");
     await expect(loadBoundaries()).rejects.toThrow("疆域数据请求失败：HTTP 503");
     await expect(loadBoundaries()).resolves.toEqual({ boundaries, omittedCount: 0 });
     expect(attempts).toBe(2);

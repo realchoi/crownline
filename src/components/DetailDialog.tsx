@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import {
   calculatePeriodsDuration,
@@ -11,12 +11,14 @@ import {
   DETAIL_REIGN_ROLE_NAMES,
   DISPLAY_CATEGORY_NAMES
 } from "../domain/displayLabels";
+import { getRegionNames } from "../domain/regionScope";
 import { selectRulerSnapshot, type RulerSnapshot } from "../domain/rulerSnapshot";
 import type { CrownlineDetail, HistoricalEntity, Region, SourceRef } from "../domain/types";
 import { DetailLoadPanel, type DetailLoadState } from "./DetailLoadPanel";
 import { EntityLocalName } from "./EntityLocalName";
 import { RulerOverview } from "./RulerOverview";
 import { RelatedPolities } from "./RelatedPolities";
+import { useModalDialog } from "./useModalDialog";
 
 interface DetailDialogProps {
   entity: HistoricalEntity;
@@ -79,11 +81,7 @@ export function DetailDialog({
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const duration = calculatePeriodsDuration(entity.existencePeriods);
-  const regionById = new Map(regions.map((region) => [region.id, region]));
-  const regionNames = entity.historicalRegionIds.flatMap((regionId) => {
-    const region = regionById.get(regionId);
-    return region ? [region.names.primary] : [];
-  });
+  const regionNames = getRegionNames(regions, entity.historicalRegionIds);
   const detail = detailState.status === "ready" ? detailState.detail : undefined;
   const snapshot =
     detail && entity.entityKind === "polity" && currentYear !== undefined
@@ -91,49 +89,7 @@ export function DetailDialog({
       : undefined;
   const sourceGroups = detail ? collectSourceGroups(detail, entity, snapshot) : [];
 
-  useEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-
-    // 浏览器使用原生模态能力；测试环境不支持时退化为 open 属性。
-    if (typeof dialog.showModal === "function") dialog.showModal();
-    else dialog.setAttribute("open", "");
-    closeButtonRef.current?.focus();
-
-    const dialogBody = dialog.querySelector(".dialog-body");
-    const handleWheel = (event: WheelEvent) => {
-      if (!(dialogBody instanceof HTMLElement)) {
-        event.preventDefault();
-        return;
-      }
-
-      const target = event.target;
-      if (!(target instanceof Node) || !dialogBody.contains(target)) {
-        event.preventDefault();
-        return;
-      }
-
-      const { scrollTop, scrollHeight, clientHeight } = dialogBody;
-      const atTop = scrollTop <= 0;
-      const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
-      if ((atTop && event.deltaY < 0) || (atBottom && event.deltaY > 0)) {
-        event.preventDefault();
-      }
-    };
-
-    dialog.addEventListener("wheel", handleWheel, { passive: false });
-    // 显式监听 Escape，确保不同浏览器和自动化环境都走统一关闭流程。
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      dialog.removeEventListener("wheel", handleWheel);
-      document.removeEventListener("keydown", handleKeyDown);
-      if (dialog.open && typeof dialog.close === "function") dialog.close();
-      else dialog.removeAttribute("open");
-    };
-  }, [onClose]);
+  useModalDialog(dialogRef, { onClose, initialFocusRef: closeButtonRef });
 
   const rulerHeading =
     currentYear === undefined
@@ -144,10 +100,6 @@ export function DetailDialog({
     <dialog
       ref={dialogRef}
       aria-labelledby="detail-name"
-      onCancel={(event) => {
-        event.preventDefault();
-        onClose();
-      }}
       onClick={(event) => event.currentTarget === event.target && onClose()}
     >
       <div className="dialog-shell">

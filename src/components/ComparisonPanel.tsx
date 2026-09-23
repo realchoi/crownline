@@ -9,6 +9,7 @@ import {
   selectRulersDuringPeriods,
   type ComparisonRulerEntry
 } from "../domain/polityComparison";
+import { getRegionNames } from "../domain/regionScope";
 import { selectRulerSnapshot, type RulerSnapshot } from "../domain/rulerSnapshot";
 import type { CrownlineDetail, HistoricalEntity, Region } from "../domain/types";
 import { HistoricalRelationships } from "./HistoricalRelationships";
@@ -89,10 +90,7 @@ function PolityColumn({
   overlapPeriods: ReturnType<typeof buildPolityComparison>["overlapPeriods"];
   currentYear?: number;
 }) {
-  const regionNames = entity.historicalRegionIds.flatMap((regionId) => {
-    const region = regions.find(({ id }) => id === regionId);
-    return region ? [region.names.primary] : [];
-  });
+  const regionNames = getRegionNames(regions, entity.historicalRegionIds);
   const entries = detail ? selectRulersDuringPeriods(entity, detail, overlapPeriods) : [];
   const snapshot =
     detail && currentYear ? selectRulerSnapshot(entity, detail, currentYear) : undefined;
