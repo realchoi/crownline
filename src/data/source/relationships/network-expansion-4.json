@@ -1,0 +1,276 @@
+[
+  {
+    "id": "relationship-england-hre-bouvines-alliance",
+    "type": "alliance",
+    "participants": [
+      {
+        "entityId": "polity-kingdom-of-england",
+        "role": "出资与派兵方"
+      },
+      {
+        "entityId": "polity-holy-roman-empire",
+        "role": "联军统帅方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1214,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1214,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "1214年英格兰约翰王出资支持奥托四世对抗法王腓力二世，并派索尔兹伯里伯爵等骑士加入奥托四世在瓦朗谢讷集结的联军；7月27日联军在布汶战败。奥托四世当时已遭教廷绝罚，1212年起又有腓特烈二世被选为对立国王，本条只表示奥托四世一方与英格兰的同盟，不代表帝国诸侯整体参战。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-drm-bouvines-accounts",
+        "locator": "The Battle of Bouvines according to William the Breton (prose account): Otto … whom King John of England had retained against King Philip … King John sent to him, at his expense and in his pay, noble combatants and knights"
+      },
+      {
+        "sourceId": "source-whe-hre-timeline",
+        "locator": "27 Jul 1214: the allied army under Holy Roman Emperor Otto IV during the Anglo-French War of 1213-1214"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "奥托四世的帝位在1212年后受到腓特烈二世挑战，神圣罗马帝国一方只由奥托四世及其支持者代表。"
+  },
+  {
+    "id": "relationship-tokugawa-ryukyu-edo-missions",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-tokugawa-shogunate",
+        "role": "受使方"
+      },
+      {
+        "entityId": "polity-ryukyu-kingdom",
+        "role": "遣使方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1634,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1850,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "1634年起，琉球在德川将军袭职时遣庆贺使、在本国国王即位后遣谢恩使赴江户，至1850年共18次，区间内为间隔派遣而非常驻往来。使节由萨摩岛津氏奉命督办并带领，平凡社《世界大百科事典》称之为服属礼仪；1609年后琉球实际受萨摩藩支配、编入岛津氏知行，同时维持对中国的朝贡册封关系。本条只记录琉球与幕府之间的遣使礼仪，不写成琉球对幕府的直接臣属。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-kotobank-ryukyu-shisetsu",
+        "locator": "改訂新版 世界大百科事典「琉球使節」（紙屋敦之）：1634年（寛永11）薩摩島津氏が琉球国王に徳川将軍の代替りを祝う慶賀使を派遣させたのに始まる……服属儀礼である……1850年（嘉永3）に至る間計18回実行された"
+      },
+      {
+        "sourceId": "source-kotobank-ryukyu-shisetsu",
+        "locator": "山川 日本史小辞典 改訂新版「琉球使節」：江戸時代，琉球国王が徳川将軍に送った外交使節……1634年(寛永11)に始まり，1850年(嘉永3)まで18回実施"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-fatimid-byzantine-war-990s",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-fatimid-caliphate",
+        "role": "交战方"
+      },
+      {
+        "entityId": "polity-byzantine-empire",
+        "role": "交战方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 992,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 998,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "990年代法蒂玛军队屡次围攻拜占庭的附庸阿勒颇：拜占庭安条克驻军在992年和994年两度野战失利，巴西尔二世于995年春亲率援军抵达北叙利亚，迫使法蒂玛军撤退；998年拜占庭军再败，巴西尔二世随后蹂躏奥龙特斯河谷并围攻的黎波里未果，来源未载后者年份，故不计入区间。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-dir-basil-ii",
+        "locator": "The East: Fatimid armies repeatedly besieged Aleppo … defeated in open battle in 992 and 994 … arrived unexpectedly in northern Syria in the early spring of 995 … In 998 Byzantine forces based at Antioch … suffered another defeat"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-fatimid-byzantine-peace-1001",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-fatimid-caliphate",
+        "role": "议和方"
+      },
+      {
+        "entityId": "polity-byzantine-empire",
+        "role": "议和方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1001,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1016,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "巴西尔二世对北叙利亚的迅速反击促使年轻哈里发哈基姆的近臣议和，双方和平自1001年维持至1016年而未严重破裂，1009年哈基姆拆毁耶路撒冷圣墓教堂也未动摇这一局面；1016年法蒂玛军占据阿勒颇后关系有所恶化，但未恢复1000年前的全面战争。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-dir-basil-ii",
+        "locator": "The East: persuaded the advisors surrounding the young Fatimid caliph, al-Hakim, to come to terms. The result was a peace which lasted without serious rupture from 1001 to 1016"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-champa-khmer-angkor-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-champa-kingdom",
+        "role": "进攻方"
+      },
+      {
+        "entityId": "polity-khmer-empire",
+        "role": "防守方"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1177,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1177,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "1177年占婆以舟师袭击高棉，攻至其国都吴哥并加以劫掠。其后阇耶跋摩七世驱逐占据吴哥的占婆军队，并自1181年在位；可核来源未给出驱逐完成的年份，本条只记1177年的进攻。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-wikisource-song-shi",
+        "locator": "卷四百八十九 外国五·占城：淳熙四年（1177），占城以舟师袭真腊，傅其国都"
+      },
+      {
+        "sourceId": "source-whe-khmer-empire",
+        "locator": "Cham's humiliating revenge, looting Angkor (1177 CE); Jayavarman VII (r. 1181 CE - 1215 CE) … expelled the Chams who took Angkor"
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "relationship-ethiopia-ottoman-habesh-war",
+    "type": "war",
+    "participants": [
+      {
+        "entityId": "polity-ethiopian-empire",
+        "role": "交战方"
+      },
+      {
+        "entityId": "polity-ottoman-empire",
+        "role": "交战方（哈贝什行省）"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1574,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1579,
+          "precision": "exact"
+        }
+      },
+      {
+        "start": {
+          "year": 1589,
+          "precision": "exact"
+        },
+        "end": {
+          "year": 1589,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "奥斯曼在红海沿岸设哈贝什行省后，与埃塞俄比亚反复争夺德巴尔瓦与阿尔基科：1574年行省军击退埃塞俄比亚对两地的进攻；1579年萨尔萨·登格尔皇帝在提格雷的阿迪卡罗亲率军队击败并击杀行省总督艾哈迈德帕夏，随后夺取德巴尔瓦；1589年双方友好破裂，埃塞俄比亚再度进攻，被新任总督许达韦尔迪帕夏击败。奥斯曼一方主要是哈贝什行省兵力，不是中央大军亲征。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-tdv-habes-eyaleti",
+        "locator": "Rıdvan Paşa zamanında … 1574’te Debârvâ’ya ve Arkiko Limanı’na yönelik iki önemli askerî harekât geri püskürtüldü; Addi Karro … (1579) … Osmanlılar’ın yenilgisiyle sona erdi"
+      },
+      {
+        "sourceId": "source-tdv-habes-eyaleti",
+        "locator": "Nihayet bu dostluk 1589’da sona erdi. … Hüdâverdi Paşa zamanında saldırıya geçen Habeşistan kralı yenilgiye uğradı"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "阿迪卡罗之战另有1578年12月之说；1579年后哈兹尔帕夏收复沿海并在德巴尔瓦前获胜的年份来源未载，未计入区间。"
+  },
+  {
+    "id": "relationship-ethiopia-ottoman-habesh-diplomacy",
+    "type": "diplomacy",
+    "participants": [
+      {
+        "entityId": "polity-ethiopian-empire",
+        "role": "通好方"
+      },
+      {
+        "entityId": "polity-ottoman-empire",
+        "role": "通好方（哈贝什行省）"
+      }
+    ],
+    "periods": [
+      {
+        "start": {
+          "year": 1583,
+          "precision": "circa"
+        },
+        "end": {
+          "year": 1589,
+          "precision": "exact"
+        }
+      }
+    ],
+    "summary": "哈兹尔帕夏任内萨尔萨·登格尔首次致信商谈；1582年12月穆斯塔法帕夏出任哈贝什总督后，双方建立外交关系，萨尔萨·登格尔还借用土耳其士兵镇压国内叛乱。1589年这一友好关系终止。",
+    "eventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "source-tdv-habes-eyaleti",
+        "locator": "Hızır Paşa’dan sonra Habeş eyaletine tayin edilen (21 Aralık 1582) Mustafa Paşa zamanında Habeşistan Krallığı ile diplomatik ilişki kuruldu … Nihayet bu dostluk 1589’da sona erdi"
+      }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "来源只给出穆斯塔法帕夏1582年12月21日的任命日期，建交起点按其到任后推定为约1583年。"
+  }
+]

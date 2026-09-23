@@ -1,0 +1,68 @@
+[
+  {
+    "id": "source-drm-bouvines-accounts",
+    "title": "The Battle of Bouvines (1214)",
+    "sourceType": "primary",
+    "citation": "De Re Militari 刊出的布汶之战史料英译汇编，收录《马谢讷记》与法王随军司铎威廉·勒布雷东的散文记述；用于核对英格兰约翰王出资并派骑士支持奥托四世联军。",
+    "authors": [
+      "William the Breton"
+    ],
+    "publisher": "De Re Militari: The Society for Medieval Military History",
+    "url": "https://deremilitari.org/2014/03/the-battle-of-bouvines-1214/",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-whe-hre-timeline",
+    "title": "Timeline: Holy Roman Empire",
+    "sourceType": "tertiary",
+    "citation": "World History Encyclopedia：神圣罗马帝国年表；用于核对1214年布汶之战中奥托四世统率的联军及其所属的英法战争背景。",
+    "publisher": "World History Encyclopedia",
+    "url": "https://www.worldhistory.org/timeline/Holy_Roman_Empire/",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-kotobank-ryukyu-shisetsu",
+    "title": "琉球使节",
+    "sourceType": "tertiary",
+    "citation": "Kotobank 收录的“琉球使节”条，包括平凡社《改订新版 世界大百科事典》（紙屋敦之撰）与山川出版社《山川 日本史小辞典 改订新版》释文；用于核对1634—1850年琉球遣往德川将军的庆贺使与谢恩使。",
+    "authors": [
+      "紙屋敦之"
+    ],
+    "publisher": "平凡社、山川出版社（Kotobank）",
+    "url": "https://kotobank.jp/word/%E7%90%89%E7%90%83%E4%BD%BF%E7%AF%80-877833",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-dir-basil-ii",
+    "title": "Basil II (A.D. 976-1025)",
+    "sourceType": "secondary",
+    "citation": "Catherine Holmes, “Basil II (A.D. 976-1025)”, De Imperatoribus Romanis: An Online Encyclopedia of Roman Emperors, 2003；用于核对巴西尔二世时期拜占庭与法蒂玛王朝在北叙利亚的战争与1001年议和。",
+    "authors": [
+      "Catherine Holmes"
+    ],
+    "publisher": "De Imperatoribus Romanis",
+    "url": "https://roman-emperors.sites.luc.edu/basilii.htm",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-whe-khmer-empire",
+    "title": "Khmer Empire",
+    "sourceType": "tertiary",
+    "citation": "World History Encyclopedia：高棉帝国条目；用于核对1177年占婆劫掠吴哥及阇耶跋摩七世驱逐占婆军队。",
+    "publisher": "World History Encyclopedia",
+    "url": "https://www.worldhistory.org/Khmer_Empire/",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-tdv-habes-eyaleti",
+    "title": "HABEŞ EYALETİ",
+    "sourceType": "secondary",
+    "citation": "Cengiz Orhonlu, “Habeş Eyaleti”, TDV İslâm Ansiklopedisi, 1996；用于核对奥斯曼哈贝什行省与埃塞俄比亚在十六世纪后期的战争和外交。",
+    "authors": [
+      "Cengiz Orhonlu"
+    ],
+    "publisher": "TDV İslâm Araştırmaları Merkezi",
+    "url": "https://islamansiklopedisi.org.tr/habes-eyaleti",
+    "accessedAt": "2026-09-23"
+  }
+]

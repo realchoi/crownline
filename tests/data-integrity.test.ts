@@ -443,9 +443,9 @@ describe("生产历史数据", () => {
     expect(new Set(data.relationships.map(({ type }) => type))).toEqual(
       new Set(RELATIONSHIP_TYPES)
     );
-    expect(data.relationships).toHaveLength(125);
+    expect(data.relationships).toHaveLength(132);
     expect(data.events).toHaveLength(34);
-    expect(data.sources).toHaveLength(308);
+    expect(data.sources).toHaveLength(314);
     expect(
       data.relationships.every(({ sourceRefs }) => {
         return sourceRefs.length > 0 && sourceRefs.every(({ locator }) => Boolean(locator?.trim()));
