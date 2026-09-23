@@ -40,7 +40,8 @@
       "description": "萨珊帝国是224年阿尔达希尔一世推翻帕提亚后在伊朗高原建立的波斯帝国，以泰西封（Ctesiphon）为冬都政治中心，统合伊朗、美索不达米亚及西亚广大疆域达四个世纪。帝国与罗马及后来的拜占庭长期争霸，沙普尔一世曾俘罗马皇帝瓦勒里安，霍斯劳二世时期亦与拜占庭爆发大规模战争并一度占领叙利亚与埃及。651年耶兹德格尔三世在阿拉伯征服中败亡，萨珊王朝终结。",
       "sourceRefs": [
         {
-          "sourceId": "source-sasanian-history"
+          "sourceId": "source-sasanian-history",
+          "locator": "Overview；History：Origins and early history / Wars with Rome / Arab conquest"
         },
         {
           "sourceId": "source-sasanian-rulers"

@@ -17,17 +17,19 @@
     "placeName": "Damascus",
     "role": "capital",
     "coordinates": {
-      "latitude": 33.5138,
-      "longitude": 36.2765
+      "latitude": 33.5130695,
+      "longitude": 36.3095814
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期都城的大致位置，不表示政权疆域。744年末马尔万二世将驻跸中心北迁哈兰，但王朝仍以叙利亚为权力根基。",
+    "positionNote": "Britannica支持穆阿维叶一世以大马士革为统治中心，并在744年马尔万二世时期转向哈兰；坐标取现代大马士革OSM城市节点。这里只表示661—744年的都城浏览定位，不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-umayyad-history",
+        "locator": "The reign of Muʿāwiyah I：Damascus as the seat of rule；Marwān II：transfer to Harran in 744"
       },
       {
-        "sourceId": "source-umayyad-history"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 1091272140（Damascus）；33.5130695, 36.3095814；2026-09-15检索"
       }
     ],
     "confidence": "medium"
@@ -50,17 +52,19 @@
     "placeName": "Harran",
     "role": "political-center",
     "coordinates": {
-      "latitude": 36.8631,
-      "longitude": 39.0319
+      "latitude": 36.8710059,
+      "longitude": 39.0251364
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示744年后倭马亚末期的政治中心大致位置，不表示固定首都或政权疆域。",
+    "positionNote": "《伊朗百科全书》确认马尔万二世将政治中心由大马士革迁至哈兰；坐标取现代哈兰OSM城镇关系中心。记录只覆盖末代哈里发744—750年，不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p0-iranica-harran",
+        "locator": "Harran：Marwan II transferred his capital from Damascus to Harran"
       },
       {
-        "sourceId": "source-umayyad-history"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 1747581（Harran）；36.8710059, 39.0251364；2026-09-15检索"
       }
     ],
     "confidence": "medium"

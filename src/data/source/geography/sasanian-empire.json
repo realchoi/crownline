@@ -5,11 +5,11 @@
     "periods": [
       {
         "start": {
-          "year": 224,
+          "year": 226,
           "precision": "exact"
         },
         "end": {
-          "year": 651,
+          "year": 637,
           "precision": "exact"
         }
       }
@@ -17,17 +17,19 @@
     "placeName": "Ctesiphon",
     "role": "capital",
     "coordinates": {
-      "latitude": 33.0936,
-      "longitude": 44.5806
+      "latitude": 33.0937384,
+      "longitude": 44.5807874
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用考古遗址附近现代地点坐标，仅表示萨珊王朝主要政治中心的大致位置，不表示政权疆域。",
+    "positionNote": "大都会博物馆资料以226年阿尔达希尔一世在泰西封加冕及637年穆斯林军征服该城界定可核查区间；坐标取塔克基斯拉遗址OSM节点。224—225及638—651年保持点位未知，不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p0-met-ctesiphon",
+        "locator": "Ctesiphon：226年阿尔达希尔一世在城中加冕并成为萨珊都城；637年被穆斯林军征服"
       },
       {
-        "sourceId": "source-sasanian-history"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 13337155458（Taq Kasra）；33.0937384, 44.5807874；2026-09-15检索"
       }
     ],
     "confidence": "medium"

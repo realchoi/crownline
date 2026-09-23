@@ -5,7 +5,7 @@
     "periods": [
       {
         "start": {
-          "year": 1632,
+          "year": 1636,
           "precision": "exact"
         },
         "end": {
@@ -17,17 +17,19 @@
     "placeName": "Gondar",
     "role": "capital",
     "coordinates": {
-      "latitude": 12.6086,
-      "longitude": 37.4757
+      "latitude": 12.6082643,
+      "longitude": 37.4698895
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代贡德尔；1632年法西利德斯定都后成为所罗门王朝后期主要宫廷中心，仅表示该时期政治中心的大致位置，不表示政权疆域。1270—1632年帝国中心曾多次迁移，本条目不另列移动宫廷点位。",
+    "positionNote": "UNESCO确认法西利德斯于1636年将贡德尔设为永久首都，王廷在18世纪后期衰落；坐标取法西尔盖比城堡区OSM对象中心。1632—1635年及更早的移动宫廷保持未知，不表示没有政治中心或政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p0-unesco-gondar",
+        "locator": "Outstanding Universal Value / Brief synthesis：1636年设永久首都；王廷在18世纪后期衰落"
       },
       {
-        "sourceId": "source-ethiopian-empire-history"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM way 1536242568（Fasil Ghebbi）；12.6082643, 37.4698895；2026-09-15检索"
       }
     ],
     "confidence": "medium"

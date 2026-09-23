@@ -42,7 +42,8 @@
       "description": "萨法维王朝由萨法维教团出身的伊斯玛仪一世于1501年攻占大不里士后建立，自称伊朗沙阿，并将十二伊玛目派什叶派立为国家宗教，是阿拉伯征服以来第一个统合伊朗高原大部分地区的本土王朝。王朝以奇兹尔巴什部众为军政支柱，长期与西面的奥斯曼帝国、东面的乌兹别克人作战；都城先后从大不里士迁至加兹温（1555年）、再迁至伊斯法罕（1598年），阿巴斯一世时期达到鼎盛。1722年阿富汗人攻陷伊斯法罕后王朝名存实亡，1736年纳迪尔废黜阿巴斯三世自立，萨法维政权终结。",
       "sourceRefs": [
         {
-          "sourceId": "source-safavid-history"
+          "sourceId": "source-safavid-history",
+          "locator": "Safavids：Origins；State religion；Capitals；Fall of Isfahan and 1736 deposition"
         },
         {
           "sourceId": "source-safavid-rulers"

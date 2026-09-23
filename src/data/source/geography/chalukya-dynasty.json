@@ -15,19 +15,21 @@
       }
     ],
     "placeName": "Badami",
-    "role": "capital",
+    "role": "representative-center",
     "coordinates": {
-      "latitude": 15.915,
-      "longitude": 75.676
+      "latitude": 15.9203874,
+      "longitude": 75.6807865
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标（古称 Vatapi）；仅表示该时期都城的大致位置，不表示政权疆域。",
+    "positionNote": "UNESCO材料将巴达米列为早期遮娄其的政治与宗教中心，并称其为该王朝的第二都城；坐标取现代Badami城镇OSM节点。此处只作整个策展区间的代表性中心，不声称它始终是唯一都城，也不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p0-unesco-badami",
+        "locator": "Description：Badami served as a second capital；Aihole-Badami-Pattadakal were Early Chalukya power and spiritual centres"
       },
       {
-        "sourceId": "source-chalukya-history"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 655135229（Badami）；15.9203874, 75.6807865；2026-09-15检索"
       }
     ],
     "confidence": "medium"

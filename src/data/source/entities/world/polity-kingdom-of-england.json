@@ -48,7 +48,8 @@
       "description": "以英格兰本土为核心、并在不同时期直接统辖威尔士及其边区的中世纪与近世王国。该政权通常以阿塞尔斯坦在927年控制约克后的统一为起点，经历诺曼征服、金雀花与都铎—斯图亚特诸王朝，至1707年依《联合法案》并入大不列颠王国；1649至1660年英格兰为共和国与护国公政体，此处按王国口径视为中断。",
       "sourceRefs": [
         {
-          "sourceId": "source-england-history"
+          "sourceId": "source-england-history",
+          "locator": "United Kingdom：England before 1066；Norman and Plantagenet periods；1707 union"
         },
         {
           "sourceId": "source-england-rulers"

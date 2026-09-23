@@ -1,6 +1,6 @@
 {
   "reviewVersion": 2,
-  "reviewedAt": "2026-09-10",
+  "reviewedAt": "2026-09-23",
   "scope": "2026-09-08 基线中100条所有 sourceRefs 均缺少非空 locator 的既有地理快照；本文件为维护侧证据审查，不进入浏览器产物。",
   "method": [
     "坐标证据、历史地点/角色证据、适用年代证据分开判断。",
@@ -10,9 +10,9 @@
   ],
   "summary": {
     "baselineRecords": 100,
-    "verifiedThisReview": 25,
-    "correctedThisReview": 6,
-    "pendingEvidence": 75
+    "verifiedThisReview": 42,
+    "correctedThisReview": 15,
+    "pendingEvidence": 58
   },
   "maintenanceNotes": [
     "polity-maya-city-states 保留原稳定 ID，但已改为历史分期；其旧 Tikal 点位迁到 polity-maya-tikal。",
@@ -214,21 +214,26 @@
           "polityId": "polity-cn-eastern-wu",
           "placeName": "武昌",
           "group": "china",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
             {
-              "sourceId": "source-geonames"
+              "sourceId": "source-p0-4-hubei-wuchang",
+              "locator": "正文首段及建都史简表：武昌在今鄂州，孙权221年迁鄂、229年迁建业，孙皓265年再次迁都"
             },
             {
-              "sourceId": "source-zgbk-three-kingdoms"
+              "sourceId": "source-p0-4-ezhou-wuchang",
+              "locator": "引语：221年4月孙权迁鄂、229年迁建业、265年9月孙皓复都、266年12月还都建业"
+            },
+            {
+              "sourceId": "source-p0-4-ungegn-ezhou",
+              "locator": "City Details - 鄂州 - Ezhou：Latitude 30.4，Longitude 114.88；坐标来源中国地名研究所"
             }
           ],
           "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“武昌”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+            "coordinateEvidence": "已核实：联合国地名专家组城市资料载鄂州30.4、114.88，来源为中国地名研究所；只作现代城市级区域锚点。原坐标落在今武汉市武昌区，与三国吴都武昌所在的鄂州不符，已纠正。",
+            "historicalIdentity": "已核实：湖北省文化和旅游厅及鄂州市人民政府分别明确孙权时期武昌在今鄂州，并说明其政治中心与迁都角色。",
+            "temporalApplicability": "已核实：孙权221年迁鄂，点位按本政权222年起点裁切，229年迁建业；孙皓265年复都，鄂州市政府记266年12月还都，故补第二段265—266。湖北省文旅厅表格终年作267，已在业务记录说明采用口径。"
+          }
         },
         {
           "recordId": "geo-jin-bianjing",
@@ -919,21 +924,31 @@
           "polityId": "polity-chalukya-dynasty",
           "placeName": "Badami",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p0-unesco-badami",
+              "locator": "Description：Badami served as a second capital；Aihole-Badami-Pattadakal were Early Chalukya power and spiritual centres"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 655135229（Badami）；15.9203874, 75.6807865；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份已收窄为未知。"
+          },
+          "outcome": "semantics-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-chalukya-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Badami”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-champa-vijaya",
@@ -963,21 +978,31 @@
           "polityId": "polity-chola-empire",
           "placeName": "Gangaikonda Cholapuram",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p0-tnarch-gangaikonda",
+              "locator": "Gangaikondacholapuram：Rajendra I established the new capital；secondary capital for about 250 years"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM way 390203874（Gangaikonda Cholapuram Temple）；11.2062208, 79.4486436；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份已收窄为未知。"
+          },
+          "outcome": "semantics-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-inflibnet-chola"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Gangaikonda Cholapuram”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-chola-thanjavur",
@@ -985,21 +1010,31 @@
           "polityId": "polity-chola-empire",
           "placeName": "Thanjavur",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-inflibnet-chola",
+              "locator": "§ 3 Imperial Cholas：Vijayalaya captured Tanjore ca. 850；Rajendra I founded the new capital Gangaikonda Cholapuram"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM way 120390896（Brihadeeswara Temple, Thanjavur）；10.7825800, 79.1313819；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份已收窄为未知。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-inflibnet-chola"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Thanjavur”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-delhi-sultanate-delhi",
@@ -1007,21 +1042,31 @@
           "polityId": "polity-delhi-sultanate",
           "placeName": "Delhi",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p0-unesco-delhi",
+              "locator": "Description：Delhi grew to be the capital of an empire in the Delhi Sultanate；Siri、Tughlaqabad、Jahanpanah、Firozabad等历代城址"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 21180767（Delhi city）；28.6664535, 77.2169781；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份或角色已收窄。"
+          },
+          "outcome": "semantics-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-delhi-sultanate-britannica"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Delhi”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-goryeo-gaegyeong",
@@ -1351,21 +1396,31 @@
           "polityId": "polity-safavid-iran",
           "placeName": "Isfahan",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-safavid-history",
+              "locator": "Safavids：1598 transfer of the capital to Isfahan；1722 Afghan capture of Isfahan"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 6566419（Isfahan）；32.6707877, 51.6650002；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份已收窄为未知。"
+          },
+          "outcome": "semantics-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-safavid-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Isfahan”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-safavid-qazvin",
@@ -1373,21 +1428,31 @@
           "polityId": "polity-safavid-iran",
           "placeName": "Qazvin",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p0-iranica-capital-cities",
+              "locator": "From the Safavids to the Qajars：Qazvin为962/1555至1005—1006/1597—1598年的都城"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 6792037（Qazvin）；36.2691723, 50.0057530；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份或角色已收窄。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-safavid-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Qazvin”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-safavid-tabriz",
@@ -1395,21 +1460,31 @@
           "polityId": "polity-safavid-iran",
           "placeName": "Tabriz",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p0-iranica-capital-cities",
+              "locator": "From the Safavids to the Qajars：1501年初以Tabriz为基地；962/1555年迁都Qazvin"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 6564175（Tabriz）；38.0738612, 46.2978789；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份或角色已收窄。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-safavid-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Tabriz”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-sasanian-ctesiphon",
@@ -1417,21 +1492,31 @@
           "polityId": "polity-sasanian-empire",
           "placeName": "Ctesiphon",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p0-met-ctesiphon",
+              "locator": "Ctesiphon：226年阿尔达希尔一世在城中加冕并成为萨珊都城；637年被穆斯林军征服"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 13337155458（Taq Kasra）；33.0937384, 44.5807874；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份已收窄为未知。"
+          },
+          "outcome": "semantics-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-sasanian-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Ctesiphon”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-seljuk-hamadan",
@@ -1643,21 +1728,31 @@
           "polityId": "polity-tokugawa-shogunate",
           "placeName": "Edo",
           "group": "other-asia",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-tokugawa-history",
+              "locator": "The Tokugawa Period：1603 establishment；Edo as bakufu political center；1868 Meiji restoration"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 5409598583（Edo Castle）；35.6883735, 139.7544070；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份已收窄为未知。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-tokugawa-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：点位期间直接等同于政权存续期，尚无证据证明该地点在整个区间持续适用。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Edo”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         }
       ]
     },
@@ -1706,21 +1801,31 @@
           "polityId": "polity-byzantine-empire",
           "placeName": "Nicaea",
           "group": "europe",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-met-byzantium",
+              "locator": "The Period of the Latin Occupation：1204—1261；Nicaea为流亡拜占庭国家首都并主导恢复君士坦丁堡"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 1273931（İznik / Nicaea）；40.4303445, 29.7223732；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份或角色已收窄。"
+          },
+          "outcome": "semantics-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-met-byzantium"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Nicaea”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-castile-burgos",
@@ -1955,8 +2060,8 @@
               "locator": "Outstanding Universal Value / Brief synthesis：14世纪初奥斯曼帝国第一座首都与苏丹驻地"
             },
             {
-            "sourceId": "source-p2-turkey-edirne-capital",
-            "locator": "历史背景：1365年奥斯曼将首都从布尔萨迁至埃迪尔内"
+              "sourceId": "source-p2-turkey-edirne-capital",
+              "locator": "历史背景：1365年奥斯曼将首都从布尔萨迁至埃迪尔内"
             },
             {
               "sourceId": "source-p2-osm-nominatim",
@@ -1966,7 +2071,7 @@
           "findings": {
             "coordinateEvidence": "已定位至布尔萨 OSM node 289534897，并采用其城市坐标作区域锚点。",
             "historicalIdentity": "UNESCO 直接确认布尔萨是奥斯曼帝国第一座首都与苏丹驻地。",
-          "temporalApplicability": "UNESCO 与土耳其文化和旅游部资料共同支持1326年成为首都、1365年迁往埃迪尔内，因此本记录止于1364年。"
+            "temporalApplicability": "UNESCO 与土耳其文化和旅游部资料共同支持1326年成为首都、1365年迁往埃迪尔内，因此本记录止于1364年。"
           },
           "outcome": "evidence-added",
           "baselineSourceRefs": [
@@ -1984,21 +2089,31 @@
           "polityId": "polity-ottoman-empire",
           "placeName": "Edirne",
           "group": "europe",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p2-turkey-edirne-capital",
+              "locator": "历史背景：1365年奥斯曼将首都从布尔萨迁至埃迪尔内；1453年后迁往君士坦丁堡"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 1834221（Edirne Merkez）；41.6759327, 26.5587225；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份或角色已收窄。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-ottoman-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Edirne”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-ottoman-istanbul",
@@ -2006,21 +2121,31 @@
           "polityId": "polity-ottoman-empire",
           "placeName": "Istanbul",
           "group": "europe",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p0-met-ottoman-capital",
+              "locator": "Unit 5, Chapter 2, p. 124（PDF p. 17）：1453 capture；remained the Ottoman capital until 1923"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 1882099475（İstanbul）；41.0063810, 28.9758715；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份已收窄为未知。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-ottoman-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Istanbul”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-ottoman-sogut",
@@ -2055,21 +2180,31 @@
           "polityId": "polity-abbasid-caliphate",
           "placeName": "Baghdad",
           "group": "africa",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-met-abbasid",
+              "locator": "The Art of the Abbasid Period：762年Baghdad成为新都；Samarra在836—892年间取代首都；1258年终结"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 5638803（Baghdad）；33.3061701, 44.3872213；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份或角色已收窄。"
+          },
+          "outcome": "semantics-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-met-abbasid"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Baghdad”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-aksum-axum",
@@ -2113,21 +2248,31 @@
           "polityId": "polity-ethiopian-empire",
           "placeName": "Gondar",
           "group": "africa",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p0-unesco-gondar",
+              "locator": "Outstanding Universal Value / Brief synthesis：1636年设永久首都；王廷在18世纪后期衰落"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM way 1536242568（Fasil Ghebbi）；12.6082643, 37.4698895；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份或角色已收窄。"
+          },
+          "outcome": "semantics-corrected-and-evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-ethiopian-empire-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Gondar”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-fatimid-cairo",
@@ -2339,21 +2484,31 @@
           "polityId": "polity-umayyad-caliphate",
           "placeName": "Damascus",
           "group": "africa",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-umayyad-history",
+              "locator": "The reign of Muʿāwiyah I：Damascus as the seat of rule；Marwān II：transfer to Harran in 744"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM node 1091272140（Damascus）；33.5130695, 36.3095814；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份已收窄为未知。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-umayyad-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Damascus”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         },
         {
           "recordId": "geo-umayyad-harran",
@@ -2361,21 +2516,31 @@
           "polityId": "polity-umayyad-caliphate",
           "placeName": "Harran",
           "group": "africa",
-          "reviewStatus": "pending-evidence",
+          "reviewStatus": "verified",
           "currentSourceRefs": [
+            {
+              "sourceId": "source-p0-iranica-harran",
+              "locator": "Harran：Marwan II transferred his capital from Damascus to Harran"
+            },
+            {
+              "sourceId": "source-p2-osm-nominatim",
+              "locator": "OSM relation 1747581（Harran）；36.8710059, 39.0251364；2026-09-15检索"
+            }
+          ],
+          "findings": {
+            "coordinateEvidence": "已用2026-09-15检索的具体OSM对象核对坐标，并按记录声明的区域或近似精度使用。",
+            "historicalIdentity": "已用记录所列机构或学术来源的具体段落核实地点身份与角色。",
+            "temporalApplicability": "已按可定位材料核实适用年代；证据不足的年份或角色已收窄。"
+          },
+          "outcome": "evidence-added",
+          "baselineSourceRefs": [
             {
               "sourceId": "source-geonames"
             },
             {
               "sourceId": "source-umayyad-history"
             }
-          ],
-          "findings": {
-            "coordinateEvidence": "缺少：source-geonames 只指向通用首页，不能对应本记录的具体 feature 与坐标。",
-            "historicalIdentity": "待定位：现有历史来源引用没有 locator，本轮不能确认其直接支持地点身份与角色。",
-            "temporalApplicability": "待查：阶段或迁都区间没有可定位依据，不能由政权纪年或地点名称推导。"
-          },
-          "requiredFollowUp": "定位现有历史来源中直接支持“Harran”身份与适用期的章节/页码；另用具体数据集记录核对坐标。"
+          ]
         }
       ]
     },

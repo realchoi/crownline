@@ -17,17 +17,19 @@
     "placeName": "Tabriz",
     "role": "capital",
     "coordinates": {
-      "latitude": 38.08,
-      "longitude": 46.2919
+      "latitude": 38.0738612,
+      "longitude": 46.2978789
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "positionNote": "《伊朗百科全书》支持1501年以大不里士为萨法维政治基地及1555年迁都加兹温；坐标取现代大不里士OSM城市关系中心，只作历史城市区域锚点，不表示都城范围或政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p0-iranica-capital-cities",
+        "locator": "From the Safavids to the Qajars：1501年初以Tabriz为基地；962/1555年迁都Qazvin"
       },
       {
-        "sourceId": "source-safavid-history"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 6564175（Tabriz）；38.0738612, 46.2978789；2026-09-15检索"
       }
     ],
     "confidence": "medium"
@@ -50,17 +52,19 @@
     "placeName": "Qazvin",
     "role": "capital",
     "coordinates": {
-      "latitude": 36.2797,
-      "longitude": 50.0049
+      "latitude": 36.2691723,
+      "longitude": 50.005753
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "positionNote": "《伊朗百科全书》支持1555年由大不里士迁都加兹温及1597—1598年迁往伊斯法罕；坐标取现代加兹温OSM城市关系中心，只作历史城市区域锚点，不表示都城范围或政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p0-iranica-capital-cities",
+        "locator": "From the Safavids to the Qajars：Qazvin为962/1555至1005—1006/1597—1598年的都城"
       },
       {
-        "sourceId": "source-safavid-history"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 6792037（Qazvin）；36.2691723, 50.0057530；2026-09-15检索"
       }
     ],
     "confidence": "medium"
@@ -75,7 +79,7 @@
           "precision": "exact"
         },
         "end": {
-          "year": 1736,
+          "year": 1722,
           "precision": "exact"
         }
       }
@@ -83,17 +87,19 @@
     "placeName": "Isfahan",
     "role": "capital",
     "coordinates": {
-      "latitude": 32.6546,
-      "longitude": 51.668
+      "latitude": 32.6707877,
+      "longitude": 51.6650002
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期都城的大致位置，不表示政权疆域。",
+    "positionNote": "《伊朗百科全书》支持1598年迁都伊斯法罕及1722年阿富汗军攻陷该城；坐标取现代伊斯法罕OSM城市关系中心。1723—1736年的萨法维名义延续不再自动沿用这一都城点位；本点不表示政权疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-safavid-history",
+        "locator": "Safavids：1598 transfer of the capital to Isfahan；1722 Afghan capture of Isfahan"
       },
       {
-        "sourceId": "source-safavid-history"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 6566419（Isfahan）；32.6707877, 51.6650002；2026-09-15检索"
       }
     ],
     "confidence": "medium"

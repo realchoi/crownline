@@ -40,7 +40,8 @@
       "description": "750年阿拔斯家族推翻倭马亚王朝后建立哈里发政权，762年营建巴格达，并以伊拉克为政治与文化中心。九世纪以后，军人集团和地方王朝逐渐掌握实际权力，但阿拔斯哈里发仍保持重要宗教与象征地位；1258年蒙古军攻陷巴格达，巴格达时期的统治终结。",
       "sourceRefs": [
         {
-          "sourceId": "source-met-abbasid"
+          "sourceId": "source-met-abbasid",
+          "locator": "The Art of the Abbasid Period：750 succession, 762 Baghdad and 1258 conquest"
         },
         {
           "sourceId": "source-wikipedia-abbasid-caliphs"

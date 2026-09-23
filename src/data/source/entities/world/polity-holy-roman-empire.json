@@ -38,7 +38,8 @@
       "description": "以德意志王国为核心、并涵盖中欧和意大利部分地区的复合政治体。962年奥托一世受皇帝加冕后，罗马人的国王通常由诸侯选举，并在不同时期接受教皇加冕或直接采用当选皇帝称号；哈布斯堡家族后来长期掌握皇位，1806年弗朗茨二世在拿破仑战争压力下解散帝国。",
       "sourceRefs": [
         {
-          "sourceId": "source-dhm-hre"
+          "sourceId": "source-dhm-hre",
+          "locator": "Overview：Heiliges Römisches Reich 962—1806"
         },
         {
           "sourceId": "source-met-hre"

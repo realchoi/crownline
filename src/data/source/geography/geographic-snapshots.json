@@ -30,25 +30,46 @@
   {
     "id": "geo-byzantine-nicaea",
     "polityId": "polity-byzantine-empire",
-    "periods": [{ "start": { "year": 1204, "precision": "exact" }, "end": { "year": 1260, "precision": "exact" } }],
+    "periods": [{ "start": { "year": 1204, "precision": "exact" }, "end": { "year": 1261, "precision": "exact" } }],
     "placeName": "Nicaea",
     "role": "political-center",
-    "coordinates": { "latitude": 40.4297, "longitude": 29.7214 },
+    "coordinates": { "latitude": 40.4303445, "longitude": 29.7223732 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期政治中心的大致位置，不表示固定首都或政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-met-byzantium" }],
+    "positionNote": "大都会博物馆资料确认1204年后尼西亚成为流亡拜占庭国家的首都，并由该政权在1261年恢复君士坦丁堡；坐标取现代伊兹尼克OSM城镇关系中心，只作区域锚点，不表示疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-met-byzantium",
+        "locator": "The Period of the Latin Occupation：1204—1261；Nicaea为流亡拜占庭国家首都并主导恢复君士坦丁堡"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 1273931（İznik / Nicaea）；40.4303445, 29.7223732；2026-09-15检索"
+      }
+    ],
     "confidence": "high"
   },
   {
     "id": "geo-abbasid-baghdad",
     "polityId": "polity-abbasid-caliphate",
-    "periods": [{ "start": { "year": 762, "precision": "exact" }, "end": { "year": 1258, "precision": "exact" } }],
+    "periods": [
+      { "start": { "year": 762, "precision": "exact" }, "end": { "year": 835, "precision": "exact" } },
+      { "start": { "year": 893, "precision": "exact" }, "end": { "year": 1258, "precision": "exact" } }
+    ],
     "placeName": "Baghdad",
     "role": "capital",
-    "coordinates": { "latitude": 33.3152, "longitude": 44.3661 },
+    "coordinates": { "latitude": 33.3061701, "longitude": 44.3872213 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-met-abbasid" }],
+    "positionNote": "大都会博物馆资料确认762年营建巴格达，萨迈拉在836—892年间取代其首都地位，因此本记录保留两段并排除萨迈拉时期；坐标取现代巴格达OSM城市关系中心，只作区域锚点，不表示疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-met-abbasid",
+        "locator": "The Art of the Abbasid Period：762年Baghdad成为新都；Samarra在836—892年间取代首都；1258年终结"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 5638803（Baghdad）；33.3061701, 44.3872213；2026-09-15检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -69,22 +90,40 @@
     "periods": [{ "start": { "year": 850, "precision": "exact" }, "end": { "year": 1024, "precision": "exact" } }],
     "placeName": "Thanjavur",
     "role": "capital",
-    "coordinates": { "latitude": 10.787, "longitude": 79.1378 },
+    "coordinates": { "latitude": 10.78258, "longitude": 79.1313819 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-inflibnet-chola" }],
+    "positionNote": "INFLIBNET课程材料支持维阇耶洛耶约850年夺取坦贾武尔及罗阇因陀罗一世约1025年另建新都；坐标取坦贾武尔大寺OSM对象中心作为旧都锚点，不表示都城范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-inflibnet-chola",
+        "locator": "§ 3 Imperial Cholas：Vijayalaya captured Tanjore ca. 850；Rajendra I founded the new capital Gangaikonda Cholapuram"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM way 120390896（Brihadeeswara Temple, Thanjavur）；10.7825800, 79.1313819；2026-09-15检索"
+      }
+    ],
     "confidence": "high"
   },
   {
     "id": "geo-chola-gangaikonda",
     "polityId": "polity-chola-empire",
-    "periods": [{ "start": { "year": 1025, "precision": "exact" }, "end": { "year": 1279, "precision": "exact" } }],
+    "periods": [{ "start": { "year": 1025, "precision": "exact" }, "end": { "year": 1275, "precision": "circa" } }],
     "placeName": "Gangaikonda Cholapuram",
     "role": "capital",
-    "coordinates": { "latitude": 11.2065, "longitude": 79.4494 },
+    "coordinates": { "latitude": 11.2062208, "longitude": 79.4486436 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-inflibnet-chola" }],
+    "positionNote": "泰米尔纳德邦考古部门将恒河科达朱罗补罗描述为罗阇因陀罗一世营建、延续约250年的次都；因此终点采用约1275年，不把王朝1279年终结直接等同于都城适用期。坐标取当地大寺OSM对象中心，不表示都城范围或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p0-tnarch-gangaikonda",
+        "locator": "Gangaikondacholapuram：Rajendra I established the new capital；secondary capital for about 250 years"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM way 390203874（Gangaikonda Cholapuram Temple）；11.2062208, 79.4486436；2026-09-15检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -142,10 +181,19 @@
     "periods": [{ "start": { "year": 1603, "precision": "exact" }, "end": { "year": 1868, "precision": "exact" } }],
     "placeName": "Edo",
     "role": "political-center",
-    "coordinates": { "latitude": 35.6762, "longitude": 139.6503 },
+    "coordinates": { "latitude": 35.6883735, "longitude": 139.754407 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期政治中心的大致位置，不表示固定首都或政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-tokugawa-history" }],
+    "positionNote": "NCSU课程材料支持1603年德川幕府建立、江户作为幕府政治中心及1868年体制终结；坐标取江户城OSM节点，不表示城市范围、固定全国首都或政权疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-tokugawa-history",
+        "locator": "The Tokugawa Period：1603 establishment；Edo as bakufu political center；1868 Meiji restoration"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 5409598583（Edo Castle）；35.6883735, 139.7544070；2026-09-15检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -405,10 +453,19 @@
     "periods": [{ "start": { "year": 1365, "precision": "exact" }, "end": { "year": 1452, "precision": "exact" } }],
     "placeName": "Edirne",
     "role": "capital",
-    "coordinates": { "latitude": 41.6771, "longitude": 26.5557 },
+    "coordinates": { "latitude": 41.6759327, "longitude": 26.5587225 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-ottoman-history" }],
+    "positionNote": "土耳其文化和旅游部资料确认1365年奥斯曼由布尔萨迁都埃迪尔内，1453年后由君士坦丁堡接替；坐标取现代埃迪尔内OSM城市关系中心，只作区域锚点，不表示都城范围或疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p2-turkey-edirne-capital",
+        "locator": "历史背景：1365年奥斯曼将首都从布尔萨迁至埃迪尔内；1453年后迁往君士坦丁堡"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 1834221（Edirne Merkez）；41.6759327, 26.5587225；2026-09-15检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -417,10 +474,19 @@
     "periods": [{ "start": { "year": 1453, "precision": "exact" }, "end": { "year": 1922, "precision": "exact" } }],
     "placeName": "Istanbul",
     "role": "capital",
-    "coordinates": { "latitude": 41.0082, "longitude": 28.9784 },
+    "coordinates": { "latitude": 41.006381, "longitude": 28.9758715 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅用于标示历史都城的大致位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-ottoman-history" }],
+    "positionNote": "资料确认1453年后该城作为奥斯曼都城延续至1923年；记录按政权终点止于1922年，OSM城市节点只作区域锚点，不表示都城范围或疆域。",
+    "sourceRefs": [
+      {
+        "sourceId": "source-p0-met-ottoman-capital",
+        "locator": "Unit 5, Chapter 2, p. 124（PDF p. 17）：1453 capture；remained the Ottoman capital until 1923"
+      },
+      {
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM node 1882099475（İstanbul）；41.0063810, 28.9758715；2026-09-15检索"
+      }
+    ],
     "confidence": "high"
   },
   {
@@ -693,14 +759,22 @@
   {
     "id": "geo-eastern-wu-wuchang",
     "polityId": "polity-cn-eastern-wu",
-    "periods": [{ "start": { "year": 222, "precision": "exact" }, "end": { "year": 228, "precision": "exact" } }],
+    "periods": [
+      { "start": { "year": 222, "precision": "exact" }, "end": { "year": 229, "precision": "exact" } },
+      { "start": { "year": 265, "precision": "exact" }, "end": { "year": 266, "precision": "exact" } }
+    ],
     "placeName": "武昌",
     "role": "political-center",
-    "coordinates": { "latitude": 30.5538, "longitude": 114.3162 },
+    "coordinates": { "latitude": 30.4, "longitude": 114.88 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期政治中心的大致位置，不表示固定首都或政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-zgbk-three-kingdoms" }],
-    "confidence": "high"
+    "positionNote": "三国时期武昌在今湖北鄂州，并非今武汉市武昌区。联合国地名资料所列鄂州现代城市坐标仅作区域浏览锚点；221年迁鄂早于本政权采用的222年起点，故点位从222年显示。229年迁都年及265—266年复都期间均可显示，不表示全年唯一中心或政权疆域。",
+    "sourceRefs": [
+      { "sourceId": "source-p0-4-hubei-wuchang", "locator": "正文首段及建都史简表：武昌在今鄂州，孙权221年迁鄂、229年迁建业，孙皓265年再次迁都" },
+      { "sourceId": "source-p0-4-ezhou-wuchang", "locator": "引语：221年4月孙权迁鄂、229年迁建业、265年9月孙皓复都、266年12月还都建业" },
+      { "sourceId": "source-p0-4-ungegn-ezhou", "locator": "City Details - 鄂州 - Ezhou：Latitude 30.4，Longitude 114.88；坐标来源中国地名研究所" }
+    ],
+    "confidence": "medium",
+    "confidenceNote": "湖北省文旅厅表格将第二次建都写为265—267年，鄂州市政府记为265年9月至266年12月；本条采用后者的还都年份，年度展示仍按闭区间包含交接年。"
   },
   {
     "id": "geo-eastern-wu-jianye",
@@ -1078,10 +1152,10 @@
     "periods": [{ "start": { "year": -770, "precision": "exact" }, "end": { "year": -256, "precision": "exact" } }],
     "placeName": "洛邑",
     "role": "capital",
-    "coordinates": { "latitude": 34.6197, "longitude": 112.454 },
+    "coordinates": { "latitude": 34.6196539, "longitude": 112.4477046 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今洛阳的历史都城定位；洛邑与周王室东迁后的王城遗址并非现代行政中心本身，点位仅表示都城位置，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-accws-ancient-capitals", "locator": "The Ancient Capital Cities: Luoyang served as the capital of Eastern Zhou" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今洛阳的历史都城定位；洛邑与周王室东迁后的王城遗址并非现代行政中心本身，点位仅表示都城位置，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM relation 3246491（Luoyang）；34.6196539, 112.4477046；2026-09-16检索" }, { "sourceId": "source-accws-ancient-capitals", "locator": "The Ancient Capital Cities: Luoyang served as the capital of Eastern Zhou" }],
     "confidence": "high"
   },
   {
@@ -1102,10 +1176,10 @@
     "periods": [{ "start": { "year": 301, "precision": "exact" }, "end": { "year": 376, "precision": "exact" } }],
     "placeName": "姑臧",
     "role": "capital",
-    "coordinates": { "latitude": 37.9282, "longitude": 102.6414 },
+    "coordinates": { "latitude": 37.9277838, "longitude": 102.6348615 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今武威的历史姑臧城区域；现代武威城区与古城遗址并非同一边界，点位仅表示前凉都城，不表示河西政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-dpm-sixteen-kingdoms", "locator": "十六国：前凉政权与姑臧" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今武威的历史姑臧城区域；现代武威城区与古城遗址并非同一边界，点位仅表示前凉都城，不表示河西政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM node 244082207（Wuwei）；37.9277838, 102.6348615；2026-09-16检索" }, { "sourceId": "source-dpm-sixteen-kingdoms", "locator": "十六国：前凉政权与姑臧" }],
     "confidence": "high"
   },
   {
@@ -1114,10 +1188,10 @@
     "periods": [{ "start": { "year": 304, "precision": "exact" }, "end": { "year": 347, "precision": "exact" } }],
     "placeName": "成都",
     "role": "capital",
-    "coordinates": { "latitude": 30.5728, "longitude": 104.0668 },
+    "coordinates": { "latitude": 30.659867, "longitude": 104.063315 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今成都的历史城市区域；古代成都城与现代市区不完全重合，点位仅表示成汉政治中心，不表示蜀地政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-dpm-sixteen-kingdoms", "locator": "十六国：成汉政权与成都" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今成都的历史城市区域；古代成都城与现代市区不完全重合，点位仅表示成汉政治中心，不表示蜀地政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM relation 2110264（Chengdu）；30.6598670, 104.0633150；2026-09-16检索" }, { "sourceId": "source-dpm-sixteen-kingdoms", "locator": "十六国：成汉政权与成都" }],
     "confidence": "high"
   },
   {
@@ -1187,10 +1261,10 @@
     "periods": [{ "start": { "year": 420, "precision": "exact" }, "end": { "year": 479, "precision": "exact" } }],
     "placeName": "建康",
     "role": "capital",
-    "coordinates": { "latitude": 32.0603, "longitude": 118.7969 },
+    "coordinates": { "latitude": 32.06167, "longitude": 118.77778 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今南京的建康城区域；历史城址与现代南京市区不完全重合，点位仅表示刘宋都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cambridge-six-dynasties-capitals", "locator": "Jiankang (modern Nanjing) served as the capital of the Song" }],
+    "positionNote": "坐标采用GeoNames南京Feature 1799962作为建康城区域参照；历史城址与现代市区不完全重合，点位仅表示刘宋都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-locator-review-geonames-nanjing", "locator": "Feature 1799962：Nanjing，32.06167, 118.77778；城市级区域参照" }, { "sourceId": "source-cambridge-six-dynasties-capitals", "locator": "Jiankang (modern Nanjing) served as the capital of the Song" }],
     "confidence": "high"
   },
   {
@@ -1199,10 +1273,10 @@
     "periods": [{ "start": { "year": 479, "precision": "exact" }, "end": { "year": 502, "precision": "exact" } }],
     "placeName": "建康",
     "role": "capital",
-    "coordinates": { "latitude": 32.0603, "longitude": 118.7969 },
+    "coordinates": { "latitude": 32.06167, "longitude": 118.77778 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今南京的建康城区域；历史城址与现代南京市区不完全重合，点位仅表示南齐都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cambridge-six-dynasties-capitals", "locator": "Jiankang (modern Nanjing) served as the capital of Qi" }],
+    "positionNote": "坐标采用GeoNames南京Feature 1799962作为建康城区域参照；历史城址与现代市区不完全重合，点位仅表示南齐都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-locator-review-geonames-nanjing", "locator": "Feature 1799962：Nanjing，32.06167, 118.77778；城市级区域参照" }, { "sourceId": "source-cambridge-six-dynasties-capitals", "locator": "Jiankang (modern Nanjing) served as the capital of Qi" }],
     "confidence": "high"
   },
   {
@@ -1211,10 +1285,10 @@
     "periods": [{ "start": { "year": 502, "precision": "exact" }, "end": { "year": 557, "precision": "exact" } }],
     "placeName": "建康",
     "role": "capital",
-    "coordinates": { "latitude": 32.0603, "longitude": 118.7969 },
+    "coordinates": { "latitude": 32.06167, "longitude": 118.77778 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今南京的建康城区域；历史城址与现代南京市区不完全重合，点位仅表示梁都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cambridge-six-dynasties-capitals", "locator": "Jiankang (modern Nanjing) served as the capital of Liang" }],
+    "positionNote": "坐标采用GeoNames南京Feature 1799962作为建康城区域参照；历史城址与现代市区不完全重合，点位仅表示梁都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-locator-review-geonames-nanjing", "locator": "Feature 1799962：Nanjing，32.06167, 118.77778；城市级区域参照" }, { "sourceId": "source-cambridge-six-dynasties-capitals", "locator": "Jiankang (modern Nanjing) served as the capital of Liang" }],
     "confidence": "high"
   },
   {
@@ -1223,10 +1297,10 @@
     "periods": [{ "start": { "year": 557, "precision": "exact" }, "end": { "year": 589, "precision": "exact" } }],
     "placeName": "建康",
     "role": "capital",
-    "coordinates": { "latitude": 32.0603, "longitude": 118.7969 },
+    "coordinates": { "latitude": 32.06167, "longitude": 118.77778 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今南京的建康城区域；历史城址与现代南京市区不完全重合，点位仅表示陈都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cambridge-six-dynasties-capitals", "locator": "Jiankang (modern Nanjing) served as the capital of Chen" }],
+    "positionNote": "坐标采用GeoNames南京Feature 1799962作为建康城区域参照；历史城址与现代市区不完全重合，点位仅表示陈都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-locator-review-geonames-nanjing", "locator": "Feature 1799962：Nanjing，32.06167, 118.77778；城市级区域参照" }, { "sourceId": "source-cambridge-six-dynasties-capitals", "locator": "Jiankang (modern Nanjing) served as the capital of Chen" }],
     "confidence": "high"
   },
   {
@@ -1235,10 +1309,10 @@
     "periods": [{ "start": { "year": 690, "precision": "exact" }, "end": { "year": 705, "precision": "exact" } }],
     "placeName": "洛阳",
     "role": "capital",
-    "coordinates": { "latitude": 34.6197, "longitude": 112.454 },
+    "coordinates": { "latitude": 34.6196539, "longitude": 112.4477046 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今洛阳的历史都城区域；武周时期洛阳承担帝都功能，点位仅表示都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-accws-ancient-capitals", "locator": "The Ancient Capital Cities: Luoyang served as capital during the Wuzhou era" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今洛阳的历史都城区域；武周时期洛阳承担帝都功能，点位仅表示都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM relation 3246491（Luoyang）；34.6196539, 112.4477046；2026-09-16检索" }, { "sourceId": "source-accws-ancient-capitals", "locator": "The Ancient Capital Cities: Luoyang served as capital during the Wuzhou era" }],
     "confidence": "high"
   },
   {
@@ -1247,10 +1321,10 @@
     "periods": [{ "start": { "year": 907, "precision": "exact" }, "end": { "year": 923, "precision": "exact" } }],
     "placeName": "开封",
     "role": "capital",
-    "coordinates": { "latitude": 34.7972, "longitude": 114.3076 },
+    "coordinates": { "latitude": 34.7990966, "longitude": 114.3054796 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今开封的汴州—开封历史城市区域；现代城区不等同于后梁疆域，点位仅表示都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-accws-ancient-capitals", "locator": "The Ancient Capital Cities: Kaifeng served as the capital of Later Liang" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今开封的汴州—开封历史城市区域；现代城区不等同于后梁疆域，点位仅表示都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM node 244080911（Kaifeng）；34.7990966, 114.3054796；2026-09-16检索" }, { "sourceId": "source-accws-ancient-capitals", "locator": "The Ancient Capital Cities: Kaifeng served as the capital of Later Liang" }],
     "confidence": "high"
   },
   {
@@ -1259,10 +1333,10 @@
     "periods": [{ "start": { "year": 923, "precision": "exact" }, "end": { "year": 936, "precision": "exact" } }],
     "placeName": "洛阳",
     "role": "capital",
-    "coordinates": { "latitude": 34.6197, "longitude": 112.454 },
+    "coordinates": { "latitude": 34.6196539, "longitude": 112.4477046 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今洛阳的历史都城区域；后唐都城遗址与现代城市范围不完全重合，点位仅表示都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-accws-ancient-capitals", "locator": "The Ancient Capital Cities: Luoyang served as the capital of Later Tang" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今洛阳的历史都城区域；后唐都城遗址与现代城市范围不完全重合，点位仅表示都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM relation 3246491（Luoyang）；34.6196539, 112.4477046；2026-09-16检索" }, { "sourceId": "source-accws-ancient-capitals", "locator": "The Ancient Capital Cities: Luoyang served as the capital of Later Tang" }],
     "confidence": "high"
   },
   {
@@ -1392,10 +1466,10 @@
     "periods": [{ "start": { "year": 386, "precision": "exact" }, "end": { "year": 403, "precision": "exact" } }],
     "placeName": "姑臧",
     "role": "capital",
-    "coordinates": { "latitude": 37.9282, "longitude": 102.6414 },
+    "coordinates": { "latitude": 37.9277838, "longitude": 102.6348615 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今武威的姑臧历史城市区域；现代城区与古城遗址并非同一边界，点位仅表示后凉都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-cambridge-six-dynasties", "locator": "Chapter 6, The Sixteen Kingdoms: Later Liang capital at Guzang" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今武威的姑臧历史城市区域；现代城区与古城遗址并非同一边界，点位仅表示后凉都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM node 244082207（Wuwei）；37.9277838, 102.6348615；2026-09-16检索" }, { "sourceId": "source-cambridge-six-dynasties", "locator": "Chapter 6, The Sixteen Kingdoms: Later Liang capital at Guzang" }],
     "confidence": "high"
   },
   {
@@ -1535,10 +1609,10 @@
     "periods": [{ "start": { "year": 936, "precision": "exact" }, "end": { "year": 947, "precision": "exact" } }],
     "placeName": "开封",
     "role": "capital",
-    "coordinates": { "latitude": 34.7973, "longitude": 114.3076 },
+    "coordinates": { "latitude": 34.7990966, "longitude": 114.3054796 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今开封的汴州—开封历史城市区域；现代城区与五代都城遗址不完全重合，点位仅表示后晋都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties, pp. 3–30: Later Jin at Kaifeng" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今开封的汴州—开封历史城市区域；现代城区与五代都城遗址不完全重合，点位仅表示后晋都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM node 244080911（Kaifeng）；34.7990966, 114.3054796；2026-09-16检索" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties, pp. 3–30: Later Jin at Kaifeng" }],
     "confidence": "high"
   },
   {
@@ -1547,10 +1621,10 @@
     "periods": [{ "start": { "year": 947, "precision": "exact" }, "end": { "year": 951, "precision": "exact" } }],
     "placeName": "开封",
     "role": "capital",
-    "coordinates": { "latitude": 34.7973, "longitude": 114.3076 },
+    "coordinates": { "latitude": 34.7990966, "longitude": 114.3054796 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今开封的汴州—开封历史城市区域；现代城区与五代都城遗址不完全重合，点位仅表示后汉都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties, pp. 3–30: Later Han at Kaifeng" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今开封的汴州—开封历史城市区域；现代城区与五代都城遗址不完全重合，点位仅表示后汉都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM node 244080911（Kaifeng）；34.7990966, 114.3054796；2026-09-16检索" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties, pp. 3–30: Later Han at Kaifeng" }],
     "confidence": "high"
   },
   {
@@ -1559,10 +1633,10 @@
     "periods": [{ "start": { "year": 951, "precision": "exact" }, "end": { "year": 960, "precision": "exact" } }],
     "placeName": "开封",
     "role": "capital",
-    "coordinates": { "latitude": 34.7973, "longitude": 114.3076 },
+    "coordinates": { "latitude": 34.7990966, "longitude": 114.3054796 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今开封的汴州—开封历史城市区域；现代城区与五代都城遗址不完全重合，点位仅表示后周都城，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties, pp. 3–30: Later Zhou at Kaifeng" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今开封的汴州—开封历史城市区域；现代城区与五代都城遗址不完全重合，点位仅表示后周都城，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM node 244080911（Kaifeng）；34.7990966, 114.3054796；2026-09-16检索" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties, pp. 3–30: Later Zhou at Kaifeng" }],
     "confidence": "high"
   },
   {
@@ -1607,10 +1681,10 @@
     "periods": [{ "start": { "year": 907, "precision": "exact" }, "end": { "year": 925, "precision": "exact" } }],
     "placeName": "成都",
     "role": "capital",
-    "coordinates": { "latitude": 30.5728, "longitude": 104.0668 },
+    "coordinates": { "latitude": 30.659867, "longitude": 104.063315 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今成都的历史城市区域；古代成都城与现代市区不完全重合，点位仅表示前蜀政治中心，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties: Former Shu at Chengdu" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今成都的历史城市区域；古代成都城与现代市区不完全重合，点位仅表示前蜀政治中心，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM relation 2110264（Chengdu）；30.6598670, 104.0633150；2026-09-16检索" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties: Former Shu at Chengdu" }],
     "confidence": "high"
   },
   {
@@ -1619,10 +1693,10 @@
     "periods": [{ "start": { "year": 934, "precision": "exact" }, "end": { "year": 965, "precision": "exact" } }],
     "placeName": "成都",
     "role": "capital",
-    "coordinates": { "latitude": 30.5728, "longitude": 104.0668 },
+    "coordinates": { "latitude": 30.659867, "longitude": 104.063315 },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应今成都的历史城市区域；古代成都城与现代市区不完全重合，点位仅表示后蜀政治中心，不表示政权疆域。",
-    "sourceRefs": [{ "sourceId": "source-geonames" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties: Later Shu at Chengdu" }],
+    "positionNote": "坐标取自具体 OSM 对象，用于标示今成都的历史城市区域；古代成都城与现代市区不完全重合，点位仅表示后蜀政治中心，不表示政权疆域。",
+    "sourceRefs": [{ "sourceId": "source-p2-osm-nominatim", "locator": "OSM relation 2110264（Chengdu）；30.6598670, 104.0633150；2026-09-16检索" }, { "sourceId": "source-mote-imperial-china", "locator": "Chapter 1, The Five Dynasties: Later Shu at Chengdu" }],
     "confidence": "high"
   },
   {

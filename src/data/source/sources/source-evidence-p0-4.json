@@ -1,0 +1,29 @@
+[
+  {
+    "id": "source-p0-4-hubei-wuchang",
+    "title": "鄂吴名都鄂州（武昌）",
+    "sourceType": "institutional",
+    "citation": "湖北省文化和旅游厅：《鄂吴名都鄂州（武昌）》；记述孙权在今鄂州营建武昌、229年迁都建业以及孙皓时期再次迁都武昌。",
+    "publisher": "湖北省文化和旅游厅",
+    "url": "https://wlt.hubei.gov.cn/bmdt/ztzl/zshb/201912/t20191226_1799420.shtml",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-p0-4-ungegn-ezhou",
+    "title": "City Details - 鄂州 - Ezhou",
+    "sourceType": "dataset",
+    "citation": "联合国地名专家组城市资料；鄂州现代城市坐标据中国地名研究所提供，仅用作三国武昌所在区域的近似浏览点位。",
+    "publisher": "United Nations Group of Experts on Geographical Names",
+    "url": "https://ungegn.un.org/dashboard/cities/details?id=2006",
+    "accessedAt": "2026-09-23"
+  },
+  {
+    "id": "source-p0-4-ezhou-wuchang",
+    "title": "吴都武昌城——樊山札记之四",
+    "sourceType": "institutional",
+    "citation": "鄂州市人民政府：《吴都武昌城——樊山札记之四》；记述221年孙权迁鄂、229年迁建业及265—266年孙皓复都武昌。",
+    "publisher": "鄂州市人民政府",
+    "url": "https://www.ezhou.gov.cn/zjez/ezrw/ezss/202205/t20220526_469968.html",
+    "accessedAt": "2026-09-23"
+  }
+]

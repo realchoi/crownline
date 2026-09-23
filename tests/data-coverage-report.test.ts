@@ -91,7 +91,7 @@ describe("数据覆盖报告 v4", () => {
     expect(report.temporalCoverage.summary).toMatchObject({
       polities: 134,
       politiesWithYearsWithoutReignRecords: 42,
-      politiesWithUnknownGeographyYears: 23
+      politiesWithUnknownGeographyYears: 26
     });
     const hre = report.temporalCoverage.polities.find(
       ({ entityId }) => entityId === "polity-holy-roman-empire"
@@ -131,7 +131,7 @@ describe("数据覆盖报告 v4", () => {
         relationships: 74,
         events: 34,
         geographicSnapshots: 194,
-        sources: 279
+        sources: 290
       },
       polityCoverage: {
         rulerDetails: {
@@ -179,28 +179,28 @@ describe("数据覆盖报告 v4", () => {
       )
     );
     expect(report.sourceQuality).toEqual({
-      total: 279,
-      byType: { primary: 3, secondary: 48, tertiary: 67, dataset: 14, institutional: 147 },
-      withUrl: 278,
+      total: 290,
+      byType: { primary: 3, secondary: 50, tertiary: 67, dataset: 15, institutional: 155 },
+      withUrl: 289,
       withoutUrl: 1,
-      withAccessedAt: 278,
+      withAccessedAt: 289,
       withoutAccessedAt: 1
     });
     expect(report.sourceReferenceQuality).toMatchObject({
       entities: {
         records: 137,
-        recordsWithLocatedSourceRefs: 23,
-        recordsWithoutLocatedSourceRefs: 114
+        recordsWithLocatedSourceRefs: 35,
+        recordsWithoutLocatedSourceRefs: 102
       },
       persons: {
         records: 1385,
-        recordsWithLocatedSourceRefs: 188,
-        recordsWithoutLocatedSourceRefs: 1197
+        recordsWithLocatedSourceRefs: 318,
+        recordsWithoutLocatedSourceRefs: 1067
       },
       reigns: {
         records: 1424,
-        recordsWithLocatedSourceRefs: 188,
-        recordsWithoutLocatedSourceRefs: 1236
+        recordsWithLocatedSourceRefs: 321,
+        recordsWithoutLocatedSourceRefs: 1103
       },
       reignVacancies: {
         records: 12,
@@ -227,8 +227,8 @@ describe("数据覆盖报告 v4", () => {
       geographicSnapshots: {
         records: 194,
         recordsWithSourceRefs: 194,
-        recordsWithLocatedSourceRefs: 119,
-        recordsWithoutLocatedSourceRefs: 75
+        recordsWithLocatedSourceRefs: 136,
+        recordsWithoutLocatedSourceRefs: 58
       }
     });
     expect(report.sourceReferenceQuality.entities.recordIdsWithoutLocatedSourceRefs).toContain(
@@ -419,7 +419,7 @@ describe("关系分布和来源质量", () => {
     expect(report.sourceReferenceQuality).toMatchObject({
       relationships: { records: 74, recordsWithLocatedSourceRefs: 74 },
       events: { records: 34, recordsWithLocatedSourceRefs: 34 },
-      geographicSnapshots: { records: 194, recordsWithLocatedSourceRefs: 119 }
+      geographicSnapshots: { records: 194, recordsWithLocatedSourceRefs: 136 }
     });
   });
 

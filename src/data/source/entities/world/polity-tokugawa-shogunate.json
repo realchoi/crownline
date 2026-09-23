@@ -24,7 +24,13 @@
       "culturalSphereIds": [],
       "modernAreaIds": [],
       "description": "1603年，德川家康受封征夷大将军后建立德川幕府，以江户为政治中枢，结合幕府直辖与各藩领主形成幕藩体制。该政权通过武家诸法度、参勤交代和等级秩序维持两百余年的相对和平，并推动都市商业、出版与武士—町人文化发展。十九世纪中叶西方压力与内政危机加剧，1867年德川庆喜奉还大政，1868年明治维新使幕府体制终结。",
-      "sourceRefs": [{ "sourceId": "source-tokugawa-history" }, { "sourceId": "source-tokugawa-rulers" }],
+      "sourceRefs": [
+        {
+          "sourceId": "source-tokugawa-history",
+          "locator": "The Tokugawa Period：1603 establishment, Edo political center and 1868 end"
+        },
+        { "sourceId": "source-tokugawa-rulers" }
+      ],
       "confidence": "medium"
     }
   ],

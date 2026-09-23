@@ -38,9 +38,9 @@ describe("既有点位 locator 证据审查", () => {
   it("逐条覆盖基线100条并明确区分已核实与待查", () => {
     expect(review.summary).toEqual({
       baselineRecords: 100,
-      verifiedThisReview: 25,
-      correctedThisReview: 6,
-      pendingEvidence: 75
+      verifiedThisReview: 42,
+      correctedThisReview: 15,
+      pendingEvidence: 58
     });
     expect(entries).toHaveLength(100);
     expect(new Set(entries.map(({ recordId }) => recordId)).size).toBe(100);
@@ -69,7 +69,7 @@ describe("既有点位 locator 证据审查", () => {
 
   it("不把通用 GeoNames 首页或仅有纪年表的记录标成已核实", () => {
     const pending = entries.filter(({ reviewStatus }) => reviewStatus === "pending-evidence");
-    expect(pending).toHaveLength(75);
+    expect(pending).toHaveLength(58);
     for (const entry of pending) {
       expect(entry.currentSourceRefs.some(({ sourceId }) => sourceId === "source-geonames")).toBe(
         true
@@ -94,7 +94,7 @@ describe("既有点位 locator 证据审查", () => {
 
   it("已核实记录均已换成带具体 locator 的引用", () => {
     const verified = entries.filter(({ reviewStatus }) => reviewStatus === "verified");
-    expect(verified).toHaveLength(25);
+    expect(verified).toHaveLength(42);
     for (const entry of verified) {
       expect(entry.currentSourceRefs.every(({ locator }) => Boolean(locator?.trim()))).toBe(true);
     }

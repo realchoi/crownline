@@ -1,0 +1,38 @@
+[
+  {
+    "id": "source-p0-met-ctesiphon",
+    "title": "Ctesiphon",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History: Ctesiphon；用于核对萨珊王朝都城身份、226年加冕与637年被征服的时间边界。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/essays/ctesiphon",
+    "accessedAt": "2026-09-15"
+  },
+  {
+    "id": "source-p0-met-ottoman-capital",
+    "title": "The Ottoman Empire",
+    "sourceType": "institutional",
+    "citation": "The Metropolitan Museum of Art, Art of the Islamic World: Unit 5, Chapter 2, The Ottoman Empire；用于核对1453年攻取君士坦丁堡及其作为奥斯曼都城延续至1923年的口径。",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit5.pdf",
+    "accessedAt": "2026-09-15"
+  },
+  {
+    "id": "source-p0-unesco-badami",
+    "title": "Evolution of Temple Architecture – Aihole-Badami-Pattadakal",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre Tentative List: Evolution of Temple Architecture – Aihole-Badami-Pattadakal；用于核对巴达米作为早期遮娄其政治与宗教中心的身份。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/tentativelists/5972/",
+    "accessedAt": "2026-09-15"
+  },
+  {
+    "id": "source-p0-tnarch-gangaikonda",
+    "title": "Gangaikondacholapuram",
+    "sourceType": "institutional",
+    "citation": "Tamil Nadu Department of Archaeology: Gangaikondacholapuram；用于核对罗阇因陀罗一世营建新都及其约250年的次都地位。",
+    "publisher": "Tamil Nadu Department of Archaeology",
+    "url": "https://www.tnarch.gov.in/gangaikondacholapuram",
+    "accessedAt": "2026-09-15"
+  }
+]

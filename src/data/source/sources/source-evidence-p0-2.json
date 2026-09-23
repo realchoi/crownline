@@ -1,0 +1,38 @@
+[
+  {
+    "id": "source-p0-iranica-capital-cities",
+    "title": "Capital Cities",
+    "sourceType": "secondary",
+    "citation": "Encyclopaedia Iranica: Capital Cities；用于核对萨法维王朝1501年以大不里士为基地、1555年迁都加兹温及1597—1598年迁往伊斯法罕的口径。",
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/capital-cities/",
+    "accessedAt": "2026-09-15"
+  },
+  {
+    "id": "source-p0-iranica-harran",
+    "title": "Harran",
+    "sourceType": "secondary",
+    "citation": "Encyclopaedia Iranica: Harran；用于核对马尔万二世将倭马亚哈里发国政治中心由大马士革迁至哈兰。",
+    "publisher": "Encyclopaedia Iranica",
+    "url": "https://www.iranicaonline.org/articles/harran/",
+    "accessedAt": "2026-09-15"
+  },
+  {
+    "id": "source-p0-unesco-gondar",
+    "title": "Fasil Ghebbi, Gondar Region",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre: Fasil Ghebbi, Gondar Region；用于核对1636年设立永久首都、18世纪后期衰落及贡德尔政府中心地位。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/19",
+    "accessedAt": "2026-09-15"
+  },
+  {
+    "id": "source-p0-unesco-delhi",
+    "title": "Delhi - A Heritage City",
+    "sourceType": "institutional",
+    "citation": "UNESCO World Heritage Centre Tentative List: Delhi - A Heritage City；用于核对德里苏丹国时期德里作为帝国政治中心及历代城址并存的口径。",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/tentativelists/5743/",
+    "accessedAt": "2026-09-15"
+  }
+]

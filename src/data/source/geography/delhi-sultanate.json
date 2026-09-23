@@ -15,19 +15,21 @@
       }
     ],
     "placeName": "Delhi",
-    "role": "capital",
+    "role": "representative-center",
     "coordinates": {
-      "latitude": 28.6139,
-      "longitude": 77.209
+      "latitude": 28.6664535,
+      "longitude": 77.2169781
     },
     "positionPrecision": "approximate",
-    "positionNote": "坐标采用 GeoNames 对应现代地点坐标，仅表示该时期政治中心的大致位置，不表示政权疆域。洛迪王朝西坎达尔时期曾移驻阿格拉，此处仍以德里为主要浏览定位点。",
+    "positionNote": "UNESCO材料确认德里在苏丹国时期发展为帝国首都，并列出Siri、Tughlaqabad、Jahanpanah与Firozabad等不同城址；坐标取现代德里OSM城市关系中心。此处改为全时期代表性中心，不声称历代始终共用一个固定都城，也不表示疆域。",
     "sourceRefs": [
       {
-        "sourceId": "source-geonames"
+        "sourceId": "source-p0-unesco-delhi",
+        "locator": "Description：Delhi grew to be the capital of an empire in the Delhi Sultanate；Siri、Tughlaqabad、Jahanpanah、Firozabad等历代城址"
       },
       {
-        "sourceId": "source-delhi-sultanate-britannica"
+        "sourceId": "source-p2-osm-nominatim",
+        "locator": "OSM relation 21180767（Delhi city）；28.6664535, 77.2169781；2026-09-15检索"
       }
     ],
     "confidence": "medium"

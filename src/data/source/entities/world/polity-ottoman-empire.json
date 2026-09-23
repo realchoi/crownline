@@ -41,7 +41,8 @@
       "description": "奥斯曼帝国起于安纳托利亚西北边疆的奥斯曼家族政权，先后以布尔萨、埃迪尔内和1453年后的君士坦丁堡／伊斯坦布尔为核心，统合巴尔干、安纳托利亚与阿拉伯诸省，成为连接东地中海、黑海与西亚的重要帝国。其疆域与制度在十五至十六世纪达到高峰，十九世纪以后则在地方民族主义、列强干预与大战失败中持续收缩，最终于1922年废除苏丹制。",
       "sourceRefs": [
         {
-          "sourceId": "source-ottoman-history"
+          "sourceId": "source-ottoman-history",
+          "locator": "Collections term overview：Ottoman dynasty"
         },
         {
           "sourceId": "source-ottoman-rulers"
