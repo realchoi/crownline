@@ -6,11 +6,11 @@ dialog {
   background: var(--surface-strong);
   color: var(--text);
   padding: 0;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+  box-shadow: var(--shadow-dialog);
 }
 
 dialog::backdrop {
-  background: rgba(20, 14, 10, 0.58);
+  background: var(--backdrop);
   backdrop-filter: blur(4px);
 }
 
@@ -57,18 +57,12 @@ body:has(dialog[open]) {
 
 .type-badge.detail-contemporary {
   background: color-mix(in srgb, var(--parallel) 16%, transparent);
-  color: #6d4a18;
+  color: var(--parallel-on-soft);
 }
 
-@media (prefers-color-scheme: dark) {
-  .type-badge.detail-contemporary {
-    color: #e2b664;
-  }
-
-  .type-badge.detail-mainline,
-  .role-badge.role-ruler {
-    color: var(--accent-hover);
-  }
+.type-badge.detail-mainline,
+.role-badge.role-ruler {
+  color: var(--accent-on-soft);
 }
 
 .type-badge.detail-context {

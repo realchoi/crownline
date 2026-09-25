@@ -58,7 +58,7 @@ main {
 .mode-switch button[aria-pressed="true"] {
   background: var(--surface-strong);
   color: var(--accent);
-  box-shadow: 0 4px 14px rgba(72, 45, 29, 0.11);
+  box-shadow: var(--shadow-control);
 }
 
 .year-current {
@@ -196,7 +196,7 @@ main {
 .map-layer-switch button[aria-pressed="true"] {
   background: var(--surface-strong);
   color: var(--accent);
-  box-shadow: 0 3px 12px rgba(72, 45, 29, 0.1);
+  box-shadow: var(--shadow-control);
 }
 
 .map-layer-help {
@@ -239,7 +239,7 @@ main {
 .scope-switch button[aria-pressed="true"] {
   background: var(--surface-strong);
   color: var(--period);
-  box-shadow: 0 3px 12px rgba(72, 45, 29, 0.1);
+  box-shadow: var(--shadow-control);
 }
 
 .region-coverage-note {
@@ -787,7 +787,7 @@ a:focus-visible {
   border: 1px solid color-mix(in srgb, var(--border) 90%, var(--accent));
   border-top: 2px solid var(--accent);
   background: color-mix(in srgb, var(--surface-strong) 94%, transparent);
-  box-shadow: 0 8px 24px rgba(38, 29, 25, 0.11);
+  box-shadow: var(--shadow-floating);
   padding: 6px 8px 6px 14px;
   pointer-events: auto;
   backdrop-filter: blur(15px);
@@ -903,7 +903,7 @@ a:focus-visible {
 }
 
 .filter-sheet::backdrop {
-  background: rgba(28, 21, 17, 0.54);
+  background: var(--backdrop);
   backdrop-filter: blur(2px);
 }
 

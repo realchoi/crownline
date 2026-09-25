@@ -1,3 +1,28 @@
+/* 响应式覆盖集中在此文件，按断点从宽到窄排列，窄断点在后以覆盖宽断点：
+   - min-width: 981px  桌面双栏地图的吸顶增强
+   - max-width: 980px  地图与结果改为单栏
+   - max-width: 800px  平板竖屏及以下：控制台改为抽屉（与 BrowseControls.tsx 的 MOBILE_CONTROLS_QUERY 一致）
+   - max-width: 760px  平板竖屏内容重排：结果网格减列、对比两栏改单栏
+   - max-width: 640px  手机：时间轴紧凑行、对比弹窗与快捷栏全屏布局
+   - max-width: 460px  小屏手机
+   之后是触屏、减少动态效果与打印。 */
+@media (min-width: 981px) {
+  .historical-map {
+    position: sticky;
+    /* 仅避让阶段 2 的紧凑工具条，不再为完整筛选面板预留大块空间。 */
+    top: 76px;
+  }
+
+  /* 聚合面板展开后随页面滚动，避免 sticky 地图卡片挡住面板下半部分。 */
+  .historical-map.is-cluster-expanded {
+    position: static;
+  }
+  .map-results {
+    position: sticky;
+    top: 76px;
+    max-height: calc(100vh - 96px);
+  }
+}
 @media (max-width: 980px) {
   .controls-year .controls-grid,
   .controls-map .controls-grid {
@@ -9,254 +34,8 @@
     scroll-margin-top: 20px;
   }
 }
-
-@media (max-width: 760px) {
-  .map-layer-control {
-    grid-template-columns: 1fr;
-  }
-  .map-layer-control .field-label,
-  .map-layer-switch,
-  .map-layer-help {
-    grid-column: 1;
-    grid-row: auto;
-  }
-  .map-layer-switch {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .map-cluster-panel {
-    max-height: min(420px, 52vh);
-    margin-top: 10px;
-    padding: 12px;
-  }
-  .map-cluster-panel-heading {
-    gap: 10px;
-  }
-  .map-cluster-panel-heading h2 {
-    font-size: 1.08rem;
-  }
-  .map-cluster-panel-list {
-    grid-template-columns: 1fr;
-  }
-  .map-cluster-panel-item {
-    grid-template-columns: 28px minmax(0, 1fr) auto;
-    min-height: 84px;
-    padding: 10px;
-  }
-  .region-scope-heading {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .scope-switch {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .scope-switch button {
-    padding-inline: 8px;
-  }
-  .button {
-    width: 100%;
-  }
-  .results-line {
-    flex-direction: column;
-    gap: 2px;
-  }
-  .comparison-panel {
-    background: var(--surface);
-  }
-  .comparison-panel::before {
-    display: none;
-  }
-  .comparison-columns {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .historical-relationships-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .relationship-group {
-    grid-template-columns: 76px minmax(0, 1fr);
-    gap: 10px;
-  }
-  .relationship-card {
-    padding: 14px;
-  }
-  .timepoint-grid,
-  .context-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .detail-grid,
-  .ruler-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .ruler-sequence-item summary {
-    grid-template-columns: minmax(104px, 0.7fr) minmax(110px, 1.3fr) auto 16px;
-  }
-  .sequence-detail {
-    padding-left: max(8px, calc(32% + 3px));
-  }
-  .map-results-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 460px) {
-  .related-polity {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-  }
-
-  .related-polity-compare {
-    justify-self: start;
-  }
-
-  .site-shell {
-    width: min(100% - 32px, 1120px);
-  }
-  .detail-grid {
-    grid-template-columns: 1fr;
-  }
-  .ruler-list {
-    grid-template-columns: 1fr;
-  }
-  .ruler-overview-heading {
-    align-items: center;
-  }
-  .ruler-filter-list {
-    flex-wrap: nowrap;
-    margin-inline: -2px;
-    padding: 2px 2px 5px;
-    overflow-x: auto;
-    scrollbar-width: thin;
-  }
-  .ruler-filter {
-    flex: none;
-  }
-  .ruler-sequence-item summary {
-    grid-template-columns: minmax(0, 1fr) auto 16px;
-    gap: 5px 9px;
-    padding-block: 10px;
-  }
-  .sequence-period {
-    grid-column: 1 / -1;
-  }
-  .sequence-name {
-    grid-column: 1;
-  }
-  .sequence-detail {
-    padding: 3px 8px 17px;
-  }
-  .ruler-overview-hint {
-    margin-left: 22px;
-  }
-  .mode-switch button,
-  .year-step-button {
-    min-height: 44px;
-  }
-  .year-slider-row {
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
-    gap: 6px;
-  }
-  .year-range {
-    grid-template-columns: auto auto;
-  }
-  .year-range span:nth-child(2) {
-    display: none;
-  }
-  .year-range span:last-child {
-    text-align: right;
-  }
-  .timepoint-grid,
-  .context-grid {
-    grid-template-columns: 1fr;
-  }
-  .timepoint-card {
-    min-height: 142px;
-  }
-  .comparison-panel-heading {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  .comparison-slots,
-  .comparison-columns {
-    grid-template-columns: 1fr;
-  }
-  .comparison-slot {
-    grid-template-columns: 28px minmax(0, 1fr) auto;
-  }
-  .comparison-summary {
-    margin-block: 18px;
-  }
-  .relationship-group {
-    grid-template-columns: 1fr;
-    gap: 7px;
-  }
-  .relationship-group h4 {
-    padding-block: 2px;
-  }
-  .relationship-events li {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-  .historical-map {
-    padding: 8px;
-  }
-  .map-results {
-    padding: 0 16px 16px;
-  }
-  .map-results-heading {
-    padding-top: 16px;
-  }
-  .map-result-detail {
-    padding-right: 62px;
-    scroll-margin-top: 20px;
-  }
-  .map-result-item > .comparison-toggle {
-    top: 4px;
-    right: 4px;
-    min-width: 52px;
-    min-height: 44px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.001ms !important;
-    animation-duration: 0.001ms !important;
-  }
-}
-
-@media print {
-  body {
-    background: white;
-    color: black;
-  }
-  .controls-panel,
-  .scope-note,
-  dialog,
-  .skip-link {
-    display: none !important;
-  }
-  .site-shell {
-    width: 100%;
-  }
-  .timeline-stage {
-    break-inside: avoid;
-    box-shadow: none;
-  }
-  .timeline-shared-axis,
-  .axis-row {
-    position: static;
-  }
-}
-
-/* 探索控制台在平板竖屏及以下切换为专用抽屉。 */
 @media (max-width: 800px) {
+  /* 探索控制台在平板竖屏及以下切换为专用抽屉。 */
   .mobile-explore-bar {
     position: sticky;
     top: 0;
@@ -336,7 +115,7 @@
     background: var(--surface-strong);
     color: var(--text);
     padding: 0;
-    box-shadow: 0 -20px 70px rgba(20, 15, 12, 0.28);
+    box-shadow: var(--shadow-sheet);
   }
 
   .filter-sheet-frame {
@@ -494,17 +273,6 @@
     padding-inline: 0;
     font-size: 0.8125rem;
   }
-}
-
-@media (max-width: 460px) {
-  .filter-sheet[open] {
-    width: 100%;
-    height: 96dvh;
-    border-inline: 0;
-  }
-}
-
-@media (max-width: 800px) {
   .hero {
     display: block;
     padding: 20px 0 14px;
@@ -533,8 +301,120 @@
     padding-left: 10px;
   }
 }
+@media (max-width: 760px) {
+  .map-layer-control {
+    grid-template-columns: 1fr;
+  }
+  .map-layer-control .field-label,
+  .map-layer-switch,
+  .map-layer-help {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .map-layer-switch {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .map-cluster-panel {
+    max-height: min(420px, 52vh);
+    margin-top: 10px;
+    padding: 12px;
+  }
+  .map-cluster-panel-heading {
+    gap: 10px;
+  }
+  .map-cluster-panel-heading h2 {
+    font-size: 1.08rem;
+  }
+  .map-cluster-panel-list {
+    grid-template-columns: 1fr;
+  }
+  .map-cluster-panel-item {
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    min-height: 84px;
+    padding: 10px;
+  }
+  .region-scope-heading {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .scope-switch {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .scope-switch button {
+    padding-inline: 8px;
+  }
+  .button {
+    width: 100%;
+  }
+  .comparison-panel {
+    background: var(--surface);
+  }
+  .comparison-panel::before {
+    display: none;
+  }
+  .comparison-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .historical-relationships-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .relationship-group {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .relationship-card {
+    padding: 14px;
+  }
+  .timepoint-grid,
+  .context-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .detail-grid,
+  .ruler-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ruler-sequence-item summary {
+    grid-template-columns: minmax(104px, 0.7fr) minmax(110px, 1.3fr) auto 16px;
+  }
+  .sequence-detail {
+    padding-left: max(8px, calc(32% + 3px));
+  }
+  .map-results-list {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .site-shell.has-comparison-tray {
+    padding-bottom: calc(148px + env(safe-area-inset-bottom));
+  }
 
-@media (max-width: 600px) {
+  :root:has(.comparison-tray) {
+    scroll-padding-bottom: calc(140px + env(safe-area-inset-bottom));
+  }
+
+  .comparison-tray {
+    padding-inline: 10px;
+  }
+
+  .comparison-tray-frame {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 7px 10px;
+    padding: 8px 8px 8px 12px;
+  }
+
+  .comparison-tray-entities {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .comparison-tray-entities .is-empty {
+    min-width: 96px;
+  }
   dialog.comparison-dialog {
     width: 100%;
     height: 100dvh;
@@ -562,11 +442,9 @@
   .comparison-dialog .comparison-panel {
     padding: 18px 16px;
   }
-}
 
-/* 窄屏时间轴：名称与年代同行、对比图标靠右，时间条另起一行并共享同一横向比例；
+  /* 窄屏时间轴：名称与年代同行、对比图标靠右，时间条另起一行并共享同一横向比例；
    长分组先预览 6 行，由分组底部的开关展开。 */
-@media (max-width: 640px) {
   .timeline-stage {
     padding: 12px 0 4px;
     border: 0;
@@ -723,10 +601,149 @@
     outline: 1px solid var(--accent);
     outline-offset: 3px;
   }
-}
 
-/* 触屏保持 44px 触控目标；精确指针下的紧凑行仍满足 WCAG 2.5.8 的 24px 最小目标。 */
+  /* 窄屏地图视野按钮单行横向滚动，缩放按钮固定在右侧。 */
+  .map-viewport-controls {
+    flex-wrap: nowrap;
+  }
+
+  .map-viewport-presets {
+    flex: 1;
+    flex-wrap: nowrap;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .map-viewport-presets button {
+    flex: none;
+  }
+}
+@media (max-width: 460px) {
+  .related-polity {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .related-polity-compare {
+    justify-self: start;
+  }
+
+  .site-shell {
+    width: min(100% - 32px, 1120px);
+  }
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .ruler-list {
+    grid-template-columns: 1fr;
+  }
+  .ruler-overview-heading {
+    align-items: center;
+  }
+  .ruler-filter-list {
+    flex-wrap: nowrap;
+    margin-inline: -2px;
+    padding: 2px 2px 5px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .ruler-filter {
+    flex: none;
+  }
+  .ruler-sequence-item summary {
+    grid-template-columns: minmax(0, 1fr) auto 16px;
+    gap: 5px 9px;
+    padding-block: 10px;
+  }
+  .sequence-period {
+    grid-column: 1 / -1;
+  }
+  .sequence-name {
+    grid-column: 1;
+  }
+  .sequence-detail {
+    padding: 3px 8px 17px;
+  }
+  .ruler-overview-hint {
+    margin-left: 22px;
+  }
+  .mode-switch button,
+  .year-step-button {
+    min-height: 44px;
+  }
+  .year-slider-row {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    gap: 6px;
+  }
+  .year-range {
+    grid-template-columns: auto auto;
+  }
+  .year-range span:nth-child(2) {
+    display: none;
+  }
+  .year-range span:last-child {
+    text-align: right;
+  }
+  .timepoint-grid,
+  .context-grid {
+    grid-template-columns: 1fr;
+  }
+  .timepoint-card {
+    min-height: 142px;
+  }
+  .comparison-panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .comparison-slots,
+  .comparison-columns {
+    grid-template-columns: 1fr;
+  }
+  .comparison-slot {
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+  }
+  .comparison-summary {
+    margin-block: 18px;
+  }
+  .relationship-group {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+  .relationship-group h4 {
+    padding-block: 2px;
+  }
+  .relationship-events li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .historical-map {
+    padding: 8px;
+  }
+  .map-results {
+    padding: 0 16px 16px;
+  }
+  .map-results-heading {
+    padding-top: 16px;
+  }
+  .map-result-detail {
+    padding-right: 62px;
+    scroll-margin-top: 20px;
+  }
+  .map-result-item > .comparison-toggle {
+    top: 4px;
+    right: 4px;
+    min-width: 52px;
+    min-height: 44px;
+  }
+  .filter-sheet[open] {
+    width: 100%;
+    height: 96dvh;
+    border-inline: 0;
+  }
+}
 @media (pointer: coarse) {
+  /* 触屏保持 44px 触控目标；精确指针下的紧凑行仍满足 WCAG 2.5.8 的 24px 最小目标。 */
   .row-name {
     min-height: 44px;
   }
@@ -749,31 +766,43 @@
     min-width: 44px;
     min-height: 44px;
   }
-}
-
-/* 窄屏地图视野按钮单行横向滚动，缩放按钮固定在右侧。 */
-@media (max-width: 640px) {
-  .map-viewport-controls {
-    flex-wrap: nowrap;
-  }
-
-  .map-viewport-presets {
-    flex: 1;
-    flex-wrap: nowrap;
-    min-width: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .map-viewport-presets button {
-    flex: none;
-  }
-}
-
-@media (pointer: coarse) {
   .map-viewport-presets button,
   .map-zoom-controls button {
     min-width: 44px;
     min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .controls-panel,
+  .scope-note,
+  dialog,
+  .skip-link {
+    display: none !important;
+  }
+  .site-shell {
+    width: 100%;
+  }
+  .timeline-stage {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+  .timeline-shared-axis,
+  .axis-row {
+    position: static;
   }
 }

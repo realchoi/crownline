@@ -51,6 +51,21 @@
   --period: #496a69;
   --regional: #6b5b8b;
   --shadow: 0 18px 50px rgba(72, 45, 29, 0.09);
+  /* 分层阴影与遮罩：控件选中态、卡片悬停、浮动工具条、底部快捷栏、弹窗、抽屉与地图标记。 */
+  --shadow-control: 0 3px 12px rgba(72, 45, 29, 0.1);
+  --shadow-card-hover: 0 12px 28px rgba(72, 45, 29, 0.1);
+  --shadow-floating: 0 8px 24px rgba(38, 29, 25, 0.11);
+  --shadow-tray: 0 14px 38px rgba(32, 23, 19, 0.24);
+  --shadow-dialog: 0 30px 90px rgba(0, 0, 0, 0.28);
+  --shadow-sheet: 0 -20px 70px rgba(20, 15, 12, 0.28);
+  --shadow-marker: 0 3px 12px rgba(38, 29, 25, 0.3);
+  --shadow-marker-active: 0 5px 18px rgba(38, 29, 25, 0.4);
+  --shadow-marker-small: 0 2px 6px rgba(38, 29, 25, 0.24);
+  --spine-shade: rgba(72, 45, 29, 0.06);
+  --backdrop: rgba(20, 14, 10, 0.58);
+  /* 浅色底徽标上的文字色；深色模式改用更亮的色阶以保证对比度。 */
+  --accent-on-soft: var(--accent);
+  --parallel-on-soft: #6d4a18;
   /* 时间轴刻度网格线；引用 --muted，深色模式随之切换。 */
   --track-grid: color-mix(in srgb, var(--muted) 26%, transparent);
   --radius-lg: 24px;
@@ -82,6 +97,8 @@
     --period: #77aaa7;
     --regional: #a895c8;
     --shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+    --accent-on-soft: var(--accent-hover);
+    --parallel-on-soft: #e2b664;
   }
 }
 

@@ -26,19 +26,6 @@
   padding: 14px;
 }
 
-@media (min-width: 981px) {
-  .historical-map {
-    position: sticky;
-    /* 仅避让阶段 2 的紧凑工具条，不再为完整筛选面板预留大块空间。 */
-    top: 76px;
-  }
-
-  /* 聚合面板展开后随页面滚动，避免 sticky 地图卡片挡住面板下半部分。 */
-  .historical-map.is-cluster-expanded {
-    position: static;
-  }
-}
-
 .world-map {
   position: relative;
   width: 100%;
@@ -114,7 +101,7 @@
 .map-viewport-presets button[aria-pressed="true"] {
   background: var(--surface-strong);
   color: var(--period);
-  box-shadow: 0 3px 12px rgba(72, 45, 29, 0.1);
+  box-shadow: var(--shadow-control);
 }
 
 .map-zoom-controls button:hover:not(:disabled),
@@ -186,7 +173,7 @@
   border: 2px solid var(--surface-strong);
   background: var(--accent);
   color: var(--surface-strong);
-  box-shadow: 0 3px 12px rgba(38, 29, 25, 0.3);
+  box-shadow: var(--shadow-marker);
   transition:
     transform 0.16s ease,
     box-shadow 0.16s ease;
@@ -203,7 +190,7 @@
 .map-marker:focus-visible {
   z-index: 8;
   transform: translate(-50%, -50%) scale(1.18);
-  box-shadow: 0 5px 18px rgba(38, 29, 25, 0.4);
+  box-shadow: var(--shadow-marker-active);
 }
 
 .map-marker span {
@@ -293,7 +280,7 @@
   border-radius: 50%;
   background: var(--accent);
   color: var(--surface-strong);
-  box-shadow: 0 2px 6px rgba(38, 29, 25, 0.24);
+  box-shadow: var(--shadow-marker-small);
 }
 
 .map-legend-symbol::after {
@@ -492,14 +479,6 @@
   background: var(--surface);
   padding-top: 20px;
   padding-bottom: 10px;
-}
-
-@media (min-width: 981px) {
-  .map-results {
-    position: sticky;
-    top: 76px;
-    max-height: calc(100vh - 96px);
-  }
 }
 
 .map-results-heading {
