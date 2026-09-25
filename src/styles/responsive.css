@@ -731,6 +731,14 @@
     min-height: 44px;
   }
 
+  /* 年份切片卡片右上角的对比开关同样保持 44px 触控目标。 */
+  .timepoint-card-shell .comparison-toggle {
+    top: 8px;
+    right: 8px;
+    min-width: 60px;
+    min-height: 44px;
+  }
+
   /* 吸顶坐标轴内的窗口按钮取 32px，兼顾触控与吸顶区高度；仍高于 WCAG 2.5.8 的 24px 下限。 */
   .axis-window-button {
     min-width: 44px;

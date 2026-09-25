@@ -598,6 +598,29 @@ test.describe("Crownline 浏览器冒烟", () => {
     ).toBe(false);
   });
 
+  test("年份切片的对比入口位于卡片内，手机端保持 44px 触控目标", async ({ page, isMobile }) => {
+    await page.goto("/?mode=point&year=1200&scope=china");
+    await waitForAppReady(page);
+
+    const polities = page.getByRole("region", { name: "当时存在的政权" });
+    const card = polities.getByRole("button", { name: /^南宋，/ });
+    const toggle = polities.getByRole("button", { name: "将南宋加入对比" });
+    const [cardBox, toggleBox] = await Promise.all([card.boundingBox(), toggle.boundingBox()]);
+    expect(toggleBox!.x).toBeGreaterThanOrEqual(cardBox!.x);
+    expect(toggleBox!.y).toBeGreaterThanOrEqual(cardBox!.y);
+    expect(toggleBox!.x + toggleBox!.width).toBeLessThanOrEqual(cardBox!.x + cardBox!.width);
+    expect(toggleBox!.y + toggleBox!.height).toBeLessThanOrEqual(cardBox!.y + cardBox!.height);
+    if (isMobile) expect(toggleBox!.height).toBeGreaterThanOrEqual(44);
+
+    await toggle.click();
+    // 选中后可访问名称切换为“移出对比”；点按开关不应同时打开卡片详情。
+    await expect(polities.getByRole("button", { name: "将南宋移出对比" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    await expect(page.getByRole("dialog")).toHaveCount(0);
+  });
+
   test("手机分组预览始终保留已选入对比的行", async ({ page, isMobile }) => {
     test.skip(!isMobile, "分组预览只在手机布局生效");
     await page.goto("/?compare=polity-cn-yuan");

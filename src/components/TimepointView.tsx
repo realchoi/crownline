@@ -3,6 +3,7 @@ import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import { formatEntityNameWithLocal } from "../domain/entityNames";
 import type { MatchedEntity } from "../domain/selectors";
 import { getRegionNames, type RegionScope } from "../domain/regionScope";
+import { sortTimepointMatches } from "../domain/timepointOrder";
 import type { Region } from "../domain/types";
 import { ComparisonToggle } from "./ComparisonToggle";
 import { EntityLocalName } from "./EntityLocalName";
@@ -40,8 +41,13 @@ function TimepointCard({
   });
 
   const comparisonSelected = comparisonEntityIds.includes(entity.id);
+  // 中国阶段与历史地区合并为一行；世界政权没有阶段时只显示地区，避免重复。
+  const placement = [section?.title, regionNames.join(" · ")].filter(Boolean).join(" · ");
+  const isPolity = entity.entityKind === "polity";
   return (
-    <div className={`timepoint-card-shell${comparisonSelected ? " is-comparison-selected" : ""}`}>
+    <div
+      className={`timepoint-card-shell${comparisonSelected ? " is-comparison-selected" : ""}${isPolity ? " has-comparison-toggle" : ""}`}
+    >
       <button
         className={`timepoint-card timepoint-${entity.displayCategory}`}
         type="button"
@@ -52,14 +58,11 @@ function TimepointCard({
           <span className={`type-badge detail-${entity.displayCategory}`}>
             {DISPLAY_CATEGORY_NAMES[entity.displayCategory]}
           </span>
-          <span className="timepoint-card-section">
-            {section?.title ?? regionNames.join(" · ")}
-          </span>
         </span>
         <strong className="timepoint-card-name">{entity.names.primary}</strong>
         <EntityLocalName names={entity.names} className="timepoint-local-name" />
         <span className="timepoint-card-periods">{periods}</span>
-        <span className="timepoint-card-regions">{regionNames.join(" · ")}</span>
+        <span className="timepoint-card-regions">{placement}</span>
         {(isApproximate || entity.chronologyStatus === "disputed") && (
           <span className="timepoint-card-flags">
             {isApproximate && <span>年代约略</span>}
@@ -67,7 +70,8 @@ function TimepointCard({
           </span>
         )}
       </button>
-      {entity.entityKind === "polity" && (
+      {/* 对比入口叠放在卡片右上角；按钮不能嵌套，所以与卡片按钮互为兄弟节点。 */}
+      {isPolity && (
         <ComparisonToggle
           entityName={formatEntityNameWithLocal(entity.names)}
           selected={comparisonSelected}
@@ -102,6 +106,8 @@ export function TimepointView({
       : regionScope.mode === "global"
         ? "全球已收录范围"
         : scopeRegions.map(({ names }) => names.primary).join("、");
+  const sortedPolities = sortTimepointMatches(polities);
+  const sortedPeriods = sortTimepointMatches(historicalPeriods);
   const allMatches = [...polities, ...historicalPeriods];
   const hasApproximateChronology = allMatches.some(({ entity }) => {
     return entity.existencePeriods.some((period) => {
@@ -142,7 +148,7 @@ export function TimepointView({
         </div>
         {polities.length > 0 ? (
           <div className="timepoint-grid">
-            {polities.map((match) => (
+            {sortedPolities.map((match) => (
               <TimepointCard
                 key={match.entity.id}
                 match={match}
@@ -175,29 +181,37 @@ export function TimepointView({
         )}
       </section>
 
-      <section className="timepoint-section historical-context" aria-label="历史背景">
-        <div className="timepoint-section-heading">
-          <div>
-            <p className="timepoint-kicker">不计入政权结果</p>
-            <h3>历史背景</h3>
-          </div>
-          <span>{historicalPeriods.length} 条</span>
-        </div>
+      {/* 没有历史分期时收成一行说明，不再占用整块分区。 */}
+      <section
+        className={`timepoint-section historical-context${historicalPeriods.length === 0 ? " is-empty" : ""}`}
+        aria-label="历史背景"
+      >
         {historicalPeriods.length > 0 ? (
-          <div className="timepoint-grid context-grid">
-            {historicalPeriods.map((match) => (
-              <TimepointCard
-                key={match.entity.id}
-                match={match}
-                onSelect={onSelect}
-                regions={regions}
-                comparisonEntityIds={comparisonEntityIds}
-                onToggleComparison={onToggleComparison}
-              />
-            ))}
-          </div>
+          <>
+            <div className="timepoint-section-heading">
+              <div>
+                <p className="timepoint-kicker">不计入政权结果</p>
+                <h3>历史背景</h3>
+              </div>
+              <span>{historicalPeriods.length} 条</span>
+            </div>
+            <div className="timepoint-grid context-grid">
+              {sortedPeriods.map((match) => (
+                <TimepointCard
+                  key={match.entity.id}
+                  match={match}
+                  onSelect={onSelect}
+                  regions={regions}
+                  comparisonEntityIds={comparisonEntityIds}
+                  onToggleComparison={onToggleComparison}
+                />
+              ))}
+            </div>
+          </>
         ) : (
-          <p className="context-empty">该年份暂无单独收录的历史分期背景。</p>
+          <p className="context-empty">
+            <strong>历史背景</strong>该年份暂无单独收录的历史分期背景；分期不计入政权结果。
+          </p>
         )}
       </section>
     </section>

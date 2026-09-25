@@ -12,6 +12,7 @@ import {
 import { getRegionNames } from "../domain/regionScope";
 import { selectRulerSnapshot, type RulerSnapshot } from "../domain/rulerSnapshot";
 import type { CrownlineDetail, HistoricalEntity, Region } from "../domain/types";
+import { ComparisonTimelineChart } from "./ComparisonTimelineChart";
 import { HistoricalRelationships } from "./HistoricalRelationships";
 import { EntityLocalName } from "./EntityLocalName";
 
@@ -265,6 +266,10 @@ export function ComparisonPanel({
                 <span>这不表示双方没有历史关系；请查看下方已校订记录。</span>
               </>
             )}
+            <ComparisonTimelineChart
+              comparison={comparison}
+              {...(currentYear !== undefined ? { currentYear } : {})}
+            />
           </div>
 
           <div className="comparison-columns">

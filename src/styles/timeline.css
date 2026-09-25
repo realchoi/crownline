@@ -485,20 +485,29 @@
   gap: 12px;
 }
 
+/* 卡片按钮与对比开关是兄弟节点；开关叠放在卡片右上角，与类别徽标同一行。 */
 .timepoint-card-shell {
+  position: relative;
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: 7px;
 }
 
 .timepoint-card-shell .timepoint-card {
   width: 100%;
   flex: 1;
 }
+
 .timepoint-card-shell .comparison-toggle {
-  align-self: flex-end;
-  margin: 0 8px 0 0;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  margin: 0;
+}
+
+/* 为右上角开关留出位置，长名称不会被遮挡。 */
+.timepoint-card-shell.has-comparison-toggle .timepoint-card-topline {
+  padding-right: 72px;
 }
 .timepoint-card-shell.is-comparison-selected .timepoint-card {
   border-color: var(--accent);
@@ -552,14 +561,6 @@
 
 .timepoint-card .type-badge {
   margin-bottom: 14px;
-}
-
-.timepoint-card-section {
-  overflow: hidden;
-  color: var(--muted);
-  font-size: 0.7rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .timepoint-card-name {
@@ -625,4 +626,15 @@
   margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+.historical-context.is-empty {
+  padding-block: 18px;
+}
+
+.context-empty strong {
+  margin-right: 10px;
+  color: var(--period);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
 }

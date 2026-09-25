@@ -346,6 +346,28 @@ describe("Crownline 浏览", () => {
     expect(screen.getByText(/起止边界/)).toBeInTheDocument();
   });
 
+  it("年份切片按主线、并立、区域政权依次排列", () => {
+    window.history.replaceState(null, "", "/?mode=point&year=1200&scope=china");
+    renderApp();
+
+    const polities = screen.getByRole("region", { name: "当时存在的政权" });
+    const names = within(polities)
+      .getAllByRole("button", { name: /点击查看详情。$/ })
+      .map((card) => card.getAttribute("aria-label")!.split(/[，（]/)[0]);
+    expect(names).toEqual(["南宋", "西夏", "金", "大理"]);
+  });
+
+  it("年份切片卡片只显示一次地区，并把阶段与地区合并为一行", () => {
+    window.history.replaceState(null, "", "/?mode=point&year=1200");
+    renderApp();
+
+    const polities = screen.getByRole("region", { name: "当时存在的政权" });
+    const hre = within(polities).getByRole("button", { name: /^神圣罗马帝国/ });
+    expect(hre.textContent?.match(/欧洲/g)).toHaveLength(1);
+    const southernSong = within(polities).getByRole("button", { name: /^南宋，/ });
+    expect(southernSong).toHaveTextContent("辽宋夏金元 · 中国历史范围");
+  });
+
   it("将当前年份置于滑杆上方，并把年份加减放在滑杆首尾", () => {
     window.history.replaceState(null, "", "/?mode=point&year=-221");
     renderApp();

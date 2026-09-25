@@ -195,6 +195,43 @@ describe("Crownline 政权对比", () => {
     expect(tangAttempts).toBe(2);
   });
 
+  it("以双轨时间图呈现双方存续与共同存续区间", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?comparison=open&compare=polity-cn-eastern-han&compare=polity-kushan-empire"
+    );
+    renderApp();
+
+    const panel = screen.getByRole("region", { name: "政权时间对比" });
+    expect(
+      within(panel).getByRole("img", {
+        name: "时间对比图：东汉 25—220；贵霜帝国 约50—约230；共同存续 约50—220"
+      })
+    ).toBeInTheDocument();
+  });
+
+  it("时间对比图标出位于比例尺内的当前年份，没有交集时如实说明", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?mode=point&year=100&comparison=open&compare=polity-cn-eastern-han&compare=polity-kushan-empire"
+    );
+    const { unmount } = renderApp();
+    expect(screen.getByRole("img", { name: /^时间对比图：.+；当前年份 100$/ })).toBeInTheDocument();
+    unmount();
+
+    window.history.replaceState(
+      null,
+      "",
+      "/?comparison=open&compare=polity-cn-qin&compare=polity-cn-ming"
+    );
+    renderApp();
+    expect(
+      screen.getByRole("img", { name: /^时间对比图：.+；存续时间没有重叠$/ })
+    ).toBeInTheDocument();
+  });
+
   it("没有时间交集时不把资料缺失解释为没有历史关系", () => {
     window.history.replaceState(
       null,

@@ -364,6 +364,102 @@
   border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
 }
 
+/* 双轨时间对比图：A、B 两条轨道共用比例尺，共同存续区间以贯穿两轨的色带标出。
+   --chart-label 为轨道左侧 A/B 标记列宽（含间距），色带与刻度都从该偏移处起算。 */
+.comparison-chart {
+  --chart-label: 34px;
+  justify-self: stretch;
+  width: min(100%, 640px);
+  margin: 14px auto 0;
+  text-align: left;
+}
+
+.comparison-chart-body {
+  display: grid;
+  gap: 4px;
+}
+
+.comparison-chart-plot {
+  position: relative;
+  display: grid;
+  gap: 8px;
+}
+
+.comparison-chart-row {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.comparison-chart-slot {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.comparison-chart-track {
+  position: relative;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--timeline-grid, none), var(--surface-soft);
+}
+
+.comparison-chart-bar {
+  position: absolute;
+  top: 3px;
+  min-width: 4px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.comparison-chart-track-a .comparison-chart-bar {
+  background: var(--accent);
+}
+
+.comparison-chart-track-b .comparison-chart-bar {
+  background: var(--period);
+}
+
+.comparison-chart-overlay {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  bottom: -5px;
+  left: var(--chart-label);
+  pointer-events: none;
+}
+
+.comparison-chart-overlap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  min-width: 2px;
+  border-inline: 1px dashed var(--parallel);
+  background: color-mix(in srgb, var(--parallel) 16%, transparent);
+}
+
+.comparison-chart-current {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: var(--text);
+}
+
+.comparison-chart-axis {
+  padding-left: var(--chart-label);
+}
+
 .comparison-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

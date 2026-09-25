@@ -43,9 +43,15 @@
 ## Stage 4: 年份切片卡片与对比弹窗
 
 **Goal**: 卡片去重与排序、空分区折叠、对比入口入卡；对比弹窗增加共同存续双轨图。
-**Success Criteria**: 卡片不重复地区信息；主线优先；对比弹窗以图示呈现重叠区间。
-**Tests**: 组件测试、e2e。
-**Status**: Not Started
+**Success Criteria**:
+
+- 卡片按主线、主要并立、区域政权依次排列，同类按起始年代稳定排序且不受输入顺序影响。
+- 阶段与地区合并为一行，世界政权不再重复显示地区；对比开关位于卡片右上角，触屏 44px。
+- 当年没有历史分期时背景区收为一行说明。
+- 对比弹窗双轨图：双方存续并集为比例尺，多段存续分段绘制，共同存续色带贯穿两轨，当前年份在图内时标出；整图提供文字替代。
+
+**Tests**: `tests/timepoint-order.test.ts`、`tests/comparison-chart.test.ts`；`tests/app/app-browse.test.tsx` 排序与去重；`tests/app/app-comparison.test.tsx` 图的文字替代；e2e 卡内对比开关位置与触控尺寸。
+**Status**: Complete
 
 ## Stage 5: CSS token 与断点整理
 
