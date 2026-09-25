@@ -526,6 +526,59 @@ test.describe("Crownline 浏览器冒烟", () => {
     expect(Math.abs((categoryBox?.y ?? 0) - (clearBox?.y ?? 0))).toBeLessThan(2);
   });
 
+  test("桌面工具条完整显示搜索示例，更多筛选不单独换行", async ({ page, isMobile }) => {
+    test.skip(isMobile, "桌面工具条仅在 desktop-chromium 项目覆盖");
+    for (const [width, query] of [
+      [1024, ""],
+      [1280, ""],
+      [1280, "?mode=point&year=-221"],
+      [1440, "?mode=point&year=-221"]
+    ] as const) {
+      await page.setViewportSize({ width, height: 800 });
+      await page.goto(`/${query}`);
+      await waitForAppReady(page);
+      await page.evaluate(() => document.fonts.ready);
+
+      const search = page.getByRole("searchbox", { name: "搜索名称、别名、年份或说明" });
+      const fits = await search.evaluate((input: HTMLInputElement) => {
+        const style = getComputedStyle(input);
+        const probe = document.createElement("span");
+        probe.style.font = style.font;
+        probe.style.whiteSpace = "pre";
+        probe.textContent = input.placeholder;
+        document.body.append(probe);
+        const textWidth = probe.getBoundingClientRect().width;
+        probe.remove();
+        // 搜索框内置清除按钮会占用约 18px，即使为空也参与内部排版。
+        const contentWidth =
+          input.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - 18;
+        return contentWidth >= textWidth;
+      });
+      expect(fits, `${width}px${query} 搜索示例被截断`).toBe(true);
+
+      const [searchBox, moreBox] = await Promise.all([
+        search.boundingBox(),
+        page.getByRole("button", { name: /^更多筛选/ }).boundingBox()
+      ]);
+      expect(
+        Math.abs(searchBox!.y + searchBox!.height / 2 - (moreBox!.y + moreBox!.height / 2))
+      ).toBeLessThan(4);
+      // 1280px 及以上（内容宽度 1120px）保持一行工具条。
+      if (width >= 1280) {
+        const viewBox = await page.getByRole("region", { name: "呈现方式" }).first().boundingBox();
+        expect(
+          Math.abs(viewBox!.y + viewBox!.height / 2 - (moreBox!.y + moreBox!.height / 2)),
+          `${width}px${query} 工具条折行`
+        ).toBeLessThan(6);
+      }
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth > document.documentElement.clientWidth
+        )
+      ).toBe(false);
+    }
+  });
+
   test("更多筛选中精确跳转为紧凑组合控件，与类别和清除按钮同行等高", async ({ page, isMobile }) => {
     test.skip(isMobile, "桌面更多筛选布局仅在 desktop-chromium 项目覆盖");
 

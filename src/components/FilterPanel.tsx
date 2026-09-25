@@ -177,25 +177,28 @@ export function FilterPanel({
               onRegionScopeChange(scope);
             }}
           />
-          {searchField("visually-hidden")}
-          <button
-            className="console-more-toggle"
-            type="button"
-            aria-expanded={moreOpen}
-            aria-controls={moreId}
-            {...(hiddenFilterCount > 0
-              ? { "aria-label": `更多筛选，已启用 ${hiddenFilterCount} 项` }
-              : {})}
-            onClick={() => setMoreOpen((open) => !open)}
-          >
-            更多筛选
-            {hiddenFilterCount > 0 && (
-              <span className="console-more-count" aria-hidden="true">
-                {hiddenFilterCount}
-              </span>
-            )}
-            <span className="console-more-chevron" aria-hidden="true" />
-          </button>
+          {/* 搜索框与“更多筛选”作为一个整体换行，避免按钮单独落到下一行。 */}
+          <div className="console-toolbar-search">
+            {searchField("visually-hidden")}
+            <button
+              className="console-more-toggle"
+              type="button"
+              aria-expanded={moreOpen}
+              aria-controls={moreId}
+              {...(hiddenFilterCount > 0
+                ? { "aria-label": `更多筛选，已启用 ${hiddenFilterCount} 项` }
+                : {})}
+              onClick={() => setMoreOpen((open) => !open)}
+            >
+              更多筛选
+              {hiddenFilterCount > 0 && (
+                <span className="console-more-count" aria-hidden="true">
+                  {hiddenFilterCount}
+                </span>
+              )}
+              <span className="console-more-chevron" aria-hidden="true" />
+            </button>
+          </div>
         </div>
         <div id={moreId} className="console-more" hidden={!moreOpen}>
           <RegionScopeControl

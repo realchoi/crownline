@@ -463,10 +463,11 @@ a:focus-visible {
 }
 
 /* 时间控件在工具条中排列为：范围切换、滑杆、当前年份。 */
+/* 最小宽度由内容最小尺寸决定（滑杆轨道至少 100px），不按滑杆固有宽度撑开，
+   使 1120px 内容宽度下整条工具条仍能保持一行。 */
 .console-toolbar .time-range-control {
   display: flex;
-  flex: 3 1 400px;
-  min-width: max-content;
+  flex: 3 1 360px;
   align-items: center;
   gap: 8px;
 }
@@ -484,7 +485,7 @@ a:focus-visible {
 .console-toolbar .year-slider-row {
   order: 2;
   flex: 1;
-  grid-template-columns: 34px minmax(110px, 1fr) 34px;
+  grid-template-columns: 34px minmax(100px, 1fr) 34px;
   align-items: center;
 }
 
@@ -506,9 +507,19 @@ a:focus-visible {
   margin: 0;
 }
 
+/* 搜索框与“更多筛选”是同一个弹性项，一行放不下时整体换到第二行。
+   搜索框最小宽度容纳完整的搜索示例与内置清除按钮（16px 字号，避免 iPad 聚焦时缩放）。 */
+.console-toolbar-search {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 14px;
+  min-width: max-content;
+}
+
 .console-toolbar .search-field {
-  flex: 1 1 180px;
-  min-width: 160px;
+  flex: 1 1 14.5rem;
+  min-width: 14.5rem;
 }
 
 .console-toolbar .search-field .text-input {
