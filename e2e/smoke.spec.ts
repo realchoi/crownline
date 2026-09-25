@@ -219,9 +219,11 @@ test.describe("Crownline 浏览器冒烟", () => {
     });
   }
 
-  test("桌面端加载时间轴并打开原生 dialog", async ({ page }) => {
+  test("桌面端加载时间轴并打开原生 dialog", async ({ page, isMobile }) => {
     await page.goto("/");
     await waitForAppReady(page);
+    // 手机布局中东亚分组先预览 6 行，唐需要展开后才可见。
+    if (isMobile) await page.getByRole("button", { name: /^展开东亚全部/ }).click();
 
     const tangBar = page.getByRole("button", { name: tangTimelineButtonName });
     await tangBar.click();
@@ -559,6 +561,67 @@ test.describe("Crownline 浏览器冒烟", () => {
       ].map(async (control) => (await control.boundingBox())!)
     );
     expect(Math.abs(inputAfter!.y - categoryAfter!.y)).toBeLessThan(2);
+  });
+
+  test("手机时间轴使用紧凑行，长分组先预览 6 行并可展开收起", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "分组预览只在手机布局生效");
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/");
+    await waitForAppReady(page);
+
+    const eastAsia = page.getByRole("region", { name: "东亚", exact: true });
+    const rows = eastAsia.locator(".timeline-row");
+    const expand = eastAsia.getByRole("button", { name: /^展开东亚全部 \d+ 条$/ });
+    await expect(expand).toHaveAttribute("aria-expanded", "false");
+    await expect(eastAsia.locator(".timeline-row:visible")).toHaveCount(6);
+
+    const firstRow = rows.first();
+    expect((await firstRow.boundingBox())!.height).toBeLessThanOrEqual(76);
+    const compareBox = (await firstRow.getByRole("button", { name: /对比$/ }).boundingBox())!;
+    expect(compareBox.width).toBeGreaterThanOrEqual(44);
+    expect(compareBox.height).toBeGreaterThanOrEqual(44);
+    expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBeLessThan(8000);
+
+    await expand.click();
+    const collapse = eastAsia.getByRole("button", { name: "收起东亚" });
+    await expect(collapse).toHaveAttribute("aria-expanded", "true");
+    await expect(eastAsia.locator(".timeline-row:visible")).toHaveCount(await rows.count());
+
+    await collapse.click();
+    await expect(expand).toBeFocused();
+    await expect(expand).toBeInViewport();
+    await expect(eastAsia.locator(".timeline-row:visible")).toHaveCount(6);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > document.documentElement.clientWidth
+      )
+    ).toBe(false);
+  });
+
+  test("手机分组预览始终保留已选入对比的行", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "分组预览只在手机布局生效");
+    await page.goto("/?compare=polity-cn-yuan");
+    await waitForAppReady(page);
+
+    const eastAsia = page.getByRole("region", { name: "东亚", exact: true });
+    await expect(eastAsia.getByRole("button", { name: /^展开东亚全部/ })).toHaveAttribute(
+      "aria-expanded",
+      "false"
+    );
+    await expect(eastAsia.getByRole("button", { name: "查看元详情" })).toBeVisible();
+    await expect(eastAsia.locator(".timeline-row:visible")).toHaveCount(7);
+  });
+
+  test("桌面时间轴完整显示长分组，不提供分组预览按钮", async ({ page, isMobile }) => {
+    test.skip(isMobile, "桌面布局只在 desktop-chromium 项目覆盖");
+    await page.goto("/");
+    await waitForAppReady(page);
+
+    const eastAsia = page.getByRole("region", { name: "东亚", exact: true });
+    await expect(eastAsia.getByRole("button", { name: /^展开东亚/ })).toHaveCount(0);
+    await expect(eastAsia.locator(".timeline-row:visible")).toHaveCount(
+      await eastAsia.locator(".timeline-row").count()
+    );
   });
 
   test("点击坐标轴分段放大时间窗口，刷新后恢复并可回到全时期", async ({ page }) => {

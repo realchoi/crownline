@@ -564,7 +564,8 @@
   }
 }
 
-/* 窄屏时间轴：名称与年代在左、对比入口靠右，时间条另起一行并共享同一横向比例。 */
+/* 窄屏时间轴：名称与年代同行、对比图标靠右，时间条另起一行并共享同一横向比例；
+   长分组先预览 6 行，由分组底部的开关展开。 */
 @media (max-width: 640px) {
   .timeline-stage {
     padding: 12px 0 4px;
@@ -641,16 +642,34 @@
 
   .timeline-row {
     border-radius: 0;
-    padding: 4px 0 10px;
+    padding: 2px 0 6px;
+  }
+
+  /* 与 TimelineStage.tsx 的 PREVIEW_ROW_COUNT（6）保持一致；已选入对比的行始终保留。 */
+  .timeline-rows.is-collapsed > .timeline-row:nth-child(n + 7):not(.is-comparison-selected) {
+    display: none;
+  }
+
+  .timeline-rows-toggle {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin: 6px 0 8px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-control);
+    background: var(--surface-strong);
+    color: var(--accent);
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    font-weight: 700;
   }
 
   .row-label {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto 44px;
     grid-template-areas:
-      "name compare"
-      "years compare"
-      "regions compare";
-    column-gap: 12px;
+      "name years compare"
+      "regions regions compare";
+    column-gap: 10px;
   }
 
   .row-name,
@@ -664,25 +683,39 @@
   .row-name {
     min-height: 44px;
     font-size: 1rem;
-    line-height: 1.4;
+    line-height: 1.3;
   }
 
+  /* 多段或带说明的年代较长时在右侧换行，不挤压名称。 */
   .row-years {
+    max-width: 11rem;
     font-size: 0.8125rem;
-    line-height: 1.5;
+    line-height: 1.4;
+    text-align: right;
   }
 
   .row-regions {
-    margin-top: 0;
-    padding-bottom: 0;
+    margin-top: -6px;
+    padding-bottom: 2px;
     font-size: 0.75rem;
   }
 
   .row-label .comparison-toggle {
-    min-width: 60px;
+    width: 44px;
+    min-width: 44px;
     min-height: 44px;
-    border-radius: var(--radius-control);
-    font-size: 0.75rem;
+    margin: 0;
+    border-color: var(--border);
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  .row-label .comparison-toggle-text {
+    display: none;
+  }
+
+  .row-label .comparison-toggle-icon {
+    display: block;
   }
 
   .timeline-row.is-comparison-selected {

@@ -242,6 +242,43 @@ describe("Crownline 浏览", () => {
     expect(Number.parseFloat(holyRomanEmpireBar.style.width)).toBeCloseTo(37.63, 1);
   });
 
+  it("超过 6 行的分组提供展开开关，并以 aria-controls 指向行容器", () => {
+    renderApp();
+
+    // jsdom 视口为桌面宽度，开关按样式隐藏且不参与可访问名称计算；
+    // 这里按文字定位并验证按钮语义，手机可见性与可访问名称由 e2e 覆盖。
+    const eastAsia = screen.getByRole("region", { name: "东亚" });
+    const toggle = within(eastAsia).getByText(/^展开东亚全部 \d+ 条$/);
+    expect(toggle.tagName).toBe("BUTTON");
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+    const rows = document.getElementById(toggle.getAttribute("aria-controls") ?? "");
+    expect(eastAsia).toContainElement(rows);
+    expect(toggle).toHaveTextContent(
+      `展开东亚全部 ${rows!.querySelectorAll(".timeline-row").length} 条`
+    );
+
+    fireEvent.click(toggle);
+    expect(within(eastAsia).getByText("收起东亚")).toHaveAttribute("aria-expanded", "true");
+  });
+
+  it("只能收起一两行的分组完整显示，不提供展开开关", () => {
+    window.history.replaceState(null, "", "/?scope=china");
+    renderApp();
+
+    const earlyStates = screen.getByRole("region", { name: "早期国家与先秦" });
+    expect(within(earlyStates).getAllByRole("button", { name: /^查看.+详情$/ })).toHaveLength(7);
+    expect(within(earlyStates).queryByText(/^展开/)).not.toBeInTheDocument();
+  });
+
+  it("不超过 6 行的分组不显示展开开关", () => {
+    window.history.replaceState(null, "", "/?scope=custom&region=region-east-africa");
+    renderApp();
+
+    const eastAfrica = screen.getByRole("region", { name: "东非" });
+    expect(within(eastAfrica).getAllByRole("button", { name: /^查看.+详情$/ })).toHaveLength(4);
+    expect(within(eastAfrica).queryByText(/^展开/)).not.toBeInTheDocument();
+  });
+
   it("全览时间轴不是 live region，结果变化只由摘要播报", async () => {
     const user = setupUser();
     renderApp();

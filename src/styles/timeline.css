@@ -206,8 +206,11 @@
   transition: background 0.12s ease;
 }
 
-.axis-zoom-segment:hover {
-  background: color-mix(in srgb, var(--accent) 9%, transparent);
+/* 仅在可悬停设备上提示；触屏点按后 :hover 会滞留。 */
+@media (hover: hover) {
+  .axis-zoom-segment:hover {
+    background: color-mix(in srgb, var(--accent) 9%, transparent);
+  }
 }
 
 .axis-zoom-segment:focus-visible {
@@ -367,6 +370,11 @@
   height: 14px;
   border: 2px dashed var(--period);
   background: transparent;
+}
+
+/* 分组预览开关只在手机布局显示（见 responsive.css）。 */
+.timeline-rows-toggle {
+  display: none;
 }
 
 .empty-state {

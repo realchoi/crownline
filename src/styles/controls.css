@@ -425,6 +425,17 @@ a:focus-visible {
   opacity: 0.38;
 }
 
+.comparison-toggle-icon {
+  display: none;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 /* 桌面首屏工具条：主控件一行排列，窄于约 1280px 时自然折为两行。 */
 .console-toolbar {
   display: block;

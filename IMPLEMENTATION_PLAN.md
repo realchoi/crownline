@@ -30,10 +30,15 @@
 
 ## Stage 3: 移动端行密度
 
-**Goal**: 可折叠地区分组、紧凑行、对比入口图标化，显著降低移动端页面高度。
-**Success Criteria**: 412px 视口首页高度明显下降；44px 触控目标、`aria-expanded`/`aria-pressed` 保持。
-**Tests**: 组件集成测试、e2e 响应式与 axe。
-**Status**: Not Started
+**Goal**: 紧凑行、对比入口图标化、长分组预览，显著降低移动端页面高度。
+**Success Criteria**:
+
+- ≤640px 时名称与年代同行、对比为 44×44 图标按钮，普通行高由约 100px 降到 74px。
+- 9 行及以上的分组先预览 6 行，已选入对比的行始终保留；开关带 `aria-expanded`/`aria-controls`，收起后开关回到视口；桌面完整显示。
+- 390px 首页高度由 15,383px 降到约 5,700px（中国范围 8,633px → 约 4,600px）。
+
+**Tests**: `tests/app/app-browse.test.tsx` 开关语义与阈值；e2e 手机紧凑行、预览展开收起与焦点、桌面完整显示。
+**Status**: Complete
 
 ## Stage 4: 年份切片卡片与对比弹窗
 
