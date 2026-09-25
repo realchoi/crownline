@@ -104,6 +104,29 @@ describe("Crownline 政权对比", () => {
     expect(screen.getByRole("button", { name: "将清加入对比" })).toBeEnabled();
   });
 
+  it("快捷栏一键清空全部对比政权并把焦点交还主内容", async () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?compare=polity-cn-tang&compare=polity-cn-ming&custom=keep"
+    );
+    const user = setupUser();
+    renderApp();
+
+    const tray = screen.getByRole("complementary", { name: "对比快捷栏" });
+    await user.click(within(tray).getByRole("button", { name: "清空全部对比政权" }));
+
+    expect(screen.queryByRole("complementary", { name: "对比快捷栏" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "将唐加入对比" })).toHaveAttribute(
+      "aria-pressed",
+      "false"
+    );
+    const params = new URLSearchParams(window.location.search);
+    expect(params.has("compare")).toBe(false);
+    expect(params.get("custom")).toBe("keep");
+    expect(screen.getByRole("main")).toHaveFocus();
+  });
+
   it("选满两个政权后政权名只作为两栏标题出现一次", async () => {
     window.history.replaceState(
       null,

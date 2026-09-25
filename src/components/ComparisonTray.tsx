@@ -4,11 +4,12 @@ import type { HistoricalEntity } from "../domain/types";
 interface ComparisonTrayProps {
   entities: HistoricalEntity[];
   onRemove: (entityId: string) => void;
+  onClear: () => void;
   onView: () => void;
 }
 
 /** 在长结果页中持续提供当前选择和对比弹窗入口。 */
-export function ComparisonTray({ entities, onRemove, onView }: ComparisonTrayProps) {
+export function ComparisonTray({ entities, onRemove, onClear, onView }: ComparisonTrayProps) {
   return (
     <aside className="comparison-tray" aria-label="对比快捷栏">
       <div className="comparison-tray-frame">
@@ -32,6 +33,15 @@ export function ComparisonTray({ entities, onRemove, onView }: ComparisonTrayPro
           ))}
           {entities.length === 1 && <li className="is-empty">再选一个政权</li>}
         </ul>
+
+        <button
+          className="comparison-tray-clear"
+          type="button"
+          aria-label="清空全部对比政权"
+          onClick={onClear}
+        >
+          清空
+        </button>
 
         <button
           className="comparison-tray-view"

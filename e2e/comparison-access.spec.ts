@@ -57,6 +57,27 @@ test("时间轴名称和固定快捷栏提供可达的详情与对比路径", as
   expect(new URL(page.url()).searchParams.has("compare")).toBe(false);
 });
 
+test("快捷栏的一键清空按钮留在视口内并清除全部对比政权", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/?compare=polity-cn-yuan&compare=polity-sukhothai-kingdom&custom=keep");
+  const tray = page.getByRole("complementary", { name: "对比快捷栏" });
+  const clear = tray.getByRole("button", { name: "清空全部对比政权" });
+  await expect(clear).toBeVisible();
+
+  const viewportWidth = page.viewportSize()!.width;
+  for (const button of [clear, tray.getByRole("button", { name: "查看对比" })]) {
+    const box = await button.boundingBox();
+    expect(box!.height).toBeGreaterThanOrEqual(44);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(viewportWidth);
+  }
+
+  await clear.click();
+  await expect(tray).toHaveCount(0);
+  await expect(page.getByRole("main")).toBeFocused();
+  await expect(page).toHaveURL(/custom=keep/);
+  expect(new URL(page.url()).searchParams.has("compare")).toBe(false);
+});
+
 for (const colorScheme of ["light", "dark"] as const) {
   test(`对比弹窗保留浏览位置、独立滚动及键盘焦点（${colorScheme}）`, async ({
     page,

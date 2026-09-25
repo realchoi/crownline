@@ -20,7 +20,7 @@
   display: grid;
   width: min(780px, 100%);
   min-height: 64px;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 16px;
   margin: 0 auto;
@@ -114,6 +114,22 @@
   color: var(--muted);
   padding: 0 11px;
   font-size: var(--text-2xs);
+}
+
+.comparison-tray-clear {
+  min-height: 44px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 12px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.comparison-tray-clear:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .comparison-tray-view {

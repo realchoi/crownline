@@ -237,6 +237,11 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
         <ComparisonTray
           entities={comparisonEntities}
           onRemove={toggleComparison}
+          onClear={() => {
+            setBrowseState((current) => ({ ...current, compareEntityIds: [] }));
+            // 快捷栏随清空卸载，焦点交还主内容而不是落到 body。
+            mainRef.current?.focus({ preventScroll: true });
+          }}
           onView={() => {
             setComparisonOrigin(null);
             setBrowseState((current) => ({ ...current, comparisonOpen: true }));
