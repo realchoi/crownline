@@ -396,4 +396,32 @@ describe("Crownline 地图", () => {
       new Set(["polity-byzantine-empire", "polity-abbasid-caliphate"])
     );
   });
+
+  it("切换地图大区视野后结果列表先列视野内点位，回到全球后取消分组", async () => {
+    window.history.replaceState(null, "", "/?view=map&year=1368");
+    const user = setupUser();
+    renderApp();
+
+    const map = await screen.findByRole("region", { name: "当前年份历史政权示意地图" });
+    const list = screen.getByRole("region", { name: "地图结果列表" });
+    const pointButtons = (container: HTMLElement) =>
+      within(container).getAllByRole("button", { name: /，(都城|政治中心|代表性中心)$/ });
+    await within(list).findByRole("button", { name: /^明，/ });
+    expect(within(list).queryByRole("heading", { name: /^视野/ })).not.toBeInTheDocument();
+    const total = pointButtons(list).length;
+
+    await user.click(within(map).getByRole("button", { name: "东亚" }));
+    const groupHeadings = within(list).getAllByRole("heading", { name: /^视野/ });
+    expect(groupHeadings.map((heading) => heading.textContent)).toEqual([
+      expect.stringMatching(/^视野内/),
+      expect.stringMatching(/^视野外/)
+    ]);
+    const [inView, outOfView] = within(list).getAllByRole("list");
+    expect(within(inView!).getByRole("button", { name: /^明，/ })).toBeInTheDocument();
+    expect(within(outOfView!).getByRole("button", { name: /^奥斯曼帝国/ })).toBeInTheDocument();
+    expect(pointButtons(inView!).length + pointButtons(outOfView!).length).toBe(total);
+
+    await user.click(within(map).getByRole("button", { name: "全球" }));
+    expect(within(list).queryByRole("heading", { name: /^视野/ })).not.toBeInTheDocument();
+  });
 });

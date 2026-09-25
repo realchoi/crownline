@@ -135,3 +135,18 @@ test("桌面双栏结果列表高度跟随地图卡片，不在地图下方留�
   expect(Math.abs(metrics.shell.height - metrics.map.height)).toBeLessThan(1);
   expect(metrics.scrolls).toBe(true);
 });
+
+test("切换大区视野后结果列表回到顶部并先列视野内点位", async ({ page, isMobile }) => {
+  test.skip(isMobile, "内部滚动与视野联动在桌面项目覆盖");
+
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/?view=map&scope=global");
+  const results = page.getByRole("region", { name: "地图结果列表" });
+  await expect(results.locator(".map-result-item").nth(40)).toBeAttached();
+  await results.evaluate((element) => (element.scrollTop = 1600));
+
+  await page.getByRole("group", { name: "地图视野" }).getByRole("button", { name: "欧洲" }).click();
+  await expect(results.getByRole("heading", { name: /^视野内/ })).toBeVisible();
+  await expect(results.getByRole("heading", { name: /^视野外/ })).toBeAttached();
+  expect(await results.evaluate((element) => element.scrollTop)).toBe(0);
+});

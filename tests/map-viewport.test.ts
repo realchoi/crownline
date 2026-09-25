@@ -7,6 +7,7 @@ import {
   MAP_VIEWPORT_PRESETS,
   MAX_MAP_ZOOM,
   clampViewport,
+  partitionPointsByViewport,
   projectToViewport,
   selectViewportPoints,
   viewportFromBounds,
@@ -63,6 +64,30 @@ describe("地图视野", () => {
     const visible = selectViewportPoints([beijing, rome], viewport);
     expect(visible).toHaveLength(1);
     expect(visible[0]!.xPercent).toBeCloseTo(projectToViewport(beijing, viewport).xPercent);
+  });
+
+  it("按视野拆分结果时保持原顺序且不改写底图坐标", () => {
+    const eastAsia = MAP_VIEWPORT_PRESETS.find(({ id }) => id === "east-asia")!;
+    const viewport = viewportFromBounds(eastAsia.bounds);
+    const rome = pointAt(41.9, 12.5);
+    const beijing = pointAt(39.9, 116.4);
+    const cairo = pointAt(30, 31.2);
+    const kyoto = pointAt(35, 135.8);
+
+    const { inView, outOfView } = partitionPointsByViewport(
+      [rome, beijing, cairo, kyoto],
+      viewport
+    );
+    expect(inView).toEqual([beijing, kyoto]);
+    expect(outOfView).toEqual([rome, cairo]);
+  });
+
+  it("全球视野下所有点位都在视野内，视野边缘按闭区间计入", () => {
+    const points = [pointAt(90, -180), pointAt(-90, 180), pointAt(0, 0)];
+    expect(partitionPointsByViewport(points, GLOBAL_MAP_VIEWPORT)).toEqual({
+      inView: points,
+      outOfView: []
+    });
   });
 
   it("每个已收录点位至少落在一个大区快捷视野中", () => {

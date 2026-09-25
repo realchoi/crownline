@@ -1,3 +1,4 @@
+import { useState, type ComponentProps } from "react";
 import { describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import { setupUser } from "./helpers/user";
@@ -7,6 +8,12 @@ import { HistoricalMap } from "../src/components/HistoricalMap";
 import { MapLoadPanel } from "../src/components/MapLoadPanel";
 import { MapResultList } from "../src/components/MapResultList";
 import { projectCoordinates, selectMapSnapshots, type MapPoint } from "../src/domain/mapSnapshots";
+import {
+  GLOBAL_MAP_VIEWPORT,
+  GLOBAL_MAP_VIEW_STATE,
+  MAP_VIEWPORT_PRESETS,
+  viewportFromBounds
+} from "../src/domain/mapViewport";
 
 const data = await loadSourceData();
 
@@ -31,6 +38,16 @@ function point(entityId: string, snapshotId: string): MapPoint {
   };
 }
 
+/** 取景状态由外层持有；独立渲染地图时用本地 state 模拟 MapBrowseView。 */
+function StatefulMap(props: Omit<ComponentProps<typeof HistoricalMap>, "view" | "onViewChange">) {
+  const [view, setView] = useState(GLOBAL_MAP_VIEW_STATE);
+  return <HistoricalMap {...props} view={view} onViewChange={setView} />;
+}
+
+const EAST_ASIA_VIEWPORT = viewportFromBounds(
+  MAP_VIEWPORT_PRESETS.find(({ id }) => id === "east-asia")!.bounds
+);
+
 describe("历史地图组件", () => {
   it("呈现本地底图和可选择的单点标记", async () => {
     const user = setupUser();
@@ -41,7 +58,7 @@ describe("历史地图组件", () => {
       500
     );
 
-    render(<HistoricalMap points={selection.points} onSelect={onSelect} />);
+    render(<StatefulMap points={selection.points} onSelect={onSelect} />);
 
     const map = screen.getByRole("region", { name: "当前年份历史政权示意地图" });
     const marker = within(map).getByRole("button", { name: "北魏，洛阳，都城" });
@@ -63,7 +80,7 @@ describe("历史地图组件", () => {
     const nanjing = point("polity-cn-ming", "geo-ming-nanjing");
 
     render(
-      <HistoricalMap points={[nanjing, beijing]} clusterThresholdPercent={5} onSelect={onSelect} />
+      <StatefulMap points={[nanjing, beijing]} clusterThresholdPercent={5} onSelect={onSelect} />
     );
 
     const cluster = screen.getByRole("button", { name: "此处有 2 个历史点位" });
@@ -108,7 +125,7 @@ describe("历史地图组件", () => {
     ).points;
     expect(tenochtitlan.length).toBeGreaterThan(0);
 
-    render(<HistoricalMap points={[beijing, luoyang, ...tenochtitlan]} onSelect={vi.fn()} />);
+    render(<StatefulMap points={[beijing, luoyang, ...tenochtitlan]} onSelect={vi.fn()} />);
     const map = screen.getByRole("region", { name: "当前年份历史政权示意地图" });
     const status = within(map).getByRole("status");
     expect(status).toHaveTextContent(`视野内 ${2 + tenochtitlan.length} 个点位。`);
@@ -123,14 +140,14 @@ describe("历史地图组件", () => {
     expect(within(map).getByRole("button", { name: "明，北京，都城" })).toBeInTheDocument();
     expect(within(map).queryByRole("button", { name: /阿兹特克帝国/ })).not.toBeInTheDocument();
     expect(status).toHaveTextContent(
-      `视野内 2 个点位，另有 ${tenochtitlan.length} 个在视野外，仍列在结果列表中。`
+      `视野内 2 个点位，另有 ${tenochtitlan.length} 个在视野外，列在结果列表的“视野外”分组中。`
     );
   });
 
   it("缩放按钮在全球视野禁用缩小，放大后取消预设选中", async () => {
     const user = setupUser();
     render(
-      <HistoricalMap points={[point("polity-cn-ming", "geo-ming-beijing")]} onSelect={vi.fn()} />
+      <StatefulMap points={[point("polity-cn-ming", "geo-ming-beijing")]} onSelect={vi.fn()} />
     );
 
     const zoomOut = screen.getByRole("button", { name: "缩小视野" });
@@ -170,6 +187,68 @@ describe("历史地图组件", () => {
     expect(within(item).getByText("洛阳")).toHaveClass("map-result-place");
     await user.click(item);
     expect(onSelect).toHaveBeenCalledWith("polity-cn-northern-wei");
+  });
+
+  it("按地图取景把点位分为视野内与视野外两组，各组保持输入顺序", () => {
+    const tenochtitlan = selectMapSnapshots(
+      [entity("polity-aztec-empire")],
+      data.geographicSnapshots
+    ).points;
+    const beijing = point("polity-cn-ming", "geo-ming-beijing");
+    const luoyang = point("polity-cn-northern-wei", "geo-northern-wei-luoyang");
+
+    render(
+      <MapResultList
+        points={[...tenochtitlan, beijing, luoyang]}
+        missingEntities={[]}
+        comparisonEntityIds={[]}
+        viewport={EAST_ASIA_VIEWPORT}
+        onSelect={vi.fn()}
+        onToggleComparison={vi.fn()}
+      />
+    );
+
+    const results = screen.getByRole("region", { name: "地图结果列表" });
+    expect(within(results).getByRole("heading", { name: "地图点位" })).toBeVisible();
+    const headings = within(results).getAllByRole("heading", { level: 3 });
+    expect(headings.map((heading) => heading.textContent)).toEqual([
+      "视野内2 个",
+      `视野外${tenochtitlan.length} 个`
+    ]);
+    const [inView, outOfView] = within(results).getAllByRole("list");
+    expect(
+      within(inView!)
+        .getAllByRole("button", { name: /，(都城|政治中心|代表性中心)$/ })
+        .map((button) => button.getAttribute("aria-label"))
+    ).toEqual(["明，北京，都城", "北魏，洛阳，都城"]);
+    expect(within(outOfView!).getAllByRole("button", { name: /^阿兹特克帝国/ })).toHaveLength(
+      tenochtitlan.length
+    );
+  });
+
+  it("全部点位都在视野内或未传入取景时不显示分组标题", () => {
+    const view = render(
+      <MapResultList
+        points={[point("polity-cn-ming", "geo-ming-beijing")]}
+        missingEntities={[]}
+        comparisonEntityIds={[]}
+        viewport={GLOBAL_MAP_VIEWPORT}
+        onSelect={vi.fn()}
+        onToggleComparison={vi.fn()}
+      />
+    );
+    expect(screen.queryByRole("heading", { level: 3 })).not.toBeInTheDocument();
+
+    view.rerender(
+      <MapResultList
+        points={[point("polity-cn-ming", "geo-ming-beijing")]}
+        missingEntities={[]}
+        comparisonEntityIds={[]}
+        onSelect={vi.fn()}
+        onToggleComparison={vi.fn()}
+      />
+    );
+    expect(screen.queryByRole("heading", { level: 3 })).not.toBeInTheDocument();
   });
 
   it("复用对比按钮标签并禁用第三个未选政权", async () => {

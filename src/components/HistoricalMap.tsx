@@ -11,7 +11,7 @@ import {
   type MapPoint
 } from "../domain/mapSnapshots";
 import {
-  GLOBAL_MAP_VIEWPORT,
+  GLOBAL_MAP_VIEW_STATE,
   MAP_VIEWPORT_PRESETS,
   MAP_ZOOM_STEP,
   MAX_MAP_ZOOM,
@@ -19,8 +19,7 @@ import {
   selectViewportPoints,
   viewportFromBounds,
   zoomViewport,
-  type MapViewport,
-  type MapViewportPresetId
+  type MapViewState
 } from "../domain/mapViewport";
 import { EntityLocalName } from "./EntityLocalName";
 import { HistoricalBoundaries } from "./HistoricalBoundaries";
@@ -32,6 +31,9 @@ interface HistoricalMapProps {
   isOverview?: boolean;
   comparisonEntityIds?: string[];
   selectedEntityId?: string | null;
+  /** 取景由外层持有，结果列表据此把视野内外分组。 */
+  view: MapViewState;
+  onViewChange: (view: MapViewState) => void;
   /** 聚合半径，单位为当前视野宽度的百分比；缺省时按地图实际宽度保证标记不重叠。 */
   clusterThresholdPercent?: number;
   onSelect: (entityId: string) => void;
@@ -52,6 +54,8 @@ export function HistoricalMap({
   isOverview = false,
   comparisonEntityIds = [],
   selectedEntityId = null,
+  view,
+  onViewChange,
   clusterThresholdPercent,
   onSelect
 }: HistoricalMapProps) {
@@ -74,8 +78,7 @@ export function HistoricalMap({
     (canvasWidth
       ? Math.max(MAP_CLUSTER_DISTANCE_PERCENT, (MARKER_SPACING_PX / canvasWidth) * 100)
       : MAP_CLUSTER_DISTANCE_PERCENT);
-  const [viewport, setViewport] = useState<MapViewport>(GLOBAL_MAP_VIEWPORT);
-  const [presetId, setPresetId] = useState<MapViewportPresetId | null>("global");
+  const { viewport, presetId } = view;
   const visiblePoints = useMemo(() => selectViewportPoints(points, viewport), [points, viewport]);
   // 聚合在视野坐标中进行，放大后邻近点位会自然拆开。
   const clusters = useMemo(
@@ -90,8 +93,7 @@ export function HistoricalMap({
     top: `${-(viewport.centerY - 50 / viewport.zoom) * viewport.zoom}%`
   };
   const zoomBy = (factor: number) => {
-    setViewport((current) => zoomViewport(current, factor));
-    setPresetId(null);
+    onViewChange({ viewport: zoomViewport(viewport, factor), presetId: null });
   };
   // 以聚合中的一个点位记录展开状态，视野或尺寸变化重新聚合时面板保持打开。
   const [expandedPointId, setExpandedPointId] = useState<string | null>(null);
@@ -124,8 +126,11 @@ export function HistoricalMap({
               type="button"
               aria-pressed={presetId === id}
               onClick={() => {
-                setViewport(id === "global" ? GLOBAL_MAP_VIEWPORT : viewportFromBounds(bounds));
-                setPresetId(id);
+                onViewChange(
+                  id === "global"
+                    ? GLOBAL_MAP_VIEW_STATE
+                    : { viewport: viewportFromBounds(bounds), presetId: id }
+                );
               }}
             >
               {label}
@@ -153,7 +158,7 @@ export function HistoricalMap({
       </div>
       <p className="map-viewport-status" role="status">
         {hiddenPointCount > 0
-          ? `视野内 ${visiblePoints.length} 个点位，另有 ${hiddenPointCount} 个在视野外，仍列在结果列表中。`
+          ? `视野内 ${visiblePoints.length} 个点位，另有 ${hiddenPointCount} 个在视野外，列在结果列表的“视野外”分组中。`
           : `视野内 ${visiblePoints.length} 个点位。`}
       </p>
       <div className="historical-map-canvas world-map" ref={canvasRef}>

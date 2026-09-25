@@ -41,6 +41,17 @@ export const MAP_VIEWPORT_PRESETS = [
 
 export type MapViewportPresetId = (typeof MAP_VIEWPORT_PRESETS)[number]["id"];
 
+/** 地图与结果列表共享的取景状态；手动缩放后不再对应任何快捷视野。 */
+export interface MapViewState {
+  viewport: MapViewport;
+  presetId: MapViewportPresetId | null;
+}
+
+export const GLOBAL_MAP_VIEW_STATE: MapViewState = {
+  viewport: GLOBAL_MAP_VIEWPORT,
+  presetId: "global"
+};
+
 /** 把缩放限制在允许范围内，并让视野始终完整落在世界底图内。 */
 export function clampViewport({ zoom, centerX, centerY }: MapViewport): MapViewport {
   const clampedZoom = Math.min(MAX_MAP_ZOOM, Math.max(MIN_MAP_ZOOM, zoom));
@@ -82,6 +93,10 @@ export function projectToViewport(
   };
 }
 
+function isInsideViewport({ xPercent, yPercent }: ProjectedCoordinates): boolean {
+  return xPercent >= 0 && xPercent <= 100 && yPercent >= 0 && yPercent <= 100;
+}
+
 /** 返回落在视野内的点位，坐标已换算为视野百分比；视野外点位只留在等价结果列表中。 */
 export function selectViewportPoints(
   points: readonly MapPoint[],
@@ -89,11 +104,20 @@ export function selectViewportPoints(
 ): MapPoint[] {
   return points.flatMap((point) => {
     const projected = projectToViewport(point, viewport);
-    const inside =
-      projected.xPercent >= 0 &&
-      projected.xPercent <= 100 &&
-      projected.yPercent >= 0 &&
-      projected.yPercent <= 100;
-    return inside ? [{ ...point, ...projected }] : [];
+    return isInsideViewport(projected) ? [{ ...point, ...projected }] : [];
   });
+}
+
+/** 按当前视野把结果拆成视野内与视野外两组，各自保持输入顺序并保留底图坐标。 */
+export function partitionPointsByViewport(
+  points: readonly MapPoint[],
+  viewport: MapViewport
+): { inView: MapPoint[]; outOfView: MapPoint[] } {
+  const inView: MapPoint[] = [];
+  const outOfView: MapPoint[] = [];
+  for (const point of points) {
+    if (isInsideViewport(projectToViewport(point, viewport))) inView.push(point);
+    else outOfView.push(point);
+  }
+  return { inView, outOfView };
 }

@@ -1,3 +1,5 @@
+import { useRef, useState } from "react";
+
 import { HistoricalMap } from "../components/HistoricalMap";
 import { MapLoadPanel } from "../components/MapLoadPanel";
 import { MapResultList } from "../components/MapResultList";
@@ -5,6 +7,7 @@ import type { BoundarySelection } from "../domain/boundarySnapshots";
 import type { BrowseState } from "../domain/browseState";
 import { getMapLayerNeeds, resolveRenderableMapLayer } from "../domain/mapLayers";
 import type { MapSelection } from "../domain/mapSnapshots";
+import { GLOBAL_MAP_VIEW_STATE, type MapViewState } from "../domain/mapViewport";
 import type { BoundaryState } from "./useBoundaryData";
 import type { GeographyState } from "./useGeographyData";
 
@@ -53,6 +56,13 @@ export function MapBrowseView({
   const pointsPending = needs.points && readyPoints === null;
   const boundariesPending = needs.boundaries && readyBoundaries === null;
   const isOverview = browseState.timeRange === "all";
+  const [mapView, setMapView] = useState<MapViewState>(GLOBAL_MAP_VIEW_STATE);
+  const resultListRef = useRef<HTMLElement>(null);
+  const changeMapView = (view: MapViewState) => {
+    setMapView(view);
+    // 换取景后视野内分组排在最前，列表回到顶部才能看到它。
+    if (resultListRef.current) resultListRef.current.scrollTop = 0;
+  };
 
   return (
     <section className="historical-map-shell" aria-label="历史地图浏览结果">
@@ -101,6 +111,8 @@ export function MapBrowseView({
             isOverview={isOverview}
             comparisonEntityIds={browseState.compareEntityIds}
             selectedEntityId={browseState.detailEntityId}
+            view={mapView}
+            onViewChange={changeMapView}
             onSelect={onSelect}
           />
           <MapResultList
@@ -111,6 +123,8 @@ export function MapBrowseView({
             mapLayer={layer}
             isOverview={isOverview}
             comparisonEntityIds={browseState.compareEntityIds}
+            viewport={mapView.viewport}
+            ref={resultListRef}
             onSelect={onSelect}
             onToggleComparison={onToggleComparison}
           />

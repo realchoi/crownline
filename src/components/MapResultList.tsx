@@ -1,9 +1,12 @@
+import { useMemo, type Ref } from "react";
+
 import type { HistoricalEntity } from "../domain/types";
 import type { BoundaryMapShape } from "../domain/boundarySnapshots";
 import type { MapLayer } from "../domain/browseState";
 import { formatEntityNameWithLocal } from "../domain/entityNames";
 import { BOUNDARY_PRECISION_NAMES, DETAIL_CONFIDENCE_NAMES } from "../domain/displayLabels";
 import { GEOGRAPHIC_ROLE_NAMES, type MapPoint } from "../domain/mapSnapshots";
+import { partitionPointsByViewport, type MapViewport } from "../domain/mapViewport";
 import { ComparisonToggle } from "./ComparisonToggle";
 import { EntityLocalName } from "./EntityLocalName";
 
@@ -15,6 +18,9 @@ interface MapResultListProps {
   mapLayer?: MapLayer;
   isOverview?: boolean;
   comparisonEntityIds: string[];
+  /** 传入地图当前取景时，点位按视野内外分组；全部在视野内时不分组。 */
+  viewport?: MapViewport;
+  ref?: Ref<HTMLElement>;
   onSelect: (entityId: string) => void;
   onToggleComparison: (entityId: string) => void;
 }
@@ -32,11 +38,58 @@ export function MapResultList({
   mapLayer = "points",
   isOverview = false,
   comparisonEntityIds,
+  viewport,
+  ref,
   onSelect,
   onToggleComparison
 }: MapResultListProps) {
+  const pointGroups = useMemo(
+    () => (viewport ? partitionPointsByViewport(points, viewport) : null),
+    [points, viewport]
+  );
+  const renderPointList = (groupPoints: MapPoint[], outOfView = false) => (
+    <ul className={`map-results-list map-result-list${outOfView ? " is-out-of-view" : ""}`}>
+      {groupPoints.map((point) => {
+        const selected = comparisonEntityIds.includes(point.entity.id);
+        return (
+          <li
+            className={`map-result-item${selected ? " is-comparison-selected" : ""}`}
+            key={point.snapshot.id}
+          >
+            <button
+              className="map-result-detail"
+              type="button"
+              aria-label={pointLabel(point)}
+              onClick={() => onSelect(point.entity.id)}
+            >
+              <span
+                className={`map-result-glyph map-legend-symbol map-legend-${point.snapshot.role}`}
+                aria-hidden="true"
+              />
+              <strong>{point.entity.names.primary}</strong>
+              <EntityLocalName names={point.entity.names} className="map-result-local-name" />
+              <span className="map-result-meta">
+                <span className="map-result-place">{point.snapshot.placeName}</span>
+                <span className={`map-result-role role-${point.snapshot.role}`}>
+                  {GEOGRAPHIC_ROLE_NAMES[point.snapshot.role]}
+                </span>
+              </span>
+              <small>{point.snapshot.positionNote}</small>
+            </button>
+            <ComparisonToggle
+              entityName={formatEntityNameWithLocal(point.entity.names)}
+              selected={selected}
+              disabled={comparisonEntityIds.length >= 2 && !selected}
+              onToggle={() => onToggleComparison(point.entity.id)}
+            />
+          </li>
+        );
+      })}
+    </ul>
+  );
+
   return (
-    <section className="map-results" aria-label="地图结果列表">
+    <section className="map-results" aria-label="地图结果列表" ref={ref}>
       <div className="map-results-heading">
         <div>
           <p className="timepoint-kicker">可访问结果</p>
@@ -60,46 +113,29 @@ export function MapResultList({
         </span>
       </div>
 
-      {mapLayer !== "boundaries" && points.length > 0 && (
-        <ul className="map-results-list map-result-list">
-          {points.map((point) => {
-            const selected = comparisonEntityIds.includes(point.entity.id);
-            return (
-              <li
-                className={`map-result-item${selected ? " is-comparison-selected" : ""}`}
-                key={point.snapshot.id}
-              >
-                <button
-                  className="map-result-detail"
-                  type="button"
-                  aria-label={pointLabel(point)}
-                  onClick={() => onSelect(point.entity.id)}
-                >
-                  <span
-                    className={`map-result-glyph map-legend-symbol map-legend-${point.snapshot.role}`}
-                    aria-hidden="true"
-                  />
-                  <strong>{point.entity.names.primary}</strong>
-                  <EntityLocalName names={point.entity.names} className="map-result-local-name" />
-                  <span className="map-result-meta">
-                    <span className="map-result-place">{point.snapshot.placeName}</span>
-                    <span className={`map-result-role role-${point.snapshot.role}`}>
-                      {GEOGRAPHIC_ROLE_NAMES[point.snapshot.role]}
-                    </span>
-                  </span>
-                  <small>{point.snapshot.positionNote}</small>
-                </button>
-                <ComparisonToggle
-                  entityName={formatEntityNameWithLocal(point.entity.names)}
-                  selected={selected}
-                  disabled={comparisonEntityIds.length >= 2 && !selected}
-                  onToggle={() => onToggleComparison(point.entity.id)}
-                />
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      {mapLayer !== "boundaries" &&
+        points.length > 0 &&
+        (pointGroups && pointGroups.outOfView.length > 0 ? (
+          <>
+            <h3 className="map-results-group-heading">
+              视野内<span>{pointGroups.inView.length} 个</span>
+            </h3>
+            {pointGroups.inView.length > 0 ? (
+              renderPointList(pointGroups.inView)
+            ) : (
+              <p className="map-results-group-note">当前视野内没有点位。</p>
+            )}
+            <h3 className="map-results-group-heading">
+              视野外<span>{pointGroups.outOfView.length} 个</span>
+            </h3>
+            <p className="map-results-group-note">
+              地图当前未显示；切换或缩小视野后可在地图上查看。
+            </p>
+            {renderPointList(pointGroups.outOfView, true)}
+          </>
+        ) : (
+          renderPointList(points)
+        ))}
 
       {mapLayer !== "points" && (
         <>
