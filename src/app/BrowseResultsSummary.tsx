@@ -43,7 +43,7 @@ export function BrowseResultsSummary({
     browseState.timeRange === "year"
       ? formatHistoricalYear({ year: browseState.year, precision: "exact" })
       : timeWindow
-        ? `时段 ${formatTimeWindow(timeWindow)}`
+        ? `时间窗口 ${formatTimeWindow(timeWindow)}`
         : "全时期";
   return (
     <div

@@ -248,13 +248,13 @@ describe("Crownline 浏览", () => {
     // jsdom 视口为桌面宽度，开关按样式隐藏且不参与可访问名称计算；
     // 这里按文字定位并验证按钮语义，手机可见性与可访问名称由 e2e 覆盖。
     const eastAsia = screen.getByRole("region", { name: "东亚" });
-    const toggle = within(eastAsia).getByText(/^展开东亚全部 \d+ 条$/);
+    const toggle = within(eastAsia).getByText(/^展开东亚其余 \d+ 条$/);
     expect(toggle.tagName).toBe("BUTTON");
     expect(toggle).toHaveAttribute("aria-expanded", "false");
     const rows = document.getElementById(toggle.getAttribute("aria-controls") ?? "");
     expect(eastAsia).toContainElement(rows);
     expect(toggle).toHaveTextContent(
-      `展开东亚全部 ${rows!.querySelectorAll(".timeline-row").length} 条`
+      `展开东亚其余 ${rows!.querySelectorAll(".timeline-row").length - 6} 条`
     );
 
     fireEvent.click(toggle);

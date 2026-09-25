@@ -57,6 +57,7 @@ export function TimelineStage({
   const toggleRef = useRef<HTMLButtonElement>(null);
   const collapsedByUserRef = useRef(false);
   const collapsible = group.matches.length >= PREVIEW_ROW_COUNT + MIN_HIDDEN_ROW_COUNT;
+  const hiddenRowCount = group.matches.length - PREVIEW_ROW_COUNT;
 
   // 收起后开关会随行数减少大幅上移；把它带回视口，避免用户失去位置。
   useEffect(() => {
@@ -177,7 +178,7 @@ export function TimelineStage({
             setExpanded(!expanded);
           }}
         >
-          {expanded ? `收起${group.title}` : `展开${group.title}全部 ${group.matches.length} 条`}
+          {expanded ? `收起${group.title}` : `展开${group.title}其余 ${hiddenRowCount} 条`}
         </button>
       )}
     </section>

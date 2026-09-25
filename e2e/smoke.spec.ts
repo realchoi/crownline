@@ -223,7 +223,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await page.goto("/");
     await waitForAppReady(page);
     // 手机布局中东亚分组先预览 6 行，唐需要展开后才可见。
-    if (isMobile) await page.getByRole("button", { name: /^展开东亚全部/ }).click();
+    if (isMobile) await page.getByRole("button", { name: /^展开东亚其余/ }).click();
 
     const tangBar = page.getByRole("button", { name: tangTimelineButtonName });
     await tangBar.click();
@@ -571,7 +571,7 @@ test.describe("Crownline 浏览器冒烟", () => {
 
     const eastAsia = page.getByRole("region", { name: "东亚", exact: true });
     const rows = eastAsia.locator(".timeline-row");
-    const expand = eastAsia.getByRole("button", { name: /^展开东亚全部 \d+ 条$/ });
+    const expand = eastAsia.getByRole("button", { name: /^展开东亚其余 \d+ 条$/ });
     await expect(expand).toHaveAttribute("aria-expanded", "false");
     await expect(eastAsia.locator(".timeline-row:visible")).toHaveCount(6);
 
@@ -604,7 +604,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await waitForAppReady(page);
 
     const eastAsia = page.getByRole("region", { name: "东亚", exact: true });
-    await expect(eastAsia.getByRole("button", { name: /^展开东亚全部/ })).toHaveAttribute(
+    await expect(eastAsia.getByRole("button", { name: /^展开东亚其余/ })).toHaveAttribute(
       "aria-expanded",
       "false"
     );
@@ -631,7 +631,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await page.getByRole("button", { name: "放大到 500—1000" }).click();
     await expect.poll(() => new URL(page.url()).searchParams.get("from")).toBe("500");
     expect(new URL(page.url()).searchParams.get("keep")).toBe("1");
-    const windowAxis = page.getByRole("group", { name: /^时段刻度：500—1000/ });
+    const windowAxis = page.getByRole("group", { name: /^时间窗口刻度：500—1000/ });
     await expect(windowAxis).toBeVisible();
 
     await page.reload();
@@ -645,7 +645,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     ).toBe(false);
     await expectNoSeriousA11yViolations(page);
 
-    await windowAxis.getByRole("button", { name: "返回全时期" }).click();
+    await windowAxis.getByRole("button", { name: "恢复全时期" }).click();
     await expect.poll(() => new URL(page.url()).searchParams.has("from")).toBe(false);
     await expect(page.getByRole("button", { name: "查看夏详情" })).toHaveCount(1);
   });

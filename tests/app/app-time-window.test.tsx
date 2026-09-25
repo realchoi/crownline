@@ -17,7 +17,7 @@ describe("全览时间窗口", () => {
     expect(searchParams().get("from")).toBe("500");
     expect(searchParams().get("to")).toBe("1000");
     expect(
-      screen.getByRole("group", { name: "时段刻度：500—1000，每100年一格" })
+      screen.getByRole("group", { name: "时间窗口刻度：500—1000，每100年一格" })
     ).toBeInTheDocument();
     expect(screen.getByRole("status")).toHaveTextContent("500—1000");
     expect(screen.getByRole("button", { name: "查看唐详情" })).toBeInTheDocument();
@@ -33,16 +33,16 @@ describe("全览时间窗口", () => {
     expect(screen.getByRole("button", { name: /^唐，618—690，/ })).toBeInTheDocument();
   });
 
-  it("缩小时段并可返回全时期", async () => {
+  it("缩小时间窗口并可恢复全时期", async () => {
     window.history.replaceState(null, "", "/?from=500&to=1000");
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "缩小时段" }));
+    await user.click(screen.getByRole("button", { name: "缩小时间窗口" }));
     expect(searchParams().get("from")).toBe("-200");
     expect(searchParams().get("to")).toBe("1600");
 
-    await user.click(screen.getByRole("button", { name: "返回全时期" }));
+    await user.click(screen.getByRole("button", { name: "恢复全时期" }));
     expect(searchParams().has("from")).toBe(false);
     expect(screen.getByRole("status")).toHaveTextContent("显示 137 / 137 个条目");
     expect(
@@ -50,7 +50,7 @@ describe("全览时间窗口", () => {
     ).toBeInTheDocument();
   });
 
-  it("活跃筛选标签可移除时段，清除搜索与类别不影响窗口", async () => {
+  it("活跃筛选标签可移除时间窗口，清除搜索与类别不影响窗口", async () => {
     window.history.replaceState(null, "", "/?from=500&to=1000&q=%E5%94%90");
     const user = setupUser();
     renderApp();
@@ -61,7 +61,7 @@ describe("全览时间窗口", () => {
 
     await user.click(
       within(screen.getAllByLabelText("活跃筛选")[0]!).getByRole("button", {
-        name: "移除时段：500—1000"
+        name: "移除时间窗口：500—1000"
       })
     );
     expect(searchParams().has("from")).toBe(false);
@@ -77,10 +77,10 @@ describe("全览时间窗口", () => {
     renderApp();
 
     const timeline = screen.getByRole("region", { name: "多地区完整时间轴" });
-    expect(timeline).toHaveTextContent("时段 1800—1900 内暂无已收录条目");
+    expect(timeline).toHaveTextContent("时间窗口 1800—1900 内暂无已收录条目");
     expect(timeline).toHaveTextContent("这不表示该时期没有政权");
 
-    await user.click(within(timeline).getByRole("button", { name: "返回全时期" }));
+    await user.click(within(timeline).getByRole("button", { name: "恢复全时期" }));
     expect(searchParams().has("from")).toBe(false);
   });
 
@@ -88,7 +88,7 @@ describe("全览时间窗口", () => {
     window.history.replaceState(null, "", "/?scope=china&from=600&to=700");
     renderApp();
 
-    expect(screen.getAllByRole("group", { name: /^时段刻度：600—700/ })).toHaveLength(1);
+    expect(screen.getAllByRole("group", { name: /^时间窗口刻度：600—700/ })).toHaveLength(1);
     expect(screen.queryAllByRole("group", { name: /^阶段时间刻度/ })).toHaveLength(0);
   });
 

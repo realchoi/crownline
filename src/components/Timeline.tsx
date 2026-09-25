@@ -64,7 +64,7 @@ export function Timeline({
     <button
       className="axis-window-button"
       type="button"
-      aria-label="返回全时期"
+      aria-label="恢复全时期"
       onClick={() => onTimeWindowChange(null)}
     >
       {text}
@@ -79,9 +79,9 @@ export function Timeline({
             <>{scopeName}尚未收录代表性政权；这不表示该地区在历史上没有政权。</>
           ) : timeWindow && emptyReason === "limited-coverage" ? (
             <>
-              时段 {formatTimeWindow(timeWindow)} 内暂无已收录条目；这不表示该时期没有政权。
+              时间窗口 {formatTimeWindow(timeWindow)} 内暂无已收录条目；这不表示该时期没有政权。
               <br />
-              {renderResetButton("返回全时期")}
+              {renderResetButton("恢复全时期")}
             </>
           ) : (
             <>
@@ -91,7 +91,7 @@ export function Timeline({
               {timeWindow && (
                 <>
                   <br />
-                  {renderResetButton("返回全时期")}
+                  {renderResetButton("恢复全时期")}
                 </>
               )}
             </>
@@ -108,17 +108,17 @@ export function Timeline({
         <div
           className={`timeline-shared-axis${timeWindow ? " has-window" : ""}`}
           role="group"
-          aria-label={`${timeWindow ? "时段刻度" : "统一时间刻度"}：${sharedRangeLabel}，每${sharedAxis.step}年一格`}
+          aria-label={`${timeWindow ? "时间窗口刻度" : "统一时间刻度"}：${sharedRangeLabel}，每${sharedAxis.step}年一格`}
         >
           <div className="shared-axis-caption">
-            <span className="shared-axis-title">{timeWindow ? "时段" : "统一时间比例"}</span>
+            <span className="shared-axis-title">{timeWindow ? "时间窗口" : "统一时间比例"}</span>
             <span className="shared-axis-range">{sharedRangeLabel}</span>
             {timeWindow && (
               <span className="axis-window-actions">
                 <button
                   className="axis-window-button"
                   type="button"
-                  aria-label="缩小时段"
+                  aria-label="缩小时间窗口"
                   onClick={() => onTimeWindowChange(zoomOutTimeWindow(timeWindow, yearBounds))}
                 >
                   缩小

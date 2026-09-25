@@ -53,10 +53,10 @@ export function ActiveFilterChips({
       <div className="active-filter-list">
         {timeWindow && (
           <span className="filter-chip filter-chip-window">
-            <span>时段：{formatTimeWindow(timeWindow)}</span>
+            <span>时间窗口：{formatTimeWindow(timeWindow)}</span>
             <button
               type="button"
-              aria-label={`移除时段：${formatTimeWindow(timeWindow)}`}
+              aria-label={`移除时间窗口：${formatTimeWindow(timeWindow)}`}
               onClick={() => onTimeWindowChange(null)}
             >
               ×
