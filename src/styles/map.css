@@ -530,7 +530,8 @@
   border-radius: 12px;
   background: transparent;
   color: var(--text);
-  padding: 11px 58px 11px 10px;
+  /* 右侧为绝对定位的对比开关（约 53px，Linux 字体渲染略宽）留出空间并保留可见间距。 */
+  padding: 11px 66px 11px 10px;
   text-align: left;
   scroll-margin-top: 330px;
 }
