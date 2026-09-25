@@ -6,19 +6,19 @@ async function expectReadableCards(cards: Locator, maxLines: number) {
   const metrics = await cards.evaluateAll((elements) =>
     elements.map((card) => {
       const title = card.querySelector("strong")!;
-      const role = card.querySelector(".map-result-role")!;
+      const glyph = card.querySelector(".map-result-glyph")!;
       const local = card.querySelector(".map-result-local-name");
       const compare = card.querySelector(".comparison-toggle")!;
       const range = document.createRange();
       range.selectNodeContents(title);
       const titleBox = title.getBoundingClientRect();
-      const roleBox = role.getBoundingClientRect();
+      const glyphBox = glyph.getBoundingClientRect();
       const compareBox = compare.getBoundingClientRect();
       const localBox = local?.getBoundingClientRect();
       return {
         name: title.textContent,
         lines: new Set(Array.from(range.getClientRects(), (rect) => Math.round(rect.y))).size,
-        gap: titleBox.left - roleBox.right,
+        gap: titleBox.left - glyphBox.right,
         overlapsCompare: titleBox.right > compareBox.left,
         localBelowTitle: !localBox || localBox.top >= titleBox.bottom - 1,
         localFits: !localBox || localBox.right <= compareBox.left,
@@ -110,4 +110,28 @@ test("疆域与点位列表宽度一致且卡片之间留有间距", async ({ pa
   await expect(compare).toBeFocused();
   await page.keyboard.press("Space");
   await expect(compare).toHaveAttribute("aria-pressed", "true");
+});
+
+test("桌面双栏结果列表高度跟随地图卡片，不在地图下方留白", async ({ page, isMobile }) => {
+  test.skip(isMobile, "双栏布局只在桌面项目覆盖");
+
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/?view=map&scope=global");
+  const results = page.getByRole("region", { name: "地图结果列表" });
+  await expect(results.locator(".map-result-item").nth(20)).toBeAttached();
+
+  const metrics = await page.evaluate(() => {
+    const box = (selector: string) => document.querySelector(selector)!.getBoundingClientRect();
+    const list = document.querySelector(".map-results")!;
+    return {
+      map: box(".historical-map"),
+      list: box(".map-results"),
+      shell: box(".historical-map-shell"),
+      scrolls: list.scrollHeight > list.clientHeight
+    };
+  });
+  expect(Math.abs(metrics.list.top - metrics.map.top)).toBeLessThan(1);
+  expect(Math.abs(metrics.list.height - metrics.map.height)).toBeLessThan(1);
+  expect(Math.abs(metrics.shell.height - metrics.map.height)).toBeLessThan(1);
+  expect(metrics.scrolls).toBe(true);
 });

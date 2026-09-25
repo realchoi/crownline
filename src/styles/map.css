@@ -469,51 +469,63 @@
   max-height: min(78vh, 760px);
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-top: 0;
+  padding: 0 14px 14px;
 }
 
 .map-results-heading {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: var(--surface);
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-.map-results-heading {
   display: flex;
   align-items: end;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 4px;
+  margin: 0 -14px 6px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 16px 16px 10px;
+}
+
+.map-results-heading .timepoint-kicker {
+  margin-bottom: 2px;
 }
 
 .map-results-heading h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: 1.3rem;
+  line-height: 1.2;
 }
 
 .map-results-heading > span {
   color: var(--muted);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
+
 .map-results-list {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .map-results-list + .map-results-list {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
+/* 紧凑索引行：图形与地图标记一致，名称、原名、地点与说明依次排在右列。 */
 .map-result-item {
   position: relative;
   min-width: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--surface-strong);
-  padding: 4px;
+  transition: border-color 0.16s ease;
+}
+
+.map-result-item:hover,
+.map-result-item:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 46%, var(--border));
 }
 
 .map-result-item.is-comparison-selected {
@@ -523,73 +535,101 @@
 
 .map-result-detail {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 2px 9px;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: center;
+  gap: 1px 10px;
   width: 100%;
   border: 0;
-  border-radius: 12px;
+  border-radius: inherit;
   background: transparent;
   color: var(--text);
   /* 右侧为绝对定位的对比开关（约 53px，Linux 字体渲染略宽）留出空间并保留可见间距。 */
-  padding: 11px 66px 11px 10px;
+  padding: 9px 66px 10px 11px;
   text-align: left;
   scroll-margin-top: 330px;
 }
 
+.map-result-glyph {
+  grid-row: 1;
+}
+
 .map-result-detail strong {
   font-family: var(--font-display);
-  font-size: 1.08rem;
+  font-size: var(--text-base);
+  line-height: 1.35;
+}
+
+.map-result-local-name,
+.map-result-meta,
+.map-result-detail small {
+  grid-column: 2;
 }
 
 .map-result-local-name {
-  /* 原名单独占一行，避免撑宽标签列并挤压中文标题。 */
-  grid-column: 1 / -1;
+  /* 原名单独占一行，避免撑宽标题行并挤压中文名称。 */
+  color: var(--muted);
+  font-size: var(--text-xs);
   overflow-wrap: anywhere;
 }
 
-.map-result-place {
-  grid-column: 1 / -1;
-  color: var(--accent);
+.map-result-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 6px;
+  font-size: var(--text-xs);
 }
-.map-result-detail small {
-  grid-column: 1 / -1;
-  color: var(--muted);
-  line-height: 1.45;
+
+.map-result-place {
+  color: var(--accent);
+  overflow-wrap: anywhere;
 }
 
 .map-result-role {
-  align-self: center;
-  justify-self: start;
-  border: 1px solid currentColor;
-  border-radius: 999px;
   color: var(--accent);
-  padding: 1px 7px;
-  font-size: var(--text-2xs);
   font-weight: 750;
   white-space: nowrap;
 }
 
+.map-result-role::before {
+  margin-right: 6px;
+  color: var(--muted);
+  font-weight: 400;
+  content: "·";
+}
+
 .role-political-center {
-  border-radius: 5px;
   color: var(--parallel);
 }
 .role-representative-center {
-  border-style: dashed;
   color: var(--regional);
 }
 
-.boundary-result-role {
-  border-style: dashed;
-  color: var(--period);
-}
-
+.boundary-result-role,
 .map-boundary-result .map-result-place {
   color: var(--period);
 }
+
+.map-result-detail small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: var(--text-2xs);
+  line-height: 1.5;
+}
+
+.map-boundary-glyph {
+  width: 18px;
+  height: 12px;
+  border: 1px dashed color-mix(in srgb, var(--text) 58%, transparent);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--period) 35%, transparent);
+}
+
 .map-result-item > .comparison-toggle {
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 9px;
+  margin-top: 0;
   scroll-margin-top: 330px;
 }
 

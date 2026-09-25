@@ -75,12 +75,18 @@ export function MapResultList({
                   aria-label={pointLabel(point)}
                   onClick={() => onSelect(point.entity.id)}
                 >
-                  <span className={`map-result-role role-${point.snapshot.role}`}>
-                    {GEOGRAPHIC_ROLE_NAMES[point.snapshot.role]}
-                  </span>
+                  <span
+                    className={`map-result-glyph map-legend-symbol map-legend-${point.snapshot.role}`}
+                    aria-hidden="true"
+                  />
                   <strong>{point.entity.names.primary}</strong>
                   <EntityLocalName names={point.entity.names} className="map-result-local-name" />
-                  <span className="map-result-place">{point.snapshot.placeName}</span>
+                  <span className="map-result-meta">
+                    <span className="map-result-place">{point.snapshot.placeName}</span>
+                    <span className={`map-result-role role-${point.snapshot.role}`}>
+                      {GEOGRAPHIC_ROLE_NAMES[point.snapshot.role]}
+                    </span>
+                  </span>
                   <small>{point.snapshot.positionNote}</small>
                 </button>
                 <ComparisonToggle
@@ -120,15 +126,18 @@ export function MapResultList({
                       aria-label={`${boundary.entity.names.primary}，${range}，疆域示意`}
                       onClick={() => onSelect(boundary.entity.id)}
                     >
-                      <span className="map-result-role boundary-result-role">
-                        {BOUNDARY_PRECISION_NAMES[boundary.snapshot.boundaryPrecision]}
-                      </span>
+                      <span className="map-result-glyph map-boundary-glyph" aria-hidden="true" />
                       <strong>{boundary.entity.names.primary}</strong>
                       <EntityLocalName
                         names={boundary.entity.names}
                         className="map-result-local-name"
                       />
-                      <span className="map-result-place">适用时期：{range}</span>
+                      <span className="map-result-meta">
+                        <span className="map-result-place">适用时期：{range}</span>
+                        <span className="map-result-role boundary-result-role">
+                          {BOUNDARY_PRECISION_NAMES[boundary.snapshot.boundaryPrecision]}
+                        </span>
+                      </span>
                       <small>
                         可信度：{DETAIL_CONFIDENCE_NAMES[boundary.snapshot.confidence]}。
                         {boundary.snapshot.boundaryNote}

@@ -1,5 +1,5 @@
 /* 响应式覆盖集中在此文件，按断点从宽到窄排列，窄断点在后以覆盖宽断点：
-   - min-width: 981px  桌面双栏地图的吸顶增强
+   - min-width: 981px  桌面双栏地图：结果列表高度跟随地图卡片
    - max-width: 980px  地图与结果改为单栏
    - max-width: 800px  平板竖屏及以下：控制台改为抽屉（与 BrowseControls.tsx 的 MOBILE_CONTROLS_QUERY 一致）
    - max-width: 760px  平板竖屏内容重排：结果网格减列、对比两栏改单栏
@@ -7,20 +7,29 @@
    - max-width: 460px  小屏手机
    之后是触屏、减少动态效果与打印。 */
 @media (min-width: 981px) {
-  .historical-map {
-    position: sticky;
-    /* 仅避让阶段 2 的紧凑工具条，不再为完整筛选面板预留大块空间。 */
-    top: 76px;
+  .historical-map-shell {
+    align-items: stretch;
   }
 
-  /* 聚合面板展开后随页面滚动，避免 sticky 地图卡片挡住面板下半部分。 */
-  .historical-map.is-cluster-expanded {
-    position: static;
-  }
+  /* 结果列表不参与行高计算，高度跟随地图卡片并在卡片内滚动；
+     否则上百条结果会把整行撑高，在地图下方留出大块空白。 */
   .map-results {
-    position: sticky;
-    top: 76px;
-    max-height: calc(100vh - 96px);
+    contain: size;
+    min-height: 420px;
+    max-height: none;
+  }
+}
+
+/* 桌面鼠标环境下位置说明先收成两行，键盘聚焦到该行时完整展开；触屏设备保持全文。 */
+@media (min-width: 981px) and (hover: hover) {
+  .map-result-detail small {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .map-result-item:focus-within .map-result-detail small {
+    display: block;
   }
 }
 @media (max-width: 980px) {
@@ -724,7 +733,7 @@
     padding: 0 16px 16px;
   }
   .map-results-heading {
-    padding-top: 16px;
+    margin-inline: -16px;
   }
   .map-result-detail {
     padding-right: 62px;
