@@ -704,6 +704,7 @@ a:focus-visible {
   font-weight: 700;
 }
 
+/* top 与 BrowseControls.tsx 的 COMPACT_CONSOLE_TOP 保持一致。 */
 .compact-console-slot {
   position: sticky;
   top: 8px;

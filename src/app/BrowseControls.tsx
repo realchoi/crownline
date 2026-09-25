@@ -22,6 +22,10 @@ import {
 import { formatHistoricalYear } from "../domain/chronology";
 import { getRegionScopeLabel } from "../domain/regionScope";
 import type { Region } from "../domain/types";
+import { useStickyHeaderOffset } from "./useStickyHeaderOffset";
+
+/** 与 controls.css 中 .compact-console-slot 的 top 保持一致。 */
+const COMPACT_CONSOLE_TOP = 8;
 
 interface BrowseControlsProps {
   browseState: BrowseState;
@@ -66,6 +70,8 @@ export function BrowseControls({
   const [isCompact, setIsCompact] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const fullConsoleRef = useRef<HTMLElement>(null);
+  const mobileBarRef = useRef<HTMLDivElement>(null);
+  const compactBarRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const sheetTriggerRef = useRef<HTMLButtonElement>(null);
   const sheetCloseRef = useRef<HTMLButtonElement>(null);
@@ -106,6 +112,12 @@ export function BrowseControls({
       if (frame) cancelAnimationFrame(frame);
     };
   }, [isMobile]);
+
+  useStickyHeaderOffset(
+    isMobile ? mobileBarRef : compactBarRef,
+    isMobile || isCompact,
+    isMobile ? 0 : COMPACT_CONSOLE_TOP
+  );
 
   const closeSheet = useCallback(() => setIsSheetOpen(false), []);
   useModalDialog(dialogRef, {
@@ -211,7 +223,7 @@ export function BrowseControls({
     <section className="exploration-controls" aria-label="探索控制区">
       {isMobile ? (
         <>
-          <div className="mobile-explore-bar">
+          <div ref={mobileBarRef} className="mobile-explore-bar">
             <div className="mobile-explore-heading">
               <ViewModeControl
                 value={browseState.viewMode}
@@ -248,7 +260,12 @@ export function BrowseControls({
           </section>
           <div className="compact-console-slot">
             {isCompact && (
-              <div className="compact-console-bar" role="region" aria-label="紧凑探索工具条">
+              <div
+                ref={compactBarRef}
+                className="compact-console-bar"
+                role="region"
+                aria-label="紧凑探索工具条"
+              >
                 {statusItems}
                 <button
                   className="expand-console-button"

@@ -524,6 +524,29 @@ test.describe("Crownline 浏览器冒烟", () => {
     expect(Math.abs((categoryBox?.y ?? 0) - (clearBox?.y ?? 0))).toBeLessThan(2);
   });
 
+  test("长时间轴滚动时统一坐标轴吸顶在工具条下方", async ({ page, isMobile }) => {
+    await page.goto("/");
+    await waitForAppReady(page);
+    await page.evaluate(() => window.scrollTo({ top: 2400, behavior: "instant" }));
+
+    const header = isMobile
+      ? page.locator(".mobile-explore-bar")
+      : page.getByRole("region", { name: "紧凑探索工具条" });
+    await expect(header).toBeVisible();
+    const axis = page.getByRole("img", { name: /^统一时间刻度：/ });
+    await expect
+      .poll(async () => {
+        const [headerBox, axisBox] = await Promise.all([header.boundingBox(), axis.boundingBox()]);
+        return Math.abs((axisBox?.y ?? -100) - ((headerBox?.y ?? 0) + (headerBox?.height ?? 0)));
+      })
+      .toBeLessThanOrEqual(2);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > document.documentElement.clientWidth
+      )
+    ).toBe(false);
+  });
+
   test("桌面底部展开控制台保留滚动位置，关闭后恢复焦点", async ({ page, isMobile }, testInfo) => {
     test.skip(isMobile, "桌面滚动控制台仅在 desktop 项目覆盖");
 

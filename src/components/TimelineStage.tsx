@@ -1,9 +1,12 @@
-import { fromOrdinal, formatHistoricalYear, formatPeriods, toOrdinal } from "../domain/chronology";
+import { formatPeriods, toOrdinal } from "../domain/chronology";
 import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
 import { getRegionNames } from "../domain/regionScope";
+import { buildTimelineAxis } from "../domain/timelineAxis";
 import type { Region } from "../domain/types";
 import { ComparisonToggle } from "./ComparisonToggle";
+import { TimelineAxisTicks } from "./TimelineAxisTicks";
+import { timelineGridStyle } from "./timelineGrid";
 
 /** 单个时间轴分组的渲染参数；多地区模式可注入共享比例。 */
 interface TimelineStageProps {
@@ -32,11 +35,15 @@ export function TimelineStage({
   const startOrdinal = toOrdinal(scaleRange.startYear);
   const endOrdinal = toOrdinal(scaleRange.endYear);
   const span = endOrdinal - startOrdinal;
-  const midpoint = fromOrdinal(Math.round((startOrdinal + endOrdinal) / 2));
+  const axis = buildTimelineAxis(scaleRange);
   const headingId = `stage-${group.id}`;
 
   return (
-    <section className={`timeline-stage timeline-group-${group.kind}`} aria-labelledby={headingId}>
+    <section
+      className={`timeline-stage timeline-group-${group.kind}`}
+      aria-labelledby={headingId}
+      style={timelineGridStyle(axis)}
+    >
       <div className="stage-heading">
         <h2 className="stage-title" id={headingId}>
           {group.title}
@@ -47,11 +54,7 @@ export function TimelineStage({
       {showAxis && (
         <div className="axis-row" aria-hidden="true">
           <span />
-          <div className="axis-labels">
-            {[scaleRange.startYear, midpoint, scaleRange.endYear].map((year) => (
-              <span key={year}>{formatHistoricalYear({ year, precision: "exact" })}</span>
-            ))}
-          </div>
+          <TimelineAxisTicks axis={axis} />
         </div>
       )}
 

@@ -230,9 +230,9 @@ describe("Crownline 浏览", () => {
     );
     renderApp();
 
-    expect(screen.getAllByRole("img", { name: "统一时间刻度：前322—1922，中点801" })).toHaveLength(
-      1
-    );
+    expect(
+      screen.getAllByRole("img", { name: "统一时间刻度：前322—1922，每500年一格" })
+    ).toHaveLength(1);
 
     const cholaBar = screen.getByRole("button", { name: /^朱罗帝国，/ });
     const holyRomanEmpireBar = screen.getByRole("button", { name: /^神圣罗马帝国，/ });
@@ -240,6 +240,18 @@ describe("Crownline 浏览", () => {
     expect(Number.parseFloat(cholaBar.style.width)).toBeCloseTo(19.13, 1);
     expect(Number.parseFloat(holyRomanEmpireBar.style.left)).toBeCloseTo(57.2, 1);
     expect(Number.parseFloat(holyRomanEmpireBar.style.width)).toBeCloseTo(37.63, 1);
+  });
+
+  it("全览时间轴不是 live region，结果变化只由摘要播报", async () => {
+    const user = setupUser();
+    renderApp();
+
+    await user.type(screen.getByRole("searchbox", { name: /搜索/ }), "唐");
+
+    expect(screen.getByRole("region", { name: "多地区完整时间轴" })).not.toHaveAttribute(
+      "aria-live"
+    );
+    expect(screen.getByRole("status")).toHaveTextContent(/显示 \d+ \/ 137 个条目/);
   });
 
   it("自选多地区在两种浏览模式间保持并同步 URL", async () => {

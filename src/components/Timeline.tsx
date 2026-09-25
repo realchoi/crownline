@@ -1,7 +1,9 @@
 import { formatHistoricalYear, fromOrdinal, toOrdinal } from "../domain/chronology";
 import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
 import type { RegionScope } from "../domain/regionScope";
+import { buildTimelineAxis } from "../domain/timelineAxis";
 import type { Region } from "../domain/types";
+import { TimelineAxisTicks } from "./TimelineAxisTicks";
 import { TimelineStage } from "./TimelineStage";
 
 /** 时间轴列表所需的已分组结果和详情选择事件。 */
@@ -36,15 +38,10 @@ export function Timeline({
           endYear: fromOrdinal(Math.max(...groups.map(({ range }) => toOrdinal(range.endYear))))
         }
       : null;
-  const sharedAxisLabels = sharedRange
-    ? [
-        sharedRange.startYear,
-        fromOrdinal(
-          Math.round((toOrdinal(sharedRange.startYear) + toOrdinal(sharedRange.endYear)) / 2)
-        ),
-        sharedRange.endYear
-      ].map((year) => formatHistoricalYear({ year, precision: "exact" }))
-    : null;
+  const sharedAxis = sharedRange ? buildTimelineAxis(sharedRange) : null;
+  const sharedRangeLabel = sharedRange
+    ? `${formatHistoricalYear({ year: sharedRange.startYear, precision: "exact" })}—${formatHistoricalYear({ year: sharedRange.endYear, precision: "exact" })}`
+    : "";
   const timelineLabel = regionScope.mode === "china" ? "中国历代王朝时间轴" : "多地区完整时间轴";
   const selectedRegionNames =
     regionScope.mode === "custom"
@@ -57,7 +54,7 @@ export function Timeline({
 
   if (matchCount === 0) {
     return (
-      <section id="timeline" aria-label={timelineLabel} aria-live="polite">
+      <section id="timeline" aria-label={timelineLabel}>
         <div className="empty-state">
           {emptyReason === "unindexed" ? (
             <>{scopeName}尚未收录代表性政权；这不表示该地区在历史上没有政权。</>
@@ -74,19 +71,19 @@ export function Timeline({
   }
 
   return (
-    <section id="timeline" aria-label={timelineLabel} aria-live="polite">
-      {sharedAxisLabels && (
+    // 结果数量变化由结果摘要的 role="status" 播报；整段时间轴不设 live region，避免读屏逐行朗读。
+    <section id="timeline" aria-label={timelineLabel}>
+      {sharedAxis && (
         <div
           className="timeline-shared-axis"
           role="img"
-          aria-label={`统一时间刻度：${sharedAxisLabels[0]}—${sharedAxisLabels[2]}，中点${sharedAxisLabels[1]}`}
+          aria-label={`统一时间刻度：${sharedRangeLabel}，每${sharedAxis.step}年一格`}
         >
-          <span className="shared-axis-caption">统一时间比例</span>
-          <div className="axis-labels" aria-hidden="true">
-            {sharedAxisLabels.map((label) => (
-              <span key={label}>{label}</span>
-            ))}
-          </div>
+          <span className="shared-axis-caption">
+            统一时间比例
+            <span className="shared-axis-range">{sharedRangeLabel}</span>
+          </span>
+          <TimelineAxisTicks axis={sharedAxis} />
         </div>
       )}
       {groups.map((group) => (

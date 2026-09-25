@@ -1,23 +1,37 @@
+/* 坐标轴在长列表中吸顶，停在紧凑工具条或移动探索栏下方（偏移由 useStickyHeaderOffset 写入）。
+   左右内边距与分组卡片的边框、内边距及行右侧留白对齐，使刻度落在轨道上方。 */
 .timeline-shared-axis {
+  position: sticky;
+  top: var(--sticky-header-offset, 0px);
+  z-index: 20;
   display: grid;
   grid-template-columns: var(--label-column) minmax(0, 1fr);
   gap: 14px;
   align-items: end;
-  margin-bottom: 4px;
-  padding: 5px 22px;
+  margin-bottom: 8px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--page) 92%, transparent);
+  padding: 6px 27px 4px 21px;
   color: var(--muted);
+  backdrop-filter: blur(12px);
 }
 
 .shared-axis-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
   color: var(--period);
   font-size: 0.72rem;
   font-weight: 750;
   letter-spacing: 0.08em;
 }
 
-.timeline-shared-axis .axis-labels {
-  position: relative;
-  padding-bottom: 8px;
+.shared-axis-range {
+  color: var(--muted);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
 }
 
 .timeline-shared-axis .axis-labels::after {
@@ -90,16 +104,59 @@
   gap: 14px;
 }
 
+/* 中国模式各阶段自有比例尺，坐标轴在所属阶段卡片内吸顶。 */
 .axis-row {
-  margin-bottom: 4px;
+  position: sticky;
+  top: var(--sticky-header-offset, 0px);
+  z-index: 3;
+  margin: 0 -20px 4px;
+  background: color-mix(in srgb, var(--surface-strong) 94%, transparent);
+  padding: 4px 26px 2px 20px;
+  backdrop-filter: blur(12px);
 }
 
 .axis-labels {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  height: 1.9em;
   color: var(--muted);
   font-size: 0.72rem;
   font-variant-numeric: tabular-nums;
+}
+
+.axis-tick {
+  position: absolute;
+  top: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.axis-tick.is-start {
+  transform: none;
+}
+
+.axis-tick.is-end {
+  transform: translateX(-100%);
+}
+
+/* 刻度线从文字下方延伸到基线，与轨道网格线同一位置。 */
+.axis-tick::after {
+  position: absolute;
+  top: 1.35em;
+  left: 50%;
+  width: 1px;
+  height: 0.55em;
+  background: var(--track-grid);
+  content: "";
+}
+
+.axis-tick.is-start::after {
+  left: 0;
+}
+
+.axis-tick.is-end::after {
+  left: auto;
+  right: 0;
 }
 
 .timeline-row {
@@ -196,21 +253,15 @@
   height: 18px;
   overflow: visible;
   border-radius: 999px;
-  background:
-    linear-gradient(
-      to right,
-      transparent 49.85%,
-      color-mix(in srgb, var(--border) 72%, transparent) 49.85%,
-      color-mix(in srgb, var(--border) 72%, transparent) 50.15%,
-      transparent 50.15%
-    ),
-    var(--surface-soft);
+  /* --timeline-grid 由 TimelineStage 按刻度生成。 */
+  background: var(--timeline-grid, none), var(--surface-soft);
 }
 
+/* 极短政权在长比例尺下保持 4px 可视宽度；真实年代由名称旁年份和可访问名称提供。 */
 .timeline-bar {
   position: absolute;
   top: 3px;
-  min-width: 1px;
+  min-width: 4px;
   height: 12px;
   border: 0;
   border-radius: 999px;
@@ -219,6 +270,13 @@
   transition:
     transform 0.12s ease,
     filter 0.12s ease;
+}
+
+/* 略微扩大细条的指针命中区域，不改变视觉宽度。 */
+.timeline-bar::before {
+  position: absolute;
+  inset: -3px -3px;
+  content: "";
 }
 
 .timeline-bar:hover,

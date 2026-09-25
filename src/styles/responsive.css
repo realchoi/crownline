@@ -249,6 +249,10 @@
     break-inside: avoid;
     box-shadow: none;
   }
+  .timeline-shared-axis,
+  .axis-row {
+    position: static;
+  }
 }
 
 /* 探索控制台在平板竖屏及以下切换为专用抽屉。 */
@@ -596,12 +600,28 @@
   }
 
   .timeline-shared-axis {
-    padding: 6px 0;
+    border-radius: 0;
+    padding: 6px 0 2px;
   }
 
-  .shared-axis-caption,
+  /* 吸顶时只保留刻度；统一比例范围由各分组标题的年代说明补足。 */
+  .shared-axis-caption {
+    display: none;
+  }
+
   .axis-labels {
     font-size: 0.75rem;
+  }
+
+  /* 窄轨道隔一个显示刻度文字，刻度线与网格线全部保留。 */
+  .axis-tick:nth-child(even) {
+    color: transparent;
+  }
+
+  .axis-row {
+    margin-inline: 0;
+    background: color-mix(in srgb, var(--page) 92%, transparent);
+    padding: 6px 0 2px;
   }
 
   .axis-row > span {

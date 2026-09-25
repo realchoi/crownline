@@ -51,6 +51,8 @@
   --period: #496a69;
   --regional: #6b5b8b;
   --shadow: 0 18px 50px rgba(72, 45, 29, 0.09);
+  /* 时间轴刻度网格线；引用 --muted，深色模式随之切换。 */
+  --track-grid: color-mix(in srgb, var(--muted) 26%, transparent);
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 10px;
