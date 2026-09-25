@@ -8,7 +8,9 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./tests/setup.ts"],
     css: true,
-    testTimeout: 10_000,
+    // 整页 jsdom 集成测试在 CI（4 vCPU + coverage 插桩）上比本地慢 2–3 倍，
+    // 本地满载时最慢已近 5 秒；统一放宽，避免逐条追加超时。
+    testTimeout: 30_000,
     exclude: ["**/node_modules/**", "**/dist/**", "e2e/**"],
     coverage: {
       provider: "v8",

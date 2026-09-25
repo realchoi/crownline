@@ -123,7 +123,7 @@ describe("Crownline 详情", () => {
     expect(within(dialog).getByText(/不等于当时无人统治/)).toBeInTheDocument();
   });
 
-  it("全览详情展示已收录统治序列、覆盖年份并支持角色筛选", { timeout: 20_000 }, async () => {
+  it("全览详情展示已收录统治序列、覆盖年份并支持角色筛选", async () => {
     const user = setupUser();
     renderApp();
 

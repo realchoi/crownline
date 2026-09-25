@@ -26,7 +26,7 @@ describe("Crownline 政权对比", () => {
     await waitFor(() => expect(nameButton).toHaveFocus());
   });
 
-  it("选择不打开对比，主动查看后关闭或 Escape 保留选择和焦点", { timeout: 20_000 }, async () => {
+  it("选择不打开对比，主动查看后关闭或 Escape 保留选择和焦点", async () => {
     const user = setupUser();
     const loader = vi.fn(loadGeneratedDetail);
     renderApp(loader);
@@ -75,7 +75,7 @@ describe("Crownline 政权对比", () => {
     expect(screen.queryByText("已关闭对比的迟到错误")).not.toBeInTheDocument();
   });
 
-  it("从时间轴选择最多两个政权并同步 URL", { timeout: 20_000 }, async () => {
+  it("从时间轴选择最多两个政权并同步 URL", async () => {
     const user = setupUser();
     renderApp();
 
