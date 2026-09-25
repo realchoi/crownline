@@ -547,39 +547,94 @@ a:focus-visible {
   transform: translateY(2px) rotate(-135deg);
 }
 
+/* 更多筛选：地区明细、地图图层与图例独占整行；精确跳转与类别、清除按内容宽度同行，
+   标签统一置于控件上方、控件统一 40px 高；顶部对齐，跳转错误提示出现时不推动同行控件。 */
 .console-more:not([hidden]) {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 12px 24px;
-  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  align-items: flex-start;
   margin-top: 10px;
   border-top: 1px solid var(--border);
   padding-top: 10px;
 }
 
-.console-more .region-scope-details {
-  grid-column: 1 / -1;
+.console-more .region-scope-details,
+.console-more .map-layer-control,
+.console-more .legend {
+  flex: 1 1 100%;
 }
 
 .console-more .year-jump-form {
+  grid-template-columns: auto;
+  gap: 4px;
   margin: 0;
 }
 
+.console-more .year-jump-label {
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+/* 纪元、年份与跳转拼成一个整体控件；年份最多 4 位，输入框只留够数字的宽度。 */
+.console-more .year-jump-controls {
+  grid-template-columns: auto 4.75rem auto;
+  gap: 0;
+}
+
+.console-more .year-era-select,
+.console-more .year-number-input,
+.console-more .year-jump-button {
+  height: 40px;
+  padding-inline: 10px;
+  font-size: 0.875rem;
+}
+
+.console-more .year-era-select {
+  border-radius: var(--radius-control) 0 0 var(--radius-control);
+}
+
+.console-more .year-number-input {
+  margin-left: -1px;
+  border-radius: 0;
+  text-align: center;
+}
+
+.console-more .year-jump-button {
+  margin-left: -1px;
+  border-radius: 0 var(--radius-control) var(--radius-control) 0;
+  padding-inline: 14px;
+}
+
+/* 聚焦的分段抬到相邻分段之上，保证焦点环与边框不被遮挡。 */
+.console-more .year-jump-controls > :focus-visible {
+  position: relative;
+  z-index: 1;
+}
+
+/* 宽度置 0 再撑满：错误文案随组合控件宽度换行，不把整行撑开。 */
+.console-more .year-input-error {
+  width: 0;
+  min-width: 100%;
+}
+
 .console-more-filters {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  display: flex;
   gap: 10px;
-  align-items: end;
+  align-items: flex-end;
+}
+
+.console-more-filters .select-input {
+  width: auto;
+  min-width: 10rem;
+  height: 40px;
+  font-size: 0.875rem;
 }
 
 .console-more-filters .button {
   height: 40px;
   padding-block: 0;
-}
-
-.console-more .map-layer-control,
-.console-more .legend {
-  grid-column: 1 / -1;
+  font-size: 0.875rem;
 }
 
 /* 控制台与结果共享页面流，滚动工具条不占首屏空间。 */

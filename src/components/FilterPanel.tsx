@@ -204,8 +204,8 @@ export function FilterPanel({
             scope={regionScope}
             onChange={onRegionScopeChange}
           />
-          <YearJumpForm year={year} yearBounds={yearBounds} onYearChange={onYearChange} />
           {mapLayerControl}
+          <YearJumpForm year={year} yearBounds={yearBounds} onYearChange={onYearChange} />
           <div className="console-more-filters">
             {categoryField}
             {clearButton}

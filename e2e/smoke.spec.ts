@@ -524,6 +524,43 @@ test.describe("Crownline 浏览器冒烟", () => {
     expect(Math.abs((categoryBox?.y ?? 0) - (clearBox?.y ?? 0))).toBeLessThan(2);
   });
 
+  test("更多筛选中精确跳转为紧凑组合控件，与类别和清除按钮同行等高", async ({ page, isMobile }) => {
+    test.skip(isMobile, "桌面更多筛选布局仅在 desktop-chromium 项目覆盖");
+
+    await page.goto("/");
+    await waitForAppReady(page);
+    await openMoreFilters(page);
+
+    const boxes = await Promise.all(
+      [
+        page.getByRole("combobox", { name: "纪元" }),
+        page.getByRole("textbox", { name: "年份" }),
+        page.getByRole("button", { name: "跳转" }),
+        page.getByRole("combobox", { name: "显示类别" }),
+        page.getByRole("button", { name: "清除搜索与类别（控制台）" })
+      ].map(async (control) => (await control.boundingBox())!)
+    );
+    const [, yearInput] = boxes;
+    // 年份最多 4 位数字，输入框不应再拉伸占满整列。
+    expect(yearInput!.width).toBeLessThanOrEqual(96);
+    const bottoms = boxes.map(({ y, height }) => y + height);
+    expect(Math.max(...bottoms) - Math.min(...bottoms)).toBeLessThan(2);
+    const heights = boxes.map(({ height }) => height);
+    expect(Math.max(...heights) - Math.min(...heights)).toBeLessThan(2);
+
+    // 跳转错误提示出现在组合控件下方，不推动同行的类别选择。
+    await page.getByRole("textbox", { name: "年份" }).fill("3000");
+    await page.getByRole("button", { name: "跳转" }).click();
+    await expect(page.getByRole("alert")).toContainText("可跳转范围");
+    const [inputAfter, categoryAfter] = await Promise.all(
+      [
+        page.getByRole("textbox", { name: "年份" }),
+        page.getByRole("combobox", { name: "显示类别" })
+      ].map(async (control) => (await control.boundingBox())!)
+    );
+    expect(Math.abs(inputAfter!.y - categoryAfter!.y)).toBeLessThan(2);
+  });
+
   test("长时间轴滚动时统一坐标轴吸顶在工具条下方", async ({ page, isMobile }) => {
     await page.goto("/");
     await waitForAppReady(page);
