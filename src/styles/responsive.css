@@ -609,6 +609,17 @@
     display: none;
   }
 
+  /* 放大后保留窗口范围和缩小/恢复入口。 */
+  .has-window .shared-axis-caption {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+
+  .has-window .axis-window-actions {
+    margin-left: auto;
+  }
+
   .axis-labels {
     font-size: 0.75rem;
   }
@@ -685,6 +696,12 @@
 @media (pointer: coarse) {
   .row-name {
     min-height: 44px;
+  }
+
+  /* 吸顶坐标轴内的窗口按钮取 32px，兼顾触控与吸顶区高度；仍高于 WCAG 2.5.8 的 24px 下限。 */
+  .axis-window-button {
+    min-width: 44px;
+    min-height: 32px;
   }
 
   .row-label .comparison-toggle {

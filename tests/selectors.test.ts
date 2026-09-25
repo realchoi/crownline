@@ -143,6 +143,32 @@ describe("时间点结果", () => {
     expect(wrongCategory.all).toEqual([]);
   });
 
+  it("时间窗口按闭区间保留与窗口重叠的条目，并跳过多段存续的中断期", () => {
+    const windowNames = (startYear: number, endYear: number) =>
+      selectBrowseResults(data, {
+        query: "",
+        category: "all",
+        timeWindow: { startYear, endYear }
+      }).all.map(({ entity }) => entity.names.primary);
+
+    expect(windowNames(401, 408)).not.toContain("西秦");
+    expect(windowNames(401, 409)).toContain("西秦");
+    expect(windowNames(-221, -206)).toEqual(expect.arrayContaining(["秦", "战国"]));
+    expect(windowNames(-205, -203)).not.toContain("秦");
+  });
+
+  it("时间窗口内没有政权时标记为覆盖有限", () => {
+    const results = selectBrowseResults(data, {
+      query: "",
+      category: "all",
+      timeWindow: { startYear: 1800, endYear: 1900 },
+      regionScope: { mode: "custom", regionIds: ["region-east-africa"] }
+    });
+
+    expect(results.polities).toEqual([]);
+    expect(results.polityEmptyReason).toBe("limited-coverage");
+  });
+
   it("在全览模式省略年份时保持原有七十三个结果", () => {
     const results = selectBrowseResults(data, { query: "", category: "all" });
 

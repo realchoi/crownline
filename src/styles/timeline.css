@@ -34,6 +34,38 @@
   letter-spacing: 0;
 }
 
+.has-window .shared-axis-title {
+  color: var(--accent);
+}
+
+.axis-window-actions {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.axis-window-button {
+  min-height: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  background: var(--surface-strong);
+  color: var(--accent);
+  padding: 0 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.axis-window-button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.empty-state .axis-window-button {
+  margin-top: 12px;
+  min-height: 32px;
+  padding-inline: 14px;
+}
+
 .timeline-shared-axis .axis-labels::after {
   position: absolute;
   right: 0;
@@ -126,6 +158,7 @@
 .axis-tick {
   position: absolute;
   top: 0;
+  pointer-events: none;
   line-height: 1.2;
   white-space: nowrap;
   transform: translateX(-50%);
@@ -157,6 +190,29 @@
 .axis-tick.is-end::after {
   left: auto;
   right: 0;
+}
+
+/* 刻度之间的分段是放大入口；上下略微外扩，使命中高度不低于 24px。 */
+.axis-zoom-segment {
+  position: absolute;
+  top: -5px;
+  bottom: -3px;
+  z-index: 1;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  padding: 0;
+  cursor: zoom-in;
+  transition: background 0.12s ease;
+}
+
+.axis-zoom-segment:hover {
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+.axis-zoom-segment:focus-visible {
+  outline-offset: -2px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .timeline-row {
@@ -295,6 +351,17 @@
 .bar-regional {
   background: var(--regional);
 }
+/* 被时间窗口截断的一端改为平头，表示存续继续延伸到窗口之外。 */
+.timeline-bar.is-clipped-start {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.timeline-bar.is-clipped-end {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .bar-context {
   top: 2px;
   height: 14px;

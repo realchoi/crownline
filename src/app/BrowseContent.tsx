@@ -1,10 +1,15 @@
 import { Timeline } from "../components/Timeline";
 import { TimepointView } from "../components/TimepointView";
-import type { BrowseState } from "../domain/browseState";
+import {
+  getEffectiveTimeWindow,
+  type BrowseState,
+  type HistoricalYearBounds
+} from "../domain/browseState";
 import type { BoundarySelection } from "../domain/boundarySnapshots";
 import type { MapSelection } from "../domain/mapSnapshots";
 import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
 import type { BrowseResults } from "../domain/selectors";
+import type { TimeWindow } from "../domain/timeWindow";
 import type { CrownlineIndex } from "../domain/types";
 import type { GeographyState } from "./useGeographyData";
 import type { BoundaryState } from "./useBoundaryData";
@@ -21,6 +26,8 @@ interface BrowseContentProps {
   boundarySelection: BoundarySelection | null;
   onRetryGeography: () => void;
   onRetryBoundaries: () => void;
+  yearBounds: HistoricalYearBounds;
+  onTimeWindowChange: (window: TimeWindow | null) => void;
   onSelect: (entityId: string) => void;
   onToggleComparison: (entityId: string) => void;
 }
@@ -37,6 +44,8 @@ export function BrowseContent({
   boundarySelection,
   onRetryGeography,
   onRetryBoundaries,
+  yearBounds,
+  onTimeWindowChange,
   onSelect,
   onToggleComparison
 }: BrowseContentProps) {
@@ -64,7 +73,10 @@ export function BrowseContent({
         regions={data.regions}
         regionScope={browseState.regionScope}
         emptyReason={results.polityEmptyReason}
+        timeWindow={getEffectiveTimeWindow(browseState)}
+        yearBounds={yearBounds}
         comparisonEntityIds={browseState.compareEntityIds}
+        onTimeWindowChange={onTimeWindowChange}
         onToggleComparison={onToggleComparison}
         onSelect={onSelect}
       />

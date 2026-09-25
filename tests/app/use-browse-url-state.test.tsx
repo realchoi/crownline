@@ -74,6 +74,40 @@ describe("useBrowseUrlState", () => {
     expect(push).toHaveBeenCalledTimes(2);
   });
 
+  it("时间窗口只替换历史记录，并随刷新与前进后退恢复", async () => {
+    window.history.replaceState(null, "", "/?from=500&to=1000&external=kept");
+    const pushState = vi.spyOn(window.history, "pushState");
+    const { result, unmount } = renderHook(() => useBrowseUrlState(options));
+
+    expect(result.current.browseState.timeWindow).toEqual({ startYear: 500, endYear: 1000 });
+    act(() =>
+      result.current.setBrowseState((current) => ({
+        ...current,
+        timeWindow: { startYear: 600, endYear: 700 }
+      }))
+    );
+    await waitFor(() => expect(new URLSearchParams(location.search).get("from")).toBe("600"));
+    expect(new URLSearchParams(location.search).get("to")).toBe("700");
+    expect(new URLSearchParams(location.search).get("external")).toBe("kept");
+    expect(pushState).not.toHaveBeenCalled();
+
+    unmount();
+    const refreshed = renderHook(() => useBrowseUrlState(options));
+    expect(refreshed.result.current.browseState.timeWindow).toEqual({
+      startYear: 600,
+      endYear: 700
+    });
+
+    window.history.replaceState(null, "", "/?from=-221&to=-206");
+    act(() => window.dispatchEvent(new PopStateEvent("popstate")));
+    await waitFor(() =>
+      expect(refreshed.result.current.browseState.timeWindow).toEqual({
+        startYear: -221,
+        endYear: -206
+      })
+    );
+  });
+
   it("恢复 popstate 后不会立即覆盖浏览器中的状态", async () => {
     const replaceState = vi.spyOn(window.history, "replaceState");
     const { result } = renderHook(() => useBrowseUrlState(options));

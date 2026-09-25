@@ -17,10 +17,16 @@
 
 ## Stage 2: 时间窗口缩放
 
-**Goal**: 支持在时间轴上选择/缩放时间窗口并写入 URL。
-**Success Criteria**: 领域层比例尺函数可测；URL 读取、清洗、默认值省略、刷新与前进后退恢复。
-**Tests**: 领域比例尺单测、`browse-state` 与 URL hook 测试、e2e。
-**Status**: Not Started
+**Goal**: 支持在时间轴上选择/缩放时间窗口（界面称“时段”）并写入 URL。
+**Success Criteria**:
+
+- 坐标轴刻度之间的分段是可键盘操作的放大按钮，最短 10 年；放大后只保留与时段重叠的条目，窗口外的存续区间不绘制，被截断一端显示平头。
+- “缩小”以中心扩大约 3 倍并对齐整数年代；“返回全时期”与活跃筛选中的“时段”标签可还原。
+- `from`/`to` 读取时清洗（公元 0 年、颠倒、不足 10 年、覆盖全范围均视为未设置），只在全时期时间轴写入，保留未知参数，使用 `replaceState`；刷新与前进后退恢复。
+- 窗口内无已收录政权时不写成历史上不存在。
+
+**Tests**: `tests/time-window.test.ts`、`tests/browse-state.test.ts`、`tests/selectors.test.ts`、`tests/app/use-browse-url-state.test.tsx`、`tests/app/app-time-window.test.tsx`；e2e 放大、刷新恢复、axe 与无横向溢出。
+**Status**: Complete
 
 ## Stage 3: 移动端行密度
 

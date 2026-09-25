@@ -14,6 +14,7 @@ import { ViewModeControl } from "../components/ViewModeControl";
 import { useModalDialog } from "../components/useModalDialog";
 import {
   clearAdditionalFilters,
+  getEffectiveTimeWindow,
   selectBrowseYear,
   selectTimeRange,
   type BrowseState,
@@ -21,6 +22,7 @@ import {
 } from "../domain/browseState";
 import { formatHistoricalYear } from "../domain/chronology";
 import { getRegionScopeLabel } from "../domain/regionScope";
+import { formatTimeWindow } from "../domain/timeWindow";
 import type { Region } from "../domain/types";
 import { useStickyHeaderOffset } from "./useStickyHeaderOffset";
 
@@ -77,10 +79,13 @@ export function BrowseControls({
   const sheetCloseRef = useRef<HTMLButtonElement>(null);
   const hasOpenedSheetRef = useRef(false);
   const scopeLabel = getRegionScopeLabel(browseState.regionScope, regions);
+  const timeWindow = getEffectiveTimeWindow(browseState);
   const timeLabel =
-    browseState.timeRange === "all"
-      ? "全时期"
-      : formatHistoricalYear({ year: browseState.year, precision: "exact" });
+    browseState.timeRange === "year"
+      ? formatHistoricalYear({ year: browseState.year, precision: "exact" })
+      : timeWindow
+        ? formatTimeWindow(timeWindow)
+        : "全时期";
   const activeFilterCount =
     (browseState.query.trim() ? 1 : 0) +
     (browseState.category !== "all" ? 1 : 0) +
@@ -157,7 +162,9 @@ export function BrowseControls({
         setBrowseState((current) => ({ ...current, category })),
       onRegionScopeChange: (regionScope: BrowseState["regionScope"]) =>
         setBrowseState((current) => ({ ...current, regionScope })),
-      onClear: () => setBrowseState(clearAdditionalFilters)
+      onClear: () => setBrowseState(clearAdditionalFilters),
+      onTimeWindowChange: (timeWindow: BrowseState["timeWindow"]) =>
+        setBrowseState((current) => ({ ...current, timeWindow }))
     }),
     [setBrowseState]
   );
@@ -190,6 +197,8 @@ export function BrowseControls({
         category={browseState.category}
         regionScope={browseState.regionScope}
         regions={regions}
+        timeWindow={timeWindow}
+        onTimeWindowChange={updateState.onTimeWindowChange}
         onQueryChange={updateState.onQueryChange}
         onCategoryChange={updateState.onCategoryChange}
         onRegionScopeChange={updateState.onRegionScopeChange}
@@ -246,6 +255,8 @@ export function BrowseControls({
               category={browseState.category}
               regionScope={browseState.regionScope}
               regions={regions}
+              timeWindow={timeWindow}
+              onTimeWindowChange={updateState.onTimeWindowChange}
               onQueryChange={updateState.onQueryChange}
               onCategoryChange={updateState.onCategoryChange}
               onRegionScopeChange={updateState.onRegionScopeChange}

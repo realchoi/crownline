@@ -561,6 +561,32 @@ test.describe("Crownline 浏览器冒烟", () => {
     expect(Math.abs(inputAfter!.y - categoryAfter!.y)).toBeLessThan(2);
   });
 
+  test("点击坐标轴分段放大时间窗口，刷新后恢复并可回到全时期", async ({ page }) => {
+    await page.goto("/?keep=1");
+    await waitForAppReady(page);
+
+    await page.getByRole("button", { name: "放大到 500—1000" }).click();
+    await expect.poll(() => new URL(page.url()).searchParams.get("from")).toBe("500");
+    expect(new URL(page.url()).searchParams.get("keep")).toBe("1");
+    const windowAxis = page.getByRole("group", { name: /^时段刻度：500—1000/ });
+    await expect(windowAxis).toBeVisible();
+
+    await page.reload();
+    await waitForAppReady(page);
+    await expect(windowAxis).toBeVisible();
+    await expect(page.getByRole("button", { name: "查看夏详情" })).toHaveCount(0);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > document.documentElement.clientWidth
+      )
+    ).toBe(false);
+    await expectNoSeriousA11yViolations(page);
+
+    await windowAxis.getByRole("button", { name: "返回全时期" }).click();
+    await expect.poll(() => new URL(page.url()).searchParams.has("from")).toBe(false);
+    await expect(page.getByRole("button", { name: "查看夏详情" })).toHaveCount(1);
+  });
+
   test("长时间轴滚动时统一坐标轴吸顶在工具条下方", async ({ page, isMobile }) => {
     await page.goto("/");
     await waitForAppReady(page);
@@ -570,7 +596,7 @@ test.describe("Crownline 浏览器冒烟", () => {
       ? page.locator(".mobile-explore-bar")
       : page.getByRole("region", { name: "紧凑探索工具条" });
     await expect(header).toBeVisible();
-    const axis = page.getByRole("img", { name: /^统一时间刻度：/ });
+    const axis = page.getByRole("group", { name: /^统一时间刻度：/ });
     await expect
       .poll(async () => {
         const [headerBox, axisBox] = await Promise.all([header.boundingBox(), axis.boundingBox()]);

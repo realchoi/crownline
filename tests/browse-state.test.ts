@@ -66,7 +66,8 @@ describe("浏览状态", () => {
       regionScope: { mode: "global" },
       compareEntityIds: [],
       comparisonOpen: false,
-      detailEntityId: null
+      detailEntityId: null,
+      timeWindow: null
     });
   });
 
@@ -81,7 +82,8 @@ describe("浏览状态", () => {
       regionScope: { mode: "global" },
       compareEntityIds: [],
       comparisonOpen: false,
-      detailEntityId: null
+      detailEntityId: null,
+      timeWindow: null
     });
     expect(readBrowseState("?mode=point&year=-9999", bounds).year).toBe(-2070);
     expect(readBrowseState("?mode=point&year=9999", bounds).year).toBe(1922);
@@ -146,7 +148,8 @@ describe("浏览状态", () => {
       category: "contemporary",
       regionScope: { mode: "custom", regionIds: ["region-east-asia"] },
       compareEntityIds: ["polity-cn-qin"],
-      detailEntityId: "polity-cn-qin"
+      detailEntityId: "polity-cn-qin",
+      timeWindow: null
     });
   });
 
@@ -204,7 +207,8 @@ describe("浏览状态", () => {
         regionScope: { mode: "china" },
         compareEntityIds: [],
         comparisonOpen: false,
-        detailEntityId: null
+        detailEntityId: null,
+        timeWindow: null
       },
       bounds,
       "?ref=shared"
@@ -227,7 +231,8 @@ describe("浏览状态", () => {
         regionScope: { mode: "global" },
         compareEntityIds: [],
         comparisonOpen: false,
-        detailEntityId: null
+        detailEntityId: null,
+        timeWindow: null
       },
       bounds
     );
@@ -272,7 +277,8 @@ describe("浏览状态", () => {
         regionScope: { mode: "custom", regionIds: ["region-south-asia", "region-europe"] },
         compareEntityIds: [],
         comparisonOpen: false,
-        detailEntityId: null
+        detailEntityId: null,
+        timeWindow: null
       },
       bounds
     );
@@ -291,7 +297,8 @@ describe("浏览状态", () => {
         regionScope: { mode: "china" },
         compareEntityIds: [],
         comparisonOpen: false,
-        detailEntityId: null
+        detailEntityId: null,
+        timeWindow: null
       },
       bounds
     );
@@ -313,7 +320,8 @@ describe("浏览状态", () => {
         regionScope: { mode: "global" },
         compareEntityIds: [],
         comparisonOpen: false,
-        detailEntityId: null
+        detailEntityId: null,
+        timeWindow: null
       },
       bounds
     );
@@ -369,7 +377,8 @@ describe("浏览状态", () => {
         regionScope: { mode: "global" },
         compareEntityIds: ["polity-cn-ming", "polity-cn-tang"],
         comparisonOpen: false,
-        detailEntityId: null
+        detailEntityId: null,
+        timeWindow: null
       },
       bounds
     );
@@ -388,6 +397,37 @@ describe("浏览状态", () => {
     expect(
       readBrowseState("?detail=polity-missing", bounds, data.regions, data.entities).detailEntityId
     ).toBeNull();
+  });
+
+  it("恢复并清洗时间窗口参数", () => {
+    const read = (search: string) => readBrowseState(search, bounds).timeWindow;
+    expect(read("?from=500&to=1000")).toEqual({ startYear: 500, endYear: 1000 });
+    expect(read("?from=-3000&to=-1000")).toEqual({ startYear: -2070, endYear: -1000 });
+    expect(read("")).toBeNull();
+    expect(read("?from=500")).toBeNull();
+    expect(read("?from=1000&to=500")).toBeNull();
+    expect(read("?from=0&to=500")).toBeNull();
+    expect(read("?from=abc&to=500")).toBeNull();
+    expect(read("?from=500&to=505")).toBeNull();
+    expect(read("?from=-2070&to=1922")).toBeNull();
+  });
+
+  it("只在全时期时间轴写入生效的时间窗口", () => {
+    const zoomed = readBrowseState("?from=500&to=1000", bounds);
+    expect(writeBrowseState(zoomed, bounds, "?ref=shared").toString()).toBe(
+      "ref=shared&from=500&to=1000"
+    );
+    expect(writeBrowseState({ ...zoomed, timeWindow: null }, bounds).toString()).toBe("");
+    expect(writeBrowseState({ ...zoomed, viewMode: "map" }, bounds).has("from")).toBe(false);
+    expect(writeBrowseState(selectBrowseYear(zoomed, 800), bounds).has("from")).toBe(false);
+  });
+
+  it("切换视图、年份和清除筛选时保留时间窗口", () => {
+    const zoomed = readBrowseState("?from=500&to=1000&q=%E5%94%90", bounds);
+    const window = { startYear: 500, endYear: 1000 };
+    expect(selectBrowseYear(zoomed, 800).timeWindow).toEqual(window);
+    expect(selectTimeRange(selectBrowseYear(zoomed, 800), "all").timeWindow).toEqual(window);
+    expect(clearAdditionalFilters(zoomed).timeWindow).toEqual(window);
   });
 
   it("只在打开详情时写入 detail 参数", () => {

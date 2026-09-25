@@ -1,5 +1,6 @@
 import { formatPeriods, isYearInPeriods } from "./chronology";
 import { createRegionScopeMatcher, getRegionsByIds, type RegionScope } from "./regionScope";
+import { isPeriodInTimeWindow, type TimeWindow } from "./timeWindow";
 import type { BrowseData, DisplayCategory, HistoricalEntity, TimelineSection } from "./types";
 
 /** 页面类别筛选值；`all` 表示不限制展示类别。 */
@@ -15,6 +16,8 @@ export interface EntityFilters {
   query: string;
   category: CategoryFilter;
   year?: number;
+  /** 全览时间轴的放大窗口；保留至少一段存在区间与窗口重叠的条目。 */
+  timeWindow?: TimeWindow;
   regionScope?: RegionScope;
 }
 
@@ -69,12 +72,16 @@ export function selectBrowseResults(data: BrowseData, filters: EntityFilters): B
     return matchesScope(entity) ? [{ entity, section: sectionByEntityId.get(entity.id) }] : [];
   });
   const selectedYear = filters.year;
-  const timeMatches =
-    selectedYear === undefined
-      ? regionMatches
-      : regionMatches.filter(({ entity }) =>
-          isYearInPeriods(selectedYear, entity.existencePeriods)
-        );
+  const timeWindow = filters.timeWindow;
+  const timeMatches = regionMatches.filter(({ entity }) => {
+    if (selectedYear !== undefined && !isYearInPeriods(selectedYear, entity.existencePeriods)) {
+      return false;
+    }
+    return (
+      timeWindow === undefined ||
+      entity.existencePeriods.some((period) => isPeriodInTimeWindow(period, timeWindow))
+    );
+  });
   const all = timeMatches.filter(({ entity, section }) => {
     const categoryMatches =
       filters.category === "all" || entity.displayCategory === filters.category;
@@ -90,7 +97,7 @@ export function selectBrowseResults(data: BrowseData, filters: EntityFilters): B
       ? null
       : regionPolities.length === 0
         ? "unindexed"
-        : selectedYear !== undefined && timePolities.length === 0
+        : (selectedYear !== undefined || timeWindow !== undefined) && timePolities.length === 0
           ? "limited-coverage"
           : "filtered-out";
 

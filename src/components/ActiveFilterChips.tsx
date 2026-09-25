@@ -1,6 +1,7 @@
 import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import { getRegionsByIds, type RegionScope } from "../domain/regionScope";
 import type { CategoryFilter } from "../domain/selectors";
+import { formatTimeWindow, type TimeWindow } from "../domain/timeWindow";
 import type { Region } from "../domain/types";
 
 interface ActiveFilterChipsProps {
@@ -8,6 +9,9 @@ interface ActiveFilterChipsProps {
   category: CategoryFilter;
   regionScope: RegionScope;
   regions: Region[];
+  /** 生效中的时间窗口；它属于探索上下文，只能单独移除，不随“清除搜索与类别”清空。 */
+  timeWindow: TimeWindow | null;
+  onTimeWindowChange: (window: TimeWindow | null) => void;
   onQueryChange: (query: string) => void;
   onCategoryChange: (category: CategoryFilter) => void;
   onRegionScopeChange: (scope: RegionScope) => void;
@@ -20,6 +24,8 @@ export function ActiveFilterChips({
   category,
   regionScope,
   regions,
+  timeWindow,
+  onTimeWindowChange,
   onQueryChange,
   onCategoryChange,
   onRegionScopeChange,
@@ -29,7 +35,7 @@ export function ActiveFilterChips({
   const customRegions =
     regionScope.mode === "custom" ? getRegionsByIds(regions, regionScope.regionIds) : [];
   const hasAdditionalFilters = trimmedQuery.length > 0 || category !== "all";
-  const hasActiveFilters = hasAdditionalFilters || customRegions.length > 0;
+  const hasActiveFilters = hasAdditionalFilters || customRegions.length > 0 || timeWindow !== null;
 
   if (!hasActiveFilters) return null;
 
@@ -45,6 +51,18 @@ export function ActiveFilterChips({
     <div className="active-filter-bar" aria-label="活跃筛选">
       <span className="active-filter-label">已选</span>
       <div className="active-filter-list">
+        {timeWindow && (
+          <span className="filter-chip filter-chip-window">
+            <span>时段：{formatTimeWindow(timeWindow)}</span>
+            <button
+              type="button"
+              aria-label={`移除时段：${formatTimeWindow(timeWindow)}`}
+              onClick={() => onTimeWindowChange(null)}
+            >
+              ×
+            </button>
+          </span>
+        )}
         {trimmedQuery && (
           <span className="filter-chip">
             <span>搜索：{trimmedQuery}</span>

@@ -3,6 +3,7 @@ import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import type { OverviewTimelineGroup } from "../domain/overviewTimeline";
 import { getRegionNames } from "../domain/regionScope";
 import { buildTimelineAxis } from "../domain/timelineAxis";
+import { formatTimeWindow, type TimeWindow } from "../domain/timeWindow";
 import type { Region } from "../domain/types";
 import { ComparisonToggle } from "./ComparisonToggle";
 import { TimelineAxisTicks } from "./TimelineAxisTicks";
@@ -15,6 +16,8 @@ interface TimelineStageProps {
   scaleRange?: OverviewTimelineGroup["range"];
   showAxis?: boolean;
   comparisonEntityIds: string[];
+  /** 提供时，阶段坐标轴的刻度分段可点击放大为时间窗口。 */
+  onZoom?: (window: TimeWindow) => void;
   onToggleComparison: (entityId: string) => void;
   onSelect: (entityId: string) => void;
 }
@@ -29,6 +32,7 @@ export function TimelineStage({
   scaleRange = group.range,
   showAxis = true,
   comparisonEntityIds,
+  onZoom,
   onToggleComparison,
   onSelect
 }: TimelineStageProps) {
@@ -52,9 +56,13 @@ export function TimelineStage({
       </div>
 
       {showAxis && (
-        <div className="axis-row" aria-hidden="true">
+        <div
+          className="axis-row"
+          role="group"
+          aria-label={`阶段时间刻度：${formatTimeWindow(scaleRange)}，每${axis.step}年一格`}
+        >
           <span />
-          <TimelineAxisTicks axis={axis} />
+          <TimelineAxisTicks axis={axis} range={scaleRange} {...(onZoom ? { onZoom } : {})} />
         </div>
       )}
 
@@ -97,9 +105,12 @@ export function TimelineStage({
             </div>
             <div className="track">
               {entity.existencePeriods.map((period) => {
-                // 区间先裁剪到阶段边界，再换算为轨道上的百分比位置。
-                const clippedStart = Math.max(toOrdinal(period.start.year), startOrdinal);
-                const clippedEnd = Math.min(toOrdinal(period.end.year), endOrdinal);
+                // 区间先裁剪到比例尺边界，再换算为轨道上的百分比位置；完全在比例尺外的区间不绘制。
+                const periodStart = toOrdinal(period.start.year);
+                const periodEnd = toOrdinal(period.end.year);
+                if (periodEnd < startOrdinal || periodStart > endOrdinal) return null;
+                const clippedStart = Math.max(periodStart, startOrdinal);
+                const clippedEnd = Math.min(periodEnd, endOrdinal);
                 const left = ((clippedStart - startOrdinal) / span) * 100;
                 const rawWidth = ((clippedEnd - clippedStart) / span) * 100;
                 // 时间条只表达真实比例；详情入口由左侧名称提供足够大的点击区域。
@@ -108,7 +119,7 @@ export function TimelineStage({
                 const categoryLabel = DISPLAY_CATEGORY_NAMES[entity.displayCategory];
                 return (
                   <button
-                    className={`timeline-bar bar-${entity.displayCategory}`}
+                    className={`timeline-bar bar-${entity.displayCategory}${periodStart < startOrdinal ? " is-clipped-start" : ""}${periodEnd > endOrdinal ? " is-clipped-end" : ""}`}
                     key={`${period.start.year}-${period.end.year}`}
                     type="button"
                     style={{ left: `${Math.max(0, left)}%`, width: `${width}%` }}

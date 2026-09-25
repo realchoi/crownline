@@ -231,7 +231,7 @@ describe("Crownline 浏览", () => {
     renderApp();
 
     expect(
-      screen.getAllByRole("img", { name: "统一时间刻度：前322—1922，每500年一格" })
+      screen.getAllByRole("group", { name: "统一时间刻度：前322—1922，每500年一格" })
     ).toHaveLength(1);
 
     const cholaBar = screen.getByRole("button", { name: /^朱罗帝国，/ });

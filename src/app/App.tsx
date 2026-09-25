@@ -4,12 +4,13 @@ import { DetailDialog } from "../components/DetailDialog";
 import { ComparisonDialog } from "../components/ComparisonDialog";
 import { useDialogReturnFocus } from "./useDialogReturnFocus";
 import { ComparisonTray } from "../components/ComparisonTray";
-import { getHistoricalYearBounds } from "../domain/browseState";
+import { getEffectiveTimeWindow, getHistoricalYearBounds } from "../domain/browseState";
 import { selectBoundarySnapshots, type BoundarySelection } from "../domain/boundarySnapshots";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
 import { selectMapSnapshots } from "../domain/mapSnapshots";
 import { createRegionScopeMatcher } from "../domain/regionScope";
 import { selectBrowseResults } from "../domain/selectors";
+import type { TimeWindow } from "../domain/timeWindow";
 import type { CrownlineIndex, TimelineSection } from "../domain/types";
 import type { CrownlineDetailLoader } from "../data/loadCrownlineDetail";
 import type { CrownlineGeographyLoader } from "../data/loadCrownlineGeography";
@@ -62,13 +63,22 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
   useDialogReturnFocus(Boolean(browseState.detailEntityId || browseState.comparisonOpen), mainRef);
   const { query, category, regionScope } = browseState;
   const selectedYear = browseState.timeRange === "year" ? browseState.year : undefined;
+  const timeWindow = getEffectiveTimeWindow(browseState);
+  const windowStart = timeWindow?.startYear;
+  const windowEnd = timeWindow?.endYear;
   // 只随筛选相关状态重算；打开详情或调整对比不触发。
   const results = useMemo(() => {
     const filters = { query, category, regionScope };
-    return selectedYear === undefined
-      ? selectBrowseResults(data, filters)
-      : selectBrowseResults(data, { ...filters, year: selectedYear });
-  }, [category, data, query, regionScope, selectedYear]);
+    if (selectedYear !== undefined)
+      return selectBrowseResults(data, { ...filters, year: selectedYear });
+    if (windowStart !== undefined && windowEnd !== undefined) {
+      return selectBrowseResults(data, {
+        ...filters,
+        timeWindow: { startYear: windowStart, endYear: windowEnd }
+      });
+    }
+    return selectBrowseResults(data, filters);
+  }, [category, data, query, regionScope, selectedYear, windowStart, windowEnd]);
   const entityById = useMemo(() => {
     return new Map(data.entities.map((entity) => [entity.id, entity]));
   }, [data.entities]);
@@ -125,6 +135,13 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
         if (current.compareEntityIds.length >= 2) return current;
         return { ...current, compareEntityIds: [...current.compareEntityIds, entityId] };
       });
+    },
+    [setBrowseState]
+  );
+
+  const setTimeWindow = useCallback(
+    (nextWindow: TimeWindow | null) => {
+      setBrowseState((current) => ({ ...current, timeWindow: nextWindow }));
     },
     [setBrowseState]
   );
@@ -206,6 +223,8 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
             boundaryState={boundaryState}
             onRetryGeography={retryGeography}
             onRetryBoundaries={retryBoundaries}
+            yearBounds={yearBounds}
+            onTimeWindowChange={setTimeWindow}
             onSelect={openDetail}
             onToggleComparison={toggleComparison}
           />

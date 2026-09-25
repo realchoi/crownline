@@ -1,6 +1,7 @@
 import type { RegionScope } from "./regionScope";
 import type { BrowseData, DisplayCategory, HistoricalEntity, Region } from "./types";
 import type { CategoryFilter } from "./selectors";
+import { sanitizeTimeWindow, type TimeWindow } from "./timeWindow";
 
 /** 用户选择的时间范围；URL 继续使用旧的 mode=point 契约。 */
 export type TimeRange = "all" | "year";
@@ -24,6 +25,13 @@ export interface BrowseState {
   compareEntityIds: string[];
   detailEntityId: string | null;
   comparisonOpen: boolean;
+  /** 全时期时间轴的放大窗口；null 表示完整范围。切换视图或年份时保留，仅在全时期时间轴生效。 */
+  timeWindow: TimeWindow | null;
+}
+
+/** 时间窗口只作用于全时期时间轴；地图与指定年份视图保留但不应用。 */
+export function getEffectiveTimeWindow(state: BrowseState): TimeWindow | null {
+  return state.viewMode === "timeline" && state.timeRange === "all" ? state.timeWindow : null;
 }
 
 /** 选择年份始终进入指定年份状态；其他浏览维度保持不变。 */
@@ -113,6 +121,12 @@ export function readBrowseState(
     .filter((id) => polityIds.has(id))
     .slice(0, 2);
   const entityIds = new Set(entities.map(({ id }) => id));
+  const rawFrom = params.get("from");
+  const rawTo = params.get("to");
+  const timeWindow =
+    rawFrom !== null && rawTo !== null && rawFrom.trim() && rawTo.trim()
+      ? sanitizeTimeWindow(Number(rawFrom), Number(rawTo), bounds)
+      : null;
   const rawDetail = params.get("detail");
   const detailEntityId = rawDetail && entityIds.has(rawDetail) ? rawDetail : null;
 
@@ -129,7 +143,8 @@ export function readBrowseState(
     compareEntityIds,
     detailEntityId,
     comparisonOpen:
-      params.get("comparison") === "open" && compareEntityIds.length > 0 && !detailEntityId
+      params.get("comparison") === "open" && compareEntityIds.length > 0 && !detailEntityId,
+    timeWindow
   };
 }
 
@@ -151,7 +166,9 @@ export function writeBrowseState(
     "compare",
     "detail",
     "layer",
-    "comparison"
+    "comparison",
+    "from",
+    "to"
   ].forEach((name) => params.delete(name));
 
   if (state.viewMode === "map") params.set("view", "map");
@@ -161,6 +178,11 @@ export function writeBrowseState(
   if (state.timeRange === "year") params.set("mode", "point");
   if (state.timeRange === "year" && state.year !== bounds.max) {
     params.set("year", String(state.year));
+  }
+  const timeWindow = getEffectiveTimeWindow(state);
+  if (timeWindow) {
+    params.set("from", String(timeWindow.startYear));
+    params.set("to", String(timeWindow.endYear));
   }
   if (state.query.trim()) params.set("q", state.query.trim());
   if (state.category !== "all") params.set("type", state.category);

@@ -1,9 +1,10 @@
-import type { BrowseState } from "../domain/browseState";
+import { getEffectiveTimeWindow, type BrowseState } from "../domain/browseState";
 import type { BoundarySelection } from "../domain/boundarySnapshots";
 import { getBrowseResultsSummary } from "../domain/browseResultsSummary";
 import { formatHistoricalYear } from "../domain/chronology";
 import { getRegionScopeLabel } from "../domain/regionScope";
 import type { MapSelection } from "../domain/mapSnapshots";
+import { formatTimeWindow } from "../domain/timeWindow";
 import type { Region } from "../domain/types";
 
 interface BrowseResultsSummaryProps {
@@ -37,6 +38,13 @@ export function BrowseResultsSummary({
     mapSelection,
     boundarySelection
   });
+  const timeWindow = getEffectiveTimeWindow(browseState);
+  const timeLabel =
+    browseState.timeRange === "year"
+      ? formatHistoricalYear({ year: browseState.year, precision: "exact" })
+      : timeWindow
+        ? `时段 ${formatTimeWindow(timeWindow)}`
+        : "全时期";
   return (
     <div
       className={`results-line${browseState.viewMode === "timeline" ? " results-timeline" : ""}`}
@@ -44,10 +52,7 @@ export function BrowseResultsSummary({
       aria-atomic="true"
     >
       <span className="results-context">
-        {getRegionScopeLabel(browseState.regionScope, regions)} ·{" "}
-        {browseState.timeRange === "all"
-          ? "全时期"
-          : formatHistoricalYear({ year: browseState.year, precision: "exact" })}
+        {getRegionScopeLabel(browseState.regionScope, regions)} · {timeLabel}
       </span>
       <span>{summary.primary}</span>
       <span className="results-hint">{summary.secondary}</span>
