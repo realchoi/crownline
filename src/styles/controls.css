@@ -10,7 +10,7 @@ main {
 
 .view-mode-control .field-label {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
 }
 
 .controls-panel {
@@ -51,7 +51,7 @@ main {
   background: transparent;
   color: var(--muted);
   padding: 4px 12px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-weight: 750;
 }
 
@@ -71,7 +71,7 @@ main {
 
 .year-current .field-label {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
 }
 
 .year-current-value {
@@ -88,7 +88,7 @@ main {
   color: var(--text);
   padding: 3px 10px;
   font-family: var(--font-display);
-  font-size: 0.92rem;
+  font-size: var(--text-lg);
   letter-spacing: 0.04em;
 }
 
@@ -137,7 +137,7 @@ main {
   grid-template-columns: auto 1fr auto;
   gap: 12px;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
   font-variant-numeric: tabular-nums;
 }
 
@@ -189,7 +189,7 @@ main {
   background: transparent;
   color: var(--muted);
   padding: 4px 12px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-weight: 750;
 }
 
@@ -205,7 +205,7 @@ main {
   min-width: 0;
   margin: 0;
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
   line-height: 1.5;
 }
 
@@ -232,7 +232,7 @@ main {
   background: transparent;
   color: var(--muted);
   padding: 4px 12px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-weight: 750;
 }
 
@@ -245,7 +245,7 @@ main {
 .region-coverage-note {
   margin: 0;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
   line-height: 1.5;
 }
 
@@ -259,7 +259,7 @@ main {
 .region-options legend {
   padding: 0;
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
 }
 
@@ -279,7 +279,7 @@ main {
   border-radius: 999px;
   background: var(--surface-soft);
   padding: 5px 10px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
 }
 
 .region-option-list label:has(input:checked) {
@@ -293,7 +293,7 @@ main {
 
 .region-option-list small {
   color: var(--muted);
-  font-size: 0.66rem;
+  font-size: var(--text-2xs);
 }
 
 .controls-grid {
@@ -308,7 +308,7 @@ main {
   display: block;
   margin-bottom: 4px;
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
   font-weight: 650;
 }
 
@@ -359,7 +359,7 @@ a:focus-visible {
   gap: 6px 18px;
   margin: 0;
   color: var(--muted);
-  font-size: 0.73rem;
+  font-size: var(--text-2xs);
 }
 
 .legend-item {
@@ -403,7 +403,7 @@ a:focus-visible {
   background: transparent;
   color: var(--period);
   padding: 2px 8px;
-  font-size: 0.64rem;
+  font-size: var(--text-2xs);
   font-weight: 750;
   letter-spacing: 0.04em;
   line-height: 1;
@@ -525,7 +525,7 @@ a:focus-visible {
   background: var(--surface-soft);
   color: var(--text);
   padding: 6px 12px;
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   font-weight: 700;
   white-space: nowrap;
 }
@@ -542,7 +542,7 @@ a:focus-visible {
   border-radius: 999px;
   background: var(--accent);
   color: var(--surface-strong);
-  font-size: 0.68rem;
+  font-size: var(--text-2xs);
 }
 
 .console-more-chevron {
@@ -583,7 +583,7 @@ a:focus-visible {
 }
 
 .console-more .year-jump-label {
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
   font-weight: 650;
 }
 
@@ -598,7 +598,7 @@ a:focus-visible {
 .console-more .year-jump-button {
   height: 40px;
   padding-inline: 10px;
-  font-size: 0.875rem;
+  font-size: var(--text-md);
 }
 
 .console-more .year-era-select {
@@ -639,13 +639,13 @@ a:focus-visible {
   width: auto;
   min-width: 10rem;
   height: 40px;
-  font-size: 0.875rem;
+  font-size: var(--text-md);
 }
 
 .console-more-filters .button {
   height: 40px;
   padding-block: 0;
-  font-size: 0.875rem;
+  font-size: var(--text-md);
 }
 
 /* 控制台与结果共享页面流，滚动工具条不占首屏空间。 */
@@ -680,7 +680,7 @@ a:focus-visible {
 
 .console-kicker {
   color: var(--accent);
-  font-size: 0.6rem;
+  font-size: var(--text-2xs);
   font-weight: 750;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -689,7 +689,7 @@ a:focus-visible {
 .controls-panel-heading h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.02rem;
+  font-size: var(--text-base);
   letter-spacing: 0.04em;
 }
 
@@ -705,7 +705,7 @@ a:focus-visible {
 .active-filter-label {
   flex: none;
   color: var(--muted);
-  font-size: 0.66rem;
+  font-size: var(--text-2xs);
   font-weight: 750;
   letter-spacing: 0.08em;
 }
@@ -726,7 +726,7 @@ a:focus-visible {
   border-radius: 2px;
   background: var(--surface-strong);
   color: var(--text);
-  font-size: 0.7rem;
+  font-size: var(--text-2xs);
   line-height: 1;
 }
 
@@ -747,7 +747,7 @@ a:focus-visible {
   border-left: 1px solid var(--border);
   background: transparent;
   color: var(--accent);
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .filter-chip-region {
@@ -766,7 +766,7 @@ a:focus-visible {
   background: transparent;
   color: var(--accent);
   padding: 3px 1px;
-  font-size: 0.68rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
 }
 
@@ -822,7 +822,7 @@ a:focus-visible {
   border-left: 1px solid var(--border);
   padding: 0 14px;
   font-family: var(--font-display);
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   font-weight: 700;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -836,7 +836,7 @@ a:focus-visible {
 .console-status-items small {
   color: var(--muted);
   font-family: var(--font-body);
-  font-size: 0.58rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: 0.08em;
 }
@@ -850,7 +850,7 @@ a:focus-visible {
   background: var(--accent);
   color: var(--surface-strong);
   padding: 7px 14px;
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
   font-weight: 750;
 }
 
@@ -875,7 +875,7 @@ a:focus-visible {
   color: var(--muted);
   padding: 1px 2px;
   cursor: pointer;
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
   list-style: none;
 }
 
@@ -887,7 +887,7 @@ a:focus-visible {
   margin-left: auto;
   color: var(--accent);
   content: "＋";
-  font-size: 0.9rem;
+  font-size: var(--text-lg);
 }
 
 .scope-note[open] summary::after {
@@ -1001,7 +1001,7 @@ body.filter-sheet-open {
   border-top: 1px dashed var(--border);
   padding: 10px 31px 12px;
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
   line-height: 1.65;
 }
 
@@ -1011,7 +1011,7 @@ body.filter-sheet-open {
   gap: 16px;
   min-width: 0;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   align-items: baseline;
   margin: 0;
   padding: 12px 0;
@@ -1027,7 +1027,7 @@ body.filter-sheet-open {
 
 .year-jump-label {
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
 }
 
 .year-jump-controls {
@@ -1046,7 +1046,7 @@ body.filter-sheet-open {
   background: var(--surface-strong);
   color: var(--text);
   padding: 4px 8px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-variant-numeric: tabular-nums;
 }
 
@@ -1066,5 +1066,5 @@ body.filter-sheet-open {
   grid-column: 1 / -1;
   margin: 0;
   color: var(--accent);
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
 }

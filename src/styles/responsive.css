@@ -61,7 +61,7 @@
 
   .mobile-explore-heading .mode-switch button {
     min-height: 44px;
-    font-size: 0.875rem;
+    font-size: var(--text-md);
   }
 
   .open-filter-button {
@@ -71,7 +71,7 @@
     background: var(--surface-strong);
     border-color: var(--border);
     color: var(--text);
-    font-size: 0.875rem;
+    font-size: var(--text-md);
   }
 
   .mobile-explore-bar .active-filter-bar {
@@ -249,13 +249,13 @@
     align-items: flex-start;
     gap: 3px;
     padding-block: 10px;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
   }
 
   .results-context {
     display: block;
     color: var(--text);
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     font-weight: 650;
     overflow-wrap: anywhere;
   }
@@ -266,12 +266,12 @@
 
   .scope-note summary {
     min-height: 44px;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
   }
 
   .scope-note p {
     padding-inline: 0;
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
   }
   .hero {
     display: block;
@@ -288,13 +288,13 @@
 
   .site-title-sub {
     margin-top: 8px;
-    font-size: 0.875rem;
+    font-size: var(--text-md);
     letter-spacing: 0.06em;
   }
 
   .hero-stats {
     gap: 4px 10px;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
   }
 
   .hero-stats span + span {
@@ -468,7 +468,7 @@
   }
 
   .stage-range {
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
   }
 
   .timeline-shared-axis,
@@ -500,7 +500,7 @@
   }
 
   .axis-labels {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
   }
 
   /* 窄轨道隔一个显示刻度文字，刻度线与网格线全部保留。 */
@@ -538,7 +538,7 @@
     background: var(--surface-strong);
     color: var(--accent);
     padding: 8px 12px;
-    font-size: 0.875rem;
+    font-size: var(--text-md);
     font-weight: 700;
   }
 
@@ -560,14 +560,14 @@
 
   .row-name {
     min-height: 44px;
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1.3;
   }
 
   /* 多段或带说明的年代较长时在右侧换行，不挤压名称。 */
   .row-years {
     max-width: 11rem;
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     line-height: 1.4;
     text-align: right;
   }
@@ -575,7 +575,7 @@
   .row-regions {
     margin-top: -6px;
     padding-bottom: 2px;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
   }
 
   .row-label .comparison-toggle {

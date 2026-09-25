@@ -88,14 +88,14 @@
   background: transparent;
   color: var(--muted);
   padding: 3px 10px;
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
   font-weight: 750;
 }
 
 .map-zoom-controls button {
   min-width: 34px;
   color: var(--accent);
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .map-viewport-presets button[aria-pressed="true"] {
@@ -117,7 +117,7 @@
 .map-viewport-status {
   margin: 0 0 8px;
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: var(--text-2xs);
 }
 
 .historical-map-land {
@@ -220,7 +220,7 @@
 
 .map-cluster-trigger {
   border-radius: 9px;
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
   font-weight: 800;
   scroll-margin-top: 330px;
 }
@@ -237,7 +237,7 @@
   margin: 12px 4px 0;
   padding: 0;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
   list-style: none;
 }
 
@@ -252,7 +252,7 @@
   gap: 7px;
   margin: 0 4px;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
 }
 
 .map-boundary-legend-swatch {
@@ -304,7 +304,7 @@
 
 .map-legend-cluster {
   border-radius: 6px;
-  font-size: 0.58rem;
+  font-size: var(--text-2xs);
   font-weight: 800;
 }
 
@@ -341,7 +341,7 @@
 .map-cluster-panel-heading p:last-child {
   margin: 3px 0 0;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
 }
 
 .map-cluster-panel-close {
@@ -352,7 +352,7 @@
   background: var(--surface-soft);
   color: var(--text);
   padding: 5px 13px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-weight: 750;
 }
 
@@ -404,7 +404,7 @@
   border-radius: 9px;
   background: var(--accent);
   color: var(--surface-strong);
-  font-size: 0.7rem;
+  font-size: var(--text-2xs);
   font-weight: 800;
   font-variant-numeric: tabular-nums;
 }
@@ -417,7 +417,7 @@
 
 .map-cluster-panel-copy strong {
   font-family: var(--font-display);
-  font-size: 1.02rem;
+  font-size: var(--text-base);
 }
 
 .map-cluster-panel-copy .map-point-local-name {
@@ -432,7 +432,7 @@
 
 .map-cluster-panel-place {
   color: var(--accent);
-  font-size: 0.85rem;
+  font-size: var(--text-md);
 }
 
 .map-cluster-panel-copy small {
@@ -443,7 +443,7 @@
 .map-cluster-panel-action {
   align-self: center;
   color: var(--accent);
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
   font-weight: 750;
   white-space: nowrap;
 }
@@ -451,7 +451,7 @@
 .map-boundary-note {
   margin: 10px 4px 0;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
 }
 
 .map-results,
@@ -563,7 +563,7 @@
   border-radius: 999px;
   color: var(--accent);
   padding: 1px 7px;
-  font-size: 0.68rem;
+  font-size: var(--text-2xs);
   font-weight: 750;
   white-space: nowrap;
 }
@@ -607,7 +607,7 @@
 .map-missing p {
   margin: 0 0 10px;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: var(--text-md);
 }
 .map-missing-list {
   display: flex;
@@ -618,7 +618,7 @@
   border-radius: 999px;
   background: var(--surface-soft);
   padding: 3px 9px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
 }
 
 .map-load-panel {

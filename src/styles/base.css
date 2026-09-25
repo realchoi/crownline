@@ -68,6 +68,14 @@
   --parallel-on-soft: #6d4a18;
   /* 时间轴刻度网格线；引用 --muted，深色模式随之切换。 */
   --track-grid: color-mix(in srgb, var(--muted) 26%, transparent);
+  /* 字号阶梯（1rem 及以下）；--text-2xs 是全站最小字号，保证中文小字可读。
+     标题等展示字号仍在各组件中按需设置。 */
+  --text-2xs: 0.72rem;
+  --text-xs: 0.76rem;
+  --text-sm: 0.82rem;
+  --text-md: 0.86rem;
+  --text-lg: 0.92rem;
+  --text-base: 1rem;
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 10px;

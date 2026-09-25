@@ -51,7 +51,7 @@ body:has(dialog[open]) {
   background: var(--accent-soft);
   color: var(--accent);
   padding: 4px 10px;
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
   font-weight: 750;
 }
 
@@ -107,7 +107,7 @@ body:has(dialog[open]) {
 
 .map-cluster-panel li button .map-point-local-name {
   grid-column: 1 / -1;
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
 }
 
 .map-result-local-name,
@@ -129,12 +129,12 @@ body:has(dialog[open]) {
   border-left: 3px solid var(--period);
   color: var(--muted);
   padding-left: 12px;
-  font-size: 0.9rem;
+  font-size: var(--text-lg);
 }
 
 .confidence-note {
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: var(--text-md);
 }
 
 .icon-button {
@@ -189,7 +189,7 @@ body:has(dialog[open]) {
 .detail-card dt {
   display: block;
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: var(--text-2xs);
 }
 
 .detail-card dd {
@@ -211,7 +211,7 @@ body:has(dialog[open]) {
 .related-polities-hint {
   margin: 0;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
 }
 
 .related-polities-list,
@@ -243,7 +243,7 @@ body:has(dialog[open]) {
 .related-polity-records {
   margin-top: 6px;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   font-variant-numeric: tabular-nums;
 }
 
@@ -264,7 +264,7 @@ body:has(dialog[open]) {
   background: transparent;
   color: var(--accent);
   padding: 8px 12px;
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   font-weight: 700;
 }
 
@@ -332,7 +332,7 @@ body:has(dialog[open]) {
 .ruler-overview-heading p {
   margin: 0;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: var(--text-md);
 }
 
 .ruler-overview-total {
@@ -366,7 +366,7 @@ body:has(dialog[open]) {
   background: transparent;
   color: var(--muted);
   padding: 5px 7px 5px 11px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-weight: 700;
 }
 
@@ -380,7 +380,7 @@ body:has(dialog[open]) {
   background: var(--surface-soft);
   color: var(--text);
   padding-inline: 5px;
-  font-size: 0.7rem;
+  font-size: var(--text-2xs);
   font-variant-numeric: tabular-nums;
 }
 
@@ -460,7 +460,7 @@ body:has(dialog[open]) {
 
 .sequence-period {
   color: var(--accent);
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-weight: 750;
   font-variant-numeric: tabular-nums;
 }
@@ -468,7 +468,7 @@ body:has(dialog[open]) {
 .sequence-name {
   min-width: 0;
   font-family: var(--font-display);
-  font-size: 0.98rem;
+  font-size: var(--text-base);
 }
 
 .sequence-disclosure {
@@ -488,7 +488,7 @@ body:has(dialog[open]) {
   margin: 0 8px;
   padding: 2px 32px 17px max(8px, calc(36% + 3px));
   color: var(--text);
-  font-size: 0.86rem;
+  font-size: var(--text-md);
 }
 
 .sequence-detail p {
@@ -503,7 +503,7 @@ body:has(dialog[open]) {
   border-top: 1px dashed var(--border);
   padding-top: 10px;
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
 }
 
 .sequence-sources > span {
@@ -529,7 +529,7 @@ body:has(dialog[open]) {
 .ruler-overview-hint {
   margin: 12px 0 0 22px;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
 }
 
 .ruler-status,
@@ -538,7 +538,7 @@ body:has(dialog[open]) {
   flex: none;
   border-radius: 999px;
   padding: 3px 9px;
-  font-size: 0.7rem;
+  font-size: var(--text-2xs);
   font-weight: 750;
 }
 
@@ -569,7 +569,7 @@ body:has(dialog[open]) {
 
 .ruler-card p {
   margin: 8px 0 0;
-  font-size: 0.88rem;
+  font-size: var(--text-md);
 }
 
 .role-badge {
@@ -664,7 +664,7 @@ body:has(dialog[open]) {
 }
 
 .ruler-coverage-heading strong {
-  font-size: 0.84rem;
+  font-size: var(--text-md);
 }
 
 .ruler-coverage-heading span,
@@ -672,7 +672,7 @@ body:has(dialog[open]) {
 .ruler-coverage-caveat,
 .ruler-coverage-gaps {
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
 }
 
 .ruler-coverage progress {
