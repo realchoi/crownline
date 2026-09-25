@@ -230,6 +230,28 @@
   transform: scale(1.08);
 }
 
+/* 结果列表悬停或聚焦某行时，地图上对应标记或所在聚合加一圈光环并放大。 */
+.map-marker.is-highlighted,
+.map-cluster-trigger.is-highlighted {
+  background: var(--accent-hover);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--accent) 36%, transparent),
+    var(--shadow-marker-active);
+}
+
+.map-marker.is-highlighted {
+  z-index: 10;
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+.map-cluster-trigger.is-highlighted {
+  transform: scale(1.18);
+}
+
+.map-cluster:has(.is-highlighted) {
+  z-index: 10;
+}
+
 .map-marker-legend {
   display: flex;
   flex-wrap: wrap;

@@ -21,6 +21,8 @@ interface MapResultListProps {
   /** 传入地图当前取景时，点位按视野内外分组；全部在视野内时不分组。 */
   viewport?: MapViewport;
   ref?: Ref<HTMLElement>;
+  /** 悬停或聚焦某个点位行时通知地图高亮；离开该行时传 null。 */
+  onHighlightPoint?: (pointId: string | null) => void;
   onSelect: (entityId: string) => void;
   onToggleComparison: (entityId: string) => void;
 }
@@ -40,6 +42,7 @@ export function MapResultList({
   comparisonEntityIds,
   viewport,
   ref,
+  onHighlightPoint,
   onSelect,
   onToggleComparison
 }: MapResultListProps) {
@@ -55,6 +58,12 @@ export function MapResultList({
           <li
             className={`map-result-item${selected ? " is-comparison-selected" : ""}`}
             key={point.snapshot.id}
+            onMouseEnter={() => onHighlightPoint?.(point.snapshot.id)}
+            onMouseLeave={() => onHighlightPoint?.(null)}
+            onFocus={() => onHighlightPoint?.(point.snapshot.id)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget)) onHighlightPoint?.(null);
+            }}
           >
             <button
               className="map-result-detail"

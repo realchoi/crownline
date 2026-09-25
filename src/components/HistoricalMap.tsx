@@ -34,6 +34,8 @@ interface HistoricalMapProps {
   /** 取景由外层持有，结果列表据此把视野内外分组。 */
   view: MapViewState;
   onViewChange: (view: MapViewState) => void;
+  /** 结果列表当前指向的点位；地图高亮该标记或包含它的聚合。 */
+  highlightedPointId?: string | null;
   /** 聚合半径，单位为当前视野宽度的百分比；缺省时按地图实际宽度保证标记不重叠。 */
   clusterThresholdPercent?: number;
   onSelect: (entityId: string) => void;
@@ -56,6 +58,7 @@ export function HistoricalMap({
   selectedEntityId = null,
   view,
   onViewChange,
+  highlightedPointId = null,
   clusterThresholdPercent,
   onSelect
 }: HistoricalMapProps) {
@@ -183,7 +186,9 @@ export function HistoricalMap({
           if (cluster.points.length === 1) {
             return (
               <button
-                className={`map-marker map-marker-${firstPoint.snapshot.role}`}
+                className={`map-marker map-marker-${firstPoint.snapshot.role}${
+                  firstPoint.snapshot.id === highlightedPointId ? " is-highlighted" : ""
+                }`}
                 key={cluster.id}
                 type="button"
                 style={style}
@@ -196,10 +201,13 @@ export function HistoricalMap({
           }
 
           const expanded = expandedClusterId === cluster.id;
+          const highlighted = cluster.points.some(
+            ({ snapshot }) => snapshot.id === highlightedPointId
+          );
           return (
             <div className="map-cluster" key={cluster.id} style={style}>
               <button
-                className="map-cluster-trigger"
+                className={`map-cluster-trigger${highlighted ? " is-highlighted" : ""}`}
                 type="button"
                 aria-label={`此处有 ${cluster.points.length} 个历史点位`}
                 aria-expanded={expanded}

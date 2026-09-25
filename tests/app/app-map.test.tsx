@@ -424,4 +424,20 @@ describe("Crownline 地图", () => {
     await user.click(within(map).getByRole("button", { name: "全球" }));
     expect(within(list).queryByRole("heading", { name: /^视野/ })).not.toBeInTheDocument();
   });
+
+  it("悬停结果列表中的点位行时地图高亮对应标记", async () => {
+    window.history.replaceState(null, "", "/?view=map&year=1368");
+    const user = setupUser();
+    renderApp();
+
+    const map = await screen.findByRole("region", { name: "当前年份历史政权示意地图" });
+    const list = screen.getByRole("region", { name: "地图结果列表" });
+    const row = await within(list).findByRole("button", { name: /^明，/ });
+    expect(map.querySelectorAll(".is-highlighted")).toHaveLength(0);
+
+    await user.hover(row);
+    expect(map.querySelectorAll(".is-highlighted")).toHaveLength(1);
+    await user.unhover(row);
+    expect(map.querySelectorAll(".is-highlighted")).toHaveLength(0);
+  });
 });

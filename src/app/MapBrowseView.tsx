@@ -58,6 +58,8 @@ export function MapBrowseView({
   const isOverview = browseState.timeRange === "all";
   const [mapView, setMapView] = useState<MapViewState>(GLOBAL_MAP_VIEW_STATE);
   const resultListRef = useRef<HTMLElement>(null);
+  // 结果列表中悬停或聚焦的点位，在地图上高亮其标记或所在聚合。
+  const [highlightedPointId, setHighlightedPointId] = useState<string | null>(null);
   const changeMapView = (view: MapViewState) => {
     setMapView(view);
     // 换取景后视野内分组排在最前，列表回到顶部才能看到它。
@@ -113,6 +115,7 @@ export function MapBrowseView({
             selectedEntityId={browseState.detailEntityId}
             view={mapView}
             onViewChange={changeMapView}
+            highlightedPointId={highlightedPointId}
             onSelect={onSelect}
           />
           <MapResultList
@@ -125,6 +128,7 @@ export function MapBrowseView({
             comparisonEntityIds={browseState.compareEntityIds}
             viewport={mapView.viewport}
             ref={resultListRef}
+            onHighlightPoint={setHighlightedPointId}
             onSelect={onSelect}
             onToggleComparison={onToggleComparison}
           />

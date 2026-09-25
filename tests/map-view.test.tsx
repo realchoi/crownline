@@ -251,6 +251,75 @@ describe("历史地图组件", () => {
     expect(screen.queryByRole("heading", { level: 3 })).not.toBeInTheDocument();
   });
 
+  it("悬停或聚焦结果行时通知地图高亮该点位，离开整行后清除", async () => {
+    const user = setupUser();
+    const onHighlightPoint = vi.fn();
+    render(
+      <>
+        <MapResultList
+          points={[
+            point("polity-cn-ming", "geo-ming-beijing"),
+            point("polity-cn-northern-wei", "geo-northern-wei-luoyang")
+          ]}
+          missingEntities={[]}
+          comparisonEntityIds={[]}
+          onHighlightPoint={onHighlightPoint}
+          onSelect={vi.fn()}
+          onToggleComparison={vi.fn()}
+        />
+        <button type="button">列表之后</button>
+      </>
+    );
+
+    const beijing = screen.getByRole("button", { name: "明，北京，都城" });
+    await user.hover(beijing);
+    expect(onHighlightPoint).toHaveBeenLastCalledWith("geo-ming-beijing");
+    await user.unhover(beijing);
+    expect(onHighlightPoint).toHaveBeenLastCalledWith(null);
+
+    onHighlightPoint.mockClear();
+    beijing.focus();
+    expect(onHighlightPoint).toHaveBeenLastCalledWith("geo-ming-beijing");
+    // 在同一行内从详情按钮移到对比按钮，高亮保持不变。
+    await user.tab();
+    expect(screen.getByRole("button", { name: "将明加入对比" })).toHaveFocus();
+    expect(onHighlightPoint).not.toHaveBeenCalledWith(null);
+    await user.tab();
+    expect(onHighlightPoint).toHaveBeenLastCalledWith("geo-northern-wei-luoyang");
+    screen.getByRole("button", { name: "列表之后" }).focus();
+    expect(onHighlightPoint).toHaveBeenLastCalledWith(null);
+  });
+
+  it("按结果列表指向高亮单点标记或包含该点位的聚合", () => {
+    const beijing = point("polity-cn-ming", "geo-ming-beijing");
+    const nanjing = point("polity-cn-ming", "geo-ming-nanjing");
+    const luoyang = point("polity-cn-northern-wei", "geo-northern-wei-luoyang");
+    const view = render(
+      <StatefulMap
+        points={[beijing, nanjing, luoyang]}
+        clusterThresholdPercent={5}
+        highlightedPointId="geo-northern-wei-luoyang"
+        onSelect={vi.fn()}
+      />
+    );
+
+    const cluster = screen.getByRole("button", { name: "此处有 3 个历史点位" });
+    expect(cluster).toHaveClass("is-highlighted");
+
+    view.rerender(
+      <StatefulMap
+        points={[beijing, luoyang]}
+        clusterThresholdPercent={0.5}
+        highlightedPointId="geo-northern-wei-luoyang"
+        onSelect={vi.fn()}
+      />
+    );
+    expect(screen.getByRole("button", { name: "北魏，洛阳，都城" })).toHaveClass("is-highlighted");
+    expect(screen.getByRole("button", { name: "明，北京，都城" })).not.toHaveClass(
+      "is-highlighted"
+    );
+  });
+
   it("复用对比按钮标签并禁用第三个未选政权", async () => {
     const user = setupUser();
     const onToggleComparison = vi.fn();
