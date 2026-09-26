@@ -128,7 +128,6 @@
 
   .filter-sheet .mode-switch button,
   .filter-sheet .scope-switch button,
-  .filter-sheet .map-layer-switch button,
   .filter-sheet .year-step-button,
   .filter-sheet .text-input {
     min-height: 44px;
@@ -178,7 +177,6 @@
 
   .filter-sheet .time-range-control,
   .filter-sheet .region-scope-control,
-  .filter-sheet .map-layer-control,
   .filter-sheet .controls-grid,
   .filter-sheet .category-filter {
     margin-top: 14px;
@@ -197,28 +195,10 @@
     padding-top: 14px;
   }
 
-  .filter-sheet .scope-switch,
-  .filter-sheet .map-layer-switch {
+  .filter-sheet .scope-switch {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     width: 100%;
-  }
-
-  .filter-sheet .map-layer-switch {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .filter-sheet .map-layer-control {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding-top: 14px;
-  }
-
-  .filter-sheet .map-layer-control .field-label,
-  .filter-sheet .map-layer-switch,
-  .filter-sheet .map-layer-help {
-    grid-column: 1;
-    grid-row: auto;
   }
 
   .filter-sheet .controls-grid {

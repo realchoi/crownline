@@ -21,14 +21,14 @@
 **Goal**: 第一行呈现方式页签 + 观测范围下拉浮层 + 搜索；第二行全宽时间刻度尺；第三行类别；地图图层开关移到地图结果区；取消“更多筛选”。
 **Success Criteria**: 浮层支持 Escape、点外关闭与焦点恢复；疆域加载失败时仍可切回地点标记；桌面 1120px 下无横向溢出。
 **Tests**: 控制台、地区、地图图层集成测试；E2E 冒烟与 axe。
-**Status**: In Progress
+**Status**: Complete
 
 ## Stage 4: 紧凑条与移动端
 
 **Goal**: 滚动后的紧凑工具条与移动端首屏可直接改年份；移动抽屉不再重复呈现方式。
 **Success Criteria**: 紧凑条保留状态与“展开控制台”；移动端 44px 触控目标、抽屉无横向溢出。
 **Tests**: 控制台集成测试、`e2e/year-input.spec.ts`、响应式 E2E。
-**Status**: Not Started
+**Status**: In Progress
 
 ## Stage 5: 收尾
 

@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, useMemo } from "react";
 
 import {
   formatHistoricalYear,
@@ -8,6 +8,7 @@ import {
   toOrdinal
 } from "../domain/chronology";
 import type { HistoricalYearBounds, TimeRange } from "../domain/browseState";
+import { buildTimelineAxis } from "../domain/timelineAxis";
 import { YearField } from "./YearField";
 
 interface TimeRangeControlProps {
@@ -16,6 +17,14 @@ interface TimeRangeControlProps {
   yearBounds: HistoricalYearBounds;
   onChange: (value: TimeRange) => void;
   onYearChange: (year: number) => void;
+}
+
+/** 刻度尺最多标注的年代数；窄屏由样式隐藏隔位的次要刻度。 */
+const RULER_MAX_TICKS = 9;
+
+/** 刻度文案；公元 1 年标记为公元前后分界。 */
+function formatRulerYear(year: number): string {
+  return year === 1 ? "元年" : formatHistoricalYear({ year, precision: "exact" });
 }
 
 /**
@@ -32,12 +41,20 @@ export function TimeRangeControl({
   const isAllTime = value === "all";
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
   const yearHelpId = useId();
+  const ruler = useMemo(
+    () =>
+      buildTimelineAxis({ startYear: yearBounds.min, endYear: yearBounds.max }, RULER_MAX_TICKS),
+    [yearBounds.min, yearBounds.max]
+  );
 
   return (
     <section
       className={`time-range-control${isAllTime ? " is-overview" : ""}`}
       aria-label="时间范围"
     >
+      <span className="field-label time-range-label" aria-hidden="true">
+        时间
+      </span>
       <div className="time-range-inputs">
         <button
           className="time-all-button"
@@ -80,7 +97,19 @@ export function TimeRangeControl({
             aria-describedby={yearHelpId}
             onChange={(event) => onYearChange(fromOrdinal(Number(event.currentTarget.value)))}
           />
-          <div className="year-range" id={yearHelpId}>
+          {/* 刻度与滑杆轨道对齐，只作视觉参照；读屏以 aria-valuetext 与下方说明为准。 */}
+          <div className="year-ruler-ticks" aria-hidden="true">
+            {ruler.ticks.map(({ year: tickYear, position }, index) => (
+              <span
+                key={tickYear}
+                className={`year-ruler-tick${index % 2 === 1 ? " is-minor" : ""}`}
+                style={{ left: `${position}%` }}
+              >
+                {formatRulerYear(tickYear)}
+              </span>
+            ))}
+          </div>
+          <div className="year-range visually-hidden" id={yearHelpId}>
             <span>{formatHistoricalYear({ year: yearBounds.min, precision: "exact" })}</span>
             <span>{isAllTime ? "拖动或输入年份即进入该年" : "自动跳过公元 0 年"}</span>
             <span>{formatHistoricalYear({ year: yearBounds.max, precision: "exact" })}</span>

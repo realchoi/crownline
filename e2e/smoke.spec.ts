@@ -11,10 +11,10 @@ async function waitForAppReady(page: Page) {
   await expect(page.getByRole("main")).toBeVisible();
 }
 
-/** 桌面工具条把类别、精确跳转、地区多选与地图图层收在“更多筛选”中。 */
-async function openMoreFilters(page: Page) {
-  const toggle = page.getByRole("button", { name: /^更多筛选/ });
-  if ((await toggle.getAttribute("aria-expanded")) !== "true") await toggle.click();
+/** 桌面工具条的地区预设与多选收在“观测范围”浮层中。 */
+async function openRegionScope(page: Page) {
+  const trigger = page.getByRole("button", { name: /^观测范围/ });
+  if ((await trigger.getAttribute("aria-expanded")) !== "true") await trigger.click();
 }
 
 async function expectNoSeriousA11yViolations(page: Page) {
@@ -266,9 +266,14 @@ test.describe("Crownline 浏览器冒烟", () => {
     await installBoundaryFixture(page);
     await page.goto("/?view=map&year=800&scope=china&layer=boundaries");
     await waitForAppReady(page);
+    // 图层开关位于地图结果区，先于打开控制台检查（移动抽屉为模态）。
+    await expect(page.getByRole("button", { name: "疆域示意" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
     const getControls = async () => {
       if (!isMobile) {
-        await openMoreFilters(page);
+        await openRegionScope(page);
         return page;
       }
       const existing = page.getByRole("dialog", { name: "筛选与呈现" });
@@ -288,11 +293,7 @@ test.describe("Crownline 浏览器冒烟", () => {
       "false"
     );
     await expect(controls.getByRole("textbox", { name: "年份" })).toHaveValue("800");
-    await expect(controls.getByRole("button", { name: "中国" })).toHaveAttribute(
-      "aria-pressed",
-      "true"
-    );
-    await expect(controls.getByRole("button", { name: "疆域示意" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "中国", exact: true })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
@@ -301,7 +302,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await waitForAppReady(page);
     controls = await getControls();
     await expect(controls.getByRole("textbox", { name: "年份" })).toHaveValue("800");
-    await expect(controls.getByRole("button", { name: "中国" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "中国", exact: true })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
@@ -331,7 +332,7 @@ test.describe("Crownline 浏览器冒烟", () => {
       "aria-pressed",
       "true"
     );
-    await expect(controls.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "全球已收录", exact: true })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
@@ -501,7 +502,6 @@ test.describe("Crownline 浏览器冒烟", () => {
     await installBoundaryFixture(page);
     await page.goto("/?view=map");
     await waitForAppReady(page);
-    await openMoreFilters(page);
     const help = page.locator(".map-layer-help");
     const box = await help.boundingBox();
     expect(box).not.toBeNull();
@@ -509,7 +509,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     expect(box?.height ?? Number.POSITIVE_INFINITY).toBeLessThan(90);
   });
 
-  test("桌面工具条完整显示搜索示例，更多筛选不单独换行", async ({ page, isMobile }) => {
+  test("桌面控制台首行完整显示搜索示例，页签、观测范围与搜索同排", async ({ page, isMobile }) => {
     test.skip(isMobile, "桌面工具条仅在 desktop-chromium 项目覆盖");
     for (const [width, query] of [
       [1024, ""],
@@ -539,19 +539,45 @@ test.describe("Crownline 浏览器冒烟", () => {
       });
       expect(fits, `${width}px${query} 搜索示例被截断`).toBe(true);
 
-      const [searchBox, moreBox] = await Promise.all([
+      const [searchBox, scopeBox, tabsBox] = await Promise.all([
         search.boundingBox(),
-        page.getByRole("button", { name: /^更多筛选/ }).boundingBox()
+        page.getByRole("button", { name: /^观测范围/ }).boundingBox(),
+        page.getByRole("group", { name: "呈现方式选择" }).first().boundingBox()
       ]);
+      const middle = (box: { y: number; height: number }) => box.y + box.height / 2;
+      expect(Math.abs(middle(searchBox!) - middle(scopeBox!))).toBeLessThan(4);
       expect(
-        Math.abs(searchBox!.y + searchBox!.height / 2 - (moreBox!.y + moreBox!.height / 2))
-      ).toBeLessThan(4);
+        Math.abs(middle(searchBox!) - middle(tabsBox!)),
+        `${width}px${query} 控制台首行折行`
+      ).toBeLessThan(8);
       expect(
         await page.evaluate(
           () => document.documentElement.scrollWidth > document.documentElement.clientWidth
         )
       ).toBe(false);
     }
+  });
+
+  test("观测范围浮层支持键盘开合、焦点恢复且无严重无障碍问题", async ({ page, isMobile }) => {
+    test.skip(isMobile, "观测范围浮层仅在桌面工具条出现");
+
+    await page.goto("/");
+    await waitForAppReady(page);
+    const trigger = page.getByRole("button", { name: /^观测范围/ });
+    await trigger.focus();
+    await page.keyboard.press("Enter");
+    await expect(trigger).toHaveAttribute("aria-expanded", "true");
+    await expect(page.getByRole("button", { name: "全球已收录", exact: true })).toBeFocused();
+    await expectNoSeriousA11yViolations(page);
+
+    await page.keyboard.press("Escape");
+    await expect(trigger).toHaveAttribute("aria-expanded", "false");
+    await expect(trigger).toBeFocused();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > document.documentElement.clientWidth
+      )
+    ).toBe(false);
   });
 
   test("年份框为紧凑组合控件，错误提示不推动同行控件", async ({ page, isMobile }) => {

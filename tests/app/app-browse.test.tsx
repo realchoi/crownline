@@ -2,7 +2,14 @@ import { fireEvent, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { setupUser } from "../helpers/user";
-import { enterYear, getYearInput, installAppTestLifecycle, renderApp } from "../helpers/renderApp";
+import {
+  chooseRegionPreset,
+  enterYear,
+  getYearInput,
+  installAppTestLifecycle,
+  openRegionScope,
+  renderApp
+} from "../helpers/renderApp";
 installAppTestLifecycle();
 
 describe("Crownline 浏览", () => {
@@ -18,11 +25,9 @@ describe("Crownline 浏览", () => {
     expect(screen.getByRole("region", { name: "探索控制区" })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "当前范围和结果摘要" })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "主要探索内容" })).toBeInTheDocument();
-    expect(screen.getByLabelText("地区范围")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
-      "aria-pressed",
-      "true"
-    );
+    const scopeTrigger = screen.getByRole("button", { name: /^观测范围/ });
+    expect(scopeTrigger).toHaveTextContent("全球已收录");
+    expect(scopeTrigger).toHaveAttribute("aria-expanded", "false");
     expect(screen.getByRole("region", { name: "多地区完整时间轴" })).toBeInTheDocument();
   });
 
@@ -162,20 +167,23 @@ describe("Crownline 浏览", () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "中国" }));
+    await chooseRegionPreset(user, "中国");
     await enterYear(user, 1400);
     await user.click(screen.getByRole("button", { name: "地图" }));
 
     expect(getYearInput()).toHaveValue("1400");
     expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "false");
-    expect(screen.getByRole("button", { name: "中国" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: /^观测范围/ })).toHaveTextContent("中国");
     expect(new URLSearchParams(window.location.search).get("view")).toBe("map");
 
     await user.click(screen.getByRole("button", { name: "时间轴" }));
 
     expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "false");
     expect(screen.getByRole("region", { name: "1400 年时间点结果" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "中国" })).toHaveAttribute("aria-pressed", "true");
+    expect(openRegionScope().getByRole("button", { name: "中国" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
     expect(new URLSearchParams(window.location.search).has("view")).toBe(false);
   });
 
@@ -186,13 +194,13 @@ describe("Crownline 浏览", () => {
     await enterYear(user, 1922);
     expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
 
-    await user.click(screen.getByRole("button", { name: "中国" }));
+    await chooseRegionPreset(user, "中国");
     expect(new URLSearchParams(window.location.search).get("scope")).toBe("china");
 
-    await user.click(screen.getByRole("button", { name: "全球已收录" }));
+    await chooseRegionPreset(user, "全球已收录");
 
     expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
-    expect(screen.getByLabelText("地区范围说明")).toHaveTextContent("当前数据集中的全部已收录条目");
+    expect(openRegionScope().getByText(/当前数据集中的全部已收录条目/)).toBeInTheDocument();
   });
 
   it("从 URL 恢复自选地区并把覆盖有限与历史不存在区分开", () => {
@@ -203,11 +211,9 @@ describe("Crownline 浏览", () => {
     );
     renderApp();
 
-    expect(screen.getByRole("button", { name: "自选地区" })).toHaveAttribute(
-      "aria-pressed",
-      "true"
-    );
-    expect(screen.getByRole("checkbox", { name: "东非" })).toBeChecked();
+    const scope = openRegionScope();
+    expect(scope.getByRole("button", { name: "自选地区" })).toHaveAttribute("aria-pressed", "true");
+    expect(scope.getByRole("checkbox", { name: "东非" })).toBeChecked();
     expect(screen.getByRole("region", { name: "当时存在的政权" })).toHaveTextContent(
       "当前数据覆盖有限，不表示当时不存在政权"
     );
@@ -221,7 +227,7 @@ describe("Crownline 浏览", () => {
     await user.click(screen.getByRole("button", { name: "全时期" }));
 
     expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
-    expect(screen.getByRole("button", { name: "全球已收录" })).toHaveAttribute(
+    expect(openRegionScope().getByRole("button", { name: "全球已收录" })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
@@ -244,7 +250,7 @@ describe("Crownline 浏览", () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "自选地区" }));
+    await chooseRegionPreset(user, "自选地区");
 
     expect(screen.getByRole("checkbox", { name: "东南亚" })).toBeInTheDocument();
     expect(screen.getByRole("checkbox", { name: "中亚" })).toBeInTheDocument();
@@ -329,16 +335,16 @@ describe("Crownline 浏览", () => {
     const user = setupUser();
     renderApp();
 
-    expect(screen.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
-    expect(screen.getByRole("checkbox", { name: "西亚" })).toBeChecked();
+    expect(screen.getByRole("button", { name: /^观测范围/ })).toHaveTextContent("欧洲、西亚");
     await enterYear(user, 1922);
     await user.click(screen.getByRole("button", { name: "全时期" }));
 
     const params = new URLSearchParams(window.location.search);
     expect(params.get("scope")).toBe("custom");
     expect(params.getAll("region")).toEqual(["region-europe", "region-west-asia"]);
-    expect(screen.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
-    expect(screen.getByRole("checkbox", { name: "西亚" })).toBeChecked();
+    const scope = openRegionScope();
+    expect(scope.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
+    expect(scope.getByRole("checkbox", { name: "西亚" })).toBeChecked();
   });
 
   it("美洲全览在补样后展示两个代表政权而不再显示未收录提示", () => {

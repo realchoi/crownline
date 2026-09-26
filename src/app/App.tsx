@@ -4,7 +4,11 @@ import { DetailDialog } from "../components/DetailDialog";
 import { ComparisonDialog } from "../components/ComparisonDialog";
 import { useDialogReturnFocus } from "./useDialogReturnFocus";
 import { ComparisonTray } from "../components/ComparisonTray";
-import { getEffectiveTimeWindow, getHistoricalYearBounds } from "../domain/browseState";
+import {
+  getEffectiveTimeWindow,
+  getHistoricalYearBounds,
+  type MapLayer
+} from "../domain/browseState";
 import { selectBoundarySnapshots, type BoundarySelection } from "../domain/boundarySnapshots";
 import { buildOverviewTimelineGroups } from "../domain/overviewTimeline";
 import { selectMapSnapshots } from "../domain/mapSnapshots";
@@ -145,6 +149,12 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
     },
     [setBrowseState]
   );
+  const setMapLayer = useCallback(
+    (mapLayer: MapLayer) => {
+      setBrowseState((current) => ({ ...current, mapLayer }));
+    },
+    [setBrowseState]
+  );
 
   const openDetail = (entityId: string) => {
     setBrowseState((current) => ({ ...current, detailEntityId: entityId, comparisonOpen: false }));
@@ -194,7 +204,6 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
           yearBounds={yearBounds}
           regions={data.regions}
           resultCount={results.all.length}
-          boundarySnapshotCount={data.boundarySnapshotCount}
         />
 
         <section className="exploration-summary" aria-label="当前范围和结果摘要">
@@ -223,6 +232,7 @@ export function App({ data, loadDetail, loadGeography, loadBoundaries }: AppProp
             boundaryState={boundaryState}
             onRetryGeography={retryGeography}
             onRetryBoundaries={retryBoundaries}
+            onMapLayerChange={setMapLayer}
             yearBounds={yearBounds}
             onTimeWindowChange={setTimeWindow}
             onSelect={openDetail}

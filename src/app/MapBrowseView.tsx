@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 
 import { HistoricalMap } from "../components/HistoricalMap";
+import { MapLayerControl } from "../components/MapLayerControl";
 import { MapLoadPanel } from "../components/MapLoadPanel";
 import { MapResultList } from "../components/MapResultList";
 import type { BoundarySelection } from "../domain/boundarySnapshots";
@@ -13,6 +14,9 @@ import type { GeographyState } from "./useGeographyData";
 
 export interface MapBrowseViewProps {
   browseState: BrowseState;
+  /** 生产疆域为零时不提供图层开关。 */
+  boundariesAvailable: boolean;
+  onMapLayerChange: (layer: BrowseState["mapLayer"]) => void;
   geographyState: GeographyState;
   mapSelection: MapSelection | null;
   boundaryState: BoundaryState;
@@ -33,6 +37,8 @@ const EMPTY_BOUNDARY_SELECTION: BoundarySelection = {
 /** 地图呈现：按图层加载状态显示加载/错误面板、地图和等价结果列表。 */
 export function MapBrowseView({
   browseState,
+  boundariesAvailable,
+  onMapLayerChange,
   geographyState,
   mapSelection,
   boundaryState,
@@ -68,6 +74,9 @@ export function MapBrowseView({
 
   return (
     <section className="historical-map-shell" aria-label="历史地图浏览结果">
+      {boundariesAvailable && (
+        <MapLayerControl value={browseState.mapLayer} onChange={onMapLayerChange} />
+      )}
       {(pointsPending || boundariesPending) && (
         <section className="map-layer-status-list" aria-label="地图图层状态">
           {pointsPending && (

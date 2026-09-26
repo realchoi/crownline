@@ -173,38 +173,68 @@ describe("探索控制台", () => {
     expect(screen.queryByLabelText("活跃筛选")).not.toBeInTheDocument();
   });
 
-  it("桌面工具条默认收起更多筛选，年份框与类别筛选常驻工具条", async () => {
-    const user = setupUser();
+  it("桌面控制台分三层：页签、时间与类别常驻，不再有“更多筛选”", () => {
     renderApp();
 
-    const toggle = screen.getByRole("button", { name: "更多筛选" });
-    expect(toggle).toHaveAttribute("aria-expanded", "false");
-    expect(screen.getByRole("searchbox")).toBeInTheDocument();
-    expect(screen.getByRole("textbox", { name: "年份" })).toBeVisible();
-    expect(screen.getByRole("group", { name: "显示类别" })).toBeVisible();
-    expect(screen.queryByRole("combobox", { name: "显示类别" })).not.toBeInTheDocument();
-
-    await user.click(toggle);
-    expect(toggle).toHaveAttribute("aria-expanded", "true");
-    expect(document.getElementById(toggle.getAttribute("aria-controls")!)).toBeVisible();
-  });
-
-  it("选择自选地区时自动展开地区多选", async () => {
-    const user = setupUser();
-    renderApp();
-
-    await user.click(screen.getByRole("button", { name: "自选地区" }));
-    expect(screen.getByRole("button", { name: "更多筛选" })).toHaveAttribute(
-      "aria-expanded",
+    const toolbar = screen.getByRole("region", { name: "浏览与筛选工具" });
+    expect(within(toolbar).getByRole("button", { name: "时间轴" })).toHaveAttribute(
+      "aria-pressed",
       "true"
     );
-    expect(screen.getByRole("group", { name: "选择一个或多个历史地区" })).toBeVisible();
+    expect(within(toolbar).getByRole("searchbox")).toBeVisible();
+    expect(within(toolbar).getByRole("textbox", { name: "年份" })).toBeVisible();
+    expect(within(toolbar).getByRole("group", { name: "显示类别" })).toBeVisible();
+    expect(screen.queryByRole("button", { name: /更多筛选/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole("group", { name: "地图图层" })).not.toBeInTheDocument();
   });
 
-  it("从自选地区链接进入时默认展开地区多选", () => {
-    window.history.replaceState(null, "", "/?scope=custom&region=region-europe");
+  it("观测范围浮层：选自选地区保持展开，选中国后收起并把焦点还给触发按钮", async () => {
+    const user = setupUser();
     renderApp();
 
+    const trigger = screen.getByRole("button", { name: /^观测范围/ });
+    await user.click(trigger);
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+    const panel = document.getElementById(trigger.getAttribute("aria-controls")!)!;
+    // 打开后聚焦当前选中的预设。
+    expect(within(panel).getByRole("button", { name: "全球已收录" })).toHaveFocus();
+
+    await user.click(within(panel).getByRole("button", { name: "自选地区" }));
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByRole("group", { name: "选择一个或多个历史地区" })).toBeVisible();
+    await user.click(screen.getByRole("checkbox", { name: "欧洲" }));
+    expect(new URLSearchParams(window.location.search).getAll("region")).toContain("region-europe");
+
+    await user.click(within(panel).getByRole("button", { name: "中国" }));
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+    expect(trigger).toHaveFocus();
+    expect(trigger).toHaveTextContent("中国");
+  });
+
+  it("观测范围浮层可用 Escape 关闭并恢复焦点，点击外部也会关闭", async () => {
+    const user = setupUser();
+    renderApp();
+
+    const trigger = screen.getByRole("button", { name: /^观测范围/ });
+    await user.click(trigger);
+    await user.keyboard("{Escape}");
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+    expect(trigger).toHaveFocus();
+    expect(screen.queryByRole("region", { name: "地区范围" })).not.toBeInTheDocument();
+
+    await user.click(trigger);
+    await user.click(screen.getByRole("heading", { name: "Crownline · 王冠纪" }));
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("从自选地区链接进入时触发按钮显示已选地区，展开后已勾选", async () => {
+    window.history.replaceState(null, "", "/?scope=custom&region=region-europe");
+    const user = setupUser();
+    renderApp();
+
+    const trigger = screen.getByRole("button", { name: /^观测范围/ });
+    expect(trigger).toHaveTextContent("欧洲");
+    await user.click(trigger);
     expect(screen.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
   });
 });

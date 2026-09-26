@@ -26,6 +26,7 @@ interface BrowseContentProps {
   boundarySelection: BoundarySelection | null;
   onRetryGeography: () => void;
   onRetryBoundaries: () => void;
+  onMapLayerChange: (layer: BrowseState["mapLayer"]) => void;
   yearBounds: HistoricalYearBounds;
   onTimeWindowChange: (window: TimeWindow | null) => void;
   onSelect: (entityId: string) => void;
@@ -44,6 +45,7 @@ export function BrowseContent({
   boundarySelection,
   onRetryGeography,
   onRetryBoundaries,
+  onMapLayerChange,
   yearBounds,
   onTimeWindowChange,
   onSelect,
@@ -53,6 +55,8 @@ export function BrowseContent({
     return (
       <MapBrowseView
         browseState={browseState}
+        boundariesAvailable={data.boundarySnapshotCount > 0}
+        onMapLayerChange={onMapLayerChange}
         geographyState={geographyState}
         mapSelection={mapSelection}
         boundaryState={boundaryState}

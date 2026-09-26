@@ -67,10 +67,19 @@ export function renderApp(
   );
 }
 
-/** 桌面工具条把类别、精确跳转、地区多选与地图图层收在“更多筛选”中；已展开时不重复点击。 */
-export function openMoreFilters() {
-  const toggle = screen.getByRole("button", { name: /更多筛选/ });
-  if (toggle.getAttribute("aria-expanded") !== "true") fireEvent.click(toggle);
+/** 展开桌面工具条的观测范围浮层；已展开时不重复点击。 */
+export function openRegionScope() {
+  const trigger = screen.getByRole("button", { name: /^观测范围/ });
+  if (trigger.getAttribute("aria-expanded") !== "true") fireEvent.click(trigger);
+  return within(screen.getByRole("region", { name: "地区范围" }));
+}
+
+/** 在观测范围浮层中选择预设；中国与全球选择后浮层自动收起。 */
+export async function chooseRegionPreset(
+  user: UserEvent,
+  name: "中国" | "自选地区" | "全球已收录"
+) {
+  await user.click(openRegionScope().getByRole("button", { name }));
 }
 
 /** 唯一的时间范围控件；紧凑条或抽屉另有副本时传入所在容器。 */

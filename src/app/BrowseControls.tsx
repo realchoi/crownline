@@ -35,7 +35,6 @@ interface BrowseControlsProps {
   yearBounds: HistoricalYearBounds;
   regions: Region[];
   resultCount: number;
-  boundarySnapshotCount: number;
 }
 
 const MOBILE_CONTROLS_QUERY = "(max-width: 800px)";
@@ -65,8 +64,7 @@ export function BrowseControls({
   setBrowseState,
   yearBounds,
   regions,
-  resultCount,
-  boundarySnapshotCount
+  resultCount
 }: BrowseControlsProps) {
   const isMobile = useMobileControls();
   const [isCompact, setIsCompact] = useState(false);
@@ -155,8 +153,6 @@ export function BrowseControls({
       onTimeRangeChange: (timeRange: BrowseState["timeRange"]) =>
         setBrowseState((current) => selectTimeRange(current, timeRange)),
       onYearChange: (year: number) => setBrowseState((current) => selectBrowseYear(current, year)),
-      onMapLayerChange: (mapLayer: BrowseState["mapLayer"]) =>
-        setBrowseState((current) => ({ ...current, mapLayer })),
       onQueryChange: (query: string) => setBrowseState((current) => ({ ...current, query })),
       onCategoryChange: (category: BrowseState["category"]) =>
         setBrowseState((current) => ({ ...current, category })),
@@ -174,7 +170,6 @@ export function BrowseControls({
       <FilterPanel
         layout={layout}
         viewMode={browseState.viewMode}
-        mapLayer={browseState.mapLayer}
         timeRange={browseState.timeRange}
         year={browseState.year}
         yearBounds={yearBounds}
@@ -182,11 +177,9 @@ export function BrowseControls({
         category={browseState.category}
         regions={regions}
         regionScope={browseState.regionScope}
-        boundarySnapshotCount={boundarySnapshotCount}
         onViewModeChange={updateState.onViewModeChange}
         onTimeRangeChange={updateState.onTimeRangeChange}
         onYearChange={updateState.onYearChange}
-        onMapLayerChange={updateState.onMapLayerChange}
         onQueryChange={updateState.onQueryChange}
         onCategoryChange={updateState.onCategoryChange}
         onRegionScopeChange={updateState.onRegionScopeChange}

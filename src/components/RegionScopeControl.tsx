@@ -5,17 +5,10 @@ interface RegionScopeControlProps {
   regions: Region[];
   scope: RegionScope;
   onChange: (scope: RegionScope) => void;
-  /** 桌面工具条分开放置预设按钮与“覆盖说明 + 多选地区”；筛选抽屉使用完整控件。 */
-  part?: "all" | "presets" | "details";
 }
 
 /** 全时期与指定年份共享的地区预设、多选地区和数据覆盖说明。 */
-export function RegionScopeControl({
-  regions,
-  scope,
-  onChange,
-  part = "all"
-}: RegionScopeControlProps) {
+export function RegionScopeControl({ regions, scope, onChange }: RegionScopeControlProps) {
   const selectableRegions = regions.filter((region) => {
     return region.regionKind === "historical-region" && region.id !== CHINA_REGION_ID;
   });
@@ -92,22 +85,6 @@ export function RegionScopeControl({
     </fieldset>
   );
 
-  if (part === "presets") {
-    return (
-      <section className="region-scope-control" aria-label="地区范围">
-        <span className="field-label">观测范围</span>
-        {presets}
-      </section>
-    );
-  }
-  if (part === "details") {
-    return (
-      <section className="region-scope-details" aria-label="地区范围说明">
-        {coverageNote}
-        {customOptions}
-      </section>
-    );
-  }
   return (
     <section className="region-scope-control" aria-label="地区范围">
       <div className="region-scope-heading">
