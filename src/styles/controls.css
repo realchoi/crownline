@@ -132,7 +132,8 @@ main {
 }
 
 .year-field .year-number-input {
-  width: 4.2em;
+  /* 用 rem 固定宽度：显示占位文字时字号会变小，em 宽度会随之收窄并截断占位文字。 */
+  width: 4.7rem;
   background: transparent;
   color: var(--accent);
   padding: 2px 4px 2px 10px;
@@ -141,12 +142,18 @@ main {
   font-weight: 700;
 }
 
-.year-field .year-number-input::placeholder {
-  color: var(--muted);
-  opacity: 0.75;
+/* 占位文字的基线仍由输入框自身字体的行框决定；只改 ::placeholder 的字号，
+   小号无衬线字会沉到大号衬线行框的基线上，比右侧“年”低约 2px。
+   因此空值时让输入框本身改用与“年”相同的正文字体和字号。 */
+.year-field .year-number-input:placeholder-shown {
   font-family: var(--font-body);
   font-size: var(--text-xs);
   font-weight: 500;
+}
+
+.year-field .year-number-input::placeholder {
+  color: var(--muted);
+  opacity: 0.75;
 }
 
 .year-field-unit {

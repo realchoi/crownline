@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import type { Result } from "axe-core";
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 
 import { installBoundaryFixture } from "./boundary-fixture";
 
@@ -15,6 +15,46 @@ async function waitForAppReady(page: Page) {
 async function openRegionScope(page: Page) {
   const trigger = page.getByRole("button", { name: /^观测范围/ });
   if ((await trigger.getAttribute("aria-expanded")) !== "true") await trigger.click();
+}
+
+/** 截取元素内侧（避开边框）并按像素找出字形墨迹的上下边缘，单位为 CSS px。 */
+async function measureInk(page: Page, locator: Locator) {
+  const raw = (await locator.boundingBox())!;
+  const clip = { x: raw.x + 3, y: raw.y + 3, width: raw.width - 6, height: raw.height - 6 };
+  const png = await page.screenshot({ clip });
+  return page.evaluate(
+    async ({ data, clip }) => {
+      const image = new Image();
+      image.src = `data:image/png;base64,${data}`;
+      await image.decode();
+      const canvas = document.createElement("canvas");
+      canvas.width = image.width;
+      canvas.height = image.height;
+      const context = canvas.getContext("2d")!;
+      context.drawImage(image, 0, 0);
+      const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+      const background = [pixels[0]!, pixels[1]!, pixels[2]!];
+      let top = -1;
+      let bottom = -1;
+      for (let y = 0; y < canvas.height; y += 1) {
+        for (let x = 0; x < canvas.width; x += 1) {
+          const index = (y * canvas.width + x) * 4;
+          const distance =
+            Math.abs(pixels[index]! - background[0]!) +
+            Math.abs(pixels[index + 1]! - background[1]!) +
+            Math.abs(pixels[index + 2]! - background[2]!);
+          if (distance > 30) {
+            if (top < 0) top = y;
+            bottom = y;
+            break;
+          }
+        }
+      }
+      const scale = canvas.height / clip.height;
+      return { top: clip.y + top / scale, bottom: clip.y + bottom / scale };
+    },
+    { data: png.toString("base64"), clip }
+  );
 }
 
 async function expectNoSeriousA11yViolations(page: Page) {
@@ -578,6 +618,34 @@ test.describe("Crownline 浏览器冒烟", () => {
         () => document.documentElement.scrollWidth > document.documentElement.clientWidth
       )
     ).toBe(false);
+  });
+
+  test("年份框的占位文字与单位“年”在同一水平线上且完整显示", async ({ page, isMobile }) => {
+    await page.goto("/");
+    await waitForAppReady(page);
+    await page.evaluate(() => document.fonts.ready);
+    const field = page
+      .locator(isMobile ? ".mobile-explore-bar" : ".full-exploration-console")
+      .locator(".year-field");
+    const input = field.getByRole("textbox", { name: "年份" });
+    await expect(input).toHaveValue("");
+
+    const [placeholder, unit] = await Promise.all([
+      measureInk(page, input),
+      measureInk(page, field.locator(".year-field-unit"))
+    ]);
+    expect(Math.abs(placeholder.top - unit.top)).toBeLessThanOrEqual(1);
+    expect(Math.abs(placeholder.bottom - unit.bottom)).toBeLessThanOrEqual(1);
+
+    const fits = await input.evaluate((element: HTMLInputElement) => {
+      const style = getComputedStyle(element);
+      const context = document.createElement("canvas").getContext("2d")!;
+      context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+      const available =
+        element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      return context.measureText(element.placeholder).width <= available;
+    });
+    expect(fits).toBe(true);
   });
 
   test("地图点位图例中的聚合数字在图标内垂直居中", async ({ page }) => {
