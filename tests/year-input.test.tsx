@@ -1,4 +1,5 @@
-import { act, render, screen, waitFor } from "@testing-library/react";
+import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { useState } from "react";
 import { describe, expect, it, vi } from "vitest";
 
 import { TimeRangeControl } from "../src/components/TimeRangeControl";
@@ -184,6 +185,38 @@ describe("精确历史年份输入", () => {
     expect(allTime).toHaveAttribute("aria-pressed", "false");
     await user.click(allTime);
     expect(onChange).toHaveBeenCalledWith("all");
+  });
+
+  it("外部连续改年份（拖动滑杆）时不会闪现跳转按钮", () => {
+    function Harness() {
+      const [year, setYear] = useState(800);
+      return (
+        <TimeRangeControl
+          value="year"
+          year={year}
+          yearBounds={yearBounds}
+          onChange={vi.fn()}
+          onYearChange={setYear}
+        />
+      );
+    }
+    render(<Harness />);
+    const slider = screen.getByRole("slider", { name: "历史年份滑杆" });
+    const observer = new MutationObserver(() => {});
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    for (const ordinal of [500, 600, 700]) {
+      fireEvent.change(slider, { target: { value: String(ordinal) } });
+    }
+
+    // 过渡渲染也会写入 DOM，逐条检查新增节点，而不只看最终状态。
+    const flashed = observer
+      .takeRecords()
+      .flatMap((record) => [...record.addedNodes])
+      .some((node) => node instanceof HTMLElement && node.textContent === "跳转");
+    observer.disconnect();
+    expect(flashed).toBe(false);
+    expect(screen.getByRole("textbox", { name: "年份" })).toHaveValue("700");
   });
 
   it("把跳转结果写入 URL，并在 popstate 后同步外部年份", async () => {

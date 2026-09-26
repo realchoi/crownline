@@ -1,4 +1,4 @@
-import { useEffect, useId, useState, type FormEvent } from "react";
+import { useId, useState, type FormEvent } from "react";
 
 import type { HistoricalYearBounds } from "../domain/browseState";
 import { formatHistoricalYear } from "../domain/chronology";
@@ -54,13 +54,17 @@ export function YearField({ year, yearBounds, isAllTime, onYearChange }: YearFie
   const [draft, setDraft] = useState(() => getYearDraft(year, isAllTime));
   const [error, setError] = useState<string | null>(null);
   const errorId = useId();
+  // 外部年份变化（滑杆、步进、后退前进）在渲染阶段同步草稿；若放到 effect，
+  // 会先提交一帧“草稿≠当前值”的状态，拖动滑杆时“跳转”按钮随之闪现。
+  const syncKey = `${year}|${isAllTime}`;
+  const [syncedKey, setSyncedKey] = useState(syncKey);
   const current = getYearDraft(year, isAllTime);
-  const isDirty = draft.value.trim() !== current.value || draft.era !== current.era;
-
-  useEffect(() => {
-    setDraft(getYearDraft(year, isAllTime));
+  if (syncedKey !== syncKey) {
+    setSyncedKey(syncKey);
+    setDraft(current);
     setError(null);
-  }, [year, isAllTime]);
+  }
+  const isDirty = draft.value.trim() !== current.value || draft.era !== current.era;
 
   const commit = (next: YearDraft) => {
     const parsed = parseYearDraft(next, yearBounds);
