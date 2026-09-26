@@ -173,24 +173,24 @@ describe("探索控制台", () => {
     expect(screen.queryByLabelText("活跃筛选")).not.toBeInTheDocument();
   });
 
-  it("桌面工具条默认收起更多筛选，展开后可使用类别与精确跳转", async () => {
+  it("桌面工具条默认收起更多筛选，展开后可使用类别；年份框常驻工具条", async () => {
     const user = setupUser();
     renderApp();
 
     const toggle = screen.getByRole("button", { name: "更多筛选" });
     expect(toggle).toHaveAttribute("aria-expanded", "false");
     expect(screen.getByRole("searchbox")).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: "年份" })).toBeVisible();
     expect(screen.queryByRole("combobox", { name: "显示类别" })).not.toBeInTheDocument();
 
     await user.click(toggle);
     expect(toggle).toHaveAttribute("aria-expanded", "true");
     expect(document.getElementById(toggle.getAttribute("aria-controls")!)).toBeVisible();
-    expect(screen.getByRole("combobox", { name: "纪元" })).toBeInTheDocument();
     await user.selectOptions(screen.getByRole("combobox", { name: "显示类别" }), "context");
     expect(screen.getByRole("button", { name: "更多筛选，已启用 1 项" })).toBe(toggle);
 
     await user.click(toggle);
-    expect(screen.queryByRole("combobox", { name: "纪元" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("combobox", { name: "显示类别" })).not.toBeInTheDocument();
   });
 
   it("选择自选地区时自动展开地区多选", async () => {

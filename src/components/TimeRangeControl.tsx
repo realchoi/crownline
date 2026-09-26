@@ -8,7 +8,7 @@ import {
   toOrdinal
 } from "../domain/chronology";
 import type { HistoricalYearBounds, TimeRange } from "../domain/browseState";
-import { YearJumpForm } from "./YearJumpForm";
+import { YearField } from "./YearField";
 
 interface TimeRangeControlProps {
   value: TimeRange;
@@ -16,55 +16,52 @@ interface TimeRangeControlProps {
   yearBounds: HistoricalYearBounds;
   onChange: (value: TimeRange) => void;
   onYearChange: (year: number) => void;
-  /** 桌面工具条把精确跳转放入“更多筛选”，此处只保留切换与滑杆。 */
-  showJumpForm?: boolean;
 }
 
-/** 时间轴与地图共享的时间范围和历史年份控制。 */
+/**
+ * 时间轴与地图共享的唯一时间控件：“全时期”按钮退出年份，
+ * 年份框、步进与滑杆任一操作都进入指定年份。
+ */
 export function TimeRangeControl({
   value,
   year,
   yearBounds,
   onChange,
-  onYearChange,
-  showJumpForm = true
+  onYearChange
 }: TimeRangeControlProps) {
   const isAllTime = value === "all";
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
   const yearHelpId = useId();
 
   return (
-    <section className="time-range-control" aria-label="时间范围">
-      <div className="time-range-heading">
-        <div>
-          <span className="field-label">时间范围</span>
-          <div className="mode-switch" role="group" aria-label="时间范围选择">
-            <button type="button" aria-pressed={isAllTime} onClick={() => onChange("all")}>
-              全时期
-            </button>
-            <button type="button" aria-pressed={!isAllTime} onClick={() => onChange("year")}>
-              指定年份
-            </button>
-          </div>
-        </div>
-        <div className={`year-current${isAllTime ? " is-overview" : ""}`}>
-          <span className="field-label">{isAllTime ? "当前范围" : "当前年份"}</span>
-          <span
-            className="year-current-value"
-            aria-label={isAllTime ? "当前时间范围" : "当前年份"}
-            aria-live="polite"
-          >
-            {isAllTime ? "全时期" : formattedYear}
-          </span>
-        </div>
+    <section
+      className={`time-range-control${isAllTime ? " is-overview" : ""}`}
+      aria-label="时间范围"
+    >
+      <div className="time-range-inputs">
+        <button
+          className="time-all-button"
+          type="button"
+          aria-pressed={isAllTime}
+          onClick={() => onChange("all")}
+        >
+          全时期
+        </button>
+        <YearField
+          year={year}
+          yearBounds={yearBounds}
+          isAllTime={isAllTime}
+          onYearChange={onYearChange}
+        />
       </div>
 
       <div className="year-slider-row">
+        {/* 全时期没有可见的当前年份，步进无从参照，因此禁用。 */}
         <button
           className="year-step-button"
           type="button"
           aria-label="上一年"
-          disabled={year === yearBounds.min}
+          disabled={isAllTime || year === yearBounds.min}
           onClick={() => onYearChange(previousHistoricalYear(year))}
         >
           <span aria-hidden="true">−</span>
@@ -85,7 +82,7 @@ export function TimeRangeControl({
           />
           <div className="year-range" id={yearHelpId}>
             <span>{formatHistoricalYear({ year: yearBounds.min, precision: "exact" })}</span>
-            <span>{isAllTime ? "调整后进入指定年份" : "自动跳过公元 0 年"}</span>
+            <span>{isAllTime ? "拖动或输入年份即进入该年" : "自动跳过公元 0 年"}</span>
             <span>{formatHistoricalYear({ year: yearBounds.max, precision: "exact" })}</span>
           </div>
         </div>
@@ -93,16 +90,12 @@ export function TimeRangeControl({
           className="year-step-button"
           type="button"
           aria-label="下一年"
-          disabled={year === yearBounds.max}
+          disabled={isAllTime || year === yearBounds.max}
           onClick={() => onYearChange(nextHistoricalYear(year))}
         >
           <span aria-hidden="true">＋</span>
         </button>
       </div>
-
-      {showJumpForm && (
-        <YearJumpForm year={year} yearBounds={yearBounds} onYearChange={onYearChange} />
-      )}
     </section>
   );
 }

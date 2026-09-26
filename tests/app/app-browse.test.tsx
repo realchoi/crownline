@@ -2,7 +2,13 @@ import { fireEvent, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { setupUser } from "../helpers/user";
-import { openMoreFilters, installAppTestLifecycle, renderApp } from "../helpers/renderApp";
+import {
+  enterYear,
+  getYearInput,
+  openMoreFilters,
+  installAppTestLifecycle,
+  renderApp
+} from "../helpers/renderApp";
 installAppTestLifecycle();
 
 describe("Crownline 浏览", () => {
@@ -99,12 +105,12 @@ describe("Crownline 浏览", () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "指定年份" }));
+    await enterYear(user, 1922);
 
     expect(screen.getByRole("region", { name: "1922 年时间点结果" })).toHaveTextContent(
       "1922年 · 当时存在"
     );
-    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1922");
+    expect(getYearInput()).toHaveValue("1922");
     expect(new URLSearchParams(window.location.search).get("mode")).toBe("point");
 
     fireEvent.change(screen.getByRole("slider", { name: "历史年份滑杆" }), {
@@ -112,12 +118,15 @@ describe("Crownline 浏览", () => {
     });
     await user.click(screen.getByRole("button", { name: "全时期" }));
     expect(screen.getByRole("region", { name: "多地区完整时间轴" })).toBeInTheDocument();
-    expect(screen.getByLabelText("当前时间范围")).toHaveTextContent("全时期");
-    expect(screen.queryByLabelText("当前年份")).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "true");
+    expect(getYearInput()).toHaveValue("");
     expect(new URLSearchParams(window.location.search).has("mode")).toBe(false);
 
-    await user.click(screen.getByRole("button", { name: "指定年份" }));
-    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1400");
+    // 全时期下滑杆仍停在最近浏览年份，拖动即回到指定年份。
+    const overviewSlider = screen.getByRole("slider", { name: "选择历史年份，调整后进入指定年份" });
+    expect(overviewSlider).toHaveAttribute("aria-valuetext", "1400年，调整后进入指定年份");
+    fireEvent.change(overviewSlider, { target: { value: "1401" } });
+    expect(getYearInput()).toHaveValue("1401");
   });
 
   it("在时间轴和地图间切换时保持时间范围、年份和观测范围", async () => {
@@ -125,26 +134,17 @@ describe("Crownline 浏览", () => {
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "中国" }));
-    await user.click(screen.getByRole("button", { name: "指定年份" }));
-    fireEvent.change(screen.getByRole("slider", { name: "历史年份滑杆" }), {
-      target: { value: "1400" }
-    });
+    await enterYear(user, 1400);
     await user.click(screen.getByRole("button", { name: "地图" }));
 
-    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1400");
-    expect(screen.getByRole("button", { name: "指定年份" })).toHaveAttribute(
-      "aria-pressed",
-      "true"
-    );
+    expect(getYearInput()).toHaveValue("1400");
+    expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "false");
     expect(screen.getByRole("button", { name: "中国" })).toHaveAttribute("aria-pressed", "true");
     expect(new URLSearchParams(window.location.search).get("view")).toBe("map");
 
     await user.click(screen.getByRole("button", { name: "时间轴" }));
 
-    expect(screen.getByRole("button", { name: "指定年份" })).toHaveAttribute(
-      "aria-pressed",
-      "true"
-    );
+    expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "false");
     expect(screen.getByRole("region", { name: "1400 年时间点结果" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "中国" })).toHaveAttribute("aria-pressed", "true");
     expect(new URLSearchParams(window.location.search).has("view")).toBe(false);
@@ -154,7 +154,7 @@ describe("Crownline 浏览", () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "指定年份" }));
+    await enterYear(user, 1922);
     expect(new URLSearchParams(window.location.search).has("scope")).toBe(false);
 
     await user.click(screen.getByRole("button", { name: "中国" }));
@@ -302,7 +302,7 @@ describe("Crownline 浏览", () => {
 
     expect(screen.getByRole("checkbox", { name: "欧洲" })).toBeChecked();
     expect(screen.getByRole("checkbox", { name: "西亚" })).toBeChecked();
-    await user.click(screen.getByRole("button", { name: "指定年份" }));
+    await enterYear(user, 1922);
     await user.click(screen.getByRole("button", { name: "全时期" }));
 
     const params = new URLSearchParams(window.location.search);
@@ -368,37 +368,39 @@ describe("Crownline 浏览", () => {
     expect(southernSong).toHaveTextContent("辽宋夏金元 · 中国历史范围");
   });
 
-  it("将当前年份置于滑杆上方，并把年份加减放在滑杆首尾", () => {
+  it("年份框同时显示并改写当前年份，年份加减放在滑杆首尾", () => {
     window.history.replaceState(null, "", "/?mode=point&year=-221");
     renderApp();
 
-    const currentYear = screen.getByLabelText("当前年份");
     const slider = screen.getByRole("slider", { name: "历史年份滑杆" });
     const sliderRow = slider.closest(".year-slider-row");
 
-    expect(currentYear).toHaveTextContent("前221");
-    expect(currentYear.closest(".time-range-heading")?.nextElementSibling).toBe(sliderRow);
+    expect(screen.getByRole("combobox", { name: "纪元" })).toHaveValue("bce");
+    expect(getYearInput()).toHaveValue("221");
+    expect(screen.getAllByRole("textbox", { name: "年份" })).toHaveLength(1);
+    expect(screen.queryByRole("button", { name: "指定年份" })).not.toBeInTheDocument();
     expect(sliderRow?.firstElementChild).toHaveAccessibleName("上一年");
     expect(sliderRow?.lastElementChild).toHaveAccessibleName("下一年");
-    expect(screen.queryByRole("textbox", { name: "当前年份" })).not.toBeInTheDocument();
   });
 
   it("用键盘操作年份首尾按钮并在公元前后步进时跳过零年", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=-1");
     const user = setupUser();
     renderApp();
-    const currentYear = screen.getByLabelText("当前年份");
+    const era = screen.getByRole("combobox", { name: "纪元" });
 
     const nextYear = screen.getByRole("button", { name: "下一年" });
     nextYear.focus();
     await user.keyboard("{Enter}");
-    expect(currentYear).toHaveTextContent("1");
+    expect(era).toHaveValue("ce");
+    expect(getYearInput()).toHaveValue("1");
     expect(new URLSearchParams(window.location.search).get("year")).toBe("1");
 
     const previousYear = screen.getByRole("button", { name: "上一年" });
     previousYear.focus();
     await user.keyboard("{Enter}");
-    expect(currentYear).toHaveTextContent("前1");
+    expect(era).toHaveValue("bce");
+    expect(getYearInput()).toHaveValue("1");
   });
 
   it("通过滑杆序数跨越公元前后且不产生公元零年", () => {
@@ -407,9 +409,10 @@ describe("Crownline 浏览", () => {
     const slider = screen.getByRole("slider", { name: "历史年份滑杆" });
 
     fireEvent.change(slider, { target: { value: "1" } });
-    expect(screen.getByLabelText("当前年份")).toHaveTextContent("1");
+    expect(new URLSearchParams(window.location.search).get("year")).toBe("1");
     fireEvent.change(slider, { target: { value: "0" } });
-    expect(screen.getByLabelText("当前年份")).toHaveTextContent("前1");
+    expect(new URLSearchParams(window.location.search).get("year")).toBe("-1");
+    expect(screen.getByRole("combobox", { name: "纪元" })).toHaveValue("bce");
   });
 
   it("在约年边界给出解释，并为组合筛选提供明确空状态", async () => {

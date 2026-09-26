@@ -2,10 +2,8 @@ import { expect, test, type Locator, type Page } from "@playwright/test";
 
 async function openTimeControls(page: Page, isMobile: boolean): Promise<Locator> {
   if (!isMobile) {
-    // 桌面工具条把精确跳转收在“更多筛选”中。
-    const toggle = page.getByRole("button", { name: /^更多筛选/ });
-    if ((await toggle.getAttribute("aria-expanded")) !== "true") await toggle.click();
-    return page.getByRole("region", { name: "浏览与筛选工具" });
+    // 桌面年份框常驻控制台的时间范围控件。
+    return page.locator(".full-exploration-console").getByRole("region", { name: "时间范围" });
   }
 
   const dialog = page.getByRole("dialog", { name: "筛选与呈现" });
@@ -26,7 +24,7 @@ test("精确年份跳转可分享，并在刷新和浏览器状态变化后恢�
     for (const control of [
       controls.getByRole("combobox", { name: "纪元" }),
       controls.getByRole("textbox", { name: "年份" }),
-      controls.getByRole("button", { name: "跳转" })
+      controls.getByRole("button", { name: "全时期" })
     ]) {
       expect((await control.boundingBox())!.height).toBeGreaterThanOrEqual(44);
     }

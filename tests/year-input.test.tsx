@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { TimeRangeControl } from "../src/components/TimeRangeControl";
 import type { TimeRange } from "../src/domain/browseState";
-import { openMoreFilters, installAppTestLifecycle, renderApp } from "./helpers/renderApp";
+import { installAppTestLifecycle, renderApp } from "./helpers/renderApp";
 import { setupUser } from "./helpers/user";
 
 installAppTestLifecycle();
@@ -13,9 +13,9 @@ const yearBounds = { min: -2070, max: 1922 };
 function renderYearControl({
   year = 800,
   value = "year" as TimeRange,
-  onYearChange = vi.fn()
+  onYearChange = vi.fn(),
+  onChange = vi.fn()
 } = {}) {
-  const onChange = vi.fn();
   const view = render(
     <TimeRangeControl
       value={value}
@@ -56,8 +56,7 @@ describe("精确历史年份输入", () => {
 
     const yearInput = screen.getByRole("textbox", { name: "年份" });
     await user.clear(yearInput);
-    if (input) await user.type(yearInput, input);
-    await user.click(screen.getByRole("button", { name: "跳转" }));
+    await user.type(yearInput, `${input}{Enter}`);
 
     expect(screen.getByRole("alert")).toHaveTextContent(error);
     expect(yearInput).toHaveAttribute("aria-invalid", "true");
@@ -80,10 +79,10 @@ describe("精确历史年份输入", () => {
     await user.click(screen.getByRole("button", { name: "跳转" }));
     expect(screen.getByRole("alert")).toHaveTextContent("可跳转范围为前2070至1922。");
 
-    await user.selectOptions(screen.getByRole("combobox", { name: "纪元" }), "bce");
+    // 改纪元会立即提交，超出范围同样给出提示而不跳转。
     await user.clear(input);
     await user.type(input, "2071");
-    await user.click(screen.getByRole("button", { name: "跳转" }));
+    await user.selectOptions(screen.getByRole("combobox", { name: "纪元" }), "bce");
     expect(screen.getByRole("alert")).toHaveTextContent("可跳转范围为前2070至1922。");
     expect(onYearChange).not.toHaveBeenCalled();
   });
@@ -95,7 +94,7 @@ describe("精确历史年份输入", () => {
     const input = screen.getByRole("textbox", { name: "年份" });
 
     await user.clear(input);
-    await user.click(screen.getByRole("button", { name: "跳转" }));
+    await user.type(input, "{Enter}");
     expect(screen.getByRole("alert")).toBeInTheDocument();
 
     rerender(
@@ -114,11 +113,83 @@ describe("精确历史年份输入", () => {
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
   });
 
+  it("修改后离开输入框即提交；清空后离开则恢复当前年份", async () => {
+    const user = setupUser();
+    const onYearChange = vi.fn();
+    renderYearControl({ onYearChange });
+    const input = screen.getByRole("textbox", { name: "年份" });
+
+    await user.clear(input);
+    await user.type(input, "1200");
+    expect(screen.getByRole("button", { name: "跳转" })).toBeInTheDocument();
+    await user.tab();
+    expect(onYearChange).toHaveBeenCalledWith(1200);
+
+    onYearChange.mockClear();
+    // 父组件未更新年份时，当前值仍是 800。
+    await user.clear(input);
+    await user.tab();
+    expect(input).toHaveValue("800");
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    expect(onYearChange).not.toHaveBeenCalled();
+  });
+
+  it("未修改时不显示跳转按钮，离开输入框不会重复提交", async () => {
+    const user = setupUser();
+    const onYearChange = vi.fn();
+    renderYearControl({ onYearChange });
+
+    expect(screen.queryByRole("button", { name: "跳转" })).not.toBeInTheDocument();
+    await user.click(screen.getByRole("textbox", { name: "年份" }));
+    await user.tab();
+    expect(onYearChange).not.toHaveBeenCalled();
+  });
+
+  it("改纪元立即以同一数字跳转", async () => {
+    const user = setupUser();
+    const onYearChange = vi.fn();
+    renderYearControl({ year: 221, onYearChange });
+
+    await user.selectOptions(screen.getByRole("combobox", { name: "纪元" }), "bce");
+    expect(onYearChange).toHaveBeenCalledWith(-221);
+  });
+
+  it("全时期时年份框留空、步进禁用，输入年份后进入该年", async () => {
+    const user = setupUser();
+    const onYearChange = vi.fn();
+    const onChange = vi.fn();
+    renderYearControl({ value: "all", year: 1922, onYearChange, onChange });
+
+    const input = screen.getByRole("textbox", { name: "年份" });
+    expect(input).toHaveValue("");
+    expect(input).toHaveAttribute("placeholder", "输入年份");
+    expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "上一年" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "下一年" })).toBeDisabled();
+
+    await user.selectOptions(screen.getByRole("combobox", { name: "纪元" }), "bce");
+    expect(onYearChange).not.toHaveBeenCalled();
+
+    await user.type(input, "770{Enter}");
+    expect(onYearChange).toHaveBeenCalledWith(-770);
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it("指定年份时“全时期”按钮退出年份", async () => {
+    const user = setupUser();
+    const onChange = vi.fn();
+    renderYearControl({ onChange });
+
+    const allTime = screen.getByRole("button", { name: "全时期" });
+    expect(allTime).toHaveAttribute("aria-pressed", "false");
+    await user.click(allTime);
+    expect(onChange).toHaveBeenCalledWith("all");
+  });
+
   it("把跳转结果写入 URL，并在 popstate 后同步外部年份", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=-221&external=kept");
     const user = setupUser();
     renderApp();
-    openMoreFilters();
 
     const era = screen.getByRole("combobox", { name: "纪元" });
     const input = screen.getByRole("textbox", { name: "年份" });

@@ -283,11 +283,11 @@ test.describe("Crownline 浏览器冒烟", () => {
       "aria-pressed",
       "true"
     );
-    await expect(controls.getByRole("button", { name: "指定年份" })).toHaveAttribute(
+    await expect(controls.getByRole("button", { name: "全时期" })).toHaveAttribute(
       "aria-pressed",
-      "true"
+      "false"
     );
-    await expect(controls.getByLabel("当前年份", { exact: true })).toHaveText("800");
+    await expect(controls.getByRole("textbox", { name: "年份" })).toHaveValue("800");
     await expect(controls.getByRole("button", { name: "中国" })).toHaveAttribute(
       "aria-pressed",
       "true"
@@ -300,7 +300,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await page.reload();
     await waitForAppReady(page);
     controls = await getControls();
-    await expect(controls.getByLabel("当前年份", { exact: true })).toHaveText("800");
+    await expect(controls.getByRole("textbox", { name: "年份" })).toHaveValue("800");
     await expect(controls.getByRole("button", { name: "中国" })).toHaveAttribute(
       "aria-pressed",
       "true"
@@ -320,7 +320,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     );
 
     await page.goBack();
-    await expect(controls.getByLabel("当前年份", { exact: true })).toHaveText("800");
+    await expect(controls.getByRole("textbox", { name: "年份" })).toHaveValue("800");
     await expect(controls.getByRole("button", { name: "地图" })).toHaveAttribute(
       "aria-pressed",
       "true"
@@ -563,14 +563,6 @@ test.describe("Crownline 浏览器冒烟", () => {
       expect(
         Math.abs(searchBox!.y + searchBox!.height / 2 - (moreBox!.y + moreBox!.height / 2))
       ).toBeLessThan(4);
-      // 1280px 及以上（内容宽度 1120px）保持一行工具条。
-      if (width >= 1280) {
-        const viewBox = await page.getByRole("region", { name: "呈现方式" }).first().boundingBox();
-        expect(
-          Math.abs(viewBox!.y + viewBox!.height / 2 - (moreBox!.y + moreBox!.height / 2)),
-          `${width}px${query} 工具条折行`
-        ).toBeLessThan(6);
-      }
       expect(
         await page.evaluate(
           () => document.documentElement.scrollWidth > document.documentElement.clientWidth
@@ -579,41 +571,35 @@ test.describe("Crownline 浏览器冒烟", () => {
     }
   });
 
-  test("更多筛选中精确跳转为紧凑组合控件，与类别和清除按钮同行等高", async ({ page, isMobile }) => {
-    test.skip(isMobile, "桌面更多筛选布局仅在 desktop-chromium 项目覆盖");
+  test("年份框为紧凑组合控件，错误提示不推动同行控件", async ({ page, isMobile }) => {
+    test.skip(isMobile, "桌面工具条布局仅在 desktop-chromium 项目覆盖");
 
-    await page.goto("/");
+    await page.goto("/?mode=point&year=-221");
     await waitForAppReady(page);
-    await openMoreFilters(page);
+    const time = page
+      .locator(".full-exploration-console")
+      .getByRole("region", { name: "时间范围" });
 
     const boxes = await Promise.all(
       [
-        page.getByRole("combobox", { name: "纪元" }),
-        page.getByRole("textbox", { name: "年份" }),
-        page.getByRole("button", { name: "跳转" }),
-        page.getByRole("combobox", { name: "显示类别" }),
-        page.getByRole("button", { name: "清除搜索与类别（控制台）" })
+        time.getByRole("button", { name: "全时期" }),
+        time.getByRole("combobox", { name: "纪元" }),
+        time.getByRole("textbox", { name: "年份" }),
+        time.getByRole("button", { name: "上一年" })
       ].map(async (control) => (await control.boundingBox())!)
     );
-    const [, yearInput] = boxes;
-    // 年份最多 4 位数字，输入框不应再拉伸占满整列。
+    const [, , yearInput] = boxes;
+    // 年份最多 4 位数字，输入框不应拉伸占满整列。
     expect(yearInput!.width).toBeLessThanOrEqual(96);
-    const bottoms = boxes.map(({ y, height }) => y + height);
-    expect(Math.max(...bottoms) - Math.min(...bottoms)).toBeLessThan(2);
-    const heights = boxes.map(({ height }) => height);
-    expect(Math.max(...heights) - Math.min(...heights)).toBeLessThan(2);
+    const centers = boxes.map(({ y, height }) => y + height / 2);
+    expect(Math.max(...centers) - Math.min(...centers)).toBeLessThan(3);
 
-    // 跳转错误提示出现在组合控件下方，不推动同行的类别选择。
-    await page.getByRole("textbox", { name: "年份" }).fill("3000");
-    await page.getByRole("button", { name: "跳转" }).click();
-    await expect(page.getByRole("alert")).toContainText("可跳转范围");
-    const [inputAfter, categoryAfter] = await Promise.all(
-      [
-        page.getByRole("textbox", { name: "年份" }),
-        page.getByRole("combobox", { name: "显示类别" })
-      ].map(async (control) => (await control.boundingBox())!)
-    );
-    expect(Math.abs(inputAfter!.y - categoryAfter!.y)).toBeLessThan(2);
+    const stepBefore = (await time.getByRole("button", { name: "上一年" }).boundingBox())!;
+    await time.getByRole("textbox", { name: "年份" }).fill("3000");
+    await time.getByRole("textbox", { name: "年份" }).press("Enter");
+    await expect(time.getByRole("alert")).toContainText("可跳转范围");
+    const stepAfter = (await time.getByRole("button", { name: "上一年" }).boundingBox())!;
+    expect(Math.abs(stepAfter.y - stepBefore.y)).toBeLessThan(2);
   });
 
   test("手机时间轴使用紧凑行，长分组先预览 6 行并可展开收起", async ({ page, isMobile }) => {

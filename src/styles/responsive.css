@@ -160,21 +160,27 @@
     width: 100%;
   }
 
-  .filter-sheet .year-era-select,
-  .filter-sheet .year-number-input,
-  .filter-sheet .year-jump-button {
+  .filter-sheet .time-all-button {
     min-height: 44px;
   }
 
-  .filter-sheet .time-range-heading,
+  /* 外框 1px 边线之内仍保留 44px 触控高度。 */
+  .filter-sheet .year-field-controls {
+    min-height: 46px;
+  }
+
+  .filter-sheet .year-field {
+    flex: 1;
+  }
+
+  .filter-sheet .year-field .year-number-input {
+    flex: 1;
+  }
+
   .filter-sheet .region-scope-heading {
     display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
-  }
-
-  .filter-sheet .year-current {
-    justify-content: flex-start;
   }
 
   .filter-sheet .time-range-control,

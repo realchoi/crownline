@@ -4,6 +4,8 @@ import { describe, expect, it, vi } from "vitest";
 import type { GeographyLoadResult } from "../../src/data/loadCrownlineGeography";
 import { setupUser } from "../helpers/user";
 import {
+  enterYear,
+  getYearInput,
   openMoreFilters,
   artifacts,
   boundaryFixtureIndex,
@@ -51,8 +53,8 @@ describe("Crownline 地图", () => {
     expect(
       await screen.findByRole("region", { name: "全时期历史政权总览地图" })
     ).toBeInTheDocument();
-    expect(screen.getByLabelText("当前时间范围")).toHaveTextContent("全时期");
     expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "true");
+    expect(getYearInput()).toHaveValue("");
     expect(screen.getByText(/全时期总览：显示/)).toBeInTheDocument();
     expect(screen.getByText("跨时期点位不表示这些政权同时存在")).toBeInTheDocument();
 
@@ -65,7 +67,7 @@ describe("Crownline 地图", () => {
       target: { value: "500" }
     });
     expect(await screen.findByRole("region", { name: "当前年份历史政权示意地图" })).toBeVisible();
-    expect(screen.getByLabelText("当前年份")).toHaveTextContent("500");
+    expect(getYearInput()).toHaveValue("500");
     expect(screen.getByRole("region", { name: "地图结果列表" })).not.toHaveTextContent("明");
     expect(new URLSearchParams(window.location.search).get("mode")).toBe("point");
 
@@ -339,13 +341,10 @@ describe("Crownline 地图", () => {
     expect(params.has("mode")).toBe(false);
     expect(params.has("year")).toBe(false);
 
-    await user.click(screen.getByRole("button", { name: "指定年份" }));
+    await enterYear(user, 1922);
     await user.click(screen.getByRole("button", { name: "疆域示意" }));
     params = new URLSearchParams(window.location.search);
-    expect(screen.getByRole("button", { name: "指定年份" })).toHaveAttribute(
-      "aria-pressed",
-      "true"
-    );
+    expect(screen.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "false");
     expect(params.get("mode")).toBe("point");
   });
 

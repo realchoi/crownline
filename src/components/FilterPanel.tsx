@@ -8,7 +8,6 @@ import type { Region } from "../domain/types";
 import { RegionScopeControl } from "./RegionScopeControl";
 import { TimeRangeControl } from "./TimeRangeControl";
 import { ViewModeControl } from "./ViewModeControl";
-import { YearJumpForm } from "./YearJumpForm";
 
 /** 筛选面板的受控状态与事件。 */
 export interface FilterPanelProps {
@@ -166,7 +165,6 @@ export function FilterPanel({
             yearBounds={yearBounds}
             onChange={onTimeRangeChange}
             onYearChange={onYearChange}
-            showJumpForm={false}
           />
           <RegionScopeControl
             part="presets"
@@ -208,7 +206,6 @@ export function FilterPanel({
             onChange={onRegionScopeChange}
           />
           {mapLayerControl}
-          <YearJumpForm year={year} yearBounds={yearBounds} onYearChange={onYearChange} />
           <div className="console-more-filters">
             {categoryField}
             {clearButton}

@@ -26,7 +26,7 @@ p {
 }
 
 h1,
-.year-current-value,
+.year-field .year-number-input,
 .stage-title,
 .timepoint-heading h2,
 .timepoint-section-heading h3,

@@ -2,7 +2,7 @@ import { screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { setupUser } from "../helpers/user";
-import { installAppTestLifecycle, renderApp } from "../helpers/renderApp";
+import { enterYear, installAppTestLifecycle, renderApp } from "../helpers/renderApp";
 installAppTestLifecycle();
 
 const searchParams = () => new URLSearchParams(window.location.search);
@@ -97,7 +97,7 @@ describe("全览时间窗口", () => {
     const user = setupUser();
     renderApp();
 
-    await user.click(screen.getByRole("button", { name: "指定年份" }));
+    await enterYear(user, 1922);
     expect(searchParams().has("from")).toBe(false);
 
     await user.click(screen.getByRole("button", { name: "全时期" }));
