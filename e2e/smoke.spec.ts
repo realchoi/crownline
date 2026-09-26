@@ -580,6 +580,27 @@ test.describe("Crownline 浏览器冒烟", () => {
     ).toBe(false);
   });
 
+  test("地图点位图例中的聚合数字在图标内垂直居中", async ({ page }) => {
+    await page.goto("/?view=map");
+    await waitForAppReady(page);
+    const symbol = page.locator(".map-legend-cluster");
+    await expect(symbol).toBeVisible();
+    await page.evaluate(() => document.fonts.ready);
+
+    const offset = await symbol.evaluate((element) => {
+      const box = element.getBoundingClientRect();
+      const range = document.createRange();
+      range.selectNodeContents(element);
+      const glyph = range.getBoundingClientRect();
+      return {
+        vertical: glyph.top + glyph.height / 2 - (box.top + box.height / 2),
+        overflow: glyph.height > box.height
+      };
+    });
+    expect(Math.abs(offset.vertical)).toBeLessThanOrEqual(1);
+    expect(offset.overflow).toBe(false);
+  });
+
   test("年份框为紧凑组合控件，错误提示不推动同行控件", async ({ page, isMobile }) => {
     test.skip(isMobile, "桌面工具条布局仅在 desktop-chromium 项目覆盖");
 

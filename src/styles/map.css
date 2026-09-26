@@ -324,10 +324,12 @@
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 
+/* 18px 图标去掉边框只剩 14px 内容区，继承的正文行高会把数字挤到下方，需收紧为 1。 */
 .map-legend-cluster {
   border-radius: 6px;
   font-size: var(--text-2xs);
   font-weight: 800;
+  line-height: 1;
 }
 
 .map-legend-cluster::after {
