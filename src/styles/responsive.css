@@ -53,19 +53,52 @@
 
   .mobile-explore-heading {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 12px;
-    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    padding-top: 4px;
   }
 
   .mobile-explore-heading .field-label {
     display: none;
   }
 
-  .mobile-explore-heading .mode-switch button {
+  .mobile-explore-heading .view-tabs button {
     min-height: 44px;
-    font-size: var(--text-md);
+    padding: 8px 12px 7px;
+  }
+
+  .mobile-explore-heading .open-filter-button {
+    margin-bottom: 6px;
+  }
+
+  /* 首屏常驻紧凑时间控件：年份框吃掉剩余宽度，全时期与步进保持 44px 触控目标。 */
+  .mobile-explore-bar .time-range-control.is-compact {
+    padding-block: 8px;
+  }
+
+  .mobile-explore-bar .time-all-button {
+    min-height: 44px;
+    padding-inline: 12px;
+  }
+
+  .mobile-explore-bar .year-field {
+    flex: 1;
+  }
+
+  .mobile-explore-bar .year-field-controls {
+    min-height: 46px;
+  }
+
+  .mobile-explore-bar .year-field .year-number-input {
+    flex: 1;
+    min-width: 3em;
+  }
+
+  .mobile-explore-bar .time-range-control.is-compact .year-step-button {
+    width: 44px;
+    min-height: 44px;
   }
 
   .open-filter-button {
@@ -377,6 +410,11 @@
   }
 }
 @media (max-width: 640px) {
+  /* 窄屏刻度尺只保留隔位的主要年代，避免文字互相挤压。 */
+  .year-ruler-tick.is-minor {
+    display: none;
+  }
+
   .site-shell.has-comparison-tray {
     padding-bottom: calc(148px + env(safe-area-inset-bottom));
   }

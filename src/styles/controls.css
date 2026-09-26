@@ -170,6 +170,24 @@ main {
   max-width: 18rem;
 }
 
+/* 紧凑时间控件：全时期、年份框与一对步进按钮排成一行，不含滑杆。 */
+.time-range-control.is-compact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.year-step-pair {
+  display: flex;
+  gap: 4px;
+}
+
+.time-range-control.is-compact .year-step-button {
+  width: 34px;
+  min-height: 34px;
+}
+
 /* 全时期时拇指淡出，轨道仍可点击或拖动进入某一年。 */
 .time-range-control.is-overview .year-slider {
   opacity: 0.55;
@@ -717,12 +735,14 @@ a:focus-visible {
   padding-top: 8px;
 }
 
-/* 工具条内错误提示浮在年份框下方，不撑高整行。 */
-.console-toolbar .year-field {
+/* 工具条与紧凑时间控件内的错误提示浮在年份框下方，不撑高整行。 */
+.console-toolbar .year-field,
+.time-range-control.is-compact .year-field {
   position: relative;
 }
 
-.console-toolbar .year-input-error {
+.console-toolbar .year-input-error,
+.time-range-control.is-compact .year-input-error {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
@@ -959,9 +979,19 @@ a:focus-visible {
   }
 }
 
+.compact-console-bar .view-mode-control .field-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .console-status-items {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, auto));
+  grid-auto-columns: minmax(0, auto);
+  grid-auto-flow: column;
   flex: 1;
   gap: 0;
   min-width: 0;

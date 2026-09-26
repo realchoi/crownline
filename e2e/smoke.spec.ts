@@ -144,7 +144,7 @@ test.describe("Crownline 浏览器冒烟", () => {
 
     await page.getByRole("button", { name: "地图", exact: true }).click();
     await expect(page.getByRole("region", { name: "全时期历史政权总览地图" })).toBeVisible();
-    await expect(page.getByRole("dialog", { name: "筛选与呈现" })).toHaveCount(0);
+    await expect(page.getByRole("dialog", { name: "筛选条件" })).toHaveCount(0);
     await page.getByRole("button", { name: "时间轴", exact: true }).click();
     await expect(page.getByRole("button", { name: "时间轴", exact: true })).toHaveAttribute(
       "aria-pressed",
@@ -276,15 +276,15 @@ test.describe("Crownline 浏览器冒烟", () => {
         await openRegionScope(page);
         return page;
       }
-      const existing = page.getByRole("dialog", { name: "筛选与呈现" });
+      const existing = page.getByRole("dialog", { name: "筛选条件" });
       if ((await existing.count()) === 0) {
         await page.getByRole("button", { name: /^筛选/ }).click();
       }
-      return page.getByRole("dialog", { name: "筛选与呈现" });
+      return page.getByRole("dialog", { name: "筛选条件" });
     };
     let controls = await getControls();
 
-    await expect(controls.getByRole("button", { name: "地图" })).toHaveAttribute(
+    await expect(page.getByRole("button", { name: "地图", exact: true })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
@@ -311,7 +311,7 @@ test.describe("Crownline 浏览器冒烟", () => {
       window.history.pushState(null, "", "/?scope=global");
       window.dispatchEvent(new PopStateEvent("popstate"));
     });
-    await expect(controls.getByRole("button", { name: "时间轴" })).toHaveAttribute(
+    await expect(page.getByRole("button", { name: "时间轴", exact: true })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
@@ -322,7 +322,7 @@ test.describe("Crownline 浏览器冒烟", () => {
 
     await page.goBack();
     await expect(controls.getByRole("textbox", { name: "年份" })).toHaveValue("800");
-    await expect(controls.getByRole("button", { name: "地图" })).toHaveAttribute(
+    await expect(page.getByRole("button", { name: "地图", exact: true })).toHaveAttribute(
       "aria-pressed",
       "true"
     );
@@ -348,7 +348,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     await expect(trigger).toBeVisible();
     await expect(page.getByRole("region", { name: "地区范围" })).toHaveCount(0);
     await trigger.click();
-    const sheet = page.getByRole("dialog", { name: "筛选与呈现" });
+    const sheet = page.getByRole("dialog", { name: "筛选条件" });
     await expect(sheet).toBeVisible();
     await expect(sheet.getByRole("button", { name: "关闭筛选" })).toBeFocused();
     await sheet.getByPlaceholder("例如：唐、奥斯曼、前221").fill("明");
@@ -766,7 +766,7 @@ test.describe("Crownline 浏览器冒烟", () => {
     for (const colorScheme of ["light", "dark"] as const) {
       await page.emulateMedia({ colorScheme, reducedMotion: "reduce" });
       await trigger.click();
-      const sheet = page.getByRole("dialog", { name: "筛选与呈现" });
+      const sheet = page.getByRole("dialog", { name: "筛选条件" });
       await expect(sheet).toBeVisible();
       const close = sheet.getByRole("button", { name: "关闭筛选" });
       await expect(close).toBeFocused();
@@ -799,7 +799,7 @@ test.describe("Crownline 浏览器冒烟", () => {
       .locator(".mobile-explore-bar")
       .evaluate((element) => element.getBoundingClientRect().height);
     await trigger.click();
-    const sheet = page.getByRole("dialog", { name: "筛选与呈现" });
+    const sheet = page.getByRole("dialog", { name: "筛选条件" });
     await sheet.getByRole("button", { name: "自选地区" }).click();
     await expect(sheet.getByRole("checkbox", { name: "欧洲" })).toBeVisible();
     await expect(sheet.locator(".region-options")).toBeVisible();
@@ -880,14 +880,8 @@ test.describe("Crownline 浏览器冒烟", () => {
     await page.goto("/");
     await waitForAppReady(page);
 
-    if (isMobile) {
-      await page.getByRole("button", { name: "筛选" }).click();
-      const sheet = page.getByRole("dialog", { name: "筛选与呈现" });
-      await sheet.getByRole("button", { name: "地图" }).click();
-      await sheet.getByRole("button", { name: /查看 \d+ 个结果/ }).click();
-    } else {
-      await page.getByRole("button", { name: "地图" }).click();
-    }
+    // 手机端视图页签常驻首屏，与桌面同样直接切换。
+    await page.getByRole("button", { name: "地图", exact: true }).click();
     await expect(page.getByRole("region", { name: "全时期历史政权总览地图" })).toBeVisible();
 
     const pageBackground = await page.evaluate(

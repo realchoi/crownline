@@ -6,7 +6,7 @@ async function openTimeControls(page: Page, isMobile: boolean): Promise<Locator>
     return page.locator(".full-exploration-console").getByRole("region", { name: "时间范围" });
   }
 
-  const dialog = page.getByRole("dialog", { name: "筛选与呈现" });
+  const dialog = page.getByRole("dialog", { name: "筛选条件" });
   if ((await dialog.count()) === 0) {
     await page.getByRole("button", { name: /^筛选/ }).click();
   }
@@ -16,6 +16,26 @@ async function openTimeControls(page: Page, isMobile: boolean): Promise<Locator>
 test("精确年份跳转可分享，并在刷新和浏览器状态变化后恢复", async ({ page, isMobile }) => {
   await page.goto("/?mode=point&year=-221&custom=keep");
   await expect(page.getByRole("heading", { name: "Crownline · 王冠纪" })).toBeVisible();
+
+  if (isMobile) {
+    // 首屏常驻的紧凑时间控件同样保持 44px 触控目标，且不造成横向溢出。
+    const bar = page.locator(".mobile-explore-bar").getByRole("region", { name: "时间范围" });
+    await expect(bar.getByRole("textbox", { name: "年份" })).toHaveValue("221");
+    for (const control of [
+      bar.getByRole("button", { name: "全时期" }),
+      bar.getByRole("combobox", { name: "纪元" }),
+      bar.getByRole("textbox", { name: "年份" }),
+      bar.getByRole("button", { name: "上一年" }),
+      bar.getByRole("button", { name: "下一年" })
+    ]) {
+      expect((await control.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+    }
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > document.documentElement.clientWidth
+      )
+    ).toBe(false);
+  }
 
   let controls = await openTimeControls(page, isMobile);
   await expect(controls.getByRole("combobox", { name: "纪元" })).toHaveValue("bce");

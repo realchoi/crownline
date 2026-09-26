@@ -17,6 +17,8 @@ interface TimeRangeControlProps {
   yearBounds: HistoricalYearBounds;
   onChange: (value: TimeRange) => void;
   onYearChange: (year: number) => void;
+  /** `compact` 用于滚动后的工具条与移动端首屏：只保留全时期、年份框与步进，不含滑杆。 */
+  variant?: "full" | "compact";
 }
 
 /** 刻度尺最多标注的年代数；窄屏由样式隐藏隔位的次要刻度。 */
@@ -36,7 +38,8 @@ export function TimeRangeControl({
   year,
   yearBounds,
   onChange,
-  onYearChange
+  onYearChange,
+  variant = "full"
 }: TimeRangeControlProps) {
   const isAllTime = value === "all";
   const formattedYear = formatHistoricalYear({ year, precision: "exact" });
@@ -47,6 +50,64 @@ export function TimeRangeControl({
     [yearBounds.min, yearBounds.max]
   );
 
+  const allTimeButton = (
+    <button
+      className="time-all-button"
+      type="button"
+      aria-pressed={isAllTime}
+      onClick={() => onChange("all")}
+    >
+      全时期
+    </button>
+  );
+  const yearField = (
+    <YearField
+      year={year}
+      yearBounds={yearBounds}
+      isAllTime={isAllTime}
+      onYearChange={onYearChange}
+    />
+  );
+  // 全时期没有可见的当前年份，步进无从参照，因此禁用。
+  const previousButton = (
+    <button
+      className="year-step-button"
+      type="button"
+      aria-label="上一年"
+      disabled={isAllTime || year === yearBounds.min}
+      onClick={() => onYearChange(previousHistoricalYear(year))}
+    >
+      <span aria-hidden="true">−</span>
+    </button>
+  );
+  const nextButton = (
+    <button
+      className="year-step-button"
+      type="button"
+      aria-label="下一年"
+      disabled={isAllTime || year === yearBounds.max}
+      onClick={() => onYearChange(nextHistoricalYear(year))}
+    >
+      <span aria-hidden="true">＋</span>
+    </button>
+  );
+
+  if (variant === "compact") {
+    return (
+      <section
+        className={`time-range-control is-compact${isAllTime ? " is-overview" : ""}`}
+        aria-label="时间范围"
+      >
+        {allTimeButton}
+        {yearField}
+        <div className="year-step-pair">
+          {previousButton}
+          {nextButton}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       className={`time-range-control${isAllTime ? " is-overview" : ""}`}
@@ -56,33 +117,12 @@ export function TimeRangeControl({
         时间
       </span>
       <div className="time-range-inputs">
-        <button
-          className="time-all-button"
-          type="button"
-          aria-pressed={isAllTime}
-          onClick={() => onChange("all")}
-        >
-          全时期
-        </button>
-        <YearField
-          year={year}
-          yearBounds={yearBounds}
-          isAllTime={isAllTime}
-          onYearChange={onYearChange}
-        />
+        {allTimeButton}
+        {yearField}
       </div>
 
       <div className="year-slider-row">
-        {/* 全时期没有可见的当前年份，步进无从参照，因此禁用。 */}
-        <button
-          className="year-step-button"
-          type="button"
-          aria-label="上一年"
-          disabled={isAllTime || year === yearBounds.min}
-          onClick={() => onYearChange(previousHistoricalYear(year))}
-        >
-          <span aria-hidden="true">−</span>
-        </button>
+        {previousButton}
         <div className="year-slider-wrap">
           <input
             className="year-slider"
@@ -115,15 +155,7 @@ export function TimeRangeControl({
             <span>{formatHistoricalYear({ year: yearBounds.max, precision: "exact" })}</span>
           </div>
         </div>
-        <button
-          className="year-step-button"
-          type="button"
-          aria-label="下一年"
-          disabled={isAllTime || year === yearBounds.max}
-          onClick={() => onYearChange(nextHistoricalYear(year))}
-        >
-          <span aria-hidden="true">＋</span>
-        </button>
+        {nextButton}
       </div>
     </section>
   );

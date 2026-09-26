@@ -13,7 +13,7 @@ import { ViewModeControl } from "./ViewModeControl";
 /** 筛选面板的受控状态与事件。 */
 export interface FilterPanelProps {
   panelRef?: Ref<HTMLElement>;
-  /** `toolbar` 为桌面首屏的三层控制台；`full` 为筛选抽屉中的纵向控件。 */
+  /** `toolbar` 为桌面首屏的三层控制台；`full` 为筛选抽屉中的纵向控件（不含呈现方式）。 */
   layout?: "full" | "toolbar";
   viewMode: ViewMode;
   timeRange: TimeRange;
@@ -114,10 +114,8 @@ export function FilterPanel({
       aria-label="浏览与筛选工具"
       tabIndex={-1}
     >
-      <header className="controls-panel-heading">
-        <h2>探索控制台</h2>
-        <ViewModeControl value={viewMode} onChange={onViewModeChange} />
-      </header>
+      {/* 抽屉只放筛选条件；呈现方式留在移动端首屏与滚动后工具条，不重复出现。 */}
+      <h2 className="visually-hidden">探索控制台</h2>
       {timeControl}
       <RegionScopeControl regions={regions} scope={regionScope} onChange={onRegionScopeChange} />
       <div className="controls-grid">{searchField("field-label")}</div>

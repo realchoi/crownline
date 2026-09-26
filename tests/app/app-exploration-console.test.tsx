@@ -46,7 +46,7 @@ describe("探索控制台", () => {
     const map = screen.getByRole("button", { name: "地图" });
     await user.click(map);
     expect(map).toHaveAttribute("aria-pressed", "true");
-    expect(screen.queryByRole("dialog", { name: "筛选与呈现" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("dialog", { name: "筛选条件" })).not.toBeInTheDocument();
     expect(
       await screen.findByRole("region", { name: "当前年份历史政权示意地图" })
     ).toBeInTheDocument();
@@ -66,22 +66,28 @@ describe("探索控制台", () => {
     expect(within(summary).getByRole("status")).toHaveTextContent("中国 · 800");
   });
 
-  it("移动端外部视图按钮与筛选抽屉共享状态，关闭抽屉后可继续切换", async () => {
+  it("移动端首屏提供视图页签与年份框，筛选抽屉不再重复呈现方式", async () => {
     mockMobileViewport(true);
     const user = setupUser();
     renderApp();
 
     await user.click(screen.getByRole("button", { name: "地图" }));
-    await user.click(screen.getByRole("button", { name: "筛选" }));
-    const dialog = screen.getByRole("dialog", { name: "筛选与呈现" });
-    expect(within(dialog).getByRole("button", { name: "地图" })).toHaveAttribute(
-      "aria-pressed",
-      "true"
-    );
-    await user.click(within(dialog).getByRole("button", { name: "时间轴" }));
+    const bar = within(screen.getByRole("region", { name: "探索控制区" }));
+    const input = bar.getByRole("textbox", { name: "年份" });
+    await user.type(input, "800{Enter}");
+    expect(new URLSearchParams(window.location.search).get("year")).toBe("800");
+    expect(bar.getByRole("button", { name: "全时期" })).toHaveAttribute("aria-pressed", "false");
+
+    await user.click(screen.getByRole("button", { name: /^筛选/ }));
+    const dialog = screen.getByRole("dialog", { name: "筛选条件" });
+    expect(within(dialog).queryByRole("button", { name: "地图" })).not.toBeInTheDocument();
+    expect(within(dialog).getByRole("textbox", { name: "年份" })).toHaveValue("800");
+    await user.click(within(dialog).getByRole("button", { name: "全时期" }));
     await user.click(within(dialog).getByRole("button", { name: "关闭筛选" }));
-    expect(screen.getByRole("button", { name: "时间轴" })).toHaveAttribute("aria-pressed", "true");
-    expect(screen.getByRole("status")).toHaveTextContent("全球已收录 · 全时期");
+
+    expect(screen.getByRole("button", { name: "地图" })).toHaveAttribute("aria-pressed", "true");
+    const summary = screen.getByRole("region", { name: "当前范围和结果摘要" });
+    expect(within(summary).getByRole("status")).toHaveTextContent("全球已收录 · 全时期");
     expect(screen.queryByLabelText("当前探索状态")).not.toBeInTheDocument();
   });
 
@@ -104,21 +110,30 @@ describe("探索控制台", () => {
       toJSON: () => ({})
     }));
     fireEvent.scroll(window);
-    expect(await screen.findByRole("region", { name: "紧凑探索工具条" })).toHaveTextContent(
-      "时间轴"
+    const compactBar = await screen.findByRole("region", { name: "紧凑探索工具条" });
+    expect(within(compactBar).getByRole("button", { name: "时间轴" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
     );
+    // 滚动后可直接换年份，不必先展开控制台。
+    fireEvent.change(within(compactBar).getByRole("textbox", { name: "年份" }), {
+      target: { value: "618" }
+    });
+    fireEvent.submit(within(compactBar).getByRole("textbox", { name: "年份" }).closest("form")!);
+    expect(new URLSearchParams(window.location.search).get("year")).toBe("618");
+    expect(within(compactBar).getByRole("button", { name: "下一年" })).toBeEnabled();
 
     const user = setupUser();
     const trigger = screen.getByRole("button", { name: "展开控制台" });
     await user.click(trigger);
-    const dialog = screen.getByRole("dialog", { name: "筛选与呈现" });
+    const dialog = screen.getByRole("dialog", { name: "筛选条件" });
     await waitFor(() =>
       expect(within(dialog).getByRole("button", { name: "关闭筛选" })).toHaveFocus()
     );
     await user.click(within(dialog).getByRole("button", { name: "中国" }));
     await user.keyboard("{Escape}");
     await waitFor(() => expect(trigger).toHaveFocus());
-    expect(screen.queryByRole("dialog", { name: "筛选与呈现" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("dialog", { name: "筛选条件" })).not.toBeInTheDocument();
     expect(new URLSearchParams(window.location.search).get("scope")).toBe("china");
     expect(screen.getByRole("region", { name: "紧凑探索工具条" })).toHaveTextContent("中国");
 
@@ -138,7 +153,7 @@ describe("探索控制台", () => {
     expect(screen.queryByRole("searchbox")).not.toBeInTheDocument();
     await user.click(trigger);
 
-    const dialog = screen.getByRole("dialog", { name: "筛选与呈现" });
+    const dialog = screen.getByRole("dialog", { name: "筛选条件" });
     const close = within(dialog).getByRole("button", { name: "关闭筛选" });
     await waitFor(() => expect(close).toHaveFocus());
     expect(document.body).toHaveClass("filter-sheet-open");

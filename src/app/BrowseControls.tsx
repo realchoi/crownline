@@ -10,6 +10,7 @@ import {
 
 import { ActiveFilterChips } from "../components/ActiveFilterChips";
 import { FilterPanel } from "../components/FilterPanel";
+import { TimeRangeControl } from "../components/TimeRangeControl";
 import { ViewModeControl } from "../components/ViewModeControl";
 import { useModalDialog } from "../components/useModalDialog";
 import {
@@ -20,7 +21,6 @@ import {
   type BrowseState,
   type HistoricalYearBounds
 } from "../domain/browseState";
-import { formatHistoricalYear } from "../domain/chronology";
 import { getRegionScopeLabel } from "../domain/regionScope";
 import { formatTimeWindow } from "../domain/timeWindow";
 import type { Region } from "../domain/types";
@@ -78,12 +78,6 @@ export function BrowseControls({
   const hasOpenedSheetRef = useRef(false);
   const scopeLabel = getRegionScopeLabel(browseState.regionScope, regions);
   const timeWindow = getEffectiveTimeWindow(browseState);
-  const timeLabel =
-    browseState.timeRange === "year"
-      ? formatHistoricalYear({ year: browseState.year, precision: "exact" })
-      : timeWindow
-        ? formatTimeWindow(timeWindow)
-        : "全时期";
   const activeFilterCount =
     (browseState.query.trim() ? 1 : 0) +
     (browseState.category !== "all" ? 1 : 0) +
@@ -199,16 +193,26 @@ export function BrowseControls({
     </>
   );
 
+  // 滚动后工具条与移动端首屏直接提供换年份的入口，不必先打开控制台。
+  const compactTimeControl = (
+    <TimeRangeControl
+      variant="compact"
+      value={browseState.timeRange}
+      year={browseState.year}
+      yearBounds={yearBounds}
+      onChange={updateState.onTimeRangeChange}
+      onYearChange={updateState.onYearChange}
+    />
+  );
+
   const statusItems = (
     <div className="console-status-items" aria-label="当前探索状态">
-      <span>
-        <small>呈现</small>
-        {browseState.viewMode === "timeline" ? "时间轴" : "地图"}
-      </span>
-      <span>
-        <small>时间</small>
-        {timeLabel}
-      </span>
+      {timeWindow && (
+        <span>
+          <small>窗口</small>
+          {formatTimeWindow(timeWindow)}
+        </span>
+      )}
       <span>
         <small>范围</small>
         {scopeLabel}
@@ -229,6 +233,7 @@ export function BrowseControls({
               <ViewModeControl
                 value={browseState.viewMode}
                 onChange={updateState.onViewModeChange}
+                appearance="tabs"
               />
               <button
                 ref={sheetTriggerRef}
@@ -242,6 +247,7 @@ export function BrowseControls({
                 筛选{activeFilterCount > 0 ? ` · ${activeFilterCount}` : ""}
               </button>
             </div>
+            {compactTimeControl}
             <ActiveFilterChips
               query={browseState.query}
               category={browseState.category}
@@ -269,6 +275,11 @@ export function BrowseControls({
                 role="region"
                 aria-label="紧凑探索工具条"
               >
+                <ViewModeControl
+                  value={browseState.viewMode}
+                  onChange={updateState.onViewModeChange}
+                />
+                {compactTimeControl}
                 {statusItems}
                 <button
                   className="expand-console-button"
@@ -297,7 +308,7 @@ export function BrowseControls({
           <header className="filter-sheet-heading">
             <div>
               <span className="console-kicker">Explore / 探索</span>
-              <h2 id="filter-sheet-title">筛选与呈现</h2>
+              <h2 id="filter-sheet-title">筛选条件</h2>
             </div>
             <button ref={sheetCloseRef} type="button" aria-label="关闭筛选" onClick={closeSheet}>
               <span aria-hidden="true">×</span>

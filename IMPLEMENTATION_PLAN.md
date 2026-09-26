@@ -28,11 +28,11 @@
 **Goal**: 滚动后的紧凑工具条与移动端首屏可直接改年份；移动抽屉不再重复呈现方式。
 **Success Criteria**: 紧凑条保留状态与“展开控制台”；移动端 44px 触控目标、抽屉无横向溢出。
 **Tests**: 控制台集成测试、`e2e/year-input.spec.ts`、响应式 E2E。
-**Status**: In Progress
+**Status**: Complete
 
 ## Stage 5: 收尾
 
 **Goal**: 字体子集、文档、完整检查。
 **Success Criteria**: `npm run check` 通过；README 中控制台描述与实际一致。
 **Tests**: `npm run check`。
-**Status**: Not Started
+**Status**: In Progress
