@@ -509,23 +509,6 @@ test.describe("Crownline 浏览器冒烟", () => {
     expect(box?.height ?? Number.POSITIVE_INFINITY).toBeLessThan(90);
   });
 
-  test("全时期总览的清除筛选按钮与类别选择在桌面端保持同行", async ({ page, isMobile }) => {
-    test.skip(isMobile, "桌面网格布局仅在 desktop-chromium 项目覆盖");
-
-    await page.goto("/");
-    await waitForAppReady(page);
-    await page.getByRole("button", { name: "地图" }).click();
-    await openMoreFilters(page);
-
-    const categoryBox = await page.getByRole("combobox", { name: "显示类别" }).boundingBox();
-    const clearBox = await page
-      .getByRole("button", { name: "清除搜索与类别（控制台）" })
-      .boundingBox();
-    expect(categoryBox).not.toBeNull();
-    expect(clearBox).not.toBeNull();
-    expect(Math.abs((categoryBox?.y ?? 0) - (clearBox?.y ?? 0))).toBeLessThan(2);
-  });
-
   test("桌面工具条完整显示搜索示例，更多筛选不单独换行", async ({ page, isMobile }) => {
     test.skip(isMobile, "桌面工具条仅在 desktop-chromium 项目覆盖");
     for (const [width, query] of [

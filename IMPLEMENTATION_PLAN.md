@@ -14,14 +14,14 @@
 **Goal**: 用一组 `aria-pressed` 类别按钮（全部 + 四类，时间轴视图带色标）替换“显示类别”下拉框、独立图例与控制台里的清除按钮。
 **Success Criteria**: 单选语义不变，再次点击已选类别回到全部；地图视图不显示色标；`type` URL 参数不变。
 **Tests**: `app-browse` 类别相关用例、控制台用例。
-**Status**: In Progress
+**Status**: Complete
 
 ## Stage 3: 控制台层级重排
 
 **Goal**: 第一行呈现方式页签 + 观测范围下拉浮层 + 搜索；第二行全宽时间刻度尺；第三行类别；地图图层开关移到地图结果区；取消“更多筛选”。
 **Success Criteria**: 浮层支持 Escape、点外关闭与焦点恢复；疆域加载失败时仍可切回地点标记；桌面 1120px 下无横向溢出。
 **Tests**: 控制台、地区、地图图层集成测试；E2E 冒烟与 axe。
-**Status**: Not Started
+**Status**: In Progress
 
 ## Stage 4: 紧凑条与移动端
 

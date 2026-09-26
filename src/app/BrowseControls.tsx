@@ -190,7 +190,6 @@ export function BrowseControls({
         onQueryChange={updateState.onQueryChange}
         onCategoryChange={updateState.onCategoryChange}
         onRegionScopeChange={updateState.onRegionScopeChange}
-        onClear={updateState.onClear}
       />
       <ActiveFilterChips
         query={browseState.query}

@@ -1,10 +1,10 @@
 import { useId, useState, type Ref } from "react";
 
 import type { HistoricalYearBounds, MapLayer, TimeRange, ViewMode } from "../domain/browseState";
-import { DISPLAY_CATEGORY_NAMES } from "../domain/displayCategories";
 import type { RegionScope } from "../domain/regionScope";
 import type { CategoryFilter } from "../domain/selectors";
 import type { Region } from "../domain/types";
+import { CategoryFilterControl } from "./CategoryFilterControl";
 import { RegionScopeControl } from "./RegionScopeControl";
 import { TimeRangeControl } from "./TimeRangeControl";
 import { ViewModeControl } from "./ViewModeControl";
@@ -31,7 +31,6 @@ export interface FilterPanelProps {
   onQueryChange: (query: string) => void;
   onCategoryChange: (category: CategoryFilter) => void;
   onRegionScopeChange: (scope: RegionScope) => void;
-  onClear: () => void;
 }
 
 /** 渲染呈现方式、时间、地区、搜索、类别与图例控件。 */
@@ -54,10 +53,8 @@ export function FilterPanel({
   onMapLayerChange,
   onQueryChange,
   onCategoryChange,
-  onRegionScopeChange,
-  onClear
+  onRegionScopeChange
 }: FilterPanelProps) {
-  const hasFilters = query.trim().length > 0 || category !== "all";
   const showPoints = mapLayer !== "boundaries";
   const showBoundaries = mapLayer !== "points";
   const isMap = viewMode === "map";
@@ -108,47 +105,11 @@ export function FilterPanel({
       />
     </label>
   );
-  const categoryField = (
-    <label>
-      <span className="field-label">显示类别</span>
-      <select
-        className="select-input"
-        value={category}
-        onChange={(event) => onCategoryChange(event.currentTarget.value as CategoryFilter)}
-      >
-        <option value="all">全部条目</option>
-        {Object.entries(DISPLAY_CATEGORY_NAMES).map(([value, label]) => (
-          <option key={value} value={value}>
-            {label}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-  const clearButton = (
-    <button
-      className="button"
-      type="button"
-      aria-label="清除搜索与类别（控制台）"
-      disabled={!hasFilters}
-      onClick={onClear}
-    >
-      清除搜索与类别
-    </button>
-  );
-  const legend = !isMap && timeRange === "all" && (
-    <div className="legend" aria-label="类别图例">
-      {Object.entries(DISPLAY_CATEGORY_NAMES).map(([value, label]) => (
-        <span className={`legend-item legend-${value}`} key={value}>
-          <i className="legend-mark" aria-hidden="true" />
-          {label}
-        </span>
-      ))}
-    </div>
+  const categoryControl = (
+    <CategoryFilterControl value={category} showSwatches={!isMap} onChange={onCategoryChange} />
   );
 
   if (layout === "toolbar") {
-    const hiddenFilterCount = category !== "all" ? 1 : 0;
     return (
       <section
         ref={panelRef}
@@ -183,17 +144,9 @@ export function FilterPanel({
               type="button"
               aria-expanded={moreOpen}
               aria-controls={moreId}
-              {...(hiddenFilterCount > 0
-                ? { "aria-label": `更多筛选，已启用 ${hiddenFilterCount} 项` }
-                : {})}
               onClick={() => setMoreOpen((open) => !open)}
             >
               更多筛选
-              {hiddenFilterCount > 0 && (
-                <span className="console-more-count" aria-hidden="true">
-                  {hiddenFilterCount}
-                </span>
-              )}
               <span className="console-more-chevron" aria-hidden="true" />
             </button>
           </div>
@@ -206,12 +159,8 @@ export function FilterPanel({
             onChange={onRegionScopeChange}
           />
           {mapLayerControl}
-          <div className="console-more-filters">
-            {categoryField}
-            {clearButton}
-          </div>
-          {legend}
         </div>
+        {categoryControl}
       </section>
     );
   }
@@ -239,12 +188,8 @@ export function FilterPanel({
 
       {mapLayerControl}
 
-      <div className="controls-grid">
-        {searchField("field-label")}
-        {categoryField}
-        {clearButton}
-      </div>
-      {legend}
+      <div className="controls-grid">{searchField("field-label")}</div>
+      {categoryControl}
     </section>
   );
 }

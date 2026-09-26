@@ -2,13 +2,7 @@ import { fireEvent, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { setupUser } from "../helpers/user";
-import {
-  enterYear,
-  getYearInput,
-  openMoreFilters,
-  installAppTestLifecycle,
-  renderApp
-} from "../helpers/renderApp";
+import { enterYear, getYearInput, installAppTestLifecycle, renderApp } from "../helpers/renderApp";
 installAppTestLifecycle();
 
 describe("Crownline 浏览", () => {
@@ -51,15 +45,46 @@ describe("Crownline 浏览", () => {
   it("按展示类别筛选并清除筛选", async () => {
     const user = setupUser();
     renderApp();
-    openMoreFilters();
-    const select = screen.getByRole("combobox", { name: "显示类别" });
+    const categories = within(screen.getByRole("group", { name: "显示类别" }));
 
-    await user.selectOptions(select, "context");
+    await user.click(categories.getByRole("button", { name: "历史分期" }));
     expect(screen.getByRole("status")).toHaveTextContent("显示 3 / 137 个条目");
+    expect(categories.getByRole("button", { name: "历史分期" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    expect(categories.getByRole("button", { name: "全部" })).toHaveAttribute(
+      "aria-pressed",
+      "false"
+    );
 
     await user.click(screen.getByRole("button", { name: "清除搜索与类别" }));
     expect(screen.getByRole("status")).toHaveTextContent("显示 137 / 137 个条目");
-    expect(select).toHaveValue("all");
+    expect(categories.getByRole("button", { name: "全部" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+  });
+
+  it("类别保持单选：换选另一类替换当前类别，再次点击已选类别回到全部", async () => {
+    const user = setupUser();
+    renderApp();
+    const categories = within(screen.getByRole("group", { name: "显示类别" }));
+
+    await user.click(categories.getByRole("button", { name: "主线王朝" }));
+    await user.click(categories.getByRole("button", { name: "区域政权" }));
+    expect(new URLSearchParams(window.location.search).get("type")).toBe("regional");
+    expect(categories.getByRole("button", { name: "主线王朝" })).toHaveAttribute(
+      "aria-pressed",
+      "false"
+    );
+
+    await user.click(categories.getByRole("button", { name: "区域政权" }));
+    expect(new URLSearchParams(window.location.search).has("type")).toBe(false);
+    expect(categories.getByRole("button", { name: "全部" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
   });
 
   it("搜索和类别变化及清除筛选都保留地区、年份、详情和对比", () => {
@@ -69,12 +94,13 @@ describe("Crownline 浏览", () => {
       "/?mode=point&year=800&scope=china&q=%E5%94%90&type=mainline&compare=polity-cn-tang&detail=polity-cn-tang"
     );
     renderApp();
-    openMoreFilters();
 
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "明" } });
-    fireEvent.change(screen.getByRole("combobox", { name: "显示类别" }), {
-      target: { value: "contemporary" }
-    });
+    fireEvent.click(
+      within(screen.getByRole("group", { name: "显示类别" })).getByRole("button", {
+        name: "主要并立政权"
+      })
+    );
     fireEvent.click(screen.getByRole("button", { name: "清除搜索与类别" }));
 
     const params = new URLSearchParams(window.location.search);
@@ -91,13 +117,16 @@ describe("Crownline 浏览", () => {
     window.history.replaceState(null, "", "/?q=时期&type=context");
     const user = setupUser();
     renderApp();
-    openMoreFilters();
+    const categories = within(screen.getByRole("group", { name: "显示类别" }));
 
     expect(screen.getByRole("searchbox")).toHaveValue("时期");
-    expect(screen.getByRole("combobox", { name: "显示类别" })).toHaveValue("context");
+    expect(categories.getByRole("button", { name: "历史分期" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
     expect(screen.getByRole("status")).toHaveTextContent("显示 2 / 137 个条目");
 
-    await user.selectOptions(screen.getByRole("combobox", { name: "显示类别" }), "all");
+    await user.click(categories.getByRole("button", { name: "全部" }));
     expect(new URLSearchParams(window.location.search).has("type")).toBe(false);
   });
 
@@ -322,15 +351,20 @@ describe("Crownline 浏览", () => {
     expect(timeline).not.toHaveTextContent("尚未收录代表性政权");
   });
 
-  it("时间点模式隐藏重复图例并在全览模式恢复", async () => {
+  it("类别筛选默认可见，时间轴视图带色标兼作图例，地图视图不显示色标", async () => {
     window.history.replaceState(null, "", "/?mode=point&year=978");
     const user = setupUser();
     renderApp();
 
-    expect(screen.queryByLabelText("类别图例")).not.toBeInTheDocument();
+    const categories = screen.getByRole("group", { name: "显示类别" });
+    expect(categories).toBeVisible();
+    expect(categories.querySelectorAll(".category-swatch")).toHaveLength(4);
 
-    await user.click(screen.getByRole("button", { name: "全时期" }));
-    expect(screen.getByLabelText("类别图例")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "地图" }));
+    expect(screen.getByRole("group", { name: "显示类别" })).toBeVisible();
+    expect(
+      screen.getByRole("group", { name: "显示类别" }).querySelectorAll(".category-swatch")
+    ).toHaveLength(0);
   });
 
   it("从时间点 URL 恢复并把历史分期与政权分开呈现", () => {

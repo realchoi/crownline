@@ -382,9 +382,7 @@ main {
 .controls-grid {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(180px, 0.7fr) auto;
   gap: 12px;
-  align-items: end;
 }
 
 .field-label {
@@ -395,8 +393,7 @@ main {
   font-weight: 650;
 }
 
-.text-input,
-.select-input {
+.text-input {
   width: 100%;
   min-height: 40px;
   border: 1px solid var(--border);
@@ -408,7 +405,6 @@ main {
 }
 
 .text-input:focus,
-.select-input:focus,
 button:focus-visible,
 a:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
@@ -435,42 +431,99 @@ a:focus-visible {
   opacity: 0.48;
 }
 
-.legend {
+/* 图例即筛选：色标与时间条、年份切片卡片的类别颜色一致；地图视图不显示色标。 */
+.category-filter {
   grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 18px;
+  align-items: center;
+  gap: 6px 12px;
+  min-width: 0;
+}
+
+.category-filter .field-label {
   margin: 0;
-  color: var(--muted);
   font-size: var(--text-2xs);
 }
 
-.legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.category-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  min-width: 0;
 }
 
-.legend-mark {
-  width: 26px;
-  height: 10px;
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 30px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--chip-color, var(--text));
+  padding: 3px 11px 3px 9px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.category-chip:hover {
+  border-color: color-mix(in srgb, var(--chip-color, var(--text)) 45%, transparent);
+}
+
+.category-chip[aria-pressed="true"] {
+  border-color: var(--chip-color, var(--text));
+  background: color-mix(in srgb, var(--chip-color, var(--text)) 11%, var(--surface-strong));
+}
+
+.category-all {
+  border-color: var(--border);
+  padding-inline: 11px;
+}
+
+.category-all[aria-pressed="true"] {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--surface-strong);
+}
+
+/* 已选某一类时，其余类别文字退为次要色（保持对比度），色标减淡。 */
+.category-filter.has-selection .category-chip:not([aria-pressed="true"], .category-all) {
+  color: var(--muted);
+}
+
+.category-filter.has-selection
+  .category-chip:not([aria-pressed="true"], .category-all)
+  .category-swatch {
+  color: var(--chip-color);
+  opacity: 0.45;
+}
+
+.category-mainline {
+  --chip-color: var(--accent);
+}
+.category-contemporary {
+  --chip-color: var(--parallel);
+}
+.category-context {
+  --chip-color: var(--period);
+}
+.category-regional {
+  --chip-color: var(--regional);
+}
+
+.category-swatch {
+  width: 22px;
+  height: 8px;
   border-radius: 999px;
   background: currentColor;
 }
 
-.legend-mainline {
-  color: var(--accent);
-}
-.legend-contemporary {
-  color: var(--parallel);
-}
-.legend-context {
-  color: var(--period);
-}
-.legend-regional {
-  color: var(--regional);
-}
-.legend-context .legend-mark {
+.category-context .category-swatch {
+  height: 6px;
   background: transparent;
   border: 2px dashed currentColor;
 }
@@ -556,6 +609,12 @@ a:focus-visible {
   margin: 0;
 }
 
+.console-toolbar .category-filter {
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
 /* 工具条内错误提示浮在年份框下方，不撑高整行。 */
 .console-toolbar .year-field {
   position: relative;
@@ -637,17 +696,6 @@ a:focus-visible {
   border-color: var(--accent);
 }
 
-.console-more-count {
-  display: inline-grid;
-  min-width: 18px;
-  height: 18px;
-  place-items: center;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--surface-strong);
-  font-size: var(--text-2xs);
-}
-
 .console-more-chevron {
   width: 7px;
   height: 7px;
@@ -674,28 +722,8 @@ a:focus-visible {
 }
 
 .console-more .region-scope-details,
-.console-more .map-layer-control,
-.console-more .legend {
+.console-more .map-layer-control {
   flex: 1 1 100%;
-}
-
-.console-more-filters {
-  display: flex;
-  gap: 10px;
-  align-items: flex-end;
-}
-
-.console-more-filters .select-input {
-  width: auto;
-  min-width: 10rem;
-  height: 40px;
-  font-size: var(--text-md);
-}
-
-.console-more-filters .button {
-  height: 40px;
-  padding-block: 0;
-  font-size: var(--text-md);
 }
 
 /* 控制台与结果共享页面流，滚动工具条不占首屏空间。 */

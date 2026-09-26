@@ -33,11 +33,6 @@
   }
 }
 @media (max-width: 980px) {
-  .controls-year .controls-grid,
-  .controls-map .controls-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(180px, 0.55fr) auto;
-  }
-
   .historical-map-shell {
     grid-template-columns: 1fr;
     scroll-margin-top: 20px;
@@ -135,9 +130,7 @@
   .filter-sheet .scope-switch button,
   .filter-sheet .map-layer-switch button,
   .filter-sheet .year-step-button,
-  .filter-sheet .button,
-  .filter-sheet .text-input,
-  .filter-sheet .select-input {
+  .filter-sheet .text-input {
     min-height: 44px;
   }
 
@@ -187,8 +180,12 @@
   .filter-sheet .region-scope-control,
   .filter-sheet .map-layer-control,
   .filter-sheet .controls-grid,
-  .filter-sheet .legend {
+  .filter-sheet .category-filter {
     margin-top: 14px;
+  }
+
+  .filter-sheet .category-chip {
+    min-height: 44px;
   }
 
   .filter-sheet .time-range-control {
@@ -229,10 +226,6 @@
     grid-template-columns: 1fr;
     border-top: 1px solid var(--border);
     padding-top: 14px;
-  }
-
-  .filter-sheet .button {
-    width: 100%;
   }
 
   .filter-sheet .active-filter-bar {
